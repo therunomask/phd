@@ -1,0 +1,143 @@
+\documentclass[oneside,reqno,12pt]{amsart}
+
+%\usepackage{fontspec}
+
+\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+%\setmainfont{YuMincho}
+%Hiragino Maru Gothic ProN
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+
+\setcounter{secnumdepth}{5}
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+%picture
+\usepackage{wrapfig}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+\newenvironment{mueq}
+  {\equation\aligned}
+  {\endaligned\endequation}
+  
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+
+
+\newcommand{\Z}[2]{Z_{\stackrel{1}{#1}}\left(#2\right)}
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\Dirk}[1]{ \todo[color=orange!60]{Dirk: #1} }
+\newcommand{\DirkBox}[1]{ \mbox{}\todo[inline,caption={},color=red!60]{Dirk: #1} }
+\newcommand{\Markus}[1]{ \todo[color=green!20]{Markus: #1} }
+\newcommand{\dirk}{ \color{orange} }
+\newcommand{\markus}{ \color{green} }
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+\makeatletter
+
+
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2.0ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                   {-0.5ex \@plus -0.5ex \@minus -.2ex}%
+                                   {0.5em}%
+                                   {\normalfont\bfseries}}
+\renewcommand\subsubsection{\@startsection {subsubsection}{1}{\z@}%
+                                   {-0.3ex \@plus -0.4ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\sc}}  
+\renewcommand\paragraph{\@startsection {paragraph}{1}{\z@}%
+                                   {-0.2ex \@plus -1ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\it}}                                   
+\makeatother
+
+\parindent 0cm
+\begin{document}
+
+\begin{Thm}\label{trace_int_op}
+ Let \(\mathcal{M}\) denote the 4-dimensional mass shell and \(\mathcal{H}_{\mathcal{M}}\)(in the notation of Deckert, Merkl 2014) be ... {\bf (insert lengthy definition) }. We are interested in calculating the trace of an integral operator. Let therefore \(K: \mathcal{H}\rightarrow \mathcal{H}\) be an operator acting as
+\begin{equation}
+\forall  \xi  \in \mathcal{H}: \widehat{K\xi} (l)= \int_{\mathcal{M}} i_p \left( \mathrm{d}^4 p \right) K(l,p) \hat{\xi}(p)
+\end{equation}
+ for some nice integral kernel \(K\). 
+ 
+ Then the trace of the operator \(K\) is given by:
+ \begin{equation}
+ \tr K= \int_{\mathcal{M}} i_p \left( \mathrm{d}^4 p \right) \tr_{\mathcal{D}_p} K(p,p).
+ \end{equation}
+ \end{Thm}
+ {\bf Proof:} As a first step, we choose \((\varphi_{n,k})_{k\in \{1,2\} ,n\in \mathbb{Z}\backslash\{0\}}\) be an ONB of \(\mathcal{H}\) such that for each \(p\in \mathcal{M}\) there is an ONB of \(\mathcal{D}_p\), denoted by \(\{e^p_1,e^p_2\}\) such that
+ \begin{equation*}
+\forall n \in \mathbb{Z}\backslash\{0\}: \left<\varphi_{n,1}(p), e^p_1\right>=\left<\varphi_{n,2}(p), e^p_2\right>
+ \end{equation*}
+holds, where \((\varphi_n)_{n\in\mathbb{Z}\backslash\{0\}}\) is an ONB of \(L^2\left(\mathcal{M}, i_p\left(\mathrm{d}^4p\right)\right)=:\mathcal{H}'\). The sum representing the trace of the operator in question can be reordered in this manner
+ \begin{equation*}
+ \tr K = \sum_{k\in \{1,2\}, n \in \mathbb{Z}\backslash\{0\}} \left< \varphi_{k,n},K \varphi_{k,n}\right>=\sum_{n\in\mathbb{Z}\backslash \{0\}} \left< \varphi_{n},\tr_{\mathcal{D}_{\cdot}} \left(K\right) \varphi_{n}\right>
+ .\end{equation*}
+For the next step we will be using the bra ket notation of Dirac. The identity on \(\mathcal{H}'\) can be written as 
+\begin{equation*}
+1=\sum_{n\in\mathbb{Z}\backslash\{0\}} \left| \varphi_n \right> \left< \varphi_n \right|
+.\end{equation*}
+Now for any function \(g: \in \mathcal{H}'\) and any \(p\in\mathcal{M}\), one gets
+\begin{equation*}
+g(p)= (1 \cdot g) (p) = \sum_{n\in\mathbb{Z}\backslash\{0\}}\left( \left| \varphi_n \right> \left< \varphi_n , g \right>\right)(p)= \sum_{n\in\mathbb{Z}\backslash\{0\}} \varphi_n (p) \left< \varphi_n , g \right>
+.\end{equation*} 
+This implies
+\begin{equation*}
+ \sum_{n\in\mathbb{Z}\backslash\{0\}}   \int_{\mathcal{M}}i_l \left(\mathrm{d}^4 l\right) \varphi_n^*(l)  \tr_{\mathcal{D}_{\cdot}}(K(l,p)) \varphi_n (p)= \tr_{\mathcal{D}_{\cdot}}(K(p,p)),
+\end{equation*}
+which in turn means for the trace
+\begin{align*}
+\tr K =  \sum_{n\in\mathbb{Z}\backslash\{0\}} \int_{\mathcal{M}}i_p \left(\mathrm{d}^4 p\right) \int_{\mathcal{M}}i_l \left(\mathrm{d}^4 l\right) \varphi_n^*(p) \tr_{\mathcal{D}_{\cdot}}(K(p,l)) \varphi_n (l)\\
+= \int_{\mathcal{M}}i_p \left(\mathrm{d}^4 p\right) \tr_{\mathcal{D}_{\cdot}}(K(p,p))
+,\end{align*} 
+ where the niceness of \(K\) was used for interchanging the sum and the integrals.\qed
+ 
+
+ 
+\end{document}
+

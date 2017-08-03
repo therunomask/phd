@@ -1,0 +1,219 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+
+%identity sign
+\usepackage{dsfont}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\equalmath}[1]{\ensuremath{\stackrel{#1}{=}}}
+
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\newtheorem{lemma}{Lemma }
+\newtheorem{theorem}{Theorem }
+\begin{document}
+
+\title{ Charge Conjugation}
+%
+%set this as title and create front page!
+%
+
+\begin{center}
+\section{ Lifting Charge Conjugation}
+\end{center}
+
+We will define the second quantised charge conjugation operator \(\mathfrak{C}\) on all of Fockspace analogously to the way we are currently trying to define the second quantised S matrix operator. Fock space is defined as:
+
+\begin{equation}
+\mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\Lambda m} \otimes \left(\mathcal{H}^- \right)^{\Lambda p}
+\end{equation}
+We will denote the fixed particles sectors of Fockspace by \(\mathcal{F}_{m,p}:= \left(\mathcal{H}^+ \right)^{\otimes m} \otimes \left(\mathcal{H}^- \right)^{\otimes p}\)
+The following property called ''Lift condition`` will play a central role in our definition:%somewhat silly to call the s-matrix u
+\begin{equation}\label{lift_condition}
+\begin{aligned}
+\forall \phi\in \mathcal{H}: \hspace{0.5cm} &a\left( C \phi \right)  \circ \mathfrak{C}=\mathfrak{C} \circ a^*(\phi),\\
+\hspace{0.5cm} &a^*\left( C \phi \right)  \circ \mathfrak{C}=\mathfrak{C} \circ a(\phi)
+\end{aligned}
+\end{equation}
+
+This property together with the charge conjugation operator on the one particle Hilbertspace, linearity and the following property shall be sufficient to define \(\mathfrak{C}\).
+\begin{equation}
+\mathfrak{C}\Omega=\Omega
+\end{equation}
+
+
+\begin{lemma}\label{basic_properties}
+{\bf properties of} \(\mathfrak{C}\):
+
+\begin{equation}\label{self_invers}
+\mathfrak{C} \mathfrak{C} = \mathds{1}
+\end{equation}
+\begin{equation}\label{unitarity}
+\mathfrak{C}^* \mathfrak{C} = \mathds{1}
+\end{equation}
+\end{lemma}
+{\bf Proof:}  We will first proof \eqref{self_invers}: Let \(\alpha\) be an arbitrary Fockspace element. Let further \((\varphi_n)_{n\in \mathbb{N}}\) be an orthonormal basis of \(\mathcal{H}_+\) and \((f_n)_{n\in \mathbb{N}}\) be an orthonormal basis of \(\mathcal{H}_-\).
+
+\begin{multline}
+\mathfrak{C}\mathfrak{C} \alpha =\mathfrak{C}\mathfrak{C} \sum_{m,p \in \mathbb{N}_0} \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \prod_{l=1}^m a^*(\varphi_{a_l}) \prod_{d=1}^p a(f_{b_d}) \Omega \\
+=\mathfrak{C} \sum_{m,p \in \mathbb{N}_0} \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \left(\prod_{l=1}^m a(C \varphi_{a_l}) \right) \mathfrak{C}\prod_{d=1}^p a(f_{b_d}) \Omega \\
+= \sum_{m,p \in \mathbb{N}_0} \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \left(\prod_{l=1}^m a^*(C C \varphi_{a_l}) \right) \mathfrak{C}\prod_{d=1}^p a^*(C f_{b_d}) \mathfrak{C}\Omega \\
+\equalmath{CC=\mathds(1)}\sum_{m,p \in \mathbb{N}_0} \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \left(\prod_{l=1}^m a^*( \varphi_{a_l}) \right) \prod_{d=1}^p a(C C f_{b_d}) \mathfrak{C}\mathfrak{C}\Omega \\
+\equalmath{CC=\mathds(1)}\sum_{m,p \in \mathbb{N}_0} \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \left(\prod_{l=1}^m a^*( \varphi_{a_l}) \right) \prod_{d=1}^p a(f_{b_d})\Omega =\alpha ,
+\end{multline}
+which proves the first claim. The calculation for the second claim is similar. Let \(\alpha, \beta \in \mathfrak{F}\) be arbitrary elements and \((\varphi_n)_{n\in \mathbb{N}}\) , \((f_n)_{n\in \mathbb{N}}\) as before.
+
+\begin{multline}
+\left< \beta ,\mathfrak{C}^*\mathfrak{C} \alpha\right> =\left<\mathfrak{C} \beta, \mathfrak{C}\alpha\right>= 
+\sum_{n,g,m,p \in \mathbb{N}_0} \sum_{\tilde{a}_1, \dots \tilde{a}_n, \tilde{b}_1 , \dots \tilde{b}_g \in \mathbb{N}}  \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}}\\
+\left< \mathfrak{C}  \beta_{\tilde{a}_1,\dots \tilde{a}_n, \tilde{b}_1, \dots \tilde{b}_g} \prod_{l=1}^n a^*(\varphi_{\tilde{a}_l}) \prod_{d=1}^g a(f_{\tilde{b}_d}) \Omega, \mathfrak{C}  \alpha_{a_1,\dots a_m, b_1, \dots b_p} \prod_{l=1}^m a^*(\varphi_{a_l}) \prod_{d=1}^p a(f_{b_d}) \Omega\right> \\
+= \sum_{n,g,m,p \in \mathbb{N}_0} \sum_{\tilde{a}_1, \dots \tilde{a}_n, \tilde{b}_1 , \dots \tilde{b}_g \in \mathbb{N}}  \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}}\beta_{\tilde{a}_1,\dots \tilde{a}_n, \tilde{b}_1, \dots \tilde{b}_g} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \\
+\left< \mathfrak{C}   \prod_{l=1}^n a^*(\varphi_{\tilde{a}_l}) \prod_{d=1}^g a(f_{\tilde{b}_d}) \Omega, \mathfrak{C}   \prod_{l=1}^m a^*(\varphi_{a_l}) \prod_{d=1}^p a(f_{b_d}) \Omega\right> \\
+= \sum_{n,g,m,p \in \mathbb{N}_0} \sum_{\tilde{a}_1, \dots \tilde{a}_n, \tilde{b}_1 , \dots \tilde{b}_g \in \mathbb{N}}  \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}}\beta_{\tilde{a}_1,\dots \tilde{a}_n, \tilde{b}_1, \dots \tilde{b}_g} \alpha_{\tilde{a}_1,\dots \tilde{a}_m, \tilde{b}_1, \dots \tilde{b}_p} \\
+\left<   \prod_{l=1}^n a(C \varphi_{\tilde{a}_l}) \prod_{d=1}^g a^*(C f_{\tilde{b}_d}) \mathfrak{C} \Omega,    \prod_{l=1}^m a(C \varphi_{a_l}) \prod_{d=1}^p a^*(C f_{b_d}) \mathfrak{C}  \Omega\right> \\
+= \sum_{n,g,m,p \in \mathbb{N}_0} \sum_{\tilde{a}_1, \dots \tilde{a}_n, \tilde{b}_1 , \dots \tilde{b}_g \in \mathbb{N}}  \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}}\beta_{\tilde{a}_1,\dots \tilde{a}_n, \tilde{b}_1, \dots \tilde{b}_g} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \\
+\left<   \prod_{l=1}^n a(C \varphi_{\tilde{a}_l}) \prod_{d=1}^g a^*(C f_{\tilde{b}_d})  \Omega,    \prod_{l=1}^m a(C \varphi_{a_l}) \prod_{d=1}^p a^*(C f_{b_d})  \Omega\right> \\
+= \sum_{m,p \in \mathbb{N}_0} \sum_{\tilde{a}_1, \dots \tilde{a}_n, \tilde{b}_1 , \dots \tilde{b}_g \in \mathbb{N}}  \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}}\beta_{a_1,\dots a_n, b_1, \dots b_g} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \\
+\sum_{\pi\in S_m, \sigma \in S_p} (-1)^\pi(-1)^\sigma\prod_{l=1}^m \left<    C \varphi_{a_{\pi(l)}} ,C \varphi_{\tilde{a}_l} \right>  \prod_{d=1}^p \left< C f_{\tilde{b}_d}, C f_{b_{\sigma (d)}}\right> \\
+= \sum_{m,p \in \mathbb{N}_0} \sum_{\tilde{a}_1, \dots \tilde{a}_n, \tilde{b}_1 , \dots \tilde{b}_g \in \mathbb{N}}  \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}}\beta_{a_1,\dots a_n, b_1, \dots b_g} \alpha_{a_1,\dots a_m, b_1, \dots b_p} \\
+\sum_{\pi\in S_m, \sigma \in S_p} (-1)^\pi(-1)^\sigma\prod_{l=1}^m \left<     \varphi_{\tilde{a}_l} , \varphi_{a_{\pi(l)}} \right>  \prod_{d=1}^p \left<  f_{b_{\sigma (d)}},  f_{\tilde{b}_d}\right> \\
+=\sum_{n,g,m,p \in \mathbb{N}_0} \sum_{\tilde{a}_1, \dots \tilde{a}_n, \tilde{b}_1 , \dots \tilde{b}_g \in \mathbb{N}}  \sum_{a_1, \dots a_m, b_1 , \dots b_p \in \mathbb{N}}\\
+\left<  \beta_{\tilde{a}_1,\dots \tilde{a}_n, \tilde{b}_1, \dots \tilde{b}_g} \prod_{l=1}^n a^*(\varphi_{\tilde{a}_l}) \prod_{d=1}^g a(f_{\tilde{b}_d}) \Omega, \alpha_{a_1,\dots a_m, b_1, \dots b_p} \prod_{l=1}^m a^*(\varphi_{a_l}) \prod_{d=1}^p a(f_{b_d}) \Omega\right> =\left< \beta, \alpha \right>
+\end{multline}
+\qed
+
+\begin{theorem}
+\(\mathfrak{C}S^A=S^{-A} \mathfrak{C}\)
+\end{theorem}
+{\bf Proof:} possible?
+\vspace{1.0cm}
+
+We can now use lemma \ref{basic_properties} to show the following 
+\begin{lemma} \(\mathfrak{C} T_1(A) \mathfrak{C}= T_1(-A) \). 
+\end{lemma}
+{\bf Proof:}
+The analogous property holds for the one-particle operator: \(C Z_1(A)C= Z_1(-A)\). We will make use of the image of an arbitrary Fockspace element of \( T_1 \) as was derived in ``defining\textunderscore T1.pdf''. We will consider the the image part by part, separated by the fixed-particle subspace they belong to. Let \(\alpha \in \mathcal{F}_{m,p}\) be arbitrary. \((\varphi_n)_{n\in \mathbb{N}}\) , \((f_n)_{n\in \mathbb{N}}\) be as usual.
+\begin{center}
+{\large Case 1: \(\left. T_1\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m,p}}\)}
+\end{center}
+
+\begin{multline}
+\sum_{\tilde{m},\tilde{p}\in \mathbb{N}}\mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{\tilde{m},\tilde{p}}\rightarrow\mathcal{F}_{\tilde{m},\tilde{p}}} \mathfrak{C} \alpha= \\
+\sum_{m,p \in \mathbb{N}} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m,p}} \mathfrak{C} \prod_{l=1}^m a^*(\varphi_{a_l})\prod_{d=1}^p a(f_{b_d})\Omega=\\
+\sum_{m,p \in \mathbb{N}} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m,p}}  \prod_{l=1}^m a(C \varphi_{a_l})\prod_{d=1}^p a^*(C f_{b_d})\mathfrak{C}\Omega=\\
+(-1)^{m p}\sum_{m,p \in \mathbb{N}} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m,p}}  \prod_{d=1}^p a^*(C f_{b_d}) \prod_{l=1}^m a(C \varphi_{a_l})\Omega\equaltext{defining\textunderscore T1.pdf}\\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C}\\
+\left[ \sum_{c=1}^p  \left[\prod_{d=1}^{c-1} a^*(C f_{b_d})\right]  a^*\left(Z_{1,++}(A)C f_{b_c}\right) \prod_{k=c+1}^{p} a^*(C f_{b_k})  \prod_{l=1}^m a(C \varphi_{a_l}) \Omega \right.
++\\
+\left. \sum_{e=1}^m  \prod_{d=1}^{p} a^*(C f_{b_d})  \left[ \prod_{l=1}^{e-1} a(C \varphi_{a_l}) \right]  a\left(Z_{1,--}(A) C \varphi_{a_e}\right)  \prod_{k=e+1}^{m} a(C \varphi_{a_k}) \Omega \right] =\\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \\
+\left[ \sum_{c=1}^p  \left[\prod_{d=1}^{c-1} a( f_{b_d})\right]  a\left(C Z_{1,++}(A)C f_{b_c}\right) \prod_{k=c+1}^{p} a( f_{b_k})  \prod_{l=1}^m a^*( \varphi_{a_l}) \mathfrak{C} \Omega \right.
++\\
+\left. \sum_{e=1}^m  \prod_{d=1}^{p} a( f_{b_d})  \left[ \prod_{l=1}^{e-1} a^*( \varphi_{a_l}) \right]  a^*\left(C Z_{1,--}(A) C \varphi_{a_e}\right)  \prod_{k=e+1}^{m} a^*( \varphi_{a_k})\mathfrak{C} \Omega \right] =\\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \\
+\left[ (-1)^{m p}\sum_{c=1}^p \prod_{l=1}^m a^*( \varphi_{a_l})  \left[\prod_{d=1}^{c-1} a( f_{b_d})\right]  a\left( Z_{1,--}(-A) f_{b_c}\right) \prod_{k=c+1}^{p} a( f_{b_k})   \Omega \right.
++\\
+\left. (-1)^{p m}\sum_{e=1}^m    \left[ \prod_{l=1}^{e-1} a^*( \varphi_{a_l}) \right]  a^*\left( Z_{1,++}(-A)  \varphi_{a_e}\right)  \prod_{k=e+1}^{m} a^*( \varphi_{a_k}) \prod_{d=1}^{p} a( f_{b_d})\Omega \right] =\\
+\sum_{m,p\in \mathbb{N}}\left. T_1(-A)\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m,p}}  \alpha
+\end{multline}
+
+\newpage 
+
+For case 2 we need to pick the bases of \(\mathcal{H}^+, \mathcal{H}^-\) in such a way that \(\forall n \in \mathbb{N} \hspace{0.2cm} C \varphi_n = f_n \), which is always possible. We also make use of properties of the one-particle charge conjugation operator. \(C: \mathcal{H}^- \rightarrow \bar{\mathcal{H}}^+, \)linear.
+\begin{center}
+{\large Case 2: \(\left. T_1\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m+1,p+1}}\)}
+\end{center}
+
+
+\begin{multline}
+\sum_{\tilde{m},\tilde{p}\in \mathbb{N}}\mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{\tilde{m},\tilde{p}}\rightarrow\mathcal{F}_{\tilde{m}+1,\tilde{p}+1}} \mathfrak{C} \alpha= \\
+\sum_{m,p \in \mathbb{N}} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m+1,p+1}} \mathfrak{C} \prod_{l=1}^m a^*(\varphi_{a_l})\prod_{d=1}^p a(f_{b_d})\Omega=\\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p}\sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m+1,p+1}} \prod_{d=1}^p a^*(C f_{b_d}) \prod_{l=1}^m a(C \varphi_{a_l})\mathfrak{C}\Omega\equaltext{defining\textunderscore T1.pdf}\\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p}\sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C}  \\
+(-1)^{m}\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left<Z_{1,-+}(A)\varphi\right|\left. f\right>
+\left[\prod_{d=1}^p a^*(C f_{b_d})\right] a^*(\varphi)\left[\prod_{l=1}^m a(C \varphi_{a_l}) \right]
+ a(f) \Omega=\\
+ \sum_{m,p \in \mathbb{N}} (-1)^{m p}\sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p}  \\
+(-1)^{m}\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left<Z_{1,-+}(A)\varphi\right|\left. f\right>
+\left[\prod_{d=1}^p a( f_{b_d})\right] a(C \varphi)\left[\prod_{l=1}^m a^*( \varphi_{a_l}) \right]
+ a^*(C f) \Omega=\\
+  \sum_{m,p \in \mathbb{N}} (-1)^{m p}\sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p}  \\
+(-1)^{m}(-1)^{m+1 + m p + p}\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left<Z_{1,-+}(A)\varphi\right|\left. f\right>
+\left[\prod_{l=1}^m a^*( \varphi_{a_l}) \right]
+ a^*(C f)  \left[\prod_{d=1}^p a( f_{b_d})\right] a(C \varphi)\Omega=\\
+   \sum_{m,p \in \mathbb{N}} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p}  \\
+(-1)^{1 + p}\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left<C C Z_{1,-+}(A)C f \right|\left. C  \varphi \right>
+\left[\prod_{l=1}^m a^*( \varphi_{a_l}) \right]
+ a^*(\varphi)  \left[\prod_{d=1}^p a( f_{b_d})\right] a(f)\Omega =\\
+    \sum_{m,p \in \mathbb{N}} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p}  \\
+(-1)^{1 + p}\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left<  Z_{1,-+}(A)\varphi \right|\left.   f \right>
+\left[\prod_{l=1}^m a^*( \varphi_{a_l}) \right]
+ a^*(\varphi)  \left[\prod_{d=1}^p a( f_{b_d})\right] a(f)\Omega=\\
+ \sum_{\tilde{m},\tilde{p}\in \mathbb{N}}\left. T_1(-A)\right|_{\mathcal{F}_{\tilde{m},\tilde{p}}\rightarrow\mathcal{F}_{\tilde{m}+1,\tilde{p}+1}}  \alpha=
+\end{multline}
+
+Where in the second but last equality we used that 
+\begin{multline}
+\left<C C Z_{1,-+}(A)C f \right|\left. C  \varphi \right>_\mathcal{H}=
+\left<C  Z_{1,+-}(-A) f \right|\left. C  \varphi \right>_\mathcal{H}=
+\left<  Z_{1,+-}(-A) f \right|\left.   \varphi \right>_{\bar{\mathcal{H}}}=\\
+\left< \varphi   \right|\left. Z_{1,+-}(-A) f  \right>_{\mathcal{H}}=
+\left< Z_{1,-+}(A)  \varphi   \right|\left. f  \right>_{\mathcal{H}}
+\end{multline}
+Which we will use again in case 3.
+
+\begin{center}
+{\large Case 3: \(\left. T_1\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m-1,p-1}}\)}
+\end{center}
+
+
+\begin{multline}
+\sum_{\tilde{m},\tilde{p}\in \mathbb{N}}\mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{\tilde{m},\tilde{p}}\rightarrow\mathcal{F}_{\tilde{m}-1,\tilde{p}-1}} \mathfrak{C} \alpha= \\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p}\sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C} \left. T_1(A)\right|_{\mathcal{F}_{m,p}\rightarrow\mathcal{F}_{m-1,p-1}} \prod_{d=1}^p a^*(C f_{b_d}) \prod_{l=1}^m a(C \varphi_{a_l})\Omega\equaltext{defining\textunderscore T1.pdf}\\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p}\sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p} \mathfrak{C} \\
+\sum_{j=1}^m \sum_{c=1}^p (-1)^{p-c+j-1}  \left<C \varphi_{a_j}\right|\left.Z_{1,-+}(A)C f_{b_c}\right> \prod_{\stackrel{d=1}{d\neq c}}^{p} a^*(C f_{b_l})  \prod_{\stackrel{l=1}{l\neq j}}^m a(C \varphi_{a_l}) \Omega=\\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p}\sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p}  \\
+\sum_{j=1}^m \sum_{c=1}^p (-1)^{p-c+j-1}  \left<C \varphi_{a_j}\right|\left. CC Z_{1,-+}(A)C f_{b_c}\right> \prod_{\stackrel{d=1}{d\neq c}}^{p} a( f_{b_l})  \prod_{\stackrel{l=1}{l\neq j}}^m a^*( \varphi_{a_l}) \Omega=\\
+\sum_{m,p \in \mathbb{N}} (-1)^{m p}\sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p}  \\
+\sum_{j=1}^m \sum_{c=1}^p (-1)^{p-c+j-1}  (-1)^{mp -m -p +1}\left< f_{b_c}\right|\left.  Z_{1,-+}(A) \varphi_{a_j}\right>\prod_{\stackrel{l=1}{l\neq j}}^m a^*( \varphi_{a_l}) \prod_{\stackrel{d=1}{d\neq c}}^{p} a( f_{b_l})   \Omega=\\
+\sum_{m,p \in \mathbb{N}} \sum_{a_1, \dots a_m, b_1, \dots b_p \in \mathbb{N}} \alpha_{a_1, \dots a_m, b_1, \dots b_p}  \\
+\sum_{j=1}^m \sum_{c=1}^p (-1)^{m-j+c-1}  (-1)\left< f_{b_c}\right|\left.  Z_{1,-+}(A) \varphi_{a_j}\right>\prod_{\stackrel{l=1}{l\neq j}}^m a^*( \varphi_{a_l}) \prod_{\stackrel{d=1}{d\neq c}}^{p} a( f_{b_l})   \Omega=\\
+\sum_{\tilde{m},\tilde{p}\in \mathbb{N}}\left. T_1(-A)\right|_{\mathcal{F}_{\tilde{m},\tilde{p}}\rightarrow\mathcal{F}_{\tilde{m}-1,\tilde{p}-1}}  \alpha
+\end{multline}
+\qed
+
+
+
+
+
+
+
+
+
+\end{document}
+

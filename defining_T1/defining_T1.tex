@@ -1,0 +1,290 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+
+%identity sign
+\usepackage{dsfont}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\equalmath}[1]{\ensuremath{\stackrel{#1}{=}}}
+
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\title{ Defining \(T_k\)}
+%
+%set this as title and create front page!
+%
+
+\begin{center}
+\section{ General Preliminaries}
+\end{center}
+
+We will define \(T_k\) as the expansion coefficients of the second quantised \(S\)-matrix \(S\), which is an operator on Fockspace. If we denote the Hilbert space of square integrable positive, resp. negative energy solutions(find proper reference) of the Dirac equation with external potential \eqref{dirac equation} by \(\mathcal{H}^\pm\) then Fockspace is given by:
+
+\begin{equation}\label{dirac equation}
+i \slashed{\partial} \psi = (\slashed{A}+m) \psi
+\end{equation}
+
+\begin{equation}
+\mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\Lambda m} \otimes \left(\mathcal{H}^- \right)^{\Lambda p}
+\end{equation}
+We will denote the fixed particles sectors of Fockspace by \(\mathcal{F}_{m,p}:= \left(\mathcal{H}^+ \right)^{\Lambda m} \otimes \left(\mathcal{H}^- \right)^{\Lambda p}\)
+We employ the following property as defining the second quantised \(S\)-matrix:%somewhat silly to call the s-matrix u
+\begin{equation}\label{lift_condition}
+\forall \phi\in \mathcal{H}: \hspace{0.5cm} a\left( U \phi \right)  \circ S= S \circ a(\phi),
+\end{equation}
+Where \(a\) is the annihilation operator of the Fockspace \(\mathcal{F}\) over the \(m\), \(p\) particle sectors, \(\mathcal{F}_{m,p}:=\). This property is called the ``Lift condition''. Which is equivalent to the commutativity of the following diagram.
+\begin{equation}
+\begin{CD}								%heuristics with infinite wedge space?
+\mathcal{F}     @>S^A>>  \mathcal{F}\\
+@AAaA        @AAaA\\
+\mathcal{H}\otimes \mathcal{F}     @>U^A\otimes S^A>>  \mathcal{H}\otimes \mathcal{F} 
+\end{CD}
+\end{equation}
+The respective condition for the creation operator, which can easily be derived from \eqref{lift_condition} is:
+\begin{equation}
+\forall \phi\in \mathcal{H}: \hspace{0.5cm} a^*\left( U^A \phi \right)  \circ S^A =S^A \circ a^*(\phi)
+\end{equation}
+Expanding \(U^A\) and \(S^A\) in a powerseries and sorting the resulting series in powers of \(A\), one obtains commutation relations for the coefficients of said expansion:
+\begin{multline}
+\begin{aligned}
+U^A&=\mathds{1}_\mathcal{H}+\sum_{l=1}^\infty \frac{1}{l!} Z_l (A)\\
+S^A&=\mathds{1}_\mathcal{F}+\sum_{l=1}^\infty \frac{1}{l!} T_l(A)
+\end{aligned}
+\end{multline}
+\begin{multline}\label{lift_commutation_relation}
+a\left( U \phi \right)  \circ \tilde{U}=\tilde{U} \circ a(\phi)\\
+\iff a\left( \left[\mathds{1}_\mathcal{H}+\sum_{l=1}^\infty \frac{1}{l!} Z_l (A) \right]\phi \right)  \circ \left(\mathds{1}_\mathcal{F}+\sum_{l=1}^\infty \frac{1}{l!} T_l(A)\right)=\\\left(\mathds{1}_\mathcal{F}+\sum_{l=1}^\infty \frac{1}{l!} T_l(A) \right)\circ a(\phi)\\
+\iff a(\phi)+\sum_{l=1}^\infty \frac{1}{l!} a\left(Z_l (A) \phi \right) + a(\phi)\circ\sum_{l=1}^\infty \frac{1}{l!} T_l(A)+ \sum_{l=1}^\infty \frac{1}{l!} a\left(Z_l (A) \phi \right)\circ\sum_{k=1}^\infty \frac{1}{k!} T_k(A)=\\
+a(\phi)+\sum_{l=1}^\infty \frac{1}{l!} T_l(A) \circ a(\phi)\\
+\iff \sum_{l=1}^\infty \frac{1}{l!} a\left(Z_l (A) \phi \right) + \sum_{l=1}^\infty \frac{1}{l!} a\left(Z_l (A) \phi \right)\circ\sum_{k=1}^\infty \frac{1}{k!} T_k(A)=\\ 
+\sum_{l=1}^\infty \frac{1}{l!} T_l(A) \circ a(\phi)- a(\phi)\circ\sum_{l=1}^\infty \frac{1}{l!} T_l(A)\\
+\iff \sum_{l=1}^\infty \frac{1}{l!} a\left(Z_l (A) \phi \right) + \sum_{m=2}^\infty\sum_{\stackrel{k+l=m}{l,k\ge1}} \frac{1}{l! k!} a\left(Z_l (A) \phi \right)\circ T_k(A)=\sum_{l=1}^\infty \frac{1}{l!} \left[T_l(A) , a(\phi)\right]\\
+\iff \sum_{m=1}^\infty \frac{1}{m!} a\left(Z_m (A) \phi \right) + \sum_{m=2}^\infty\sum_{j=1}^{m-1} \frac{1}{j!(m-j)!)} a\left(Z_j (A) \phi \right)\circ T_{m-j}(A)=\sum_{l=1}^\infty \frac{1}{l!} \left[T_l(A) , a(\phi)\right]\\
+\iff \sum_{m=1}^\infty  \left(\frac{1}{m!} a\left(Z_m (A) \phi \right) + \mathds{1}_{[2,\infty[}(m)\sum_{j=1}^{m-1}\frac{1}{j!(m-j)!}  a\left(Z_j (A) \phi \right)\circ T_{m-j}(A)\right)=\\
+\sum_{m=1}^\infty \frac{1}{m!}\left[T_m(A) , a(\phi)\right]
+\end{multline}
+
+Since the last line of \eqref{lift_commutation_relation} needs to hold for every smooth compactly supported \(A\), the equality must hold for all the sets of terms of equal power of \(A\) separately, hence we get:
+
+\begin{equation}\label{Tk_commutation_relation_annihilator}
+\left[T_m(A) , a(\phi)\right]= a\left(Z_m (A) \phi \right) + \mathds{1}_{[2,\infty[}(m)\sum_{j=1}^{m-1} \begin{pmatrix} m \\ j \end{pmatrix} a\left(Z_j (A) \phi \right)\circ T_{m-j}(A)
+\end{equation}
+By the very same computation we get the corresponding expression for the creation operator:
+\begin{equation}\label{Tk_commutation_relation_creator}
+\left[T_m(A) , a^*(\phi)\right]= a^*\left(Z_m (A) \phi \right) + \mathds{1}_{[2,\infty[}(m)\sum_{j=1}^{m-1} \begin{pmatrix} m \\ j \end{pmatrix} a^*\left(Z_j (A) \phi \right)\circ T_{m-j}(A)
+\end{equation}
+Equations \eqref{Tk_commutation_relation_annihilator} and \eqref{Tk_commutation_relation_creator} enable us to extend the definition of \(T_k\) to any fixed particle sector once we have defined its action on the vacuum vector of Fockspace.
+
+\section{Defining \(T_1\)}
+
+In addition to \eqref{Tk_commutation_relation_annihilator} and \eqref{Tk_commutation_relation_creator} we define \(\left<\Omega \right| \left. T_1(A) \Omega\right>=0\) for any external field \(A\). We will show in the following that the resulting Fockspace operator is well defined, bounded on every fixed particle sector, but unbounded on all of Fockspace.
+
+First of all we find the image of \(\mathcal{F}_{m,p}\) under \(T1\). For \(\left( \varphi_l \right)_{l\in\mathbb{N}} \), respectively \(\left( f_l \right)_{l\in\mathbb{N}} \)  being an ONB for \(\mathcal{H}^\pm\) the set 
+
+\begin{equation}\label{F_m,p basis}
+\left\{\left. \prod_{l=1}^m a^*(\varphi_{\omega(l)}) \prod_{b=1}^p a(f_{\sigma(b)}) \Omega \right| \omega,\sigma: \mathbb{N} \rightarrow \mathbb{N}, \text{bijective} \right\}
+\end{equation}
+
+form an ONB of \(\mathcal{F}_{m,p}\).  First of all, we begin by finding the image of the vacuum under \(T_1\). An arbitrary matrix element has the form:
+\begin{multline}\label{ImageOfVacuum}
+\left<\prod_{l=1}^m a^*(\varphi_{\omega(l)}) \prod_{b=1}^p a(f_{\sigma(b)}) \Omega\right| T_1 \left.\Omega\right>=\left< \Omega\right|  \prod_{b=1}^p a^*(f_{\sigma(b)}) \prod_{l=1}^m a(\varphi_{\omega(l)})T_1 \left.\Omega\right> \equaltext{\eqref{Tk_commutation_relation_annihilator},\eqref{Tk_commutation_relation_creator}} \\
+-\left<\Omega\right| \delta_{p,1}\delta_{m,1}a^*(f_{\sigma(1)})a(Z_1(A)\varphi_{\omega(1)})\left|\Omega\right>=-\delta_{p,1}\delta_{m,1}\left<\Omega\right| a^*(f_{\sigma(1)})a(Z_{1,-+}(A)\varphi_{\omega(1)})\left.\Omega\right>\\
+=-\delta_{p,1}\delta_{m,1}\left<Z_{1,-+}(A)\varphi_{\omega(1)}\right|\left. f_{\sigma(1)}\right>
+\end{multline}
+This image is well defined because
+ \begin{multline}%!!!!!!!!!!find proper meaning of norm of \slashed{A} !!!!!!!!!!
+ \| \left| T_1(A)\Omega\right>\|^2=\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left|\left<Z_{1,-+}(A)\varphi\right|\left. f\right>\right|^2=\| Z_{1,-+}\|_{\text{HS}}^2=\| \slashed{A}(\cdot_1-\cdot_2)\|_{\mathcal{L}^2(\mathcal{M}_- \times\mathcal{M}_+)}^2\\
+ \int_{\mathbb{R}^3}\frac{\text{d}^3p}{E_p} \int_{\mathbb{R}^3}\frac{\text{d}^3k}{E_k} \left\| \slashed{A}(-E_p-E_k,p_1-k_1,p_2-k_2,p_3-k_3) \right\|^2<\infty
+ \end{multline}
+
+We will be using \eqref{ImageOfVacuum} to find the image of an arbitrary element of \eqref{F_m,p basis}:
+
+\begin{multline}\label{beginning of image of fixed particle sector}
+T_1(A)\prod_{l=1}^m a^*(\varphi_{\omega(l)}) \prod_{b=1}^p a(f_{\sigma(b)}) \Omega
+\equaltext{\eqref{Tk_commutation_relation_annihilator},\eqref{Tk_commutation_relation_creator}} \sum_{c=1}^m  \left[\prod_{l=1}^{c-1} a^*(\varphi_{\omega(l)})\right]  a^*\left(Z_1(A)\varphi_{\omega(c)}\right) \prod_{k=c+1}^{m} a^*(\varphi_{\omega(k)})  \prod_{b=1}^p a(f_{\sigma(b)}) \Omega\\
++\sum_{e=1}^p  \prod_{l=1}^{m} a^*(\varphi_{\omega(l)})  \left[ \prod_{b=1}^{e-1} a(f_{\sigma(b)}) \right]  a\left(Z_1(A)f_{\sigma(e)}\right)  \prod_{k=e+1}^{p} a(f_{\sigma(k)}) \Omega +\prod_{l=1}^m a^*(\varphi_{\omega(l)}) \prod_{b=1}^p a(f_{\sigma(b)}) T_1(A)\Omega\\
+\equaltext{\eqref{ImageOfVacuum}}\sum_{c=1}^m  \left[\prod_{l=1}^{c-1} a^*(\varphi_{\omega(l)})\right]  a^*\left(Z_1(A)\varphi_{\omega(c)}\right) \prod_{k=c+1}^{m} a^*(\varphi_{\omega(k)})  \prod_{b=1}^p a(f_{\sigma(b)}) \Omega
++\\
+\sum_{e=1}^p  \prod_{l=1}^{m} a^*(\varphi_{\omega(l)})  \left[ \prod_{b=1}^{e-1} a(f_{\sigma(b)}) \right]  a\left(Z_1(A)f_{\sigma(e)}\right)  \prod_{k=e+1}^{p} a(f_{\sigma(k)}) \Omega +\\
+\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left<Z_{1,-+}(A)\varphi\right|\left. f\right>
+\prod_{l=1}^m a^*(\varphi_{\omega(l)}) \left[\prod_{b=1}^p a(f_{\sigma(b)}) \right]
+a^*(\varphi) a(f) \Omega\\
+=\sum_{c=1}^m  \left[\prod_{l=1}^{c-1} a^*(\varphi_{\omega(l)})\right]  a^*\left(Z_{1,++}(A)\varphi_{\omega(c)}\right) \prod_{k=c+1}^{m} a^*(\varphi_{\omega(k)})  \prod_{b=1}^p a(f_{\sigma(b)}) \Omega
++\\
+\sum_{e=1}^p  \prod_{l=1}^{m} a^*(\varphi_{\omega(l)})  \left[ \prod_{b=1}^{e-1} a(f_{\sigma(b)}) \right]  a\left(Z_{1,--}(A)f_{\sigma(e)}\right)  \prod_{k=e+1}^{p} a(f_{\sigma(k)}) \Omega +\\
+\sum_{j=1}^p \sum_{c=1}^m (-1)^{m-c+j-1}   \left<f_{\sigma(j)}\right|\left.Z_{1,-+}(A)\varphi_{\omega(c)}\right> \prod_{\stackrel{l=1}{l\neq c}}^{m} a^*(\varphi_{\omega(l)})  \prod_{\stackrel{b=1}{b\neq j}}^p a(f_{\sigma(b)}) \Omega+\\
+(-1)^{p+1}\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left<Z_{1,-+}(A)\varphi\right|\left. f\right>
+\left[\prod_{l=1}^m a^*(\varphi_{\omega(l)})\right] a^*(\varphi)\left[\prod_{b=1}^p a(f_{\sigma(b)}) \right]
+ a(f) \Omega
+\end{multline}
+
+In the last line we can now read off the particle sectors to which \(\prod_{l=1}^m a^*(\varphi_{\omega(l)}) \prod_{b=1}^p a(f_{\sigma(b)}) \Omega\) gets mapped. The first two terms did not change their particle number, the third term lost one particle and one hole in the sea, the fourth term gained a particle and a hole.
+
+\begin{equation}
+T_1: \mathcal{F}_{m,p}\rightarrow \mathcal{F}_{m-1,p-1} \oplus \mathcal{F}_{m,p} \oplus \mathcal{F}_{m+1,p+1}
+\end{equation}
+
+The extension of \(T_1\) to all fixed particle sectors via\eqref{beginning of image of fixed particle sector} results in a well defined operator. What is left to show is that this operator is bounded if restricted to a particular fixed particle sector \(\mathcal{F}_{m,p}\), but unbounded in general.
+
+\(T_1\) maps \(\mathcal{F}_{m,p}\) to the direct sum of three distinct vectors spaces, so to find the norm of \(T_1\) we have to compare these cases:
+
+\vspace{1cm}
+\begin{center}
+{\Large Case 1:} \( \mathcal{F}_{m,p}\rightarrow \mathcal{F}_{m,p} \)
+\end{center}
+Let \(\alpha, \beta \in \mathcal{F}_{m,p}\), \( (\varphi_l )_{l\in \mathbb{N}} \) be an ONB of \(\mathcal{H}^+\) and \( (f_l )_{l\in \mathbb{N}} \) be an ONB of \(\mathcal{H}^-\). Then \(\alpha\) and \(\beta\) can be written as:
+
+\begin{equation}
+\begin{aligned}
+\alpha=&\sum_{\stackrel{(i_1,\dots i_m)\in \mathbb{N}^m}{(k_1,\dots k_p)\in \mathbb{N}^p}} \alpha_{i_1,\dots, i_m, k_1, \dots, k_p} \prod_{l=1}^m a^*(\varphi_{i_l}) \prod_{d=1}^p a(f_{k_d})\Omega
+\\
+\beta=&\sum_{\stackrel{(q_1,\dots q_m)\in \mathbb{N}^m}{(r_1,\dots r_p)\in \mathbb{N}^p}} \beta_{q_1,\dots, q_m, r_1, \dots, r_p} \prod_{l=1}^m a^*(\varphi_{q_l}) \prod_{d=1}^p a(f_{r_d})\Omega
+\end{aligned}
+\end{equation} 
+Where  \(\alpha_{i_1,\dots, i_m, k_1, \dots, k_p}\) and \(\beta_{q_1,\dots, q_m, r_1, \dots, r_p}\) are complex numbers square sumable over their indices. Also, they obey the antisymmetry characteristic for fermions, i.e. for any \(\omega \in S_m\), \(\sigma \in S_p\): \( \alpha_{\omega(i_1),\dots, \omega(i_m), \sigma(k_1), \dots, \sigma(k_p)}=\alpha_{i_1,\dots, i_m, k_1, \dots, k_p} (-1)^\omega (-1)^\sigma\), where \((-1)^\omega\), respectively \((-1)^\sigma\) designates the sign of the permutation.
+
+We need to find a bound for the matrix element \(\left<\beta\right., T_1(A) \left.\alpha\right>\):
+\begin{multline}
+\left<\beta\right., T_1(A) \left.\alpha\right>\equaltext{\eqref{beginning of image of fixed particle sector}}\sum_{\stackrel{(i_1,\dots i_m)\in \mathbb{N}^m}{(k_1,\dots k_p)\in \mathbb{N}^p}}\sum_{\stackrel{(q_1,\dots q_m)\in \mathbb{N}^m}{(r_1,\dots r_p)\in \mathbb{N}^p}} \sum_{\pi \in S_m} \sum_{\sigma \in S_p} \beta^*_{q_1,\dots, q_m, r_1, \dots, r_p}  \alpha_{i_1,\dots, i_m, k_1, \dots, k_p} (-1)^\omega (-1)^\sigma \\
+\left[\sum_{c=1}^m \left<\varphi_{q_{\pi(c)}} ,Z_{1,++}(A) \varphi_{i_c}\right> \prod_{\stackrel{l=1}{l\neq c}}^m  \left< \varphi_{q_{\pi(l)}}, \varphi_{i_l}\right> \prod_{d=1}^p\left< f_{k_{d}}, f_{r_{\sigma(d)}}\right> +\right.\\
+\left. \sum_{c=1}^p \left<f_{r_{\sigma(c)}},Z_{1,--}(A)f_{k_c}\right> \prod_{l=1}^m  \left< \varphi_{q_{\pi(l)}},\varphi_{i_l}\right> \prod_{\stackrel{d=1}{d\neq c}}^p\left< f_{k_{d}}, f_{r_{\sigma(d)}}\right> \right]\\
+=\sum_{\stackrel{(i_1,\dots i_m)\in \mathbb{N}^m}{(k_1,\dots k_p)\in \mathbb{N}^p}}\sum_{\stackrel{(q_1,\dots q_m)\in \mathbb{N}^m}{(r_1,\dots r_p)\in \mathbb{N}^p}} \sum_{\pi \in S_m} \sum_{\sigma \in S_p} \beta^*_{q_1,\dots, q_m, r_1, \dots, r_p}  \alpha_{i_1,\dots, i_m, k_1, \dots, k_p} (-1)^\omega (-1)^\sigma \\
+\left[\sum_{c=1}^m \left<\varphi_{q_{\pi(c)}} ,Z_{1,++}(A) \varphi_{i_c}\right> \prod_{\stackrel{l=1}{l\neq c}}^m   \delta_{q_{\pi(l)},i_l} \prod_{d=1}^p \delta_{k_{\sigma(d)},r_d} +
+\sum_{c=1}^p \left<f_{r_{\sigma(c)}},Z_{1,--}(A)f_{k_c}\right> \prod_{l=1}^m   \delta_{q_{\pi(l)},i_l} \prod_{\stackrel{d=1}{d\neq c}}^p \delta_{k_{d},r_{\sigma(d)}} \right]\\
+=\sum_{\stackrel{(q_1,\dots q_m)\in \mathbb{N}^m}{(r_1,\dots r_p)\in \mathbb{N}^p}} \sum_{\pi \in S_m} \sum_{\sigma \in S_p}  (-1)^\omega (-1)^\sigma \\
+\left[\sum_{c=1}^m \sum_{\stackrel{i_c\in \mathbb{N}}{(k_1,\dots k_p)\in \mathbb{N}^p}}\beta^*_{q_1,\dots, q_m, r_1, \dots, r_p} \alpha_{q_{\pi(1)},\dots q_{\pi(c-1)}, i_c,q_{\pi(c+1)} \dots, q_{\pi(m)}, r_{\sigma(1)}, \dots, r_{\sigma(p)}} \left<\varphi_{q_{\pi(c)}} ,Z_{1,++}(A) \varphi_{i_c}\right>  +\right.\\
+\left.\sum_{c=1}^p \sum_{\stackrel{(i_1,\dots,i_m)\in \mathbb{N}^m}{k_c\in \mathbb{N}}} \beta^*_{q_1,\dots, q_m, r_1, \dots, r_p} \alpha_{q_{\pi(1)},\dots, q_{\pi(m)}, r_{\sigma(1)}, \dots r_{\sigma(c-1)}, k_{c},r_{\sigma(c+1)} \dots, r_{\sigma(p)}} \left<f_{r_{\sigma(c)}},Z_{1,--}(A)f_{k_c}\right> \right]\\
+=\sum_{\stackrel{(q_1,\dots q_m)\in \mathbb{N}^m}{(r_1,\dots r_p)\in \mathbb{N}^p}} \sum_{\pi \in S_m} \sum_{\sigma \in S_p}  (-1)^\omega (-1)^\sigma \\
+\left[ \sum_{\stackrel{i_1\in \mathbb{N}}{(k_1,\dots k_p)\in \mathbb{N}^p}} m \beta^*_{q_1,\dots, q_m, r_1, \dots, r_p} \alpha_{ i_1,q_{\pi(2)} \dots, q_{\pi(m)}, r_{\sigma(1)}, \dots, r_{\sigma(p)}} \left<\varphi_{q_{\pi(1)}} ,Z_{1,++}(A) \varphi_{i_1}\right>  +\right.\\
+\left.\sum_{\stackrel{(i_1,\dots i_m)\in \mathbb{N}}{k_1\in \mathbb{N}}}  p \beta^*_{q_1,\dots, q_m, r_1, \dots, r_p} \alpha_{q_{\pi(1)},\dots, q_{\pi(m)}, k_{1},  r_{\sigma(2)}, \dots, r_{\sigma(p)}} \left<f_{r_{\sigma(1)}},Z_{1,--}(A)f_{k_1}\right> \right]
+\end{multline}
+
+\begin{multline}
+\left<\beta\right., T_1(A) \left.\alpha\right>=\\
+\left[m \beta^*_{q_1,\dots, q_m, r_1, \dots, r_p} \alpha_{q_{\pi(1)},\dots q_{\pi(c-1)}, q_{i_c},q_{\pi(c+1)} \dots, q_{\pi(m)}, r_{\sigma(1)}, \dots, r_{\sigma(p)}} \left<\varphi_{q_{\pi(c)}} ,Z_{1,++}(A) \varphi_{i_c}\right>  +\right.\\
+\left. p \beta^*_{q_1,\dots, q_m, r_1, \dots, r_p} \alpha_{q_{\pi(1)},\dots, q_{\pi(m)}, r_{\sigma(1)}, \dots r_{\sigma(c-1)}, k_{c},r_{\sigma(c+1)} \dots, r_{\sigma(p)}} \left<f_{r_{\sigma(c)}},Z_{1,--}(A)f_{k_c}\right> \right]\\
+=\sum_{\stackrel{(i_1,\dots i_m)\in \mathbb{N}^m}{(k_1,\dots k_p)\in \mathbb{N}^p}}\sum_{\stackrel{(q_1,\dots q_m)\in \mathbb{N}^m}{(r_1,\dots r_p)\in \mathbb{N}^p}} \sum_{\pi \in S_m} \sum_{\sigma \in S_p} \beta^*_{q_1,\dots, q_m, r_1, \dots, r_p}  \alpha_{i_1,\dots, i_m, k_1, \dots, k_p} (-1)^\omega (-1)^\sigma \\
+\left[m \left<\varphi_{q_{\pi(1)}} ,Z_{1,++}(A) \varphi_{i_1}\right> \prod_{l=2}^m   \delta_{q_{\pi(l)},i_l} \prod_{d=1}^p \delta_{k_{\sigma(d)},r_d} +
+p \left<f_{r_{\sigma(1)}},Z_{1,--}(A)f_{k_1}\right> \prod_{l=1}^m   \delta_{q_{\pi(l)},i_l} \prod_{d=2}^p \delta_{k_{d},r_{\sigma(d)}} \right]\\
+=\left<\beta\right., m Z_{1,++}\bigotimes_{l=2}^m \mathds{1} \otimes \bigotimes_{d=1}^p \mathds{1}+p \bigotimes_{l=1}^m \mathds{1} \otimes Z_{1,--} \otimes \bigotimes_{d=2}^p \mathds{1} \left.\alpha\right>
+\end{multline}
+This means for the norm of the operator in {\bf Case 1}:
+\begin{equation}
+\| T_1(A)\|_{\mathcal{F}_{m,p}\rightarrow \mathcal{F}_{m,p} }\le m \|Z_{1,++}\|+p \|Z_{1,--}\|
+\end{equation}
+\vspace{1cm}
+\begin{center}
+{\Large Case 2:} \( \mathcal{F}_{m,p}\rightarrow \mathcal{F}_{m+1,p+1} \)
+\end{center}
+
+Let \(\alpha,  \in \mathcal{F}_{m,p}\),\(\beta,  \in \mathcal{F}_{m+1,p+1}\) , \( (\varphi_l )_{l\in \mathbb{N}} \)  and \( (f_l )_{l\in \mathbb{N}} \)  analogous to {\bf case 1} . Then \(\alpha\) and \(\beta\) can be written as:
+
+\begin{equation}
+\begin{aligned}
+\alpha=&\sum_{\stackrel{(i_1,\dots i_m)\in \mathbb{N}^m}{(k_1,\dots k_p)\in \mathbb{N}^p}} \alpha_{i_1,\dots, i_m, k_1, \dots, k_p} \prod_{l=1}^m a^*(\varphi_{i_l}) \prod_{d=1}^p a(f_{k_d})\Omega
+\\
+\beta=&\sum_{\stackrel{(q_1,\dots q_{m+1})\in \mathbb{N}^{m+1}}{(r_1,\dots r_{p+1})\in \mathbb{N}^{p+1}}} \beta_{q_1,\dots, q_{m+1}, r_1, \dots, r_{p+1}} \prod_{l=1}^{m+1} a^*(\varphi_{q_l}) \prod_{d=1}^{p+1} a(f_{r_d})\Omega
+\end{aligned}
+\end{equation} 
+
+So for an arbitrary matrix element we get:
+
+\begin{multline}
+\left< \beta, T_1(A) \alpha \right>\equaltext{\eqref{beginning of image of fixed particle sector}} 
+\sum_{\stackrel{(q_1,\dots q_{m+1})\in \mathbb{N}^{m+1}}{(r_1,\dots r_{p+1})\in \mathbb{N}^{p+1}}}\sum_{\stackrel{(i_1,\dots i_m)\in \mathbb{N}^m}{(k_1,\dots k_p)\in \mathbb{N}^p}} \alpha_{i_1,\dots, i_m, k_1, \dots, k_p} \beta^*_{q_1,\dots, q_{m+1}, r_1, \dots, r_{p+1}} \\
+\left<  \prod_{l=1}^{m+1} a^*(\varphi_{q_l}) \prod_{d=1}^{p+1} a(f_{r_d})\Omega \right| \left. (-1)^{p}\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}}\left<Z_{1,-+}(A)\varphi\right|\left. f\right>
+\left[\prod_{l=1}^m a^*(\varphi_{i_{l}})\right] a^*(\varphi)\left[\prod_{b=1}^p a(f_{k_{b}}) \right]
+ a(f) \Omega\right>\\
+ =\sum_{\stackrel{(q_1,\dots q_{m+1})\in \mathbb{N}^{m+1}}{(r_1,\dots r_{p+1})\in \mathbb{N}^{p+1}}}\sum_{\stackrel{(i_1,\dots i_m)\in \mathbb{N}^m}{(k_1,\dots k_p)\in \mathbb{N}^p}}\sum_{\stackrel{\varphi \in \text{ONB}(\mathcal{H}^+)}{f\in \text{ONB}(\mathcal{H}^-)}} (-1)^{p}\left<Z_{1,-+}(A)\varphi\right|\left. f\right>\alpha_{i_1,\dots, i_m, k_1, \dots, k_p} \beta^*_{q_1,\dots, q_{m+1}, r_1, \dots, r_{p+1}} \\
+\left<  \prod_{l=1}^{m+1} a^*(\varphi_{q_l}) \prod_{d=1}^{p+1} a(f_{r_d})\Omega \right| \left. 
+\left[\prod_{l=1}^m a^*(\varphi_{i_{l}})\right] a^*(\varphi)\left[\prod_{b=1}^p a(f_{k_{b}}) \right]
+ a(f) \Omega\right>
+\end{multline}
+
+By integrating \(\varphi\) and \(f\) into the \((\varphi_l)_{l\in \mathbb{N}}\) respectively \((f_l)_{l\in \mathbb{N}}\) we can simplify the notation.
+\begin{multline}
+\left< \beta, T_1(A) \alpha \right> =\sum_{\stackrel{(q_1,\dots q_{m+1})\in \mathbb{N}^{m+1}}{(r_1,\dots r_{p+1})\in \mathbb{N}^{p+1}}}\sum_{\stackrel{(i_1,\dots i_{m+1})\in \mathbb{N}^{m+1}}{(k_1,\dots k_{p+1})\in \mathbb{N}^{p+1}}}  \overbrace{(-1)^{p}\left<Z_{1,-+}(A)\varphi_{i_{m+1}}\right|\left. f_{k_{p+1}}\right>\alpha_{i_1,\dots, i_m, k_1, \dots, k_p}}^{\tilde{\alpha}_{i_1,\dots, i_{m+1}, k_1, \dots, k_{p+1}}}\\
+ \beta^*_{q_1,\dots, q_{m+1}, r_1, \dots, r_{p+1}} \sum_{\pi \in S_{m+1}} \sum_{\sigma \in S_{p+1}} (-1)^\pi (-1)^\sigma \prod_{l=1}^{m+1} \left< \varphi_{q_l} , \varphi_{i_{\pi(l)}} \right> \prod_{e=1}^{p+1} \left< f_{k_{\sigma(e)}} ,  f_{r_e}\right>
+= \left< \beta, \tilde{\alpha} \right>
+\end{multline}
+We focus our attention on \(\tilde{\alpha}\).
+
+\begin{multline}
+\left< \tilde{\alpha},\tilde{\alpha} \right> = \sum_{\stackrel{(q_1,\dots q_{m+1})\in \mathbb{N}^{m+1}}{(r_1,\dots r_{p+1})\in \mathbb{N}^{p+1}}}\sum_{\stackrel{(i_1,\dots i_{m+1})\in \mathbb{N}^{m+1}}{(k_1,\dots k_{p+1})\in \mathbb{N}^{p+1}}} \tilde{\alpha}^*_{q_1, \dots, q_{m+1}, r_1, \dots r_{p+1}} \tilde{\alpha}_{i_1, \dots, i_{m+1}, k_1, \dots k_{p+1}}\\
+\sum_{\pi\in S_{m+1}}\sum_{\sigma \in S_{p+1}} (-1)^\pi (-1)^\sigma \prod_{l=1}^{m+1} \left< \varphi_{q_l} , \varphi_{i_{\pi(l)}} \right> \prod_{e=1}^{p+1} \left< f_{k_{\sigma(e)}} ,  f_{r_e}\right>\\
+=\sum_{\stackrel{(i_1,\dots i_{m+1})\in \mathbb{N}^{m+1}}{(k_1,\dots k_{p+1})\in \mathbb{N}^{p+1}}} \sum_{\pi\in S_{m+1}}\sum_{\sigma \in S_{p+1}} (-1)^\pi (-1)^\sigma  \tilde{\alpha}^*_{i_{\pi(1)}, \dots, i_{\pi(m+1)}, k_{\sigma(1)}, \dots k_{\sigma(p+1)}} \tilde{\alpha}_{i_1, \dots, i_{m+1}, k_1, \dots k_{p+1}}\\
+=(m+1)! (p+1)!\left< P_{\text{antisymm}}\tilde{\alpha}_{\cdot, \dots \cdot, \cdot, \dots \cdot},\tilde{\alpha}_{\cdot, \dots \cdot, \cdot, \dots \cdot} \right>_{\ell^2}
+\end{multline}
+
+Where the scalar product in the last line is in the Hilbertspace of the coefficients \(\ell^2(\mathbb{N}^{m+1+p+1})\). We defined the orthogonal projector onto the antisymmetric subspace: 
+\begin{equation}
+\begin{aligned}
+P_{\text{antisymm}} : \ell^2(\mathbb{N}^{m+1+p+1}) &\rightarrow \ell^2(\mathbb{N}^{m+1+p+1})\\
+\beta &\mapsto \frac{1}{(m+1)!(p+1)!}\sum_{\pi \in S_{m+1}}\sum_{\sigma \in S_{p+1}} (-1)^\pi (-1)^\sigma \beta_{\pi(\cdot), \dots \pi(\cdot), \sigma (\cdot), \dots \sigma (\cdot)}
+\end{aligned}
+\end{equation}
+
+So as an estimation on the norm of \(\tilde{\alpha}\) we get:
+
+\begin{multline}
+\left< \tilde{\alpha},\tilde{\alpha} \right> =
+(m+1)! (p+1)!\left< P_{\text{antisymm}}\tilde{\alpha}_{\cdot, \dots \cdot, \cdot, \dots \cdot},\tilde{\alpha}_{\cdot, \dots \cdot, \cdot, \dots \cdot} \right>_{\ell^2} \le
+ (m+1)! (p+1)!\left<\tilde{\alpha}_{\cdot, \dots \cdot, \cdot, \dots \cdot},\tilde{\alpha}_{\cdot, \dots \cdot, \cdot, \dots \cdot} \right>_{\ell^2} =\\
+ (m+1)! (p+1)! \sum_{\stackrel{(i_1,\dots i_{m+1})\in \mathbb{N}^{m+1}}{(k_1,\dots k_{p+1})\in \mathbb{N}^{p+1}}} \tilde{\alpha}^*_{i_1, \dots i_{m+1}, k_1, \dots k_{p+1}} \tilde{\alpha}_{i_1, \dots i_{m+1}, k_1, \dots k_{p+1}}=\\
+  (m+1)! (p+1)! \sum_{\stackrel{(i_1,\dots i_{m+1})\in \mathbb{N}^{m+1}}{(k_1,\dots k_{p+1})\in \mathbb{N}^{p+1}}} \alpha^*_{i_1, \dots i_{m+1}, k_1, \dots k_{p+1}} \alpha_{i_1, \dots i_{m}, k_1, \dots k_{p}} \left|\left<Z_{1,-+}(A)\varphi_{i_{m+1}},f_{p+1} \right> \right|^2=\\
+   m! p! \sum_{\stackrel{(i_1,\dots i_{m})\in \mathbb{N}^{m}}{(k_1,\dots k_{p})\in \mathbb{N}^{p}}} \alpha^*_{i_1, \dots i_{m+1}, k_1, \dots k_{p+1}} \alpha_{i_1, \dots i_{m}, k_1, \dots k_{p}}  (m+1) (p+1) \sum_{c,d=1}^\infty \left|\left<Z_{1,-+}(A)\varphi_{c},f_{d} \right> \right|^2= \\
+  \sum_{\stackrel{(i_1,\dots i_{m})\in \mathbb{N}^{m}}{(k_1,\dots k_{p})\in \mathbb{N}^{p}}} \sum_{\pi\in S_m} \sum_{\sigma \in S_p}(-1)^\pi (-1)^\sigma \alpha^*_{i_{\pi(1)}, \dots i_{\pi(m+1)}, k_{(\sigma(1)}, \dots k_{\sigma(p+1)}} \alpha_{i_1, \dots i_{m}, k_1, \dots k_{p}}  (m+1) (p+1) \| Z_{1,-+}(A)\|_{\text{HS}}^2=\\
+    \left<\alpha,\alpha\right> (m+1) (p+1) \| Z_{1,-+}(A)\|_{\text{HS}}^2
+\end{multline}
+Which means for the operator norm of \(T_1\):
+\begin{equation}
+\| T_1(A)\|_{ \mathcal{F}_{m,p}\rightarrow \mathcal{F}_{m+1,p+1} }\le \sqrt{(m+1)(p+1)} \| Z_{1,-+}(A)\|_{\text{HS}}
+\end{equation}
+\vspace{1cm}
+\begin{center}
+{\Large Case 3:} \( \mathcal{F}_{m,p}\rightarrow \mathcal{F}_{m-1,p-1} \)
+\end{center}
+Since \(T_1\) is anti selfadjoint (\(i\) times the generator of a unitary evolution) it follows directly that:
+\begin{equation}
+\| T_1(A)\|_{ \mathcal{F}_{m,p}\rightarrow \mathcal{F}_{m-1,p-1} }\le \sqrt{m p} \| Z_{1,+-}(A)\|_{\text{HS}}
+\end{equation}
+ {\Large \(T_1\) overall}
+ 
+ We find for \(T_1\) on a fixed particle sector the operator norm to be:
+ 
+ \begin{multline}
+ \| T_1(A)\|_{\mathcal{F}_{m,p}\rightarrow \mathcal{F}_{m-1,p-1} \oplus \mathcal{F}_{m,p} \oplus \mathcal{F}_{m+1,p+1} }\le \\ 
+ \sqrt{m p \| Z_{1,+-}(A)\|^2_{\text{HS}} +(m \|Z_{1,++}\|+p \|Z_{1,--}\|)^2+(m+1) (p+1) \| Z_{1,-+}(A)\|^2_{\text{HS}}}
+ \end{multline}
+
+
+
+\end{document}
+

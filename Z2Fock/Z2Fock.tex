@@ -1,0 +1,178 @@
+\documentclass[oneside,reqno,12pt]{amsart}
+
+%\usepackage{fontspec}
+
+\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\setmainfont{YuMincho}
+%Hiragino Maru Gothic ProN
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+
+\setcounter{secnumdepth}{5}
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+%picture
+\usepackage{wrapfig}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+\newenvironment{mueq}
+  {\equation\aligned}
+  {\endaligned\endequation}
+  
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\ma}{マ}
+\DeclareMathOperator{\mo}{モ}
+
+\newcommand{\Z}[2]{Z_{\stackrel{1}{#1}}\left(#2\right)}
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\Dirk}[1]{ \todo[color=orange!60]{Dirk: #1} }
+\newcommand{\DirkBox}[1]{ \mbox{}\todo[inline,caption={},color=red!60]{Dirk: #1} }
+\newcommand{\Markus}[1]{ \todo[color=green!20]{Markus: #1} }
+\newcommand{\dirk}{ \color{orange} }
+\newcommand{\markus}{ \color{green} }
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+\makeatletter
+
+
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2.0ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                   {-0.5ex \@plus -0.5ex \@minus -.2ex}%
+                                   {0.5em}%
+                                   {\normalfont\bfseries}}
+\renewcommand\subsubsection{\@startsection {subsubsection}{1}{\z@}%
+                                   {-0.3ex \@plus -0.4ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\sc}}  
+\renewcommand\paragraph{\@startsection {paragraph}{1}{\z@}%
+                                   {-0.2ex \@plus -1ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\it}}                                   
+\makeatother
+
+\parindent 0cm
+
+\begin{document}
+\section{Does the image of a general element not specify the operator uniquely?}
+
+
+Let \(\mo \in \mathcal{H}\) and \(f\in \mathcal{C}_c^\infty\left( \mathbb{R}^4, \mathbb{C}^4 \right) \). Let \(H: \mathcal{F}\rightarrow \mathcal{F}\) be a linear Fock space valued operator on Fock space. Assume it has zero vacuum expectation value and fulfils the commutation relations
+\begin{align}\label{commH1}
+\left[ H, a(\mo)\right] &= a\left( N\mo \right),\\\label{commH2}
+\left[ H, a^*(\mo)\right] &= a^*\left( N\mo \right).
+\end{align}
+Let \((\ma_l)_{l\in\mathbb{N}}=:B \subset \mathcal{H}\) , \((\varphi_l)_{l\in\mathbb{N}}=:B_+ \subset \mathcal{H}^+\) 
+and \((y_k)_{k\in\mathbb{N}}=:B_-\subset \mathcal{H}^-\) be Schauder basis of all of, respectively positive respectively negative part of the Hilbert space. We introduce for a more compact notation
+\begin{align*}
+\forall n,l\in\mathbb{N}: \Delta_{n,l} : & \left(\mathcal{F}\left( \mathcal{H}\right) \rightarrow \mathcal{F}\left(\mathcal{H}\right) \right) \rightarrow \left(\mathcal{F}\left( \mathcal{H}\right) \rightarrow \mathcal{F}\left(\mathcal{H}\right) \right) \\
+& F \mapsto \left\{\begin{matrix}
+F \quad \text{if } n=l\\
+\id \quad \text{otherwise},
+\end{matrix}\right.\\
+\forall n,l\in\mathbb{N}: \Delta_{n,l} : & \left( \mathcal{H}\rightarrow \mathcal{H} \right) \rightarrow \left(\mathcal{H} \rightarrow \mathcal{H} \right) \\
+& F \mapsto \left\{\begin{matrix}
+F \quad \text{if } n=l\\
+\id \quad \text{otherwise}.
+\end{matrix}\right.
+\end{align*}
+
+Let \(m,p\in\mathbb{N}\).  We would like to compute \(H\alpha\) for any element \(\alpha\) of the canonical Schauder basis of the fixed m-p particle Sector of Fockspace. In order to do so we first compute the image of the vacuum. It holds that
+\begin{align*}
+&\langle \prod_{l=1}^m a^*(\varphi_l) \prod_{k=1}^p a(y_k) \Omega, H  \Omega\rangle
+=(-1)^{m+p} \langle \Omega, \prod_{k=1}^p a^*(y_k) \prod_{l=1}^m a(\varphi_l) H \Omega \rangle\\
+&=(-1)^{m+p+1} \delta_{m,1}  \langle \Omega, \prod_{k=1}^p a^*(y_k) \prod_{l=1}^{m-1} a(\varphi_l)  a\left( N \varphi_M\right) \Omega \rangle\\
+&=(-1)^{p} \delta_{m,1}\delta_{p,1}  \langle \Omega, \prod_{k=1}^p a^*(y_k)   a\left( N_{-+} \varphi_1\right) \Omega \rangle 
+=-\delta_{m,1}\delta_{p,1} \left< y_1, N_{-+} \varphi_1\right>
+.\end{align*}
+So we conclude that
+\begin{equation}
+H \Omega \rangle= -\sum_{y\in B^-}\sum_{\varphi\in B^+} \left< y, N_{-+} \varphi\right> a^*(\varphi) a(y) \Omega\rangle
+\end{equation}
+holds. We can now compute the image of a general Element of the canonical basis of the m-p particle sector. It is
+\begin{align*}
+&H \prod_{l=1}^m a^*(\varphi_l) \prod_{k=1}^p a(y_k) \Omega \rangle\\
+&=\sum_{b=1}^{m+p} \prod_{l=1}^m a^*\left(\Delta_{l,b}\left( N\right) \varphi_l \right)\prod_{k=1}^p a\left(\Delta_{m+k,b}\left(N\right) y_k \right) \Omega \rangle
++  \prod_{l=1}^m a^*(\varphi_l) \prod_{k=1}^p a(y_k) H \Omega \rangle\\
+&=\sum_{b=1}^{m+p} \prod_{l=1}^m a^*\left(\Delta_{l,b}\left( N\right) \varphi_l \right)\prod_{k=1}^p a\left(\Delta_{m+k,b}\left(N_{--}\right) y_k \right) \Omega \rangle\\
+&-  \prod_{l=1}^m a^*(\varphi_l) \prod_{k=1}^p a(y_k) \sum_{y\in B^-}\sum_{\varphi\in B^+} \left< y, N_{-+} \varphi\right> a^*(\varphi) a(y) \Omega\rangle\\\tag{H1}\label{H1}
+&=\sum_{b=1}^{m+p} \prod_{l=1}^m a^*\left(\Delta_{l,b}\left( N_{++}\right) \varphi_l \right)\prod_{k=1}^p a\left(\Delta_{m+k,b}\left(N_{--}\right) y_k \right) \Omega \rangle\\\tag{H2}\label{H2}
+&- \sum_{\varphi\in B^+}  a^*(\varphi) a\left(N_{-+} \varphi\right) \prod_{l=1}^m a^*(\varphi_l) \prod_{k=1}^p a(y_k)  \Omega\rangle\\\tag{H3}\label{H3}
+&+\sum_{b=1}^m \sum_{c=1}^p (-1)^{m-b +c}\left< y_c, N_{\stackrel{2}{-+}}\varphi_b\right>\prod_{\stackrel{l=1}{l\neq b}}^m a^*(\varphi_l) \prod_{\stackrel{k=1}{k\neq c}}^p a(y_k) \Omega \rangle
+\end{align*}
+
+We define a second operator on Fock space \(G: \mathcal{F}\rightarrow \mathcal{F}\) by
+\begin{equation}
+G:= \sum_{\phi\in B^+} a^*\left( N\phi\right)a(\phi) + \sum_{\ma\in B} a\left( P_- N\ma\right) a^*(\ma ).
+\end{equation}
+You can easily see that
+
+\begin{align*}
+&\left( \sum_{\phi\in B^+} a^*\left( N\phi\right)a(\phi) + \sum_{\ma\in B} a\left( P_- N\ma\right) a^*(\ma )\right) \prod_{l=1}^m a^*(\varphi_l) \prod_{k=1}^p a(y_k) \Omega \rangle\\
+&=\sum_{b=1}^m \prod_{l=1}^m a^*\left( \Delta_{b,l}\left(N\right)\varphi_l\right)\prod_{k=1}^p a(y_k) \Omega \rangle + \sum_{b=1}^p \prod_{l=1}^m a^*(\varphi_l)\prod_{k=1}^p a\left( \Delta_{k,b}\left(N_{--}\right)y_k\right) \Omega\rangle\\
+&-\sum_{\varphi\in B^+} a^*(\varphi) a\left( N_{-+}\varphi\right) \prod_{l=1}^m a^*(\varphi_l) \prod_{k=1}^p a(y_k) \Omega \rangle\\\tag{G1}\label{G1}
+&=\sum_{b=1}^m \prod_{l=1}^m a^*\left( \Delta_{b,l}\left(N_{++}\right)\varphi_l\right)\prod_{k=1}^p a(y_k) \Omega \rangle + \sum_{b=1}^p \prod_{l=1}^m a^*(\varphi_l)\prod_{k=1}^p a\left( \Delta_{k,b}\left(N_{--}\right)y_k\right) \Omega\rangle\\\tag{G2}\label{G2}
+&-\sum_{\varphi\in B^+} a^*(\varphi) a\left( N_{-+}\varphi\right) \prod_{l=1}^m a^*(\varphi_l) \prod_{k=1}^p a(y_k) \Omega \rangle\\\tag{G3}\label{G3}
+&+\sum_{b=1}^m \sum_{c=1}^p (-1)^{m-b+c} \left< y_c, N_{-+}\varphi_b\right> \prod_{\stackrel{l=1}{l\neq b}}^m a^*(\varphi_l) \prod_{\stackrel{k=1}{k\neq c}}^p a(y_k) \Omega \rangle
+\end{align*}
+holds. Now the lines \eqref{G1}-\eqref{G3} are identical to \eqref{H1}-\eqref{H3}.  Which leads me to wanting to conclude that 
+\begin{equation}
+H= G
+\end{equation}
+holds. However we can compute the commutation relations analogous to \eqref{commH1} and \eqref{commH2}. They are
+\begin{align*}
+&\left[  \sum_{\phi\in B^+} a^*\left( N\phi\right)a(\phi) + \sum_{\ma\in B} a\left( P_- N\ma\right) a^*(\ma ), a(\mo) \right]\\
+&=-a\left(P_+N^* \mo \right) +a\left( P_- N\mo\right)\stackrel{!}{=} a\left( N\mo\right)
+,\end{align*}
+\begin{align*}
+&\left[  \sum_{\phi\in B^+} a^*\left( N\phi\right)a(\phi) + \sum_{\ma\in B} a\left( P_- N\ma\right) a^*(\ma ), a^*(\mo) \right]\\
+&=a^*\left(N P_+\mo \right) -a^*\left(  N^*P_-\mo\right)\stackrel{!}{=} a^*\left( N\mo\right)
+.\end{align*}
+These constraints on \(N\) seem to appear out of the structure of Fock space.
+\end{document}
+

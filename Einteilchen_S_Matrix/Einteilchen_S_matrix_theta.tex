@@ -1,0 +1,110 @@
+\documentclass[a4paper,12pt]{article}
+
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+
+
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+{\Large Begin der S-Matrixreihe nach ''Zus"atzliche Rechtfertigung Heavysidefunktionen durch aufteilen des Impulsintegrals zu ersetzen``}
+
+Seien \(t,t_0\in\mathbb{R}, y\in\mathbb{R}^4\)
+
+\begin{multline}
+\phi_t(y)=\phi_{t_0}(y)-i \int_{t_0}^t \text{d}s L_s \phi_s(y)=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s\mathcal{F}_{0\Sigma_s}(v_s\slashed{n}_s \slashed{A})\mathcal{F}_{\Sigma_s 0}\phi_s(y)\\
+=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s\mathcal{F}_{0\mathcal{M}}\mathcal{F}_{\mathcal{M}\Sigma_s}(v_s\slashed{n}_s \slashed{A})\mathcal{F}_{\Sigma_s 0}\phi_s(y)\\
+=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \frac{1}{(2\pi)^{1.5}m}\int_{\mathcal{M}}e^{-ipy}i_p(\text{d}^4p) \mathcal{F}_{\mathcal{M}\Sigma_s}(v_s\slashed{n}_s \slashed{A})\mathcal{F}_{\Sigma_s 0}\phi_s(y)\\
+=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \frac{1}{(2\pi)^{3}m}\int_{\mathcal{M}}e^{-ipy}i_p(\text{d}^4p) \frac{\slashed{p}+m}{2m}\int_{\Sigma_s}e^{ipx}i_{\gamma}(\text{d}^4x)v_s(x)\slashed{n}_s(x) \slashed{A}(x)\phi_s(x)\\
+=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \int_{\Sigma_s}\int_{\mathcal{M}}\frac{\slashed{p}+m}{2m^2}e^{ip(x-y)}i_p(\text{d}^4p) \frac{i_{\gamma}(\text{d}^4x)}{(2\pi)^{3}}v_s(x)\slashed{n}_s(x) \slashed{A}(x)\phi_s(x)\\
+\equaltext{verwende Impulsumformung durch Residuensatz}\\
+\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \int_{\Sigma_s}\frac{1}{2\pi i}   \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}-m)^{-1} e^{ip(x-y)}  \text{d}^4p  \frac{i_{\gamma}(\text{d}^4x)}{(2\pi)^{3}}v_s(x)\slashed{n}_s(x) \slashed{A}(x)\phi_s(x)\\
+\end{multline} 
+
+Nun spezialisiere ich mich auf Gleichzeitigkeitsfl"achen in den "ublichen Koordinatensystemen: \(v_s=1,\slashed{n}_s=\gamma^0 e_0, i_\gamma(\text{d}^4 x)=\gamma^0 d^3x\)
+\begin{multline}
+\phi_t(y)=\phi_{t_0}(y)
+- \int_{[t_0,t]\times \mathbb{R}^3} \frac{\text{d}^4x}{(2\pi)^4} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}-m)^{-1} e^{ip^\alpha (x-y)_\alpha}  \text{d}^4p \slashed{A}(x)\phi_{x^0}(x)\\
+\equaltext{iterating}\phi_{t_0}(y)- \int_{[t_0,t]\times \mathbb{R}^3} \frac{\text{d}^4x}{(2\pi)^4} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}-m)^{-1} e^{ip^\beta(x-y)_\beta}  \text{d}^4p \slashed{A}(x)\left\{\phi_{t_0}(x)- \int_{[t_0,x^0]\times \mathbb{R}^3} \right.\\ 
+\left. \frac{\text{d}^4z}{(2\pi)^4} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{q}-m)^{-1} e^{iq^\alpha(z-x)_\alpha}  \text{d}^4q \slashed{A}(z)\phi_{z^0}(z)\right\}\\
+=\phi_{t_0}(y)- \int_{[t_0,t]\times \mathbb{R}^3} \frac{\text{d}^4x}{(2\pi)^4} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4p (\slashed{p}-m)^{-1} e^{ip^\alpha(x-y)_\alpha}   \slashed{A}(x)\phi_{t_0}(x) \\ 
++(-1)^2 \int_{[t_0,t]\times \mathbb{R}^3} \frac{\text{d}^4x}{(2\pi)^4} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4p (\slashed{p}-m)^{-1} e^{ip^\beta(x-y)_\beta}   \slashed{A}(x) \int_{[t_0,x^0]\times \mathbb{R}^3}\frac{\text{d}^4z}{(2\pi)^4} \\ \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4q (\slashed{q}-m)^{-1} e^{iq^\alpha(z-x)_\alpha}   \slashed{A}(z)\phi_{t_0}(z)+\dots\\
+\end{multline}
+
+Nun lassen wir \(t\rightarrow \infty, t_0\rightarrow -\infty\) gehen, und betrachten nur den Term 2. Ordnung:
+
+\begin{multline}
+\int_{\mathbb{R}^4} \frac{\text{d}^4x}{(2\pi)^4} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4p (\slashed{p}-m)^{-1} e^{ip^\beta(x-y)_\beta}   \slashed{A}(x) \int_{[-\infty,x^0]\times \mathbb{R}^3}\frac{\text{d}^4z}{(2\pi)^4} \\ \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4q (\slashed{q}-m)^{-1} e^{iq^\alpha(z-x)_\alpha}   \slashed{A}(z)\phi_{t_0}(z)\\
+\equaltext{u=z-x}\int_{\mathbb{R}^4} \frac{\text{d}^4x}{(2\pi)^4} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4p (\slashed{p}-m)^{-1} e^{ip^\beta(x-y)_\beta}   \slashed{A}(x)  \\ \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4q (\slashed{q}-m)^{-1} \int_{\mathbb{R}^4}\frac{\text{d}^4u}{(2\pi)^4}e^{iq^\alpha u_\alpha}   \slashed{A}(u+x)\phi_{t_0}(u+x)\theta(-u^0)\\
+=\int_{\mathbb{R}^4} \frac{\text{d}^4x}{(2\pi)^4} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4p (\slashed{p}-m)^{-1} e^{ip^\beta(x-y)_\beta}   \slashed{A}(x)  \\ \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\text{d}^4q (\slashed{q}-m)^{-1} \frac{1}{(2\pi)^2} \mathcal{F}\left( \slashed{A}(\cdot+x)\phi_{t_0}(\cdot+x)\theta(-\cdot^0)\right)(q)\\
+\end{multline}
+
+Wobei \(\mathcal{F}\) die Fouriertransformation bezeichnet. 
+
+"Uberpr"ufe das Verhalten der R"ucktransformierten von 
+
+\((\slashed{q}-m)^{-1} \frac{1}{(2\pi)^2} \mathcal{F}\left( \slashed{A}(\cdot+x)\phi_{t_0}(\cdot+x)\theta(-\cdot^0)\right)(q)\):(ignoriere erst probleme von fehlender Fouriertransformation)
+
+\begin{multline}
+\left\|\mathcal{F}^{-1}\left((\slashed{\cdot}-m)^{-1} \frac{1}{(2\pi)^2} \mathcal{F}\left( \slashed{A}(\cdot\cdot+x)\phi_{t_0}(\cdot\cdot+x)\theta(-\cdot\cdot^0)\right)\right)(y)\right\|\\
+=\left\|\mathcal{F}^{-1}\left((\slashed{\cdot}-m)^{-1}\right) \frac{1}{(2\pi)^2} \text{ }_{\text{{\Large *}}}\slashed{A}(\cdot+x)\phi_{t_0}(\cdot+x)\theta(-\cdot^0)(y)\right\| \\
+\end{multline}
+please note at this point that \((\slashed{\cdot}-m)^{-1}\) is an analytic function on either cone \(\mathbb{R}^4 - i \text{ future}\). Therefore \((\slashed{\cdot}-m)^{-1}\) is the boundary value of an analytic function on a cone in the sense of theorem IX.16 of Simon and Reed. 
+\begin{multline}  
+=\left\|\int_{\mathbb{R}^- \times\mathbb{R}^3}\text{d}^4z \slashed{A}(z+x)\phi_{t_0}(z+x)\theta(-z^0)\int_{\mathbb{R}^4}\text{d}^4q\lim_{\epsilon\rightarrow 0}(\slashed{q}-i\epsilon \slashed{e_0}-m)^{-1} e^{-iq^\alpha(y-z)_\alpha}\right\|\\
+\equaltext{not valid...}\left\|\int_{\mathbb{R}^- \times\mathbb{R}^3}\text{d}^4z \slashed{A}(z+x)\phi_{t_0}(z+x)\theta(-z^0)\lim_{\epsilon\rightarrow 0}\int_{\mathbb{R}^4}\text{d}^4q(\slashed{q}-i\epsilon \slashed{e_0}-m)^{-1} e^{-iq^\alpha(y-z)_\alpha}\right\|\\
+\equaltext{analytic integrand}\left\|\int_{\mathbb{R}^- \times\mathbb{R}^3}\text{d}^4z \slashed{A}(z+x)\phi_{t_0}(z+x)\theta(-z^0)\lim_{\epsilon\rightarrow 0}\int_{\mathbb{R}^4 -i \kappa e_0}\text{d}^4q(\slashed{q}-i\epsilon \slashed{e_0}-m)^{-1} e^{-iq^\alpha(y-z)_\alpha}\right\|\\
+\equaltext{probably valid}\left\|\int_{\mathbb{R}^- \times\mathbb{R}^3}\text{d}^4z \slashed{A}(z+x)\phi_{t_0}(z+x)\theta(-z^0)\int_{\mathbb{R}^4 -i \kappa e_0}\text{d}^4q(\slashed{q}-m)^{-1} e^{-iq^\alpha(y-z)_\alpha}\right\|\\
+\le e^{-\kappa y^0} \int_{\mathbb{R}^- \times\mathbb{R}^3}\text{d}^4z \left|\slashed{A}(z+x)\phi_{t_0}(z+x)\theta(-z^0)\right| \left\| \int_{\mathbb{R}^4 }\text{d}^4q(\slashed{q}-i\kappa \slashed{e_0}-m)^{-1} e^{-iq^\alpha(y-z)_\alpha}\right\|\\
+\equaltext{partial integration} e^{-\kappa y^0} \int_{\mathbb{R}^- \times\mathbb{R}^3}\text{d}^4z \left|\slashed{A}(z+x)\phi_{t_0}(z+x)\theta(-z^0)\right| \frac{4!}{(y^0-z^0)^4} \\
+\left\| \int_{\mathbb{R}^4 }\text{d}^4q(\slashed{q}-i\kappa \slashed{e_0}-m)^{-5} e^{-iq^\alpha(y-z)_\alpha}\right\|\\
+\le e^{-\kappa y^0} \int_{\mathbb{R}^- \times\mathbb{R}^3}\text{d}^4z \left|\slashed{A}(z+x)\phi_{t_0}(z+x)\theta(-z^0)\right| \frac{4!}{(y^0-z^0)^4}  \int_{\mathbb{R}^4 }\text{d}^4q\left\|(\slashed{q}-i\kappa \slashed{e_0}-m)^{-5} \right\|\\
+\le e^{-\kappa y^0} \int_{\mathbb{R}^- \times\mathbb{R}^3}\text{d}^4z \left|\slashed{A}(z+x)\phi_{t_0}(z+x)\theta(-z^0)\right| \frac{4!}{(y^0-z^0)^4}  \int_{\mathbb{R}^4 }\text{d}^4q\left\|(\slashed{q}-i\kappa \slashed{e_0}-m)^{-5} \right\|\\
+\end{multline}
+
+We estimate the last integrand separately:
+
+\begin{multline}
+\left\|(\slashed{q}-i\kappa \slashed{e_0}-m)^{-5} \right\|\le \left\|(\slashed{q}-i\kappa \slashed{e_0}-m)^{-1} \right\|^5 = \left\|\frac{\slashed{q}-i\kappa \slashed{e_0}+m}{q^2-2i\kappa q^0 -\kappa^2 -m^2}\right\|^5\\
+\le \left(\frac{\|\slashed{q}\|+\kappa+m}{|q^2-2i\kappa q^0 -\kappa^2 -m^2|}\right)^5 \le \left(\frac{|q|+\kappa+m}{\sqrt{(q^2-\kappa^2 -m^2)^2+4\kappa^2 (q^0)^2 }}\right)^5\\
+ \equaltext{\lambda \kappa=q}  \left(\frac{|\lambda|+1+\frac{m}{\kappa}}{\sqrt{(\kappa \lambda^2-\kappa -\frac{m^2}{\kappa})^2+4\kappa^2 (\lambda^0)^2 }}\right)^5=\left(\frac{|\lambda|+1+\frac{m}{\kappa}}{\sqrt{\kappa^2( \lambda^2-1 )^2+\frac{m^4}{\kappa^2}-2m^2(\lambda^2-1)+4\kappa^2 (\lambda^0)^2 }}\right)^5\\
+ =\left(\frac{|\lambda|+1+\frac{m}{\kappa}}{\kappa\sqrt{(\lambda^2-1 )^2+\frac{m^4}{\kappa^4}-2m^2\frac{(\lambda^2-1)}{\kappa^2}+4(\lambda^0)^2 }}\right)^5\\
+ \le\left(\frac{|\lambda|+2}{\kappa\sqrt{(\lambda^2-1 )^2+4(\lambda^0)^2 -(1+2|\lambda-1|)}}\right)^5\\
+\end{multline}
+
+Where the last inequality holds only for \(\kappa\) large enough.
+For \(y^0>0\), we can let the first factor tend to zero, the problem is however, that the behaviour of the last integral for large \(\kappa\) is not easily shown to be nice. 
+
+\end{document}
+

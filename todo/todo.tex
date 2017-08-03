@@ -1,0 +1,76 @@
+\documentclass[oneside,reqno,12pt]{amsart}
+
+\usepackage{fontspec}
+
+\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+\usepackage[utf8]{inputenc}
+
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+
+\setcounter{secnumdepth}{5}
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom }
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma }
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+
+\newcommand{\Z}[2]{Z_{\stackrel{1}{#1}}\left(#2\right)}
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\Dirk}[1]{ \todo[color=orange!60]{Dirk: #1} }
+\newcommand{\DirkBox}[1]{ \mbox{}\todo[inline,caption={},color=red!60]{Dirk: #1} }
+\newcommand{\Markus}[1]{ \todo[color=green!20]{Markus: #1} }
+\newcommand{\dirk}{ \color{orange} }
+\newcommand{\markus}{ \color{green} }
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+\begin{document}
+
+\begin{enumerate}
+\item finde heraus wann man genau einen operator liften kann und was dann für ihn gilt
+\item Schreibe Induktion sauber auf, vgl Scharf
+\item finde wichtigen Physiker der sagt, gerade ordnungen >2 sind alle gut.
+\end{enumerate}
+
+\end{document}
+

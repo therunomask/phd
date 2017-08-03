@@ -1,0 +1,199 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+
+%identity sign
+\usepackage{dsfont}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\equalmath}[1]{\ensuremath{\stackrel{#1}{=}}}
+
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+\begin{center}
+{\Large What we know about \(T1\)}
+\end{center}
+ 
+ \(T1\) is an unbounded linear map from  the Fock space of QED onto itself. To be more specific, let \(\mathcal{H}_+\) denote the Hilbert space of electron wavefunctions and \(\mathcal{H}_-\) denote the Hilbert space of positron wavefunctions. Then
+ %add details of how these hilberspaces look!
+\begin{equation}
+T1: \mathcal{F}\left( \mathcal{H}_+\right)\otimes\mathcal{F}\left( \mathcal{H}_-\right) \rightarrow \mathcal{F}\left( \mathcal{H}_+\right)\otimes\mathcal{F}\left( \mathcal{H}_-\right) ,
+\end{equation}
+
+but by far not all matrix elements are nonzero, expressed in the fixed particle subspaces we already see more structure:
+%later add the comptation proving this
+\begin{equation}
+T1:  \mathcal{H}_+^{\otimes n}  \otimes \mathcal{H}_-^{\otimes p} \rightarrow\left(\mathcal{H}_+^{\otimes n-1}  \otimes \mathcal{H}_-^{\otimes p-1}\right) \oplus \left(\mathcal{H}_+^{\otimes n}  \otimes \mathcal{H}_-^{\otimes p}\right) \oplus \left(\mathcal{H}_+^{\otimes n +1}  \otimes \mathcal{H}_-^{\otimes p+1}\right)  .
+\end{equation}
+
+So restricted to the vacuum sector this simplifies, the part from the vacuum sector is set to zero, because the vacuum polarization current should be zero.
+\begin{equation}
+T1:  \mathbb{C} \rightarrow  \left(\mathcal{H}_+ \otimes \mathcal{H}_-\right)
+\end{equation}
+
+We will construct the finite operator norm of \(T1\) restricted to an arbitrary fixed particle sector, beginning with the vacuum sector. Let the vector potential of the electromagnetic field \(A\) be
+\begin{equation}
+A\in C^\infty_c\left(\mathbb{R}^4\right).
+\end{equation}
+%
+%beware of physicists notation -> replace this at some point!
+%
+Then one obtains in physicists notation:
+\begin{equation}
+T1 \Omega = \frac{1}{(2\pi)^3}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{\sqrt{2 k^0}} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{\sqrt{2 p^0}} \int_{\mathbb{R}^4}\text{d}^4x\sum_{r,s = \pm1} b^\dagger_s (k) d^\dagger_r (p) \bar{u_s}(k) \gamma^\mu v_r (p) \Omega e^{i x_\alpha (k^\alpha + p^\alpha)} A_{\mu} (x),
+\end{equation}
+Where the \(\gamma^\mu\) are the dirac matrices fulfilling the anticommutation relation 
+\begin{equation}
+\{\gamma^\alpha \gamma^\beta \} = 2 \eta^{\alpha \beta}
+\end{equation}
+The \(u , v\) are given by:
+\begin{equation}
+u_s(p)=\begin{pmatrix}
+\sqrt{p \cdot \sigma} \xi_s \\ \sqrt{p \cdot \bar{\sigma}} \xi_s
+\end{pmatrix} 
+\hspace{2cm}
+v_s(p)=\begin{pmatrix}
+\sqrt{p \cdot \sigma} \xi_{-s} \\ -\sqrt{p \cdot \bar{\sigma}} \xi_{-s}
+\end{pmatrix} ,
+\end{equation}
+with 
+\begin{equation}
+\sigma=(\mathds{1} , \vec{\sigma}) , \hspace{2cm} \bar{\sigma}=(\mathds{1} , -\vec{\sigma}) 
+\end{equation}
+\begin{equation}
+\xi_1=\begin{pmatrix}
+1\\0
+\end{pmatrix}
+\hspace{2cm}
+\xi_{-1}=\begin{pmatrix}
+0\\1
+\end{pmatrix}
+\end{equation}
+Where \(\vec{\sigma}\) is the vector containing the Pauli matrices. The creation and annihilation operator fulfill the following identity:
+\begin{equation}
+\{ b_s(p),b^\dagger_r (p')\}=\delta^3(p-p')=\{ d_s(p),d^\dagger_r (p')\}
+\end{equation}
+%relationship between proper annihilation operator a and b, d
+
+Useful identities for sums of \(u\) and \(v\) are:
+\begin{equation}
+\sum_s u_s(p)\bar{u}_s(p)=\slashed{p}+m \hspace{2cm} \sum_s v_s(p)\bar{v}_s(p)=\slashed{p}-m
+\end{equation}
+
+For the norm of the image of the vacuum we therefore arrive at:
+\begin{multline}
+\| T1 \Omega\|^2= \frac{1}{(2\pi)^6}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{\sqrt{2 k^0}} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{\sqrt{2 p^0}} 
+ \int_{\mathbb{R}^3} \frac{\text{d}^3k'}{\sqrt{2 k'^0}} \int_{\mathbb{R}^3} \frac{\text{d}^3p'}{\sqrt{2 p'^0}} \int_{\mathbb{R}^4}\text{d}^4x \int_{\mathbb{R}^4}\text{d}^4y
+\sum_{r,s,r',s' = \pm1} \\
+\Omega^\dagger 
+ d_{r'} (p') b_{s'} (k')  \bar{v}_{r'} (p') \gamma^\epsilon u_{s'}(k') 
+ b^\dagger_s (k) d^\dagger_r (p) \bar{u_s}(k) \gamma^\mu v_r (p) 
+\Omega  \\
+ e^{i x_\alpha (k^\alpha + p^\alpha)} e^{-i y_\beta (k'^\beta + p'^\beta)} 
+ A_{\mu} (x) A_{\epsilon} (y)  \\
+ =\frac{1}{(2\pi)^6} \int_{\mathbb{R}^3} \frac{\text{d}^3k}{\sqrt{2 k^0}} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{\sqrt{2 p^0}} 
+ \int_{\mathbb{R}^3} \frac{\text{d}^3k'}{\sqrt{2 k'^0}} \int_{\mathbb{R}^3} \frac{\text{d}^3p'}{\sqrt{2 p'^0}} \int_{\mathbb{R}^4}\text{d}^4x \int_{\mathbb{R}^4}\text{d}^4y
+\sum_{r,s,r',s' = \pm1} \\
+\Omega^\dagger 
+\left\{ d_{r'} (p') \left\{b_{s'} (k'), b^\dagger_s (k)\right\}, d^\dagger_r (p)\right\} \bar{v}_{r'} (p') \gamma^\epsilon u_{s'}(k') 
+  \bar{u_s}(k) \gamma^\mu v_r (p) 
+\Omega  \\
+ e^{i x_\alpha (k^\alpha + p^\alpha)} e^{-i y_\beta (k'^\beta + p'^\beta)} 
+ A_{\mu} (x) A_{\epsilon} (y)  \\
+ =\frac{1}{(2\pi)^6}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{2 k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{2 p^0} \int_{\mathbb{R}^4}\text{d}^4x\int_{\mathbb{R}^4}\text{d}^4y
+ \sum_{r,s = \pm1} 
+ \bar{v}_{r} (p) \gamma^\epsilon u_{s}(k) 
+  \bar{u_s}(k) \gamma^\mu v_r (p)  \\
+ e^{i x_\alpha (k^\alpha + p^\alpha)} e^{-i y_\beta (k^\beta + p^\beta)} 
+ A_{\mu} (x) A_{\epsilon} (y)  \\
+  =\frac{1}{(2\pi)^6} \int_{\mathbb{R}^3} \frac{\text{d}^3k}{2 k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{2 p^0} \int_{\mathbb{R}^4}\text{d}^4x\int_{\mathbb{R}^4}\text{d}^4y 
+ \sum_{r,s = \pm1} 
+ \sum_{a=1}^4 \left<e_a\right| v_r (p) \bar{v}_{r} (p) \gamma^\epsilon u_{s}(k) 
+  \bar{u_s}(k) \gamma^\mu \left|e_a\right>  \\
+  e^{i x_\alpha (k^\alpha + p^\alpha)} e^{-i y_\beta (k^\beta + p^\beta)} 
+ A_{\mu} (x) A_{\epsilon} (y)  \\
+=\frac{1}{(2\pi)^6}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{2 k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{2 p^0} \int_{\mathbb{R}^4}\text{d}^4x\int_{\mathbb{R}^4} \text{d}^4y 
+ \hspace{0,2cm}\text{tr}\left[ (\slashed{p}-m) \gamma^\epsilon (\slashed{k}+m) \gamma^\mu \right]  \\
+ e^{i x_\alpha (k^\alpha + p^\alpha)} e^{-i y_\beta (k^\beta + p^\beta)} 
+ A_{\mu} (x) A_{\epsilon} (y)  \\
+ =\frac{1}{(2\pi)^2}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{2 k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{2 p^0}
+ \left(p_\zeta k_\omega\text{tr}\left[ \gamma^\zeta \gamma^\epsilon \gamma^\omega \gamma^\mu \right] -m^2\text{tr}\left[ \gamma^\epsilon \gamma^\mu \right] \right) \\
+ \hat{A}_{\mu} (k+p) \hat{A}^*_{\epsilon} (k+p)  \\
+  =\frac{1}{(2\pi)^2}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{2 k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{2 p^0}4
+ \left(p_\zeta k_\omega(\eta^{\zeta,\epsilon}\eta^{\omega,\mu} -\eta^{\zeta,\omega}\eta^{\epsilon,\mu} +\eta^{\zeta,\mu}\eta^{\epsilon,\omega}) -m^2\eta^{\epsilon,\mu} \right) \\
+ \hat{A}_{\mu} (k+p) \hat{A}^*_{\epsilon} (k+p)  \\
+   =\frac{1}{(2\pi)^2}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{ k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{ p^0}
+ \left(k^\mu \hat{A}_{\mu} (k+p) p^\epsilon\hat{A}^*_{\epsilon} (k+p)  -p^\alpha k_\alpha \hat{A}^{\mu} (k+p) \hat{A}^*_{\mu} (k+p)\right.\\
+ \left.    +k^\mu \hat{A}^*_{\mu} (k+p) p^\epsilon\hat{A}_{\epsilon} (k+p)
+  -m^2\hat{A}^{\mu} (k+p) \hat{A}^*_{\mu} (k+p)  \right) \\
+  \equalmath{k^2=p^2=m^2} \frac{1}{(2\pi)^2}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{ k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{ p^0}
+ \left(k^\mu \hat{A}_{\mu} (k+p) p^\epsilon\hat{A}^*_{\epsilon} (k+p) \right.\\
+ \left.    +k^\mu \hat{A}^*_{\mu} (k+p) p^\epsilon\hat{A}_{\epsilon} (k+p)
+  -\frac{1}{2}(k+p)^2 \hat{A}^{\mu} (k+p) \hat{A}^*_{\mu} (k+p)  \right) \\
+    = \frac{1}{(2\pi)^2}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{ k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{ p^0}
+ \left(k^\mu \hat{A}_{\mu} (k+p) p^\epsilon\hat{A}^*_{\epsilon} (k+p) \right.\\
+ \left.    +k^\mu \hat{A}^*_{\mu} (k+p) p^\epsilon\hat{A}_{\epsilon} (k+p)
+  +\frac{1}{2} \hat{A}^*_{\mu} (k+p)  \widehat{\Box A}^{\mu} (k+p) \right) 
+\end{multline}
+Up until this point the calculation is exact. If one wants to obtain a nice looking expression for this bound one can add the terms \( k^\alpha \hat{A}_\alpha  k^\beta \hat{A}^*_\beta +p^\alpha  \hat{A}_\alpha  p^\beta \hat{A}^*_\beta \). These terms are clearly positive. One then ends up with:
+
+\begin{multline}
+\| T1 \Omega\|^2\le \frac{1}{(2\pi)^2}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{ k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{ p^0}
+ \left( (k^\mu+p^\mu) \hat{A}^*_{\mu} (k+p) (k^\epsilon+p^\epsilon)\hat{A}_{\epsilon} (k+p)\right. \\
+ \left. +\frac{1}{2} \hat{A}^*_{\mu} (k+p)  \widehat{\Box A}^{\mu} (k+p) \right) \\
+ =\frac{1}{(2\pi)^2}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{ k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{ p^0}
+ \left( \widehat{\partial^\alpha A_\alpha}^*(k+p) \widehat{\partial^\beta A_\beta}(k+p)\right. \\
+ \left. +\frac{1}{2} \hat{A}^*_{\mu} (k+p)  \widehat{\Box A}^{\mu} (k+p) \right)\\
+  =\frac{1}{(2\pi)^2}  \int_{\mathbb{R}^3} \frac{\text{d}^3k}{ k^0} \int_{\mathbb{R}^3} \frac{\text{d}^3p}{ p^0}
+ \left(\left\|\widehat{\partial^\beta A_\beta}(k+p)\right\|^2
+ +\frac{1}{2} \hat{A}^*_{\mu} (k+p)  \widehat{\Box A}^{\mu} (k+p) \right)
+\end{multline}
+
+Taking \(T1 : \mathbb{C} \rightarrow \mathcal{H}_+  \otimes \mathcal{H}_-\) for granted, we would like to define \(T1\) on all of Fockspace. In order to do this, we introduce the ``restriction of proper lifting'' for the annihilation operator:
+\begin{equation}\label{lift_condition}
+\forall \phi\in \mathcal{H}: \hspace{0.5cm} a\left( U \phi \right)  \circ \tilde{U}=\tilde{U} \circ a(\phi)
+\end{equation}
+Which is equivalent to the commutativity of the following diagram.
+\begin{equation}
+\begin{CD}								%heuristics with infinite wedge space?
+\mathcal{F}     @>\tilde{U}^A>>  \mathcal{F}\\
+@AAaA        @AAaA\\
+\mathcal{H}\otimes \mathcal{F}     @>U^A\otimes \tilde{U}^A>>  \mathcal{H}\otimes \mathcal{F} 
+\end{CD}
+\end{equation}
+The respective condition for the creation operator, which can easily be derived from \eqref{lift_condition} is:
+\begin{equation}
+\forall \phi\in \mathcal{H}: \hspace{0.5cm} a^*\left( U^A \phi \right)  \circ \tilde{U}^A=\tilde{U}^A \circ a^*(\phi)
+\end{equation}
+Expanding \(U^A\) and \(\tilde{U}^A\) in a powerseries, one obtains the following commutation relations for the coefficients of said expansion:
+\begin{multline}
+U^A=\mathds{1}_\mathcal{H}+\sum_{l=1}^\infty
+\end{multline}
+
+\end{document}
+

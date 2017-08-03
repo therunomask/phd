@@ -1,0 +1,215 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+
+\usepackage{color}
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+I'll write down basic information about the one particle Dirac-timeevolution operator. The Dirac equation in integral form can be written as 
+Let \(t,t_0\in\mathbb{R}, y\in\mathbb{R}^4\)
+\begin{multline}\label{dirac_integral}
+\phi_t(y)=\phi_{t_0}(y)-i \int_{t_0}^t \text{d}s L_s \phi_s(y)=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s\mathcal{F}_{0\Sigma_s}(v_s\slashed{n}_s \slashed{A})\mathcal{F}_{\Sigma_s 0}\phi_s(y)\\
+=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s\mathcal{F}_{0\mathcal{M}}\mathcal{F}_{\mathcal{M}\Sigma_s}(v_s\slashed{n}_s \slashed{A})\mathcal{F}_{\Sigma_s 0}\phi_s(y)\\
+=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \frac{1}{(2\pi)^{1.5}m}\int_{\mathcal{M}}e^{-ipy}i_p(\text{d}^4p) \mathcal{F}_{\mathcal{M}\Sigma_s}(v_s\slashed{n}_s \slashed{A})\mathcal{F}_{\Sigma_s 0}\phi_s(y)\\
+=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \frac{1}{(2\pi)^{3}m}\int_{\mathcal{M}}e^{-ipy}i_p(\text{d}^4p) \frac{\slashed{p}+m}{2m}\int_{\Sigma_s}e^{ipx}i_{\gamma}(\text{d}^4x)v_s(x)\slashed{n}_s(x) \slashed{A}(x)\phi_s(x)\\
+=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \int_{\Sigma_s}\int_{\mathcal{M}}\frac{\slashed{p}+m}{2m^2}e^{ip(x-y)}i_p(\text{d}^4p) \frac{i_{\gamma}(\text{d}^4x)}{(2\pi)^{3}}v_s(x)\slashed{n}_s(x) \slashed{A}(x)\phi_s(x)\\
+\end{multline}
+
+At this point we want to use the theorem of residues to change notation to a more covariant one. We employ the following trick:
+
+
+Let m,\(\epsilon >0\), \(f:\mathbb{C}^4\rightarrow \mathbb{C}\) analytic be arbitrary:
+
+\begin{multline}
+\int_{\mathcal{M}}\frac{\slashed{p}+m}{2 m^2} f(p) i_p(\text{d}^4p)= \left. m^2 \int_{\mathbb{R}^3}\frac{\slashed{p}+m}{2 m^2} f(p) \frac{\text{d}^3p}{p^0}\right|_{p^0=\sqrt{\vec{p}^2+m^2}}+\left. m^2 \int_{\mathbb{R}^3}\frac{\slashed{p}+m}{2 m^2} f(p) \frac{\text{d}^3p}{-p^0}\right|_{p^0=-\sqrt{\vec{p}^2+m^2}}\\
+=\frac{2}{2\pi i}  m^2 \left( \oint_{\left|p^0-\sqrt{\vec{p}^2+m^2}\right|=\epsilon}\text{d}p^0+\oint_{\left|p^0+\sqrt{\vec{p}^2+m^2}\right|=\epsilon}\text{d}p^0 \right) \int_{\mathbb{R}^3}\frac{\slashed{p}+m}{2 m^2} f(p) \\ 
+\frac{\text{d}^3p}{(p^0+\sqrt{\vec{p}^2+m^2})(p^0-\sqrt{\vec{p}^2+m^2})} 
+\equaltext{Umformen der Integralkontur} \frac{2m^2}{2\pi i}   \left( \int_{\mathbb{R}-i \epsilon}\text{d}p^0-\int_{\mathbb{R}+i\epsilon}\text{d}p^0 \right) \int_{\mathbb{R}^3}\\ 
+\frac{\slashed{p}+m}{2 m^2} f(p)  \frac{\text{d}^3p}{p^2-m^2}
+=\frac{1}{2\pi i}   \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) \frac{\slashed{p}+m}{p^2-m^2} f(p)  \text{d}^4p\\
+=\frac{1}{2\pi i}   \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}-m)^{-1} f(p)  \text{d}^4p\\
+\end{multline}
+
+so summarizing:
+\begin{equation}
+\int_{\mathcal{M}}\frac{\slashed{p}+m}{2 m^2} f(p) i_p(\text{d}^4p)=\frac{1}{2\pi i}   \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}-m)^{-1} f(p)  \text{d}^4p
+\end{equation}
+
+
+Using this we continue \eqref{dirac_integral}:
+
+\begin{multline}
+\phi_t(y)=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \int_{\Sigma_s}\frac{1}{2\pi i}   \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}-m)^{-1} e^{ip(x-y)}  \text{d}^4p \\
+ \frac{i_{\gamma}(\text{d}^4x)}{(2\pi)^{3}}v_s(x)\slashed{n}_s(x) \slashed{A}(x)\phi_s(x)\\
+\end{multline} 
+
+ We pick the hypersurfaces to be equal time hyperplanes such that \(v_s=1\) and \(\slashed{n}_s=\gamma^0 e_0\).
+\begin{multline}
+\phi_t(y)=\phi_{t_0}(y)
+-i \int_{[t_0,t]\times\mathbb{R}^3}\frac{1}{i}   \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}-m)^{-1} e^{ip(x-y)}  \text{d}^4p \\
+ \frac{\text{d}^4x}{(2\pi)^{4}}\slashed{A}(x)\phi_s(x)=\sum_{k=0}^\infty Z_k' \phi_{t_0}\\
+\end{multline} 
+
+
+With \(Z_k'\) obtained iteratively.In the following is \(s_0=t, x_0=y, Z_0=1\)
+\begin{multline}\label{preliminary_z_k}
+Z_k'\phi_{t}(y):=\prod_{l=1}^k \left[- \int_{[t_0,s_{l-1}]\times\mathbb{R}^3} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}_l-m)^{-1} e^{ip(x_l-x_{l-1})}  \text{d}^4p_l 
+ \frac{\text{d}s_l\text{d}^3x_l}{(2\pi)^{4}}\slashed{A}(x_l)\right]\phi_{s_l}(x_k)\\
+=- \int_{[t_0,t]\times\mathbb{R}^3} \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}_1-m)^{-1} e^{ip_1(x_1-y)}  \text{d}^4p_0 
+ \frac{\text{d}s_1\text{d}^3x_1}{(2\pi)^{4}}\slashed{A}(x_1)\\
+  \prod_{l=2}^k \left[- \int_{[t_0,s_{l-1}]\times\mathbb{R}^3} \int_{\mathbb{R}^4-i \epsilon e_0} (\slashed{p}_l-m)^{-1} e^{ip_l(x_l-x_{l-1})}  \text{d}^4p_l 
+ \frac{\text{d}s_l\text{d}^3x_l}{(2\pi)^{4}}\slashed{A}(x_l)\right]\phi_{t_0}(x_k)
+\end{multline}
+
+The chronological ordering of the integrals can not only be expressed by restricting the domains of integration of spacetime, but instead by considering only one of the integrations over a cone of momentum spacetime. This was implemented in the third line of \eqref{preliminary_z_k}. We now pick \(t\) in the future of \(\sup A\) and \(t_0\) in the past of it, since the exact \(t\) and \(t_0\) no longer play any role, I will denote them by \(\pm \infty\). This gives:
+
+\begin{equation}
+\phi_\infty(y)=S \phi_{-\infty} :=\sum_{k=0}^\infty Z_k \phi_{-\infty}
+\end{equation} 
+with
+\begin{multline}\label{def_Z_k}
+Z_k\phi(y):=(-1)^k \frac{1}{(2\pi)^{\frac{3}{2}}}\left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) \frac{\text{d}^4p_1}{(2\pi)^{2}} (\slashed{p}_1-m)^{-1} e^{-ip_1y}  \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{2}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\int_{\mathcal{M}}  i_p(\text{d}^4p_k)\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})\\
+ =(-1)^k \frac{i}{2\pi}  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}} \frac{\slashed{p}_1+m}{2m^2} e^{-ip_1y}  \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{2}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1}),
+\end{multline}
+where \(\phi\in \mathcal{H}\) arbitrary.
+
+{\Huge \bf Change powers of \(2\pi\) to correct ones of \eqref{def_Z_k}}
+
+Next we would like to find the operator norm of \(Z_k\) for arbitrary \(k\):
+
+let \(\psi \in \mathcal{H}\) arbitrary, \(V\) be an arbitrary spacelike hypersurface in Minkowskispace,
+\begin{multline}
+\left<\psi\right| \left. Z_k\phi(y)\right>= \int_{\mathcal{V}} \bar{\psi}(y)\hspace{0.2cm} i_{\gamma} (\text{d}^4 y) (-1)^k i  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}} \frac{\slashed{p}_1+m}{2m} e^{-ip_1y}  \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})\\
+ =  (-1)^k i  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}}\bar{\psi}(p_1)\hspace{0.2cm}  \frac{\slashed{p}_1+m}{2m}   \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})\\
+  =  (-1)^k i  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}}\overline{ \frac{\slashed{p}_1+m}{2m}\psi}(p_1)   \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})\\
+   =  (-1)^k i  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}}\overline{\psi}(p_1)   \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})
+\end{multline}
+
+We therefore find for the operator norm of \(Z_k\):
+\begin{multline}\label{Z_k estimate}
+\|Z_k\|=\sup_{\psi,\phi \in \mathcal{H}}\frac{\left|\left<\psi\right| \left. Z_k\phi(y)\right>\right|}{\|\psi\| \|\phi\|}
+=\sup_{\psi,\phi \in \mathcal{H}}\left|\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}}\frac{\overline{\psi}(p_1)}{\|\psi\|}\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\right.\\
+ \left. \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\frac{\hat{\phi}(p_{k+1})}{\|\phi\|}\right|\\
+\letext{C.S.I.} \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}}
+  \left|\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\frac{\hat{\phi}(p_{k+1})}{\|\phi\|}\right|^2\\
+ \le \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}}
+  \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \|\slashed{A}(p_{l-1}-p_l)\|_{\text{spec}} \| (\slashed{p}_l-m)^{-1}\|_{\text{spec}}  
+ \right]\right. \\
+\left. \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\|\slashed{A}(p_{k}-p_{k+1})\|_{\text{spec}}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2\\
+ \le \sup_{\lambda\in\mathbb{R}^4+i \epsilon e_0}\| (\slashed{\lambda}_l-m)^{-1}\|_{\text{spec}}^{k-1}   \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}}
+  \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \|\slashed{A}(p_{l-1}-p_l)\|_{\text{spec}} 
+ \right]\right. \\
+\left. \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\|\slashed{A}(p_{k}-p_{k+1})\|_{\text{spec}}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2\\
+ \letext{exp\_projector.pdf} \left(\frac{2\sqrt{2}}{\epsilon}\right)^{k-1}   \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}}
+  \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \|\slashed{A}(p_{l-1}-p_l)\|_{\text{spec}} 
+ \right]\right. \\
+\left. \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\|\slashed{A}(p_{k}-p_{k+1})\|_{\text{spec}}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2
+ \end{multline}
+ The following estimation is only valid for \(k>1\)
+ \begin{multline}
+ \letext{Parley-Wiener, A} \left(\frac{2\sqrt{2}}{\epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{(4 C_N)^k}{(2\pi)^{4k-1}}  \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}} i_p(\text{d}^4p_1) \\ 
+ \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4-i \epsilon e_0} \text{d}^4p_l \frac{1}{(1+|p_{l-1}-p_l |)^N}
+ \right] \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\frac{1}{(1+|p_{k}-p_{k+1} |)^N}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2\\
+  \le \left(\frac{1}{\sqrt{2} \epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{ C_N^k}{\pi^{4k-1}}  \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}} i_p(\text{d}^4p_1) \\ 
+ \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4} \text{d}^4p_l \frac{1}{(1+|p_{l-1}-p_l |)^N}
+ \right] \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\frac{1}{(1+|p_{k}-p_{k+1} |)^N}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2\\
+= \left(\frac{1}{\sqrt{2} \epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{ C_N^k}{\pi^{4k-1}}  \sup_{\phi\in\mathcal{H}} \left\| 
+\CONV_{\stackrel{l=2}{\mathbb{R}^4}}^{k} \left[  \frac{1}{(1+|\cdot |)^N}
+  \hspace{0.2cm} ,\hspace{0.2cm}  \frac{1}{(1+|\cdot |)^N}\stackrel{\mathcal{M}}{\Conv}\frac{\|\hat{\phi}(\cdot)\|}{\|\phi\|}\right] \right\|_{\mathcal{L}^2(\mathcal{M})}\\
+  \letext{Young Inequ. \textcolor{red}{Raum?!} } \left(\frac{1}{\sqrt{2} \epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{ C_N^k}{\pi^{4k-1}}  \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)}^{k-1}\\
+    \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathcal{M})}   \sup_{\phi\in\mathcal{H}} \left\| 
+\frac{\|\hat{\phi}(\cdot)\|}{\|\phi\|}\right\|_{\mathcal{L}^2(\mathcal{M})}\\
+= \left(\frac{1}{\sqrt{2} \epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{ C_N^k}{\pi^{4k-1}}  \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)}^{k-1}  \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathcal{M})} 
+\end{multline}
+Where \(C_N\) is the constant obtained by application of the theorem of Parley an Wiener, \(\epsilon\) is still an arbitrary positive number. This is why we now optimise over this parameter. In order to simplify the notation we define \(a:=\text{diam}(\text{supp}(A))\), \(b:= k-1\), \(f:=\left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)}\), \(g:=\left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathcal{M})} \) .
+\begin{equation}
+h: \mathbb{R}^+\rightarrow \mathbb{R},\hspace{1cm}\epsilon\mapsto\frac{e^{a \epsilon}}{\epsilon^b}
+\end{equation}
+h is a smooth positive function which diverges at zero and at infinity, so it must attain a minimum somewhere in between. We find this minimum by elementary calculus:
+\begin{equation}
+h'(\epsilon)\equaltext{!}0 \iff -b \frac{e^{a \epsilon}}{\epsilon^{b+1}}+ a \frac{e^{a \epsilon}}{\epsilon^b}=0 \iff -b +a \epsilon=0 \iff \epsilon= \frac{b}{a}
+\end{equation}
+Therefore the value of the minimum is:
+\begin{equation}
+\inf_{\epsilon\in\mathbb{R}^+} h(\epsilon)= h(\frac{b}{a})=\frac{e^b}{\left(\frac{b}{a}\right)^b}=\frac{(a e)^b}{b^b}
+\end{equation}
+Which means for the operator norm of \(Z_k\),  \(k>1\):
+\begin{equation}
+\|Z_k\|\le \left(\frac{1}{\sqrt{2} }\right)^{k-1} \frac{\left(e a\right)^{k-1}}{(k-1)^{k-1}} \frac{ C_N^k}{\pi^{4k-1}}  f^{k-1}  g
+\end{equation}
+This means that we can find the operator norm of the \(S\) operator, once we have read off the operator norm of \(Z_1\). In order to do so, we start at the end of  \eqref{Z_k estimate} and use the Young inequality right away to find:
+\begin{equation}
+\|Z_1\|\le \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}
+\end{equation}
+
+Which is finite, because \(A\) is compactly supported, which means that its Fouriertransform falls off at infinity faster than any polynomial.
+We will be using the well known upper bound for the factorial of an arbitrary number:
+\begin{equation}\label{sterling}
+n!\le \sqrt{2\pi n} \left(\frac{n}{e}\right)^n e^\frac{1}{12n}
+\end{equation}
+We will employ the abbreviation \(w= \frac{ a C_N f}{\pi^4\sqrt{2} }\)
+\begin{multline}
+\|S\|=\left\|\sum_{k=0}^\infty Z_k \right\|\le \sum_{k=0}^\infty \left\|Z_k \right\| \le 1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+ \sum_{k=2}^\infty \left(\frac{1}{\sqrt{2} }\right)^{k-1} \frac{\left(e a\right)^{k-1}}{(k-1)^{k-1}} \frac{ C_N^k}{\pi^{4k-1}}  f^{k-1}  g\\
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+g\frac{ C_N}{\pi^{3}} \sum_{k=2}^\infty \frac{\left(w e\right)^{k-1}}{(k-1)^{k-1}}
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+g\frac{ C_N}{\pi^{3}} \sum_{k=1}^\infty \frac{w^{k}}{\left(\frac{k}{e}\right)^{k}}   \\
+\letext{\eqref{sterling}}1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+g\frac{ C_N}{\pi^{3}} \sum_{k=1}^\infty \frac{w^{k}}{k!} e^{\frac{1}{12k}} \sqrt{2\pi k} \\
+\stackrel{e^{\frac{1}{12k}}\le \sqrt{k} e^{\frac{1}{12}}}{\le} \hspace{0.3cm} 1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+e^{\frac{1}{12}} g\frac{ C_N\sqrt{2}}{\pi^{\frac{5}{2}}} \sum_{k=1}^\infty \frac{w^{k}}{k!}  k\\
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+e^{\frac{1}{12}} g\frac{w C_N\sqrt{2}}{\pi^{\frac{5}{2}}} \sum_{l=0}^\infty \frac{w^{l}}{l!} 
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+e^{\frac{1}{12}} g\frac{w C_N\sqrt{2}}{\pi^{\frac{5}{2}}} e^{w}\\
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+ 2 \pi^{\frac{3}{2}}a g f  C^2_N e^{\frac{ a C_N f}{\pi^4\sqrt{2}}+\frac{1}{12}}\\
+= 1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+ \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)} \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathcal{M})} 2 \pi^{\frac{3}{2}}\text{diam}(\text{supp}(A))    C^2_N \\
+ e^{\frac{ \text{diam}(\text{supp}(A)) C_N \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)}}{\pi^4\sqrt{2}}+\frac{1}{12}} <\infty
+\end{multline}
+
+
+
+
+\end{document}
+

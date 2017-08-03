@@ -1,0 +1,501 @@
+\documentclass[oneside,reqno,12pt]{amsart}
+
+%\usepackage{fontspec}
+
+\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+%\setmainfont{YuMincho}
+%Hiragino Maru Gothic ProN
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+\usepackage{mathabx}
+\usepackage{mathtools}
+\usepackage{dsfont}
+
+
+\setcounter{secnumdepth}{5}
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+%picture
+\usepackage{wrapfig}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+  
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+
+
+\newcommand{\Z}[2]{Z_{\stackrel{1}{#1}}\left(#2\right)}
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\Dirk}[1]{ \todo[color=orange!60]{Dirk: #1} }
+\newcommand{\DirkBox}[1]{ \mbox{}\todo[inline,caption={},color=red!60]{Dirk: #1} }
+\newcommand{\Markus}[1]{ \todo[color=green!20]{Markus: #1} }
+\newcommand{\dirk}{ \color{orange} }
+\newcommand{\markus}{ \color{green} }
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+\makeatletter
+
+
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2.0ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                   {-0.5ex \@plus -0.5ex \@minus -.2ex}%
+                                   {0.5em}%
+                                   {\normalfont\bfseries}}
+\renewcommand\subsubsection{\@startsection {subsubsection}{1}{\z@}%
+                                   {-0.3ex \@plus -0.4ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\sc}}  
+\renewcommand\paragraph{\@startsection {paragraph}{1}{\z@}%
+                                   {-0.2ex \@plus -1ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\it}}                                   
+\makeatother
+
+\parindent 0cm
+
+
+\begin{document}
+
+
+I begin with a collection of definitions and formulas useful in this setting.
+
+\section{basic definitions}
+\begin{Def}
+Throuought this document the letters \(A,B,C,G\) and \(F\) with or without indices represent four-potentials,  elements of \(C_c^\infty(\mathbb{R}^4, \mathbb{R}^4)\). Furthermore we assume that for some fixed compact \(K\subseteq \mathbb{R}^4\) all the appearing four-potentials are supported in \(K\).
+\end{Def}
+\begin{Def}
+Likewise the greek letter \(\Sigma\) with or without indices and with or without (multiple) \('\)s attached to it represent spacelike hypersurfaces of Minkowski spacetime.
+\end{Def}
+
+\begin{Def}
+Furthermore
+
+\begin{equation}
+\forall \Sigma: \mathcal{H}_\Sigma:= L^2(\Sigma, \mathbb{C}^4, i_\gamma(d^4x)).
+\end{equation}
+\end{Def}
+
+\begin{Def}
+We denote the one-particle Dirac time evolution operator by
+\begin{equation}
+U^A_{\Sigma, \Sigma'} : \mathcal{H}_\Sigma\rightarrow \mathcal{H}_{\Sigma'}.
+\end{equation}
+\end{Def}
+
+\begin{Def}
+For initial polarization \(V_{\Sigma_0}\subseteq \mathcal{H}_{\Sigma_0}\) with \(\Sigma_0\) before \(K\) and \(\Phi_{\Sigma_0}: \ell_2\rightarrow \mathcal{H}_{\Sigma_0}\) with \(\text{range}\Phi_{\Sigma_0}=V_{\Sigma_0}\), we define
+\begin{equation}
+\forall \Sigma, \forall A: C_{\Sigma}(A):=\{V_\Sigma^A\mid V_\Sigma^A \approx U^A_{\Sigma, \Sigma_0} V_{\Sigma_0}\}.
+\end{equation}
+It turns out (ref) that \(C_{\Sigma}(A)\) only depends on the projection \(\Sigma\ni x\mapsto x_\alpha A^\alpha(x)\), furthermore we define
+\begin{equation}
+\mathcal{F}_{\Sigma}^A:=\mathcal{F}( U_{\Sigma, \Sigma_0}^A\Phi_{\Sigma_0}).
+\end{equation}
+\end{Def}
+
+
+
+
+\begin{Def}\label{lift}
+We call \(\tilde{U}_{\Sigma',\Sigma}^A:\mathcal{F}_{\Sigma}^A\rightarrow\mathcal{F}_{\Sigma'}^{A'}\) unitary such that
+\(\forall A, A', \Sigma, \Sigma', \Sigma''\):
+\begin{align*}\label{func}\tag{func}
+&\tilde{U}^A_{\Sigma'',\Sigma'}\tilde{U}^A_{\Sigma',\Sigma} = \tilde{U}^A_{\Sigma'',\Sigma}\\\label{loc}\tag{loc}
+& \text{germ}_{\text{Vol}\Sigma',\Sigma}(A)=\text{germ}_{\text{Vol}\Sigma',\Sigma}(A')\Rightarrow \tilde{U}^A_{\Sigma',\Sigma}=\tilde{U}^{A'}_{\Sigma',\Sigma}\\\label{reg} \tag{reg}
+&
+\end{align*}
+a lift of \(U^A_{\Sigma',\Sigma}\). Here the germ of two functions \(A\) and \(A'\) are equal iff
+\begin{equation}
+\exists U\supseteq \Sigma, U open: \left.A\right|_{U}=\left. A'\right|_{U}.
+\end{equation}
+\end{Def}
+
+\begin{Def}
+For \(\Sigma_{\text{in}}\) before \(K\) and \(\Sigma_{\text{out}}\) after \(K\) we define
+\begin{equation}
+\prescript{}{A}{\tilde{S}}_{A+F}:= \tilde{U}^A_{\Sigma_{\text{in}},\Sigma_{\text{out}}} \tilde{U}^{A+F}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}:\mathcal{F}^A_{\Sigma_{\text{in}}}\righttoleftarrow
+\end{equation}
+\end{Def}
+
+\begin{Def}
+We denote for a fixed \( U_{\Sigma_{\text{in}},\Sigma_0}^A \Phi_{\Sigma_0}\sim \Psi_{\text{in}}:\ell^2 \rightarrow \mathcal{H}_{\text{in}}\) by
+\begin{equation}
+\mathds{1}_{\text{in}}:\mathcal{H}_{\text{in}}\righttoleftarrow,
+\end{equation}
+the identity on that space and denote by
+\begin{equation}
+\overline{\mathds{1}}_{\text{in}}:\mathcal{F}(\Psi_{\text{in}})\rightarrow\mathcal{F}(U_{\Sigma_{\text{in}},\Sigma_0}^A \Phi_{\Sigma_0})
+\end{equation}
+its lift.
+\end{Def}
+
+
+\begin{Def}
+We also introduce the projector notation:
+\begin{equation}
+\prescript{}{A}{S}_{F --}:= \Psi_{\text{in}}^* ~\prescript{}{A}{S}_{F}\Psi_{\text{in}}: \ell^2 \righttoleftarrow.
+\end{equation}
+\end{Def}
+
+\begin{Def}
+and the only (partial) lift which can naturally be written down
+\begin{equation}\label{manualLift}
+\prescript{}{A}{\overline{S}}_{F}:=\mathcal{L}_{\prescript{}{A}{S}_{F}}\mathcal{R}_{\prescript{}{F}{S}_{A}} 
+\frac{1}{\sqrt{\det \prescript{}{A}{S}_{F --} ~\prescript{}{F}{S}_{A --}}}:\mathcal{F}(\Psi_{\text{in}})\righttoleftarrow,
+\end{equation}
+where the last factor is just for normalisation i.e. to make this operator unitary. Please note that this is not a lift in the sense of Definition \ref{lift} since it may not fulfill any of the conditions.
+\end{Def}
+
+\begin{Def}
+We can make a connection between the proper lift and \eqref{manualLift} by
+\begin{equation}
+\prescript{}{A}{\hat{S}}_F:= \overline{\mathds{1}}_{\text{in}}^* \prescript{}{A}{\tilde{S}}_{F} \overline{\mathds{1}}_{\text{in}}:\mathcal{F}(\Psi_{\text{in}})\righttoleftarrow.
+\end{equation}
+Now \(\overline{S}\) and \(\hat{S}\) agree up to a phase (ref), so we define
+\begin{equation}\label{def:z}
+\prescript{}{A}{z}_{F} \circ \prescript{}{A}{\overline{S}}_{F} := \prescript{}{A}{\hat{S}}_{F}.
+\end{equation} 
+\end{Def}
+There is yet another phase which characterizes the deficiency of \eqref{manualLift}, namely
+\begin{Def}
+\begin{equation}\label{def:gamma}
+\forall A,B,C: \Gamma^{-1}_{A,B,C} \circ \mathds{1} = \prescript{}{A}{\overline{S}}_B ~ \prescript{}{B}{\overline{S}}_C ~ \prescript{}{C}{\overline{S}}_A.
+\end{equation}
+\end{Def}
+
+We also introduce a notation for  general complex numbers
+\begin{Def}
+\begin{equation}
+\forall z\in\mathbb{C}\backslash \{0\}: \text{arg}(z) := \frac{z}{|z|}.
+\end{equation}
+\end{Def}
+\section{useful formulas}
+
+Since most of the time we work with the \(\text{arg}\) of complex numbers it is worth noting that
+\begin{Corollary}\label{corollary:phase'}
+\begin{equation}
+\forall z:\mathbb{R}\rightarrow \mathbb{C}: \left( \frac{z}{|z|}\right)'=  i \frac{z}{|z|} \Im \frac{ z^* z'}{|z|^2}
+\end{equation}
+\end{Corollary}
+holds. 
+
+
+\begin{lemma}\label{lemma:temp_sep}
+It is true that
+\begin{equation}\label{temp_sep}\tag{temporal separation}
+\forall F\prec G: \prescript{}{A}{\tilde{S}}_{A+F+G}=\prescript{}{A}{\tilde{S}}_{A+G}\prescript{}{A}{\tilde{S}}_{A+F}
+\end{equation}
+holds.
+\end{lemma}
+
+\begin{lemma}\label{lemma:z_temp_sep}
+It is true that
+\begin{equation}\label{z_temp_sep}
+\forall F\prec G: \prescript{}{A+G}{z}_{A+F+G}=\prescript{}{A}{z}_{A+F}
+\end{equation}
+holds.
+\end{lemma}
+
+\begin{lemma}\label{lemma:gamma}
+There are more ways to conveniently express \(\Gamma_{A,B,C}\) for all \(A,B\) and \(C\), namely
+\begin{equation}\label{gamma_to_z}
+\Gamma_{A,B,C}=\prescript{}{A}{z}_{B} ~\prescript{}{B}{z}_{C}~\prescript{}{C}{z}_A,
+\end{equation}
+and
+\begin{equation}\label{gamma_by_argdet}
+\Gamma^{-1}_{A,B,C}= \text{argdet}(\prescript{}{A}{S}_{B --} ~ \prescript{}{B}{S}_{C --} ~\prescript{}{C}{S}_{A --}).
+\end{equation}
+Furthermore it is true that
+\begin{equation}\label{gamma_cycle}
+\Gamma_{A,B,C}=\Gamma_{B,C,A}=\Gamma^{-1}_{C,B,A}
+\end{equation}
+holds. Furthermore, the tetrahedron rule holds for all \(A,B,C\) and \(D\)
+\begin{equation}\label{gamma_tetrahedron}
+\Gamma_{B,C,D}=\Gamma_{A,C,D}\Gamma_{B,A,D} \Gamma_{B,C,A}.
+\end{equation}
+
+\end{lemma}
+
+\begin{lemma}\label{lemma:z_gamma_causal}
+For the case \(F\prec G\) one can find a relation between \(z\) and \(\Gamma\) involving just one instance of each object:
+\begin{equation}
+\partial_F \partial_G \ln \prescript{}{A}{z}_{A+F+G} = - \partial_F \partial_G \ln \Gamma_{A,A+G,A+F+G}
+\end{equation}
+
+\end{lemma}
+
+Finally we present a compact formula that connects derivatives of the current to \(\Gamma\):
+\begin{lemma}\label{lemma:current_causal}
+In the case \(F\prec G\),
+\begin{equation}
+\partial_F j_{A+F}(G)= i \partial_F \partial_G \ln \frac{\Gamma_{A,A+F,A+F+G}}{\Gamma_{A,A+G,A+F+G}}
+\end{equation}
+holds.
+\end{lemma}
+Lemma \ref{lemma:current_causal} makes it easy to see that the derivative of the current is antisymmetric with respect to \(F\) and \(G\).
+
+There is another simplification of the derivative of the current that follows from the symmetries of \(\Gamma\).
+\begin{lemma}\label{lemma:current_compact}
+For \(F\prec G\) we can simplify the result of lemma \ref{lemma:current_causal} to
+\begin{equation}
+\partial_F j_{A+F}(G)=- 2 i \partial_F \partial_G \ln \Gamma_{A,A+G,A+F} = 2 i \partial_F \partial_G \ln \prescript{}{A}{z}_{A+F+G}.
+\end{equation}
+\end{lemma}
+
+\begin{Thm}\label{thm:current_explicit}
+For \(F\prec G\), the derivative of the current can more explicitly be expressed as
+\begin{equation}
+\partial_F j_{A+F}(G)= -2  \Im \tr\left[ \left( \partial_G \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \partial_F \prescript{}{A}{S}_{A+F}\right){+-}\right].
+\end{equation}
+
+
+\end{Thm}
+
+
+
+
+\section{proofs of useful formulas}
+Proof of lemma \ref{lemma:temp_sep}: Let \(F\) and \(G\) be such that \(F\prec G\) holds. Then choose \(\Sigma\) such that \(\Sigma\) is before \(\supp G\) but after \(\supp F\). Then it follows that
+\begin{align*}
+&\prescript{}{A}{\tilde{S}}_{A+F+G}=\prescript{}{A}{\tilde{S}}_{A+G}\prescript{}{A}{\tilde{S}}_{A+F}\\
+&\iff  \tilde{U}^A_{\Sigma_{\text{in}},\Sigma_{\text{out}}} \tilde{U}^{A+F+G}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}
+= \tilde{U}^A_{\Sigma_{\text{in}},\Sigma_{\text{out}}} \tilde{U}^{A+G}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}
+ \tilde{U}^A_{\Sigma_{\text{in}},\Sigma_{\text{out}}} \tilde{U}^{A+F}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}\\
+ &\iff  \tilde{U}^{A+F+G}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}
+=  \tilde{U}^{A+G}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}
+ \tilde{U}^A_{\Sigma_{\text{in}},\Sigma_{\text{out}}} 
+ \tilde{U}^{A+F}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}\\
+ &\stackrel{\eqref{func}}{\iff}
+ \tilde{U}^{A+F+G}_{\Sigma_{\text{out}},\Sigma}
+ \tilde{U}^{A+F+G}_{\Sigma,\Sigma_{\text{in}}}=
+ \tilde{U}^{A+G}_{\Sigma_{\text{out}},\Sigma} \tilde{U}^{A+G}_{\Sigma,\Sigma_{\text{in}}}
+ \tilde{U}^A_{\Sigma_{\text{in}},\Sigma} \tilde{U}^A_{\Sigma ,\Sigma_{\text{out}}} 
+ \tilde{U}^{A+F}_{\Sigma_{\text{out}},\Sigma} \tilde{U}^{A+F}_{\Sigma,\Sigma_{\text{in}}}\\
+ &\stackrel{\eqref{loc}}{\iff}
+ \tilde{U}^{A+G}_{\Sigma_{\text{out}},\Sigma}
+ \tilde{U}^{A+F}_{\Sigma,\Sigma_{\text{in}}}= 
+ \tilde{U}^{A+G}_{\Sigma_{\text{out}},\Sigma} \tilde{U}^{A}_{\Sigma,\Sigma_{\text{in}}} 
+  \tilde{U}^A_{\Sigma_{\text{in}},\Sigma} \tilde{U}^A_{\Sigma ,\Sigma_{\text{out}}} 
+   \tilde{U}^{A}_{\Sigma_{\text{out}},\Sigma} \tilde{U}^{A+F}_{\Sigma,\Sigma_{\text{in}}}\\
+ &\iff 
+ \tilde{U}^{A+G}_{\Sigma_{\text{out}},\Sigma}
+ \tilde{U}^{A+F}_{\Sigma,\Sigma_{\text{in}}}= 
+ \tilde{U}^{A+G}_{\Sigma_{\text{out}},\Sigma}\tilde{U}^{A+F}_{\Sigma,\Sigma_{\text{in}}}.
+\end{align*}
+\qed
+
+Now we prove lemma \ref{lemma:z_temp_sep}. Let \(F \prec G\). Using definition \eqref{def:z}, as well as lemma \ref{lemma:temp_sep} which holds for \(\hat{S}\) as well (simply by inserting the proper identities) we compute
+\begin{align*}
+&\prescript{}{A+G}{z}_{A+F+G} \circ \prescript{}{A+G}{\overline{S}}_{A+F+G}
+ = \prescript{}{A+G}{\hat{S}}_{A+F+G} 
+ =\prescript{}{A+G}{\hat{S}}_A \prescript{}{A}{\hat{S}}_{A+F+G}\\
+&\stackrel{ F\prec G}{=} \prescript{}{A+G}{\hat{S}}_{A}
+ ~\prescript{}{A}{\hat{S}}_{A+G} ~\prescript{}{A}{\hat{S}}_{A+F}
+ = \prescript{}{A}{\hat{S}}_{A+F}
+ = \prescript{}{A}{z}_{A+F}\circ \prescript{}{A}{\overline{S}}_{A+F}.
+\end{align*}
+Now by evaluation \(\prescript{}{A+F+G}{\overline{S}}_{A+G} ~\prescript{}{A}{\overline{S}}_{A+F}\)  we find the relation between the appearing phases. By a computation analogous to the one we just did for the one-particle scattering operator we see that the left-operation part of this operator is just the identity. The right-operation may still contribute a determinant; however, since \(\overline{S}\) is unitary the determinant may only be a phase. Therefore we see that
+\begin{align*}
+&\prescript{}{A+G}{z}_{A+F+G} ~\prescript{}{A+F}{z}_{A} 
+= \text{argdet}((\prescript{}{A+F}{S}_A)_{--} (\prescript{}{A+G}{S}_{A+F+G})_{--})\\
+&= \text{argdet}((\prescript{}{A+F}{S}_A)_{--} (\prescript{}{A+G}{S}_A ~ \prescript{}{A}{S}_{A+F+G})_{--})
+= \text{argdet}((\prescript{}{A+F}{S}_A)_{--} ( \prescript{}{A}{S}_{A+F})_{--})\\
+&= \text{argdet}((\prescript{}{A+F}{S}_A)_{--} ( \prescript{}{A+F}{S}_{A})^*_{--})=1
+\end{align*}
+holds.
+\qed
+
+Now for lemma \ref{lemma:gamma}. Formula \eqref{gamma_by_argdet} can be seen from the definition of \(\Gamma\) by taking the vacuum expectation value. Formula \(\eqref{gamma_cycle}\) can directly be seen form the definition of \(\Gamma\). We prove \eqref{gamma_to_z}, by observing that
+\begin{equation}
+\prescript{}{A}{\tilde{S}}_{C}= \prescript{}{A}{\tilde{S}}_{B} ~\prescript{}{B}{\tilde{S}}_{C}
+\end{equation}
+holds, therefore it also holds for \(\hat{S}\). Inserting definitions \eqref{def:z} and \eqref{def:gamma} yields
+\begin{equation}
+\prescript{}{A}{z}_{C} \circ \prescript{}{A}{\overline{S}}_{C}= 
+\prescript{}{A}{z}_{B}~ \prescript{}{B}{z}_{C} \circ \prescript{}{A}{\overline{S}}_{B}~\prescript{}{B}{\overline{S}}_{C}
+\end{equation}
+and
+\begin{equation}
+\prescript{}{A}{z}_{C} ~\prescript{}{B}{z}_{A}~\prescript{}{C}{z}_{B} \circ \mathds{1}= \prescript{}{A}{\overline{S}}_B ~ \prescript{}{B}{\overline{S}}_C ~\prescript{}{C}{\overline{S}}_A
+=\Gamma^{-1}_{A,B,C}. 
+\end{equation}
+Rearranging yields \eqref{gamma_to_z}. For the tetrahedron rule we simply insert \eqref{gamma_to_z} into the right hand side and get
+\begin{align*}
+&\Gamma_{A,C,D} \Gamma_{B,A,D} \Gamma_{B,C,A}
+= \prescript{}{A}{z}_{C} ~\prescript{}{C}{z}_{D}~\prescript{}{D}{z}_{A} ~
+\prescript{}{B}{z}_{A} ~\prescript{}{A}{z}_{D}~\prescript{}{D}{z}_{B}~
+\prescript{}{B}{z}_{C} ~\prescript{}{C}{z}_{A}~\prescript{}{A}{z}_{B}\\
+&= \prescript{}{C}{z}_{D}~
+\prescript{}{D}{z}_{B}~
+\prescript{}{B}{z}_{C} =\Gamma_{B,C,D}.
+\end{align*}
+
+\qed
+
+Now to prove lemma \ref{lemma:z_gamma_causal}. Let again \(F\prec G\) be true. By adding terms which vanish after splitting products into sums in the logarithm and application of derivatives we obtain
+\begin{equation*}
+\partial_F \partial_G \ln \prescript{}{A}{z}_{A+F+G} = - \partial_F \partial_G \ln \prescript{}{A+F+G}{z}_A ~\prescript{}{A}{z}_{A+G} ~\prescript{}{A}{z}_{A+F}.
+\end{equation*}
+Modifying the last factor by \eqref{z_temp_sep} yields
+\begin{align*}
+\partial_F \partial_G \ln \prescript{}{A}{z}_{A+F+G} = -\partial_F \partial_G \ln \prescript{}{A+F+G}{z}_A ~\prescript{}{A}{z}_{A+G} ~ \prescript{}{A+G}{z}_{A+F+G} = - \partial_F \partial_G \ln \Gamma_{A,A+G,A+F+G}.
+\end{align*}
+\qed
+
+We come to the proof of lemma \ref{lemma:current_causal}. Let \(F\prec G\) be true. we start with the definition of the current:
+\begin{align*}
+j_A(G)= i \partial_G \left\langle  \bigwedge \Phi, \prescript{}{A}{\tilde{S}}_{A+G} \bigwedge \Phi\right\rangle
+\end{align*}
+Now we take the derivative of this expression and insert the definition of \(z\)
+\begin{align*}
+\partial_F j_{A+F}(G)=i \partial_F \partial_G \prescript{}{A+F}{z}_{A+F+G} \left\langle  \bigwedge \Phi, \prescript{}{A+F}{\overline{S}}_{A+F+G} \bigwedge \Phi\right\rangle.
+\end{align*}
+As the expression which we take derivatives of is equal to \(1\) at \(G=0\) and the linearisation of the logarithm around \(1\) is the identity we can safely insert a logarithm, yielding
+\begin{align*}
+\partial_F j_{A+F}(G)=i \partial_F \partial_G \ln \prescript{}{A+F}{z}_{A+F+G} \left\langle  \bigwedge \Phi, \prescript{}{A+F}{\overline{S}}_{A+F+G} \bigwedge \Phi\right\rangle.
+\end{align*}
+This will greatly simplify the upcoming calculations. Next we insert the relation between \(\Gamma_{A+F,A+F+G,A}\) and \(z\) using \(\prescript{}{A}{z}_{A+F}\) with respect to \(G\) vanishes, \eqref{gamma_to_z} giving
+\begin{align*}
+\partial_F j_{A+F}(G)=i \partial_F \partial_G \ln  \prescript{}{A}{z}_{A+F+G} \Gamma_{A+F,A+F+G,A} \left\langle  \bigwedge \Phi, \prescript{}{A+F}{\overline{S}}_{A+F+G} \bigwedge \Phi\right\rangle.
+\end{align*}
+Now we insert the identity twice inside the scalar product
+\begin{align}\tag*{}
+&\partial_F j_{A+F}(G)=i \partial_F \partial_G \ln  \prescript{}{A}{z}_{A+F+G} \Gamma_{A+F,A+F+G,A} \\
+&\left\langle  \bigwedge \Phi, \prescript{}{A+F}{\overline{S}}_A~ \prescript{}{A}{\overline{S}}_{A+F}~ \prescript{}{A+F}{\overline{S}}_{A+F+G}~ \prescript{}{A+F+G}{\overline{S}}_{A} ~\prescript{}{A}{\overline{S}}_{A+F+G}  \bigwedge \Phi\right\rangle.
+\end{align}
+The central three occurrence of \(\overline{S}\) give \(\Gamma^{-1}_{A,A+F,A+F+G}\) cancelling exactly the gamma factor in front after cyclic permutation. As a next step we evaluate the scalar product. Since the operators \(\overline{S}\) are unitary this yields the argument of a determinant:
+\begin{align*}
+&\left \langle  \bigwedge \Phi, \prescript{}{A+F}{\overline{S}}_A ~\prescript{}{A}{\overline{S}}_{A+F+G}  \bigwedge \Phi\right\rangle\\
+&=\left\langle  \bigwedge \Phi, \mathcal{L}_{\prescript{}{A+F}{S}_A} \mathcal{R}_{(\prescript{}{A}{S}_{A+F})_{--}} \mathcal{L}_{\prescript{}{A}{S}_{A+F+G}} \mathcal{R}_{(\prescript{}{A+F+G}{S}_A)_{--}} \bigwedge \Phi \right\rangle \frac{1}{N}\\
+&=\left\langle  \bigwedge \Phi,  \mathcal{L}_{\prescript{}{A+F}{S}_A~\prescript{}{A}{S}_{A+F+G}} \mathcal{R}_{(\prescript{}{A+F+G}{S}_A)_{--}~(\prescript{}{A}{S}_{A+F})_{--}} \bigwedge \Phi \right\rangle \frac{1}{N}\\
+&=\left\langle  \bigwedge \Phi,  \mathcal{L}_{\prescript{}{A+F}{S}_{A+F+G}} \bigwedge \Phi (\prescript{}{A+F+G}{S}_A)_{--}~(\prescript{}{A}{S}_{A+F})_{--} \right\rangle \frac{1}{N}\\
+&=\text{argdet}((\prescript{}{A+F}{S}_{A+F+G})_{--}(\prescript{}{A+F+G}{S}_A)_{--}~(\prescript{}{A}{S}_{A+F})_{--}),
+\end{align*}
+which is, by \eqref{gamma_by_argdet}, given by
+\begin{equation}
+\left \langle  \bigwedge \Phi, \prescript{}{A+F}{\overline{S}}_A ~\prescript{}{A}{\overline{S}}_{A+F+G}  \bigwedge \Phi\right\rangle = \Gamma_{A,A+F,A+F+G}.
+\end{equation}
+Taking all of this together yields
+\begin{align*}
+&\partial_F j_{A+F}(G)=i \partial_F \partial_G \ln  \prescript{}{A}{z}_{A+F+G} \Gamma_{A,A+F,A+F+G}.
+\end{align*}
+Now we replace the appearance of \(z\) using lemma \ref{lemma:z_gamma_causal}, giving
+\begin{equation}
+\partial_F j_{A+F}(G)=i \partial_F \partial_G \ln \frac{\Gamma_{A,A+F,A+F+G}}{\Gamma_{A,A+G,A+F+G}}.
+\end{equation}
+\qed
+
+Now for lemma \ref{lemma:current_compact}. We will show the first equality, the second follows by lemma \ref{lemma:z_gamma_causal}. For this proof we abbreviate, for variables \(a,b,c,\overline{a},\overline{b},\overline{b}\in \mathbb{R}\), \(x:=((a,\overline{a}),(b,\overline{b}),(c,\overline{c}))\)
+\begin{equation}
+f(x):=f((a,\overline{a}),(b,\overline{b}),(c,\overline{c})):=\ln \Gamma_{A+a\cdot F+\overline{a}\cdot G,A+b\cdot F+\overline{b}\cdot G,A+c\cdot F+\overline{c} \cdot G}.
+\end{equation}
+Now we are interested in 
+\begin{align}\tag*{}
+&\partial_F\partial_G\ln \Gamma_{A,A+F,A+F+G} 
+= \partial_\varepsilon \partial_\delta f((0,0),(\varepsilon,0),(\varepsilon,\delta))\\ \label{current_compact_first_half}
+& = (\partial_b + \partial_c)\partial_{\overline{c}} \left.f(x)\right|_{x=0}
+ =\partial_b \partial_{\overline{c}} \left. f(x)\right|_{x=0}.
+\end{align}
+The last equality holds due to \(f((a,\overline{a}),(b,\overline{b}),(c,\overline{c}))=-f((b,\overline{b}),(a,\overline{a}),(c,\overline{c}))\), which implies
+\begin{equation}
+\partial_c \partial_{\overline{c}} f(x)|_{x=0}=-\partial_c \partial_{\overline{c}} f(x)|_{x=0}=0.
+\end{equation}
+For the very same reason we conclude
+\begin{align*}
+&-\partial_F \partial_G \ln \Gamma_{A,A+G,A+F+G} 
+= - \partial_\varepsilon \partial_\delta f((0,0),(0,\delta),(\varepsilon,\delta))\\
+&= - \partial_c (\partial_{\overline{b}} + \partial_{\overline{c}}) f(x)|_{x=0}
+= - \partial_c \partial_{\overline{b}} f(x)|_{x=0}
+= \partial_b \partial_{\overline{c}} f(x)|_{x=0},
+\end{align*}
+where the last equality follows again from the antisymmetry of \(f\). We conclude
+\begin{equation}
+-\partial_F \partial_G \ln \Gamma_{A,A+G,A+F+G} =\partial_F\partial_G\ln \Gamma_{A,A+F,A+F+G} .
+\end{equation}
+and thereby the lemma.\qed
+
+We will now continue with the proof of theorem \ref{thm:current_explicit}. The major part of this proof is contained in the following auxiliary
+
+\begin{lemma}
+For operators 
+\begin{align*}
+&A: \mathbb{R}\rightarrow \left( \mathcal{H}\rightarrow\mathcal{H}\right)\\
+&B: \mathbb{R}^2 \rightarrow \left( \mathcal{H}\rightarrow\mathcal{H}\right),
+\end{align*}
+such that \(A(\varepsilon),B(\varepsilon,\delta)\in I_1\), \(A^*=A\),\(B(\varepsilon,0)^*=B^*(\varepsilon,0)\) and \(A(0)=0=B(\varepsilon,0)\) for all \(\varepsilon,\delta\in\mathbb{R}\) hold, 
+\begin{equation}
+\partial_\delta \partial_\varepsilon \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] 
+= i \Im \tr D_1 D_2 B(x)|_{x=0}
+\end{equation}
+is true.
+\end{lemma}
+Proof of the lemma: We use corollary \ref{corollary:phase'} to find
+\begin{align*}
+&\partial_\varepsilon \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] 
+= \frac{\partial_\varepsilon \text{argdet}[1+A(\varepsilon) + B(\varepsilon,\delta)]}{\text{argdet}[1+A(0)+B(0,\delta)}\\
+&=i \frac{\text{argdet}[1+B(0,\delta)]}{\text{argdet}[1+B(0,\delta)]} \Im \left[ \frac{\text{argdet}[1+B(0,\delta)]^* \partial_\varepsilon \text{argdet}[1+A(\varepsilon)+B(\varepsilon,\delta)]}{\text{argdet}[1+B(0,\delta)]^2}\right]\\
+&=i \Im \left[ \frac{\text{argdet}[1+B(0,\delta)] \partial_\varepsilon \text{argdet}[1+A(\varepsilon)+B(\varepsilon,\delta)]}{\text{argdet}[1+B(0,\delta)]^2}\right]\\
+&=i \Im \left[ \frac{\partial_\varepsilon \text{argdet}[1+A(\varepsilon)+B(\varepsilon,\delta)]}{\text{argdet}[1+B(0,\delta)]}\right].
+\end{align*}
+Now we use that the linearisation of the determinant around the identity equal to the trace is. This yields
+\begin{equation}
+\partial_\varepsilon \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] 
+=i \Im \left[ \frac{ \tr [\partial_\varepsilon A(\varepsilon)+\partial_\varepsilon B(\varepsilon,\delta)]}{\text{argdet}[1+B(0,\delta)]}\right].
+\end{equation}
+Inserting the second derivative simplifies the expression after one recognizes that the second summand inside the imaginary part is real, since its a product of derivatives of selfadjoint traceclass operators. The corresponding calculation is
+\begin{align*}
+&\partial_{\delta} \partial_{\varepsilon} \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] \\
+&=i \Im \left[ \tr \partial_{\delta}\partial_{\varepsilon} B(\varepsilon,\delta) - \frac{\tr[\partial_{\varepsilon}A(\varepsilon) + \partial_{\varepsilon} B(\varepsilon,0)]}{\det(1+B(0,0))} \tr[\partial_{\delta} B(0,\delta)]\right]\\
+&=i \Im \left[ \tr \partial_{\delta}\partial_{\varepsilon} B(\varepsilon,\delta) - \tr[\partial_{\varepsilon}A(\varepsilon)] \tr[\partial_{\delta} B(0,\delta)]\right]\\
+&=i \Im \left[ \tr \partial_{\delta}\partial_{\varepsilon} B(\varepsilon,\delta) \right],
+\end{align*}
+where we used that \(B(0,\delta)\) is selfadjoint and \(B(\varepsilon,0)=0\). This concludes the proof of the lemma.
+
+
+
+\end{document}

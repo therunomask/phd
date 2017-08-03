@@ -1,0 +1,45 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+estimation of spectral norm of the repeated factor that disrupts the convolution structure of the kth term in the expansion of the S matrix
+
+\begin{multline}%include slash notation
+\left\|\frac{\slash{p}+m}{p^2-m^2}\right\|_{\text{spec}}=\left\|\frac{\gamma^\alpha p_\alpha+m}{p^2-m^2}\right\|_{\text{spec}}
+=\left\|\frac{\gamma^\alpha \lambda_\alpha -i\epsilon \gamma^0 +m}{\lambda^2-m^2 -2i \epsilon \lambda^0 -\epsilon^2}\right\|_{\text{spec}}
+\\=\frac{\left\|\gamma^\alpha \lambda_\alpha -i\epsilon \gamma^0 +m\right\|_{\text{spec}}}{\sqrt{(\lambda^2-m^2  -\epsilon^2)^2+4 \epsilon^2 \left(\lambda^0\right)^2}}
+=\frac{\epsilon\left\|\gamma^\alpha \frac{\lambda_\alpha}{\epsilon} -i \gamma^0 +\frac{m}{\epsilon}\right\|_{\text{spec}}}{\epsilon^2\sqrt{\left(\left(\frac{\lambda}{\epsilon}\right)^2-\left(\frac{m}{\epsilon}\right)^2  -1\right)^2+4  \left(\frac{\lambda^0}{\epsilon}\right)^2}}
+\\\rightarrow^{\epsilon\rightarrow\infty}_{\frac{\lambda}{\epsilon}=\text{const}}\text{overtext...} =\frac{\left\|\gamma^\alpha z_\alpha -i \gamma^0 \right\|_{\text{spec}}}{\epsilon\sqrt{\left(z^2  -1\right)^2+4  \left(z^0\right)^2}}
+\end{multline}
+now continue to estimate the resulting expression maximizing over z
+
+\begin{multline}
+\frac{\left\|\gamma^\alpha z_\alpha -i \gamma^0 \right\|_{\text{spec}}}{\sqrt{\left(z^2  -1\right)^2+4  \left(z^0\right)^2}}
+\le \frac{\left\|\gamma^\alpha z_\alpha \right\|_{\text{spec}} +\left\| \gamma^0 \right\|_{\text{spec}}}{\sqrt{\left(z^2  -1\right)^2+4  \left(z^0\right)^2}}
+\le \frac{4 \| z\| +1}{\sqrt{\left(z^2  -1\right)^2+4  \left(z^0\right)^2}}
+\\= \frac{4 \| z\| +1}{\sqrt{\left(z^2\right)^2  +1+2  \left\|z\right\|^2}}
+\le \frac{4 \| z\| +1}{\sqrt{1+2  \left\|z\right\|^2}}\le 2\sqrt{2}
+\end{multline}
+
+,where the last estimation follows from analyzing the differentiation of the second but last expression with respect to \(\| z \|\):
+
+\end{document}
+

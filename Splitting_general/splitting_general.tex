@@ -1,0 +1,216 @@
+\documentclass[oneside,reqno,12pt]{amsart}
+
+%\usepackage{fontspec}
+
+\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+%\setmainfont{YuMincho}
+%Hiragino Maru Gothic ProN
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+\usepackage{mathabx}
+\usepackage{mathtools}
+\usepackage{dsfont}
+
+
+\setcounter{secnumdepth}{5}
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+%picture
+\usepackage{wrapfig}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+  
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+
+
+\newcommand{\Z}[2]{Z_{\stackrel{1}{#1}}\left(#2\right)}
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\Dirk}[1]{ \todo[color=orange!60]{Dirk: #1} }
+\newcommand{\DirkBox}[1]{ \mbox{}\todo[inline,caption={},color=red!60]{Dirk: #1} }
+\newcommand{\Markus}[1]{ \todo[color=green!20]{Markus: #1} }
+\newcommand{\dirk}{ \color{orange} }
+\newcommand{\markus}{ \color{green} }
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+\makeatletter
+
+
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2.0ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                   {-0.5ex \@plus -0.5ex \@minus -.2ex}%
+                                   {0.5em}%
+                                   {\normalfont\bfseries}}
+\renewcommand\subsubsection{\@startsection {subsubsection}{1}{\z@}%
+                                   {-0.3ex \@plus -0.4ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\sc}}  
+\renewcommand\paragraph{\@startsection {paragraph}{1}{\z@}%
+                                   {-0.2ex \@plus -1ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\it}}                                   
+\makeatother
+
+\parindent 0cm
+
+
+\begin{document}
+
+We begin with a bit of notation:
+\begin{Def} We will be working in the spaces
+\begin{equation}
+\mathcal{D}:=C_c^\infty(\mathbb{R}^4,\mathbb{R}^4),
+\end{equation}
+\begin{align}\tag*{}
+&\mathcal{D}':=\mathcal{D}'(B_1(0)\cap \text{Causal}):=\\
+ \{L:\mathcal{D}\rightarrow \mathbb{C}\mid L &\text{ is linear and bounded}\wedge \supp L \subseteq B_1(0)\cap \text{Causal} \}.
+\end{align}
+For \(n\in\mathbb{N}_0\) we furthermore introduce
+\begin{align}
+\mathcal{D}^n:=(\mathcal{D},\|\cdot \|:= \sum_{|\alpha|\le n} \|D^\alpha \cdot \|_{\infty}),
+\end{align}
+\begin{align}
+{\mathcal{D}^n}':= (\mathcal{D}',\|\cdot \|'_n ,
+\end{align}
+and for \(k\in\mathbb{N}_0\) we introduce
+\begin{equation}
+\mathcal{D}_k:=\{F\in\mathcal{D}\mid \forall \alpha, |\alpha|\le k: D^\alpha F(0)=0\}
+\end{equation}
+and \(\mathcal{D}^n, {\mathcal{D}^n}'\) are analogously defined. 
+\end{Def}
+We now choose fixed (but arbitrary) functions \(\chi\in C^\infty(\mathbb{R}^4,\mathbb{R})\) and \( \eta\in C_c^\infty(\mathbb{R}^4,\mathbb{R})\), which fulfil
+\begin{align*}
+&\supp \eta\subseteq B_1(0) \wedge \forall x \in B_{1/2}(0): \eta (x)=1\\
+&\forall \lambda\in\mathbb{R}, \forall x \in \mathbb{R}^4: \chi (\lambda x ) = \chi(x)\wedge (x^2>0\wedge x^0>0 \Rightarrow \chi(x)=1)\\
+& \forall x\in\mathbb{R}^4: \left(2 (x^0)^2-  {\vec{x}}^2\le 0 \Rightarrow \chi(x)=0\right)\wedge (x^0 \le 0\Rightarrow \chi(x)=0).
+\end{align*}
+Furthermore we define for any \(\varepsilon>0\),  \(\eta_\varepsilon : x\mapsto \eta\left(\frac{x}{\varepsilon}\right)\)
+and the splitting of test-functions:
+\begin{Def} for any \(k,m,n\in\mathbb{N}_0,\varepsilon>0\)
+\begin{align}\tag*{}
+\text{Split}_{k,\varepsilon}:\mathcal{D}_k^m\rightarrow \mathcal{D}^n\\
+F\mapsto \chi (1-\eta_\varepsilon) F.
+\end{align}
+\end{Def}
+
+The main result of this document is 
+\begin{Thm}\label{testFunctionSplitting}
+For all \(k,m,n\in\mathbb{N}_0\) such that \(n+1\le k\le m\) is fulfilled, \(\text{split}_{k,\varepsilon}\) has for \(\varepsilon\rightarrow 0 \) the Cauchy-property in the topology induced by \(\|\cdot\|_{\mathcal{D}_k^m\rightarrow \mathcal{D}^n}\), meaning that 
+\begin{equation}\label{cauchy}
+\forall \delta>0, \exists E>0: \forall \varepsilon,\tilde{\varepsilon}<E: \sup_{\stackrel{\|F\|_m\le 1}{F\in \mathcal{D}_k^m}} \| \text{Split}_{k,\varepsilon} [F] - Split_{k,\tilde{\varepsilon}}[F]\|_n < \delta
+\end{equation}
+is fulfilled. Therefore the operator
+\begin{equation}
+\text{split}_k:=\lim_{\varepsilon\rightarrow 0 } \text{split}_{k,\varepsilon}:\mathcal{D}_k^m\rightarrow \hat{\mathcal{D}}^n
+\end{equation}
+exists and is bounded, where we denoted the completion of \(\mathcal{D}\) by \(\hat{\mathcal{D}}\).
+\end{Thm}
+Proof of theorem \ref{testFunctionSplitting}: Let \(k,m,n\in\mathbb{N}_0\) be such that \(n+1\le k \le m\) holds. Let 
+\(\delta>0\), \(F\in\mathcal{D}_k^m\) and \(\tilde{\varepsilon}\le \varepsilon<E\). We will choose \(E\) in hindsight, but independent of \(\varepsilon\) and \(\tilde{\varepsilon}\). We would like to estimate the left hand side of \eqref{cauchy}. There are constants \(C_1>0\) depending on \(n\) such that for all multiindices \(|\alpha|\le n\)
+\begin{align}\label{cauchy_firstEstimate}
+D^\alpha [\chi (\eta_{\tilde{\varepsilon}}-\eta_\varepsilon) F< C_1 \sum_{\stackrel{\beta,\gamma,\xi\in\mathbb{N}_0^4}{\beta+\gamma+\xi = \alpha}} \left| D^\beta \chi D^\gamma (\eta_{\tilde{\varepsilon}}-\eta_\varepsilon) D^{\xi} F\right|
+\end{align}
+holds. We continue by considering each factor separately. For the test function we can estimate for all \(|\xi|\le m\) by Taylors theorem, note that \(F\in \mathcal{D}_k^m\), for more than one dimension
+\begin{align*}
+|D^\xi F(x)| =\left|(k+1-|\tau|) \sum_{|\tau|=k-|\xi|} \frac{x^\tau}{\tau!} \int_0^1 (1-s)^{k-|\xi|} D^{\tau+|\xi|} F(s x)\mathrm{d}s\right|\\
+\le \sum_{|\tau|=k-|\xi|} \left| \frac{x^\tau}{\tau!} \right|  \left\|D^{\alpha+\xi} F\right\|_\infty,
+\end{align*}
+therefore we find for all \(x\in \mathbb{R}^4\):
+\begin{equation}\label{CauchyEstimate1}
+|D^\xi F(x)| \le C_2 \|x\|^{k-|\xi|} \|F\|_k,
+\end{equation}
+for some constant \(C_2>0\) depending on \(n\).
+In order to estimate \(\chi\) we exploit homogeneity. We find for \(\lambda>0\), \(x\in\mathbb{R}^4\)
+\begin{equation*}
+D^\beta \chi(x)=D^\beta \chi(\lambda x) = \lambda^{|\beta|} D^\beta_x \chi(\lambda x).
+\end{equation*}
+Since the derivatives of \(\chi\) are continuous their restriction to the unit sphere is bounded. By letting \(\lambda = \|x\|\) we arrive at
+\begin{equation}\label{CauchyEstimate2}
+\left| D^\beta \chi (x)\right| \le C_3 \|x\|^{-|\beta|},
+\end{equation}
+for a constant \(C_3>0\) depending on \(n\) and \(\chi\). For the estimate of \(\eta\) we split the term up in the case \(\gamma=0\) and its opposite yielding for \(x\in\mathbb{R}^4\)
+\begin{align}\tag*{}
+&\left|D^\gamma (\eta_{\varepsilon}-\eta_{\tilde{\varepsilon}})\right| (x)= 
+\left|D^\gamma \left(\eta \left(\frac{x}{\tilde{\varepsilon}}\right)- \eta \left(\frac{x}{\varepsilon}\right)\right)\right|\\ \label{CauchyEstimate3}
+&\le \left\{ \begin{matrix}
+\mathds{1}_{B_\varepsilon(0)\backslash B_{\tilde{\varepsilon}}(0)}(x) \quad &\text{for }\gamma=0\\
+C_4 [\tilde{\varepsilon}^{-|\gamma|} \mathds{1}_{B_{\tilde{\varepsilon}}(0)\backslash B_{\tilde{\varepsilon}/2}(0)}
++\varepsilon^{-|\gamma|} \mathds{1}_{B_{\varepsilon}(0)\backslash B_{\varepsilon/2}(0)}] &\text{for } \gamma \neq 0,
+\end{matrix}  \right.
+\end{align}
+for some constant \(C_4>0\) depending on \(\eta\). We will now estimate \eqref{cauchy_firstEstimate}, it suffices to pick \(x\in B_1(0)\). We split the term for \(\alpha,\gamma,\beta,\xi \in\mathbb{N}^4\) conditional on \(\gamma\) as follows
+\begin{align}\tag*{}
+&\left| D^\alpha [\chi (\eta_{\tilde{\varepsilon}}-\eta_\varepsilon]F](x)\right|\\ \label{cauchy_A} \tag{A}
+&\le C_1 \left| \sum_{\stackrel{\beta,\xi\in\mathbb{N}_0^4}{\beta+\xi = \alpha}} D^\beta \chi (x) (\eta_{\tilde{\varepsilon}}-\eta_{\varepsilon})(x) D^\xi F(x)\right|\\ \label{cauchy_B} \tag{B}
+&+ C_1 \left| \sum_{\stackrel{\beta,\gamma, \xi\in\mathbb{N}_0^4}{\beta+\gamma+\xi = \alpha,\gamma\neq 0}} D^\beta \chi (x) D^\gamma (\eta_{\tilde{\varepsilon}}-\eta_{\varepsilon})(x) D^\xi F(x)\right|
+\end{align}
+
+Let for term \eqref{cauchy_A}, \(l\in \mathbb{N}_0\) such that \(\|x\|\in ]2^{-(l+1)},2^{-l}] \subseteq B_\varepsilon(0)\) holds. Using estimates \eqref{CauchyEstimate1}, \eqref{CauchyEstimate2} and \eqref{CauchyEstimate3} we find
+\begin{align*}
+\eqref{cauchy_A} \le C_1 \mathds{1}_{B_\varepsilon(0)\backslash B_{\tilde{\varepsilon}}(0)}(x) \sum_{\stackrel{\beta,\xi\in\mathbb{N}^4_0}{\beta+\xi=\alpha}}  \left| D^\beta \chi(x)\right| \left| D^\xi F(x)\right|\\
+\le C_1C_2 C_3 \|F\|_k \sum_{\stackrel{\beta,\xi\in\mathbb{N}^4_0}{\beta+\xi=\alpha}} 2^{(l+1)|\beta|} 2^{-l (k-|\xi|)}
+=   C_1 C_2 C_3 C_5/2 \|F\|_k 2^{-l (k-|\alpha|} \\
+\le  C_1 C_2 C_3 C_5/2 \|F\|_k 2^{-l} \le    C_1 C_2 C_3 C_5 \|F\|_k \|x\| \le  C_1 C_2 C_3 C_5 \|F\|_k \varepsilon,
+\end{align*}
+where the \(n\) dependent constant \(C_5\) was introduced and \(k\ge n+1 \ge 1+ |\alpha|\) was exploited. 
+Now for the second Term, we split \eqref{cauchy_B} again into two terms, (Ba) containing \(\eta_\varepsilon\) and (Bb) other containing \(\eta_{\tilde{\varepsilon}}\). The estimate goes as follows
+\begin{align*}
+(\text{Ba})\le C_1 C_2 C_3 C_4 \|F\|_k \sum_{\stackrel{\beta,\gamma, \xi\in\mathbb{N}_0^4}{\beta+\gamma+\xi = \alpha,\gamma\neq 0}} \|x\|^{-|\beta|}  \varepsilon^{-\gamma} \mathds{1}_{B_{\varepsilon}(0)\backslash B_{\varepsilon/2}(0)} \|x\|^{k-|\xi|}\\
+\le C_1 C_2 C_3 C_4\|F\|_k \sum_{\stackrel{\beta,\gamma, \xi\in\mathbb{N}_0^4}{\beta+\gamma+\xi = \alpha,\gamma\neq 0}} \varepsilon^{-|\beta|} 2^{|\beta|}  \varepsilon^{-\gamma} \mathds{1}_{B_{\varepsilon}(0)\backslash B_{\varepsilon/2}(0)}(x) \varepsilon^{k-|\xi|}\\
+\le C_1 C_2 C_3 C_4 C_6 \|F\|_k \varepsilon^{k-|\alpha|}\le  C_1 C_2 C_3 C_4 C_6 \|F\|_k \varepsilon,
+\end{align*}
+with some \(n\) dependent \(C_6\). The very same estimate with \(\varepsilon\) replaced by \(\tilde{\varepsilon}\) holds for (Bb). Taking all this together and choosing 
+\begin{equation}
+E\le \frac{\delta}{C_1 C_2 C_3 C_4 (C_5+2C_6)}
+\end{equation}
+yields the claim. \qed
+
+
+
+
+\end{document}

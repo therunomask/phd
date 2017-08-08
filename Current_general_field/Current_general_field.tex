@@ -216,13 +216,6 @@ We also introduce a notation for  general complex numbers
 \end{Def}
 \section{useful formulas}
 
-Since most of the time we work with the \(\text{arg}\) of complex numbers it is worth noting that
-\begin{Corollary}\label{corollary:phase'}
-\begin{equation}
-\forall z:\mathbb{R}\rightarrow \mathbb{C}: \left( \frac{z}{|z|}\right)'=  i \frac{z}{|z|} \Im \frac{ z^* z'}{|z|^2}
-\end{equation}
-\end{Corollary}
-holds. 
 
 
 \begin{lemma}\label{lemma:temp_sep}
@@ -292,7 +285,7 @@ For \(F\prec G\), the derivative of the current can more explicitly be expressed
 \begin{equation}
 \partial_F j_{A+F}(G)= -2  \Im \tr\left[ \left( \partial_G \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \partial_F \prescript{}{A}{S}_{A+F}\right){+-}\right].
 \end{equation}
-
+\Markus{todo: understand better why the off-diagonal parts plus all of their derivatives are Hilbert-Schmidt operators}
 
 \end{Thm}
 
@@ -474,6 +467,15 @@ such that \(A(\varepsilon),B(\varepsilon,\delta)\in I_1\), \(A^*=A\),\(B(\vareps
 \end{equation}
 is true.
 \end{lemma}
+Now follows a corollary which we will not prove.
+Since most of the time we work with the \(\text{arg}\) of complex numbers it is worth noting that
+\begin{Corollary}\label{corollary:phase'}
+\begin{equation}
+\forall z:\mathbb{R}\rightarrow \mathbb{C}\backslash \{0\}: \left( \frac{z}{|z|}\right)'=  i \frac{z}{|z|} \Im \frac{ z'}{z}
+\end{equation}
+\end{Corollary}
+holds. 
+
 Proof of the lemma: We use corollary \ref{corollary:phase'} to find
 \begin{align*}
 &\partial_\varepsilon \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] 
@@ -495,6 +497,24 @@ Inserting the second derivative simplifies the expression after one recognizes t
 &=i \Im \left[ \tr \partial_{\delta}\partial_{\varepsilon} B(\varepsilon,\delta) \right],
 \end{align*}
 where we used that \(B(0,\delta)\) is selfadjoint and \(B(\varepsilon,0)=0\). This concludes the proof of the lemma.
+
+So we start out with the most recent result about \(\partial_F j_{A+F}(G)\), use lemma \ref{lemma:gamma} and manipulate the appearing projections to bring it in a form that more explicitly has a determinant:
+\begin{align*}
+&\partial_F \partial_G \ln \Gamma_{A,A+G,A+F+G} =
+\partial_F \partial_G \ln \text{argdet} \left( \prescript{}{A}{S}_{A+G}\right)_{--} \left( \prescript{}{A+G}{S}_{A+F}\right)_{--} \left( \prescript{}{A+F}{S}_{A}\right)_{--}\\
+=\partial_F& \partial_G \ln \text{argdet} \left[ \left( \prescript{}{A}{S}_{A+F}\right)_{--}\left(\prescript{}{A+F}{S}_A\right)_{--} - \left( \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \prescript{}{A+G}{S}_{A+F}\right)_{+-} \left( \prescript{}{A+F}{S}_{A}\right)_{--}\right]\\
+=\partial_F \partial_G & \ln \text{argdet} \left[\mathds{1}_{--}- \left( \prescript{}{A}{S}_{A+F}\right)_{-+}\left(\prescript{}{A+F}{S}_A\right)_{+-} - \left( \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \prescript{}{A+G}{S}_{A+F}\right)_{+-} \left( \prescript{}{A+F}{S}_{A}\right)_{--}\right].
+\end{align*}
+As we now take the derivative of a trace-class perturbation of the identity we can see that 1. this expression is well-defined, since the off diagonal components of the scattering matrix and its derivatives are Hilbert-Schmidt,  and 2. we can use the just derived lemma. This results in 
+
+\begin{align*}
+&\partial_F \partial_G \ln \Gamma_{A,A+G,A+F+G} =
+- i \partial_F \partial_G \Im \tr  \left( \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \prescript{}{A+G}{S}_{A+F}\right)_{+-} \left( \prescript{}{A+F}{S}_{A}\right)_{--}\\
+&=- i \Im \tr \left( \partial_G \prescript{}{A}{S}_{A+G}\right)_{-+} \left(\partial_F \prescript{}{A}{S}_{A+F}\right)_{+-},
+\end{align*}
+where the last equality follows by acknowledging that terms vanish if they contain a factor of \(\mathds{1}_{+-}\).
+The theorem follows by inserting lemma \ref{lemma:current_compact}.\qed 
+
 
 
 

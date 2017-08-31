@@ -1,0 +1,187 @@
+\documentclass[oneside,reqno,12pt]{amsart}
+
+%\usepackage{fontspec}
+
+\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+%\setmainfont{YuMincho}
+%Hiragino Maru Gothic ProN
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+\usepackage{mathabx}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\usepackage[usenames, dvipsnames]{color}
+
+\setcounter{secnumdepth}{5}
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+%picture
+\usepackage{wrapfig}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+  
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+
+
+\newcommand{\Z}[2]{Z_{\stackrel{1}{#1}}\left(#2\right)}
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\Dirk}[1]{ \todo[color=orange!60]{Dirk: #1} }
+\newcommand{\DirkBox}[1]{ \mbox{}\todo[inline,caption={},color=red!60]{Dirk: #1} }
+\newcommand{\Markus}[1]{ \todo[color=green!20]{Markus: #1} }
+\newcommand{\dirk}{ \color{orange} }
+\newcommand{\markus}{ \color{green} }
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+\makeatletter
+
+
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2.0ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                   {-0.5ex \@plus -0.5ex \@minus -.2ex}%
+                                   {0.5em}%
+                                   {\normalfont\bfseries}}
+\renewcommand\subsubsection{\@startsection {subsubsection}{1}{\z@}%
+                                   {-0.3ex \@plus -0.4ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\sc}}  
+\renewcommand\paragraph{\@startsection {paragraph}{1}{\z@}%
+                                   {-0.2ex \@plus -1ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\it}}                                   
+\makeatother
+
+\parindent 0cm
+
+
+\begin{document}
+
+\begin{equation}
+R:= -i R^0_{20} + \dot{S}^A,
+\end{equation}
+wir wählen \(\Sigma\) mit Gleichzeitigkeitsflächen, daher verschwindet \(\dot{S}^A\) (wie auf jeder Blätterung). Ab jetzt gilt 
+\(R_{20}:=R^0_{20}\).
+
+
+\begin{equation}\tag{216, ivp2}
+ \left< \phi, R_{20}(t) \psi \right> = \int_{x\in \Sigma_t} \int_{y\in \Sigma_t} \overline{\phi}(x)\i_\gamma (d^4 x) r_{20} (x,y,0) i_\gamma(d^4 y) \psi(y), \quad \psi, \phi \in \mathcal{H}_{\Sigma_t}
+\end{equation}
+
+\begin{equation}\tag{215}
+r_{20}:= r_3+r_{18}
+\end{equation}
+\begin{equation}\tag{214}
+r_{18}:= \frac{r_{24}}{8m} + \frac{i}{8m}(r_{26} + r_{29})
+\end{equation}
+
+\begin{equation}
+E_\mu:= F_{\mu,0}
+\end{equation}
+\begin{equation}
+D(w):=\frac{1}{(2\pi)^3m} \int_{\mathcal{M}^-} e^{i p w } i_p (d^4p)
+\end{equation}
+\begin{equation}
+p^{A,0}(x,y):= e^{-i\lambda^A(x,y)}p^- (z)
+\end{equation}
+\begin{equation}
+p^-(z):=\frac{-i \slashed{\partial} +m}{2m} D(z)
+\end{equation}
+\begin{equation}
+z:= y-x
+\end{equation}
+\begin{equation}
+r^2:= - (y-x)^2
+\end{equation}
+
+
+
+\begin{equation}\tag{208}
+r_{29}:= -4 \gamma^0 z^0 \slashed{E} \slashed{\partial}D
+\end{equation}
+
+\begin{equation}\tag{199}
+r_{26}:= - \gamma^0 \gamma^\mu \gamma^0 \slashed{E} \slashed{z} z_\mu  m^2 D + \gamma^0 \slashed{E} \slashed{z} z_\mu m^2 D \gamma^\mu \gamma^0
+\end{equation}
+\begin{equation}\tag{196}
+r_{24}:= r_{23}+0
+\end{equation}
+\begin{equation}\tag{194}
+r_{23}:=r_{22} + i \gamma^0 \gamma^\mu (\partial^x_{\mu} [\gamma^0 \slashed{E}]) r^2 D + 0
+\end{equation}
+\begin{equation}\tag{193}
+r_{22}:=-\gamma^0 (m + \slashed{A}(x)) [\gamma^0 \slashed{E}(x) r^2 \slashed{\partial}D] + [\gamma^0 \slashed{E}(x)r^2 \slashed{\partial}D] (m+\slashed{A}(y)) \gamma^0
+\end{equation}
+\begin{equation}\tag{181}
+r_3:= r_2 + r_7 - \frac{i}{4m} r_{16}
+\end{equation}
+\begin{equation}\tag{178}
+r_{16}:= r_{12}+r_{15}
+\end{equation}
+\begin{equation}\tag{175,173}
+r_{15}:= z^\mu \slashed{\partial} D(z)\gamma^\nu (F_{\mu,\nu}(x) - F_{\mu,\nu}(y) )\gamma^0
+\end{equation}
+\begin{equation}\tag{170}
+r_{12}:= -2 \gamma^\nu z^0 F_{\mu,\nu}(x) \partial^{\mu}D(z)
+\end{equation}
+\begin{equation}\tag{155}
+r_7:= \frac{1}{2} \gamma^0 \gamma^\nu F_{\mu,\nu}(x)z^\mu r_6 + \frac{1}{2} r_6 \gamma^\nu F_{\mu,\nu}(y)z^\mu \gamma^0 
+\end{equation}
+\begin{equation}\tag{\color{Orange}152}
+r_6:=\frac{1}{2} e^{-i \lambda^A (x,y)}D(z) + (e^{-i \lambda^A(x,y)}-1) p^-(z) 
+\end{equation}
+\begin{equation}\tag{{\color{Orange}150}}
+r_2:= \frac{1}{2} \gamma^0 r_5 (x,y) p^{A,0}(x,y) - \frac{1}{2} p^{A,0}(x,y) r_5(y,x)\gamma^0
+\end{equation}
+\begin{equation}\tag{{146}}
+r_5:= \gamma^\nu [A_\nu (y)-A_\nu(x) - (y^\mu - x^\mu) \partial^x_{\mu} A_\nu (x)]
+\end{equation}
+
+
+
+
+\end{document}

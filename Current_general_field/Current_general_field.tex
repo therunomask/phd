@@ -41,6 +41,7 @@
 
 \newtheorem{axiom}{Axiom}
 \newtheorem{Def}{Definition}[section]
+\newtheorem{DefLem}{Definition and Lemma}[section]
 \newtheorem{Conj}[Def]{Conjecture}
 \newtheorem{Thm}[Def]{Theorem}
 \newtheorem{Prp}[Def]{Proposition}
@@ -106,7 +107,7 @@ I begin with a collection of definitions and formulas useful in this setting.
 
 \section{basic definitions}
 \begin{Def}
-Throuought this document the letters \(A,B,C,G\) and \(F\) with or without indices represent four-potentials,  elements of \(C_c^\infty(\mathbb{R}^4, \mathbb{R}^4)\). Furthermore we assume that for some fixed compact \(K\subseteq \mathbb{R}^4\) all the appearing four-potentials are supported in \(K\).
+Throuought this document the letters \(A,G\) and \(F\) with or without indices represent four-potentials,  elements of \(C_c^\infty(\mathbb{R}^4, \mathbb{R}^4)\). Furthermore we assume that for some fixed compact \(K\subseteq \mathbb{R}^4\) all the appearing four-potentials are supported in \(K\).
 \end{Def}
 \begin{Def}
 Likewise the greek letter \(\Sigma\) with or without indices and with or without (multiple) \('\)s attached to it represent spacelike hypersurfaces of Minkowski spacetime.
@@ -214,6 +215,32 @@ We also introduce a notation for  general complex numbers
 \forall z\in\mathbb{C}\backslash \{0\}: \text{arg}(z) := \frac{z}{|z|}.
 \end{equation}
 \end{Def}
+
+We introduce the Greens functions of the Dirac equation.
+\begin{Def}
+For \(x\in\mathbb{R}^4\) we define
+\begin{align}
+\Delta^\pm (x):&= \frac{-1}{(2\pi)^4} \int_{\mathbb{R}^4 \pm i \varepsilon e_0} \frac{\slashed{p}+m}{p^2-m^2} e^{-ip x} d^4 p \\
+&=\pm \frac{i \slashed{\partial} +m}{2\pi} \Theta(\pm x^0) \left[ \delta(x^2) - \Theta (x^2) \frac{m}{2 \sqrt{x^2}} J_1 (m \sqrt{x^2})\right].
+\end{align}
+This function is the retarded(advanced) Greens function of the Dirac equation. (for a proof see e.g. Scharf)
+
+The difference between the two Greens functions is denoted by \(\Delta^{0}=\Delta^+-\Delta^-\).
+\end{Def}
+
+
+\begin{DefLem}\label{Def:LOperator}
+Furthermore we define components of the single particle time evolution operator. For \(\Psi \in C^\infty\left(\mathbb{R}^4, \mathbb{C}^4\right)\), define
+\begin{align}
+&L^{\pm,0}_A \Psi:= \Delta^{\pm, 0} \ast (\slashed{A} \Psi),\\
+&\Omega^{\pm}_A:= \sum_{k=0}^\infty {L^{\pm}_A}^k=\left( 1 - L_A^{\pm}\right)^{-1}\\
+&S_A := \left( \Omega_A^-\right)^{-1} \Omega_A^+ = (1-L_A^{-}) \sum_{k=0}^\infty {L^{+}_A}^k = 1+ L_A^0 \Omega^+_A\\
+&S_A^{-1} = 1- L^0_A \Omega^-_A.
+\end{align}
+\end{DefLem}
+
+
+
 \section{useful formulas}
 
 
@@ -283,13 +310,73 @@ For \(F\prec G\) we can simplify the result of lemma \ref{lemma:current_causal} 
 \begin{Thm}\label{thm:current_explicit}
 For \(F\prec G\), the derivative of the current can more explicitly be expressed as
 \begin{equation}
-\partial_F j_{A+F}(G)= -2  \Im \tr\left[ \left( \partial_G \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \partial_F \prescript{}{A}{S}_{A+F}\right){+-}\right].
+\partial_F j_{A+F}(G)= -2  \Im \tr\left[ \left( \partial_G \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \partial_F \prescript{}{A}{S}_{A+F}\right)_{+-}\right].
 \end{equation}
 \Markus{todo: understand better why the off-diagonal parts plus all of their derivatives are Hilbert-Schmidt operators}
-
 \end{Thm}
 
+%Using theorem \ref{thm:current_explicit} and definition/lemma \ref{Def:LOperator} we can rewrite the current once more
+%\begin{lemma} For \(F\prec G\) we rewrite \(\partial j\) as
+%\begin{equation}
+%\partial_F j_{A+F}(G):= - 2 \Im \tr \left[ \left(S_A^{-1} \partial_G \left( L^0_{A+G} \Omega^+_{A+G}\right)\right)_{-+}
+%\left(S_A^{-1} \partial_G \left( L^0_{A+F} \Omega^+_{A+F}\right)\right)_{+-}\right].
+%\end{equation}
+%\end{lemma}
 
+Next we want an explicit formula for the nth derivative of the current, since this will be handy in a perturbative expansion of the scattering operator. For this we need a formula for the nth derivative of \(S_A\). 
+\begin{lemma}\label{lemma:nDerivativesSMatrix}
+Using definition/lemma \ref{Def:LOperator} we find for \(n\in\mathbb{N}\)
+\begin{alignat}{2}\tag*{}
+&\left(\prod_{k=1}^n \partial_{F_k} \right) S_{A+\sum_{k=1}^n F_k} 
+= \sum_{l=1}^n &&L^0_{F_l}\Omega^+_A  \sum_{\sigma \in S(\{1,\dots,n\}\backslash\{l\})} \prod_{\stackrel{k=1}{ k\neq l}}^n \left( L^+_{F_{\sigma(k)}} \Omega^+_{A}\right)\\
+& &&+ L^0_{A} \Omega^+_A  \sum_{\sigma \in S(\{1,\dots,n\})} \prod_{k=1}^n \left(L^+_{F_{\sigma(k)}}\Omega^+_{A}\right).
+\\
+\tag*{}
+&\left(\prod_{k=1}^n \partial_{F_k} \right) S^{-1}_{A+\sum_{k=1}^n F_k} 
+= -\sum_{l=1}^n &&L^0_{F_l}\Omega^-_A  \sum_{\sigma \in S(\{1,\dots,n\}\backslash\{l\})} \prod_{\stackrel{k=1}{ k\neq l}}^n \left( L^-_{F_{\sigma(k)}} \Omega^-_{A}\right)\\
+& &&- L^0_{A} \Omega^-_A  \sum_{\sigma \in S(\{1,\dots,n\})} \prod_{k=1}^n \left(L^-_{F_{\sigma(k)}}\Omega^-_{A}\right).
+\end{alignat}
+\end{lemma}
+
+Using this lemma and lemma \ref{thm:current_explicit} we find the nth derivative of the current.
+\begin{Thm}\label{thm:GeneralDerivative}
+Using the abbreviations \(X_a:= X\backslash \{a\}\) and \(X^a:= X\cup \{a\}\) for any set \(X\) and element \(a\), we find for the current
+\begin{align*}
+&\left(\prod_{k=1}^{n+1} \partial_{F_k}\right) j_{A+\sum_{k=1}^{n+1}F_k}(F_0) 
+= -2 \sum_{\stackrel{B,C,D,E\subseteq \{1,\dots, n\}}{B\dot{\cup}C\dot{\cup}D\dot{\cup}E=\{1,\dots, n\}}}
+\Im \tr \\
+&\left[ 
+\left\{\left(\delta_{B,\emptyset} - \sum_{l\in B} L^0_{F_l} \Omega^-_A \sum_{\sigma \in S(B_l)} \prod_{b\in B_l} \left( L^-_{F_{\sigma(b)}} \Omega^-_A\right) - L^0_A \Omega^-_A \sum_{\sigma \in S(B)} \prod_{b\in B} \left( L^-_{F_{\sigma(b)}}\Omega^-_A\right)
+\right) \right.\right. \\
+&\left. \left. \left(  \sum_{l\in C^0} L^0_{F_l} \Omega^+_A \sum_{\sigma \in S(C^0_l)} \prod_{b\in C^0_l} \left( L^+_{F_{\sigma(b)}} \Omega^+_A\right) 
++ L^0_A \Omega^+_A \sum_{\sigma \in S(C^0)} \prod_{b\in C^0} \left( L^+_{F_{\sigma(b)}}\Omega^+_A\right)
+\right) \right\}_{-+}\right. \\
+&\left.  \left\{\left(\delta_{D,\emptyset} - \sum_{l\in D} L^0_{F_l} \Omega^-_A \sum_{\sigma \in S(D_l)} \prod_{b\in D_l} \left( L^-_{F_{\sigma(b)}} \Omega^-_A\right) - L^0_A \Omega^-_A \sum_{\sigma \in S(D)} \prod_{b\in D} \left( L^-_{F_{\sigma(b)}}\Omega^-_A\right)\right)\right.\right.\\
+&\left. \left. \left( \sum_{l\in E^{n+1}} L^0_{F_l} \Omega^+_A \sum_{\sigma \in S\left(E^{n+1}_l\right)} \prod_{b\in E^{n+1}_l} \left( L^+_{F_{\sigma(b)}} \Omega^+_A\right) 
+ + L^0_A \Omega^+_A \sum_{\sigma \in S\left(E^{n+1}\right)} \prod_{b\in E^{n+1}} \left( L^+_{F_{\sigma(b)}}\Omega^+_A\right)
+\right) \right\}_{+-}
+\right]
+\end{align*}
+\end{Thm}
+
+Setting \(A=0\) this expression simplifies somewhat
+\begin{Corollary}
+Using the same abbreviations as in theorem \ref{thm:GeneralDerivative} for \(A=0\) the derivatives of the current are given by
+\begin{align*}
+&\left(\prod_{k=1}^{n+1} \partial_{F_k}\right) j_{\sum_{k=1}^{n+1}F_k }(F_0) 
+= -2 \sum_{\stackrel{B,C,D,E\subseteq \{1,\dots, n\}}{B\dot{\cup}C\dot{\cup}D\dot{\cup}E=\{1,\dots, n\}}}
+\Im \tr \\
+&\left[ 
+\left\{\left(\delta_{B,\emptyset} - \sum_{l\in B} L^0_{F_l} \sum_{\sigma \in S(B_l)} \prod_{b\in B_l}  L^-_{F_{\sigma(b)}}
+\right) 
+ \left(  \sum_{l\in C^0} L^0_{F_l} \sum_{\sigma \in S(C^0_l)} \prod_{b\in C^0_l}  L^+_{F_{\sigma(b)}}
+\right) \right\}_{-+}\right. \\
+&\left.  \left\{\left(\delta_{D,\emptyset} - \sum_{l\in D} L^0_{F_l} \sum_{\sigma \in S(D_l)} \prod_{b\in D_l}  L^-_{F_{\sigma(b)}} \right)
+ \left( \sum_{l\in E^{n+1}} L^0_{F_l} \sum_{\sigma \in S\left(E^{n+1}_l\right)} \prod_{b\in E^{n+1}_l}  L^+_{F_{\sigma(b)}} 
+\right) \right\}_{+-}
+\right]
+\end{align*}
+\end{Corollary}
 
 
 \section{proofs of useful formulas}
@@ -454,20 +541,20 @@ and thereby the lemma.\qed
 
 We will now continue with the proof of theorem \ref{thm:current_explicit}. The major part of this proof is contained in the following auxiliary
 
-\begin{lemma}
+\begin{lemma}\label{lemma:Aux}
 For operators 
 \begin{align*}
 &A: \mathbb{R}\rightarrow \left( \mathcal{H}\rightarrow\mathcal{H}\right)\\
 &B: \mathbb{R}^2 \rightarrow \left( \mathcal{H}\rightarrow\mathcal{H}\right),
 \end{align*}
-such that \(A(\varepsilon),B(\varepsilon,\delta)\in I_1\), \(A^*=A\),\(B(\varepsilon,0)^*=B^*(\varepsilon,0)\) and \(A(0)=0=B(\varepsilon,0)\) for all \(\varepsilon,\delta\in\mathbb{R}\) hold, 
+such that \(A(\varepsilon),B(\varepsilon,\delta)\in I_1\), \(A^*=A\),\(B(\varepsilon,0)=B^*(\varepsilon,0)\) and \(A(0)=0=B(\varepsilon,0)\) for all \(\varepsilon,\delta\in\mathbb{R}\) hold, 
 \begin{equation}
 \partial_\delta \partial_\varepsilon \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] 
 = i \Im \tr D_1 D_2 B(x)|_{x=0}
 \end{equation}
 is true.
 \end{lemma}
-Now follows a corollary which we will not prove.
+We mention a corollary which we will not prove.
 Since most of the time we work with the \(\text{arg}\) of complex numbers it is worth noting that
 \begin{Corollary}\label{corollary:phase'}
 \begin{equation}
@@ -476,23 +563,22 @@ Since most of the time we work with the \(\text{arg}\) of complex numbers it is 
 \end{Corollary}
 holds. 
 
-Proof of the lemma: We use corollary \ref{corollary:phase'} to find
+Proof of the lemma \ref{lemma:Aux} We use corollary \ref{corollary:phase'} to find
 \begin{align*}
 &\partial_\varepsilon \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] 
 = \frac{\partial_\varepsilon \text{argdet}[1+A(\varepsilon) + B(\varepsilon,\delta)]}{\text{argdet}[1+A(0)+B(0,\delta)}\\
-&=i \frac{\text{argdet}[1+B(0,\delta)]}{\text{argdet}[1+B(0,\delta)]} \Im \left[ \frac{\text{argdet}[1+B(0,\delta)]^* \partial_\varepsilon \text{argdet}[1+A(\varepsilon)+B(\varepsilon,\delta)]}{\text{argdet}[1+B(0,\delta)]^2}\right]\\
-&=i \Im \left[ \frac{\text{argdet}[1+B(0,\delta)] \partial_\varepsilon \text{argdet}[1+A(\varepsilon)+B(\varepsilon,\delta)]}{\text{argdet}[1+B(0,\delta)]^2}\right]\\
-&=i \Im \left[ \frac{\partial_\varepsilon \text{argdet}[1+A(\varepsilon)+B(\varepsilon,\delta)]}{\text{argdet}[1+B(0,\delta)]}\right].
+&=i \frac{\text{argdet}[1+B(0,\delta)]}{\text{argdet}[1+B(0,\delta)]} \Im \left[  \frac{\partial_\varepsilon \det[1+A(\varepsilon)+B(\varepsilon,\delta)]}{\det[1+B(0,\delta)]}\right]\\
+&=i \Im \left[ \frac{\partial_\varepsilon \det[1+A(\varepsilon)+B(\varepsilon,\delta)]}{\det[1+B(0,\delta)]}\right].
 \end{align*}
 Now we use that the linearisation of the determinant around the identity equal to the trace is. This yields
 \begin{equation}
 \partial_\varepsilon \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] 
-=i \Im \left[ \frac{ \tr [\partial_\varepsilon A(\varepsilon)+\partial_\varepsilon B(\varepsilon,\delta)]}{\text{argdet}[1+B(0,\delta)]}\right].
+=i \Im \left[ \frac{ \tr [\partial_\varepsilon A(\varepsilon)+\partial_\varepsilon B(\varepsilon,\delta)]}{\det[1+B(0,\delta)]}\right].
 \end{equation}
 Inserting the second derivative simplifies the expression after one recognizes that the second summand inside the imaginary part is real, since its a product of derivatives of selfadjoint traceclass operators. The corresponding calculation is
 \begin{align*}
 &\partial_{\delta} \partial_{\varepsilon} \ln \text{argdet}\left[ 1 + A(\varepsilon) + B(\varepsilon,\delta))\right] \\
-&=i \Im \left[ \tr \partial_{\delta}\partial_{\varepsilon} B(\varepsilon,\delta) - \frac{\tr[\partial_{\varepsilon}A(\varepsilon) + \partial_{\varepsilon} B(\varepsilon,0)]}{\det(1+B(0,0))} \tr[\partial_{\delta} B(0,\delta)]\right]\\
+&=i \Im \left[ \tr \partial_{\delta}\partial_{\varepsilon} B(\varepsilon,\delta) - \frac{\tr[\partial_{\varepsilon}A(\varepsilon) + \partial_{\varepsilon} B(\varepsilon,0)]}{\det(1+B(0,0))^2} \tr[\partial_{\delta} B(0,\delta)]\right]\\
 &=i \Im \left[ \tr \partial_{\delta}\partial_{\varepsilon} B(\varepsilon,\delta) - \tr[\partial_{\varepsilon}A(\varepsilon)] \tr[\partial_{\delta} B(0,\delta)]\right]\\
 &=i \Im \left[ \tr \partial_{\delta}\partial_{\varepsilon} B(\varepsilon,\delta) \right],
 \end{align*}
@@ -505,7 +591,8 @@ So we start out with the most recent result about \(\partial_F j_{A+F}(G)\), use
 =\partial_F& \partial_G \ln \text{argdet} \left[ \left( \prescript{}{A}{S}_{A+F}\right)_{--}\left(\prescript{}{A+F}{S}_A\right)_{--} - \left( \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \prescript{}{A+G}{S}_{A+F}\right)_{+-} \left( \prescript{}{A+F}{S}_{A}\right)_{--}\right]\\
 =\partial_F \partial_G & \ln \text{argdet} \left[\mathds{1}_{--}- \left( \prescript{}{A}{S}_{A+F}\right)_{-+}\left(\prescript{}{A+F}{S}_A\right)_{+-} - \left( \prescript{}{A}{S}_{A+G}\right)_{-+} \left( \prescript{}{A+G}{S}_{A+F}\right)_{+-} \left( \prescript{}{A+F}{S}_{A}\right)_{--}\right].
 \end{align*}
-As we now take the derivative of a trace-class perturbation of the identity we can see that 1. this expression is well-defined, since the off diagonal components of the scattering matrix and its derivatives are Hilbert-Schmidt,  and 2. we can use the just derived lemma. This results in 
+As we now take the derivative of a trace-class perturbation of the identity we can see that 1. this expression is well-defined, since the off 
+diagonal components of the scattering matrix and its derivatives are Hilbert-Schmidt,  and 2. we can use the lemma we just proved. This results in 
 
 \begin{align*}
 &\partial_F \partial_G \ln \Gamma_{A,A+G,A+F+G} =
@@ -514,6 +601,64 @@ As we now take the derivative of a trace-class perturbation of the identity we c
 \end{align*}
 where the last equality follows by acknowledging that terms vanish if they contain a factor of \(\mathds{1}_{+-}\).
 The theorem follows by inserting lemma \ref{lemma:current_compact}.\qed 
+
+\vspace{1cm}
+Proof of lemma \ref{lemma:nDerivativesSMatrix}. First we plug in the definition of \(S\) and use the product rule, resulting in
+\begin{align}
+\left(\prod_{k=1}^n \partial_{F_k} \right) S_{A+\sum_{k=1}^n F_k} 
+= &\sum_{l=1}^n L^0_{F_l} \left( \prod_{\stackrel{k=1}{ k\neq l}}^n \partial_{F_k}\right) \Omega^+_{A+\sum_{\stackrel{k=1}{ k\neq l}}^n F_k}\\
+&+ L^0_{A} \left( \prod_{k=1}^n \partial_{F_k}\right) \Omega^+_{A+\sum_{k=1}^n F_k},
+\end{align}
+Now since \(\Omega_A^\pm=(1-L_A^\pm)^{-1}\) holds we have \(\partial_F \Omega_{A+F}^\pm = \Omega^\pm_{A} L^\pm_F \Omega^\pm_A\). 
+Applying this \(n\) times results in a sum over all permutations of the pertubative fields we are taking derivatives with respect to. Yielding
+\begin{align}\tag*{}
+\left(\prod_{k=1}^n \partial_{F_k} \right) S_{A+\sum_{k=1}^n F_k} 
+= \sum_{l=1}^n &L^0_{F_l}\Omega^+_A  \sum_{\sigma \in S(\{1,\dots,n\}\backslash\{l\})} \prod_{\stackrel{k=1}{ k\neq l}}^n \left( L^+_{F_{\sigma(k)}} \Omega^+_{A}\right)\\
+&+ L^0_{A} \Omega^+_A  \sum_{\sigma \in S(\{1,\dots,n\})} \prod_{k=1}^n \left(L^+_{F_{\sigma(k)}}\Omega^+_{A}\right).
+\end{align}
+Analogously for \(S^{-1}\) we find
+\begin{align}\tag*{}
+\left(\prod_{k=1}^n \partial_{F_k} \right) S^{-1}_{A+\sum_{k=1}^n F_k} 
+= -\sum_{l=1}^n &L^0_{F_l}\Omega^-_A  \sum_{\sigma \in S(\{1,\dots,n\}\backslash\{l\})} \prod_{\stackrel{k=1}{ k\neq l}}^n \left( L^-_{F_{\sigma(k)}} \Omega^-_{A}\right)\\
+&- L^0_{A} \Omega^-_A  \sum_{\sigma \in S(\{1,\dots,n\})} \prod_{k=1}^n \left(L^-_{F_{\sigma(k)}}\Omega^-_{A}\right).
+\end{align}
+\qed
+
+Proof of theorem \ref{thm:GeneralDerivative} 
+: Lemma \ref{lemma:nDerivativesSMatrix} and theorem 
+\ref{thm:current_explicit} already provides most of the proof of this theorem. We use the abbreviations
+\begin{align*}
+\tilde{A}:= A+\sum_{k=1}^{n}F_k\\
+\tilde{A}^0:= A+\sum_{k=0}^{n}F_k\\
+\tilde{A}^{n+1}:= A+\sum_{k=1}^{n+1}F_k.
+\end{align*}
+ Starting with this theorem we have for any \(n\in\mathbb{N}\)
+\begin{equation}
+\left(\prod_{k=1}^{n+1} \partial_{F_k}\right) j_{\tilde{A}^{n+1}}(F_0) 
+=-2\left(\prod_{k=1}^{n} \partial_{F_k}\right)  \Im \tr\left[ \left( \partial_{F_0} \prescript{}{\tilde{A}}{S}_{\tilde{A}^{0}}\right)_{-+} 
+\left( \partial_{F_{n+1}} \prescript{}{\tilde{A}}{S}_{\tilde{A}^{n+1}}\right)_{+-}\right].
+\end{equation}
+Using definition/lemma \ref{Def:LOperator} we can expand the right hand side a bit further to 
+\begin{align*}
+=-2\left(\prod_{k=1}^{n} \partial_{F_k}\right)  \Im \tr&\left[ 
+\left( \left(1-L^0_{\tilde{A}}\Omega^-_{\tilde{A}} \right)  \partial_{F_0}\left(1+ L^0_{\tilde{A}^{n+1}} \Omega^+_{\tilde{A}^{n+1}}\right)\right)_{-+}\right. \\
+&\left.\left( \left(1-L^0_{\tilde{A}}\Omega^-_{\tilde{A}} \right)  \partial_{F_{n+1}}\left(1+ L^0_{\tilde{A}^{0}} \Omega^+_{\tilde{A}^0}\right)\right)_{+-}
+\right].
+\end{align*}
+Now we need to distribute \(n\) derivatives over four terms. The possibilities of doing so are found by the analogous problem of distributing \(n\) 
+labelled balls over four labelled boxes. The product rule for non commuting products tells us that we have to sum over these possibilities. 
+We realise this sum by a sum over all possible distributions of the elements of \(\{1,\dots, n\}\) into four disjoint sets \(B,C,D,E\) whose union is again \(\{1,\dots, n\}\). This yields for the right hand side
+\begin{align*}
+=-2\sum_{\stackrel{B,C,D,E\subseteq \{1,\dots, n\}}{B\dot{\cup}C\dot{\cup}D\dot{\cup}E=\{1,\dots, n\}}}  \Im \tr&\left[ 
+\left( \left(\prod_{l\in B} \partial_{F_l}\right)\left(1-L^0_{\tilde{A}}\Omega^-_{\tilde{A}} \right) 
+\left(\prod_{l\in C} \partial_{F_l}\right) \partial_{F_0}\left(1+ L^0_{\tilde{A}^{n+1}} \Omega^+_{\tilde{A}^{n+1}}\right)\right)_{-+}\right. \\
+&\left.\left( \left(\prod_{l\in D} \partial_{F_l}\right)\left(1-L^0_{\tilde{A}}\Omega^-_{\tilde{A}} \right) 
+\left(\prod_{l\in E} \partial_{F_l}\right) \partial_{F_{n+1}}\left(1+ L^0_{\tilde{A}^{0}} \Omega^+_{\tilde{A}^0}\right)\right)_{+-}
+\right].
+\end{align*}
+Applying the derivatives to the brackets and using once more the product rule yields the theorem. In doing so one should not forget that the \(L\) operators are linear, therefore yield zero when linearised twice with respect to different fields. \qed
+
+
 
 
 

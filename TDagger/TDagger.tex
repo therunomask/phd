@@ -1,0 +1,154 @@
+\documentclass[oneside,reqno,12pt]{amsart}
+
+%\usepackage{fontspec}
+
+\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+%\setmainfont{YuMincho}
+%Hiragino Maru Gothic ProN
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+\usepackage{mathabx}
+\usepackage{mathtools}
+\usepackage{dsfont}
+
+
+\setcounter{secnumdepth}{5}
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+%picture
+\usepackage{wrapfig}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{DefLem}{Definition and Lemma}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+  
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+
+
+\newcommand{\Z}[2]{Z_{\stackrel{1}{#1}}\left(#2\right)}
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\Dirk}[1]{ \todo[color=orange!60]{Dirk: #1} }
+\newcommand{\DirkBox}[1]{ \mbox{}\todo[inline,caption={},color=red!60]{Dirk: #1} }
+\newcommand{\Markus}[1]{ \todo[color=green!20]{Markus: #1} }
+\newcommand{\dirk}{ \color{orange} }
+\newcommand{\markus}{ \color{green} }
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+\makeatletter
+
+
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2.0ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+                                   {-0.5ex \@plus -0.5ex \@minus -.2ex}%
+                                   {0.5em}%
+                                   {\normalfont\bfseries}}
+\renewcommand\subsubsection{\@startsection {subsubsection}{1}{\z@}%
+                                   {-0.3ex \@plus -0.4ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\sc}}  
+\renewcommand\paragraph{\@startsection {paragraph}{1}{\z@}%
+                                   {-0.2ex \@plus -1ex \@minus -.2ex}%
+                                   {0.1 em}%
+                                   {\normalfont\it}}                                   
+\makeatother
+
+\parindent 0cm
+
+
+\begin{document}
+
+\section{The Relationship between \(T_n^\dagger\) and \(T_n\)}
+We know for any four-vectorfield \(A\in C^\infty_c (\mathbb{R}^4,\mathbb{R}^4)\) by unitarity of the scattering matrix that
+\begin{equation}
+{\tilde{S}{}^A }^* {\tilde{S}}^A = 1
+\end{equation}
+holds. By expanding the S matrix and its adjoint in a power series in \(A\) one obtains
+\begin{equation}
+1 = \sum_{k=0}^\infty \sum_{l=0}^\infty \frac{1}{k! l !} T^\dagger_l(A) T_k(A).
+\end{equation}
+By resummation follows
+\begin{equation}
+1= \sum_{s=0}^\infty \frac{1}{s!} \sum_{l=0}^s \begin{pmatrix}s \\ l\end{pmatrix} T^\dagger_l (A) T_{s-l}(A).
+\end{equation}
+By scaling it follows from homogeneity of degree \(n\) of \(T_n\) and \(T^\dagger_n\) that
+\begin{equation}
+\forall s \in\mathbb{N}: 0=\sum_{l=0}^s \begin{pmatrix}s \\ l\end{pmatrix} T^\dagger_l (A) T_{s-l}(A)
+\end{equation}
+holds. Let \(n\in\mathbb{N}\). This means we can solve for \(T_n^\dagger\) yielding
+\begin{equation}
+T_n^\dagger (A)= - \sum_{l=0}^{n-1} \begin{pmatrix}n \\ l \end{pmatrix} T_l^\dagger(A) T_{n-l}(A).
+\end{equation}
+To get an explicit expression for \(T_n\) for different arguments we use the symmetry and multilinearity of \(T_n\). Let \(A_1,\dots A_n\) be four-vectorfields. Thereby it follows that
+\begin{align*}
+T_n^\dagger(A_1,\dots, A_n) 
+&= \frac{1}{n!} \left(\prod_{l=1}^n \partial_{\varepsilon_l}\right)\left. T^\dagger_n \left(\sum_{k=1}^n\varepsilon_k A_k\right)\right|_{\varepsilon_1=\dots=\varepsilon_n=0}\\
+&= - \frac{1}{n!} \left(\prod_{c=1}^n \partial_{\varepsilon_c}\right) \left. \sum_{l=0}^{n-1} \begin{pmatrix}n \\ l \end{pmatrix} T_l^\dagger \left(\sum_{k=1}^n\varepsilon_k A_k\right) T_{n-l} \left(\sum_{k=1}^n\varepsilon_k A_k\right) \right|_{\varepsilon_1=\dots=\varepsilon_n=0}
+\end{align*}
+Due to linearity of \(T_k\) in each of its \(k\) arguments it can at most be linearised \(k\) times with respect to different four-potentials without vanishing. This means however, that in each summand each factor needs to receive exactly as many derivatives as it has arguments. This simplifies the expression considerably. We directly plug in the relationship between \(T_n\) for one and \(n\) arguments finding
+\begin{align*}
+T_n^\dagger(A_1,\dots, A_n) 
+&= - \frac{1}{n!}  \sum_{B\subseteq \{A_1,\dots, A_n\}} |B|! |B^c|! \begin{pmatrix}n\\|B|\end{pmatrix} T^\dagger_{|B|}(B) T_{|B^c|}(B^c)\\
+&= -   \sum_{B\subseteq \{A_1,\dots, A_n\}} T^\dagger_{|B|}(B) T_{|B^c|}(B^c).
+\end{align*}
+
+This equation is solved by
+\begin{equation}
+T_n^\dagger(A_1,\dots, A_n) = \sum_{m\in \mathcal{T}(\{A_1,\dots, A_n\})} (-1)^{|m|} \prod_{l=1}^{|m|} T_{|m_l|} (m_l),
+\end{equation}
+where \(\mathcal{T}\) is given by
+\begin{align*}
+\mathcal{T}(\{A_1,\dots, A_n\}):= \left.\bigcup_{1\le k \le n} \right\{ (m_1, \dots, m_k) \mid \\
+\left.  \forall l\in \{1,\dots, n\}: m_l \subseteq \{A_1,\dots, A_n\}, \dot{\bigcup_{1\le l \le k}}m_l= \{A_1,\dots A_n\} \right\}
+\end{align*}
+which best checked by directly plugging it in.
+
+
+
+
+
+\end{document}

@@ -1,0 +1,17 @@
+\contentsline {chapter}{Contents}{ii}{section*.1}
+\contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\chapternumberline {2}Connection to Physical Literature}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Defining One-Particle Scattering-Matrix}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Well-definedness of \(U\) }{8}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Construction of the Second Quantised Scattering-Matrix}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Main Conjecture}{13}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Explicit Representations}{15}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Results About All Odd Orders}{16}{subsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2.1} Lifting the Charge Conjugation Operator}{16}{subsubsection.2.3.2.1}
+\contentsline {subsubsection}{\numberline {2.3.2.2}Commutation of Charge Conjugation and Scattering Operators}{17}{subsubsection.2.3.2.2}
+\contentsline {subsection}{\numberline {2.3.3} Explicit Bound of the First Orde}{18}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Results about the Second Order}{18}{subsection.2.3.4}
+\contentsline {chapter}{\chapternumberline {3}Mathematical Justification}{25}{chapter.3}
+\contentsline {appendix}{\chapternumberline {A}Proof of bla}{27}{appendix.A}
+\contentsline {chapter}{Bibliography}{29}{section*.17}
+\contentsline {chapter}{Cooperating Researchers}{31}{appendix*.18}

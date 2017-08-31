@@ -1,0 +1,840 @@
+%\documentclass[oneside,reqno,12pt]{amsart}
+\documentclass[b5paper,draft,openbib,12pt]{memoir} 
+%\documentclass[b5paper,openbib,12pt]{memoir} 
+%check whether openbib option is necessary
+%option final will remove some markings
+
+
+%\usepackage{fontspec}
+
+%\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+%picture
+\usepackage{wrapfig}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+\hypersetup{final}
+%needed to have hyperlinks in draft mode
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+
+
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+
+%\makeatletter
+
+%\renewcommand\section{\@startsection {section}{1}{\z@}%
+%                                   {-2.0ex \@plus -1ex \@minus -.2ex}%
+%                                   {2.3ex \@plus.2ex}%
+%                                   {\normalfont\Large\bfseries}}
+%\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+%                                   {-0.5ex \@plus -0.5ex \@minus -.2ex}%
+%                                   {0.5em}%
+%                                   {\normalfont\bfseries}}
+%\renewcommand\subsubsection{\@startsection {subsubsection}{1}{\z@}%
+%                                   {-0.3ex \@plus -0.4ex \@minus -.2ex}%
+%                                   {0.1 em}%
+%                                   {\normalfont\sc}}  
+%\renewcommand\paragraph{\@startsection {paragraph}{1}{\z@}%
+%                                   {-0.2ex \@plus -1ex \@minus -.2ex}%
+%                                   {0.1 em}%
+%                                   {\normalfont\it}}                                   
+
+%\def\@settitle{\begin{center}%
+%  \baselineskip14\p@\relax
+%  \bfseries
+%  \uppercasenonmath\@title
+%  \@title
+%  \ifx\@subtitle\@empty\else
+%     \\[1ex]\uppercasenonmath\@subtitle
+%     \footnotesize\mdseries\@subtitle
+%  \fi
+%  \end{center}%
+%}
+%\def\subtitle#1{\gdef\@subtitle{#1}}
+%\def\@subtitle{}
+%\makeatother
+
+
+%\makeatletter
+\renewcommand\chapterheadstart{
+\vspace *{\beforechapskip}
+\hrulefill
+\vskip 0pt
+}
+
+\renewcommand\afterchaptertitle{%
+\vskip 0pt
+\hrulefill
+\par \nobreak  \vskip  \afterchapskip  } 
+%  \hrulefill}
+%  \m@mindentafterchapter\@afterheading}
+%\makeatother
+
+\setsecnumdepth{all}
+
+
+%all divisions are numbered in the text body
+
+\parindent 0cm
+
+\begin{document}
+
+
+
+\frontmatter
+%
+%\noindent
+%\begin{center}
+%    \textsc{ \small{Description of the dissertation project of Markus Nöth,
+%        Ludwig-Maximilians University of Munich} \\
+%        \smallskip
+%\large{ Electron-Positron Pair Creation in External Fields} \\
+%\small{Rigorous Control of the Scattering-Matrix Expansion}}
+%    \vskip.3cm
+%    \small
+% supervisor:    D.-A.\ Deckert (LMU)
+% \vskip0.4cm
+\title{Electron-Positron Pair Creation in External~Fields}
+%\subtitle{\footnotesize{Rigorous Control of the Scattering-Matrix Expansion}}
+\author{M. Nöth}
+\maketitle
+
+ \begin{abstract}
+ In this project we investigate the phenomenon of creation of matter-antimatter
+pairs of particles, more precisely electron-positron pairs, out of the vacuum
+subject to strong external electromagnetic fields. 
+Although this phenomenon was predicted already in 1929 and was
+observed in many experiments, its rigorous
+mathematical description still lies
+at the frontier of human understanding of nature. 
+Dirac introduced the heuristic description of the vacuum of quantum electrodynamics (QED) as a homogeneous sea of particles. Although the picture of pair creation as lifting a particle out of the Dirac sea, leaving a hole in the sea, is very
+explanatory the mathematical formulation of the time evolution of the Dirac sea
+faces many mathematical challenges. 
+A straightforward interaction of sea particles and the radiation field is ill-defined and physically important
+quantities such as the total charge current density are badly divergent due to the
+infinitely many occupied states in the sea. 
+Nevertheless, in the last century physicists and mathematicians
+ have developed strong methods called
+``perturbative renormalisation theory'' that allow at least to treat the
+scattering regime perturbatively. %Though mathematically not well understood,
+Non-perturbative methods have to be developed in order to give an adequate theoretical description of upcoming next-generation experiments allowing a study of the time evolution.
+Our endeavour focuses on the so-called \emph{external
+field model of QED} in which one neglects the interaction between the sea
+particles and only allows an interaction with a prescribed electromagnetic field.
+It is the goal of this project to develop the necessary non-perturbative
+methods in this model to give a rigorous construction of the scattering
+and the time evolution operator. 
+\\
+\smallskip
+\noindent \textbf{Keywords:} Second Quantised Dirac Equation, non-perturbative QED, external-field QED, Scattering Operator
+ \end{abstract}
+
+
+%\vskip.5cm
+%\thispagestyle{empty}
+
+
+\tableofcontents
+
+\newpage
+
+
+
+\mainmatter
+
+\chapter{Introduction}
+
+\show\afterchaptertitle
+\noch{Maybe something similar to phd proposal introduction}
+
+\chapter[Connection to Physical Literature][Connection to Physics]{Mathematical Framework and Connection to Physical Literature} \label{sec:workprogram}
+
+
+In order to be able to state our main conjecture \eqref{main_result} precisely
+I will need to introduce the one-particle dynamics for electrons and their
+scattering operator, see section \ref{sec:one-particle} below, and then move on
+to the second quantised dynamics and its corresponding scattering operator  in
+section \ref{sec:second quant}. Second quantization is the canonical
+method of turning a one-particle theory into one of an arbitrary and
+possibly changing number of particles. The informal
+series expansion of the one-particle scattering operator \(U\) is derived 
+from Dirac's equation of motion for the electron. In section
+ \ref{sec:well-def} the convergence of this
+expansion is shown. The informal expansion of the second quantized
+scattering operator $S$ is then derived from $U$ by second quantisation in
+section \ref{sec:second quant}. At this point I have gathered enough tools to present the main conjecture \ref{main_result} in section \ref{sec:main result}. 
+After the main conjecture is known, I present several of my own results in sections \ref{sec: odd orders}, \ref{sec: first order} and \ref{sec: second order} about the first order, the second order and all other odd orders. 
+These results give an intuition on how to control the convergence of the informal expansion of the scattering operator \(S\).
+
+%\Dirk{gibt kurz die Motivation: wir wollen zur Conjecture, dazu
+%Einteilchentheorie wichtig für die    Dirac-Seetheorie, wird also zuerst
+%besprochen, danach kommen wir zur    zweit-quant. (führe den Begriff ein)}
+
+
+\section{Defining One-Particle Scattering-Matrix}\label{sec:one-particle}
+
+
+%The goal of this and the next section is to introduce some results, which are
+%known to the community and form the basis of my work. 
+In order to introduce the one-particle dynamics I introduce Diracs equation \eqref{dirac} and reformulate it in integral form in equation \eqref{dirac_integral}. By iterating this equation we will naturally be led to the informal series expansion of the scattering operator equation \eqref{DefU}, whose convergence is discussed in the next section. 
+%\Dirk{ordne es anders: wir wollen $S$, dazu Zeitentwicklung $U$, dazu Dirac
+%Gleichung, Integralversion, formale Iteration, Konvergenz}
+%\Markus{So? Oder wolltest du, dass ich auch die Mathematik umordne?} Gut so.
+
+Throughout this thesis I will consider four-potentials $A, F$ or \(G\) to be smooth functions
+in \(C_{c}^\infty(\mathbb{R}^4)\otimes \mathbb{C}^4\), where the index \(c\)
+denotes that the elements have compact support. Also throughout this thesis I
+will denote by \(A, F\) and \(G\) some arbitrary but fixed four-potentials. The Dirac
+equation for a wave function \(\phi \in L^2(\mathbb{R}^3)\otimes \mathbb{C}^4\)
+is
+\begin{equation}\label{dirac}
+0= (i\slashed{\partial}-e\slashed{A}-m \id) \phi,
+\end{equation}
+where \(m\) is the mass of the electron, \(\id: \mathbb{C}^4\rightarrow \mathbb{C}^4\) is the identity  and crossed out letters mean that their four-index is contracted with Dirac matrices
+\begin{equation}
+\slashed{A}:= A_\alpha \gamma^\alpha,
+\end{equation}
+where Einstein's summation convention is used. These matrices fulfil the anti-commutation relation
+\begin{equation}
+\forall \alpha, \beta \in \{0,1,2,3\}:\{\gamma^\alpha, \gamma^\beta\}:= \gamma^\alpha \gamma^\beta+ \gamma^\beta \gamma^\alpha= g^{\alpha \beta},
+\end{equation}
+where \(g\) is the Minkowski metric. I work with the \(+---\) metric signature and the Dirac representation of this algebra. Squared four dimensional objects always refer to the Minkowski square, meaning for all \(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
+
+In order to define Lorentz invariant measures for four dimensional integrals I employ the same notation as in \cite{deckert2014dirac}. The standard volume form over \(\mathbb{R}^4\) is denoted by \(\mathrm{d}^4 x= \mathrm{d}x^0 \mathrm{d}x^1\mathrm{d}x^2 \mathrm{d}x^3\), the product of forms is understood as the wedge product. The symbol \(\mathrm{d}^3x\)  means the 3-form \(\mathrm{d}^3x= \mathrm{d}x^1\mathrm{d}x^2\mathrm{d}x^3\) on \(\mathbb{R}^4\). Contraction of a form \(\omega\) with a vector \(v\) is denoted by \(\mathfrak{i}_v(\omega)\). The notation \(\mathfrak{i}_v (\omega)\) is also used for the spinor matrix valued vector \(\gamma=(\gamma^0,\gamma^1,\gamma^2,\gamma^3)=\gamma^\alpha e_\alpha\):
+\begin{equation}
+\mathfrak{i}_\gamma (\mathrm{d}^4x) := \gamma^\alpha \mathfrak{i}_{e_\alpha}(\mathrm{d}^4 x),
+\end{equation} 
+
+with \((e_\alpha)_{\alpha}\) being the canonical basis of \(\mathbb{C}^4\). Let \(\mathcal{C}_A\) be the space of solutions to \eqref{dirac} which have compact support on any spacelike hyperplane \(\Sigma\). Let \(\phi, \psi\) be in \(\mathcal{C_A}\), the scalar product \(\langle \cdot, \cdot\rangle\) of elements of \(\mathcal{C}_A\) is defined as
+
+\begin{equation}
+\langle \phi, \psi \rangle := \int_{\Sigma} \overline{\phi (x)} \mathfrak{i}_{\gamma} (\mathrm{d}^4x) \psi (x)=: \int_{\Sigma} \phi^\dagger (x) \gamma^0 \mathfrak{i}_{\gamma} (\mathrm{d}^4x) \psi (x) .
+\end{equation}
+Furthermore define \(\mathcal{H}\) to be \(\mathcal{H}:=\overline{\mathcal{C}_A}^{\langle \cdot, \cdot \rangle}\). The mas-shell \(\mathcal{M}\subset \mathbb{R}^4\) is given by
+\begin{equation}
+\mathcal{M}=\{p\in \mathbb{R}^4\mid p^2=m^2\}.
+\end{equation}
+The subset \(\mathcal{M}^+\) of \(\mathcal{M}\) is defined to be \(\mathcal{M}^+:=\{p\in\mathcal{M}\mid p^0>0\}\). The image  of \(\mathcal{H}\) by the projector \(1_{\mathcal{M^+}}\), given in momentum space representation, is denoted by \(\mathcal{H}^+\) and its orthogonal complement by \(\mathcal{H}^-\). 
+I introduce a family of Cauchy hypersurfaces \((\Sigma_t)_{t\in\mathbb{R}}\) governed by a family of normal vector fields \((\left.v_t n\right|_{\Sigma_t})\), where \(n: \mathbb{R}^4 \times \mathbb{R} \rightarrow \mathbb{R}^4\) and \(v: \mathbb{R}^4 \times \mathbb{R} \rightarrow \mathbb{R}\) are smooth functions. For \(x\in\Sigma_t\) the vector \(n_t(x)\) denotes the future directed unit-normal vector to \(\Sigma_t\) at \(x\) and \(v_t(x)\) the corresponding normal velocity of the flow of the Cauchy surfaces. 
+
+Now we have the tools to recast the Dirac equation into an integral version
+which will allow me to define the scattering operator. 
+Let \(\psi \in \mathcal{C}_A\), for any \(t\in\mathbb{R}\) I denote by \(\phi_t\) the solution to the free Dirac equation, that is equation \eqref{dirac} with \(A=0\), with \(\left.\psi\right|_{\Sigma_t}\) as initial condition on \(\Sigma_t\). Let \(t_0\in\mathbb{R}\) have some fixed value, equation \eqref{dirac} can be reformulated, c.f. theorem 2.23 of \cite{deckert2014dirac}, as
+\begin{multline}\label{dirac_integral}
+\phi_t(y)=\phi_{t_0}(y)
+-i \int_{t_0}^t \text{d}s \int_{\Sigma_s}\int_{\mathcal{M}}\frac{\slashed{p}+m}{2m^2}e^{ip(x-y)}\mathfrak{i}_p(\text{d}^4p) \frac{\mathfrak{i}_{\gamma}(\text{d}^4x)}{(2\pi)^{3}}\\
+v_s(x)\slashed{n}_s(x) \slashed{A}(x)\phi_s(x),
+\end{multline}
+which holds for any \(t\in\mathbb{R}\). Employing the following rewriting of integrals
+
+\begin{equation}
+\int_{\mathcal{M}}\frac{\slashed{p}+m}{2 m^2} f(p) \mathfrak{i}_p(\text{d}^4p)=\frac{1}{2\pi i}   \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right) (\slashed{p}-m)^{-1} f(p)  \text{d}^4p,
+\end{equation}
+which is due to the theorem of residues, equation \eqref{dirac_integral} assumes the form
+
+\begin{multline}
+\phi_t(y)=\phi_{t_0}(y)
+- \int_{[t_0,t]\times\mathbb{R}^3}  \left( \int_{\mathbb{R}^4-i \epsilon e_0}-\int_{\mathbb{R}^4+i \epsilon e_0} \right)\\
+ (\slashed{p}-m)^{-1} e^{ip(x-y)}  \text{d}^4p  \frac{\text{d}^4x}{(2\pi)^{4}}\slashed{A}(x)\phi_s(x). 
+\end{multline} 
+In the last expression I picked all hypersurfaces \(\Sigma_s\) to be equal time
+hyperplanes such that \(v_s=1\) and \(\slashed{n}_s=\gamma^0 e_0\). We identify
+the advanced and retarded Greens functions of the Dirac equation:
+\begin{equation}
+\Delta^\pm (x):= \frac{-1}{(2\pi)^4} \int_{\mathbb{R}^4\pm i \varepsilon e_0} \frac{\slashed{p}+ m}{p^2-m^2} e^{-ipx} d^4 p,
+\end{equation}
+yielding
+\begin{multline}\label{dirac integral split}
+\phi_t(y)=\phi_{t_0}(y)
++ \int_{[t_0,t]\times\mathbb{R}^3}  (\Delta^--\Delta^+)(y-x)  \text{d}^4x \slashed{A}(x)\phi_s(x). 
+\end{multline} 
+
+ Iteratingequation \eqref{dirac integral split} and picking \(t\) in the future of
+\(\supp A\) and \(t_0\) in the past of it, denoting them by \(\pm \infty\) since 
+their exact value is no longer important, the following series expansion is 
+obtained informally
+
+\begin{equation}\label{DefU}
+\phi_\infty(y)=U^A \phi_{-\infty} :=\sum_{k=0}^\infty Z_k(A) \phi_{-\infty},
+\end{equation} 
+with \(Z_0=\id \), the identity on \(\mathbb{C}^4\), and where for arbitrary \(\phi\in \mathcal{H}\), \(Z_k \) is defined as
+\begin{align*}
+&Z_k(A)\phi(y):= \int_{\mathbb{R}^4}  (\Delta^--\Delta^+)(y-x_1)  \text{d}^4x_1 \slashed{A}(x_1) \\
+&\prod_{l=2}^k \left[\int_{[-\infty,x^0_{l-1}]\times\mathbb{R}^3}  (\Delta^--\Delta^+)(x_{l-1}-x_l)   \slashed{A}(x_l)\text{d}^4x_l\right]
+ \phi(x_k).
+\end{align*}
+Now since the integration variables are time ordered and \(\supp \Delta^\pm \subseteq \text{Cau}^\pm\) 
+in every one but the first factor the contribution of \(\Delta^-\) vanishes. Therefore we can simply \noch{führe Cau als kausale Menge ein}
+drop it. Furthermore we may continue the integration domain to all of \(\mathbb{R}^4\), since
+there \(\Delta^+\) gives no contribution, giving
+\begin{multline}\label{Z_kDelta}
+Z_k(A)\phi(y)= (-1)^{k-1}\int_{\mathbb{R}^4}\text{d}^4x_1  (\Delta^--\Delta^+)(y-x_1)   \slashed{A}(x_1) \\
+\prod_{l=2}^k \left[\int_{\mathbb{R}^4}\text{d}^4x_l \Delta^+(x_{l-1}-x_l)   \slashed{A}(x_l)\right]
+ \phi(x_k).
+\end{multline}
+
+
+ This is convenient, because we may now use the spacetime
+integration with the exponential factor of the definition of \(\Delta^-\) as a Fourier transform
+acting on the four-potentials and the wave function. 
+Undoing the substitutions again for the first factor and executing the just mentioned Fourier
+transforms using the convolution theorem inductively results in
+
+\begin{multline}\label{define_Zk}
+Z_k(A)\phi(y) =- i  \int_{\mathcal{M}}\frac{\mathfrak{i}_p(\text{d}^4p_1)}{(2\pi)^{3}} \frac{\slashed{p}_1+m}{2m} e^{-ip_1y}  \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\\
+ \int_{\mathcal{M}}  \mathfrak{i}_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1}).
+\end{multline}
+
+Due to the representation \eqref{Z_kDelta} one may also represent \(Z_k\) in terms of The operators
+\begin{align}
+\Delta^0:= \Delta^+-\Delta^-\\
+L_A^{\pm,0}:= \Delta^{\pm,0} \ast \slashed{A}
+\end{align}
+in this manner
+\begin{equation}
+Z_k(A)\phi(y)= (-1)^{k} L^0_A \left({L_A^+}^{k-1}( \phi)\right) (y),
+\end{equation}
+where the upper right index for an operator means iterative application of said operator.
+
+\subsection{Well-definedness of \(U\) }\label{sec:well-def}
+
+I will outline in this section how to prove that the informally inferred series
+expansion of \(U\) in \eqref{DefU} is well-defined, i.e. that the series
+ converges. In doing so it is crucial to find appropriate bounds
+on the summands of said series. 
+The domain of integration of the temporal variables in the iterated form of
+equation \eqref{dirac_integral} is a simplex. The volume of this simplex is
+related to the volume of the cube by the factor \(n!\), using this one usually
+introduces the time ordering Operator and the factor of \(\frac{1}{n!}\). This
+line of argument has been translated into the momentum space, which might turn
+out to be more convenient for proving the main conjecture. 
+
+Using Parsevals theorem one translates the operators \(Z_k\) into momentum space, then one applies standard approximation techniques and the theorem of Paley and Wiener and Youngs inequality for convolution operators. Next one minimizes with respect to the arbitrary \(\epsilon\) in the equation \eqref{define_Zk}, which can be done due to the rules for changing the contour of integration of analytic functions. The estimate is valid only for \(k>1\), it is given by
+\begin{equation}
+\|Z_k(A)\|\le \left(\frac{1}{\sqrt{2} }\right)^{k-1} \frac{\left(e a\right)^{k-1}}{(k-1)^{k-1}} \frac{ C_N^k}{\pi^{4k+2}8}  f^{k-1}  g,
+\end{equation}
+where \(C_N>0\) is a constant obtained by application of the theorem of Paley and Wiener (it can for example be found in \cite{reed1975methods}). In order to simplify the notation I used \(a:=\text{diam}(\text{supp}(A))\), \(f:=\left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}^1(\mathbb{R}^4, \mathrm{d}^4x)}\), \(g:=\left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}^1(\mathcal{M},\mathfrak{i}_p \mathrm{d}^4p)} \) and \(e\) being Euler's number. By \(\mathcal{L}^1(E, \mathrm{d}\mu )\) I denote the space of functions with domain of definition \(E\) which are integrable with respect to the measure \(\mathrm{d}\mu\), i.e.
+\begin{equation}
+\mathcal{L}^1(E, \mathrm{d}\mu ):=\{ \psi: E\rightarrow \mathbb{C}  \mid \int_E \|\psi (x)\| \mathrm{d}\mu (x)< \infty \}.
+\end{equation}
+
+For the operator norm of \(Z_1 (A)\) the bound
+\begin{equation}
+\|Z_1(A)\|\le \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}
+\end{equation}
+
+can be found more easily. It is finite, because in position space \(A\) is compactly supported, which means that at infinity its Fourier transform falls off faster than any polynomial.
+Some lengthy calculations and the use of the well known bound on the factorial \(n!\le \sqrt{2\pi n} \left(\frac{n}{e}\right)^n e^\frac{1}{12n}\)  result in the following bound for the series representing the operator \(U\)
+\begin{multline}
+\|U^A\|=\left\|\sum_{k=0}^\infty Z_k(A) \right\|
+\le  1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})} + f g \frac{a    C^2_N }{\pi^{\frac{19}{2}}4}
+ e^{\frac{a C_N f}{\pi^4\sqrt{2}}+\frac{1}{12}} <\infty.
+\end{multline}
+The series representing \(U^A\) therefore converges, so it gives rise to a well defined operator.
+
+
+\section{Construction of the Second Quantised Scattering-Matrix}\label{sec:second quant}
+The main objective of my thesis is to do the analogous proof of section
+\ref{sec:well-def} in the second quantised case, %\Dirk{Begriff second-quant.
+%einführen}
+i.e. to prove conjecture
+\ref{main_result}. For doing so we have gathered a lot of tools from the
+one-particle theory. In the following I outline how the construction of the
+second quantised scattering operator is to be carried out, we will naturally be
+led to an informal power series representation for the scattering operator \(S\). This time the construction is more delicate, so I will consider different kinds of terms of the expansion using different techniques. 
+I will first consider all odd orders in the expansion in section \ref{sec: odd orders}, 
+then mention additional results about the first order in section \ref{sec:
+first order} and move on to the second order in section \ref{sec: second
+order}. The control of the orders greater than two are outstanding and forms the main
+part of the work in this project. In section \ref{sec:main result} below I
+will give arguments why the necessary control for the convergence can be
+achieved.
+
+First I fix some more notation. Using the space of solutions of the Dirac equation \(\mathcal{H}\)
+%\Dirk{am besten schon oben einführen}
+one constructs Fock space in the following way
+
+\begin{equation}
+\mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\Lambda m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\Lambda p},
+\end{equation}
+where the bar denotes complex conjugation and \(\Lambda\) in the exponent
+denotes that only elements which are antisymmetric with respect to permutations
+are allowed. The Factor \(\left(\mathcal{H}^{\pm}\right)^0\) is understood as
+\(\mathbb{C}\). I will denote the sectors of Fock space of fixed particle
+numbers by \(\mathcal{F}_{m,p}:= \left(\mathcal{H}^+ \right)^{\Lambda m}
+\otimes \left(\overline{\mathcal{H}^-} \right)^{\Lambda p}\). The element of
+\(\mathcal{F}_{0,0}\) of norm \(1\) will be denoted by \(\Omega\).  The
+annihilation operator \(a\) acts on an arbitrary sector of Fock space
+\(\mathcal{F}_{m,p}\), for any \(m,p\in\mathbb{N}_0\) as
+
+\begin{equation}
+\begin{aligned}
+a: &\mathcal{H}\otimes \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p-1}\\
+&\phi \otimes \alpha \mapsto \langle \mathrm{P}_+ \phi (x),\alpha (x,\cdot,\dots)\rangle_x + \langle \mathrm{P}_- \phi (x),\alpha (\cdot,\dots, \cdot, x)\rangle_x,
+\end{aligned}
+\end{equation}
+where \(\langle, \rangle_x\) denotes that the scalar product of \(\mathcal{H}\) is to be taken with respect to \(x\) and \(\mathrm{P}_{\pm}\) denotes the projector onto \(\mathcal{H}^+\) and \(\mathcal{H}^-\) respectively. The vacuum sector is mapped to the zero element of Fock space. 
+
+Now we turn to the construction of the \(S\)-matrix, the second quantised analogue of \(U\). This construction is carried out axiomatically. The first axiom makes sure that the following diagram, and the analogue for the adjoint of the annihilation operator commute.
+\begin{equation}
+\begin{CD}								%heuristics with infinite wedge space?
+\mathcal{F}     @>S^A>>  \mathcal{F}\\
+@AAaA        @AAaA\\
+\mathcal{H}\otimes \mathcal{F}     @>U^A\otimes S^A>>  \mathcal{H}\otimes \mathcal{F} 
+\end{CD}
+\end{equation}
+\begin{axiom}
+The \(S\) operator fulfils the ``lift condition''.
+\begin{align}\label{lift_condition1}
+\forall \phi\in \mathcal{H}:& \hspace{0.5cm} S^A \circ a(\phi)=a\left( U^A \phi \right)  \circ S^A,\tag{lift condition}\\
+\forall \phi\in \mathcal{H}:& \hspace{0.5cm} S^A \circ a^*(\phi)=a^*\left( U^A \phi \right)  \circ S^A,\tag{adjoint lift condition}
+\end{align}
+where \(a^*\) is the adjoint of the annihilation operator, the creation operator. 
+\end{axiom}
+The scattering operator is then expanded in an informal 
+power series
+
+\begin{equation}\label{S_expansion}
+S^A=\id_\mathcal{F}+\sum_{l=1}^\infty \frac{1}{l!} T_l(A).
+\end{equation}
+In order to fully characterise \(S^A\) it is enough to characterise all of the \(T_l\) operators. For \(k\in \mathbb{N}\) the operators \(T_k (A)\) are also defined for \(k\) non-identical arguments by homogeneity of \(T_k(A)\) to be symmetric in its arguments. Using the \eqref{lift_condition1} one can easily derive commutation relations for the operators \(T_m\), which are given by
+
+\begin{align}
+\left[T_m(A) , a(\phi)\right]= a\left(Z_m (A) \phi \right) + 1_{[2,\infty[}(m)\sum_{j=1}^{m-1} \begin{pmatrix} m \\ j \end{pmatrix} a\left(Z_j (A) \phi \right)\circ T_{m-j}(A), \label{Tk_commutation_relation_annihilator}\\
+\left[T_m(A) , a^*(\phi)\right]= a^*\left(Z_m (A) \phi \right) + 1_{[2,\infty[}(m)\sum_{j=1}^{m-1} \begin{pmatrix} m \\ j \end{pmatrix} a^*\left(Z_j (A) \phi \right)\circ T_{m-j}(A),\label{Tk_commutation_relation_creator}
+\end{align}
+where \(1_{Y}\) is the characteristic function of the set \(Y\).
+The matrix elements of the expansion coefficients \(T_l\) of \eqref{S_expansion} can therefore be constructed from the matrix elements of the lower expansion coefficients \(T_k\) with \(k<l\) and the vacuum expectation value of \(T_l\). As will be shown in section \ref{sec: odd orders}, the vacuum expectation value of all odd orders can naturally be chosen to zero, due to charge conjugation symmetry. I will be using the method of Eppstein and Glaser (see \cite{epstein1973role, scharf2014finite})  to find the vacuum expectation value of the even orders.
+
+Besides the scattering operator I will also need the expansion coefficients of its adjoint. 
+\begin{equation}\label{S_adjoint}
+\left(S^A\right)^*=\id_\mathcal{F}+\sum_{l=1}^\infty \frac{1}{l!} \tilde{T}_l(A)
+\end{equation}
+
+Since the scattering operator has to be unitary, it is not difficult to find the following expression for the coefficients of its adjoint
+
+\begin{equation}
+\forall m>0:\quad \sum_{k=0}^m \begin{pmatrix}
+m\\k
+\end{pmatrix} T_{m-k} (A) \tilde{T}_{k}(A)=0.
+\end{equation}
+
+Thus to find the adjoint coefficient of order \(n\), it suffices to know the coefficients of \(S\) itself up to order \(n\). 
+
+\section{Main Conjecture}\label{sec:main result}
+Now I can state the primary objective of my thesis in terms of the following
+\begin{Conj}\label{main_result}
+For all smooth four-potentials \(A\in C_{c}^\infty(\mathbb{R}^4)\otimes
+\mathbb{C}^4\),
+\(e \in \mathbb{R}\), and for all \(\psi, \phi \in
+\mathcal{F}\) the following limit exists
+\begin{equation}
+\lim_{n\rightarrow \infty} \left\langle \psi, \sum_{k=0}^n  \frac{e^n}{n!} T_n (A)\phi \right\rangle.
+\end{equation}
+\end{Conj}
+
+Such a uniform convergence would be optimal. In case, it can not be achieved, a
+weaker form of this conjecture in which $|e|$ has to be chosen sufficiently
+small and the possible scattering states $\Psi,\Phi$ have to be restricted to a
+certain regularity would still be physically interesting.
+
+The main difficulty in proving this theorem is the large number of  possible
+summands in the determinant-like structure of the term of \(n\)-th order.  I am
+optimistic about finding the proof of conjecture \ref{main_result} for several
+reasons:
+
+\begin{enumerate}
+\item For the summand involving \(T_n\) one gets a factor of \(\frac{1}{n!}\)
+    from the simplex. In the expression for \(T_n\) there are \(n\) time
+    integrals, and in the integrand the temporal variables are ordered. Since
+    there are \(n!\) possible orderings each particular order contributes only
+    one part in \(n!\). This argument can be made precise and has been
+    translated into momentum space, where it was already used to estimate the
+    one-particle scattering operator, see section \ref{sec:well-def}.
+\item The operators \(T_n\) posses the property called ``charge conservation'',
+    i.e. \(T_n\) maps any element of the \(b,p\) particle sector of Fock space
+    to \(c,o\) particle sectors fulfilling \(c-o=b-p\). Hence many possible
+    transitions are forbidden by the structure of the operators \(T_n\).
+\item The iterative character of the operators \(T_n\) illustrated by equations \eqref{Tk_commutation_relation_annihilator} and \eqref{Tk_commutation_relation_creator} suggests that
+    the control of $T_1$ and $T_2$, discussed in sections \ref{sec: first order} and \ref{sec: second order},
+    is sufficient to also control the $n$-th
+    order. This behavior is also suggested by the renormalisability of QED (see \cite[Chapter
+    4.3]{scharf2014finite}) which states that only finite many types of renormalisations
+    are needed.
+\item Many of the remaining possible transitions are forbidden by the
+    antisymmetry of the fermionic Fock space.
+\end{enumerate}
+
+After a successful proof of the main conjecture this method can be generalised in a canonical manner to yield a direct construction of a more general time evolution operator, as was mentioned in the introduction this is especially desirable in the non-perturbative regime of QED.
+In the rest of this section I will present the results about $T_n$ for $n=1$,
+$n=2$, and all other odd $n$.
+
+\subsection{Explicit Representations}\label{sec: explicit}
+
+I introduce the operator \(G\) as follows. I denote by \(Q\) the following set \(Q:=\{f: \mathcal{H}\rightarrow \mathcal{H} \text{ linear} \mid i \cdot f \text{ is selfadjoint}\}\).
+\begin{Def}
+ Let then \(G\) be the following function
+\begin{align*}\tag{Def G} \label{Def G}
+G: \quad & Q\rightarrow \left( \mathcal{F}\rightarrow \mathcal{F} \right)\\
+& f\mapsto \sum_{n\in\mathbb{N}}a^*(f \varphi_n) a(\varphi) - \sum_{n\in -\mathbb{N}} a(\varphi_n) a^*(f \varphi_n).
+\end{align*}
+\end{Def}
+The first expansion coefficient of the scattering operator, \(T_1\), is then given by 
+\begin{equation}\label{expT1}
+T_1(A)=G(Z_1(A)),
+\end{equation}
+given \(\langle T_2 \rangle \in \mathbb{C}\), the second order by 
+\begin{equation}\label{expT2}
+T_2=G(Z_2-Z_1Z_1)+T_1T_1 -\tr \left(Z_{\stackrel{1}{-+}}Z_{\stackrel{1}{+-}}\right) + \langle T_2\rangle,
+\end{equation}
+and the third order by
+\begin{equation}
+T_3=G\left( Z_3 - \frac{3}{2}Z_2Z_1 - \frac{3}{2}Z_1Z_2 + 2 Z_1Z_1Z_1\right)+ \frac{3}{2}T_2T_1 + \frac{3}{2} T_1T_2 - 2 T_1T_1T_1 
+.\end{equation}
+
+Let \(b \in\mathbb{R}\) be arbitrary, there is a \(C\in\mathbb{C}\) such that \(T_4\) is given by
+\begin{align}\tag*{}
+&T_4:= 2 T_1T_3 + 2 T_3 T_1 + 3 T_2 T_2 - b T_1 T_1 T_2 - b T_2 T_1 T_1 - 2 ( 6-b) T_1 T_2 T_1 \\\label{explicitT4}
+&+ 6 T_1 T_1 T_1 T_1+G\left(Z_4-2Z_1Z_3-2Z_3Z_1-3Z_2Z_2\right.\\\tag*{}
+&\left.+bZ_1^2Z_2+2(6-b)Z_1Z_2Z_1+bZ_2Z_1^2-6Z_1^4 \right)  + C
+.\end{align}
+\noch{habe noch keinen guten Kandidaten für \(T_n\)...}
+
+These expressions can easily be verified by means of the commutation rules \eqref{Tk_commutation_relation_annihilator} and \eqref{Tk_commutation_relation_creator}.
+
+
+\subsection{Results About All Odd Orders}\label{sec: odd orders}
+In order to show that any serious candidate for the construction of the scattering-matrix fulfils \(\langle \Omega, T_{2n+1}\Omega \rangle =0\) for any \(n\in\mathbb{N}_0\), I also lift the charge conjugation operator to Fock space.
+\subsubsection{ Lifting the Charge Conjugation Operator}
+
+
+I will define the second quantised charge conjugation operator \(\mathfrak{C}\) on all of Fock space analogously to the way I am currently in the process of defining the second quantised S-matrix operator.
+The operator \(\mathfrak{C}: \mathcal{F}\rightarrow \mathcal{F}\) is defined to be the linear bounded operator on Fock space fulfilling the ''lift condition``
+\begin{equation}
+\begin{aligned}
+\forall \phi\in \mathcal{H}: \hspace{0.5cm} &a\left( C \phi \right)  \circ \mathfrak{C}=\mathfrak{C} \circ a^*(\phi),\\
+\hspace{0.5cm} &a^*\left( C \phi \right)  \circ \mathfrak{C}=\mathfrak{C} \circ a(\phi),
+\end{aligned}
+\end{equation}
+where \(C\) is the charge conjugation operator on the one particle Hilbert space. The operator \(\mathfrak{C}\) is furthermore defined to fulfil
+\begin{equation}
+\mathfrak{C}\Omega=\Omega.
+\end{equation}
+
+\begin{lemma}\label{basic_properties}
+{\large Properties of} \(\mathfrak{C}\):
+
+The lifted operator \(\mathfrak{C}\) has the following important properties.
+\begin{align}
+\mathfrak{C} \mathfrak{C} = \id \label{self_invers}\\
+\mathfrak{C}^* \mathfrak{C} = \id \label{unitarity}
+\end{align}
+\end{lemma}
+The proof of this lemma consists of fairly lengthy but straightforward computations.
+
+\subsubsection{Commutation of Charge Conjugation and Scattering Operators}
+I first introduce another operator and use it to find the commutation properties of the charge conjugation operator with the scattering operator. Consider the commutating diagram in the one-particle picture.
+\begin{equation}
+\begin{CD}							
+ \mathcal{H}     @>U^A>>  \mathcal{H}\\
+@VVCV        @VVCV\\
+\overline{\mathcal{H}}    @>U^{-A}>> \overline{ \mathcal{H}} .
+\end{CD}
+\end{equation}
+Inspired by this diagram I introduce for each four potential \(A\) the one particle operator \(K: \mathcal{H}\rightarrow\mathcal{H}\) with \(K=U^AC=C U^{-A}\). It is easy to see that \(K\) is unitary and \( P_- K P_+\)and \( P_+ K P_-\) are Hilbert-Schmidt operators, due to the analogous property of the one particle scattering Operator, for more details see \cite{deckert2010time}. This means that \(K\) has a second quantised analogue \(\tilde{K}\) that is unique up to a phase. The operator is then defined as follows
+
+
+\begin{align}
+\tilde{K} &: \mathcal{F}_{\mathcal{H}^{+}\oplus \overline{\mathcal{H}^{-}}} \rightarrow  \mathcal{F}_{\overline{\mathcal{H}}^{+}\oplus \mathcal{H}^{-}}\\
+\forall \psi \in \mathcal{H}&: \quad \tilde{K}a^{\#}(\psi)=a^{\#}(K\psi)\tilde{K},
+\end{align}
+
+where \(a^{\#}\) can be either \(a\) or \(a^*\).
+
+\begin{axiom}\label{SC_CS} The two unknown phases between \(\tilde{K}\) and \(S^A \mathfrak{C}\) and \(\mathfrak{C}S^{-A}\) agree, i.e.
+\begin{equation}
+    \exists \phi[A]\in\mathbb R:  \mathfrak{C}S^A=e^{i\phi[A]} \tilde{K}=S^{-A} \mathfrak{C}.
+\end{equation}
+\end{axiom}
+I have now collected enough tools to prove the following
+\begin{lemma}\label{vacuum_expectation_odd}
+It follows from axiom \ref{SC_CS} that for all four potentials \(A\)
+\begin{equation}
+\forall n\in\mathbb{N}_0: \langle \Omega, T_{2n+1}(A) \Omega \rangle=0
+\end{equation}
+holds. I.e. the vacuum expectation value of all odd expansion coefficients of \eqref{S_expansion} vanishes.
+\end{lemma}
+The proof of lemma \ref{vacuum_expectation_odd} uses homogeneity of degree
+\(2n+1\) of \(T_{2n+1}\), and the properties of operator \(\mathfrak{C}\).
+
+\subsection{ Explicit Bound of the First Orde}\label{sec: first order}
+ The bound of \(T_1(A)\) on a sector of arbitrary but fixed particle number of Fock space \(\mathcal{F}_{m,p}\) for any \(m,p\in\mathbb{N}_0\) can be found to be
+
+\begin{equation}
+\left\|  T_1(A)\Big|_{\mathcal{F}_{m,p}}\right\|\le  \sqrt{m p \alpha +(m \beta +p \gamma)^2+(m+1) (p+1) \delta},
+\end{equation}
+ 
+ for some positive numbers \(\alpha,\beta,\gamma,\delta \in \mathbb{R}^+\). This bound is found by exploiting the commutation properties of \(T_1\) and the determinant like structure of the scalar product of Fock space.
+
+
+
+\subsection{Results about the Second Order}\label{sec: second order}
+Historically it was found that it is notoriously difficult to give a mathematically well defined description of \(T_2\). This can now be achieved by means of the method of Epstein und Glaser \cite{epstein1973role}. Knowing the explicit form of \(T_2\),
+ \eqref{expT2} all that is left to define this operator is to find its vacuum expectation value. 
+This is achieved by
+\begin{axiom}\label{ax:causality} Any disturbance of the electromagnetic field should not influence the behaviour of the system previous to its existence. More precisely, the second quantised scattering-matrix should fulfil
+\begin{equation}\label{causality}
+\left( S^f \right)^{-1} S^{f+g}= \left( S^0 \right)^{-1} S^{g}\tag{causality},
+\end{equation}
+ for any four potentials \(f\) and \(g\) such that the support of \(f\) is not earlier than the support of \(g\). That is, \eqref{causality} should hold whenever
+ \begin{equation}\label{f>g}
+ \supp (f) \succ \supp (g) :\iff  \not\exists p\in\supp (f)  \text{ } \exists l\in \supp (g): (p-l)^2 \ge 0 \wedge p^0 \le l^0
+ \end{equation}
+is fulfilled.
+\end{axiom}
+
+
+ Equation \eqref{causality} also holds when I choose slightly different functions. Let \(\varepsilon, \delta\in \mathbb{R}\), and let \(g,f\) be such that \eqref{causality} is satisfied  then also
+\begin{equation}\label{causality_mult}
+\left( S^{\varepsilon f} \right)^{-1} S^{\varepsilon f+ \delta g}= \left( S^0 \right)^{-1} S^{\delta g}
+\end{equation}
+holds. Expanding equation \eqref{causality_mult} differentiating with respect to \(\varepsilon\) and \(\delta\) once, one gets
+
+\begin{equation}\label{defA_1}
+0=\tilde{T}_1 (f) T_1(g) + T_2(f,g)=:A_1(f,g).
+\end{equation}
+
+Exchanging \(f\) and \(g\) in equations \eqref{f>g} and \eqref{causality_mult} and taking the same derivatives, one gets 
+\begin{equation}\label{defR_1}
+0=\tilde{T}_1 (g) T_1(f) + T_2(f,g)=:R_1(f,g).
+\end{equation}
+I now extent the domain of \(A_1\) and \(R_1\) to all possible sets of two four-potentials and define another operator valued distribution by 
+
+\begin{equation}\label{defD_1}
+D_1(f,g):=A(f,g)-R(f,g)=\tilde{T}_1 (f) T_1(g)-\tilde{T}_1 (g) T_1(f) .
+\end{equation}
+
+It can be inferred from above that \(D_1(f,g)\) is zero if \(f\succ g\) and \(f\prec g\) are both true. Thus to obtain \(T_2\), I first compute \(D_1\) using only \(T_1\) and \(\tilde{T}_1\), then I decompose \(D_1\) into parts fulfilling the support properties of \(A_1\) and \(R_1\). Finally I subtract from the obtained operator \(A_1 (f,g)\) the expression \(\tilde{T}_1(f)T_1(g)\). I will only work with vacuum expectation values, since it is easier and suffices to define \(T_2\) uniquely.
+
+Using \(\tilde{T}_1=-T_1\), and the closed expression \eqref{expT1} for \(T_1\) and the commutation relations of the annihilation and creation operators one obtains
+
+\begin{equation}
+\langle \Omega, D_1(f,g) \Omega \rangle= - \tr \left( P_- Z_1(f)P_+ Z_1(g)P_- \right)+  \tr \left(P_- Z_1(g) P_+ Z(f)P_- \right).
+\end{equation}
+
+%Expressing the traces in terms of integrals and using equation \eqref{define_Zk} one obtains
+%\begin{equation}
+%\begin{aligned}
+%\tr \left(\Z{-+}{f}\Z{+-}{g} \right)
+%=  \int_{\mathcal{M}^-} i_{p_1} \left( \mathrm{d}^4p_1 \right)\int_{\mathcal{M}^+} i_{p_2} \left( \mathrm{d}^4p_2 \right) \\
+%\tr \left(\frac{\slashed{p_1}+m}{2m} \slashed{f}(p_1-p_2)\frac{\slashed{p_2}+m}{2m} \slashed{g}(p_2-p_1) \right).
+%\end{aligned}
+%\end{equation}
+
+Expressing the traces in terms of integrals, using equation \eqref{define_Zk} together with a lengthy calculation reveals that 
+\begin{equation}
+\begin{aligned}
+\langle \Omega, D_1(f,g) \Omega \rangle
+=\frac{2\pi m^2}{3} \int_{\stackrel{k\in\mathbb{R}^4, k\in\text{Future}}{k^2>4m^2}} \sqrt{1-\frac{4m^2}{k^2}}(k^2+2m^2) \\
+(g^{\alpha \beta}-\frac{k^\alpha k^\beta}{k^2})\left(f_\alpha (k) g_\beta (-k) - f_\alpha (-k) g_\beta (k)\right) \text{ }\mathrm{d}^4k\\
+=\frac{8 \pi m^4}{3} \int_{k\in\mathbb{R}^4}  d^{\alpha \beta}(k) f_\alpha(k) g_\beta (-k)\text{ }\mathrm{d}^4k,
+\end{aligned}
+\end{equation}
+holds, where \(d\) is given by
+\begin{equation}
+d^{\alpha \beta}(k):= I\left( \frac{k^2}{4m^2}\right) 1_{k^2>4m^2}(k) [\theta (k_0)- \theta (-k_0)] \left(g^{\alpha \beta}-\frac{k^\alpha k^\beta}{k^2}\right)
+\end{equation}
+and \(I\) is given by
+\begin{equation}
+I(\kappa):=\sqrt{1-\frac{1}{\kappa}}\left(\kappa +\frac{1}{2}\right).
+\end{equation}
+
+By \(\text{Causal}_{\pm}\subset \mathbb{R}^4\) I denote the set such that all its elements fulfil \(\zeta\in \text{Causal} \Rightarrow \zeta^2\ge 0\wedge \zeta^0 \in \mathbb{R}^{\pm}\).
+Now, to split up the distribution the following theorem comes in handy; it can be found as Theorem IX.16 in \cite{reed1975methods}.
+
+\begin{Thm}\label{Paley-Wiener} Paley-Wiener theorem for causal distributions:
+\begin{itemize}
+
+\item[(A)] Let \(T\in \mathcal{S}'(\mathbb{R}^4)\) with \(\supp (T) \subseteq \text{Causal}_{\pm}\) and let \(\hat{T}\) denote its Fourier transform. Then the following is true:
+\begin{itemize}
+\item[(i)] \(\hat{T}(l+i\eta)\) is analytic for \(l, \eta\in\mathbb{R}^4\) and \(\eta^2>0 \in \text{Causal}^\circ_{\pm}\) and \(\hat{T}\) is the boundary value in the sense of \(\mathcal{S}'\).
+\item[(ii)] There is a polynomial \(P\) and an \(n\in\mathbb{N}\) such that
+\begin{equation}
+\left| \hat{T}(l+i\eta) \right|\le \left| P(l+i\eta )\right| (1+ \text{dist}(\eta, \partial \text{Causal}_{\pm})^{-n}).
+\end{equation}
+\end{itemize}
+\item[(B)] Let \(\hat{F}(l+i\eta)\) be analytic for \(l\in\mathbb{R}^4\) and \(\eta\in\text{Causal}^\circ_{\pm}\) and let \(\hat{F}\) fulfil:
+\begin{itemize}
+\item[(i)] For all \(\eta_0\in \text{Causal}^\circ_{\pm}\) there is a polynomial \(P_{\eta_0}\) such that for all \(l\in\mathbb{R}^4\) and \(\eta \in \text{Causal}^\circ_{\pm}\)
+
+\begin{equation}
+|\hat{F}(l+i(\eta + \eta_0))|\le | P_{\eta_0}(l,\eta)|.
+\end{equation}
+
+\item[(ii)] There is an \(n\in\mathbb{N}\) such that for all \(\eta_0\in\text{Causal}^\circ_{\pm}\) there is a polynomial \(Q_{\eta_0}\) with 
+\begin{equation}
+\forall \varepsilon>0: |\hat{F}(l+i \varepsilon\eta_0)|\le \frac{ | Q_{\eta_0}(l)|}{\varepsilon^n}.
+\end{equation}
+\end{itemize}
+Then there is a \(T\in \mathcal{S}'\) with \(\supp T\subset \text{Causal}_{\pm}\) such that \(T\) is the boundary value of \(\hat{F}(l+i\eta)\) in the sense of \(\mathcal{S}'\), the relation between \(\hat{F}\) and \(T\) being
+\begin{equation}
+\hat{F}(l+i \eta)= \frac{1}{(2\pi)^2} \int \mathrm{d}^4x e^{-\eta x} e^{i l x} T(x)
+\end{equation}
+for all \(l\in\mathbb{R}^4\), \(\eta \in \text{Causal}^\circ_{\pm}\) and \(x\in \supp (T)\).
+\end{itemize}
+\end{Thm}
+
+As an ansatz for the splitting I take
+
+\begin{equation}
+\hat{D}_{\pm}^{\alpha \beta}: \mathbb{R}^4 +i \cdot \text{Causal}^º_{\pm} \rightarrow \mathbb{C}, \quad k \mapsto (g^{\alpha \beta} -\frac{k^\alpha k^\beta }{k^2}) J\left( \frac{k^2}{4m^2}\right),
+\end{equation}
+where 
+
+\begin{equation}\label{dispersion_integral}
+J: \mathbb{C}\backslash \mathbb{R}^+_0 \rightarrow \mathbb{C}, \quad J(\kappa) := \frac{\kappa^2}{2\pi i} \int_1^\infty \mathrm{d}s \sqrt{1-\frac{1}{s}} \frac{s+\frac{1}{2}}{s^2 (s-\kappa)}
+\end{equation}
+
+and \(\sqrt{\cdot}\) denotes the principal value of the square root with its branch cut at \(\mathbb{R}^-_0\). Therefore \(J\) is well defined on its domain. Furthermore, \(k=l +i\text{ }\varepsilon \text{ } \eta\) with \(l\in\mathbb{R}^4\) and \(\eta \in \text{Causal}^º_{\pm}\) implies:
+\begin{equation}
+k^2\in \mathbb{R}\Rightarrow k^2=l^2-\eta^2 +i \text{ }\varepsilon l^\alpha \eta_\alpha \in \mathbb{R} \Rightarrow \left( l \perp \eta \wedge \eta^2>0 \Rightarrow l^2 \le 0  \Rightarrow k^2<0\right).
+\end{equation}
+Hence the argument of the square root \(1-\frac{1}{s}\) stays away from the branch cut and the denominator is never zero, therefore the integral on the right-hand side of equation \eqref{dispersion_integral} exists. Furthermore, \(D^{\alpha \beta}_{\pm} (k)\) is holomorphic on its domain.
+
+It can be shown using standard techniques of complex analysis that
+
+\begin{equation}\label{d_at_boundary}
+d^{\alpha \beta} (l)=\lim_{\varepsilon \searrow 0} \left( D^{\alpha \beta}_+ (l+i\varepsilon\eta)-D^{\alpha \beta}_- (l-i\varepsilon\eta) \right)
+\end{equation}
+holds for almost all \(l\in\mathbb{R}^4\). 
+
+ 
+%In the following we show that
+
+%\begin{equation}
+%d^{\alpha \beta} (l)=\lim_{\varepsilon \searrow 0} \left( D^{\alpha \beta}_+ (l+i\varepsilon\eta)-D^{\alpha \beta}_- (l-i\varepsilon\eta) \right)
+%\end{equation}
+%holds for almost all \(l\in\mathbb{R}^4\). We divide the proof of this into four cases.
+
+%\begin{itemize}
+%\item[(a)] \(\kappa = \frac{l^2}{4m^2}>1\) and \(l^0>0\): This implies \(l^\alpha \eta_%\alpha >0\), and thus,
+
+%\begin{equation}
+%\begin{aligned}
+%&\lim_{\varepsilon \searrow 0} \left( D^{\alpha \beta}_+ (l+i\varepsilon\eta)-D^{\alpha \beta}_- (l-i\varepsilon\eta) \right)
+%= \left(g^{\alpha \beta} - \frac{l^\alpha l^\beta}{l^2} \right)\\
+% &\lim_{\varepsilon \searrow 0} \left( J\left(\frac{l^2}{4m^2} +i \varepsilon \right)- J%\left(\frac{l^2}{4m^2} -i \varepsilon \right)\right)
+% = \left(g^{\alpha \beta} - \frac{l^\alpha l^\beta}{l^2}\right) \sqrt{1+\frac{1}{\kappa}}\left( \kappa + \frac{1}{2}\right)
+%\end{aligned}
+%\end{equation}
+
+
+%\end{itemize}
+
+Using similar techniques and Euler substitutions one finds the boundary value of \(\hat{D}^{\alpha \beta}_{\pm}\). For almost all \(l\in\mathbb{R}^4\) and \(\eta \in \text{Causal}^º_{\pm}\) it holds that
+
+\begin{equation}\label{splitting_result}
+\begin{aligned}
+\lim_{\varepsilon \rightarrow 0} \hat{D}^{\alpha \beta}_{\pm}(l+i\varepsilon \eta)
+= \left(g^{\alpha \beta} - \frac{l^{\alpha} l^{\beta}}{l^2}\right)\left[ \mp \id_{l^2>4m^2}(l) \text{sgn}(l^0) \frac{1}{2}\sqrt{1-  \frac{4m^2}{l^2}} \left( \frac{l^2}{4m^2}+\frac{1}{2}\right)  \right. \\
+\left.  +\frac{1}{2\pi i}\left( 1+\frac{5}{3} \frac{l^2}{4m^2}-\left(1+ \frac{l^2} {2m^2}\right)\sqrt{\frac{l^2-4m^2}{l^2}}\arctan \left( \sqrt{\frac{l^2}{4m^2-l^2}} \right)\right)   \right].
+\end{aligned}
+\end{equation}
+This is not true for the arguments fulfilling \(l^2=4m^2\); however, this is irrelevant since \(\hat{D}_{\pm}\) is to be understood as a distribution which means that changes on sets of Lebesgue measure zero are of no concern.
+%\begin{equation}\label{splitting_result}
+%\begin{aligned}
+%\forall l^2 \not \in [0,4m^2] :\lim_{\varepsilon \rightarrow 0} \hat{D}^{\alpha \beta}_{\pm}(l+i\varepsilon \eta)
+%= \left(g^{\alpha \beta} - \frac{l^{\alpha} l^{\beta}}{l^2}\right)\left[ \frac{1}{2\pi i} \left( 1+\frac{5}{3} \frac{l^2}{4m^2}- \frac{1}{2}\left(1+ \frac{l^2} {2m^2}\right)\right.\right. \\
+%\left. \left. \sqrt{\frac{l^2-4m^2}{l^2}} \ln \left( \frac{\sqrt{\left| l^2 -1 \right|}+\sqrt{\left| l^2 \right|}}{\sqrt{\left| l^2 -1 \right|}-\sqrt{\left| l^2 \right|}}\right)\right)  - \id_{l^2>4m^2}(l) \text{sgn}(l^0) \frac{1}{2}\sqrt{1-  \frac{4m^2}{l^2}} \left( \frac{l^2}{4m^2}+\frac{1}{2}\right)\right]\\
+%\forall l^2  \in ]0,4m^2[ :\lim_{\varepsilon \rightarrow 0} \hat{D}^{\alpha \beta}_{\pm}(l+i\varepsilon \eta)
+%= \left(g^{\alpha \beta} - \frac{l^{\alpha} l^{\beta}}{l^2}\right)\left[ \frac{1}{2\pi i} \left( 1+\frac{5}{3} \frac{l^2}{4m^2}-\left(1+ \frac{l^2} {2m^2}\right)\right.\right. \\
+%\left.  \sqrt{\frac{l^2-4m^2}{l^2}} \arctan \left( \sqrt{\frac{l^2}{4m^2-l^2}} \right)\right]
+%\end{aligned}
+%\end{equation}%fehlt noch logarithmusteil +0.5 * sgn(\varepsilon)* residuum
+
+
+By exploiting the support properties guaranteed by theorem \ref{Paley-Wiener} and by comparison of \eqref{defD_1} with \eqref{d_at_boundary} one can now identify the boundary values defined in \eqref{splitting_result} with the vacuum expectation values of \(A_1\) and \(R_1\) defined in \eqref{defA_1} and \eqref{defR_1}.
+This enables us to define the vacuum expectation value of \(T_2\) as a well defined distribution.
+
+\chapter{Mathematical Justification}
+
+
+\appendix
+
+\chapter{Proof of bla}
+
+bla
+
+\backmatter
+
+%\chapter{Bibliography concerning the state of the art, the research objectives, and the work program} 
+%\vspace*{-0.68cm}
+
+%\begingroup
+%\renewcommand{\section}[2]{}
+%\bibliographystyle{amsplain}
+\bibliography{ref}
+
+%\bibliography{../../aarbeit/felix}
+%\include{bib}
+%\endgroup
+
+\chapter{Cooperating Researchers} 
+Prof. Dr. Franz Merkl (LMU)\\
+Junior Research Group Leader Dr. Dirk Deckert (LMU)
+
+
+\end{document}
+

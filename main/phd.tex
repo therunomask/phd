@@ -330,7 +330,7 @@ acting on the four-potentials and the wave function.
 Undoing the substitutions again for the first factor and executing the just mentioned Fourier
 transforms using the convolution theorem inductively results in
 
-\begin{multline}\label{define_Zk}
+\begin{multline}\label{explicit_Zk}
 Z_k(A)\phi(y) =- i  \int_{\mathcal{M}}\frac{\mathfrak{i}_p(\text{d}^4p_1)}{(2\pi)^{3}} \frac{\slashed{p}_1+m}{2m} e^{-ip_1y}  \\
   \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
  \right]\\
@@ -619,7 +619,7 @@ holds. I.e. the vacuum expectation value of all odd expansion coefficients of \e
 The proof of lemma \ref{vacuum_expectation_odd} uses homogeneity of degree
 \(2n+1\) of \(T_{2n+1}\), and the properties of operator \(\mathfrak{C}\).
 
-\subsection{ Explicit Bound of the First Orde}\label{sec: first order}
+\subsection{ Explicit Bound of the First Order}\label{sec: first order}
  The bound of \(T_1(A)\) on a sector of arbitrary but fixed particle number of Fock space \(\mathcal{F}_{m,p}\) for any \(m,p\in\mathbb{N}_0\) can be found to be
 
 \begin{equation}
@@ -813,9 +813,295 @@ This enables us to define the vacuum expectation value of \(T_2\) as a well defi
 
 \appendix
 
-\chapter{Proof of bla}
+\chapter[One Particle S-Matrix; Explicit Bounds][Explicit Bounds]{One Particle S-Matrix; Explicit Bounds}
 
-bla
+We find the estimates of \(Z_k\) by using \eqref{explicit_Zk}. Let \(\psi \in \mathcal{H}\) arbitrary, \(\Sigma\) be an arbitrary spacelike hypersurface in Minkowski space,
+\begin{multline*}
+\left<\psi\right| \left. Z_k\phi(y)\right>= \int_{\Sigma} \bar{\psi}(y)\hspace{0.2cm} i_{\gamma} (\text{d}^4 y) (- i)  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}} \frac{\slashed{p}_1+m}{2m} e^{-ip_1y}  \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\\
+ \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})
+ =  - i  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}}\bar{\psi}(p_1)\hspace{0.2cm}  \frac{\slashed{p}_1+m}{2m}   \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\\
+ \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})
+  =  - i  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}}\overline{ \frac{\slashed{p}_1+m}{2m}\psi}(p_1)   \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\\
+ \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})
+   =  - i  \int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}}\overline{\psi}(p_1)   \\
+  \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\\
+ \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\hat{\phi}(p_{k+1})
+\end{multline*}
+
+We therefore find for the operator norm of \(Z_k\):
+\begin{multline}\label{Z_k estimate}
+\|Z_k\|=\sup_{\psi,\phi \in \mathcal{H}}\frac{\left|\left<\psi\right| \left. Z_k\phi(y)\right>\right|}{\|\psi\| \|\phi\|}
+=\sup_{\psi,\phi \in \mathcal{H}}\left|\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{\frac{3}{2}}}\frac{\overline{\psi}(p_1)}{\|\psi\|}\right. \\
+\left. \prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\right.\\
+ \left. \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\frac{\hat{\phi}(p_{k+1})}{\|\phi\|}\right|\\
+\letext{C.S.I.} \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}}
+  \left|\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \slashed{A}(p_{l-1}-p_l)  (\slashed{p}_l-m)^{-1}  
+ \right]\right.\\
+\left. \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\slashed{A}(p_{k}-p_{k+1})\frac{\hat{\phi}(p_{k+1})}{\|\phi\|}\right|^2\\
+ \le \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}}
+  \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}} \|\slashed{A}(p_{l-1}-p_l)\|_{\text{spec}}\right.\right.\\
+  \left.\left. \| (\slashed{p}_l-m)^{-1}\|_{\text{spec}} \right]
+ \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\|\slashed{A}(p_{k}-p_{k+1})\|_{\text{spec}}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2\\
+ \le \sup_{\lambda\in\mathbb{R}^4+i \epsilon e_0}\| (\slashed{\lambda}_l-m)^{-1}\|_{\text{spec}}^{k-1}   \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}}
+  \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}}\right.\right.\\
+  \left.\left. \|\slashed{A}(p_{l-1}-p_l)\|_{\text{spec}}  \right]
+ \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\|\slashed{A}(p_{k}-p_{k+1})\|_{\text{spec}}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2\\
+ \letext{section \ref{Sec:SBound:Sec:richtig_abschaetzen}} \left(\frac{2}{\epsilon}\right)^{k-1}   \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}}\frac{i_p(\text{d}^4p_1)}{(2\pi)^{3}}
+  \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0}\frac{\text{d}^4p_l}{(2\pi)^{4}}\right.\right.\\
+\left.\left.   \|\slashed{A}(p_{l-1}-p_l)\|_{\text{spec}}  \right]
+ \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\|\slashed{A}(p_{k}-p_{k+1})\|_{\text{spec}}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2.
+ \end{multline}
+ Where we assumed \(\varepsilon\) to be large enough so that the estimate in section 
+ \ref{Sec:SBound:Sec:richtig_abschaetzen} holds.  The following estimation is only valid 
+ for \(k>1\). We now apply the theorem of Parley and Wiener (e.g. \cite{reed1975methods})
+  to all occurrences of  \(\slashed{A}\).  Since \(A\) is compactly supported in Minkowski
+  spacetime its Fourier transform fulfills:
+  \begin{equation}
+  \forall N \in \mathbb{N}: \exists C_N\in\mathbb{R}: \forall p \in \mathbb{C}^4 \| \slashed{\hat{A}}\|(p) \le \frac{C_N 8 \pi }{1+|p|^N} e^{\frac{1}{2}\left|\Im p \right| \text{diam}(A) },
+  \end{equation}
+where diam\((A)\) is the diameter of the support of \(A\) in Minkowski spacetime 
+and the constant in the numerator was slightly modified to simplify our notation. 
+ \begin{multline}
+\le \left(\frac{C_N}{\epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{1}{\pi^2}  \sup_{\phi\in\mathcal{H}}\int_{\mathcal{M}} i_p(\text{d}^4p_1) \\ 
+ \left(\prod_{l=2}^{k} \left[ \int_{\mathbb{R}^4+i \epsilon e_0} \text{d}^4p_l \frac{1}{(1+|p_{l-1}-p_l |)^N}
+ \right] \int_{\mathcal{M}}  i_p(\text{d}^4p_{k+1})\frac{1}{(1+|p_{k}-p_{k+1} |)^N}\frac{\|\hat{\phi}(p_{k+1})\|}{\|\phi\|}\right)^2\\
+= \left(\frac{C_N}{\epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{1}{\pi^2}\\
+  \sup_{\phi\in\mathcal{H}} \left\| 
+\CONV_{\stackrel{l=2}{\mathbb{R}^4}}^{k} \left[  \frac{1}{(1+|\cdot |)^N}
+  \hspace{0.2cm} ,\hspace{0.2cm}  \frac{1}{(1+|\cdot |)^N}\stackrel{\mathcal{M}}{\Conv}\frac{\|\hat{\phi}(\cdot)\|}{\|\phi\|}\right] \right\|_{\mathcal{L}^2(\mathcal{M})}
+  \end{multline}
+  We are going to use Young's inequality for convolution operators acting 
+  \(L^2(\mathcal{M})\rightarrow L^2(\mathcal{M})\), the appropriate 
+  lemma is found in appendix \ref{Sec:Young}
+  \begin{multline}
+  \letext{Young Inequ. \textcolor{red}{Raum?!} } \left(\frac{1}{\sqrt{2} \epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{ C_N^k}{\pi^{4k-1}}  \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)}^{k-1}\\
+    \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathcal{M})}   \sup_{\phi\in\mathcal{H}} \left\| 
+\frac{\|\hat{\phi}(\cdot)\|}{\|\phi\|}\right\|_{\mathcal{L}^2(\mathcal{M})}\\
+= \left(\frac{1}{\sqrt{2} \epsilon}\right)^{k-1} e^{\epsilon \text{diam}(\text{supp}(A)) } \frac{ C_N^k}{\pi^{4k-1}}  \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)}^{k-1}  \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathcal{M})} 
+\end{multline}
+Where \(C_N\) is the constant obtained by application of the theorem of Parley an Wiener, \(\epsilon\) is still an arbitrary positive number. This is why we now optimise over this parameter. In order to simplify the notation we define \(a:=\text{diam}(\text{supp}(A))\), \(b:= k-1\), \(f:=\left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)}\), \(g:=\left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathcal{M})} \) .
+\begin{equation}
+h: \mathbb{R}^+\rightarrow \mathbb{R},\hspace{1cm}\epsilon\mapsto\frac{e^{a \epsilon}}{\epsilon^b}
+\end{equation}
+h is a smooth positive function which diverges at zero and at infinity, so it must attain a minimum somewhere in between. We find this minimum by elementary calculus:
+\begin{equation}
+h'(\epsilon)\equaltext{!}0 \iff -b \frac{e^{a \epsilon}}{\epsilon^{b+1}}+ a \frac{e^{a \epsilon}}{\epsilon^b}=0 \iff -b +a \epsilon=0 \iff \epsilon= \frac{b}{a}
+\end{equation}
+Therefore the value of the minimum is:
+\begin{equation}
+\inf_{\epsilon\in\mathbb{R}^+} h(\epsilon)= h(\frac{b}{a})=\frac{e^b}{\left(\frac{b}{a}\right)^b}=\frac{(a e)^b}{b^b}
+\end{equation}
+Which means for the operator norm of \(Z_k\),  \(k>1\):
+\begin{equation}
+\|Z_k\|\le \left(\frac{1}{\sqrt{2} }\right)^{k-1} \frac{\left(e a\right)^{k-1}}{(k-1)^{k-1}} \frac{ C_N^k}{\pi^{4k-1}}  f^{k-1}  g
+\end{equation}
+This means that we can find the operator norm of the \(S\) operator, once we have read off the operator norm of \(Z_1\). In order to do so, we start at the end of  \eqref{Z_k estimate} and use the Young inequality right away to find:
+\begin{equation}
+\|Z_1\|\le \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}
+\end{equation}
+
+Which is finite, because \(A\) is compactly supported, which means that its Fouriertransform falls off at infinity faster than any polynomial.
+We will be using the well known upper bound for the factorial of an arbitrary number:
+\begin{equation}\label{sterling}
+n!\le \sqrt{2\pi n} \left(\frac{n}{e}\right)^n e^\frac{1}{12n}
+\end{equation}
+We will employ the abbreviation \(w= \frac{ a C_N f}{\pi^4\sqrt{2} }\)
+\begin{multline}
+\|S\|=\left\|\sum_{k=0}^\infty Z_k \right\|\le \sum_{k=0}^\infty \left\|Z_k \right\| \le 1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+ \sum_{k=2}^\infty \left(\frac{1}{\sqrt{2} }\right)^{k-1} \frac{\left(e a\right)^{k-1}}{(k-1)^{k-1}} \frac{ C_N^k}{\pi^{4k-1}}  f^{k-1}  g\\
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+g\frac{ C_N}{\pi^{3}} \sum_{k=2}^\infty \frac{\left(w e\right)^{k-1}}{(k-1)^{k-1}}
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+g\frac{ C_N}{\pi^{3}} \sum_{k=1}^\infty \frac{w^{k}}{\left(\frac{k}{e}\right)^{k}}   \\
+\letext{\eqref{sterling}}1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+g\frac{ C_N}{\pi^{3}} \sum_{k=1}^\infty \frac{w^{k}}{k!} e^{\frac{1}{12k}} \sqrt{2\pi k} \\
+\stackrel{e^{\frac{1}{12k}}\le \sqrt{k} e^{\frac{1}{12}}}{\le} \hspace{0.3cm} 1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+e^{\frac{1}{12}} g\frac{ C_N\sqrt{2}}{\pi^{\frac{5}{2}}} \sum_{k=1}^\infty \frac{w^{k}}{k!}  k\\
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+e^{\frac{1}{12}} g\frac{w C_N\sqrt{2}}{\pi^{\frac{5}{2}}} \sum_{l=0}^\infty \frac{w^{l}}{l!} 
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+e^{\frac{1}{12}} g\frac{w C_N\sqrt{2}}{\pi^{\frac{5}{2}}} e^{w}\\
+=1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+ 2 \pi^{\frac{3}{2}}a g f  C^2_N e^{\frac{ a C_N f}{\pi^4\sqrt{2}}+\frac{1}{12}}\\
+= 1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}+ \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)} \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathcal{M})} 2 \pi^{\frac{3}{2}}\text{diam}(\text{supp}(A))    C^2_N \\
+ e^{\frac{ \text{diam}(\text{supp}(A)) C_N \left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}(\mathbb{R}^4)}}{\pi^4\sqrt{2}}+\frac{1}{12}} <\infty
+\end{multline}
+
+\section{Bound on \(\|(\slashed{\lambda}-m)^{-1}\|_{\text{spec}}\)}\label{Sec:SBound:Sec:richtig_abschaetzen}
+In this section we will find an upper bound on  the supremum over all \(\lambda \in \mathbb{R}^4+i\varepsilon e_0\) of
+\begin{equation}
+\|(\slashed{\lambda}-m)^{-1}\|_{\text{spec}}= 
+\left\| \frac{\slashed{\lambda}+m}{\lambda^2 - m^2}\right\|_{\text{spec}}.
+\end{equation}
+In order to do so, we will find a lower bound on the inverse of the expression in question. 
+To simplify the notation call \(\left(\Re \lambda^0 \right)^2= x\ge 0\) and write out \(\Im \lambda= \varepsilon e_0\) explicitly.
+Since the problem is symmetric in \(\lambda^0\) this suffices.
+Furthermore, since nothing depends on the direction of \(\vec{\lambda}\), the problem is really just 
+two-dimensional. Therefore we define \(r:=\|\vec{\lambda}\|^2>0\) and will only speak of these
+quantities from now on. The object to minimize is
+\begin{equation}
+f_0(x,r):=\frac{\sqrt{(x-r -\varepsilon^2 -m^2)^2+ 4 \varepsilon^2 x}}{\sqrt{x+\varepsilon^2+r}+m}.
+\end{equation}
+We continue with the triangular inequality in the denominator and the concavity of the square root in the numerator giving.
+\begin{multline}
+f_0(x,r)\ge f_1(x,r):=\frac{\frac{1}{\sqrt{2}} \left|x-r-\varepsilon^2-m^2 \right| + \frac{1}{\sqrt{2}} 2 \varepsilon \sqrt{x}}{\sqrt{x}+\sqrt{r}+m+\varepsilon}\\
+=\frac{1}{\sqrt{2}}\frac{\left|x-r-\varepsilon^2-m^2 \right| + 2 \varepsilon \sqrt{x}}{\sqrt{x}+\sqrt{r}+m+\varepsilon}.
+\end{multline}
+
+In order to find the minimum of this expression we will use the following strategy. First we find stationary points in  
+\(M^+:=\{(x,r)\in{\mathbb{R}^+}^2\mid x>r+\varepsilon^2+m^2\}\) and 
+\(M^+:=\{(x,r)\in{\mathbb{R}^+}^2\mid x<r+\varepsilon^2+m^2\}\), since there may be Minima on the boundary 
+between these sets we also minimize \(f_1\) in \(M^0:=\{(x,r)\in{\mathbb{R}^+}^2\mid x=r+\varepsilon^2+m^2\}\).
+Finally, since there might be no minimum, we find estimates on the boundary of \(M^+\cup M^-\cup M^0\).
+\begin{enumerate}[label=case \alph*),]
+\item \(x>r+\varepsilon^2+m^2\):
+
+The gradient of \(f_1\) is
+\begin{multline*}
+\sqrt{2}(\sqrt{x}+\sqrt{r}+m+\varepsilon)^2 \nabla f_1(x,r)= \\
+\begin{pmatrix}
+\frac{1}{2}\sqrt{x}+\sqrt{r}+m+\varepsilon+\varepsilon\frac{m+\sqrt{r}}{\sqrt{x}}+\frac{r+m^2+3\varepsilon^2}{2\sqrt{x}}\\
+-\sqrt{x}-\frac{\sqrt{r}}{2}-m-\varepsilon -\frac{x-\varepsilon^2-m^2}{2\sqrt{r}}-\varepsilon\sqrt{\frac{x}{r}}
+\end{pmatrix},
+\end{multline*}
+since the first element of this vector is always positive, there are no stationary points in this case.
+
+\item \(x<r+\varepsilon^2+m^2\): 
+
+Here the gradient takes the form
+\begin{multline*}
+\sqrt{2}(\sqrt{x}+\sqrt{r}+m+\varepsilon)^2 \nabla f_1(x,r)= \\
+\begin{pmatrix}
+\frac{-\sqrt{x}}{2} -\sqrt{r}-m-\varepsilon+\varepsilon\frac{\sqrt{r}+ m}{\sqrt{x}}-\frac{m^2-\varepsilon^2+r}{2\sqrt{x}}\\
++\sqrt{x}+\frac{\sqrt{r}}{2}+m+\varepsilon -\frac{m^2+\varepsilon^2 -x}{2\sqrt{r}}-\varepsilon\sqrt{\frac{x}{r}}
+\end{pmatrix}\\
+=\begin{pmatrix}
+\frac{-1}{\sqrt{x}} \left(\frac{x}{2}+\frac{r}{2} +\sqrt{x r}-\varepsilon (\sqrt{r}+ m)+\sqrt{x}(m+\varepsilon)+\frac{m^2-\varepsilon^2}{2}\right)\\
+\frac{1}{\sqrt{r}}\left(\frac{x}{2}+\frac{r}{2}+\sqrt{xr}+\sqrt{r}(m+\varepsilon) -\varepsilon\sqrt{x}-\frac{m^2+\varepsilon^2 }{2}\right)
+\end{pmatrix}_,
+\end{multline*}
+we can read off the relation 
+\begin{equation}\label{AppA:case2}
+\sqrt{x^*}=\sqrt{r^*}+\frac{m}{2}\frac{1-\frac{m}{\varepsilon}}{1+\frac{m}{2\varepsilon}}=:\sqrt{r}+\frac{m}{2} c,
+\end{equation}
+ which holds for stationary points \((x^*,r^*)\)  and use it to solve for them.
+  If we want to make sure that the stationary point stays within \(M^-\) we have to ensure
+  that \(x^*<r^*+m^2+\varepsilon^2\) for \((x^*,r^*\) being a solution to \(\nabla f_1(x,r)=0\).
+This results in the condition
+\begin{equation*}
+r< \frac{1}{m^2}\left[ \frac{\varepsilon^2+m^2(1-\frac{1}{4}c^2)}{c}\right]^2=\frac{\varepsilon^4}{m^2}+ \mathcal{O}(\varepsilon^2).
+\end{equation*}
+Since for the estimation of the one particle scattering matrix we are interested in the 
+ regime where \(\varepsilon\), this is the relevant estimation. We will shortly see that 
+ \(r^*=\mathcal{O}(\varepsilon^2)\), therefore we need not worry about the stationary point
+ being outside of \(M^-\) for \(\varepsilon\) large. Indeed, plugging the relation
+  \eqref{AppA:case2} into \(\nabla f_1(x^*,r^*) \stackrel{!}{=}0\) and solving for \(r^*\) we find
+  
+\begin{equation*}
+\sqrt{r^*}=-\frac{m}{4}(c+1) +\frac{1}{2} \sqrt{\varepsilon^2 + \frac{\varepsilon c m}{4} + \frac{m^2}{4}(5+2c)}.
+\end{equation*}
+
+One can immediately see that the right hand side is actually positive once one 
+has restored the summand \(\frac{m^2}{4}(c+1)^2\) in the discriminant. 
+By substituting Taylor's where appropriate we find for \(x^*,r^*\):
+\begin{align*}
+&\sqrt{r^*}=\frac{\varepsilon}{2}- \frac{3}{8} m + \frac{m^2}{\varepsilon} \frac{91}{128} + \mathcal{O}\left(\frac{1}{\varepsilon}\right)\\
+&\sqrt{x^*}=\frac{\varepsilon}{2}+ \frac{1}{8} m - \frac{m^2}{\varepsilon} \frac{5}{128} + \mathcal{O}\left(\frac{1}{\varepsilon}\right)\\
+&x^*=\frac{\varepsilon^2}{4} + \varepsilon m \frac{1}{8} - m^2 \frac{3}{128}+ \mathcal{O}\left(\frac{1}{\varepsilon}\right)\\
+&r^*=\frac{\varepsilon^2}{4} - \varepsilon m \frac{3}{8} + m^2 \frac{109}{128}+ \mathcal{O}\left(\frac{1}{\varepsilon}\right),
+\end{align*}
+yielding for the stationary point
+\begin{equation}
+f_1(x^*,r^*)= \frac{\varepsilon}{\sqrt{2}} + \frac{m}{4 \sqrt{2}}+ \mathcal{O}\left(\frac{1}{\varepsilon}\right).
+\end{equation}
+ 
+\item \label{bla} \(x=r+\varepsilon^2+m^2\):
+
+Plugging this into \(f_1\) gives us
+\begin{equation*}
+f_1(r+\varepsilon^2+m^2,r)=:f_2(r)= \sqrt{2} \varepsilon \frac{\sqrt{r+\varepsilon^2+m^2}}{\sqrt{r+\varepsilon^2+m^2}+\sqrt{r}+m+\varepsilon}
+\end{equation*}
+to minimise. The derivative of this function is given by
+\begin{multline*}
+\sqrt{2} (\sqrt{r+\varepsilon^2+m^2}+\sqrt{r}+m+\varepsilon)^2 f_2'(r)\\
+= \varepsilon \left( \frac{\sqrt{r}+m+\varepsilon}{\sqrt{r+m^2+\varepsilon^2}}- \sqrt{1+\frac{m^2+\varepsilon^2}{r}}\right).
+\end{multline*}
+From the derivative we can read off that the function has a minimum at 
+\(\sqrt{r^*}=\varepsilon \frac{1+\frac{m^2}{\varepsilon^2}}{1+\frac{m}{\varepsilon}}\).
+We estimate this value, its square and the minimum to be
+\begin{align}\tag*{}
+\sqrt{r^*}&= \varepsilon - m + \mathcal{O}\left( \frac{1}{\varepsilon}\right)\\ \tag*{}
+r^*&= \varepsilon^2 - 2 \varepsilon m +\mathcal{O}\left( 1\right)\\
+f_2(r^*)&= (2-\sqrt{2})\varepsilon - (3-2\sqrt{2})m + \mathcal{O}\left( \frac{1}{\varepsilon}\right).
+\end{align}
+
+\item \(x=0\):
+
+In this case \(f_1\) simplifies to
+\begin{equation*}
+f_1(0,r)=:f_3(r)=\frac{1}{\sqrt{2}} \frac{r+\varepsilon^2+m^2}{\sqrt{r}+m+\varepsilon},
+\end{equation*}
+its derivative is given by
+\begin{equation*}
+2\sqrt{2}(\sqrt{r}+m+\varepsilon)^2 \sqrt{r} f_3'(r)=r + 2 \sqrt{r}(m+\varepsilon) - \varepsilon^2-m^2.
+\end{equation*}
+So we read off that \(f_3\) has a minimum at \(\sqrt{r^*}=-m-\varepsilon + \sqrt{2} \sqrt{\varepsilon^2+\varepsilon m+m^2}\).
+The same approximations as above yield
+\begin{align}\tag*{}
+\sqrt{r^*}&=\varepsilon (\sqrt{2}-1)- \frac{2-\sqrt{2}}{2} m + \mathcal{O}\left( \frac{1}{\varepsilon}\right)\\\tag*{}
+r^*&= \varepsilon^2 (3-2\sqrt{2}) - (3\sqrt{2}  - 4) \varepsilon m + \mathcal{O}(1)\\
+f_3(r^*)&= \varepsilon (2+ \sqrt{2}) - m \left( \frac{3}{2\sqrt{2}} -1 \right) + \mathcal{O}\left( \frac{1}{\varepsilon}\right).
+\end{align}
+
+\item \(x\rightarrow \infty\):
+
+In this case \(f_1\) diverges to \(+\infty\).
+
+\item \(r=0\):
+
+In this case \(f_1\) reduces to
+
+\begin{equation*}
+f_1(x,0):=f_4(x)= \frac{1}{\sqrt{2}} \frac{ |x-\varepsilon^2-m^2| + 2 \varepsilon \sqrt{x}}{\sqrt{x}+m+\varepsilon},
+\end{equation*}
+for \(x\neq \varepsilon^2+m^2\) its derivative is given by
+\begin{multline*}
+\sqrt{2x} (\sqrt{x}+m+\varepsilon)^2 f_4'(x)\\
+= \frac{1}{2}\text{sgn}(x-\varepsilon^2-m^2)(x+\varepsilon^2+m^2)\\
++\sqrt{x} (m+\varepsilon) \text{sgn}(x-\varepsilon^2-m^2) + \varepsilon m + \varepsilon^2.
+\end{multline*}
+For \(\varepsilon\) large this function has a minimum at the
+ kink and a maximum between 0 and \(\varepsilon^2+m^2\).  So
+ we take note of the minimum at the kink and
+  the minimum for \(x\rightarrow 0\). These values are
+\begin{align}
+f_4(0)&= \frac{\varepsilon}{\sqrt{2}} \frac{1+\frac{m^2}{\varepsilon^2}}{1+\frac{m}{\varepsilon}}= \frac{\varepsilon}{\sqrt{2}} - \frac{m}{\sqrt{2}}+ \mathcal{O}\left(\frac{1}{\varepsilon}\right)\\
+f_4(\varepsilon^2+m^2)&=
+\frac{\sqrt{2} \varepsilon }{1+ \frac{1+ \frac{m}{\varepsilon}}{\sqrt{1+\frac{m^2}{\varepsilon^2}}}}= \frac{\varepsilon}{\sqrt{2}} - \frac{m}{2\sqrt{2}} + \mathcal{O}\left(\frac{1}{\varepsilon}\right)
+\end{align}
+ 
+\item  \(r\rightarrow \infty\):
+
+In this case holds \(f_1\rightarrow \infty\). 
+
+\item simultaneous limits \(x,r\rightarrow \infty\). The non trivial limits \(\sqrt{x}=\sqrt{r}+c'\) 
+for \(c'\in\mathbb{R}\) and \(x-r=c''\) for \(c''\in\mathbb{R}\) all give limits equal to or greater than
+\(\frac{\varepsilon}{\sqrt{2}}\). 
+ 
+\end{enumerate}
+Therefore the global minimum is the minimum of \ref{bla}, which is 
+\((2-\sqrt{2})\varepsilon - (3-2\sqrt{2})m + \mathcal{O}\left(\frac{1}{\varepsilon}\right)\).
+So for \(\varepsilon\) large enough relative to \(m\) we found the 
+lower bound \(\frac{\varepsilon}{2}\) of \(f_1\). So overall
+\begin{equation}
+\sup_{\lambda\in \mathbb{R}^4+\varepsilon i e_0} \left\| (\slashed{\lambda} - m)^{-1} \right\|_{spec} \le \frac{2}{\varepsilon}
+\end{equation}
+holds.
+
+
+\section{Young's Inequality on \(L^2(\mathcal{M})\)}\label{Sec:Young}
+
+
 
 \backmatter
 

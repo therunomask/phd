@@ -70,42 +70,6 @@
 \newcommand{\black}{ \color{black} }
 
 
-%\makeatletter
-
-%\renewcommand\section{\@startsection {section}{1}{\z@}%
-%                                   {-2.0ex \@plus -1ex \@minus -.2ex}%
-%                                   {2.3ex \@plus.2ex}%
-%                                   {\normalfont\Large\bfseries}}
-%\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
-%                                   {-0.5ex \@plus -0.5ex \@minus -.2ex}%
-%                                   {0.5em}%
-%                                   {\normalfont\bfseries}}
-%\renewcommand\subsubsection{\@startsection {subsubsection}{1}{\z@}%
-%                                   {-0.3ex \@plus -0.4ex \@minus -.2ex}%
-%                                   {0.1 em}%
-%                                   {\normalfont\sc}}  
-%\renewcommand\paragraph{\@startsection {paragraph}{1}{\z@}%
-%                                   {-0.2ex \@plus -1ex \@minus -.2ex}%
-%                                   {0.1 em}%
-%                                   {\normalfont\it}}                                   
-
-%\def\@settitle{\begin{center}%
-%  \baselineskip14\p@\relax
-%  \bfseries
-%  \uppercasenonmath\@title
-%  \@title
-%  \ifx\@subtitle\@empty\else
-%     \\[1ex]\uppercasenonmath\@subtitle
-%     \footnotesize\mdseries\@subtitle
-%  \fi
-%  \end{center}%
-%}
-%\def\subtitle#1{\gdef\@subtitle{#1}}
-%\def\@subtitle{}
-%\makeatother
-
-
-%\makeatletter
 \renewcommand\chapterheadstart{
 \vspace *{\beforechapskip}
 \hrulefill
@@ -361,7 +325,7 @@ introduces the time ordering Operator and the factor of \(\frac{1}{n!}\). This
 line of argument has been translated into the momentum space, which might turn
 out to be more convenient for proving the main conjecture. 
 
-Using Parsevals theorem one translates the operators \(Z_k\) into momentum space, then one applies standard approximation techniques and the theorem of Paley and Wiener and Youngs inequality for convolution operators. Next one minimizes with respect to the arbitrary \(\epsilon\) in the equation \eqref{define_Zk}, which can be done due to the rules for changing the contour of integration of analytic functions. The estimate is valid only for \(k>1\), it is given by
+Using Parsevals theorem one translates the operators \(Z_k\) into momentum space, then one applies standard approximation techniques and the theorem of Paley and Wiener and Youngs inequality for convolution operators. Next one minimizes with respect to the arbitrary \(\epsilon\) in the equation \eqref{explicit_Zk}, which can be done due to the rules for changing the contour of integration of analytic functions. The estimate is valid only for \(k>1\), it is given by
 \begin{equation}
 \|Z_k(A)\|\le \left(\frac{1}{\sqrt{2} }\right)^{k-1} \frac{\left(e a\right)^{k-1}}{(k-1)^{k-1}} \frac{ C_N^k}{\pi^{4k+2}8}  f^{k-1}  g,
 \end{equation}
@@ -683,15 +647,13 @@ Using \(\tilde{T}_1=-T_1\), and the closed expression \eqref{expT1} for \(T_1\) 
 %\end{aligned}
 %\end{equation}
 
-Expressing the traces in terms of integrals, using equation \eqref{define_Zk} together with a lengthy calculation reveals that 
-\begin{equation}
-\begin{aligned}
+Expressing the traces in terms of integrals, using equation \eqref{explicit_Zk} together with a lengthy calculation reveals that 
+\begin{multline}\label{D1_vacc}
 \langle \Omega, D_1(f,g) \Omega \rangle
-=\frac{2\pi m^2}{3} \int_{\stackrel{k\in\mathbb{R}^4, k\in\text{Future}}{k^2>4m^2}} \sqrt{1-\frac{4m^2}{k^2}}(k^2+2m^2) \\
+=-\frac{2\pi m^2}{3} \int_{\stackrel{k\in\mathbb{R}^4, k\in\text{Future}}{k^2>4m^2}} \sqrt{1-\frac{4m^2}{k^2}}(k^2+2m^2) \\
 (g^{\alpha \beta}-\frac{k^\alpha k^\beta}{k^2})\left(f_\alpha (k) g_\beta (-k) - f_\alpha (-k) g_\beta (k)\right) \text{ }\mathrm{d}^4k\\
-=\frac{8 \pi m^4}{3} \int_{k\in\mathbb{R}^4}  d^{\alpha \beta}(k) f_\alpha(k) g_\beta (-k)\text{ }\mathrm{d}^4k,
-\end{aligned}
-\end{equation}
+=-\frac{8 \pi m^4}{3} \int_{k\in\mathbb{R}^4}  d^{\alpha \beta}(k) f_\alpha(k) g_\beta (-k)\text{ }\mathrm{d}^4k,
+\end{multline}
 holds, where \(d\) is given by
 \begin{equation}
 d^{\alpha \beta}(k):= I\left( \frac{k^2}{4m^2}\right) 1_{k^2>4m^2}(k) [\theta (k_0)- \theta (-k_0)] \left(g^{\alpha \beta}-\frac{k^\alpha k^\beta}{k^2}\right)
@@ -785,28 +747,65 @@ holds for almost all \(l\in\mathbb{R}^4\).
 
 Using similar techniques and Euler substitutions one finds the boundary value of \(\hat{D}^{\alpha \beta}_{\pm}\). For almost all \(l\in\mathbb{R}^4\) and \(\eta \in \text{Causal}^º_{\pm}\) it holds that
 
-\begin{equation}\label{splitting_result}
-\begin{aligned}
-\lim_{\varepsilon \rightarrow 0} \hat{D}^{\alpha \beta}_{\pm}(l+i\varepsilon \eta)
-= \left(g^{\alpha \beta} - \frac{l^{\alpha} l^{\beta}}{l^2}\right)\left[ \mp \id_{l^2>4m^2}(l) \text{sgn}(l^0) \frac{1}{2}\sqrt{1-  \frac{4m^2}{l^2}} \left( \frac{l^2}{4m^2}+\frac{1}{2}\right)  \right. \\
-\left.  +\frac{1}{2\pi i}\left( 1+\frac{5}{3} \frac{l^2}{4m^2}-\left(1+ \frac{l^2} {2m^2}\right)\sqrt{\frac{l^2-4m^2}{l^2}}\arctan \left( \sqrt{\frac{l^2}{4m^2-l^2}} \right)\right)   \right].
-\end{aligned}
-\end{equation}
+\begin{multline}\label{splitting_result}
+\lim_{\varepsilon \rightarrow 0} \hat{D}^{\alpha \beta}_{\pm}(l+i\varepsilon \eta)=\\
+ \left(g^{\alpha \beta} - \frac{l^{\alpha} l^{\beta}}{l^2}\right)\left[ \pm \id_{l^2>4m^2} \text{sgn}(l^0) \frac{1}{2}\sqrt{1-  \frac{4m^2}{l^2}} \left( \frac{l^2}{4m^2}+\frac{1}{2}\right)  \right. \\
+\left.  +\frac{1}{2\pi i}\left( 1+\frac{5}{3} \frac{l^2}{4m^2}-\left(1+ \frac{l^2} {2m^2}\right)\sqrt{1-\frac{4m^2}{l^2}}\arctan \left( \sqrt{\frac{l^2}{4m^2-l^2}} \right)\right)   \right]_.
+\end{multline}
 This is not true for the arguments fulfilling \(l^2=4m^2\); however, this is irrelevant since \(\hat{D}_{\pm}\) is to be understood as a distribution which means that changes on sets of Lebesgue measure zero are of no concern.
-%\begin{equation}\label{splitting_result}
-%\begin{aligned}
-%\forall l^2 \not \in [0,4m^2] :\lim_{\varepsilon \rightarrow 0} \hat{D}^{\alpha \beta}_{\pm}(l+i\varepsilon \eta)
-%= \left(g^{\alpha \beta} - \frac{l^{\alpha} l^{\beta}}{l^2}\right)\left[ \frac{1}{2\pi i} \left( 1+\frac{5}{3} \frac{l^2}{4m^2}- \frac{1}{2}\left(1+ \frac{l^2} {2m^2}\right)\right.\right. \\
-%\left. \left. \sqrt{\frac{l^2-4m^2}{l^2}} \ln \left( \frac{\sqrt{\left| l^2 -1 \right|}+\sqrt{\left| l^2 \right|}}{\sqrt{\left| l^2 -1 \right|}-\sqrt{\left| l^2 \right|}}\right)\right)  - \id_{l^2>4m^2}(l) \text{sgn}(l^0) \frac{1}{2}\sqrt{1-  \frac{4m^2}{l^2}} \left( \frac{l^2}{4m^2}+\frac{1}{2}\right)\right]\\
-%\forall l^2  \in ]0,4m^2[ :\lim_{\varepsilon \rightarrow 0} \hat{D}^{\alpha \beta}_{\pm}(l+i\varepsilon \eta)
-%= \left(g^{\alpha \beta} - \frac{l^{\alpha} l^{\beta}}{l^2}\right)\left[ \frac{1}{2\pi i} \left( 1+\frac{5}{3} \frac{l^2}{4m^2}-\left(1+ \frac{l^2} {2m^2}\right)\right.\right. \\
-%\left.  \sqrt{\frac{l^2-4m^2}{l^2}} \arctan \left( \sqrt{\frac{l^2}{4m^2-l^2}} \right)\right]
-%\end{aligned}
-%\end{equation}%fehlt noch logarithmusteil +0.5 * sgn(\varepsilon)* residuum
 
 
-By exploiting the support properties guaranteed by theorem \ref{Paley-Wiener} and by comparison of \eqref{defD_1} with \eqref{d_at_boundary} one can now identify the boundary values defined in \eqref{splitting_result} with the vacuum expectation values of \(A_1\) and \(R_1\) defined in \eqref{defA_1} and \eqref{defR_1}.
-This enables us to define the vacuum expectation value of \(T_2\) as a well defined distribution.
+In order not to convolute notation too much we define 
+\(\lim_{\varepsilon\rightarrow 0} \hat{D}^{\alpha \beta}_{\pm}(l+i\varepsilon \eta)=: \hat{D}^{\alpha \beta}_{\pm}(l)\), that is we extend 
+the holomorphic functions \(\hat{D}^{\alpha \beta}_{\pm}\) to the boundary of their domain. 
+
+Furthermore we will make use of the abbreviations 
+\begin{align}
+\mathcal{K}^{\alpha \beta} (k) &:=  \left(g^{\alpha \beta}  - \frac{k^{\alpha} k^{\beta}}{k^2}\right) \\
+\mathcal{R}(k) &:= \id_{k^2>4m^2} \sqrt{1-  \frac{4m^2}{k^2}} \left( \frac{k^2}{4m^2}+\frac{1}{2}\right)\\\notag
+\tau (k) &:=\frac{1}{\pi i}\left( 1 +\frac{5}{3} \frac{k^2}{4m^2}-\left(1+ \frac{k^2} {2m^2}\right) \cdot \right.\\
+ &\left.  \cdot \sqrt{1-\frac{4m^2}{k^2}}\arctan \left( \sqrt{\frac{k^2}{4m^2-k^2}} \right)\right)_.
+\end{align}
+
+Theorem \ref{Paley-Wiener} guarantees 
+us that \(\supp D^{\alpha \beta}_{\pm}\subset \text{Causal}_{\pm}\) holds. We use this property to compare the support properties of
+ \(\supp D^{\alpha \beta}_{\pm}\) with the ones of \(A_1\) and \(R_1\) using the following short calculation: Substituting 
+ \(\supp D^{\alpha \beta}_{+}\) for \(d^{\alpha \beta}\) in \eqref{D1_vacc} we see that
+
+\begin{multline}\label{D+translation}
+\langle \Omega, D_+ (f,g)\Omega \rangle :=-\frac{8 \pi m^4}{3} \int_{\mathbb{R}^4} D^{\alpha \beta}_{+}(k) f_\alpha (k) g_\beta (-k) d^4 k=\\
+- \frac{2 m^4}{3 \pi} \int_{\mathbb{R}^4} \int_{\mathbb{R}^4} D^{\alpha \beta} (z-y) f_\alpha (y) g_\beta (z) d^4 z d^4 y
+\end{multline}
+holds. So we see that \(D_+\) vanishes whenever the support of \(g\) is earlier than the support of \(f\) or they lie 
+acausally or a mixture of these conditions. That is it vanishes whenever \(\supp f\succ \supp g\) holds, which 
+is exactly the support property of \(A_1\).  Since the analogous treatment holds for \(D_-\) and \(R_1\) and we 
+know 
+
+\begin{equation*}
+\langle \Omega, D\Omega \rangle=\langle \Omega,A_1\Omega \rangle-\langle \Omega,R_1\Omega \rangle=\langle \Omega,D_+\Omega \rangle - \langle \Omega,D_-\Omega \rangle,
+\end{equation*}
+
+we identify \(\langle \Omega,A_1\Omega \rangle=\langle \Omega,D_+\Omega \rangle\) and 
+\(\langle \Omega,R_1\Omega \rangle=\langle \Omega,D_-\Omega \rangle\). Going back to the definition 
+of \(A_1\) we can now find \(\langle \Omega, T_2 \Omega \rangle \). We reuse the calculation resulting 
+in \eqref{D1_vacc} to find
+
+\begin{multline}
+\langle \Omega, T_2 (f,g) \Omega \rangle = \langle \Omega, A_1 (f,g) \Omega \rangle - 
+\langle \Omega, T_1^\dagger (f) T_1^\dagger (g) \Omega \rangle \\
+= - \frac{8 \pi m^4}{3} \int_{\mathbb{R}^4} D_+^{\alpha \beta} (k) f_\alpha (k) g_\beta (-k) d^4k- \frac{8 \pi m^4}{3} \int_{\{k\in\mathbb{R}^4 \mid k^0>0, k^2 > 4 m^2 \}}\\
+ \sqrt{1-\frac{4m^2}{k^2}} \left( \frac{k^2}{4m^2} + \frac{1}{2}\right) 
+\left( g^{\alpha \beta} - \frac{k^\alpha k^\beta }{k^2}\right) f_\alpha (-k) g_\beta (k) d^4 k\\
+= - \frac{8 \pi m^4}{3} \int_{\mathbb{R}^4} f_\alpha (k) g_\beta (-k) \mathcal{K}^{\alpha \beta} (k)
+\left[ \mathcal{R}(k) \left\{ \frac{1}{2} \text{sgn} \left(k^0\right) + 1_{k^0<0}\right\} \right.\\
+\left. +  \frac{1}{2}\tau(k) \right]
+= \int_{\mathbb{R}^4} f_\alpha (k) g_\beta (-k) t_2^{\alpha \beta} (k) d^4 k,
+\end{multline}
+with 
+\begin{equation}
+t^{\alpha \beta}_2 (k) := - \frac{4 \pi m^4}{3}\mathcal{K}^{\alpha \beta }(k) \left[\mathcal{R}(k) + \tau(k) \right]
+\end{equation}
+
 
 \chapter{Mathematical Justification}
 

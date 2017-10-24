@@ -1,6 +1,6 @@
 \contentsline {chapter}{Contents}{ii}{section*.1}
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\chapternumberline {2}Connection to Physical Literature}{3}{chapter.2}
+\contentsline {chapter}{\chapternumberline {2}Axiomatic Construction of Scattering Operator}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Defining One-Particle Scattering-Matrix}{4}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Well-definedness of \(U\) }{8}{subsection.2.1.1}
 \contentsline {section}{\numberline {2.2}Construction of the Second Quantised Scattering-Matrix}{10}{section.2.2}
@@ -15,5 +15,5 @@
 \contentsline {appendix}{\chapternumberline {A}One Particle S-Matrix; Explicit Bounds}{27}{appendix.A}
 \contentsline {section}{\numberline {A.1}Bound on \(\delimiter "026B30D ({\mathchoice {{\setbox \z@ \hbox {$\mathsurround \z@ \displaystyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \displaystyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \textstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \textstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptscriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptscriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}}-m)^{-1}\delimiter "026B30D _{\text {spec}}\)}{32}{section.A.1}
 \contentsline {section}{\numberline {A.2}Young's Inequality on \(L^2(\mathcal {M})\)}{38}{section.A.2}
-\contentsline {chapter}{Bibliography}{39}{section*.25}
-\contentsline {chapter}{Cooperating Researchers}{41}{appendix*.26}
+\contentsline {chapter}{Bibliography}{39}{section*.26}
+\contentsline {chapter}{Cooperating Researchers}{41}{appendix*.27}

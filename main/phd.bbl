@@ -7,12 +7,12 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{1}
 
-\bibitem{deckert2010time}
+\bibitem{ivp0}
 D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher, \emph{Time-evolution of
   the external field problem in quantum electrodynamics}, Journal of
   Mathematical Physics \textbf{51} (2010), no.~12, 122301.
 
-\bibitem{deckert2014dirac}
+\bibitem{ivp1}
 D-A Deckert and Franz Merkl, \emph{Dirac equation with external potential and
   initial data on cauchy surfaces}, Journal of Mathematical Physics \textbf{55}
   (2014), no.~12, 122305.

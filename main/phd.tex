@@ -161,6 +161,11 @@ and the time evolution operator.
 \show\afterchaptertitle
 \noch{Historische Einleitung durch Anfänge relativistischer Quantenphysik, zweitquantisierung Ruijsnaars Resultat und ivp0. Falls möglich Verbindung zur Physikliteratur. Falls möglich Resultat zur Bestimmung der Phase und Analytizität. }
 
+\chapter[Nonperturbative \(S\)]{Nonperturbative discussion of the Scattering Operator}
+As we have seen in the last chapter, straightforwardly lifting the one particle dynamics to Fock Space leads to difficulties whenever the vector part of the four potential is nonzero. Clearly this is quite devastating for the approach, but even more the result does not respect gauge symmetry, a symmetry of the physical system. This fact tells us, that our description of the physical system as an element of Fock space needs extra restraints, which are purely artefacts of our particular treatment. 
+
+Inspired by this, we take a closer look at the construction of Fock space, we closely follow \cite{ivp0}. 
+
 \chapter[Axiomatic Construction of Scattering Operator][Construction of \(S\)]{Axiomatic Construction of Scattering Operator} \label{sec:workprogram}
 
 \noch{Starte von vorne, mache dies klar. Nehme 1-Teilchen stuff  und Axiome an, versuche Wohldefiniertheit zu zeigen. Motiviere Axiome durch Eigenschaften der 1-Teilchen Operatoren. Schreibe Induktionsschema auf.}
@@ -215,7 +220,7 @@ where Einstein's summation convention is used. These matrices fulfil the anti-co
 \end{equation}
 where \(g\) is the Minkowski metric. I work with the \(+---\) metric signature and the Dirac representation of this algebra. Squared four dimensional objects always refer to the Minkowski square, meaning for all \(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
 
-In order to define Lorentz invariant measures for four dimensional integrals I employ the same notation as in \cite{deckert2014dirac}. The standard volume form over \(\mathbb{R}^4\) is denoted by \(\mathrm{d}^4 x= \mathrm{d}x^0 \mathrm{d}x^1\mathrm{d}x^2 \mathrm{d}x^3\), the product of forms is understood as the wedge product. The symbol \(\mathrm{d}^3x\)  means the 3-form \(\mathrm{d}^3x= \mathrm{d}x^1\mathrm{d}x^2\mathrm{d}x^3\) on \(\mathbb{R}^4\). Contraction of a form \(\omega\) with a vector \(v\) is denoted by \(\mathfrak{i}_v(\omega)\). The notation \(\mathfrak{i}_v (\omega)\) is also used for the spinor matrix valued vector \(\gamma=(\gamma^0,\gamma^1,\gamma^2,\gamma^3)=\gamma^\alpha e_\alpha\):
+In order to define Lorentz invariant measures for four dimensional integrals I employ the same notation as in \cite{ivp1}. The standard volume form over \(\mathbb{R}^4\) is denoted by \(\mathrm{d}^4 x= \mathrm{d}x^0 \mathrm{d}x^1\mathrm{d}x^2 \mathrm{d}x^3\), the product of forms is understood as the wedge product. The symbol \(\mathrm{d}^3x\)  means the 3-form \(\mathrm{d}^3x= \mathrm{d}x^1\mathrm{d}x^2\mathrm{d}x^3\) on \(\mathbb{R}^4\). Contraction of a form \(\omega\) with a vector \(v\) is denoted by \(\mathfrak{i}_v(\omega)\). The notation \(\mathfrak{i}_v (\omega)\) is also used for the spinor matrix valued vector \(\gamma=(\gamma^0,\gamma^1,\gamma^2,\gamma^3)=\gamma^\alpha e_\alpha\):
 \begin{equation}
 \mathfrak{i}_\gamma (\mathrm{d}^4x) := \gamma^\alpha \mathfrak{i}_{e_\alpha}(\mathrm{d}^4 x),
 \end{equation} 
@@ -234,7 +239,7 @@ I introduce a family of Cauchy hypersurfaces \((\Sigma_t)_{t\in\mathbb{R}}\) gov
 
 Now we have the tools to recast the Dirac equation into an integral version
 which will allow me to define the scattering operator. 
-Let \(\psi \in \mathcal{C}_A\), for any \(t\in\mathbb{R}\) I denote by \(\phi_t\) the solution to the free Dirac equation, that is equation \eqref{dirac} with \(A=0\), with \(\left.\psi\right|_{\Sigma_t}\) as initial condition on \(\Sigma_t\). Let \(t_0\in\mathbb{R}\) have some fixed value, equation \eqref{dirac} can be reformulated, c.f. theorem 2.23 of \cite{deckert2014dirac}, as
+Let \(\psi \in \mathcal{C}_A\), for any \(t\in\mathbb{R}\) I denote by \(\phi_t\) the solution to the free Dirac equation, that is equation \eqref{dirac} with \(A=0\), with \(\left.\psi\right|_{\Sigma_t}\) as initial condition on \(\Sigma_t\). Let \(t_0\in\mathbb{R}\) have some fixed value, equation \eqref{dirac} can be reformulated, c.f. theorem 2.23 of \cite{ivp1}, as
 \begin{multline}\label{dirac_integral}
 \phi_t(y)=\phi_{t_0}(y)
 -i \int_{t_0}^t \text{d}s \int_{\Sigma_s}\int_{\mathcal{M}}\frac{\slashed{p}+m}{2m^2}e^{ip(x-y)}\mathfrak{i}_p(\text{d}^4p) \frac{\mathfrak{i}_{\gamma}(\text{d}^4x)}{(2\pi)^{3}}\\
@@ -414,13 +419,16 @@ power series
 \begin{equation}\label{S_expansion}
 S^A=\id_\mathcal{F}+\sum_{l=1}^\infty \frac{1}{l!} T_l(A).
 \end{equation}
-In order to fully characterise \(S^A\) it is enough to characterise all of the \(T_l\) operators. For \(k\in \mathbb{N}\) the operators \(T_k (A)\) are also defined for \(k\) non-identical arguments by homogeneity of \(T_k(A)\) to be symmetric in its arguments. Using the \eqref{lift_condition1} one can easily derive commutation relations for the operators \(T_m\), which are given by
+In order to fully characterise \(S^A\) it is enough to characterise all of the \(T_l\) operators. For \(k\in \mathbb{N}\)
+the operators \(T_k (A)\) are also defined for \(k\) non-identical arguments by homogeneity of
+\(T_k(A)\) to be symmetric in its arguments. For ease of notation we define \(T_0:=\id_\mathcal{F}\).
+Using the \eqref{lift_condition1} one can easily derive commutation relations for the operators 
+\(T_m\), which are given by
 
-\begin{align}
-\left[T_m(A) , a(\phi)\right]= a\left(Z_m (A) \phi \right) + 1_{[2,\infty[}(m)\sum_{j=1}^{m-1} \begin{pmatrix} m \\ j \end{pmatrix} a\left(Z_j (A) \phi \right)\circ T_{m-j}(A), \label{Tk_commutation_relation_annihilator}\\
-\left[T_m(A) , a^*(\phi)\right]= a^*\left(Z_m (A) \phi \right) + 1_{[2,\infty[}(m)\sum_{j=1}^{m-1} \begin{pmatrix} m \\ j \end{pmatrix} a^*\left(Z_j (A) \phi \right)\circ T_{m-j}(A),\label{Tk_commutation_relation_creator}
-\end{align}
-where \(1_{Y}\) is the characteristic function of the set \(Y\).
+\begin{equation}
+\left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right)\circ T_{m-j}(A), \label{Tk_commutation_relation}
+\end{equation}
+where \(a^\#\) is either \(a\) or \(a^*\).
 The matrix elements of the expansion coefficients \(T_l\) of \eqref{S_expansion} can therefore be constructed from the matrix elements of the lower expansion coefficients \(T_k\) with \(k<l\) and the vacuum expectation value of \(T_l\). As will be shown in section \ref{sec: odd orders}, the vacuum expectation value of all odd orders can naturally be chosen to zero, due to charge conjugation symmetry. I will be using the method of Eppstein and Glaser (see \cite{epstein1973role, scharf2014finite})  to find the vacuum expectation value of the even orders.
 
 Besides the scattering operator I will also need the expansion coefficients of its adjoint. 
@@ -437,6 +445,35 @@ m\\k
 \end{equation}
 
 Thus to find the adjoint coefficient of order \(n\), it suffices to know the coefficients of \(S\) itself up to order \(n\). 
+
+\section{Construction of Recursive Equation for \(T_m\)}
+
+In the following I derive a recursive equation for the coefficients of the expansion 
+of the second quantized scattering operator. The starting point of this derivation is 
+the commutator of \(T_m\), equation \eqref{Tk_commutation_relation_creator}.
+
+\subsection{Heuristics}
+
+Why at this point one might suspect that such a representation exists is, because
+looking at equation \eqref{Tk_commutation_relation_creator} for a while, one
+comes to the conclusion that if one replaces \(T_m\) by 
+\begin{equation}
+T_m - \frac{1}{2} \sum_{k=1}^{m-1} \begin{pmatrix} m \\ k\end{pmatrix} T_k T_{m-k},
+\end{equation}
+no \(T_k\) with \(k>m-2\) will occur on the right hand side of the resulting equation.
+So if one subtracts the right polynomial in \(T_k\) for suitable \(k\) one might achieve
+a commutator which contains only the creation respectively annihilation operator 
+concatenated with some one particle operator. From our treatment of \(T_1\)
+\noch{place proper reference to definition of G operator} we know which
+operators have such commutation relations. 
+
+So having this in Mind we start with the ansatz
+
+\begin{equation}
+\Gamma_m := \sum_{g=2}^m \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}} c_{b} \prod_{k=1}^g T_{b_k}.
+\end{equation}
+
+\subsection{Theorem and Proof}
 
 \section{Main Conjecture}\label{sec:main result}
 Now I can state the primary objective of my thesis in terms of the following
@@ -472,9 +509,9 @@ reasons:
     i.e. \(T_n\) maps any element of the \(b,p\) particle sector of Fock space
     to \(c,o\) particle sectors fulfilling \(c-o=b-p\). Hence many possible
     transitions are forbidden by the structure of the operators \(T_n\).
-\item The iterative character of the operators \(T_n\) illustrated by equations \eqref{Tk_commutation_relation_annihilator} and \eqref{Tk_commutation_relation_creator} suggests that
-    the control of $T_1$ and $T_2$, discussed in sections \ref{sec: first order} and \ref{sec: second order},
-    is sufficient to also control the $n$-th
+\item The iterative character of the operators \(T_n\) illustrated by equations \eqref{Tk_commutation_relation}
+    suggests that the control of $T_1$ and $T_2$, discussed in sections \ref{sec: first order} and 
+    \ref{sec: second order}, is sufficient to also control the $n$-th
     order. This behavior is also suggested by the renormalisability of QED (see \cite[Chapter
     4.3]{scharf2014finite}) which states that only finite many types of renormalisations
     are needed.
@@ -517,7 +554,7 @@ Let \(b \in\mathbb{R}\) be arbitrary, there is a \(C\in\mathbb{C}\) such that \(
 .\end{align}
 \noch{habe noch keinen guten Kandidaten für \(T_n\)...}
 
-These expressions can easily be verified by means of the commutation rules \eqref{Tk_commutation_relation_annihilator} and \eqref{Tk_commutation_relation_creator}.
+These expressions can easily be verified by means of the commutation rules \eqref{Tk_commutation_relation}.
 
 
 \subsection{Results About All Odd Orders}\label{sec: odd orders}
@@ -558,7 +595,7 @@ I first introduce another operator and use it to find the commutation properties
 \overline{\mathcal{H}}    @>U^{-A}>> \overline{ \mathcal{H}} .
 \end{CD}
 \end{equation}
-Inspired by this diagram I introduce for each four potential \(A\) the one particle operator \(K: \mathcal{H}\rightarrow\mathcal{H}\) with \(K=U^AC=C U^{-A}\). It is easy to see that \(K\) is unitary and \( P_- K P_+\)and \( P_+ K P_-\) are Hilbert-Schmidt operators, due to the analogous property of the one particle scattering Operator, for more details see \cite{deckert2010time}. This means that \(K\) has a second quantised analogue \(\tilde{K}\) that is unique up to a phase. The operator is then defined as follows
+Inspired by this diagram I introduce for each four potential \(A\) the one particle operator \(K: \mathcal{H}\rightarrow\mathcal{H}\) with \(K=U^AC=C U^{-A}\). It is easy to see that \(K\) is unitary and \( P_- K P_+\)and \( P_+ K P_-\) are Hilbert-Schmidt operators, due to the analogous property of the one particle scattering Operator, for more details see \cite{ivp0}. This means that \(K\) has a second quantised analogue \(\tilde{K}\) that is unique up to a phase. The operator is then defined as follows
 
 
 \begin{align}
@@ -1110,7 +1147,7 @@ holds.
 
 %\begingroup
 %\renewcommand{\section}[2]{}
-%\bibliographystyle{amsplain}
+\bibliographystyle{amsplain}
 \bibliography{ref}
 
 %\bibliography{../../aarbeit/felix}

@@ -1,19 +1,23 @@
 \contentsline {chapter}{Contents}{ii}{section*.1}
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\chapternumberline {2}Axiomatic Construction of Scattering Operator}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Defining One-Particle Scattering-Matrix}{4}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Well-definedness of \(U\) }{8}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Construction of the Second Quantised Scattering-Matrix}{10}{section.2.2}
-\contentsline {section}{\numberline {2.3}Main Conjecture}{13}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Explicit Representations}{15}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Results About All Odd Orders}{16}{subsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.2.1} Lifting the Charge Conjugation Operator}{16}{subsubsection.2.3.2.1}
-\contentsline {subsubsection}{\numberline {2.3.2.2}Commutation of Charge Conjugation and Scattering Operators}{17}{subsubsection.2.3.2.2}
-\contentsline {subsection}{\numberline {2.3.3} Explicit Bound of the First Order}{18}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Results about the Second Order}{18}{subsection.2.3.4}
-\contentsline {chapter}{\chapternumberline {3}Mathematical Justification}{25}{chapter.3}
-\contentsline {appendix}{\chapternumberline {A}One Particle S-Matrix; Explicit Bounds}{27}{appendix.A}
-\contentsline {section}{\numberline {A.1}Bound on \(\delimiter "026B30D ({\mathchoice {{\setbox \z@ \hbox {$\mathsurround \z@ \displaystyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \displaystyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \textstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \textstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptscriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptscriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}}-m)^{-1}\delimiter "026B30D _{\text {spec}}\)}{32}{section.A.1}
-\contentsline {section}{\numberline {A.2}Young's Inequality on \(L^2(\mathcal {M})\)}{38}{section.A.2}
-\contentsline {chapter}{Bibliography}{39}{section*.26}
-\contentsline {chapter}{Cooperating Researchers}{41}{appendix*.27}
+\contentsline {chapter}{\chapternumberline {2}Nonperturbative \(S\)}{3}{chapter.2}
+\contentsline {chapter}{\chapternumberline {3}Axiomatic Construction of Scattering Operator}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Defining One-Particle Scattering-Matrix}{6}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Well-definedness of \(U\) }{10}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Construction of the Second Quantised Scattering-Matrix}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}Construction of Recursive Equation for \(T_m\)}{15}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Heuristics}{15}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Theorem and Proof}{16}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Main Conjecture}{16}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Explicit Representations}{17}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Results About All Odd Orders}{18}{subsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.2.1} Lifting the Charge Conjugation Operator}{19}{subsubsection.3.4.2.1}
+\contentsline {subsubsection}{\numberline {3.4.2.2}Commutation of Charge Conjugation and Scattering Operators}{19}{subsubsection.3.4.2.2}
+\contentsline {subsection}{\numberline {3.4.3} Explicit Bound of the First Order}{21}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Results about the Second Order}{21}{subsection.3.4.4}
+\contentsline {chapter}{\chapternumberline {4}Mathematical Justification}{29}{chapter.4}
+\contentsline {appendix}{\chapternumberline {A}One Particle S-Matrix; Explicit Bounds}{31}{appendix.A}
+\contentsline {section}{\numberline {A.1}Bound on \(\delimiter "026B30D ({\mathchoice {{\setbox \z@ \hbox {$\mathsurround \z@ \displaystyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \displaystyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \textstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \textstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptscriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptscriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}}-m)^{-1}\delimiter "026B30D _{\text {spec}}\)}{36}{section.A.1}
+\contentsline {section}{\numberline {A.2}Young's Inequality on \(L^2(\mathcal {M})\)}{42}{section.A.2}
+\contentsline {chapter}{Bibliography}{43}{section*.27}
+\contentsline {chapter}{Cooperating Researchers}{45}{appendix*.28}

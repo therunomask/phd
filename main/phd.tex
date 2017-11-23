@@ -62,6 +62,7 @@
 \newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
 \newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
 \newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+
 % Annotations
 %\usepackage[normalem]{ulem}
 % \usepackage{refcheck}
@@ -426,7 +427,7 @@ Using the \eqref{lift_condition1} one can easily derive commutation relations fo
 \(T_m\), which are given by
 
 \begin{equation}
-\left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right)\circ T_{m-j}(A), \label{Tk_commutation_relation}
+\left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right) T_{m-j}(A), \label{Tk_commutation_relation}
 \end{equation}
 where \(a^\#\) is either \(a\) or \(a^*\).
 The matrix elements of the expansion coefficients \(T_l\) of \eqref{S_expansion} can therefore be constructed from the matrix elements of the lower expansion coefficients \(T_k\) with \(k<l\) and the vacuum expectation value of \(T_l\). As will be shown in section \ref{sec: odd orders}, the vacuum expectation value of all odd orders can naturally be chosen to zero, due to charge conjugation symmetry. I will be using the method of Eppstein and Glaser (see \cite{epstein1973role, scharf2014finite})  to find the vacuum expectation value of the even orders.
@@ -469,11 +470,221 @@ operators have such commutation relations.
 
 So having this in Mind we start with the ansatz
 
-\begin{equation}
+\begin{equation}\label{Def Gamma_m}
 \Gamma_m := \sum_{g=2}^m \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}} c_{b} \prod_{k=1}^g T_{b_k}.
 \end{equation}
 
+Now in order to show that \(T_m\) and \(\Gamma_m\) agree up to operators which have a commutation 
+relation of the form \eqref{G commutator}, we calculate \(\left[ T_m-\Gamma_m, a^\#(\varphi_n) \right]\)
+for arbitrary \(n\in\mathbb{Z}\) and try to choose the coefficients \(c_b\) of \eqref{Def Gamma_m}
+such that all contributions vanish which do not have the form \(a^\# \left( \prod_k Z_{\alpha_k}\right)\)
+for any suitable \((\alpha_k)_k\subset \mathbb{N} \). If one does so, one is led to a system of equations
+of which I wrote down a few to give an overview of its structure. The objects \(\alpha_k, \beta_l\) 
+in the system of equations can be any natural Number for any \(k,l\in\mathbb{N}\).
+
+\begin{align*}
+&0 =c_{\alpha_1,\beta_1} + c_{\beta_1,\alpha_1}+ \binom{ \alpha_1 + \beta_1}{ \alpha_1} \\
+&0 = c_{\alpha_1,\alpha_2,\beta_1} + c_{\beta_1,\alpha_1,\alpha_2} + c_{\alpha_2,\alpha_1,\beta_1} + 
+\binom{\alpha_2 + \beta_1}{ \alpha_2} c_{\alpha_1,\alpha_2+\beta_1} \\
+&\hspace{2cm}  +\binom{\alpha_1+\beta_1}{\alpha_1} c_{\alpha_1+\beta_1,\alpha_2}\\
+&0= c_{\alpha_1,\alpha_2,\alpha_3,\beta_1} + c_{\alpha_1,\alpha_2,\beta_1,\alpha_3} 
++ c_{\alpha_1,\beta_1,\alpha_2,\alpha_3} + c_{\beta_1,\alpha_1,\alpha_2,\alpha_3}\\
+&+\binom{\alpha_1+\beta_1}{\beta_1} 
+c_{\alpha_1+\beta_1,\alpha_2,\alpha_3} 
++ \binom{\alpha_2+\beta_1}{\beta_1} c_{\alpha_1,\alpha_2+\beta_1,\alpha_3}\\
+&\hspace{2cm} + \binom{\alpha_3+\beta_1}{\beta_1} c_{\alpha_1,\alpha_2,\alpha_3+\beta_1}\\
+&0= c_{\alpha_1,\alpha_2,\beta_1,\beta_2} +c_{\alpha_1,\beta_1,\alpha_2,\beta_2} +
+c_{\beta_1,\alpha_1,\alpha_2,\beta_2} +c_{\alpha_1,\beta_1,\beta_2,\alpha_2} \\
+&+c_{\beta_1,\alpha_1,\beta_2,\alpha_2} +c_{\beta_1,\beta_2,\alpha_1,\alpha_2} 
++\binom{\alpha_1+\beta_1}{\alpha_1} (c_{\alpha_1+\beta_1,\alpha_2,\beta_2} \\
+&+ c_{\alpha_1+\beta_1,\beta_2,\alpha_2})  
++\binom{\alpha_1+\beta_2}c_{\beta_1,\alpha_1+\beta_2,\alpha_1} \\
+&+\binom{\alpha_2+\beta_1}{\alpha_2} c_{\alpha_1,\alpha_2+\beta_1,\beta_2}
++ \binom{\alpha_2+\beta_2}{\alpha_2} (c_{\alpha_1,\beta_1,\alpha_2+\beta_2}\\
+&+ c_{\beta_1,\alpha_1,\alpha_2+\beta_2})
++ \binom{\alpha_1+\beta_1}{\alpha_1} \binom{\alpha_2+\beta_2}{\alpha_2}
+ c_{\alpha_1+\beta_1,\alpha_2+\beta_2}\\
+&0=c_{\alpha_1,\beta_1,\beta_2,\beta_3,\beta_4} 
++ c_{\beta_1,\alpha_1,\beta_2,\beta_3,\beta_4} 
++ c_{\beta_1,\beta_2,\alpha_1,\beta_3,\beta_4} \\
+&\hspace{1cm}+ c_{\beta_1,\beta_2,\beta_3,\alpha_1,\beta_4} 
++ c_{\beta_1,\beta_2,\beta_3,\beta_4,\alpha_1} \\
+&+\binom{\alpha_1+\beta_1}{\alpha_1} c_{\alpha_1+\beta_1,\beta_2,\beta_3,\beta_4}
++ \binom{\alpha_1+\beta_2}{\alpha_1} c_{\beta_1,\alpha_1+\beta_2,\beta_3,\beta_4}\\
+&+ \binom{\alpha_1+\beta_3}{\alpha_1} c_{\beta_1,\beta_2,\alpha_1+\beta_3,\beta_4}
++ \binom{\alpha_1+\beta_4}{\alpha_1} c_{\beta_1,\beta_2,\beta_3,\alpha_1+\beta_4}\\
+&0= c_{\alpha_1,\alpha_2,\beta_1,\beta_2,\beta_3} 
++c_{\alpha_1,\beta_1,\alpha_2,\beta_2,\beta_3} 
++c_{\beta_1,\alpha_1,\alpha_2,\beta_2,\beta_3} \\
+&+c_{\alpha_1,\beta_1,\beta_2,\alpha_2,\beta_3} 
++c_{\beta_1,\alpha_1,\beta_2,\alpha_2,\beta_3} 
++c_{\beta_1,\beta_2,\alpha_1,\alpha_2,\beta_3} \\
+&+c_{\alpha_1,\beta_1,\beta_2,\beta_3,\alpha_2} 
++c_{\beta_1,\alpha_1,\beta_2,\beta_3,\alpha_2} 
++c_{\beta_1,\beta_2,\alpha_1,\beta_3,\alpha_2} \\
+&+c_{\beta_1,\beta_2,\beta_3,\alpha_1,\alpha_2} 
++\binom{\alpha_1+\beta_1}{\beta_1} (c_{\alpha_1+\beta_1,\alpha_2,\beta_2,\beta_3}\\
+&+c_{\alpha_1+\beta_1,\beta_2,\alpha_2,\beta_3}
++c_{\alpha_1+\beta_1,\beta_2,\beta_3,\alpha_2})\\
+&+\binom{\alpha_2+\beta_1}{\beta_1} c_{\alpha_1,\alpha_2+\beta_1,\beta_2,\beta_3}\\
+&+\binom{\alpha_2+\beta_2}{\beta_2} (c_{\beta_1,\alpha_1,\alpha_2+\beta_2,\beta_3}
++c_{\alpha_1,\beta_1,\alpha_2+\beta_2,\beta_3})\\
+&+\binom{\alpha_1+\beta_2}{\beta_2} (c_{\beta_1,\alpha_1+\beta_2,\alpha_2,\beta_3}
++c_{\beta_1,\alpha_1+\beta_2,\beta_3,\alpha_2})\\
+&+\binom{\alpha_2+\beta_3}{\beta_3}( c_{\alpha_1,\beta_1,\beta_2,\alpha_2+\beta_3}
++c_{\beta_1,\alpha_1,\beta_2,\alpha_2+\beta_3}\\
+&+c_{\beta_1,\beta_2,\alpha_1,\alpha_2+\beta_3})
++\binom{\alpha_1+\beta_3}{\beta_3} c_{\beta_1,\beta_2,\alpha_1+\beta_3,\alpha_2}\\
+&+\binom{\alpha_1+\beta_1}{\alpha_1} \binom{\alpha_2+\beta_2}{\alpha_2} 
+c_{\alpha_1+\beta_1,\alpha_2+\beta_2,\beta_3}\\
+&+\binom{\alpha_1+\beta_2}{\alpha_1} \binom{\alpha_2+\beta_3}{\alpha_2} 
+c_{\beta_1,\alpha_1+\beta_2,\alpha_2+\beta_3}\\
+&+\binom{\alpha_1+\beta_1}{\alpha_1} \binom{\alpha_2+\beta_3}{\alpha_2} 
+c_{\alpha_1+\beta_1,\beta_2,\alpha_2+\beta_3}\\
+& \hspace{3cm} \vdots
+\end{align*}
+
+Solving the first few equations and plugging the solution into the consecutive
+ equations one can see that at least the first equations are solved by 
+\begin{equation}
+c_{\alpha_1,\dots, \alpha_k} = \frac{(-1)^k}{k} \begin{pmatrix}\sum_{l=1}^k \alpha_l\\ \alpha_1\ \alpha_2 \ \cdots \alpha_k\end{pmatrix},
+\end{equation}
+where the last factor is the multinomial coefficient of the indices \(\alpha_1,\dots, \alpha_k\in\mathbb{N}\).
+
 \subsection{Theorem and Proof}
+
+The above considerations lead us to the following
+
+\begin{Thm}
+For any \(n\in\mathbb{N}\) is the nth expansion coefficient of the second quantized scattering operator \(T_n\)  up to 
+multiples of the identity operator given by
+\begin{align}\notag
+&T_n = \sum_{g=2}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
+\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g T_{b_l} \\ \label{T_n recursive}
+&+ G\left( \sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^{g+1}}{g} 
+\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g Z_{b_l}  \right).
+\end{align}
+\end{Thm}
+
+\textbf{Proof:} The way I prove this is to compute the commutator of the difference between \(T_n\) and
+the first summand of \eqref{T_n recursive}. This will turn out to be exactly the commutator
+of the second summand of \eqref{T_n recursive}, since two operators on Fockspace only
+have the same commutator with general creation and annihilation operators if they
+agree up to multiples of the identity this will conclude our proof. 
+
+ In order to simplify the notation as much as possible, 
+I will write \(a^\# z\) in the following to stand for \(a(z(\varphi_p))\) or
+ \(a^*(z(\varphi_p))\) for any one particle operator \(z\) and any element
+ \(\varphi_p\) of the orthonormal basis \((\varphi_p)_{p\in\mathbb{Z}}\) of
+ \(\mathcal{H}\). 
+ 
+In order to organize the bookkeeping of all the summands which arise from iteratively
+making use of the commutation rule \eqref{Tk_commutation_relation} we organize them 
+by the looking at a spanning set of the possible terms that arise my choice is
+
+\begin{equation}\label{combinatorics span}
+\left\{ \left. a^\# \prod_{k=1}^{m_1} Z_{\alpha_k} \prod_{k=1}^{m_2}T_{\beta_k} \right|
+m_1\in\mathbb{N},m_2\in\mathbb{N}_0, \alpha\in \mathbb{N}^{m_1}, 
+\beta \in \mathbb{N}^{m_2}, |\alpha|+|\beta|=n\right\}_.
+\end{equation}
+
+As a first step of computing the commutator in question we look at the summand
+corresponding to a fixed value of the summation index \(g\) of 
+
+\begin{equation}\label{combinatorics total sum of T}
+-\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
+\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g T_{b_l}.
+\end{equation}
+
+ We need to bring this object into the form of a sum
+of terms which are multiples of elements of the set \eqref{combinatorics span}.
+This we will commit ourselves to for the next few pages. First we apply
+the product rule for the commutator:
+
+\begin{align*}
+&\left[ \sum_{\stackrel{l\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{l}
+ \prod_{k=1}^g T_{l_k},a^\#\right]\\
+ &= \sum_{\stackrel{l\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{l}
+ \sum_{\tilde{k}=1}^g \prod_{j=1}^{\tilde{k}-1} T_{l_j} 
+ \left[ T_{l_{\tilde{k}}},a^\#\right] \prod_{j=\tilde{k}+1}^g T_{l_j}\\
+&=\sum_{\stackrel{l\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{l}
+ \sum_{\tilde{k}=1}^g \prod_{j=1}^{\tilde{k}-1} T_{l_j} 
+\sum_{\sigma_{\tilde{k}}=1}^{l_{\tilde{k}}} \binom{l_{\tilde{k}}}{\sigma_{\tilde{k}}} 
+a^\# Z_f T_{l_{\tilde{k}}-\sigma_{\tilde{k}}} \prod_{j=\tilde{k}+1}^g T_{l_j},
+\end{align*}
+in the second step we used \eqref{Tk_commutation_relation}. Now we commute
+all the \(T_l\)s to the left of \(a^\#\) to its right:
+
+\begin{equation}\label{combinatorics ordered product}
+= \sum_{\stackrel{l\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{l}
+\sum_{\tilde{k}=1}^g \sum_{\stackrel{\forall 1\le j <\tilde{k}}{0\le \sigma_{j}\le l_j}}
+\sum_{\sigma_{\tilde{k}}=1}^{l_{\tilde{k}}} \prod_{j=1}^{\tilde{k}} \binom{l_j}{\sigma_j}
+a^\# \prod_{j=1}^{\tilde{k}} Z_{\sigma_j} \prod_{j=1}^{\tilde{k}} T_{l_j-\sigma_j}
+\prod_{j=\tilde{k}+1}^g T_{l_j}.
+\end{equation}
+At this point we notice that the multinomial coefficient can be combined with all
+the binomial coefficients to form a single multinomial coefficient of degree
+\(g+\tilde{k}\). Incidentally this is also the amount of \(Z\) operators plus the amount
+of \(T\) operators in each product. Moreover the indices of the Multinomial index
+agree with the indices of the \(Z\) and \(T\) operators in the product. Because of 
+this, we see that if we fix an element of the spanning set \eqref{combinatorics span}
+\(a^\# \prod_{k=1}^{m_1} Z_{\alpha_k} \prod_{k=1}^{m_2}T_{\beta_k}\), each 
+summand of \eqref{combinatorics ordered product} which is a multiple of
+this element, has the prefactor
+
+\begin{equation}
+\frac{(-1)^g}{g} \binom{n}{\alpha_1 \ \cdots \alpha_{m_1} \ \beta_1 \cdots \beta_{m_2}}
+\end{equation}
+
+no matter which summation index \(l\in\mathbb{N}^g\) it corresponds to. In order
+to do the matching one may ignore the indices \(\sigma_j\) and \(l_j-\sigma_j\) 
+which vanish, because the corresponding operators \(Z_0\) and \(T_0\) are equal to
+the identity operator on \(\mathcal{H}\) respectively Fockspace. 
+
+Since we know that 
+
+\begin{align*}
+\left[ G\left(\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
+\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g Z_{b_l}\right), a^\#\right]\\
+= a^\# \sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
+\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g Z_{b_l}
+\end{align*}
+holds, all that is left to show that 
+\begin{align*}
+\left[-\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
+\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g T_{b_l}, a^\#\right]\\
+=\left[ G\left(\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
+\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g Z_{b_l}\right), a^\#\right]\\
+\end{align*}
+holds is to count the summands which are multiples of each element of \eqref{combinatorics span}
+ corresponding to each \(g\) in \eqref{combinatorics total sum of T}. So let us fix some element
+ \(K\) of \eqref{combinatorics span} corresponding to some \(m_1\in\mathbb{N},
+ m_2\in\mathbb{N}_0, \alpha \in \mathbb{N}^{m_1}\) and \( \beta\in \mathbb{N}^{m_2}\).
+Rephrasing this problem, we can ask which products
+\begin{equation}
+\prod_{l=1}^g T_{\gamma_l}
+\end{equation}
+contribute to \(K\)? Looking at the commutation relations \eqref{Tk_commutation_relation} we
+can further rephrase this into the following game: Starting from the string 
+\begin{equation}
+A_1A_2\dots A_{m_1} B_1 B_2 \dots B_{m_2},
+\end{equation}
+how many strings can we produce by applying the following rules?
+\begin{enumerate}
+\item You may replace any occurrence of \(A_k B_j\) by \(B_j A_k\) for any \(j\) and \(k\).
+\item You may replace any occurrence of \(A_k B_j\) by \(C_{k,j}\) for any \(j\) and \(k\).
+\end{enumerate}
+Where we have to count the number of times we applied the second rule, or equivalently
+the number \(\#C\) of \(C\)'s in the resulting string, because the summation index \(g\) in 
+\eqref{combinatorics total sum of T} corresponds to \(m_1+m_2-\#C\). 
+
+Fix \(\#C \in\{0,\dots ,\min(m_1,m_2)\}\). A valid string has \(m_1+m_2-\#C\) characters,
+because the number of its \(C\)s is \(\#C\), its number of \(A\)s is \(m_1-\#C\) and 
+its number of \(B\)s is \(m_2-\#C\). 
+
+
+
+
 
 \section{Main Conjecture}\label{sec:main result}
 Now I can state the primary objective of my thesis in terms of the following
@@ -533,6 +744,15 @@ G: \quad & Q\rightarrow \left( \mathcal{F}\rightarrow \mathcal{F} \right)\\
 & f\mapsto \sum_{n\in\mathbb{N}}a^*(f \varphi_n) a(\varphi) - \sum_{n\in -\mathbb{N}} a(\varphi_n) a^*(f \varphi_n).
 \end{align*}
 \end{Def}
+\begin{lemma}
+For any \(q\in Q\) the operator \(G(q)\) fulfils the commutation relation
+\begin{equation}\label{G commutator}
+\forall n \in \mathbb{Z}: \left[ G(q), a^\# (\varphi_n)\right] = a^\# (q (\varphi_n)).
+\end{equation}
+\end{lemma}
+The proof of this lemma follows by direct calculation and exploitation of the commutation relations 
+of \(a\) and \(a^*\). \noch{vielleicht Beweis einfügen}
+
 The first expansion coefficient of the scattering operator, \(T_1\), is then given by 
 \begin{equation}\label{expT1}
 T_1(A)=G(Z_1(A)),

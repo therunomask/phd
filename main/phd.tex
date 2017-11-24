@@ -556,27 +556,30 @@ where the last factor is the multinomial coefficient of the indices \(\alpha_1,\
 The above considerations lead us to the following
 
 \begin{Thm}
-For any \(n\in\mathbb{N}\) is the nth expansion coefficient of the second quantized scattering operator \(T_n\)  up to 
-multiples of the identity operator given by
+For any \(n\in\mathbb{N}\) the nth expansion coefficient of the second quantized scattering operator \(T_n\) is given by
 \begin{align}\notag
-&T_n = \sum_{g=2}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
-\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g T_{b_l} \\ \label{T_n recursive}
-&+ G\left( \sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^{g+1}}{g} 
-\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g Z_{b_l}  \right).
+&T_n = \sum_{g=2}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l} + C \id_{\mathcal{F}} \\ \label{T_n recursive}
+&+ G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
+\binom{n}{\vec{b}} \prod_{l=1}^g Z_{b_l}  \right),
 \end{align}
+for some \(C\in \mathbb{C}\) which depends on the external field \(A\).
 \end{Thm}
 
-\textbf{Proof:} The way I prove this is to compute the commutator of the difference between \(T_n\) and
-the first summand of \eqref{T_n recursive}. This will turn out to be exactly the commutator
+\textbf{Proof:} The way we will prove this is to compute the commutator of the difference between \(T_n\) and
+the first summand of \eqref{T_n recursive} with the creation and annihilation operator of an element of the
+basis of \(\mathcal{H}\). This will turn out to be exactly equal
+to the corresponding commutator
 of the second summand of \eqref{T_n recursive}, since two operators on Fockspace only
 have the same commutator with general creation and annihilation operators if they
 agree up to multiples of the identity this will conclude our proof. 
 
  In order to simplify the notation as much as possible, 
-I will write \(a^\# z\) in the following to stand for \(a(z(\varphi_p))\) or
+I will denote by \(a^\# z\) either \(a(z(\varphi_p))\) or
  \(a^*(z(\varphi_p))\) for any one particle operator \(z\) and any element
  \(\varphi_p\) of the orthonormal basis \((\varphi_p)_{p\in\mathbb{Z}}\) of
- \(\mathcal{H}\). 
+ \(\mathcal{H}\). (We need not decide between creation and annihilation 
+ operator, since the expressions all agree)
  
 In order to organize the bookkeeping of all the summands which arise from iteratively
 making use of the commutation rule \eqref{Tk_commutation_relation} we organize them 
@@ -592,8 +595,8 @@ As a first step of computing the commutator in question we look at the summand
 corresponding to a fixed value of the summation index \(g\) of 
 
 \begin{equation}\label{combinatorics total sum of T}
--\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
-\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g T_{b_l}.
+-\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l}.
 \end{equation}
 
  We need to bring this object into the form of a sum
@@ -602,12 +605,12 @@ This we will commit ourselves to for the next few pages. First we apply
 the product rule for the commutator:
 
 \begin{align*}
-&\left[ \sum_{\stackrel{l\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{l}
+&\left[ \sum_{\stackrel{\vec{l}\in\mathbb{N}^g}{|\vec{l}|=n}} \frac{(-1)^g}{g} \binom{n}{\vec{l}}
  \prod_{k=1}^g T_{l_k},a^\#\right]\\
- &= \sum_{\stackrel{l\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{l}
+ &= \sum_{\stackrel{\vec{l}\in\mathbb{N}^g}{|\vec{l}|=n}} \frac{(-1)^g}{g} \binom{n}{\vec{l}}
  \sum_{\tilde{k}=1}^g \prod_{j=1}^{\tilde{k}-1} T_{l_j} 
  \left[ T_{l_{\tilde{k}}},a^\#\right] \prod_{j=\tilde{k}+1}^g T_{l_j}\\
-&=\sum_{\stackrel{l\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{l}
+&=\sum_{\stackrel{\vec{l}\in\mathbb{N}^g}{|\vec{l}|=n}} \frac{(-1)^g}{g} \binom{n}{\vec{l}}
  \sum_{\tilde{k}=1}^g \prod_{j=1}^{\tilde{k}-1} T_{l_j} 
 \sum_{\sigma_{\tilde{k}}=1}^{l_{\tilde{k}}} \binom{l_{\tilde{k}}}{\sigma_{\tilde{k}}} 
 a^\# Z_f T_{l_{\tilde{k}}-\sigma_{\tilde{k}}} \prod_{j=\tilde{k}+1}^g T_{l_j},
@@ -616,7 +619,7 @@ in the second step we used \eqref{Tk_commutation_relation}. Now we commute
 all the \(T_l\)s to the left of \(a^\#\) to its right:
 
 \begin{equation}\label{combinatorics ordered product}
-= \sum_{\stackrel{l\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{l}
+= \sum_{\stackrel{\vec{l}\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{\vec{l}}
 \sum_{\tilde{k}=1}^g \sum_{\stackrel{\forall 1\le j <\tilde{k}}{0\le \sigma_{j}\le l_j}}
 \sum_{\sigma_{\tilde{k}}=1}^{l_{\tilde{k}}} \prod_{j=1}^{\tilde{k}} \binom{l_j}{\sigma_j}
 a^\# \prod_{j=1}^{\tilde{k}} Z_{\sigma_j} \prod_{j=1}^{\tilde{k}} T_{l_j-\sigma_j}
@@ -644,28 +647,43 @@ the identity operator on \(\mathcal{H}\) respectively Fockspace.
 Since we know that 
 
 \begin{align*}
-\left[ G\left(\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
-\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g Z_{b_l}\right), a^\#\right]\\
-= a^\# \sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
-\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g Z_{b_l}
+\left[ G\left(\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\binom{n}{\vec{b}}  \prod_{l=1}^g Z_{b_l}\right), a^\#\right]\\
+= a^\# \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\binom{n}{\vec{b}}  \prod_{l=1}^g Z_{b_l}
 \end{align*}
-holds, all that is left to show that 
-\begin{align*}
-\left[-\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
-\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g T_{b_l}, a^\#\right]\\
-=\left[ G\left(\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
-\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g Z_{b_l}\right), a^\#\right]\\
-\end{align*}
-holds is to count the summands which are multiples of each element of \eqref{combinatorics span}
+holds, all that is left to show is that 
+\begin{align}\label{combinatorics total commutator}
+&\left[\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l}, a^\#\right]\\\notag
+&= a^\# \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\binom{n}{\vec{b}}  \prod_{l=1}^g Z_{b_l}
+\end{align}
+holds. For which we need to count the summands which are multiples of each element of \eqref{combinatorics span}
  corresponding to each \(g\) in \eqref{combinatorics total sum of T}. So let us fix some element
- \(K\) of \eqref{combinatorics span} corresponding to some \(m_1\in\mathbb{N},
+ \(K(m_1,m_2)\) of \eqref{combinatorics span} corresponding to some \(m_1\in\mathbb{N},
  m_2\in\mathbb{N}_0, \alpha \in \mathbb{N}^{m_1}\) and \( \beta\in \mathbb{N}^{m_2}\).
 Rephrasing this problem, we can ask which products
 \begin{equation}
 \prod_{l=1}^g T_{\gamma_l}
 \end{equation}
-contribute to \(K\)? Looking at the commutation relations \eqref{Tk_commutation_relation} we
-can further rephrase this into the following game: Starting from the string 
+ for suitable \(g\) and \((\gamma_l)_l\) produce multiples of \(K(m_1,m_2)\)? We will call the number of 
+ total contributions which are multiples of \(\#K(m_1,m_2)\).  Looking at the commutation relations 
+\eqref{Tk_commutation_relation} we split the set of indices \(\{\gamma_1\dots \gamma_g\}\) into
+three sets \(A,B\) and \(C\), where the commutation relation has to be used in such a way, that
+
+\begin{align*}
+&\forall k: \gamma_k \in A \iff \exists j\le m_1: \gamma_k = \alpha_j, \\
+\wedge& \forall k: \gamma_k \in B \iff \exists j\le m_2: \gamma_k = \beta_j\\
+\wedge & \forall k: \gamma_k \in C \iff \exists j\le m_1, l\le m_2: \gamma_k = \alpha_j + \beta_l
+\end{align*}
+ holds. Unfortunately not any splitting corresponds to a contribution and not any
+ order of multiplication of a legal splitting corresponds to a contribution either.
+ However we can be sure that \(\prod_{j} T_{\alpha_j} \prod_j T_{\beta_j}\) gives
+ a contribution and we may apply the commutation relations backwards to obtain any
+ valid combination. This results in the following game:
+ 
+Starting from the string 
 \begin{equation}
 A_1A_2\dots A_{m_1} B_1 B_2 \dots B_{m_2},
 \end{equation}
@@ -680,10 +698,80 @@ the number \(\#C\) of \(C\)'s in the resulting string, because the summation ind
 
 Fix \(\#C \in\{0,\dots ,\min(m_1,m_2)\}\). A valid string has \(m_1+m_2-\#C\) characters,
 because the number of its \(C\)s is \(\#C\), its number of \(A\)s is \(m_1-\#C\) and 
-its number of \(B\)s is \(m_2-\#C\). 
+its number of \(B\)s is \(m_2-\#C\). Ignoring the labelling of the \(A\)s, \(B\)s and \(C\)s 
+there are \(\binom{m_1+m_2-\#C}{\#C \ (m_1 - \#C) \ (m_2-\#C)}\) such strings. Now if
+we consider one such string without labelling, e.g.
 
+\begin{equation}
+C A A B A C C B B A C B B A B B B B,
+\end{equation}
 
+there is only one correct labelling to be restored, namely the one where each (first index of 
+any) \(C\) and \(A\) receive increasing labels from left to right and analogously for (the second 
+ index of any) \(C\) and \(B\), resulting in
+ 
+\begin{equation}
+ C_{1,1} A_2 A_3 B_2 A_4 C_{5,3} C_{6,4} B_{5} B_6 A_7 C_{8,7} B_8 B_9 A_9 B_{10} B_{11} B_{12} B_{13}.
+\end{equation}
 
+So any unlabelled  string corresponds to exactly one labelled string which in turn corresponds to 
+exactly one choice of operator product \(\prod T\). 
+So returning to our Operators, we found the number \(\#K(m_1,m_2)\) it is
+
+\begin{equation}\label{combinatorics binomial sum}
+\#K(m_1,m_2) =-\sum_{g=\max(m_1,m_2)}^{m_1+m_2} \frac{(-1)^g}{g} \binom{g}{(m_1+m_2-g) \ (g-m_1) \ (g - m_2)},
+\end{equation}
+where the total minus sign comes from the total minus sign in front of \eqref{combinatorics total commutator}
+with respect to \eqref{T_n recursive}. 
+
+Now a quick route to evaluate this sum requires us to slightly generalize the standard definition of
+binomial coefficient to the one in \cite{graham1994concrete}:
+
+\begin{Def}
+For \(a\in\mathbb{C}, b\in\mathbb{Z}\) we define
+
+\begin{equation}
+\binom{a}{b} := \left\{\begin{matrix}
+\prod_{l=0}^{b-1} \frac{a-l}{l+1} \quad \text{for } b\ge 0\\
+0 \hspace{1.7cm} \text{otherwise.}
+\end{matrix}\right.
+\end{equation}
+\end{Def}
+
+Defining the binomial coefficient for negative lower index to be zero has the merit, that one can extend the
+range of validity of many rules and sums involving binomial coefficients, also one does not have 
+to worry about the range of summation in many cases.
+
+As a first step to evaluate \eqref{combinatorics binomial sum} we split the trinomial coefficient into binomial
+ones and make use of the absorption identity
+
+\begin{equation}\tag{absorption}\label{absorption}
+\forall a \in \mathbb{C}\ \forall b \in \mathbb{Z}: b \binom{a}{b} = a \binom{a-1}{b-1} 
+\end{equation}
+
+for \(m_2\neq 0\) as follows
+
+\begin{align*}
+&\#K(m_1,m_2) \\
+&=-\sum_{g=\max(m_1,m_2)}^{m_1+m_2} \frac{(-1)^g}{g} \binom{g}{(m_1+m_2-g) \ (g-m_1) \ (g - m_2)}\\
+&=-\sum_{g=\max(m_1,m_2)}^{m_1+m_2} \frac{(-1)^g}{g} \binom{g}{m_2}\binom{m_2}{g-m_1}\\
+&\stackrel{\eqref{absorption}}{=}-\sum_{g=\max(m_1,m_2)}^{m_1+m_2} \frac{(-1)^g}{m_2} \binom{g-1}{m_2-1}\binom{m_2}{g-m_1}\\
+&=\frac{-1}{m_2} \sum_{g=\max(m_1,m_2)}^{m_1+m_2} (-1)^g \binom{g-1}{m_2-1}\binom{m_2}{g-m_1}\\
+&=\frac{-1}{m_2} \sum_{g\in\mathbb{Z}} (-1)^g \binom{g-1}{m_2-1}\binom{m_2}{g-m_1}\\
+&\stackrel{*}{=} \frac{-1}{m_2} (-1)^{m_2-m_1} \binom{m_1-1}{-1} = 0,
+\end{align*}
+where for the marked equality we used summation rule (5.24) of \cite{graham1994concrete}. 
+So all the coefficients vanish that fulfil \(m_2\neq 0\). And the sum for the remaining case
+is trivial, since there is just one summand. So the left hand side of 
+\eqref{combinatorics total commutator} can be evaluated
+
+\begin{align*}
+\left[\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
+\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g T_{b_l}, a^\#\right]\\
+= \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|b|=n}} \frac{(-1)^g}{g} \binom{n}{\vec{b}}  a^\# \prod_{l=1}^g Z_{b_l},
+\end{align*}
+
+which is exactly equal to the right hand side of \eqref{combinatorics total commutator}. \(\Box\)
 
 
 \section{Main Conjecture}\label{sec:main result}

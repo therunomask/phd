@@ -143,10 +143,17 @@ T_n^\dagger(A_1,\dots, A_n) = \sum_{m\in \mathcal{T}(\{A_1,\dots, A_n\})} (-1)^{
 where \(\mathcal{T}\) is given by
 \begin{align*}
 \mathcal{T}(\{A_1,\dots, A_n\}):= \left.\bigcup_{1\le k \le n} \right\{ (m_1, \dots, m_k) \mid \\
-\left.  \forall l\in \{1,\dots, n\}: m_l \subseteq \{A_1,\dots, A_n\}, \dot{\bigcup_{1\le l \le k}}m_l= \{A_1,\dots A_n\} \right\}
+\left.  \forall l\in \{1,\dots, k\}: m_l \subseteq \{A_1,\dots, A_n\}, \dot{\bigcup_{1\le l \le k}}m_l= \{A_1,\dots A_n\} \right\}
 \end{align*}
 which best checked by directly plugging it in.
 
+By the combinatorial interpretation of the multinomial coefficient, the form for agreeing fields \(A_1=\dots =A_n=A\in C_c^\infty (\mathbb{R}^4,\mathbb{C}^4)\) can be directly arrived at
+
+\begin{equation}
+T_n^\dagger(A) := \left. T_n^\dagger(A_1,\dots, A_n)\right|_{A_1=\dots =A_n}= \sum_{g=1}^g (-1)^g \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}} \binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l} (A),
+\end{equation}
+
+where the binomial coefficient for one lower index is always 1.
 
 
 

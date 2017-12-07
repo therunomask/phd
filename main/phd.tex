@@ -17,9 +17,10 @@
 \usepackage{graphicx}
 \usepackage{slashed}
 \usepackage{eurosym}
-\usepackage{amsmath}
-\usepackage{enumitem}
 \usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
 \usepackage{longtable}
 \usepackage[mathscr]{eucal}
 
@@ -559,11 +560,12 @@ The above considerations lead us to the following
 For any \(n\in\mathbb{N}\) the nth expansion coefficient of the second quantized scattering operator \(T_n\) is given by
 \begin{align}\notag
 &T_n = \sum_{g=2}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
-\binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l} + C \id_{\mathcal{F}} \\ \label{T_n recursive}
+\binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l} + C_n \id_{\mathcal{F}} \\ \label{T_n recursive}
 &+ G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
 \binom{n}{\vec{b}} \prod_{l=1}^g Z_{b_l}  \right),
 \end{align}
-for some \(C\in \mathbb{C}\) which depends on the external field \(A\).
+for some \(C_n\in \mathbb{C}\) which depends on the external field \(A\). The last summand will henceforth
+be abbreviated by \(G_n\).
 \end{Thm}
 
 \textbf{Proof:} The way we will prove this is to compute the commutator of the difference between \(T_n\) and
@@ -766,12 +768,228 @@ is trivial, since there is just one summand. So the left hand side of
 \eqref{combinatorics total commutator} can be evaluated
 
 \begin{align*}
-\left[\sum_{g=1}^n \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}}\frac{(-1)^g}{g} 
-\begin{pmatrix} n \\ b_1\ \dots \ b_g \end{pmatrix} \prod_{l=1}^g T_{b_l}, a^\#\right]\\
+\left[\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l}, a^\#\right]\\
 = \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|b|=n}} \frac{(-1)^g}{g} \binom{n}{\vec{b}}  a^\# \prod_{l=1}^g Z_{b_l},
 \end{align*}
 
 which is exactly equal to the right hand side of \eqref{combinatorics total commutator}. \(\Box\)
+
+\section{Solution to Recursive Equation}
+
+So we found a recursive equation for the \(T_n\)s, now we need to solve it. 
+In order to do so we need the following lemma about combinatorial distributions
+
+\begin{Lemma}\label{stirling lemma}
+For any \(g\in\mathbb{N},k\in\mathbb{N}\)
+\begin{equation}
+\sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{|\vec{g}|=k}} \binom{k}{\vec{g}}=\sum_{l=0}^g (-1)^l (g-l)^k \binom{g}{l}
+\end{equation}
+holds. The reader interested in terminology may be eager to know, that the right hand side is equal to
+ \(g!\) times the Stirling 
+number of the second kind \(\left\{\begin{matrix}k\\g\end{matrix}\right\}\).
+\end{Lemma}
+\textbf{Proof:} We would like to apply the multinomial theorem but there are all the summands missing where at least
+one of the entries of \(\vec{g}\) is zero, so we add an appropriate expression of zero. We also give the expression in
+question a name, since we will later on arrive at a recursive expression.
+\begin{multline}
+F(g,k):=\sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{|\vec{g}|=k}} \binom{k}{\vec{g}}
+= \sum_{\stackrel{\vec{g}\in\mathbb{N}_0^g}{|\vec{g}|=k}} \binom{k}{\vec{g}}
+- \sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}_0^g}{|\vec{g}|=k}}{\exists l: g_l=0}} \binom{k}{\vec{g}}\\
+= g^k 
+ - \sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}_0^g}{|\vec{g}|=k}}{\exists l: g_l=0}} \binom{k}{\vec{g}}
+=g^k 
+- \sum_{n=1}^{g-1} \sum_{\stackrel{\vec{g}\in\mathbb{N}_0^g}{|\vec{g}|=k}}
+ \binom{k}{\vec{g}} 1_{\exists! i_1\dots i_n : \forall i_l\neq i_k \wedge \forall l :g_l=0}
+\end{multline}
+where in the last line the indicator function is to enforce there being exactly n different indices \(l\) for which \(g_l=0\)
+holds. Now now since it does not matter which entries of the vector vanish because the multinomial coefficient 
+is symmetric and its value identical to the corresponding multinomial coefficient where the vanishing entries
+are omitted, we can further simplify the sum:
+
+\begin{equation*}
+F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} \sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{|\vec{g}|=k}}
+ \binom{k}{\vec{g}}
+\end{equation*}
+
+The inner sum turns out to be \(F(g-n,k)\), so we found the recursive relation for \(F\):
+\begin{equation}\label{combinatorics solution recursive}
+F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} F(g-n,k).
+\end{equation}
+
+By iteratively applying this equation, we find the following formula, which we will now prove by induction
+
+\begin{multline}\label{combinatorics induction}
+\forall d\in\mathbb{N}_0: F(g,k)=\sum_{l=0}^d (-1)^l (g-l)^k \binom{g}{l}\\
++(-1)^{d+1} \sum_{n=1}^{g-d-1} \binom{n+d-1}{d} \binom{g}{n+d} F(g-d-n,k).
+\end{multline}
+
+We already showed the start of the induction, so what's left is the induction step. Before we do so the
+following remark is in order: We are only interested in the case \(d=g\) and the formula seems meaningless
+for \(d>g\); however, the additional summands in the left sum vanish, where as the the right sum is empty
+for these values of \(d\) since the  upper bound of the summation index is lower than its lower bound.
+
+For the induction step, pick \(d\in\mathbb{N}_0\), we pull the first summand out of the second sum 
+of \eqref{combinatorics induction},
+on this summand we apply the recursive relation \eqref{combinatorics solution recursive} resulting in
+
+\begin{multline}
+F(g,k)=\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++(-1)^{d+1} \sum_{n=2}^{g-d-1} \binom{n+d-1}{d} \binom{g}{n+d} F(g-d-n,k)\\
+-(-1)^{d+1} \binom{g}{d+1} \sum_{n=1}^{g-d-2} \binom{g-d-1}{n} F(g-d-1-n,k)\\
+=\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++(-1)^{d+1} \sum_{n=1}^{g-d-2} \binom{n+d}{d} \binom{g}{n+d+1} F(g-d-1-n,k)\\
+-(-1)^{d+1} \binom{g}{d+1} \sum_{n=1}^{g-d-2} \binom{g-d-1}{n} F(g-d-1-n,k).
+\end{multline}
+After the index shift we can combine the last two sums. 
+
+\begin{multline}
+F(g,k)= \sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++ \sum_{n=1}^{g-d-2}\left[\binom{g}{d+1} \binom{g-d-1}{n} - \binom{n+d}{d} \binom{g}{n+d+1} \right] 
+\\(-1)^{d+2} F(g-d-1-n,k).
+\end{multline}
+
+
+In order to combine the two binomials we disassemble \(\binom{g}{d+1}\) into a product and use
+ \eqref{absorption}  \(d+1\) times, yielding
+\begin{multline}
+F(g,k)= \sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++ \sum_{n=1}^{g-d-2}\left[\binom{n+d+1}{d+1} - \binom{n+d}{d}\right] \binom{g}{n+d+1} 
+\\(-1)^{d+2} F(g-d-1-n,k)\\
+=\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++(-1)^{d+2}  \sum_{n=1}^{g-d-2} \binom{n+d}{d+1} \binom{g}{n+d+1}  F(g-d-1-n,k),
+\end{multline}
+where we used the addition formula for binomials:
+
+\begin{equation}
+\forall n\in \mathbb{C} \forall k \in \mathbb{Z}: \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}.
+\end{equation}
+This concludes the proof by induction. By setting \(d=g\) in equation \eqref{combinatorics induction} 
+we arrive at the desired result. \qed
+
+Using the previous lemma, we are able to show the next
+
+\begin{Lemma}\label{combinatorics weak conjecture lemma 2}
+For any \(k \in \mathbb{N}\backslash \{1\}\) the following equation holds
+\begin{equation}
+\sum_{g=1}^k \frac{(-1)^g}{g} \sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{|\vec{g}|=k}}\binom{k}{\vec{g}}=0.
+\end{equation}
+\end{Lemma}
+\textbf{Proof:} Let \(k\in\mathbb{N}\backslash\{1\}\), as a first step we apply lemma \ref{stirling lemma}.
+We change the order of summation, use \eqref{absorption}, extend the range of summation and shift 
+summation index  to arrive at
+
+\begin{multline}
+\sum_{g=1}^k \frac{(-1)^g}{g} \sum_{l=0}^g (-1)^l (g-l)^k \binom{g}{l}
+= \sum_{g=1}^k \frac{1}{g} \sum_{l=0}^g (-1)^{g-l} (g-l)^k \binom{g}{g-l}\\
+= \sum_{g=1}^k \sum_{p=0}^g (-1)^{p} p^k \frac{1}{g} \binom{g}{p}
+=\sum_{g=1}^k \sum_{p=0}^g (-1)^{p} p^k \frac{1}{p} \binom{g-1}{p-1}\\
+=\sum_{g=1}^k \sum_{p\in\mathbb{Z}} (-1)^{p} p^{k-1}\binom{g-1}{p-1}
+=\sum_{p\in\mathbb{Z}} (-1)^{p} p^{k-1} \sum_{g=1}^k \binom{g-1}{p-1}\\
+=\sum_{p\in\mathbb{Z}} (-1)^{p} p^{k-1} \sum_{g=0}^{k-1} \binom{g}{p-1}.
+\end{multline}
+
+Now we use equation (5.10) of \cite{graham1994concrete}:
+
+\begin{equation}\tag{upper summation}
+\forall m,n\in\mathbb{N}_0: \sum_{k=0}^n \binom{k}{m} = \binom{n+1}{m+1},
+\end{equation}
+which can for example be proven by induction on \(n\).
+
+We furthermore rewrite the power of the summation index \(p\) in terms of the derivative of an 
+exponential and change order summation and differentiation. This results in
+
+\begin{multline*}
+\sum_{g=1}^k \frac{(-1)^g}{g} \sum_{l=0}^g (-1)^l (g-l)^k \binom{g}{l}
+=\sum_{p\in\mathbb{Z}} (-1)^{p} p^{k-1}  \binom{k}{p}\\
+=\sum_{p=0}^k (-1)^{p} \left. \frac{\partial^{k-1}}{\partial \alpha^{k-1}} e^{\alpha p}\right|_{\alpha=0}  \binom{k}{p}
+=\left. \frac{\partial^{k-1}}{\partial \alpha^{k-1}}  \sum_{p=0}^k (-1)^{p} e^{\alpha p} \binom{k}{p}\right|_{\alpha=0} \\
+=\left. \frac{\partial^{k-1}}{\partial \alpha^{k-1}}  \left( 1-e^{\alpha p}\right)^k \right|_{\alpha=0} 
+=(-1)^k \left. \frac{\partial^{k-1}}{\partial \alpha^{k-1}} \left( \sum_{l=1}^\infty \frac{(\alpha p)^l}{l!} \right) ^k \right|_{\alpha=0} \\
+=(-1)^k \left. \frac{\partial^{k-1}}{\partial \alpha^{k-1}} ((\alpha p)^k + \mathcal{O} ((\alpha p)^{k+1}) ) \right|_{\alpha=0} =0.
+\end{multline*}
+\qed
+
+
+
+
+I am now in a position to state the solution to the recursive equation \eqref{T_n recursive}
+and have us prove together that it is in fact a solution. 
+
+\begin{Thm}
+For \(n\in\mathbb{N}\) equation \eqref{T_n recursive} is solved by 
+
+\begin{equation}\label{recursive solution}
+T_n = \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}}{|\vec{b}|= n}} \sum_{\vec{d}\in {\{0,1\}}^g} 
+\frac{1}{g!} \binom{n}{\vec{b}} \prod_{l=1}^g F_{b_l,d_l},
+\end{equation}
+where \(F\) is given by
+\begin{equation}\label{eq resursive weak solution}
+F_{a,b} = \left\{ \begin{matrix}G_a \quad \text{für } b=0 \\ C_a \quad \text{für } b=1  \end{matrix} \right._. 
+\end{equation}
+For the readers convenience we remind her, that \(G_a\) is defined by \eqref{T_n recursive}. Whereas
+the constants \(C_n\) depend on the vacuum expectation value of \(T_n\) as well as on the products
+on the right hand side of \eqref{recursive solution} and are yet either to be found in terms of or 
+eliminated in favour of \(\langle T_n \rangle \). 
+\end{Thm}
+
+\textbf{Proof:} The structure of this proof will be induction over \(n\). For \(n=1\) the whole expression
+on the right hand side collapses to \(C_1 + G_1\), which we already know to be equal to \(T_1\). For
+arbitrary \(n+1\in\mathbb{N}\backslash\{1\}\) we apply the recursive equation \eqref{T_n recursive}
+once and use the induction hypothesis for all \(k\le n\) and thereby arrive at the rather convoluted 
+expression
+
+\begin{multline}\label{recursive weak conjecture proof}
+T_{n+1} \stackrel{\eqref{T_n recursive}}{=} 
+G_{n+1} + C_{n+1}+ \sum_{g=2}^{n+1} \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n+1}} 
+\frac{(-1)^g}{g} \binom{n+1}{\vec{b}} \prod_{l=1}^g T_{b_l}\\
+\stackrel{\text{induction hyp}}{=} G_{n+1} + C_{n+1}+ \sum_{g=2}^{n+1} \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n+1}} 
+\frac{(-1)^g}{g} \binom{n+1}{\vec{b}} \prod_{l=1}^g \\
+\sum_{g_l=1}^{b_l} \sum_{\stackrel{\vec{c}_l \in\mathbb{N}^{g_l}}{|\vec{c}_l|=b_l}} \sum_{\vec{e}_l \in \{0,1\}^{g_l}}
+\frac{1}{g_l!} \binom{b_l}{\vec{c}_l} \prod_{k=1}^{g_l} F_{c_{l,k},e_{l,k}}.
+\end{multline}
+
+If we were to count the contributions of this sum to a specific product \(\prod F_{c_j,e_j}\) for some choice of 
+\((c_j)_j, (e_j)_j\) we would first recognize that all the multinomial factors in \eqref{recursive weak conjecture proof}
+combine to a single one whose indices are given by the first indices of all the \(F\) factors involved.
+Other than this factor each contribution adds \(\frac{(-1)^g}{g} \prod_{l=1}^g \frac{1}{g_l!}\) to the sum. So we 
+need to keep track of how many contributions there are and which distributions of \(g_l\) they belong to. 
+
+Fix some product \(\prod F :=\prod_{j=1}^{\tilde{g}} F_{\tilde{b}_j,\tilde{d}_j}\). In the sum 
+\eqref{recursive weak conjecture proof} we pick some initial short product of length \(g\) and split each
+factor into \(g_l\) pieces to arrive at one of length \(\tilde{g}\) if the product is to contribute to
+\(\prod F\). So clearly \(\sum_{l=1}^g g_l = \tilde{g}\) holds for any contribution to \(\prod F\). 
+The reverse is also true, for any
+\(g\) and \(g_1, \dots, g_g\in\mathbb{N}\) such that \(\sum_{l=1}^g g_l=\tilde{g}\) holds
+the corresponding expression in \eqref{recursive weak conjecture proof} contributes to 
+\(\prod F\). Furthermore \(\prod F\) and \(g\), \(g_1,\dots g_g\) is enough to uniquely
+determine the summand of \eqref{recursive weak conjecture proof} the contribution
+belongs to. For an illustration of this splitting see
+
+\begin{align*}
+\underbrace{\underbrace{F^1_{3,1} F^2_{2,0} F^3_{7,1}}_{g_1=3} \underbrace{F^4_{5,0}}_{g_2=1} \underbrace{F^5_{4,1} F^6_{2,1}}_{g_3=2} \underbrace{F^7_{1,1} F^8_{3,0} F^9_{4,1}}_{g_4=3} \underbrace{F^{10}_{4,1} F^{11}_{1,0}}_{g_5=2}}_{g=5}\\
+ g_1+g_2+g_3+g_4+g_5=11=\tilde{g},
+\end{align*}
+
+where I labelled the factors in the upper right index for the readers convenience. We recognize
+that the sum we are about to perform is by no means unique for each order of \(n\) but only 
+depends on the number of appearing factors and the number of splittings performed on
+them. By the preceding argument we need 
+
+\begin{equation}\label{combinatorics weak conjecture reformulated into equation}
+\sum_{g=2}^{\tilde{g}} \frac{(-1)^g}{g} \sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{|\vec{g}|=\tilde{g}}} \prod_{l=1}^g \frac{1}{g_l!}
+= \frac{1}{\tilde{g}!} 
+\end{equation}
+
+
+to hold for \(\tilde{g}>1\), in order to find agreement with the proposed solution \eqref{eq resursive weak solution}.
+Now proving \eqref{combinatorics weak conjecture reformulated into equation} is done by 
+realizing, that one can include the right hand side into the sum as the \(g=1\) summand, dividing
+the equation by \(\tilde{g}!\) and using lemma \ref{combinatorics weak conjecture lemma 2}
+with \(k=\tilde{g}\). The remaining case, \(\tilde{g}=1\), can directly be
+read off of \eqref{recursive weak conjecture proof}. \qed
+
+
 
 
 \section{Main Conjecture}\label{sec:main result}

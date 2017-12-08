@@ -556,7 +556,7 @@ where the last factor is the multinomial coefficient of the indices \(\alpha_1,\
 
 The above considerations lead us to the following
 
-\begin{Thm}
+\begin{Thm}\label{thm: T_n recursive}
 For any \(n\in\mathbb{N}\) the nth expansion coefficient of the second quantized scattering operator \(T_n\) is given by
 \begin{align}\notag
 &T_n = \sum_{g=2}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
@@ -920,7 +920,7 @@ and have us prove together that it is in fact a solution.
 For \(n\in\mathbb{N}\) equation \eqref{T_n recursive} is solved by 
 
 \begin{equation}\label{recursive solution}
-T_n = \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}}{|\vec{b}|= n}} \sum_{\vec{d}\in {\{0,1\}}^g} 
+T_n = \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|= n}} \sum_{\vec{d}\in {\{0,1\}}^g} 
 \frac{1}{g!} \binom{n}{\vec{b}} \prod_{l=1}^g F_{b_l,d_l},
 \end{equation}
 where \(F\) is given by
@@ -989,7 +989,60 @@ the equation by \(\tilde{g}!\) and using lemma \ref{combinatorics weak conjectur
 with \(k=\tilde{g}\). The remaining case, \(\tilde{g}=1\), can directly be
 read off of \eqref{recursive weak conjecture proof}. \qed
 
+\begin{Corollary}\label{Corollary T_n by G's and C's}
+For \(n\in\mathbb{N}\), \(T_n\) can be written as
 
+\begin{equation}
+\frac{1}{n!} T_n = \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}} 
+\sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}.
+\end{equation}
+\end{Corollary}
+\textbf{Proof:} By an argument completely analogous to the combinatorial argument in the proof of theorem 
+\eqref{thm: T_n recursive} we see that we can entangle the \(F\)s in \eqref{recursive solution}
+into \(G\)s and \(C\)s if we multiply by a factor of \(\binom{c+g}{c}\) where \(c\) is the 
+number of \(C\)s and \(g\) is the number of \(G\)s giving
+
+\begin{multline}
+T_n = \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}}
+\sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
+\binom{c+g}{c} \frac{1}{(c+g)!} \binom{n}{\vec{g}\oplus \vec{c}}
+\prod_{l=1}^c  C_{c_l} \prod_{l=1}^g G_{g_l},
+\end{multline}
+
+which directly reduces to the equation we wanted to prove, by plugging in the multinomials in terms of
+factorials. 
+
+\begin{Corollary}
+As a formal power series, the second quantized scattering operator can be written in the form
+\begin{equation}
+S= e^{\sum_{l\in\mathbb{N}} \frac{C_{l}}{l!}}
+ e^{\sum_{l\in\mathbb{N}} \frac{G_{l}}{l!}},
+\end{equation}
+which the author finds quite amusing.
+\end{Corollary}
+\textbf{Proof:} We plug corollary \ref{Corollary T_n by G's and C's} into the defining Series for the \(T_n\)s
+giving
+
+\begin{multline}
+S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
+=\id_{\mathcal{F}}+ \sum_{n\in\mathbb{N}} \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}} 
+\sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
+=\id_{\mathcal{F}}+  \sum_{\stackrel{1\le c+g }{c,g\in\mathbb{N}_0}} 
+\sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}} 
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
+=\sum_{c,g\in\mathbb{N}_0}
+\sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}} 
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
+=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \sum_{\vec{c}\in\mathbb{N}^c} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l}
+\sum_{g\in\mathbb{N}_0} \frac{1}{g!} \sum_{\vec{g}\in\mathbb{N}^g} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
+=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \prod_{l=1}^c \sum_{c_l\in\mathbb{N}} \frac{1}{c_l!} C_{c_l}
+\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \prod_{l=1}^g \sum_{g_l\in\mathbb{N}} \frac{1}{g_l!} G_{g_l}\\
+=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \left( \sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}\right)^c
+\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \left( \sum_{l\in\mathbb{N}} \frac{1}{l!} G_{l}\right)^g\\
+=e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}} e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} G_{l}}
+\end{multline}
 
 
 \section{Main Conjecture}\label{sec:main result}

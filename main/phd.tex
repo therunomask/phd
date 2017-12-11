@@ -997,6 +997,7 @@ For \(n\in\mathbb{N}\), \(T_n\) can be written as
 \sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
 \frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}.
 \end{equation}
+Please note that for ease of notation we defined \(\mathbb{N}^0:= \{0\}\).
 \end{Corollary}
 \textbf{Proof:} By an argument completely analogous to the combinatorial argument in the proof of theorem 
 \eqref{thm: T_n recursive} we see that we can entangle the \(F\)s in \eqref{recursive solution}
@@ -1041,8 +1042,10 @@ S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
 \sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \prod_{l=1}^g \sum_{g_l\in\mathbb{N}} \frac{1}{g_l!} G_{g_l}\\
 =\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \left( \sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}\right)^c
 \sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \left( \sum_{l\in\mathbb{N}} \frac{1}{l!} G_{l}\right)^g\\
-=e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}} e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} G_{l}}
+=e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}} e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} G_{l}}.
 \end{multline}
+\qed
+
 
 
 \section{Main Conjecture}\label{sec:main result}

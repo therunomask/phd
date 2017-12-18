@@ -1016,7 +1016,7 @@ factorials.
 
 \begin{Corollary}
 As a formal power series, the second quantized scattering operator can be written in the form
-\begin{equation}
+\begin{equation}\label{Corollary double exp}
 S= e^{\sum_{l\in\mathbb{N}} \frac{C_{l}}{l!}}
  e^{\sum_{l\in\mathbb{N}} \frac{G_{l}}{l!}},
 \end{equation}
@@ -1046,7 +1046,46 @@ S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
 \end{multline}
 \qed
 
+\begin{Lemma}
+The second quantized scattering operator fulfils
+\begin{equation}
+S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))}.
+\end{equation}
+\end{Lemma}
+\textbf{Proof:} We are going to change the sum in the second exponential of 
+\eqref{Corollary double exp}, so let's take a closer look at that one.
 
+\begin{multline}
+\sum_{l\in\mathbb{N}} \frac{G_{l}}{l!}= 
+\sum_{n \in\mathbb{N}} \frac{1}{n!} 
+G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
+\binom{n}{\vec{b}} \prod_{l=1}^g Z_{b_l}  \right)\\
+=G\left( \sum_{n \in\mathbb{N}} \frac{1}{n!} 
+ \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
+\binom{n}{\vec{b}} \prod_{l=1}^g Z_{b_l}  \right)\\
+=G\left( \sum_{n \in\mathbb{N}}
+ \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
+ \prod_{l=1}^g \frac{Z_{b_l}}{b_l!}  \right)\\
+=G\left( 
+ \sum_{g\in\mathbb{N}} \sum_{\vec{b}\in\mathbb{N}^g}\frac{(-1)^{g+1}}{g} 
+\prod_{l=1}^g \frac{Z_{b_l}}{b_l!}  \right)\\
+=G\left( 
+ \sum_{g\in\mathbb{N}} \frac{(-1)^{g+1}}{g} 
+\prod_{l=1}^g \left(\sum_{b_l\in\mathbb{N}} \frac{Z_{b_l}}{b_l!} \right) \right)\\
+=G\left( 
+ \sum_{g\in\mathbb{N}} \frac{(-1)^{g+1}}{g} 
+ \left(\sum_{b_l\in\mathbb{N}} \frac{Z_{b_l}}{b_l!} \right)^g \right)\\
+ =G\left( 
+ \sum_{g\in\mathbb{N}} \frac{(-1)^{g+1}}{g} 
+ \left(U-\id \right)^g \right)
+ =G\left( -
+ \sum_{g\in\mathbb{N}} \frac{1}{g} 
+ \left(\id-U \right)^g \right)\\
+  =G\left( 
+ \ln \left(\id-\left(\id-U\right) \right) \right)
+ =G\left( \ln \left(U\right)\right).
+\end{multline}
+\qed
 
 \section{Main Conjecture}\label{sec:main result}
 Now I can state the primary objective of my thesis in terms of the following

@@ -1,0 +1,167 @@
+\documentclass{article}
+\usepackage{maa-monthly}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+\hypersetup{final}
+
+%% IF YOU HAVE FONTS INSTALLED
+%\usepackage{mtpro2}
+%\usepackage{mathtime}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+ 
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{remark}{Remark}
+
+\begin{document}
+
+\title{The Connection Between Multinomial Coefficients and Sterling Numbers of the Second Kind}
+\markright{Multinomials and Sterling Numbers}
+\author{Markus Nöth}
+
+\maketitle
+
+\begin{abstract}
+A connection is made between Sterling numbers of the second kind and a particular sum of multinomial coefficients. 
+This is motivated by the combinatorial interpretation of the appearing objects and also proven by explicit calculation.
+\end{abstract}
+
+
+\noindent
+
+\section*{Introduction and notation}
+
+I would like to discuss the relationship between the multinomial coefficients and the Sterling numbers of the second kind.
+For some reason this relationship is very rarely discussed in textbooks about combinatorics. In fact the only reference I
+am aware of is the handbook of mathematical functions \cite{abramowitz1964handbook}[p 823], where the equation in 
+question is marked corrected but is incorrect. 
+
+\subsection*{Binomial coefficients}
+
+The multinomial coefficients are usually introduced in terms of binomial coefficients, which can be defined in different ways,
+the reader and I follow the convention of the book ''Concrete Mathematics``\cite{graham1994concrete}.
+
+\begin{definition}[binomial coefficient]
+For \(a\in\mathbb{C}, b\in\mathbb{Z}\) we define
+\begin{equation}
+\begin{pmatrix}a\\b\end{pmatrix} := \left\{\begin{matrix}
+\frac{1}{b!}\prod_{l=0}^{b-1} (a-l) \quad \text{for } b\ge 0\\
+0 \quad \text{else.}
+\end{matrix} \right.
+\end{equation}
+\end{definition}
+
+By defining the coefficients for negative lower index to be zero, we do not have to worry about boundary conditions in
+many formulas. The combinatorial interpretation of the binomial coefficient \(\begin{pmatrix}a \\ b\end{pmatrix}\) for
+\(a,b\in\mathbb{N}\) is \textbf{the number of ways to choose \(b\) elements of a set of \(a\) elements}. 
+
+\subsection*{Multinomial coefficients}
+
+The multinomial coefficients are then introduced as a product of binomial coefficients.
+\begin{definition}[multinomial coefficient]
+For \(g\in\mathbb{N}\) and \(a\in\mathbb{N},\vec{b}\in\mathbb{N}^g\) with \(\sum_{k=1}^g b_k=a\)
+we define
+\begin{equation}
+\begin{pmatrix}a\\\vec{b}\end{pmatrix}:= \prod_{k=1}^{g-1} \begin{pmatrix}a-\sum_{l=1}^{k-1} b_k\\b_k\end{pmatrix},
+\end{equation}
+where \(\sum_{l=1}^0 f(l):=0\) holds for any summand \(f\) by convention. 
+\end{definition}
+
+The combinatorial interpretation of \(\begin{pmatrix}a\\\vec{b}\end{pmatrix}\) for \(g\in\mathbb{N}\) and
+ \(a\in\mathbb{N},\vec{b}\in\mathbb{N}^g\) is the \textbf{number of ways to partition a set of \(a\) elements into 
+ \(g\) distinct sets, where the \(j\)-th set has \(b_j\) elements}. 
+ 
+The multinomial coefficients are applied e.g. in the well known multinomial theorem\cite{abramowitz1964handbook}[p 823]:
+
+\begin{theorem}[multinomial]
+For any \(g,n\in\mathbb{N}\) and \(x_1,\dots x_n\in\mathbb{C}\) the following equality holds true
+\begin{equation}
+\left(\sum_{k=1}^g x_k\right)^n= \sum_{\stackrel{\vec{b}\in\mathbb{N}_0^g}{|\vec{b}|=n}}\begin{pmatrix}n\\\vec{b}\end{pmatrix} \prod_{k=1}^g x_k^{b_k},
+\end{equation}
+where one usually defines \(|\vec{b}|:=\sum_{k=1}^g b_k\). 
+\end{theorem} 
+
+
+
+\subsection*{Sterling numbers of the second kind}
+ 
+The Sterling numbers of the second kind \(\left\{ \begin{matrix} n\\k\end{matrix}\right\}\), for \(n,k\in\mathbb{N}\) are usually introduced by their combinatorial interpretation, which is \textbf{the number of ways to partition a set of \(n\) elements into \(k\)
+nonempty sets}. One can find an explicit formula for the sterling numbers of the second kind \cite{stanley2011enumerative}[p82f]:
+
+\begin{equation}
+\left\{\begin{matrix}n\\k\end{matrix}\right\} = \frac{1}{k!} \sum_{j=0}^k (-1)^{k-j} \begin{pmatrix}k\\j\end{pmatrix}j^n.
+\end{equation}
+
+
+\subsection*{Second-level heading.}
+
+The same goes for second-level headings.  It is not necessary to add font commands to make the math within heads bold and sans serif; this change will occur automatically when the production style is applied.
+
+\section*{Graphics.}
+
+Figures for the \textsc{Monthly} can be submitted as either color or black \& white graphics.  Generally, color graphics will be used for the online publication, and converted to black \& white images for the print journal.  We recommend using whatever graphics program you are most comfortable with, so long as the submitted graphic is provided as a separate file using a standard file format.
+
+For best results, please follow the following guidelines:
+\begin{enumerate}
+\item Bitmapped file formats---preferably TIFF or JPEG, but not BMP---are appropriate for photographs, using a resolution of at least 300 dpi at the final scaled size of the image.
+\item Line art will reproduce best if provided in vector form, preferably EPS.
+\item Alternatively, both photographs and line art can be provided as PDF files.  Note that creating a PDF does not affect whether the graphic is a bitmap or vector; saving a scanned piece of line art as PDF does not convert it to scalable line art.
+\item If you generating graphics using a \TeX\ package, please be sure to provide a PDF of the manuscript.  In the production process, \TeX-generated graphics will eventually be converted to more conventional graphics so the \textsc{Monthly} can be delivered in e-reader formats.
+\item For photos of contributing authors, we prefer photos that are not cropped tight to the author's profile, so that production staff can crop the head shot to an equal height and width.  If possible, avoid photographs that have excess shadows or glare.
+\end{enumerate}
+
+\section*{Theorems, definitions, proofs, and all that.}
+
+Following the defaults of the \texttt{amsthm} package, styling is provided for \texttt{theorem}, \texttt{definition}, and \texttt{remark} styles, although the latter two use the same styling.
+
+\begin{theorem}[Pythagorean Theorem]
+Theorems, lemmas, axioms, and the like are stylized using italicized text. These environments can be numbered or unnumbered, at the author's discretion.
+\end{theorem}
+
+\begin{proof}
+Proofs set in roman (upright) text, and conclude with an ``end of proof'' (q.e.d.) symbol that is set automatically when you end the proof environment.  When the proof ends with an equation or other non-text element, you need to add \verb~\qedhere~ to the element to set the end of proof symbol; see the \texttt{amsthm} package documentation for more details.
+\end{proof}
+
+\begin{definition}[Secant Line]
+Definitions, remarks, and notation are stylized as roman text.  They are typically unnumbered, but there are no hard-and-fast rules about numbering.
+\end{definition}
+
+\begin{remark}
+Remarks stylize the same as definitions.
+\end{remark}
+
+
+\begin{acknowledgment}{Acknowledgment.}
+The authors wish to thank the Greek polymath Anonymous, whose prolific works are an endless source of inspiration.
+\end{acknowledgment}
+
+\bibliographystyle{amsplain}
+\bibliography{ref}
+
+%\begin{thebibliography}{1}
+%\bibitem{parker13} Adam Parker, Who solved the Bernoulli equation and how did they do it? \textit{Coll. Math. J.} \textbf{44} (2013) 89--97.
+%
+%\bibitem{hopkins} Brian Hopkins, ed., \textit{Resources for Teaching Discrete Mathematics}, Mathematical Association of America, Washington DC, 2009.
+%\end{thebibliography}
+
+\begin{biog}
+\item[Woodrow Wilson] received his Ph.D. in history and political science from Johns Hopkins University. He held visiting positions at Cornell and Wesleyan before joining the faculty at Princeton, where he was eventually appointed president of the university.  Among his proudest accomplishments was the abolition of eating clubs at Princeton on the grounds that they were elitist.
+\begin{affil}
+Office of the President, Princeton University, Princeton NJ 08544\\
+twoodwilson@princeton.edu
+\end{affil}
+
+\item[Herbert Hoover] entered Stanford University in 1891, after failing all of the entrance exams except mathematics.  He received his B.S. degree in geology in 1895, spent time as a mining engineer, then was appointed by his co-author to the U.S. Food Administration and the Supreme Economic Council, where he orchestrated the greatest famine relief efforts of all time.
+\begin{affil}
+Hoover Institution, Stanford University, Stanford CA 94305\\
+herbhoover@stanford.edu
+\end{affil}
+\end{biog}
+\vfill\eject
+
+\end{document}

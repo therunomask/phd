@@ -1,0 +1,339 @@
+%\documentclass[oneside,reqno,12pt]{amsart}
+\documentclass[b5paper,draft,openbib,12pt]{memoir} 
+%\documentclass[b5paper,openbib,12pt]{memoir} 
+%check whether openbib option is necessary
+%option final will remove some markings
+
+
+%\usepackage{fontspec}
+
+%\usepackage[a4paper, top=2.7cm, bottom=2.7cm]{geometry}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{eurosym}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage[mathscr]{eucal}
+
+
+%commutative diagram
+\usepackage{amsmath,amscd}
+%picture
+\usepackage{wrapfig}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+\hypersetup{final}
+%needed to have hyperlinks in draft mode
+
+
+% \numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Conj}[Def]{Conjecture}
+\newtheorem{Thm}[Def]{Theorem}
+\newtheorem{Prp}[Def]{Proposition}
+\newtheorem{Lemma}[Def]{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Remark}[Def]{Remark}
+\newtheorem{Corollary}[Def]{Corollary}
+\newtheorem{Example}[Def]{Example}
+\newtheorem{Assumption}[Def]{Assumption}
+
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+
+
+\newcommand{\id}{{\mathbbm 1}}
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
+\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
+\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
+
+% Annotations
+%\usepackage[normalem]{ulem}
+% \usepackage{refcheck}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
+\newcommand{\black}{ \color{black} }
+
+
+\renewcommand\chapterheadstart{
+\vspace *{\beforechapskip}
+\hrulefill
+\vskip 0pt
+}
+
+\renewcommand\afterchaptertitle{%
+\vskip 0pt
+\hrulefill
+\par \nobreak  \vskip  \afterchapskip  } 
+%  \hrulefill}
+%  \m@mindentafterchapter\@afterheading}
+%\makeatother
+
+\setsecnumdepth{all}
+
+
+%all divisions are numbered in the text body
+
+\parindent 0cm
+
+\begin{document}
+
+
+
+\frontmatter
+%
+\mainmatter
+
+This is just a compilation of results of calculations. In addition to the usual conventions I assume summation over
+repeated indices regardless of their position. 
+
+\begin{Def}
+For one particle operators \(A_1,\dots, A_c,B_1,\dots B_p \) and \(c,p\in\mathbb{N}\) define:
+\begin{equation*}
+L(A_1,\dots, A_c; B_1,\dots ,B_m):= \prod_{l=1}^p a(\varphi_{-k_l}) 
+\prod_{l=1}^c a^*(A_l \varphi_{n_l}) \prod_{l=1}^p a^*(B_l \varphi_{-k_l}) \prod_{l=1}^c a(\varphi_{n_l})
+\end{equation*}
+\end{Def}
+
+\section{ 1 times 1}
+
+\begin{equation}
+L(A_1;)L(B_1;)=-L(A_1,B_1;) + L(A_1P_+B_1;)
+\end{equation}
+
+\begin{equation}
+L(A_1;)L(;B_1)=-L(A_1;B_1) +L(B_1P_-A_1;) + L(;A_1P_+B_1) -\tr(P_-A_1P_+B_1)
+\end{equation}
+
+\begin{equation}
+L(;A_1)L(B_1;)=-L(B_1;A_1)
+\end{equation}
+
+\begin{equation}
+L(;A_1)L(;B_1)=-L(;A_1,B_1) + L(;B_1P_-A_1)
+\end{equation}
+
+
+\section{2 times 1}
+\begin{multline}
+L(A_1,A_2;)L(B_1;)=L(A_1,A_2,B_1;) + L(A_1,A_2P_+B_1;) + L(A_1P_+B_1,A_2;)
+\end{multline}
+
+\begin{multline}
+L(A_1,A_2;)L(;B_1)= L(A_1,A_2;B_1) + L(A_1;A_2P_+B_1)\\
++L(A_2;A_1P_+B_1) + L(A_1,B_1P_-A_2;) + L(A_2,B_1P_-A_1;)\\
+-L(A_2P_+B_1P_-A_1;) -L(A_1P_+B_1P_-A_2;) \\
++L(A_1;) \tr(P_-A_2P_+B_1) + L(A_2;) \tr(P_-A_1P_+B_1)
+\end{multline}
+
+\begin{multline}
+L(A_1;A_2)L(B_1;)=L(A_1,B_1;A_2) + L(A_1P_+B_1;A_2)
+\end{multline}
+
+\begin{multline}
+L(A_1;A_2)L(;B_1) = L(A_1;A_2,B_1) \\
++L(A_1;B_1P_-A_2) + L(B_1P_-A_1;A_2) + L(;A_1P_+B_1,A_2)\\
+-L(;A_1P_+B_1P_-A_2) + L(;A_2) \tr(P_-A_1P_+B_1)
+\end{multline}
+
+\begin{multline}
+L(;A_1,A_2)L(B_1;) = L(B_1;A_1,A_2)
+\end{multline}
+
+\begin{multline}
+L(;A_1,A_2)L(;B_1)=L(;A_1,A_2,B_1) + L(;A_1,B_1P_-A_2) + L(;A_2,B_1P_-A_1)
+\end{multline}
+
+\section{1 times 2}
+\begin{multline}
+L(A_1;)L(B_1,B_2;)= L(A_1,B_1,B_2;) + L(A_1P_+B_1,B_2;) + L(A_1P_+B_2,B_1;)
+\end{multline}
+
+\begin{multline}
+L(A_1;)L(B_1;B_2)=L(A_1,B_1;B_2) \\
++L(A_1P_+B_1;B_2) + L(B_1;A_1P_+B_2) + L(B_2P_-A_1,B_1;)\\
+-L(B_2P_-A_1P_+B_1;) + L(B_1;)\tr(P_-A_1P_+B_2)
+\end{multline}
+
+\begin{multline}
+L(A_1;)L(;B_1,B_2)=L(A_1;B_1,B_2) + L(B_1P_-A_1;B_2) \\
++L(B_1P_-A_1;B_1) + L(;B_1,A_1P_+B_2) + L(;A_1P_+B_1,B_2)\\
+-L(;B_1P_-A_1P_+B_2) - L(;B_2P_-A_1P_+B_1)\\
++L(;B_1)\tr(P_-A_1P_+B_2) + L(;B_2) \tr(P_-A_1P_+B_1)
+\end{multline}
+
+\begin{multline}
+L(;A_1)L(B_1,B_2;)=L(B_1,B_2;A_1)
+\end{multline}
+
+\begin{multline}
+L(;A_1)L(B_1;B_2)=L(B_1;A_1,B_2) + L(B_1;B_2P_-A_1)
+\end{multline}
+
+\begin{multline}
+L(;A_1)L(;B_1,B_2) = L(;A_1,B_1,B_2) + L(;B_1,B_2P_-A_1) \\
++ L(;B_1P_-A_1,B_2)
+\end{multline}
+
+\section{3 times 1}
+\begin{multline}
+L(;A_1,A_2,A_3)L(B;)= -L(B;A_1,A_2,A_3)
+\end{multline}
+
+\begin{multline}
+L(;A_1,A_2,A_3)L(;B) = -L(;A_1,A_2,A_3,B) +L(;A_1,A_2,BP_-A_3)\\
++L(;A_1,BP_-A_2,A_3)+L(;BP_-A_1,A_2,A_3)
+\end{multline}
+
+\begin{multline}
+L(A_1;A_2,A_3)L(B)=L(A_1,B;A_2,A_3)+L(A_1P_+B;A_2,A_3)
+\end{multline}
+
+\begin{multline}
+L(A_1;A_2,A_3)L(;B_1)= L(A_1;A_2,A_3,B) + L(A_1;A_2,BP_-A_3) \\
++ L(A_1;B_1P_-A_2,A_3) + L(BP_-A_1;A_2,A_3) \\
++L(;A_1P_+BP_-A_3) + L(;A_1P_+BP_-A_2,A_3) - L(;A_2,A_3) \tr(P_-A_1P_+B)
+\end{multline}
+
+\begin{multline}
+L(A_1,A_2;A_3)L(B;)=-L(A_1,A_2,B;A_3) \\
++ L(A_1,A_2P_+B;A_3) + L(A_1P_+B,A_2;A_3)
+\end{multline}
+
+\begin{multline}
+L(A_1,A_2;A_3)L(;B) = -L(A_1,A_2;A_3,B) \\
++ L(BP_-A_1,A_2;A_3) + L(A_1, BP_-A_2;A_3) + L(A_1,A_2;BP_-A_3)\\
++L(A_2;A_1P_+B,A_3) + L(A_1;A_2P_+B,A_3)\\
++L(A_1P_+BP_-A_2;A_3) + L(A_2;A_1P_+BP_-A_3) + L(A_2P_+BP_-A_1;A_3)\\
++L(A_1;A_2P_+BP_-A_3)\\
+-L(A_1;A_3) \tr(P_-A_2P_+B) - L(A_2;A_3) \tr(P_-A_1P_+B)
+\end{multline}
+
+\begin{multline}
+L(A_1,A_2,A_3;)L(B;)= -L(A_1,A_2,A_3,B;) + L(A_1,A_2,A_3P_+B;)\\
++ L(A_1,A_2P_+B,A_3;) +L(A_1P_+B,A_2,A_3)
+\end{multline}
+
+\begin{multline}
+L(A_1,A_2,A_3;)L(;B) = -L(A_1,A_2,A_3;B)\\
++ L(BP_-A_1,A_2,A_3;) + L(A_1,BP_-A_2,A_3;) + L(A_1,A_2,BP_-A_3;)\\
++L(A_2,A_3;A_1P_+B) + L(A_1,A_3;A_2P_+B) +L(A_1,A_2;A_3P_+B)\\
++L(A_1P_+BP_-A_2,A_3;) + L(A_1P_+BP_-A_3,A_2;) + L(A_2P_+BP_-A_1,A_3;)\\
++L(A_1,A_2P_+BP_-A_3;) + L(A_3P_+B_1P_-A_1,A2;) + L(A_1,A_3P_+BP_-A_2;)\\
+-L(A_1,A_2;)\tr(P_-A_3P_+B) - L(A_1,A_3;)\tr(P_-A_2P_+B) - L(A_2,A_3;) \tr(P_-A_1P_+B)
+\end{multline}
+
+
+\section{2 times 2}
+
+\begin{multline}
+L(A_1,A_2;)L(B_1,B_2;)= L(A_1,A_2,B_1,B_2;) -L(A_1P_+B_1,A_2,B_2;)\\
+-L(A_1P_+B_2,A_2,B_1;) - L(A_1,B_1,A_2P_+B_2;) - L(A_1,A_2P_+B_1,B_2;)\\
+-L(A_1P_+B_1,A_2P_+B_2;) - L(A_2P_+B_1,A_1P_+B_2;)
+\end{multline}
+
+\begin{multline}
+L(A_1,A_2;)L(B_1,B_2;)= L(A_1,A_2,B_1,B_2;)-L(A_1,B_1,A_2P_+B_2) \\
+-L(A_1,B_2,A_2P_+B_1;) - L(A_2,B_1,A_1P_+B_2;) - L(A_2,B_2, A_1P_+B_1;)\\
+-L(A_2P_+B_1,A_1P_+B_2;)- L(A_1P_+B_1,A_2P+B_2;)
+\end{multline}
+
+\begin{multline}
+L(A_1,A_2;)L(B_1;B_2)= L(A_1,A_2,B_1;B_2) - L(A_1,B_1,B_2P_-A_2;)\\
+-L(B_2P_-A_1,A_2,B_1;)-L(A_1P_+B_1,A_2;B_2)-L(A_1,B_1;A_2P_+B_2)\\
+-L(A_1,A_2P_+B_1;B_2) - L(A_2,B_1;A_1P_+B_2)\\
++L(A_1,B_1)\tr(P_-A_2P_+B_2) +L(A_2,B_1;)\tr(P_-A_1P_+B_2) \\
+-L(A_1,B_2P_-A_2P_+B_1;) -L(A_2P_+B_1,B_2P_-A_1;) -L(A_2P_+B_2P_-A_1,B_1;)\\
+-L(A_1P_+B_1,B_2P_-A_2;) -L(A_2,B_2P_-A_1P_+B_1;) -L(A_1P_+B_2P_-A_2,B_1;)\\
+-L(A_2P_+B_1;A_1P_+B_2) - L(A_1P_+B_1;A_2P_+B_2)\\
+-L(A_2P_+B_1;)\tr(P_-A_1P_+B_2) - L(A_1 P_+B_1;) \tr(P_-A_2P_+B_2)\\
++L(A_1P_+B_2P_-A_2P_+B_1;) +L(A_2P_+B_2P_-A_1P_+B_1;)
+\end{multline}
+
+\begin{multline}
+L(A_1,A_2;)L(;B_1,B_2)= L(A_1,A_2;B_1,B_2) - L(A_1,B_2P_-A_2;B_1)\\
+-L(B_1P_-A_1,A_2;B_2)-L(A_1,B_1P_-A_2;B_2) - L(B_1P_-A_1,A_2;B_1)\\
+-L(A_2;B_1,A_1P_+B_2)-L(A_2;A_1P_+B_1,B_2)-L(A_1;B_2,A_2P_+B_2)\\
+-L(A_1;A_2P_+B_1,B_2)\\
+-L(B_1P_-A_1,B_2P_-A_2;) - L(B_2P_-A_1,B_1P_-A_2;) - L(A_2;B_2P_-A_1P_+B_1)\\
+-L(A_2P_+B_2P_-A_1;B_1)- L(B_2P_-A_1;A_2P_+B_1)- L(A_1P_+B_2P_-A_2;B_1)\\
+-L(B_2P_-A_2;A_1P_+B_1) - L(A_1;B_2P_-A_2P_+B_1)-L(A_2;B_1P_-A_1P_+B_2)\\
+-L(B_1P_-A_2;A_1P_+B_2) - L(A_1P_+B_1P_-A_2;B_2) - L(A_1;B_1P_-A_2P_+B_2)\\
+-L(B_1P_-A_1;A_2P_+B_2) - L(A_2P_+B_1P_-A_1;B_2)\\
+- L(;A_1P_+B_1,A_2P_+B_2)-L(;A_1P_+B_2,A_2P_+B_1)\\
++L(A_2;B_1)\tr(P_+B_2P_-A_1) + L(A_1;B_1)\tr(P_+B_2P_-A_2) \\
++L(A_2;B_2)\tr(P_+B_1P_-A_1) + L(A_1;B_2)\tr(P_+B_1P_-A_2)\\
++L(B_1P_-A_1P_+B_2P_-A_2;) + L(B_2P_-A_2P_+B_1P_-A_1;) \\
++ L(B_2P_-A_1P_+B_1P_-A_2;)+ L(B_1P_-A_2P_+B_2P_-A_1;)\\
++L(;A_2P_+B_2P_-A_1P_+B_1) + L(;A_1P_+B_2P_-A_2P_+B_1)\\
++L(;A_2P_+B_1P_-A_1P_+B_2) + L(;A_1P_+B_1P_-A_2P_+B_2)\\
+-L(B_2P_-A_2;)\tr(P_+B_1P_-A_1) - L(B_1P_-A_1;)\tr(P_+B_2P_-A_2)\\
+-L(B_1P_-A_1;)\tr(P_+B_1P_-A_2) -L(B_1P_-A_2;)\tr(P_+B_2P_-A_1)\\
+-L(;A_2P_+B_1)\tr(P_+B_2P_-A_1) - L(;A_1P_+B_1)\tr(P_+B_2P_-A_2)\\
+-L(;A_2P_+B_2)\tr(P_+B_1P_-A_1) - L(;A_1P_+B_2)\tr(P_+B_1P_-A_2)\\
+-\tr(P_+B_2P_-A_2P_+B_1P_-A_1) -\tr(P_+B_1P_-A_2P_+B_2P_-A_1)\\
++\tr(P_+B_1P_-A_1) \tr(P_+B_2P_-A_2) + \tr(P_+B_1P_-A_2)\tr(P_+B_2P_-A_1)
+\end{multline}
+
+\begin{multline}
+L(A_1;A_2)L(B_1,B_2;)=L(A_1,B_1,B_2;A_2) - L(A_1P_+B_1,B_2;A_2)\\
+ - L(A_1P_+B_2,B_1;A_2)
+\end{multline}
+
+\begin{multline}
+L(A_1;A_2)L(B_1;B_2)=L(A_1,B_1;A_2,B_2) - L(B_2P_-A_1,B_1;A_2)\\
+-L(B_1;A_1P_+B_2,A_2) -L(A_1P_+B_1;A_2,B_2)-L(A_1,B_1;B_2P_-A_2)\\
+-L(B_1;A_1P_+B_2P_-A_2) - L(B_2P_-A_1P_+B_1;A_2)-L(A_1P_+B_1;B_2P_-A_2)\\
++L(B_1;A_2)\tr(P_-A_1P_+B_2)
+\end{multline}
+
+\begin{multline}
+L(A_1;A_2)L(;B_1,B_2)= L(A_1;A_2,B_1,B_2)\\
+-L(A_1;B_1P_-A_2,B_2)-L(B_2P_-A_1;A_2,B_1) -L(A_1;B_1,B_2P_-A_2)\\
+-L(B_1P_-A_1;A_2,B_2)\\
+-L(B_1P_-A_1;B_2P_-A_2)-L(B_2P_-A_1;B_1P_-A_2)-L(;A_1P_+B_2P_-A_2,B_1)\\
+-L(;A_1P_+B_2,B_1P_-A_2) - L(;A_2,B_2P_-A_1P_+B_1) - L(;A_1P_+B_1,B_2P_-A_2)\\
+-L(;A_1P_+B_1P_-A_2,B_2)-L(;A_2,B_1P_-A_1P_+B_2) \\
++L(;A_2,B_1) \tr (P_-A_1P_+B_2) + L(;A_2,B_2) \tr(P_-A_1P_+B_1)\\
++L(B_1P_-A_1P_+B_2P_-A_2) + L(;B_2P_-A_1P_+B_1P_-A_2)\\
+-L(;B_1P_-A_2)\tr(P_-A_1P_+B_2) - L(;B_2P_-A_2) \tr(P_-A_1P_+B_1)
+\end{multline}
+
+\begin{multline}
+L(;A_1,A_2)L(B_1,B_2;)=L(B_1,B_2;A_1,A_2)
+\end{multline}
+
+\begin{multline}
+L(;A_1,A_2)L(B_1;B_2)=L(B_1;A_1,A_2,B_2)\\
+-L(B_1;B_2P_-A_1,A_2)-L(B_1;A_1,B_2P_-A_2)
+\end{multline}
+
+\begin{multline}
+L(;A_1,A_2)L(;B_1,B_2)= L(;A_1,A_2,B_1,B_2) \\
+- L(;A_1,B_2P_-A_2,B_1)-L(;A_1,B_1P_-A_2,B_2) \\
+-L(;B_2P_-A_1,A_2,B_1)-L(;B_1P_-A_1,A_2,B_2)\\
+-L(;B_1P_-A_1,B_2P_-A_2)-L(;B_1P_-A_2,B_2P_-A_1)
+\end{multline}
+
+
+
+\backmatter
+\end{document}
+

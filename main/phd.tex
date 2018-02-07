@@ -160,7 +160,7 @@ and the time evolution operator.
 
 \chapter{Introduction}
 
-\show\afterchaptertitle
+%\show\afterchaptertitle
 \noch{Historische Einleitung durch Anfänge relativistischer Quantenphysik, zweitquantisierung Ruijsnaars Resultat und ivp0. Falls möglich Verbindung zur Physikliteratur. Falls möglich Resultat zur Bestimmung der Phase und Analytizität. }
 
 \chapter[Nonperturbative \(S\)]{Nonperturbative discussion of the Scattering Operator}
@@ -411,6 +411,7 @@ Now we turn to the construction of the \(S\)-matrix, the second quantised analog
 The \(S\) operator fulfils the ``lift condition''.
 \begin{align}\label{lift_condition1}
 \forall \phi\in \mathcal{H}:& \hspace{0.5cm} S^A \circ a(\phi)=a\left( U^A \phi \right)  \circ S^A,\tag{lift condition}\\
+\label{lift_condition2}
 \forall \phi\in \mathcal{H}:& \hspace{0.5cm} S^A \circ a^*(\phi)=a^*\left( U^A \phi \right)  \circ S^A,\tag{adjoint lift condition}
 \end{align}
 where \(a^*\) is the adjoint of the annihilation operator, the creation operator. 
@@ -808,7 +809,7 @@ is symmetric and its value identical to the corresponding multinomial coefficien
 are omitted, we can further simplify the sum:
 
 \begin{equation*}
-F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} \sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{|\vec{g}|=k}}
+F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} \sum_{\stackrel{\vec{g}\in\mathbb{N}^n}{|\vec{g}|=k}}
  \binom{k}{\vec{g}}
 \end{equation*}
 
@@ -925,7 +926,7 @@ T_n = \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|= n}} \sum_{
 \end{equation}
 where \(F\) is given by
 \begin{equation}\label{eq resursive weak solution}
-F_{a,b} = \left\{ \begin{matrix}G_a \quad \text{für } b=0 \\ C_a \quad \text{für } b=1  \end{matrix} \right._. 
+F_{a,b} = \left\{ \begin{matrix}G_a \quad \text{for } b=0 \\ C_a \quad \text{for } b=1  \end{matrix} \right._. 
 \end{equation}
 For the readers convenience we remind her, that \(G_a\) is defined by \eqref{T_n recursive}. Whereas
 the constants \(C_n\) depend on the vacuum expectation value of \(T_n\) as well as on the products
@@ -1046,13 +1047,15 @@ S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
 \end{multline}
 \qed
 
-\begin{Lemma}
+\begin{Thm}
 The second quantized scattering operator fulfils
-\begin{equation}
-S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))}.
+\begin{equation}\label{sleek_second_quantized_scattering_operator}
+S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))},
 \end{equation}
-\end{Lemma}
-\textbf{Proof:} We are going to change the sum in the second exponential of 
+where \(C_n\) must be imaginary for any \(n\in\mathbb{N}\) in order to satisfy unitarity.
+\end{Thm}
+\textbf{Proof:} Due to the last few lemmas and theorems this proof has become much less difficult.
+ We are going to change the sum in the second exponential of 
 \eqref{Corollary double exp}, so let's take a closer look at that: by exchanging summation
 we can step by step simplify
 
@@ -1087,6 +1090,145 @@ G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{
  =G\left( \ln \left(U\right)\right).
 \end{multline}
 \qed
+
+\begin{Remark}
+If one starts with the right hand side of \eqref{sleek_second_quantized_scattering_operator} as the definition of 
+some operator \(\mathfrak{S}\), all it takes to verify that it fulfils \eqref{lift_condition1} and \eqref{lift_condition2} is the following 
+(in comparison with its derivation) short calculation:
+
+Let \(\varphi\in \mathcal{H}\), for any \(k\in \mathbb{N}_0\) we see applying the commutation relation of \(G\):
+\begin{multline*}
+G(\ln U) \sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(G(\ln U)\right)^{k-l} = \\
+\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^{l+1} \varphi \right) \left(G(\ln U)\right)^{k-l}
++\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(G(\ln U)\right)^{k-l+1}\\
+= \sum_{b=0}^{k+1} \left( \binom{k}{b-1} + \binom{k}{b}\right) a^\#\left( (\ln U)^b \varphi\right) \left( G(\ln U)\right)^{k+1-b}\\
+=\sum_{b=0}^{k+1}  \binom{k+1}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( G(\ln U)\right)^{k+1-b},
+\end{multline*}
+so we see that for \(k\in\mathbb{N}_0\)
+\begin{equation}
+\left(G(\ln U)\right)^k a^\# (\varphi) = \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( G(\ln U)\right)^{k-b}
+\end{equation}
+holds. Using that we conclude
+\begin{multline*}
+e^{G(\ln U)}a^\#(\varphi) = \sum_{k=0}^\infty \frac{1}{k!} \left(G(\ln U)\right)^k a^\# (\varphi)\\
+=\sum_{k=0}^\infty \frac{1}{k!}  \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi \right) \left( G(\ln U)\right)^{k-b}\\
+=\sum_{c=0}^\infty \sum_{l=0}^\infty \frac{1}{c! l!} a^\#\left( (\ln U)^c \varphi \right) \left( G(\ln U)\right)^{l}\\
+=a^\#\left( e^{\ln U} \varphi \right) e^{G( \ln U)}=a^\#\left( U \varphi \right) e^{G( \ln U)}.
+\end{multline*}
+Clearly multiplying the second quantised operator by an additional phase as in 
+\eqref{sleek_second_quantised_scattering_operator} does not influence this calculation.
+\end{Remark}
+
+As a preparation for calculating the vacuum polarisation current we proof the following 
+\begin{Lemma}\label{G_kommutator}
+Let \(P_k,P_l\in Q\) then the following holds
+\begin{equation}
+\left[G(P_k),G(P_l)\right]= 
+\tr\left(P_{\stackrel{k}{-+}}P_{\stackrel{l}{+-}}\right)
+-\tr\left(P_{\stackrel{l}{-+}}P_{\stackrel{k}{+-}}\right) 
++G\left(\left[P_k,P_l\right]\right)
+.\end{equation}
+\end{Lemma}
+For a proof of this lemma let \(P_k,P_l \in Q\), we compute
+\begin{align*}
+&\left[G(P_k),G(P_l)\right]\stackrel{\eqref{G commutator}}{=}\\
+&=\sum_{n,b\in\mathbb{N}} \left[ a^*\left(P_k\varphi_n\right) a(\varphi_n), a^*\left(P_l\varphi_b\right)a(\varphi_n)\right]
+-\sum_{-b,n\in\mathbb{N}}\left[a^*\left(P_k\varphi_n\right)a(\varphi_n), a(\varphi_b) a^*\left(P_l\varphi_b\right)\right]\\
+&-\sum_{-n,b\in\mathbb{N}}\left[a(\varphi_n)a^*\left(P_k\varphi_n\right),a^*\left(P_l\varphi_b\right)a(\varphi_b)\right]
++\sum_{n,b\in\mathbb{N}}\left[ a(\varphi_n)a^*\left(P_k\varphi_n\right), a(\varphi_b)a^*\left(P_l\varphi_b\right)\right]\\
+&=\sum_{n,b\in\mathbb{N}} \left(a^*\left(P_k\varphi_n\right)\left<\varphi_n,P_l\varphi_b\right>a(\varphi_b)-a^*\left(P_l\varphi_b\right) \left<\varphi_b,P_k\varphi_n\right>a(\varphi_n) \right)\\
+&-\sum_{-b,n\in\mathbb{N}}\left( - \left<\varphi_b,P_k \varphi_n\right>a(\varphi_n)a^*\left(P_l\varphi_b\right) + a(\varphi_b) a^*\left(P_k\varphi_n\right)\left<\varphi_n,P_l\varphi_b\right>\right)\\
+&-\sum_{-n,b\in\mathbb{N}} \left( - \left< \varphi_n,P_l\varphi_b\right> a^*\left(P_k\varphi_n\right) a(\varphi_b) + a^*\left(P_l\varphi_b\right)a(\varphi_n)\left<\varphi_b,P_k\varphi_n\right>\right)\\
+&+\sum_{n,b\in -\mathbb{N}} \left(a(\varphi_n) \left< \varphi_b,P_k\varphi_n\right>a^*\left(P_l\varphi_b\right)-a(\varphi_b)\left<\varphi_n,P_l\varphi_b\right> a^*\left(P_k\varphi_n\right)\right)\\
+&=\sum_{b\in\mathbb{N}} a^*\left(P_k P_{\stackrel{l}{++}}\varphi_b\right)a(\varphi_b) - \sum_{n\in\mathbb{N}}a^*\left(P_l P_{\stackrel{k}{++}}\varphi_n\right)a(\varphi_n)\\
+&+\sum_{n\in\mathbb{N}}a(\varphi_n)a^*\left(P_l P_{\stackrel{k}{-+}}\varphi_n\right) - \sum_{-b\in\mathbb{N}} a(\varphi_b)a^*\left(P_k P_{\stackrel{l}{+-}}\varphi_b\right)\\
+&+\sum_{b\in\mathbb{N}}a^*\left(P_k P_{\stackrel{l}{-+}}\varphi_b\right)a(\varphi_b)-\sum_{-n\in\mathbb{N}}a^*\left(P_l P_{\stackrel{k}{+-}}\varphi_n\right) a(\varphi_n)\\
+&+\sum_{-n\in\mathbb{N}}a(\varphi_n)a^*\left(P_l P_{\stackrel{k}{--}}\varphi_n\right) - \sum_{-b \in \mathbb{N}} a(\varphi_b)a^*\left(P_k P_{\stackrel{l}{--}}\varphi_b\right)\\
+=&\sum_{n\in\mathbb{N}} a^*\left(P_k P_l \varphi_n \right) a(\varphi_n) - \sum_{n\in\mathbb{N}} a^*\left(P_l P_{\stackrel{k}{++}} \varphi_n \right) a(\varphi_n)\\
+&+\tr \left( P_{\stackrel{l}{+-}} P_{\stackrel{k}{-+}}\right) - \sum_{n\in\mathbb{N}} a^*\left( P_l P_{\stackrel{k}{-+}} \varphi_n\right)a(\varphi_n)\\
+&-\tr \left( P_{\stackrel{l}{-+}} P_{\stackrel{k}{+-}}\right) + \sum_{-b\in\mathbb{N}} a(\varphi_b) a^*\left(P_l P_{\stackrel{k}{+-}} \varphi_b\right)\\
+&+\sum_{-b\in\mathbb{N}} a(\varphi_b) a^*\left( P_l P_{\stackrel{k}{--}}\varphi_b\right) - \sum_{-b\in\mathbb{N}} a(\varphi_b) a^*\left( P_k P_l \varphi_b\right)\\
+&=\tr \left( P_{\stackrel{l}{+-}} P_{\stackrel{k}{-+}}\right)
+-\tr \left( P_{\stackrel{l}{-+}} P_{\stackrel{k}{+-}}\right)\\
+&+\sum_{n\in\mathbb{N}} a^*\left(\left[P_k ,P_l\right] \varphi_n \right) a(\varphi_n)
++\sum_{-b\in\mathbb{N}} a(\varphi_b)a^*\left(\left[P_l ,P_k\right] \varphi_b \right) \\
+&=\tr \left( P_{\stackrel{l}{+-}} P_{\stackrel{k}{-+}}\right)
+-\tr \left( P_{\stackrel{l}{-+}} P_{\stackrel{k}{+-}}\right)
++G\left(\left[P_k,P_l\right]\right)
+\end{align*}
+\qed
+
+\begin{Def}
+For \(k\in\mathbb{N}_0\), \(X,Y\in \mathcal{B}(\mathcal{H})\) the nested commutator \([X,Y]_k\) is defined inductively as
+\begin{align*}
+[X,Y]_0&:= Y\\
+[X,Y]_{k+1}&:=[X,[X,Y]_{k}] \quad \forall k\in\mathbb{N}_0.
+\end{align*}
+\end{Def}
+
+\begin{Lemma}\label{nested_kommuted_G}
+For \(1<m\in\mathbb{N}\) and \(B,C \in Q\) the following holds
+\begin{equation}
+\left[ G(B),G(C)\right]_m= G\left([B,C]_m\right) + \tr\left(P_-BP_+[B,C]_{m-1}\right) - \tr\left(P_+BP_-[B,C]_{m-1}\right).
+\end{equation}
+\end{Lemma}
+
+
+\begin{Thm}
+The vacuum expectation value of the current of the scattering operator takes the form
+\begin{multline}
+j_A(F)= i \partial_{\varepsilon}\left. \sum_{n\in\mathbb{N}} \frac{C_n(A+\varepsilon F)}{n!} \right|_{\varepsilon=0}+\\\partial_{\varepsilon} \left. \Im \tr \left( P_+ \ln U^A P_- {S^{A}}^* \ln S^{A+\varepsilon F} S^A \right)\right|_{\varepsilon=0}
+\end{multline}
+\end{Thm}
+\textbf{Proof:} We use \eqref{sleek_second_quantised_scattering_operator} to plug into Bogoliubov's formula for the
+current \todo{ref!!}
+
+\begin{multline}\label{sleek_current_calc1}
+j_A(F) = i \partial_{\varepsilon}\left. \langle \Omega, {S^{A} }^* S^{A+\varepsilon F}\Omega \rangle \right|_{\varepsilon=0}\\
+=i \partial_{\varepsilon}\left. \langle \Omega, e^{-\sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!}} e^{-G(\ln (U^A))} 
+e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F)} e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
+=i\langle \Omega,\partial_{\varepsilon}\left.  e^{-\sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!}} e^{-G(\ln (U^A))} 
+e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F)} e^{G(\ln (U^{A}))} \Omega\rangle \right|_{\varepsilon=0}\\
++i\langle \Omega,\partial_{\varepsilon}\left.  e^{-\sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!}} e^{-G(\ln (U^A))} 
+e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A)} e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
+=i e^{-\sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!}} 
+\partial_{\varepsilon} \left. e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F)}  \right|_{\varepsilon=0}
++i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
+e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
+=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}
++i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
+e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0},
+\end{multline}
+so the first summand works out just as claimed. For the second summand we employ Duhamel's and Hadamard's formula. \todo{ref!! + restrictions, something better than 
+ \url{https://s3.amazonaws.com/academia.edu.documents/46627661/CBH.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1517999839&Signature=m\%2FGNTMS\%2FNAH7ioWII76ZlULcCRY\%3D&response-content-disposition=inline\%3B\%20filename\%3DCrib_Notes_on_Campbell-Baker-Hausdorff_e.pdf}}
+These are
+
+\begin{equation}
+\partial_{\alpha}\left. e^{Y+\alpha X}\right|_{\alpha=0} = \int_0^1 d t e^{(1-t) Y} X e^{t Y}\tag{Duhamel's formula}
+\end{equation}
+
+and
+\begin{equation}\tag{Hadamard's formula}
+e^{X}Ye^{-X}=\sum_{k=0}^\infty \frac{1}{k!} [X,Y]_k.
+\end{equation}
+
+
+So continuing with the second term of \eqref{sleek_current_calc1} we get
+\begin{multline}
+i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
+e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
+=i\langle \Omega, e^{-G(\ln (U^A))} 
+ \int_0^1 d t e^{(1-t) G(\ln (U^{A}))} \partial_{\varepsilon}\left. G(\ln (U^{A+\varepsilon F}))\right|_{\varepsilon=0} e^{t G(\ln (U^{A}))}  \Omega\rangle \\
+ =i\langle \Omega, 
+ \int_0^1 d t e^{-t G(\ln (U^{A}))} \partial_{\varepsilon}\left. G(\ln (U^{A+\varepsilon F}))\right|_{\varepsilon=0} e^{t G(\ln (U^{A}))}  \Omega\rangle \\
+ =i \langle \Omega, \int_0^1 d t  \sum_{k=0}^\infty \frac{1}{k!} 
+ \left[ -t G(\ln U^A),  \partial_{\varepsilon}\left. G(\ln (U^{A+\varepsilon F}))\right|_{\varepsilon=0} \right]_k \Omega \rangle\\
+  =i \langle \Omega,  \sum_{k=0}^\infty \frac{1}{k!}  \int_0^1 d t (-t)^k \partial_{\varepsilon}\left.
+ \left[  G(\ln U^A),   G(\ln (U^{A+\varepsilon F})) \right]_k \right|_{\varepsilon=0} \Omega \rangle\\
+ =i   \sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \partial_{\varepsilon}\left.\langle \Omega,
+\left[  G(\ln U^A),   G(\ln (U^{A+\varepsilon F})) \right]_k  \Omega \rangle\right|_{\varepsilon=0}. 
+\end{multline}
+At this point we use lemma \eqref{G_kommutator}.
 
 \section{Main Conjecture}\label{sec:main result}
 Now I can state the primary objective of my thesis in terms of the following

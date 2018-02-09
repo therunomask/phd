@@ -1049,7 +1049,7 @@ S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
 
 \begin{Thm}
 The second quantized scattering operator fulfils
-\begin{equation}\label{sleek_second_quantized_scattering_operator}
+\begin{equation}\label{sleek_second_quantised_scattering_operator}
 S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))},
 \end{equation}
 where \(C_n\) must be imaginary for any \(n\in\mathbb{N}\) in order to satisfy unitarity.
@@ -1167,17 +1167,37 @@ For \(k\in\mathbb{N}_0\), \(X,Y\in \mathcal{B}(\mathcal{H})\) the nested commuta
 \end{Def}
 
 \begin{Lemma}\label{nested_kommuted_G}
-For \(1<m\in\mathbb{N}\) and \(B,C \in Q\) the following holds
-\begin{equation}
-\left[ G(B),G(C)\right]_m= G\left([B,C]_m\right) + \tr\left(P_-BP_+[B,C]_{m-1}\right) - \tr\left(P_+BP_-[B,C]_{m-1}\right).
-\end{equation}
+For \(m\in\mathbb{N}\) and \(B,C \in Q\) the following holds
+\begin{multline}
+\left[ G(B),G(C)\right]_m=  \tr\left(P_-BP_+[B,C]_{m-1}\right) - \tr\left(P_+BP_-[B,C]_{m-1}\right)\\
++G\left([B,C]_m\right) .
+\end{multline}
 \end{Lemma}
+\textbf{Proof:} Proof by Induction is the first thing that comes to mind, looking at the claim. Indeed, \(m=1\) is the consequence
+of the lemma \ref{G_kommutator}. For \(m\) general we have
 
+\begin{multline}
+\left[ G(B),G(C)\right]_{m+1}
+=\left[ G(B),\left[ G(B),G(C)\right]_{m}\right]\\
+\stackrel{\text{ind.hyp.}}{=}\left[ G(B), \tr\left(P_-BP_+[B,C]_{m-1}\right) - \tr\left(P_+BP_-[B,C]_{m-1}\right)
++G\left([B,C]_m\right) \right]\\
+=\left[ G(B),G\left([B,C]_m\right) \right]\\
+\stackrel{\text{lemma } \ref{G_kommutator}}{=} 
+\tr\left(P_- B P_+ [B,C]_m\right)
+-\tr\left(P_+BP_- [B,C]_m \right) 
++G\left(\left[B,[B,C]_m\right]\right)\\
+=
+\tr\left(P_- B P_+ [B,C]_m\right)
+-\tr\left(P_+BP_- [B,C]_m \right) 
++G\left([B,C]_{m+1}\right)
+\end{multline}
+\qed 
 
 \begin{Thm}
 The vacuum expectation value of the current of the scattering operator takes the form
 \begin{multline}
-j_A(F)= i \partial_{\varepsilon}\left. \sum_{n\in\mathbb{N}} \frac{C_n(A+\varepsilon F)}{n!} \right|_{\varepsilon=0}+\\\partial_{\varepsilon} \left. \Im \tr \left( P_+ \ln U^A P_- {S^{A}}^* \ln S^{A+\varepsilon F} S^A \right)\right|_{\varepsilon=0}
+j_A(F)=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}\\
+-2\int_0^1 d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right)
 \end{multline}
 \end{Thm}
 \textbf{Proof:} We use \eqref{sleek_second_quantised_scattering_operator} to plug into Bogoliubov's formula for the
@@ -1200,7 +1220,7 @@ e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
 e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0},
 \end{multline}
 so the first summand works out just as claimed. For the second summand we employ Duhamel's and Hadamard's formula. \todo{ref!! + restrictions, something better than 
- \url{https://s3.amazonaws.com/academia.edu.documents/46627661/CBH.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1517999839&Signature=m\%2FGNTMS\%2FNAH7ioWII76ZlULcCRY\%3D&response-content-disposition=inline\%3B\%20filename\%3DCrib_Notes_on_Campbell-Baker-Hausdorff_e.pdf}}
+ \href{https://s3.amazonaws.com/academia.edu.documents/46627661/CBH.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1517999839&Signature=m\%2FGNTMS\%2FNAH7ioWII76ZlULcCRY\%3D&response-content-disposition=inline\%3B\%20filename\%3DCrib_Notes_on_Campbell-Baker-Hausdorff_e.pdf}{this}}
 These are
 
 \begin{equation}
@@ -1208,7 +1228,7 @@ These are
 \end{equation}
 
 and
-\begin{equation}\tag{Hadamard's formula}
+\begin{equation}\tag{Hadamard's formula}\label{Hadamard}
 e^{X}Ye^{-X}=\sum_{k=0}^\infty \frac{1}{k!} [X,Y]_k.
 \end{equation}
 
@@ -1228,7 +1248,54 @@ e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
  =i   \sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \partial_{\varepsilon}\left.\langle \Omega,
 \left[  G(\ln U^A),   G(\ln (U^{A+\varepsilon F})) \right]_k  \Omega \rangle\right|_{\varepsilon=0}. 
 \end{multline}
-At this point we use lemma \eqref{G_kommutator}.
+At this point we use lemma \ref{nested_kommuted_G}. This results in 
+\begin{multline}\label{sleek_current_calc3}
+i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
+e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
+ =i   \sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \partial_{\varepsilon}\langle \Omega,
+ \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k-1}\right) \\
+ - \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k-1}\right)\\
++\left.G\left([\ln U^A,\ln U^{A+\varepsilon F} ]_m\right) \Omega \rangle\right|_{\varepsilon=0}\\
+=i   \sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \partial_{\varepsilon}\langle \Omega,
+ \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k-1}\right) \\
+ - \left. \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k-1}\right)  \Omega \rangle\right|_{\varepsilon=0}\\
+=i  \partial_{\varepsilon} \left.\sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!} 
+ \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k-1}\right) \right|_{\varepsilon=0}\\
+ -i  \partial_{\varepsilon} \left.\sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k-1}\right) \right|_{\varepsilon=0}\\
+=-i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!} 
+ \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
+ +i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!}  \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\ 
+\end{multline}
+
+In order to apply Hadamard's formula once again in the opposite direction, we introduce two auxiliary integrals.
+The second term then becomes
+
+\begin{multline}\label{sleek_current_calc4}
+ i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!}  \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
+= i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{k!} \int_0^1 d t \int_0^1 s^k t^{k+1}
+\tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
+= i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{1}{k!} \int_0^1 d t \int_0^1 ds\ t
+\tr\left(P_+ \ln U^A P_-[ -t s \ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
+= i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{1}{k!} \int_0^1 d z \int_z^1 ds\ 
+\tr\left(P_+ \ln U^A P_-[ -z \ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
+= i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{1}{k!} \int_0^1 d z (1-z)
+\tr\left(P_+ \ln U^A P_-[ -z \ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
+= i  \partial_{\varepsilon} \left. \int_0^1 d z (1-z) 
+\tr\left(P_+ \ln U^A P_- \sum_{k=0}^\infty \frac{1}{k!} [ -z \ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
+\stackrel{\eqref{Hadamard}}{=} i  \partial_{\varepsilon} \left. \int_0^1 d z (1-z) 
+\tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A}\ln U^{A+\varepsilon F} e^{ z \ln U^A}\right) \right|_{\varepsilon=0}\\
+=i  \int_0^1 d z (1-z) 
+\tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right) .
+\end{multline}
+
+The calculation for the first term of \eqref{sleek_current_calc3} is identical.
+At this point we notice that \eqref{sleek_current_calc4} and the term where the 
+projectors are exchanged are complex conjugates of one another. So summarising we find
+\begin{multline*}
+j_A(F)=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}\\
+-2\int_0^1 d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right).
+\end{multline*}
+
 
 \section{Main Conjecture}\label{sec:main result}
 Now I can state the primary objective of my thesis in terms of the following

@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{maa-monthly}
+\usepackage{todonotes}
 
 \usepackage[unicode=true, pdfusetitle, bookmarks=true,
   bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
@@ -27,21 +28,21 @@
 \maketitle
 
 \begin{abstract}
-A connection is made between Sterling numbers of the second kind and a particular sum of multinomial coefficients. 
-This is motivated by the combinatorial interpretation of the appearing objects and also proven by explicit calculation.
+The connection between Sterling numbers of the second kind and the multinomial coefficients is highlighted in this paper. 
+This is motivated by the combinatorial interpretation of these objects and also proven by explicit calculation.
 \end{abstract}
 
 
 \noindent
 
-\section*{Introduction and notation}
+\section{Introduction and notation.}
 
 I would like to discuss the relationship between the multinomial coefficients and the Sterling numbers of the second kind.
 For some reason this relationship is very rarely discussed in textbooks about combinatorics. In fact the only reference I
 am aware of is the handbook of mathematical functions \cite{abramowitz1964handbook}[p 823], where the equation in 
 question is marked corrected but is incorrect. 
 
-\subsection*{Binomial coefficients}
+\subsection{Binomial coefficients.}
 
 The multinomial coefficients are usually introduced in terms of binomial coefficients, which can be defined in different ways,
 the reader and I follow the convention of the book ''Concrete Mathematics``\cite{graham1994concrete}.
@@ -51,7 +52,7 @@ For \(a\in\mathbb{C}, b\in\mathbb{Z}\) we define
 \begin{equation}
 \begin{pmatrix}a\\b\end{pmatrix} := \left\{\begin{matrix}
 \frac{1}{b!}\prod_{l=0}^{b-1} (a-l) \quad \text{for } b\ge 0\\
-0 \quad \text{else.}
+0 \quad\quad\quad~~~~~  \text{else.}
 \end{matrix} \right.
 \end{equation}
 \end{definition}
@@ -60,9 +61,9 @@ By defining the coefficients for negative lower index to be zero, we do not have
 many formulas. The combinatorial interpretation of the binomial coefficient \(\begin{pmatrix}a \\ b\end{pmatrix}\) for
 \(a,b\in\mathbb{N}\) is \textbf{the number of ways to choose \(b\) elements of a set of \(a\) elements}. 
 
-\subsection*{Multinomial coefficients}
+\subsection{Multinomial coefficients}
 
-The multinomial coefficients are then introduced as a product of binomial coefficients.
+The multinomial coefficients are a product of binomial coefficients.
 \begin{definition}[multinomial coefficient]
 For \(g\in\mathbb{N}\) and \(a\in\mathbb{N},\vec{b}\in\mathbb{N}^g\) with \(\sum_{k=1}^g b_k=a\)
 we define
@@ -78,62 +79,135 @@ The combinatorial interpretation of \(\begin{pmatrix}a\\\vec{b}\end{pmatrix}\) f
  
 The multinomial coefficients are applied e.g. in the well known multinomial theorem\cite{abramowitz1964handbook}[p 823]:
 
-\begin{theorem}[multinomial]
+\begin{theorem}[multinomial theorem]
 For any \(g,n\in\mathbb{N}\) and \(x_1,\dots x_n\in\mathbb{C}\) the following equality holds true
 \begin{equation}
 \left(\sum_{k=1}^g x_k\right)^n= \sum_{\stackrel{\vec{b}\in\mathbb{N}_0^g}{|\vec{b}|=n}}\begin{pmatrix}n\\\vec{b}\end{pmatrix} \prod_{k=1}^g x_k^{b_k},
 \end{equation}
-where one usually defines \(|\vec{b}|:=\sum_{k=1}^g b_k\). 
+where one defines \(|\vec{b}|:=\sum_{k=1}^g b_k\). 
 \end{theorem} 
 
 
 
-\subsection*{Sterling numbers of the second kind}
+\subsection{Sterling numbers of the second kind}
  
 The Sterling numbers of the second kind \(\left\{ \begin{matrix} n\\k\end{matrix}\right\}\), for \(n,k\in\mathbb{N}\) are usually introduced by their combinatorial interpretation, which is \textbf{the number of ways to partition a set of \(n\) elements into \(k\)
-nonempty sets}. One can find an explicit formula for the sterling numbers of the second kind \cite{stanley2011enumerative}[p82f]:
+nonempty sets, \todo{find better formulation}}where the order of the resulting sets is neglected}. One can find an explicit formula for the sterling numbers of the second kind \cite{stanley2011enumerative}[p82f]:
 
 \begin{equation}
 \left\{\begin{matrix}n\\k\end{matrix}\right\} = \frac{1}{k!} \sum_{j=0}^k (-1)^{k-j} \begin{pmatrix}k\\j\end{pmatrix}j^n.
 \end{equation}
 
 
-\subsection*{Second-level heading.}
+\section{Connecting the Concepts.}
 
-The same goes for second-level headings.  It is not necessary to add font commands to make the math within heads bold and sans serif; this change will occur automatically when the production style is applied.
+\subsection{Combinatorial Justification.} By the interpretation just introduced for the multinomial coefficients we see that for \(g,k\in\mathbb{N}\) the term
 
-\section*{Graphics.}
+\begin{equation*}
+\frac{1}{g!}\sum_{\stackrel{\vec{v}\in\mathbb{N}^g}{\left|\vec{v}\right|=k}} \begin{pmatrix} k \\ \vec{v} \end{pmatrix}
+\end{equation*}
 
-Figures for the \textsc{Monthly} can be submitted as either color or black \& white graphics.  Generally, color graphics will be used for the online publication, and converted to black \& white images for the print journal.  We recommend using whatever graphics program you are most comfortable with, so long as the submitted graphic is provided as a separate file using a standard file format.
+is the number of ways to partition a set of \(k\) elements into \(g\) sets. The division by \(g!\) is necessary, since for counting
+partitions one treats the sets to be partitioned into as indistinguishable, where as in the sum they occur in every order.
+The Sterling number of the second kind also have exactly this interpretation, so we suspect the two objects to always agree.
 
-For best results, please follow the following guidelines:
-\begin{enumerate}
-\item Bitmapped file formats---preferably TIFF or JPEG, but not BMP---are appropriate for photographs, using a resolution of at least 300 dpi at the final scaled size of the image.
-\item Line art will reproduce best if provided in vector form, preferably EPS.
-\item Alternatively, both photographs and line art can be provided as PDF files.  Note that creating a PDF does not affect whether the graphic is a bitmap or vector; saving a scanned piece of line art as PDF does not convert it to scalable line art.
-\item If you generating graphics using a \TeX\ package, please be sure to provide a PDF of the manuscript.  In the production process, \TeX-generated graphics will eventually be converted to more conventional graphics so the \textsc{Monthly} can be delivered in e-reader formats.
-\item For photos of contributing authors, we prefer photos that are not cropped tight to the author's profile, so that production staff can crop the head shot to an equal height and width.  If possible, avoid photographs that have excess shadows or glare.
-\end{enumerate}
+\subsection{Analytic Proof}
 
-\section*{Theorems, definitions, proofs, and all that.}
+One can also see this by mathematical induction.
 
-Following the defaults of the \texttt{amsthm} package, styling is provided for \texttt{theorem}, \texttt{definition}, and \texttt{remark} styles, although the latter two use the same styling.
-
-\begin{theorem}[Pythagorean Theorem]
-Theorems, lemmas, axioms, and the like are stylized using italicized text. These environments can be numbered or unnumbered, at the author's discretion.
+\begin{theorem}
+For any \(g\in\mathbb{N},k\in\mathbb{N}\)
+\begin{equation}
+\sum_{\stackrel{\vec{v}\in\mathbb{N}^g}{|\vec{v}|=k}} \binom{k}{\vec{v}}=\sum_{l=0}^g (-1)^l (g-l)^k \binom{g}{l}
+\end{equation}
+holds.
 \end{theorem}
-
 \begin{proof}
-Proofs set in roman (upright) text, and conclude with an ``end of proof'' (q.e.d.) symbol that is set automatically when you end the proof environment.  When the proof ends with an equation or other non-text element, you need to add \verb~\qedhere~ to the element to set the end of proof symbol; see the \texttt{amsthm} package documentation for more details.
+We would like to apply the multinomial theorem but there are all the summands missing where at least
+one of the entries of \(\vec{v}\) is zero, so we add an appropriate expression of zero. We also give the expression in
+question a name, since we will later on arrive at a recursive expression.
+\begin{multline}
+F(g,k):=\sum_{\stackrel{\vec{v}\in\mathbb{N}^g}{|\vec{v}|=k}} \binom{k}{\vec{v}}
+= \sum_{\stackrel{\vec{v}\in\mathbb{N}_0^g}{|\vec{v}|=k}} \binom{k}{\vec{v}}
+- \sum_{\stackrel{\stackrel{\vec{v}\in\mathbb{N}_0^g}{|\vec{v}|=k}}{\exists l: v_l=0}} \binom{k}{\vec{v}}\\
+= g^k 
+ - \sum_{\stackrel{\stackrel{\vec{v}\in\mathbb{N}_0^g}{|\vec{v}|=k}}{\exists l: v_l=0}} \binom{k}{\vec{v}}
+=g^k 
+- \sum_{n=1}^{g-1} \sum_{\stackrel{\vec{v}\in\mathbb{N}_0^g}{|\vec{v}|=k}}
+ \binom{k}{\vec{v}} 1_{\exists! i_1\dots i_n : \left(\forall i\neq k: i_l\neq i_k\right) \wedge \forall l :v_l=0}
+\end{multline}
+where in the last line the indicator function is to enforce there being exactly n different indices \(l\) for which \(v_l=0\)
+holds. Now now since it does not matter which entries of the vector vanish because the multinomial coefficient 
+is symmetric and its value identical to the corresponding multinomial coefficient where the vanishing entries
+are omitted, we can further simplify the sum:
+
+\begin{equation*}
+F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} \sum_{\stackrel{\vec{v}\in\mathbb{N}^n}{|\vec{v}|=k}}
+ \binom{k}{\vec{v}}
+\end{equation*}
+
+The inner sum turns out to be \(F(g-n,k)\), so we found the recursive relation for \(F\):
+\begin{equation}\label{combinatorics solution recursive}
+F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} F(g-n,k).
+\end{equation}
+
+By iteratively applying this equation, we find the following formula, which we will now prove by induction
+
+\begin{multline}\label{combinatorics induction}
+\forall d\in\mathbb{N}_0: F(g,k)=\sum_{l=0}^d (-1)^l (g-l)^k \binom{g}{l}\\
++(-1)^{d+1} \sum_{n=1}^{g-d-1} \binom{n+d-1}{d} \binom{g}{n+d} F(g-d-n,k).
+\end{multline}
+
+We already showed the start of the induction, so what's left is the induction step. Before we do so the
+following remark is in order: We are only interested in the case \(d=g\) and the formula seems meaningless
+for \(d>g\); however, the additional summands in the left sum vanish, where as the the right sum is empty
+for these values of \(d\) since the  upper bound of the summation index is lower than its lower bound.
+
+For the induction step, pick \(d\in\mathbb{N}_0\), we pull the first summand out of the second sum 
+of \eqref{combinatorics induction},
+on this summand we apply the recursive relation \eqref{combinatorics solution recursive} resulting in
+
+\begin{multline}
+F(g,k)=\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++(-1)^{d+1} \sum_{n=2}^{g-d-1} \binom{n+d-1}{d} \binom{g}{n+d} F(g-d-n,k)\\
+-(-1)^{d+1} \binom{g}{d+1} \sum_{n=1}^{g-d-2} \binom{g-d-1}{n} F(g-d-1-n,k)\\
+=\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++(-1)^{d+1} \sum_{n=1}^{g-d-2} \binom{n+d}{d} \binom{g}{n+d+1} F(g-d-1-n,k)\\
+-(-1)^{d+1} \binom{g}{d+1} \sum_{n=1}^{g-d-2} \binom{g-d-1}{n} F(g-d-1-n,k).
+\end{multline}
+After the index shift we can combine the last two sums. 
+
+\begin{multline}
+F(g,k)= \sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++ \sum_{n=1}^{g-d-2}\left[\binom{g}{d+1} \binom{g-d-1}{n} - \binom{n+d}{d} \binom{g}{n+d+1} \right] 
+\\(-1)^{d+2} F(g-d-1-n,k).
+\end{multline}
+
+
+In order to combine the two binomials we disassemble \(\binom{g}{d+1}\) into a product and use
+the absorbtion identity\cite{graham1994concrete}[p. 157] \(d+1\) times.
+
+\begin{equation}\tag{absorption identity}
+\forall a \in \mathbb{C}\ \forall b \in \mathbb{Z}: b \binom{a}{b} = a \binom{a-1}{b-1} 
+\end{equation}
+
+This results in
+\begin{multline}
+F(g,k)= \sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++ \sum_{n=1}^{g-d-2}\left[\binom{n+d+1}{d+1} - \binom{n+d}{d}\right] \binom{g}{n+d+1} 
+\\(-1)^{d+2} F(g-d-1-n,k)\\
+=\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
++(-1)^{d+2}  \sum_{n=1}^{g-d-2} \binom{n+d}{d+1} \binom{g}{n+d+1}  F(g-d-1-n,k),
+\end{multline}
+where we used the addition formula for binomials:
+
+\begin{equation}
+\forall n\in \mathbb{C} \forall k \in \mathbb{Z}: \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}.
+\end{equation}
+This concludes the proof by induction. By setting \(d=g\) in equation \eqref{combinatorics induction} 
+we arrive at the desired result.
 \end{proof}
 
-\begin{definition}[Secant Line]
-Definitions, remarks, and notation are stylized as roman text.  They are typically unnumbered, but there are no hard-and-fast rules about numbering.
-\end{definition}
-
-\begin{remark}
-Remarks stylize the same as definitions.
-\end{remark}
 
 
 \begin{acknowledgment}{Acknowledgment.}
@@ -141,27 +215,31 @@ The authors wish to thank the Greek polymath Anonymous, whose prolific works are
 \end{acknowledgment}
 
 \bibliographystyle{amsplain}
-\bibliography{ref}
 
-%\begin{thebibliography}{1}
-%\bibitem{parker13} Adam Parker, Who solved the Bernoulli equation and how did they do it? \textit{Coll. Math. J.} \textbf{44} (2013) 89--97.
+
+\begin{thebibliography}{1}
+\bibitem{graham1994concrete} Graham, Ronald L and Knuth, Donald E and Patashnik, Oren, Concrete mathematics: a foundation for computer science \textit{Addison-Wesley, Reading} (1994).
+
+\bibitem{abramowitz1964handbook} Abramowitz, Milton and Stegun, Irene A \textit{Handbook of mathematical functions: with formulas, graphs, and mathematical tables}, Courier Corporation, 1964.
+
+\bibitem{stanley2011enumerative}Richard P. Stanley,Enumerative combinatorics 2nd edition, Springer 2011.
+
+\end{thebibliography}
+
 %
-%\bibitem{hopkins} Brian Hopkins, ed., \textit{Resources for Teaching Discrete Mathematics}, Mathematical Association of America, Washington DC, 2009.
-%\end{thebibliography}
+%\begin{biog}
+%\item[Woodrow Wilson] received his Ph.D. in history and political science from Johns Hopkins University. He held visiting positions at Cornell and Wesleyan before joining the faculty at Princeton, where he was eventually appointed president of the university.  Among his proudest accomplishments was the abolition of eating clubs at Princeton on the grounds that they were elitist.
+%\begin{affil}
+%Office of the President, Princeton University, Princeton NJ 08544\\
+%twoodwilson@princeton.edu
+%\end{affil}
 
-\begin{biog}
-\item[Woodrow Wilson] received his Ph.D. in history and political science from Johns Hopkins University. He held visiting positions at Cornell and Wesleyan before joining the faculty at Princeton, where he was eventually appointed president of the university.  Among his proudest accomplishments was the abolition of eating clubs at Princeton on the grounds that they were elitist.
-\begin{affil}
-Office of the President, Princeton University, Princeton NJ 08544\\
-twoodwilson@princeton.edu
-\end{affil}
-
-\item[Herbert Hoover] entered Stanford University in 1891, after failing all of the entrance exams except mathematics.  He received his B.S. degree in geology in 1895, spent time as a mining engineer, then was appointed by his co-author to the U.S. Food Administration and the Supreme Economic Council, where he orchestrated the greatest famine relief efforts of all time.
-\begin{affil}
-Hoover Institution, Stanford University, Stanford CA 94305\\
-herbhoover@stanford.edu
-\end{affil}
-\end{biog}
+%\item[Herbert Hoover] entered Stanford University in 1891, after failing all of the entrance exams except mathematics.  He received his B.S. degree in geology in 1895, spent time as a mining engineer, then was appointed by his co-author to the U.S. Food Administration and the Supreme Economic Council, where he orchestrated the greatest famine relief efforts of all time.
+%\begin{affil}
+%Hoover Institution, Stanford University, Stanford CA 94305\\
+%herbhoover@stanford.edu
+%\end{affil}
+%\end{biog}
 \vfill\eject
 
 \end{document}

@@ -132,7 +132,7 @@ infinitely many occupied states in the sea.
 Nevertheless, in the last century physicists and mathematicians
  have developed strong methods called
 ``perturbative renormalisation theory'' that allow at least to treat the
-scattering regime perturbatively. %Though mathematically not well understood,
+scattering regime perturbatively. 
 Non-perturbative methods have to be developed in order to give an adequate theoretical description of upcoming next-generation experiments allowing a study of the time evolution.
 Our endeavour focuses on the so-called \emph{external
 field model of QED} in which one neglects the interaction between the sea
@@ -188,9 +188,6 @@ section \ref{sec:second quant}. At this point I have gathered enough tools to pr
 After the main conjecture is known, I present several of my own results in sections \ref{sec: odd orders}, \ref{sec: first order} and \ref{sec: second order} about the first order, the second order and all other odd orders. 
 These results give an intuition on how to control the convergence of the informal expansion of the scattering operator \(S\).
 
-%\Dirk{gibt kurz die Motivation: wir wollen zur Conjecture, dazu
-%Einteilchentheorie wichtig für die    Dirac-Seetheorie, wird also zuerst
-%besprochen, danach kommen wir zur    zweit-quant. (führe den Begriff ein)}
 
 
 \section{Defining One-Particle Scattering-Matrix}\label{sec:one-particle}
@@ -1092,7 +1089,7 @@ G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{
 \qed
 
 \begin{Remark}
-If one starts with the right hand side of \eqref{sleek_second_quantized_scattering_operator} as the definition of 
+If one starts with the right hand side of \eqref{sleek_second_quantised_scattering_operator} as the definition of 
 some operator \(\mathfrak{S}\), all it takes to verify that it fulfils \eqref{lift_condition1} and \eqref{lift_condition2} is the following 
 (in comparison with its derivation) short calculation:
 
@@ -1197,7 +1194,9 @@ of the lemma \ref{G_kommutator}. For \(m\) general we have
 The vacuum expectation value of the current of the scattering operator takes the form
 \begin{multline}
 j_A(F)=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}\\
--2\int_0^1 d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right)
+-2\int_0^1 d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right)\\
+=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}\\
+  - 2\Im \sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!}  \tr \left( P_+ \ln U^A P_-\left[\ln U^A,\left.\partial_{\varepsilon}\ln U^{A+\varepsilon F} \right|_{\varepsilon=0}\right]_{k}\right) 
 \end{multline}
 \end{Thm}
 \textbf{Proof:} We use \eqref{sleek_second_quantised_scattering_operator} to plug into Bogoliubov's formula for the

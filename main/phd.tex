@@ -1044,9 +1044,9 @@ S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
 \end{multline}
 \qed
 
-\begin{Thm}
+\begin{Thm}\label{sleek_second_quantised_scattering_operator}
 The second quantized scattering operator fulfils
-\begin{equation}\label{sleek_second_quantised_scattering_operator}
+\begin{equation}
 S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))},
 \end{equation}
 where \(C_n\) must be imaginary for any \(n\in\mathbb{N}\) in order to satisfy unitarity.
@@ -1087,6 +1087,10 @@ G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{
  =G\left( \ln \left(U\right)\right).
 \end{multline}
 \qed
+
+\begin{Remark}
+\(\sum_{n\in\mathbb{N}} \frac{C_n}{n!}\) will henceforth be abbreviated by \(i \varphi\).
+\end{Remark}
 
 \begin{Remark}
 If one starts with the right hand side of \eqref{sleek_second_quantised_scattering_operator} as the definition of 
@@ -1190,39 +1194,23 @@ of the lemma \ref{G_kommutator}. For \(m\) general we have
 \end{multline}
 \qed 
 
-\begin{Thm}
-The vacuum expectation value of the current of the scattering operator takes the form
-\begin{multline}
-j_A(F)=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}\\
--2\int_0^1 d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right)\\
-=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}\\
-  - 2\Im \sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!}  \tr \left( P_+ \ln U^A P_-\left[\ln U^A,\left.\partial_{\varepsilon}\ln U^{A+\varepsilon F} \right|_{\varepsilon=0}\right]_{k}\right) 
+\begin{Lemma}\label{lemma:derivativeJ}
+For external potentials \(A, X\) small enough the derivatives of the scattering operator can be computed to fulfil
+\begin{align}\label{eq:derivativeS1}
+\partial_\varepsilon |_{\varepsilon=0} e^{G \ln U^{A+\varepsilon X}} &= e^{G \ln U^A} j_A^0(X) + e^{G \ln U^A} G( (U^A)^{-1} \partial_{\varepsilon} U^{A+\varepsilon X})\\
+\partial_\varepsilon |_{\varepsilon=0} e^{-G \ln U^{A+\varepsilon X}} &=- e^{-G \ln U^A} j_A^0(X) + G( \partial_{\varepsilon} \left(U^{A+\varepsilon X}\right)^{-1} U^A ) e^{-G \ln U^A},
+\end{align}
+with 
+\begin{multline}\label{def:vacuumExpectationCurrent}
+j^0_A(X):= \sum_{l\in\mathbb{N}_0} \frac{(-1)^{l+1}}{(l+2)!} \left(\tr P_- \ln U^A P_+ \left[ \ln U^A, \partial_\varepsilon \ln U^{A+\varepsilon X}\right]_{l}\right.\\
+\left. - \tr P_+ \ln U^A P_- \left[ \ln U^A, \partial_\varepsilon \ln U^{A+\varepsilon X}\right]_{l} \right).
 \end{multline}
-\end{Thm}
-\textbf{Proof:} We use \eqref{sleek_second_quantised_scattering_operator} to plug into Bogoliubov's formula for the
-current \todo{ref!!}
-
-\begin{multline}\label{sleek_current_calc1}
-j_A(F) = i \partial_{\varepsilon}\left. \langle \Omega, {S^{A} }^* S^{A+\varepsilon F}\Omega \rangle \right|_{\varepsilon=0}\\
-=i \partial_{\varepsilon}\left. \langle \Omega, e^{-\sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!}} e^{-G(\ln (U^A))} 
-e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F)} e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
-=i\langle \Omega,\partial_{\varepsilon}\left.  e^{-\sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!}} e^{-G(\ln (U^A))} 
-e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F)} e^{G(\ln (U^{A}))} \Omega\rangle \right|_{\varepsilon=0}\\
-+i\langle \Omega,\partial_{\varepsilon}\left.  e^{-\sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!}} e^{-G(\ln (U^A))} 
-e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A)} e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
-=i e^{-\sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!}} 
-\partial_{\varepsilon} \left. e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F)}  \right|_{\varepsilon=0}
-+i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
-e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
-=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}
-+i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
-e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0},
-\end{multline}
-so the first summand works out just as claimed. For the second summand we employ Duhamel's and Hadamard's formula. \todo{ref!! + restrictions, something better than 
+\end{Lemma}
+\textbf{Proof:} We start out by employing Duhamel's and Hadamard's formulas. \todo{ref!! + restrictions, something better than 
  \href{https://s3.amazonaws.com/academia.edu.documents/46627661/CBH.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1517999839&Signature=m\%2FGNTMS\%2FNAH7ioWII76ZlULcCRY\%3D&response-content-disposition=inline\%3B\%20filename\%3DCrib_Notes_on_Campbell-Baker-Hausdorff_e.pdf}{this}}
 These are
 
-\begin{equation}
+\begin{equation}\label{Duhamel}
 \partial_{\alpha}\left. e^{Y+\alpha X}\right|_{\alpha=0} = \int_0^1 d t e^{(1-t) Y} X e^{t Y}\tag{Duhamel's formula}
 \end{equation}
 
@@ -1231,36 +1219,67 @@ and
 e^{X}Ye^{-X}=\sum_{k=0}^\infty \frac{1}{k!} [X,Y]_k.
 \end{equation}
 
+So one gets
 
-So continuing with the second term of \eqref{sleek_current_calc1} we get
+\begin{align}\label{proof:duhamelApplied}
+\partial_\varepsilon |_{\varepsilon=0} e^{G \ln U^{A+\varepsilon X}} &= \int_0^1 d z e^{(1-z) G \ln U^A} \partial_\varepsilon |_{\varepsilon=0} G \ln U^{A+\varepsilon X} e^{z G \ln U^A}\\\notag
+&=e^{G \ln U^A} \int_0^1 d z \sum_{l\in\mathbb{N}_0} \frac{1}{l!} \left[ - z G \ln U^A, \partial_\varepsilon |_{\varepsilon=0} G \ln U^{A+\varepsilon X} \right]_l\\\notag
+&=e^{G \ln U^A} \int_0^1 d z \sum_{l\in\mathbb{N}_0} \frac{(-z)^l}{l!} \partial_\varepsilon |_{\varepsilon=0} \left[  G \ln U^A,  G \ln U^{A+\varepsilon X} \right]_l.
+\end{align}
+At this point we see that for \(l=0\) the summand vanishes. For all other values of \(l\) we use lemma \ref{nested_kommuted_G}, yielding
 \begin{multline}
-i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
-e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
-=i\langle \Omega, e^{-G(\ln (U^A))} 
- \int_0^1 d t e^{(1-t) G(\ln (U^{A}))} \partial_{\varepsilon}\left. G(\ln (U^{A+\varepsilon F}))\right|_{\varepsilon=0} e^{t G(\ln (U^{A}))}  \Omega\rangle \\
- =i\langle \Omega, 
- \int_0^1 d t e^{-t G(\ln (U^{A}))} \partial_{\varepsilon}\left. G(\ln (U^{A+\varepsilon F}))\right|_{\varepsilon=0} e^{t G(\ln (U^{A}))}  \Omega\rangle \\
- =i \langle \Omega, \int_0^1 d t  \sum_{k=0}^\infty \frac{1}{k!} 
- \left[ -t G(\ln U^A),  \partial_{\varepsilon}\left. G(\ln (U^{A+\varepsilon F}))\right|_{\varepsilon=0} \right]_k \Omega \rangle\\
-  =i \langle \Omega,  \sum_{k=0}^\infty \frac{1}{k!}  \int_0^1 d t (-t)^k \partial_{\varepsilon}\left.
- \left[  G(\ln U^A),   G(\ln (U^{A+\varepsilon F})) \right]_k \right|_{\varepsilon=0} \Omega \rangle\\
- =i   \sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \partial_{\varepsilon}\left.\langle \Omega,
-\left[  G(\ln U^A),   G(\ln (U^{A+\varepsilon F})) \right]_k  \Omega \rangle\right|_{\varepsilon=0}. 
+\partial_\varepsilon |_{\varepsilon=0} e^{G \ln U^{A+\varepsilon X}}= 
+e^{G \ln U^A} \int_0^1 d z \sum_{l\in\mathbb{N}} \frac{(-z)^l}{l!} \partial_\varepsilon |_{\varepsilon=0} \left( G\left(\left[ \ln U^A, \ln U^{A+\varepsilon X}\right]\right) \right.\\
++\tr P_- \ln U^A P_+ \left[ \ln U^A, \partial_\varepsilon |_{\varepsilon=0} \ln U^{A+\varepsilon X}\right]_{l-1}\\
+\left. - \tr P_+ \ln U^A P_- \left[ \ln U^A, \partial_\varepsilon |_{\varepsilon=0} \ln U^{A+\varepsilon X}\right]_{l-1}\right).
 \end{multline}
-At this point we use lemma \ref{nested_kommuted_G}. This results in 
+
+The last two terms together result in the first term of \eqref{eq:derivativeS1} after performing the integration and shifting the summation
+index. For the first term we will use linearity and continuity of \(G\)\todo{contiuity of G!!}   ~and use the same identities backwards to give
+
+\begin{multline}
+e^{G \ln U^A} \int_0^1 d z \sum_{l\in\mathbb{N}} \frac{(-z)^l}{l!} \partial_\varepsilon |_{\varepsilon=0} G\left(\left[ \ln U^A, \ln U^{A+\varepsilon X}\right]\right) \\
+=e^{G \ln U^A}  G\left( \int_0^1 d z \sum_{l\in\mathbb{N}} \frac{1}{l!}  \left[ -z \ln U^A,\partial_\varepsilon|_{\varepsilon=0} \ln U^{A+\varepsilon X}\right]\right) \\
+=e^{G \ln U^A}  G\left(e^{- \ln U^A} \int_0^1 d z e^{ \ln U^A} e^{-z \ln U^A}\partial_\varepsilon|_{\varepsilon=0} \ln U^{A+\varepsilon X} e^{z \ln U^A}\right) \\
+=e^{G \ln U^A}  G\left(e^{ \ln \left(U^A\right)^{-1}} \partial_\varepsilon|_{\varepsilon=0} e^{ \ln U^{A+\varepsilon X}} \right) \\
+=e^{G \ln U^A}  G\left(\left(U^A\right)^{-1} \partial_\varepsilon|_{\varepsilon=0}U^{A+\varepsilon X} \right).
+\end{multline}
+Putting things together results in the first equality we wanted to prove. For the second one the computation is completely analogous, except for after applying Duhamel's formula as in \eqref{proof:duhamelApplied} we substitute \(u=1-z\). The minus sign in front of the first term then arises by the chain rule, where as the second term does not share the sign change with the first, since we have to revert the use of the chain rule in the second half of the calculation when we apply  \eqref{Duhamel} backwards. \qed
+
+\begin{Def}
+We use Bogoliubov's formula to define the vacuum expectation value of the current \todo{ref!!}
+\begin{equation}
+j_A(F) = i \partial_{\varepsilon}\left. \langle \Omega, {S^{A} }^* S^{A+\varepsilon F}\Omega \rangle \right|_{\varepsilon=0}.
+\end{equation}
+\end{Def}
+
+
+
+\begin{Thm}\label{thm:CurrentExact}
+The vacuum expectation value of the current of the scattering operator takes the form
+\begin{align*}
+j_A(F)&=i \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varepsilon=0}\\
+-2\int_0^1 &d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right)\\
+&=i \partial_{\varepsilon} \left.\varphi(A+\varepsilon F) \right|_{\varepsilon=0}\\
+  - 2\Im \sum_{k=0}^\infty&\frac{(-1)^k}{(k+2)!}  \tr \left( P_+ \ln U^A P_-\left[\ln U^A,\left.\partial_{\varepsilon}\ln U^{A+\varepsilon F} \right|_{\varepsilon=0}\right]_{k}\right) 
+\end{align*}
+\end{Thm}
+\textbf{Proof:} By theorem \ref{sleek_second_quantised_scattering_operator} and abbreviating
+\(\varphi(A)= \sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!} \)we see that the current can be written in the form
+
+\begin{multline}\label{sleek_current_calc1}
+j_A(F) = i \partial_{\varepsilon}\left. \langle \Omega, {S^{A} }^* S^{A+\varepsilon F}\Omega \rangle \right|_{\varepsilon=0}\\
+=i \partial_{\varepsilon}\left. \langle \Omega, e^{-\varphi(A)} e^{-G(\ln (U^A))} 
+e^{\varphi(A+\varepsilon F)}  e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
+=i \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varepsilon=0}
++i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
+e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0},
+\end{multline}
+so the first summand works out just as claimed. For the second summand we employ lemma \ref{lemma:derivativeJ} and note that the vacuum expectation value of \(G\) vanishes no matter its argument.
+
 \begin{multline}\label{sleek_current_calc3}
 i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
 e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
- =i   \sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \partial_{\varepsilon}\langle \Omega,
- \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k-1}\right) \\
- - \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k-1}\right)\\
-+\left.G\left([\ln U^A,\ln U^{A+\varepsilon F} ]_m\right) \Omega \rangle\right|_{\varepsilon=0}\\
-=i   \sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \partial_{\varepsilon}\langle \Omega,
- \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k-1}\right) \\
- - \left. \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k-1}\right)  \Omega \rangle\right|_{\varepsilon=0}\\
-=i  \partial_{\varepsilon} \left.\sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!} 
- \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k-1}\right) \right|_{\varepsilon=0}\\
- -i  \partial_{\varepsilon} \left.\sum_{k=1}^\infty \frac{(-1)^k}{(k+1)!}  \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k-1}\right) \right|_{\varepsilon=0}\\
 =-i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!} 
  \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
  +i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!}  \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\ 
@@ -1291,9 +1310,83 @@ The calculation for the first term of \eqref{sleek_current_calc3} is identical.
 At this point we notice that \eqref{sleek_current_calc4} and the term where the 
 projectors are exchanged are complex conjugates of one another. So summarising we find
 \begin{multline*}
-j_A(F)=i \partial_{\varepsilon} \left. \sum_{n\in\mathbb{N}} \frac{C_n}{n!}(A+\varepsilon F) \right|_{\varepsilon=0}\\
+j_A(F)=i \partial_{\varepsilon} \left. \varphi (A+\varepsilon F) \right|_{\varepsilon=0}\\
 -2\int_0^1 d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right).
 \end{multline*}
+\qed
+
+\begin{Thm}
+Independent of the phase that is used to correct the scattering operator the following formula holds true for any 
+ four potentials \(A,F,H\), with \(A\) small enough so that the relevant series converge.
+\begin{multline}
+\partial_\varepsilon |_{\varepsilon=0} ( j_{A+\varepsilon H} (F)-j_{A+\varepsilon F}(H)) = \\
+2 \Im \tr \left(P_+ \left(U^A\right)^{-1} \partial_{\varepsilon}|_{\varepsilon=0} U^{A+\varepsilon F} P_-\left(U^A\right)^{-1} \partial_{\delta}|_{\delta=0} U^{A+\delta H}\right)
+\end{multline}
+\end{Thm}
+\textbf{Proof:} We compute \(\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon F}(H) \). 
+
+\begin{align*}
+&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=\\
+&\partial_\varepsilon |_{\varepsilon=0} \partial_\delta |_{\delta=0} \langle \Omega, e^{i\varphi(A+\varepsilon H + \delta F)-i\varphi(A+\varepsilon H)} e^{-G \ln U^{A+\varepsilon H}} e^{G \ln U^{A+\varepsilon H + \delta F}}\Omega \rangle\\
+\end{align*}
+
+We first act with the derivative with respect to \(H\), fixing \(F\).
+
+\begin{align*}
+&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=\\
+&\partial_\delta |_{\delta=0}   i(\partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H + \delta F)-\partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H ))e^{i\varphi(A + \delta F)-i\varphi(A)} \\
+&\langle \Omega, e^{-G \ln U^{A}} e^{G \ln U^{A + \delta F}}\Omega \rangle\\
+&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} \langle \Omega
+\partial_\varepsilon |_{\varepsilon=0} e^{-G \ln U^{A+\varepsilon H}} e^{G \ln U^{A + \delta F}}\Omega \rangle\\
+&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} 
+ \langle \Omega e^{-G \ln U^{A}} \partial_\varepsilon |_{\varepsilon=0}e^{G \ln U^{A+\varepsilon H + \delta F}}\Omega \rangle
+\end{align*}
+
+In computing further one can notice a few cancellations. For the first summand the first factor vanishes if \(\delta\) is set to zero, so the only 
+the first summand in the product rule will not vanish. For the second and third summand we will use lemma \ref{lemma:derivativeJ},
+giving
+
+\begin{align*}
+&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=\\
+&\partial_\delta |_{\delta=0}   i\partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H + \delta F)\\
+&-\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)}  j^0_{A}(H) 
+\langle \Omega, e^{-G \ln U^{A}} e^{G \ln U^{A + \delta F}}\Omega \rangle \\
+&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} \langle \Omega,
+ G \left(\partial_\varepsilon |_{\varepsilon=0} \left(U^{A+\varepsilon H}\right)^{-1} U^A\right) e^{-G \ln U^{A}} e^{G \ln U^{A + \delta F}}  \Omega \rangle\\
+&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} j^0_{A+\delta F}(H)
+\langle \Omega, e^{-G \ln U^{A}} e^{G \ln U^{A+ \delta F}}\Omega \rangle\\
+&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} 
+\langle \Omega, e^{-G \ln U^{A}} e^{G \ln U^{A+ \delta F}}G\left( \left(U^{A+\delta F}\right)^{-1}\partial_\varepsilon |_{\varepsilon=0} U^{A+\varepsilon H + \delta F} \right) \Omega \rangle.
+\end{align*}
+
+Now there are a few further simplifications to appreciate: since \(\langle \Omega, G \Omega \rangle=0\), in the third and last summand only the derivatives with respect to \(\delta\) which produce by lemma \ref{lemma:derivativeJ} another factor of \(G\)  will contribute to the sum.
+ For the other summands except for the first we can spot the appearance of \(j^0\). Respecting all this results in
+
+\begin{align*}
+&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=
+i\partial_\delta |_{\delta=0}   \partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H + \delta F)\\
+&-i\partial_\delta |_{\delta=0}\varphi(A + \delta F)j^0_{A}(H) -  j^0_{A}(H) j^0_A(F)\\
+&+\langle \Omega,
+ G \left(\partial_\varepsilon |_{\varepsilon=0} \left(U^{A+\varepsilon H}\right)^{-1} U^A\right) G\left( \left(U^{A}\right)^{-1}\partial_\delta |_{\delta=0} U^{A +\delta F} \right)  \Omega \rangle\\
+&+i\partial_\delta |_{\delta=0} \varphi(A + \delta F) j^0_{A}(H)
++\partial_\delta |_{\delta=0}  j^0_{A+\delta F}(H)
++ j^0_{A}(H)j^0_A(F)\\
+&+\langle \Omega, G\left( \left(U^{A}\right)^{-1}\partial_\delta |_{\delta=0} U^{A + \delta F} \right) G\left( \left(U^{A}\right)^{-1}\partial_\varepsilon |_{\varepsilon=0} U^{A+\varepsilon H} \right) \Omega \rangle.
+\end{align*}
+
+A few more terms cancel in the second and fourth line, also since \(\partial_\varepsilon |_{\varepsilon=0} \left(U^{A+\varepsilon H}\right)^{-1} U^{A+\varepsilon H}=0\) we can combine the two products of \(G\) into a commutator:
+
+\begin{align*}
+&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=
+i\partial_\delta |_{\delta=0}   \partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H + \delta F)\\
+&+\partial_\delta |_{\delta=0}  j^0_{A+\delta F}(H)\\
+&+\langle \Omega, \left[G\left( \left(U^{A}\right)^{-1}\partial_\delta |_{\delta=0} U^{A + \delta F} \right), G\left( \left(U^{A}\right)^{-1}\partial_\varepsilon |_{\varepsilon=0} U^{A+\varepsilon H} \right)\right] \Omega \rangle.
+\end{align*}
+
+So we can once again apply lemma \ref{G_kommutator}, which results in exactly right hand side of the equation
+we claimed to produce in the statement of this theorem. So all that is left is to recognise that one can combine
+the first two summands into \(-i \partial_{\varepsilon} j_{A+\varepsilon H} (F)\), which is a direct consequence
+of theorem \ref{thm:CurrentExact}.\qed
 
 
 \section{Main Conjecture}\label{sec:main result}

@@ -102,15 +102,105 @@
 \mainmatter
 
 This is just a compilation of results of calculations. In addition to the usual conventions I assume summation over
-repeated indices regardless of their position. 
+repeated lower indices. 
 
 \begin{Def}
 For one particle operators \(A_1,\dots, A_c,B_1,\dots B_p \) and \(c,p\in\mathbb{N}\) define:
-\begin{equation*}
-L(A_1,\dots, A_c; B_1,\dots ,B_m):= \prod_{l=1}^p a(\varphi_{-k_l}) 
+\begin{multline}\label{def:L}
+L(A_1,\dots, A_c; B_1,\dots ,B_m):= \prod_{l=1}^p a(\varphi_{-k_l}) \\
 \prod_{l=1}^c a^*(A_l \varphi_{n_l}) \prod_{l=1}^p a^*(B_l \varphi_{-k_l}) \prod_{l=1}^c a(\varphi_{n_l})
-\end{equation*}
+\end{multline}
 \end{Def}
+
+
+\section{N times 1}
+
+\begin{Lemma} For any \(a,b,\in\mathbb{N}_0\) and apropriate one particle operators \(A_k, B_l, C\) for \(1\le k\le a\), \(1\le l\le b\) we have the following equality
+\begin{align*}
+&L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\Big)G(C) =\\
+ &(-1)^{a+b}\Big[ L\Big(\bigcup_{l=1}^a \{A_l\}\cup \{C\}; \bigcup_{l=1}^b \{B_l\}\Big) - L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{C\} \Big) \Big]\\
+&+ \sum_{f=1}^a \Big[ L\Big(\bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}\cup \{A_fP_+C \}; \bigcup_{l=1}^b \{B_l\}\Big) - 
+ L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}\cup \{CP_- A_f\}; \bigcup_{l=1}^b \{B_l\}\Big)\\
+& -L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\Big) \Big]\\
+&- \sum_{f=1}^b L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{CP_- B_f\}\Big)\\
+&+ (-1)^{a+b+1} \sum_{f=1}^a \tr \Big(P_+ C P_- A_f\Big) L\Big(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\Big)\\
+&+ (-1)^{a+b} \sum_{\stackrel{f_1,f_2=1}{f_1\neq f_2}}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq f_1,f_2}}^a \{A_l\}\cup \{A_{f_2} P_+ C P_- A_{f_1}\}; \bigcup_{l=1}^b \{B_l\}\Big)\\
+&+(-1)^{a+b} \sum_{f=1}^b \sum_{g=1}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq g}}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{A_g P_+ C P_- B_f\}\Big).
+\end{align*}
+\end{Lemma}
+{\bfseries Proof:}  The proof of this equality is a rather long calculation, where \eqref{def:L} is used repeatedly. We break up the calculation into 
+several parts. Let us start with
+
+\begin{multline}
+L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(C;)=\\
+\prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l}) a^*(C \varphi_m) a(\varphi_m).
+\end{multline}
+
+We (anti)commute the creation operator involving \(C\) to its place at the end of the second product, after that the term
+will be normally ordered and can be rephrased in terms of \(L\)s. During the commutation the creation operator
+in question can be picked up by any of the annihilation operators in the rightmost product. For each term where that happens
+we can perform the sum over the basis of \(\mathcal{H}^-\) related to the annihilation operator whose anticommutator triggered.
+After this sum the corresponding term is also normally ordered and can be rephrased in terms of an \(L\) after some 
+reshuffling which may only produce signs. So performing these steps we get
+
+\begin{multline}
+L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(C;)=\\
+\sum_{f=a}^1 (-1)^{a-f} \prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^{f-1} a^*(A_l \varphi_{n_l}) a^*(A_fP_+C\varphi_m)\\
+ \prod_{l=f+1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{\stackrel{l=1}{l\neq f}}^a a(\varphi_{n_l}) a(\varphi_m)\\
++ L\left(\bigcup_{l=1}^a \{A_l\} \cup \{C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
+=\sum_{f=1}^a + L\left(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\} \cup \{A_f P_+ C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
++ L\left(\bigcup_{l=1}^a \{A_l\} \cup \{C\}; \bigcup_{l=1}^b \{B_l\}\right).
+\end{multline}
+
+Now the remaining case is more laborious, that is why we will split off and treat some of the appearing terms separately. 
+We start off analogous to before 
+
+\begin{multline}
+L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(;C)=\\
+\prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l})a(\varphi_{-m}) a^*(C \varphi_{-m}).
+\end{multline}
+
+This time we need to (anti)commute the rightmost annihilation operator all the way to the end of the first product and the creation operator to the end of the second but last product. So there will be several qualitatively different terms. From the first step alone we get
+\begin{align}\notag
+L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(;C)&=\\\notag
+(-1)^{a}\sum_{f=b}^1 (-1)^{b-f} \prod_{l=1}^b a(\varphi_{-k_l}) &\prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{\stackrel{l=1}{l\neq f}}^b a^*(B_l \varphi_{-k_l})\\ \label{Ntimes1 term 1}
+& \prod_{l=1}^a a(\varphi_{n_l}) a^*(C P_- B_f \varphi_{-k_f})\\\notag
++(-1)^{a+b}\sum_{f=a}^1 (-1)^{b-f} \prod_{l=1}^b a(\varphi_{-k_l}) &\prod_{\stackrel{l=1}{l\neq f}}^a a^*(A_l \varphi_{n_l})\\\label{Ntimes1 term 2}
+& \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l}) a^*(CP_- \varphi_{n_f})\\\notag
++(-1)^b\prod_{l=1}^b a(\varphi_{-k_l}) a(\varphi_{-m}) &\prod_{l=1}^a a^*(A_l \varphi_{n_l}) \\ \label{Ntimes1 term 3}
+&\prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l})a^*(C \varphi_{-m}).
+\end{align}
+
+We will discuss terms \eqref{Ntimes1 term 1}, \eqref{Ntimes1 term 2} and \eqref{Ntimes1 term 3} separately. 
+In Term \eqref{Ntimes1 term 1} we need to commute the last creation operator into its place in the third product,
+it can be picked up by one of the annihilation operators of the last product, but after performing the sum over
+the corresponding basis the resulting term can be rephrased in terms of an \(L\) operator by commuting
+only creation operators of the second and third product. Performing these steps yields the identity
+
+\begin{multline}
+\eqref{Ntimes1 term 1}=\sum_{f=1}^b L\left( \bigcup_{l=1}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup  \{CP_- B_f \}\right)\\
++(-1)^{a+b+1}\sum_{f=1}^b \sum_{g=1}^a L\left( \bigcup_{\stackrel{l=1}{l\neq g}}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\} \{A_gP_+CP_- B_f \}\right).
+\end{multline}
+
+For \eqref{Ntimes1 term 2} the last creation operator needs to be commuted to the end of the second product. It can be picked up by 
+one of the annihilation operators of the last product, but here we have to distinguish between two cases. If the index of this
+annihilation operator equals \(f\) the resulting commutator will be \(\tr P_+ C P_- A_f \) otherwise one can again perform the sum
+over the corresponding index and express the whole Product in terms of an \(L\) operator. All this results in 
+
+\begin{multline}
+\eqref{Ntimes1 term 2}=\sum_{f=1}^a L\left( \bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}\cup \{C P_- A_f\}; \bigcup_{l=1}^b \{B_l\}\right)\\
++(-1)^{a+b}\sum_{f=1}^a  L\left( \bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\} \right) \tr (P_+ C P_- A_f )\\
++(-1)^{a+b+1}\sum_{\stackrel{f_1,f_2=1}{f_1\neq f_2}}^a L\left( \bigcup_{\stackrel{l=1}{l\neq f_1,f_2}}^a \{A_l\} \cup \{A_{f_2} P_+CP_- A_{f_1} \}; \bigcup_{l=1}^b \{B_l\} \right).
+\end{multline}
+
+For \eqref{Ntimes1 term 3} the procedure is basically the same as for \eqref{Ntimes1 term 1}, it results in
+
+\begin{multline}
+\eqref{Ntimes1 term 3}= (-1)^{a+b} L\left( \bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right)\\
++ \sum_{f=1}^a L\left( \bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\}\cup \{C P_- A_f\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\right).
+\end{multline}
+
+Putting the results of the calculation together results in the claimed equation \qed
 
 \section{ 1 times 1}
 
@@ -119,7 +209,7 @@ L(A_1;)L(B_1;)=-L(A_1,B_1;) + L(A_1P_+B_1;)
 \end{equation}
 
 \begin{equation}
-L(A_1;)L(;B_1)=-L(A_1;B_1) +L(B_1P_-A_1;) + L(;A_1P_+B_1) -\tr(P_-A_1P_+B_1)
+L(A_1;)L(;B_1)=-L(A_1 ;B_1) +L(B_1P_-A_1;) + L(;A_1P_+B_1) -\tr(P_-A_1P_+B_1)
 \end{equation}
 
 \begin{equation}
@@ -203,7 +293,7 @@ L(;A_1,A_2,A_3)L(;B) = -L(;A_1,A_2,A_3,B) +L(;A_1,A_2,BP_-A_3)\\
 \end{multline}
 
 \begin{multline}
-L(A_1;A_2,A_3)L(B)=L(A_1,B;A_2,A_3)+L(A_1P_+B;A_2,A_3)
+L(A_1;A_2,A_3)L(B;)=-L(A_1,B;A_2,A_3)+L(A_1P_+B;A_2,A_3)
 \end{multline}
 
 \begin{multline}

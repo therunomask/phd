@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.22)  13 FEB 2018 13:23
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.22)  25 MAR 2018 03:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -684,9 +684,6 @@ LaTeX Info: Redefining \nameref on input line 22.
 \openout4 = `multinomial_sterling_connection.out'.
 
 
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-
 LaTeX Font Warning: Font shape `TU/ptm/bx/n' undefined
 (Font)              using `TU/ptm/m/n' instead on input line 29.
 
@@ -699,14 +696,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `abramowitz1964handbook' on page 1 undefined on input l
-ine 42.
-
-
-LaTeX Warning: Citation `graham1994concrete' on page 1 undefined on input line 
-48.
-
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.5> not available
 (Font)              size <10.95> substituted on input line 51.
@@ -729,10 +718,6 @@ m/m/it/10.95 b[] \OT1/cmr/m/n/10.95 =
  []
 
 
-LaTeX Warning: Citation `abramowitz1964handbook' on page 1 undefined on input l
-ine 80.
-
-
 LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
 (Font)              using `TU/ptm/m/n' instead on input line 82.
 
@@ -742,23 +727,33 @@ LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
 ine 95.
 
-./multinomial_sterling_connection.tex:95: Too many }'s.
-l.95 ... order of the resulting sets is neglected}
-                                                  . One can find an explicit...
 
-? 
-./multinomial_sterling_connection.tex:95: Emergency stop.
-l.95 ... order of the resulting sets is neglected}
-                                                  . One can find an explicit...
-End of file on the terminal!
+LaTeX Font Warning: Font shape `TU/ptm/m/sc' undefined
+(Font)              using `TU/ptm/m/n' instead on input line 138.
 
- 
+[2] [3] [4] [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 245.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
+ (./multinomial_sterling_connection.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 245.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 245.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.45pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 245.
+ ) 
 Here is how much of TeX's memory you used:
- 19556 strings out of 493010
- 349475 string characters out of 6134663
- 405772 words of memory out of 5000000
- 23211 multiletter control sequences out of 15000+600000
+ 19573 strings out of 493010
+ 349765 string characters out of 6134663
+ 412771 words of memory out of 5000000
+ 23226 multiletter control sequences out of 15000+600000
  9992 words of font info for 47 fonts, out of 8000000 for 9000
  1366 hyphenation exceptions out of 8191
- 62i,9n,77p,452b,841s stack positions out of 5000i,500n,10000p,200000b,80000s
-Output written on multinomial_sterling_connection.pdf (1 page).
+ 62i,14n,77p,452b,841s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on multinomial_sterling_connection.pdf (5 pages).

@@ -56,6 +56,8 @@
 
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dotCup}{\mathop{\dot{\bigcup}}}
+\DeclareMathOperator{\dotcup}{\mathop{\dot{\cup}}}
 
 
 \newcommand{\id}{{\mathbbm 1}}
@@ -1046,12 +1048,22 @@ S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
 
 \begin{Thm}\label{sleek_second_quantised_scattering_operator}
 The second quantized scattering operator fulfils
-\begin{equation}
-S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))},
+\begin{equation}\label{eq:sleek_second_quantised_scattering_operator}
+S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))}
 \end{equation}
-where \(C_n\) must be imaginary for any \(n\in\mathbb{N}\) in order to satisfy unitarity.
+for external potentials small enough, where \(C_n\) must be imaginary for any \(n\in\mathbb{N}\) in order to satisfy unitarity.
+For smallness the following condition is sufficient:
+\begin{equation}
+\|\id-U^A\|<1.
+\end{equation}
 \end{Thm}
 \textbf{Proof:} Due to the last few lemmas and theorems this proof has become much less difficult.
+First the remark about \(C_n \in i \mathbb{R}\) for any \(n\) is a direct consequence of 
+the second factor of \eqref{eq:sleek_second_quantised_scattering_operator} begin unitary.
+This in turn follows directly from \(G^* (K)=-G(K)\) for any \(K\) in the domain of \(G\).
+That \(\ln U\) is in the domain of \(G\) follows from \( (\ln U)^*=\ln U^*=\ln U^{-1}=-\ln U\)
+and \(\|U-\id\|<1\).
+
  We are going to change the sum in the second exponential of 
 \eqref{Corollary double exp}, so let's take a closer look at that: by exchanging summation
 we can step by step simplify
@@ -1388,6 +1400,422 @@ we claimed to produce in the statement of this theorem. So all that is left is t
 the first two summands into \(-i \partial_{\varepsilon} j_{A+\varepsilon H} (F)\), which is a direct consequence
 of theorem \ref{thm:CurrentExact}.\qed
 
+\section{Quantitative Estimates}
+
+Since we do not only want to give an expression for the time evolution operator, but also give bounds on the numerical errors
+which are due to truncate the occurring series we need to look at these series a little closer. The series involve powers of the 
+second quantisation operator \(G\), so we start by examining these in greater depth. In order to do so we define an object 
+closely related to \(G\).
+
+\begin{Def}
+\begin{multline}\label{def:L}
+L: \{M\subset B(\mathcal{H})\mid |M|<\infty\} \times \{M\subset B(\mathcal{H})\mid |M|<\infty\} \rightarrow B(\mathcal{F})\\
+L(\{A_1,\dots, A_c\},\{ B_1,\dots ,B_m\}):= \prod_{l=1}^m a(\varphi_{-k_l}) \\
+\prod_{l=1}^c a^*(A_l \varphi_{n_l}) \prod_{l=1}^m a^*(B_l \varphi_{-k_l}) \prod_{l=1}^c a(\varphi_{n_l}),
+\end{multline}
+where for notational reasons we chose to list the occurring one-particle operators in a specific order; however, 
+the order does not matter, since commutation of the relevant creation and annihilation operators always results an 
+overall factor of one.
+\end{Def}
+
+Since this operator \(L\) occurs when computing powers of \(G\) we compute is product with some \(G\) with 
+the following 
+
+\begin{Lemma}\label{lem:Ntimes1} For any \(a,b,\in\mathbb{N}_0\) and apropriate one particle operators \(A_k, B_l, C\) for \(1\le k\le a\), \(1\le l\le b\) we have the following equality
+\begin{align}
+&L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\Big)G(C) =\\\label{Ntimes1:simplyAdd1}
+ &(-1)^{a+b} L\Big(\bigcup_{l=1}^a \{A_l\}\cup \{C\}; \bigcup_{l=1}^b \{B_l\}\Big) \\\label{Ntimes1:simplyAdd2}
+ &+(-1)^{a+b+1} L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{C\} \Big) \\\label{Ntimes1:n+1atEnd1}
+&+ \sum_{f=1}^a  L\Big(\bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}\cup \{A_fP_+C \}; \bigcup_{l=1}^b \{B_l\}\Big) \\\label{Ntimes1:n+1atBeginning1}
+&+\sum_{f=1}^a
+ L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}\cup \{- CP_- A_f\}; \bigcup_{l=1}^b \{B_l\}\Big)\\\label{Ntimes1:n+1atEnd2}
+& -\sum_{f=1}^a L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\Big)\\\label{Ntimes1:n+1atBeginning2}
+&+ \sum_{f=1}^b L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{-CP_- B_f\}\Big)\\\label{Ntimes1:TrTerm}
+&+ (-1)^{a+b+1} \sum_{f=1}^a \tr \Big(P_+ C P_- A_f\Big) L\Big(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\Big)\\\label{Ntimes1:middle1}
+&+ (-1)^{a+b+1} \sum_{\stackrel{f_1,f_2=1}{f_1\neq f_2}}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq f_1,f_2}}^a \{A_l\}\cup \{-A_{f_2} P_+ C P_- A_{f_1}\}; \bigcup_{l=1}^b \{B_l\}\Big)\\\label{Ntimes1:middle2}
+&+(-1)^{a+b+1} \sum_{f=1}^b \sum_{g=1}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq g}}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{-A_g P_+ C P_- B_f\}\Big).
+\end{align}
+\end{Lemma}
+{\bfseries Proof:}  The proof of this equality is a rather long calculation, where \eqref{def:L} is used repeatedly. We break up the calculation into 
+several parts. Let us start with
+
+\begin{multline}
+L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(C;)=\\
+\prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l}) a^*(C \varphi_m) a(\varphi_m).
+\end{multline}
+
+We (anti)commute the creation operator involving \(C\) to its place at the end of the second product, after that the term
+will be normally ordered and can be rephrased in terms of \(L\)s. During the commutation the creation operator
+in question can be picked up by any of the annihilation operators in the rightmost product. For each term where that happens
+we can perform the sum over the basis of \(\mathcal{H}^-\) related to the annihilation operator whose anticommutator triggered.
+After this sum the corresponding term is also normally ordered and can be rephrased in terms of an \(L\) after some 
+reshuffling which may only produce signs. So performing these steps we get
+
+\begin{multline}
+L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(C;)=\\
+\sum_{f=a}^1 (-1)^{a-f} \prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^{f-1} a^*(A_l \varphi_{n_l}) a^*(A_fP_+C\varphi_m)\\
+ \prod_{l=f+1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{\stackrel{l=1}{l\neq f}}^a a(\varphi_{n_l}) a(\varphi_m)\\
++ L\left(\bigcup_{l=1}^a \{A_l\} \cup \{C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
+=\sum_{f=1}^a  L\left(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\} \cup \{A_f P_+ C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
++ L\left(\bigcup_{l=1}^a \{A_l\} \cup \{C\}; \bigcup_{l=1}^b \{B_l\}\right).
+\end{multline}
+
+Now the remaining case is more laborious, that is why we will split off and treat some of the appearing terms separately. 
+We start off analogous to before 
+
+\begin{multline}
+L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(;C)=\\
+\prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l})a(\varphi_{-m}) a^*(C \varphi_{-m}).
+\end{multline}
+
+This time we need to (anti)commute the rightmost annihilation operator all the way to the end of the first product and the creation operator to the end of the second but last product. So there will be several qualitatively different terms. From the first step alone we get
+\begin{align}\notag
+L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(;C)&=\\\notag
+(-1)^{a}\sum_{f=b}^1 (-1)^{b-f} \prod_{l=1}^b a(\varphi_{-k_l}) &\prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{\stackrel{l=1}{l\neq f}}^b a^*(B_l \varphi_{-k_l})\\ \label{Ntimes1 term 1}
+& \prod_{l=1}^a a(\varphi_{n_l}) a^*(C P_- B_f \varphi_{-k_f})\\\notag
++(-1)^{a+b}\sum_{f=a}^1 (-1)^{b-f} \prod_{l=1}^b a(\varphi_{-k_l}) &\prod_{\stackrel{l=1}{l\neq f}}^a a^*(A_l \varphi_{n_l})\\\label{Ntimes1 term 2}
+& \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l}) a^*(CP_- \varphi_{n_f})\\\notag
++(-1)^b\prod_{l=1}^b a(\varphi_{-k_l}) a(\varphi_{-m}) &\prod_{l=1}^a a^*(A_l \varphi_{n_l}) \\ \label{Ntimes1 term 3}
+&\prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l})a^*(C \varphi_{-m}).
+\end{align}
+
+We will discuss terms \eqref{Ntimes1 term 1}, \eqref{Ntimes1 term 2} and \eqref{Ntimes1 term 3} separately. 
+In Term \eqref{Ntimes1 term 1} we need to commute the last creation operator into its place in the third product,
+it can be picked up by one of the annihilation operators of the last product, but after performing the sum over
+the corresponding basis the resulting term can be rephrased in terms of an \(L\) operator by commuting
+only creation operators of the second and third product. Performing these steps yields the identity
+
+\begin{multline}
+\eqref{Ntimes1 term 1}=\sum_{f=1}^b L\left( \bigcup_{l=1}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup  \{CP_- B_f \}\right)\\
++(-1)^{a+b+1}\sum_{f=1}^b \sum_{g=1}^a L\left( \bigcup_{\stackrel{l=1}{l\neq g}}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\} \{A_gP_+CP_- B_f \}\right).
+\end{multline}
+
+For \eqref{Ntimes1 term 2} the last creation operator needs to be commuted to the end of the second product. It can be picked up by 
+one of the annihilation operators of the last product, but here we have to distinguish between two cases. If the index of this
+annihilation operator equals \(f\) the resulting commutator will be \(\tr P_+ C P_- A_f \) otherwise one can again perform the sum
+over the corresponding index and express the whole Product in terms of an \(L\) operator. All this results in 
+
+\begin{multline}
+\eqref{Ntimes1 term 2}=\sum_{f=1}^a L\left( \bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}\cup \{C P_- A_f\}; \bigcup_{l=1}^b \{B_l\}\right)\\
++(-1)^{a+b}\sum_{f=1}^a  L\left( \bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\} \right) \tr (P_+ C P_- A_f )\\
++(-1)^{a+b+1}\sum_{\stackrel{f_1,f_2=1}{f_1\neq f_2}}^a L\left( \bigcup_{\stackrel{l=1}{l\neq f_1,f_2}}^a \{A_l\} \cup \{A_{f_2} P_+CP_- A_{f_1} \}; \bigcup_{l=1}^b \{B_l\} \right).
+\end{multline}
+
+For \eqref{Ntimes1 term 3} the procedure is basically the same as for \eqref{Ntimes1 term 1}, it results in
+
+\begin{multline}
+\eqref{Ntimes1 term 3}= (-1)^{a+b} L\left( \bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right)\\
++ \sum_{f=1}^a L\left( \bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\}\cup \{C P_- A_f\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\right).
+\end{multline}
+
+Putting the results of the calculation together results in the claimed equation, after pulling in some factors of \(-1\) into \(L\). \qed
+
+We carry on with defining the important quantities for powers of \(G\). First we introduce for each \(k \in \mathbb{N}\) a linear
+bounded operator on \(\mathcal{H}\), \(X_k\) which fulfils \(\tr P_+ X_k P_- X_k<\infty\wedge \tr P_- X_k P_+ X_k<\infty\). 
+
+\begin{Def}
+Let 
+\begin{equation*}
+Y:=\{X_k\mid k\in\mathbb{N}\}.
+\end{equation*}
+Let for \(n\in\mathbb{N}\)
+\begin{equation*}
+\langle n\rangle := \{X_l\mid l\in\mathbb{N}, l\le n\}.
+\end{equation*}
+\end{Def}
+
+\begin{Def}
+Let for  \(b\subset Y\), such that \(|b|<\infty\)
+\begin{align}\notag
+f_b:\{l\in\mathbb{N}\mid l\le |b|\}\rightarrow b\\
+\forall k<|b| : f_b(k)=X_l\wedge f_b(k+1)=X_m\rightarrow l<m
+\end{align}
+\end{Def}
+
+\begin{Def}
+We denote for any set \(b\) by \(S(b)\) the symmetric group (group of permutations) over \(b\).
+\end{Def}
+
+\begin{Def}
+Let for  \(b\subset Y\), such that \(|b|<\infty\) and \(\sigma_b \in S(b)\)
+\begin{align*}
+\text{VZ}^l_{\sigma_b}: \{k\in\mathbb{N}\mid k<|b|\} \rightarrow \{-1,1\}\\
+\text{VZ}^l_{\sigma_b}(k):=\text{sgn}\big[f_b^{-1}(\sigma_b(f_b(k+1))) - f_b^{-1}(\sigma_b(f_b(k)))  \big]
+\end{align*}
+\end{Def}
+
+In what is to follow the order of one particle operators will be changed in all possible ways, to keep track of this by
+use of a compact notation we introduce
+\begin{Def}
+\begin{align*}
+W: \{(b,\sigma_b) \mid b\subseteq Y \wedge |b|<\infty \wedge \sigma_b \in S(b) \} \rightarrow B(\mathcal{H})\\
+W(b,\sigma_b):= \left( \prod_{k=1}^{|b|-1} \sigma_{b}(f_b(k)) P_{\text{VZ}_{\sigma_b}^b(k)} \text{VZ}_{\sigma_b}^b(k) \right) \sigma_b (f_b(|b|))
+\end{align*}
+\end{Def}
+
+\begin{Def} Let \(l\) be any finite subset of \(Y\). Denote by \(X^l_{\text{max}}\) the operator \(X_k\in l \)
+such that for any \(X_c\in l \) the relation \(k\ge c\) is fulfilled. Furthermore define
+\begin{align*}
+&\text{PT}: \{T\subset \mathcal{P}(Y)\mid |T|<\infty\}\rightarrow \mathbb{C}\\
+&\text{for: } T=\emptyset: \text{PT}(T)=1, \text{ otherwise: }\\
+&\text{PT}(T)=\sum_{\stackrel{\forall l \in T:}{\sigma_l \in S(l \backslash \{X_{\text{max}}^l\})}} \prod_{l\in T} 
+\tr [P_+ X^l_{\text{max}} P_- W(l, \sigma_l)]
+\end{align*}
+\end{Def}
+
+There is one more function left to define
+\begin{Def}
+\begin{align*}
+\text{Op}:  \{R\in \mathcal{P}(Y)\mid |R|<\infty\} \times \{D\subset \mathcal{P}(Y)\mid |T|<\infty\}\rightarrow \mathcal{B}(\mathcal{F})\\
+\text{Op}(R,D)=\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \sum_{a \subseteq R \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}} L(a,a^c)(-1)^{|a|+  \frac{(|R| + |D|)(|R|+|D|+1)}{2}}
+\end{align*}
+\end{Def}
+
+Now we are able to state the main theorem which will help us do quantitative estimates.
+
+\begin{Thm}
+Let \(n\in\mathbb{N}\), \(X_1,\dots, X_n \in Y\) then the following equation holds
+
+\begin{equation}\label{eq:ProductG}
+\prod_{k=1}^n G(X_k)= 
+\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T) \text{Op}(R,D),
+\end{equation}
+where the abbreviation \(\langle n\rangle:= \{X_k\mid k\le n\}\) was used.
+\end{Thm}
+{\bfseries Proof:} The proof will be by induction on \(n\). Since the formula in the claim reduces to 1 for \(n=0\) we will
+not spend any more time on the start of the induction. The general strategy of the proof is to break up the right 
+hand side of \eqref{eq:ProductG} for \(n+1\) into small pieces and show for each piece that it corresponds to one of
+the contributions of lemma \ref{lem:Ntimes1}, while also each term in this lemma is represented by one of the terms
+obtained by breaking up \eqref{eq:ProductG}.
+
+As a first step we break the right hand side of \eqref{eq:ProductG} into three pieces separated by in which set \(X_{n+1}\) 
+ends up in :
+\begin{align}\notag
+\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T) \text{Op}(R,D)=\\\label{ProductGI}
+\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{\exists l \in T: X_{n+1}\in l}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D)\\\label{ProductGII}
++\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{\exists l\in D: X_{n+1}\in l}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D)\\\label{ProductGIII}
++\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{X_{n+1}\in R}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D),
+\end{align}
+
+We will discuss each term separately. For term \eqref{ProductGI} the term containing \(X_{n+1}\) is in one of the elements \(l'\) of \(T\), 
+but each such element has to have more than one element. So if we were to sum over the partitions of \(\langle n\rangle \) instead,
+the rest of \(l'\backslash \{X_{n+1}\}\) is either an element of \(D\) or, if it contains only one element, of \(R\). Picking \(D\) instead of \(T\)
+is at this stage an arbitrary choice, but this choice leads to the terms of lemma \ref{lem:Ntimes1}. Alls this means that one
+correct rewriting of term \eqref{ProductGI} is
+
+\begin{multline}\label{eq:ProductGI2}
+\eqref{ProductGI}= \sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} } \sum_{b \in D \cup \{ \{r\} \mid r\in R \}}  \\
+\text{PT}(T\cup \{\{X_{n+1} \cup f\}) \text{Op}(R \backslash b, D\backslash \{b\}).
+\end{multline}
+
+Next we pull one factor and the corresponding sum out of PT and write out Op. Then we see that the sums over permutations 
+can be merged into one. There we take the convention that for any set \(f\) such that \(|f|=1\) holds, we define \(\sigma_f\) to be
+the identity on that set.
+
+This results in
+
+\begin{align}\notag
+\eqref{eq:ProductGI2}= \sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\sum_{b \in D \cup \{ \{r\} \mid r\in R \}}  \sum_{\sigma_b \in S(b)}\\\notag
+ \tr[P_+ X_{n+1} P_- W(b,\sigma_b)] \text{PT}(T) \sum_{\stackrel{\forall l \in D\backslash \{b\}}{\sigma_l \in S(l)}} \\\notag
+ \sum_{a\subseteq R\backslash b \cup \bigcup_{l\in D\backslash \{b\}}\{W(l,\sigma_l)\}}  L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|-1)(|R|+|D|)}{2}}\\\notag
+ =\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{b \in D \cup \{ \{r\} \mid r\in R \}} \text{PT}(T)\\\notag
+ \sum_{a\subseteq R\backslash b \cup \bigcup_{l\in D\backslash \{b\}}\{W(l,\sigma_l)\}}  L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|-1)(|R|+|D|)}{2}}\\\notag
+\tr[P_+ X_{n+1} P_- W(b,\sigma_b)]   \\\notag
+=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}   \text{PT}(T)  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}}\\\notag
+\sum_{b \in D \cup \{ \{r\} \mid r\in R \}} \id_{W(b,\sigma_b)\in a}  L(a\backslash\{b\},a^c) (-1)^{|a|+1}\\\notag
+(-1)^\frac{(|R|+|D|-1)(|R|+|D|)}{2} \tr[P_+ X_{n+1} P_- W(b,\sigma_b)]\\\notag
+=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}} \\\notag
+ \sum_{b \in a  }   L(a\backslash\{b\},a^c) (-1)^{|a|+\frac{(|R|+|D|+1)(|R|+|D|)}{2}}\\\notag
+ (-1)^{1+|R|+|D|} \tr[P_+ X_{n+1} P_- W(b,\sigma_b)]\\\notag
+ =\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}} \\
+   (-1)^{|a|+\frac{(|R|+|D|+1)(|R|+|D|)}{2}}  \eqref{Ntimes1:TrTerm}_{L(a,a^c) G(X_{n+1})},
+\end{align}
+
+where the notation in the last line is to be taken as ``apply Lemma \ref{lem:Ntimes1} apply it to \(L(a,a^c) G(X_{n+1})\) and
+pick only term \eqref{Ntimes1:TrTerm}''. We will use this abbreviating notation also for the next terms.
+
+The next term is \eqref{ProductGII}. Here we need a few more notational conventions. For any  set 
+\(b\subseteq \langle n \rangle\) and corresponding
+permutation \(\sigma_b\in S(b)\), we denote by the same symbol \(\sigma_b\) the continuation of \(\sigma_b\) to \(b\cup \{X_{n+1}\}\),
+where for this continuation \(X_{n+1}\) is a fixed point. Furthermore we define for any set 
+\(b\subseteq \langle n \rangle\), \(\sigma_c^b\) by
+
+\begin{align}\notag
+&\sigma_c^b \in  S(b\cup\{X_{n+1}\}), \\\notag
+\forall k\le |b|: &\sigma_c^b(f_{b\cup \{X_{n+1}\}}(k))=f_{b\cup \{X_{n+1}\}}(k+1)\\
+ &\sigma^b_c (X_{n+1})=f_b(1).
+\end{align}
+
+Finally we define for sets \(b_1,b_2 \subseteq \langle n \rangle, b_1\cap b_2=\emptyset\) and corresponding
+permutations \(\sigma_{b_1}\in S(b_1), \sigma_{b_2} \in S(b_2)\) the permutation 
+\(\sigma_{b_1,b_2}^{n+1}\) by
+
+\begin{align}\notag
+M_{b_1,b_2}^{n+1} :=b_1\cup b_2 \cup \{X_{n+1}\}\\\notag
+\sigma_{b_1,b_2}^{n+1}\in S(M_{b_1,b_2}^{n+1} )\\\notag
+\forall 1\le k \le |b_1|: \sigma_{b_1,b_2}^{n+1}(f_{M_{b_1,b_2}^{n+1}}(k))=\sigma_{b_1}(f_{b_1}(k))\\\notag
+\sigma_{b_1,b_2}^{n+1}(f_{M_{b_1,b_2}^{n+1}}(|b_1|+1))=X_{n+1}\\\notag
+\forall |b_1|+2\le k \le |b_1|+|b_2|+1:\\
+ \sigma_{b_1,b_2}^{n+1}(f_{M_{b_1,b_2}^{n+1}}(k))
+= \sigma_{b_2} ( f_{b_2}(k-|b_1|-1))
+\end{align}
+
+The beginning of the treatment of term \eqref{ProductGII} is analogous to \eqref{ProductGI}, we rewrite the
+partition of \(\langle n+1\rangle \) into one of \(\langle n \rangle \) with an additional sum over where the
+other operators packed to together with \(X_{n+1}\) come from. This splits into three parts, either \(X_{n+1}\)
+is put at the beginning of the compound operator, or its put at the end of the compound object, or 
+to the left as well as to the right are operators with smaller index. Since the overall sign is decided by 
+how often the operator index rises or falls, this separation into cases is helpful. The last case we then
+rewrite as picking two sets of operators, one of which will be in front of \(X_{n+1}\) and the other one
+behind this operator. 
+
+The calculation is as follows
+
+\begin{align}\notag
+&\eqref{ProductGII}= \sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{\exists l\in D: X_{n+1}\in l}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D)\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \text{Op} (R\backslash b , D\cup \{ b \cup \{X_{n+1}\}\backslash \{b\}\})\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D \cup \{b \cup \{X_{n+1}\}\}}{\sigma_l \in S(l)}}\\\notag
+ &\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D \cup \{b \cup \{X_{n+1}\} \}\backslash \{b\}}\{W(l,\sigma_l)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}\Big[\\\label{ProductGII.1}
+ &\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D\backslash \{b\}}\{W(l,\sigma_l)\} \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\\\label{ProductGII.2}
+&+\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D\backslash \{b\}}\{W(l,\sigma_l)\}\cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ\sigma_b)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\Big]\\\notag
+&+\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in \overline{D}}l \dotcup \overline{R}}{\forall l \in \overline{D}\cup T: |l|\ge 2}} \text{PT}(T) \sum_{\stackrel{b_1,b_2\in \overline{D} \cup \{\{r\}\mid r \in \overline{R}\}}{b_1 \neq b_2}} \sum_{\stackrel{\forall l \in \overline{D} }{\sigma_l \in S(l)}}\\\label{ProductGII.3}
+&\sum_{a \subseteq \tilde{R}\cup \bigcup_{l \in \tilde{D}}\{W(l,\sigma_l)\} \cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\}} L(a,a^c) (-1)^{|a|+ \frac{(|\overline{R}|+|\overline{D}|-1)(|\overline{R}|+|\overline{D}|)}{2}}
+\end{align}
+
+where \(\tilde{R}=\overline{R} \backslash (b_1\cup b_2)\) and
+\(\tilde{D}:=\overline{D} \cup \{b_1 \cup \{X_{n+1}\} \cup b_2 \}\backslash \{b_1,b_2\}\). For the term 
+\eqref{ProductGII.3} we had to reshuffle the outermost
+sum a bit. For each term in the original sum where \(X_{n+1}\) is neither the first nor the last factor in its product (we will call the set of factors in front of \(X_{n+1}\)  \( \alpha\) and the factors behind it \(\beta\)) there is a different splitting of \(\langle n \rangle \) into \(\overline{R}\) and \(\overline{D}\) such that \(\alpha\) and \(\beta\) are separate elements of \(\overline{D}\cup \{\{r\}\mid r \in \overline R\}\).
+So we replace the original sum over \(D\) and \(R\) into one of \(\overline{D}\) and \(\overline{R}\). Since this is a one to one
+correspondence and the sum is finite this is always possible. The exponent of the sign also changes for this reason, since
+\(|R|+|D|=|\overline{R}|+|\overline{D}|-1\) holds. Continuing with \eqref{ProductGII.1} the next steps are similar to the last steps
+in treating \eqref{ProductGI}. They are
+
+\begin{align}\notag
+&\eqref{ProductGII.1}=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}\\\notag
+ &\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D\backslash \{b\}}\{W(l,\sigma_l)\} \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\\\notag
+ &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \\\notag
+ &\sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\id_{W(b,\sigma_b)\in a} \\\notag
+& \big[L(a\backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\},a^c) \\\notag
+& -L(a\backslash \{W(b,\sigma_b)\},a^c \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\}) \big]\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T)  \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \\\notag
+ &\sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}
+ \sum_{W(b,\sigma_b) \in a }  \\\notag
+& \big[L(a\backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\},a^c) \\\notag
+& -L(a\backslash \{W(b,\sigma_b)\},a^c \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\}) \big]\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T)  \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\
+ & (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}
+ (\eqref{Ntimes1:n+1atEnd1}+\eqref{Ntimes1:n+1atEnd2})_{L(a,a^c)G(X_{n+1})}.
+\end{align}
+
+Almost the same procedure applies to \eqref{ProductGII.2}. It yields %\label{Ntimes1:n+1atBeginnign1}
+
+\begin{align}\notag
+&\eqref{ProductGII.2}=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}\\\notag
+ &\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D\backslash \{b\}}\{W(l,\sigma_l)\} \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c\circ \sigma_b)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\\\notag
+ &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \\\notag
+ &\sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}} \\\notag
+& \big[ \id_{W(b,\sigma^b_c\circ\sigma_b)\in a} L(a\backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ\sigma_b)\},a^c) \\\notag
+& +\id_{W(b,\sigma^b_c\circ \sigma_b)\in a^c} L(a\backslash \{W(b,\sigma_b)\},a^c \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ \sigma_b)\}) \big]\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T)  \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \\\notag
+ &\sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}
+  \\\notag
+& \big[ \sum_{W(b,\sigma_b) \in a }L(a\backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ\sigma_b)\},a^c) \\\notag
+&+  \sum_{W(b,\sigma_b) \in a^c } L(a,a^c \backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ \sigma_b)\}) \big]\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T)  \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\
+ & (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}
+ (\eqref{Ntimes1:n+1atBeginning1}+\eqref{Ntimes1:n+1atBeginning2})_{L(a,a^c)G(X_{n+1})}.
+\end{align}
+
+
+Also for \eqref{ProductGII.3} the procedure is almost the same. We bring the sums into a form such that one can read off the
+terms generated by the induction. We begin be renaming the sets which we had to change by resumming back to the names 
+of the original sets. 
+
+
+\begin{align}\notag
+&\eqref{ProductGII.3}=
+\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in \overline{D}}l \dotcup \overline{R}}{\forall l \in \overline{D}\cup T: |l|\ge 2}} 
+\text{PT}(T) 
+\sum_{\stackrel{b_1,b_2\in \overline{D} \cup \{\{r\}\mid r \in \overline{R}\}}{b_1 \neq b_2}} 
+\sum_{\stackrel{\forall l \in \overline{D} }{\sigma_l \in S(l)}}\\\notag
+&\sum_{a \subseteq \tilde{R}\cup \bigcup_{l \in \tilde{D}}\{W(l,\sigma_l)\} \cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\}} L(a,a^c) (-1)^{|a|+ \frac{(|\overline{R}|+|\overline{D}|-1)(|\overline{R}|+|\overline{D}|)}{2}}\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} 
+\text{PT}(T) 
+\sum_{\stackrel{b_1,b_2\in D \cup \{\{r\}\mid r \in R\}}{b_1 \neq b_2}} 
+\sum_{\stackrel{\forall l \in D }{\sigma_l \in S(l)}}\\\notag
+&\sum_{a \subseteq R\cup \bigcup_{l \in D}\{W(l,\sigma_l)\} \cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\}} L(a,a^c) (-1)^{|a|+ \frac{(| R|+|D|-1)(|R|+|D|)}{2}}\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} 
+\text{PT}(T) 
+\sum_{\stackrel{b_1,b_2\in D \cup \{\{r\}\mid r \in R\}}{b_1 \neq b_2}} 
+\sum_{\stackrel{\forall l \in D }{\sigma_l \in S(l)}} \sum_{a \subseteq R\cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\\notag
+&(-1)^{|R|+|D|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}} \id_{W(b_1,\sigma_1)\in a}\\\notag
+&\left[+(-1)^{|a|+1}\id_{W(b_2,\sigma_2)\in a} L\Big(a\backslash\{W(b_1,\sigma_1),W(b_2,\sigma_2)\}\cup\right.\\\notag
+&\cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\} ,a^c\Big) \\\notag
+&+(-1)^{|a|+1}\id_{W(b_2,\sigma_2)\in a^c}L\Big(a\backslash\{W(b_1,\sigma_1)\} ,a^c \backslash\{W(b_2,\sigma_2)\}\cup\\\notag
+&\left. \cup \{W(b_1\cup \{X_{n+1}\}\cup f_2,\sigma^{n+1}_{b_1,b_2})\}\Big) \right]\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} 
+\text{PT}(T) 
+\sum_{\stackrel{\forall l \in D }{\sigma_l \in S(l)}} \sum_{a \subseteq R\cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\\notag
+&(-1)^{|R|+|D|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}} \\\notag
+&\Big[(-1)^{|a|+1}\sum_{\stackrel{b_1,b_2 \in a}{b_1 \neq b_2}}  L\Big(a\backslash\{W(b_1,\sigma_1),W(b_2,\sigma_2)\}\cup\\\notag
+&\cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\} ,a^c\Big) \\\notag
+&+(-1)^{|a|+1}\sum_{b_1\in a,b_2\in a^c}  L\Big(a\backslash\{W(b_1,\sigma_1)\} ,a^c \backslash\{W(b_2,\sigma_2)\}\cup\\\notag
+&\left. \cup \{W(b_1\cup \{X_{n+1}\}\cup f_2,\sigma^{n+1}_{b_1,b_2})\}\Big) \right]\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} 
+\text{PT}(T) 
+\sum_{\stackrel{\forall l \in D }{\sigma_l \in S(l)}} \sum_{a \subseteq R\cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\\notag
+&(-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}} (\eqref{Ntimes1:middle1}+\eqref{Ntimes1:middle2})_{L(a,a^c)G(X_{n+1})}
+\end{align}
+
+Lastly we will discuss term \eqref{ProductGIII}; luckily, this term is less involved than the other two. The general procedure;
+however, stays the same. First we reformulate the partition of \(\langle n+1\rangle\) into one of \(\langle n \rangle \), where
+the terms acquire modifications. Secondly we massage these terms until the involved sums look exactly like the one 
+in our induction hypothesis \eqref{eq:ProductG} and realise that the terms are produced by lemma \ref{lem:Ntimes1}.
+For term \eqref{ProductGIII}  this results in
+
+\begin{align}\notag
+&\eqref{ProductGIII}
+=\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{X_{n+1}\in R}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D)\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
+\text{Op}(R\cup \{X_{n+1}\},D)\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
+\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \quad \sum_{a\subseteq R \cup \{X_{n+1}\} \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}}\\\notag
+&L(a,a^c)(-1)^{|a| + \frac{(|R|+1+|D|)(|R|+|D|+2)}{2}}\\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
+\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \quad \sum_{a\subseteq R \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}}
+(-1)^{|a| + \frac{(|R|+1+|D|)(|R|+|D|)}{2}}\\\notag
+&\big(-L(a\cup\{X_{n+1}\},a^c)+L(a,a^c\cup \{X_{n+1}\}) \big)(-1)^{|R|+|D|+1} \\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
+\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \quad \sum_{a\subseteq R \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}}
+(-1)^{|a| + \frac{(|R|+1+|D|)(|R|+|D|)}{2}}\\\notag
+&\big(L(a\cup\{X_{n+1}\},a^c)(-1)^{|R|+|D|}+L(a,a^c\cup \{X_{n+1}\})(-1)^{|R|+|D|+1} \big) \\\notag
+&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
+\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \quad \sum_{a\subseteq R \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}}
+(-1)^{|a| + \frac{(|R|+1+|D|)(|R|+|D|)}{2}}\\\notag
+&\big(\eqref{Ntimes1:simplyAdd1}+\eqref{Ntimes1:simplyAdd2} \big)_{L(a,a^c)G(X_{n+1})}.
+\end{align}
+
+Summarising we showed 
+\begin{align*}
+&\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T) \text{Op}(R,D)\\
+ &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}} \\
+  & (-1)^{|a|+\frac{(|R|+|D|+1)(|R|+|D|)}{2}}  \\
+  &\big( \eqref{Ntimes1:TrTerm}+\eqref{Ntimes1:n+1atEnd1}+\eqref{Ntimes1:n+1atEnd2} 
+  +\eqref{Ntimes1:n+1atBeginning1}+\eqref{Ntimes1:n+1atBeginning2}\\
+ &+\eqref{Ntimes1:middle1}+\eqref{Ntimes1:middle2}
+  +\eqref{Ntimes1:simplyAdd1}+\eqref{Ntimes1:simplyAdd2}\big)_{L(a,a^c) G(X_{n+1})}\\
+ &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}} \\
+  & (-1)^{|a|+\frac{(|R|+|D|+1)(|R|+|D|)}{2}} L(a,a^c)G(X_{n+1})\\
+  &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \text{Op}(R,D)G(X_{n+1})\\
+  &=\prod_{l=1}^n G(X_{l}) \quad G(X_{n+1}),
+\end{align*}
+
+which ends our proof by induction.\qed
+
+
+
 
 \section{Main Conjecture}\label{sec:main result}
 Now I can state the primary objective of my thesis in terms of the following
@@ -1400,6 +1828,9 @@ For all smooth four-potentials \(A\in C_{c}^\infty(\mathbb{R}^4)\otimes
 \lim_{n\rightarrow \infty} \left\langle \psi, \sum_{k=0}^n  \frac{e^n}{n!} T_n (A)\phi \right\rangle.
 \end{equation}
 \end{Conj}
+
+
+
 
 Such a uniform convergence would be optimal. In case, it can not be achieved, a
 weaker form of this conjecture in which $|e|$ has to be chosen sufficiently

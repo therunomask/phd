@@ -116,17 +116,19 @@ L(A_1,\dots, A_c; B_1,\dots ,B_m):= \prod_{l=1}^p a(\varphi_{-k_l}) \\
 \section{N times 1}
 
 \begin{Lemma} For any \(a,b,\in\mathbb{N}_0\) and apropriate one particle operators \(A_k, B_l, C\) for \(1\le k\le a\), \(1\le l\le b\) we have the following equality
-\begin{align*}
+\begin{align}
 &L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\Big)G(C) =\\
- &(-1)^{a+b}\Big[ L\Big(\bigcup_{l=1}^a \{A_l\}\cup \{C\}; \bigcup_{l=1}^b \{B_l\}\Big) - L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{C\} \Big) \Big]\\
-&+ \sum_{f=1}^a \Big[ L\Big(\bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}\cup \{A_fP_+C \}; \bigcup_{l=1}^b \{B_l\}\Big) - 
- L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}\cup \{CP_- A_f\}; \bigcup_{l=1}^b \{B_l\}\Big)\\
-& -L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\Big) \Big]\\
-&- \sum_{f=1}^b L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{CP_- B_f\}\Big)\\
+ &(-1)^{a+b} L\Big(\bigcup_{l=1}^a \{A_l\}\cup \{C\}; \bigcup_{l=1}^b \{B_l\}\Big) \\
+ &+(-1)^{a+b+1} L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{C\} \Big) \\
+&+ \sum_{f=1}^a  L\Big(\bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}\cup \{A_fP_+C \}; \bigcup_{l=1}^b \{B_l\}\Big) \\
+&+\sum_{f=1}^a
+ L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}\cup \{- CP_- A_f\}; \bigcup_{l=1}^b \{B_l\}\Big)\\
+& -\sum_{f=1}^a L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\Big)\\
+&+ \sum_{f=1}^b L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{-CP_- B_f\}\Big)\\
 &+ (-1)^{a+b+1} \sum_{f=1}^a \tr \Big(P_+ C P_- A_f\Big) L\Big(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\Big)\\
-&+ (-1)^{a+b} \sum_{\stackrel{f_1,f_2=1}{f_1\neq f_2}}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq f_1,f_2}}^a \{A_l\}\cup \{A_{f_2} P_+ C P_- A_{f_1}\}; \bigcup_{l=1}^b \{B_l\}\Big)\\
-&+(-1)^{a+b} \sum_{f=1}^b \sum_{g=1}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq g}}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{A_g P_+ C P_- B_f\}\Big).
-\end{align*}
+&+ (-1)^{a+b+1} \sum_{\stackrel{f_1,f_2=1}{f_1\neq f_2}}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq f_1,f_2}}^a \{A_l\}\cup \{-A_{f_2} P_+ C P_- A_{f_1}\}; \bigcup_{l=1}^b \{B_l\}\Big)\\
+&+(-1)^{a+b+1} \sum_{f=1}^b \sum_{g=1}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq g}}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{-A_g P_+ C P_- B_f\}\Big).
+\end{align}
 \end{Lemma}
 {\bfseries Proof:}  The proof of this equality is a rather long calculation, where \eqref{def:L} is used repeatedly. We break up the calculation into 
 several parts. Let us start with
@@ -148,7 +150,7 @@ L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(C;)=\\
 \sum_{f=a}^1 (-1)^{a-f} \prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^{f-1} a^*(A_l \varphi_{n_l}) a^*(A_fP_+C\varphi_m)\\
  \prod_{l=f+1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{\stackrel{l=1}{l\neq f}}^a a(\varphi_{n_l}) a(\varphi_m)\\
 + L\left(\bigcup_{l=1}^a \{A_l\} \cup \{C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
-=\sum_{f=1}^a + L\left(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\} \cup \{A_f P_+ C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
+=\sum_{f=1}^a  L\left(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\} \cup \{A_f P_+ C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
 + L\left(\bigcup_{l=1}^a \{A_l\} \cup \{C\}; \bigcup_{l=1}^b \{B_l\}\right).
 \end{multline}
 
@@ -200,7 +202,7 @@ For \eqref{Ntimes1 term 3} the procedure is basically the same as for \eqref{Nti
 + \sum_{f=1}^a L\left( \bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\}\cup \{C P_- A_f\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\right).
 \end{multline}
 
-Putting the results of the calculation together results in the claimed equation \qed
+Putting the results of the calculation together results in the claimed equation, after pulling in some factors of \(-1\) into \(L\). \qed
 
 \section{ 1 times 1}
 

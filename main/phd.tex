@@ -997,7 +997,7 @@ For \(n\in\mathbb{N}\), \(T_n\) can be written as
 \sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
 \frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}.
 \end{equation}
-Please note that for ease of notation we defined \(\mathbb{N}^0:= \{0\}\).
+Please note that for ease of notation we defined \(\mathbb{N}^0:= \{1\}\).
 \end{Corollary}
 \textbf{Proof:} By an argument completely analogous to the combinatorial argument in the proof of theorem 
 \eqref{thm: T_n recursive} we see that we can entangle the \(F\)s in \eqref{recursive solution}
@@ -1270,9 +1270,9 @@ j_A(F) = i \partial_{\varepsilon}\left. \langle \Omega, {S^{A} }^* S^{A+\varepsi
 \begin{Thm}\label{thm:CurrentExact}
 The vacuum expectation value of the current of the scattering operator takes the form
 \begin{align*}
-j_A(F)&=i \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varepsilon=0}\\
+j_A(F)&=- \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varepsilon=0}\\
 -2\int_0^1 &d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right)\\
-&=i \partial_{\varepsilon} \left.\varphi(A+\varepsilon F) \right|_{\varepsilon=0}\\
+&=- \partial_{\varepsilon} \left.\varphi(A+\varepsilon F) \right|_{\varepsilon=0}\\
   - 2\Im \sum_{k=0}^\infty&\frac{(-1)^k}{(k+2)!}  \tr \left( P_+ \ln U^A P_-\left[\ln U^A,\left.\partial_{\varepsilon}\ln U^{A+\varepsilon F} \right|_{\varepsilon=0}\right]_{k}\right) 
 \end{align*}
 \end{Thm}
@@ -1281,9 +1281,9 @@ j_A(F)&=i \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varep
 
 \begin{multline}\label{sleek_current_calc1}
 j_A(F) = i \partial_{\varepsilon}\left. \langle \Omega, {S^{A} }^* S^{A+\varepsilon F}\Omega \rangle \right|_{\varepsilon=0}\\
-=i \partial_{\varepsilon}\left. \langle \Omega, e^{-\varphi(A)} e^{-G(\ln (U^A))} 
-e^{\varphi(A+\varepsilon F)}  e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
-=i \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varepsilon=0}
+=i \partial_{\varepsilon}\left. \langle \Omega, e^{-i\varphi(A)} e^{-G(\ln (U^A))} 
+e^{i\varphi(A+\varepsilon F)}  e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
+=- \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varepsilon=0}
 +i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
 e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0},
 \end{multline}
@@ -1322,7 +1322,7 @@ The calculation for the first term of \eqref{sleek_current_calc3} is identical.
 At this point we notice that \eqref{sleek_current_calc4} and the term where the 
 projectors are exchanged are complex conjugates of one another. So summarising we find
 \begin{multline*}
-j_A(F)=i \partial_{\varepsilon} \left. \varphi (A+\varepsilon F) \right|_{\varepsilon=0}\\
+j_A(F)=- \partial_{\varepsilon} \left. \varphi (A+\varepsilon F) \right|_{\varepsilon=0}\\
 -2\int_0^1 d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right).
 \end{multline*}
 \qed
@@ -1825,7 +1825,7 @@ For all smooth four-potentials \(A\in C_{c}^\infty(\mathbb{R}^4)\otimes
 \(e \in \mathbb{R}\), and for all \(\psi, \phi \in
 \mathcal{F}\) the following limit exists
 \begin{equation}
-\lim_{n\rightarrow \infty} \left\langle \psi, \sum_{k=0}^n  \frac{e^n}{n!} T_n (A)\phi \right\rangle.
+\lim_{n\rightarrow \infty} \left\langle \psi, \sum_{k=0}^n  \frac{e^k}{k!} T_k (A)\phi \right\rangle.
 \end{equation}
 \end{Conj}
 

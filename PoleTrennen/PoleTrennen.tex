@@ -1,0 +1,146 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+
+\usepackage{todonotes}
+
+%identity sign
+\usepackage{bbm}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\equalmath}[1]{\ensuremath{\stackrel{#1}{=}}}
+
+\newtheorem{lemma}{Lemma}
+
+\newcommand{\id}{{\mathbbm 1}}
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+Über das Trennen von Polen unseres standard Integraden.
+
+
+Ich zeige hier, dass zwei beliebige Pole durch Koordinatenwahl getrennt werden können. Nehmen wir an es gibt \(k_1,\dots, k_n \in \mathbb{R}^4+i \text{Causal}^+\backslash \partial\text{Causal}^+\). Dann suchen wir uns zwei Indices \(l,r\in [n]\) mit \(l<r\). Ich erinnere nochmal an die Notation
+
+\begin{equation}
+\forall m\in [n]: k(m):=\sum_{c=1}^m k_c.
+\end{equation}
+
+Nun wählen wir unsere Koordinaten so, dass \(\Im (k(l)) \in i e_0 \mathbb{R}\) gilt. Die Pole in der komplexen Ebene von \(p^0\) sind dann gegeben durch
+
+\begin{equation}
+E_1^\pm = k(l)^0 \pm \sqrt{m^2 + (\vec{p}-\vec{k}(l))^2}, \quad E_2^\pm =k^0(r) \pm \sqrt{m^2 + (\vec{p}-\vec{k}(r))^2},
+\end{equation}
+
+wobei wir in in diesen Koordinaten \(\vec{p}\) reell wählen können.
+
+\begin{lemma}
+In der eben beschriebenen Situation gilt \(\Im (E_1^\pm)<\Im (E_2^\pm) \) für jede Vorzeichenwahl.
+\end{lemma}
+\textbf{ Beweis:} Zuerst bemerken wir, dass der Wurzelterm in \(E_1\) vergessen werden kann, da er reell ist. Wir wollen also die Ungleichung
+
+\begin{equation}\label{Ung}
+\Im (k^0(r)-k^0(l))> \left| \Im\left(\sqrt{m^2+(\vec{p}-\vec{k}(r))^2} \right) \right|
+\end{equation}
+zeigen. Zuerst bemerken wir, dass wir für eine wir für jede komplexe Zahl \(x=\alpha + i \beta\not \in  \mathbb{R}^-_0\) den Hauptzweig der Wurzel wie folgt schreiben können (unter Verwendung der lokalen Stammfunktion der Wirbelform aus Franz' Analysis 2 Skript)
+
+\begin{equation}
+\sqrt{x}= \sqrt{\sqrt{\alpha^2+\beta^2} e^{i 2 \arctan \frac{\beta}{\alpha+\sqrt{\alpha^2+\beta^2}}}}=\sqrt[4]{\alpha^2+\beta^2} e^{i  \arctan \frac{\beta}{\alpha+\sqrt{\alpha^2+\beta^2}}}.
+\end{equation}
+
+Für den Imaginärteil gilt also
+\begin{equation}\label{imroot}
+\Im \sqrt{x} = \sqrt[4]{\alpha^2+\beta^2} \sin \arctan \frac{\beta}{\alpha+\sqrt{\alpha^2+\beta^2}}=\frac{\beta}{\sqrt{2}\sqrt{\alpha + \sqrt{\alpha^2+\beta^2}}}.
+\end{equation}
+
+Um die folgende Rechnung lesbar zu halten führe ich noch ein paar Abkürzungen ein:
+\begin{subequations}
+\begin{align}
+a&:= | \vec{p}-\Re (\vec{k}(r))|\\
+b&:=|\Im (\vec{k}(r))|\\
+a b \cos\varphi&:=(\vec{p}-\Re (\vec{k}(r))) \cdot \Im (\vec{k}(r)).
+\end{align}
+\end{subequations}
+
+Damit lässt sich die gewünschte Ungleichung \eqref{Ung} wie folgt umschreiben
+
+\begin{equation}
+\Im (k^0(r)-k^0(l))> \frac{\sqrt{2} a b \cos \varphi}{\sqrt{m^2 + a^2 - b^2 + \sqrt{(m^2 + a^2 - b^2)+4 a^2 b ^2 \cos^2\varphi}}},
+\end{equation}
+wir wissen aber, dass \(\Im (k(r)-k(l)\) zeitartig ist und \(\Im (\vec{k}(r)) = \Im(\vec{k}(r)-\vec{k}(l)) \) gilt,
+also ist diese Ungleichung gleichbedeutend mit der folgenden
+
+\begin{equation}\label{reduzierteU}
+\frac{\sqrt{2} a \cos \varphi}{\sqrt{m^2 + a^2 - b^2 + \sqrt{(m^2 + a^2 - b^2)+4 a^2 b ^2 \cos^2\varphi}}}\le 1.
+\end{equation}
+
+Letztere Ungleichung gilt aber, wie sich wie folgt einsehen lässt: Es gilt
+\begin{align}
+\eqref{reduzierteU}\iff 2 a^2 \cos^2\varphi \le m^2 + a^2 - b^2 + \sqrt{(m^2 + a^2 - b^2)^2 + 4 a^2 b^2 \cos^2 \varphi},
+\end{align}
+
+Wenn nun\( (2\cos^2\varphi - 1)a^2 + b^2 - m^2 \le 0\) gilt sind wir fertig, andernfalls ist noch
+\begin{align}
+( (2\cos^2\varphi -1)a^2 + b^2 -m^2)^2 \le (m^2 + a^2 - b^2)^2 + 4a^2 b^2 \cos^2 \varphi
+\end{align}
+zu zeigen. Nach umordnen der Terme ergibt sich jedoch folgende Ungleichung
+
+\begin{align}
+a^4 (2\cos^2\varphi - 1)^2 + 2 a^2 (2\cos^2\varphi-1) b^2 - 2 m^2 a^2 (2\cos^2\varphi^2-1) \le \\
+a^4 + 2 m^2a^2 -2a^2 b^2  + 4 a^2 b^2 \cos^2\varphi\\
+\iff 
+-2m^2a^2\cos^2\varphi \le a^4(1-(2\cos^2-1)^2) = a^4 (1-\cos^2(2\varphi))=a^4\sin^2(2\varphi),
+\end{align}
+
+welche immer erfüllt ist. Die Ursprüngliche Ungleichung folgt also wenn \( (2\cos^2\varphi - 1)a^2 + b^2 - m^2 \le 0\)
+gilt direkt und andernfalls folgt sie aus einer wahren Ungleichung. \qed
+
+\vspace{2cm}
+Dieses Resultat gilt allerdings nur zwischen zwei Polen in speziellen Koordinaten, wie das folgende 
+Beispiel zeigt: Wir wählen wie zuvor \(k(r),k(l) \in \mathbb{R}^4+i {\text{Causal}^+}^0\) nur diesmal lassen wir keinen
+der Imaginärteile in Zeitrichtung schauen, stattdessen aber deren Differenz. Wir wählen 
+\begin{equation}
+k(r)-k(l)=i e_0 ~m + q e_0, ~~~ q \in \mathbb{R}
+\end{equation}
+und
+\begin{equation}
+k(l)=r~m e_1 + i 0.99 ~m~ e_1 + i m e_0,
+\end{equation}
+wobei \(r\) gegeben ist durch
+\begin{equation}
+r=2*0.99*\sqrt{\frac{1+4(1-0.99^2)}{(8*0.99^2-1)^2-1}}.
+\end{equation}
+
+Für diese spezielle Wahl gilt \(\Im (E^-(r) + E^+(l))=0\) für \(\vec{p}=0\). Der Beweis dieser Aussage erfolgt durch direkte Rechnung unter Verwendung von \eqref{imroot}. Für die Wahl der Vorzeichen und Vektoren sind die beiden Terme die aus der Wurzel kommen identisch. 
+einzige Skala, m, lässt sich kürzen und die resultierende Gleichung kann durch einsetzen überprüft werden.
+
+Man kann auch ein bisschen allgemeiner \(\vec{p}\) in den reellen Teil von \(\vec{k}(l)\) absorbieren dann gilt \(\Im (E^+(r) - E^-(l))=0\) für solche \(\vec{k}(l),\vec{p}\), die auch \(\vec{k}(l)-\vec{p}= r m e_1 + i 0.99 m e_1\) erfüllen.  Nachdem hier von \(q\) nirgends Gebrauch gemacht wird, kann durch spezielle Wahl von \(q\) insgesamt \(E^+(r)=E^-(l)\) gesetzt werden. 
+
+
+
+
+\end{document}
+

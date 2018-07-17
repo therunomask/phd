@@ -1,0 +1,272 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+
+\usepackage{todonotes}
+
+%identity sign
+\usepackage{bbm}
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+  
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\equalmath}[1]{\ensuremath{\stackrel{#1}{=}}}
+
+
+\newcommand{\id}{{\mathbbm 1}}
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\begin{center}
+{\huge Verlängerungsantrag zur Förderung des Promotionsvorhabens mit dem Titel
+\\
+{\Large Electron-Positron Pair Creation in External Fields \\
+Rigorous Control of the Scattering Matrix Expansion}}
+\end{center}
+
+\begin{center}
+Markus Nöth
+\\ \today
+\end{center}
+
+\section{Einführende Zusammenfassung des Projekts}
+Meine Promotion fällt in den Bereich der mathematischen Physik, ein Teilbereich der Mathematik. Sie handelt von der 
+Teilchen-Antiteilchen Paarerzeugung, ein Phänomen welches zuerst von Dirac 1929 vorhergesagt und 1934 von 
+Anderson nachgewiesen wurde. Insbesondere geht es um Paarerzeugung durch externe elektrische und 
+magnetische Felder unter Vernachlässigung der Wechselwirkung der Teilchen untereinander. Experimentell könnte
+man beispielsweise Elektron-Positron Paarerzeugung beobachten, wenn man die elektromagnetischen Felder von
+mehreren extrem starken Lasern über lange Zeiträume mit den Feldern von schweren Ionen kombiniert. 
+Dies wird an der Extreme Light Infrastructure, einer europäischen Forschungseinrichtung, umgesetzt. 
+
+Die Entdeckung dieses Phänomens durch Dirac hat ihren Ursprung in den ungewöhnlichen Eigenschaften der von ihm
+entdeckten Gleichung \eqref{diraceq} für einzelne Elektronen.
+Diese Gleichung erlaubt sowohl positive kinetische 
+Energien über \(m c^2\) als auch negative kinetische Energien unter \(-mc^2\). Das ist deshalb merkwürdig, weil
+physikalische Systeme üblicherweise ihre Energie minimieren wenn ihnen durch Kopplung an externe Systeme
+die Möglichkeit dazu gegeben wird. Konkret bedeutet das, dass wenn ein Elektron durch diese Gleichung beschrieben
+wird, so würde man erwarten,
+dass dieses Elektron unendlich viel Energie abstrahlt und immer negativere kinetische Energien annimmt. So ein Verhalten
+beobachtet man allerdings nicht in der Natur. Dirac löste dieses Problem dadurch, dass er 
+der Beschreibung zugrunde legte, dass alle Zustände negativer Energie bereits besetzt sind. Paulis Ausschlussprinzip 
+verhindert dann, dass weitere Elektronen diese Zustände annehmen. Dieser See aus Teilchen negativer Energie stellt
+also sicher, dass die beschriebenen Teilchen stabileres Verhalten zeigen, als Gleichung \eqref{diraceq} zuerst vermuten lässt.
+
+
+Dirac argumentierte weiter\cite{theoriedupositron}, dass dieser See so homogen sei, dass alle Wechselwirkung zwischen 
+Teilchen des Sees so symmetrisch erfolgt und sich dadurch gegenseitig aufhebt, sodass insgesamt keine Wechselwirkung 
+beobachtbar ist. Durch ein externes Feld kann das System allerdings so stark gestört werden, dass ein Elektron aus dem
+See in die Zustände positiver Energie gehoben wird und somit sowohl ein Teilchen positiver Energie als auch ein Loch
+im See übrig bleiben. Obwohl der Dirac See auf diese Weise eine schöne anschauliche Erklärung von Paarerzeugung liefert,
+bereitet die Formulierung einer mathematisch sauberen Beschreibung des Phänomens nach wie vor Probleme. 
+
+In meiner Promotion konzentriere ich mich auf Quantenelektrodynamic (QED) externer Felder, in diesem vereinfachten Modell 
+betrachtet man nicht wie sich die Teilchen gegenseitig beeinflussen sondern ausschließlich wie externe Felder auf die Teilchen
+wirken. Antworten auf Experimentelle Fragen wie ``Wie verhält sich ein System aus Elektronen nachdem es für eine längere 
+Zeit einem starken Laser ausgesetzt war?'' kann man an der sogenannten Streumatrix ablesen. Dieses Objekt wird für 
+gewöhnlich durch eine Summe aus unendlich vielen Termen dargestellt. Für viele Modelle der QED ist bekannt,
+dass eine solche perturbative Darstellung nicht konvergiert, weshalb eine andere Darstellung der Streumatrix gefunden
+werden muss. Für QED externer Felder denkt man jedoch\cite{mickelsson}, dass die Situation besser ist und 
+die Reihe der Streumatrix konvergiert. Mein Projekt besteht darin diese Vermutung in Wissen umzusetzen.
+
+\section{Erreichte Ergebnisse}
+
+In meinem Antrag schrieb ich, dass das Hauptziel darin besteht ein Konvergenzresultat der folgenden Form zu erreichen. 
+
+{\bfseries Vermutung:}
+Für alle glatten Viererpotentiale \(A\in C_c^\infty(\mathbb{R}^4)\otimes \mathbb{C}^4\), Ladungen \(e\in\mathbb{R}\)
+und Fockraumzustände \(\Psi,\Phi\in \mathcal{F}\) existiert der folgende Grenzwert
+\begin{equation}\label{Ziel}
+\lim_{n\rightarrow \infty} \langle \Psi\mid \sum_{k=0}^n \frac{e^k}{k!} T_k(A) \Phi \rangle.
+\end{equation}
+
+Hierbei beschreibt die Reihe in der Mitte die Streumatrix. Die \(T_k\) sind also im wesentlichen der Beitrag der
+ \(k\)-ten Ordnung zur Streumatrix. Es gelten außerdem die Kommutatorbedingung der Streumatrix \(S\) für beliebige
+ Einteilchen Wellenfunktionen \(\phi\in \mathcal{H}\):
+ \begin{subequations}\label{SKommutator}
+\begin{align}
+S a(\phi)=a(U\phi) S\\
+S a^*(\phi)=a^*(U\phi) S,
+\end{align}
+\end{subequations}
+wobei \(a\) und \(a^*\) die Vernichter und Erzeuger des Fockraums \(\mathcal{F}\) sind und \(U\) die Streumatrix der 
+Einteilchen Zeitentwicklung ist. Diese Kommutatorbedingungen erzwingen entsprechende Bedingungen für die 
+Koeffizienten \(T_k\), diese konnte ich ausnutzen um Ausdrücke für die \(T_k\) zu gewinnen, welche bis auf 
+Vielfache der Identität eindeutig sind. Um diese Ausdrücke angeben zu können definiere ich zuerst die Abbildung \(G\),
+welche beschränkte lineare Einteilchen Operatoren \(E\) die \(E^*=-E^*\)  erfüllen und auf beschränkte Fockraum Operatoren
+abbildet die wiederum \(G(E)^*=-G(E)\) erfüllen. \(G\) nimmt die folgende Form an
+\begin{equation}
+G(E)=\sum_{n\in \mathbb{N}} \left[a^*(E\varphi_n)a(\varphi_n) - a(\varphi_{-n})a^*(E\varphi_{-n})\right],
+\end{equation}
+wobei \( (\varphi_n)_{n\in \mathbb{Z}\backslash \{0\}}\) eine Orthonormalbasis von \(\mathcal{H}\) ist, welche anhand
+des Vorzeichens des Index aufgeteilt werden kann in eine Orthonormalbasis vom Raum der Lösungen der Diracgleichung
+
+\begin{equation}\label{diraceq}
+i \slashed{\partial}\psi - m \psi = e \slashed{A}\psi
+\end{equation}
+
+mit positiver beziehungsweise negativer Energie. Die Darstellung der \(T_k\) ist
+
+
+{\bfseries Satz:}
+Die \(T_k\) sind gegeben durch
+\begin{equation}
+\frac{1}{n!} T_n = \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}} 
+\sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l},
+\end{equation}
+wobei für eine kompaktere Notation \(\mathbb{N}^0:= \{1\}\) definiert wurde und \(G_{g_l}\) durch
+\begin{equation}
+G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
+\binom{n}{\vec{b}} \prod_{l=1}^g Z_{b_l}  \right)
+\end{equation}
+definiert wird. Die Einteilchen Operatoren \(Z_k\) sind die Koeffizienten der Einteilchen Streumatrix:
+
+\begin{equation}
+U=\sum_{k=0}^\infty \frac{1}{k!} Z_k.
+\end{equation}
+Dadurch ergibt sich eine hübsche Darstellung der gesamten zweit quantisierten Streumatrix.
+
+{\bfseries Satz:}
+Die zweitquantisierte Streumatrix \(S\) ist gegeben durch
+\begin{equation}\label{Smatrix}
+S= e^{i \eta} e^{G(\ln (U))},
+\end{equation}
+wobei \(\eta=-i\sum_{n\in\mathbb{N}}\frac{C_n}{n!}\) gilt.
+
+
+
+Man kann nun das Resultat \eqref{Smatrix} verwenden um dem Hauptziel näher zu kommen indem man
+\(S\) für eine Wahl von \(\eta\in\mathbb{R}\)
+ durch Gleichung \eqref{Smatrix} definiert immer wenn dieser Ausdruck konvergiert.
+Dann folgen aus den Beweisen dieser Sätze die geforderten Kommutationseigenschaften
+\eqref{SKommutator}. Aus einer solchen Definition der Streumatrix folgt, dass diese
+wohldefiniert ist wenn \(\|\id-U\|<1\) gilt. Damit ist also ein Teil des Hauptziels erreicht.
+
+Diese Ergebnisse sind bereits in einem entsprechenden Kapitel meiner werdenden Doktorarbeit
+ ausführlich dokumentiert, allerdings noch nicht publiziert.
+Zudem habe ich eine Analogon zum Wick'schen Satz für Produkte von \(G\) Operatoren bewiesen, dies
+wird es erleichtern explizite Fehlerschranken zu schätzen wenn unsere Ergebnisse mit Experimenten
+verglichen werden.
+
+
+
+\section{Noch abzuschließende Arbeiten}
+Was nun vor allem fehlt ist zu zeigen, dass es eine konsistente Wahl für die Phase \(\eta\) gibt, welche
+einige Eigenschaften erfüllt die man aus physikalischer Intuition
+erwartet. Die Bedingungen an die Phase
+stellen wir an die Zeitentwicklung \(S_{\Sigma',\Sigma}\) von der Cauchyfläche
+ \(\Sigma\) zur Cauchyfläche \(\Sigma'\). 
+Um diese Eigenschaften zu beschreiben, ist es sinnvoll den Strom der zu einer speziellen Phase
+und einem vierer Potential gehört einzuführen. Dieser ist durch Bogoliubovs Formel gegeben:
+
+\begin{equation}
+j^A_{\Sigma}(F)=i \partial_\varepsilon \left. \langle \Omega_{\Sigma}, S^A_{\Sigma,\Sigma'} S_{\tilde{\Sigma},\Sigma}^{A+\varepsilon F} \Omega_{\Sigma}\rangle \right|_{\varepsilon=0}.
+\end{equation}
+
+Der Strom hängt von \(\eta\) ab, weil \(\eta\) eine Funktion des vierer Potentials ist. 
+Die Bedingungen die wir an die Phase \(\eta\) stellen um diese festzulegen sind:
+
+\begin{enumerate}
+\item \emph{lokale Abhängigkeit vom vierer Potential}: \(S^A_{\Sigma',\Sigma}\) hängt nur von \(A\) innerhalb des Volumens das von \(\Sigma\) und \(\Sigma'\) aufgespannt wird ab.
+\item \emph{Gruppeneigenschaft}: Die Zeitentwicklungen zwischen drei beliebigen Cauchyflächen \(\Sigma,\Sigma',\Sigma''\) erfüllen die Bedingungen \(S_{\Sigma'',\Sigma'}^A S_{\Sigma',\Sigma}^A = S_{\Sigma'',\Sigma}^A\)
+\item \emph{Regulariät}: Der Strom \(j^A_{\Sigma}(F)\) und seine Ableitung \(\partial_\delta j^{A+\delta G}_{\Sigma}(F)\) existiert für beliebige Cauchyflächen \(\Sigma\) und vierer Potentiale \(A,F\) und \(G\).
+\end{enumerate}
+
+Die lokale Abhängigkeit fordern wir aus folgendem Grund: Angenommen ein Experimentator präpariert ein spezielles 
+System von Elektronen \(\Psi_0\) zum Zeitpunkt \(t=0\) und danach lässt er ein externes Feld \(A\) bis zu einer Zeit \(t=t'\) wirken.
+Das resultierende System von Elektronen \(\Psi_{t'}\) sollte nun nicht davon abhängen wie das ursprüngliche System präpariert wurde,
+also insbesondere unabhängig von externen Feldern vor \(t=0\) sein. Das System \(\Psi_{t'}\) sollte auch unabhängig davon sein
+was nach dem Experiment \(t>t'\) passiert, sonst wäre die ganze experimentelle Methode unangemessen um das Verhalten von
+solchen Systemen zu bestimmen. Die Gruppeneigenschaft fordern wir aus einer sehr ähnlichen Motivation. Angenommen wir
+haben drei Zeitpunkte \(0, t'>0\) und \(t''>t'\) und ein Experimentator führt zwei Experimente durch. Im ersten Experiment 
+präpariert er ein System von Elektronen \(\Psi_0\) und lässt ein externes Feld \(A\) bis zum Zeitpunkt \(t=t'\) wirken. Das 
+resultierende System \(\Psi_{t'}\) setzt er anschließend noch einem weiteren Feld \(G\) bis zum Zeitpunkt \(t=t''\) aus und
+erhält das System. Das zweite Experiment besteht darin, dass der Experimentator das System \(\Psi_{t'}\) zum
+Zeitpunkt t=0 präpariert und es bis zum Zeitpunkt \(t=t''-t'\) dem Feld \(G\) aussetzt. Nachdem in den beiden Experimenten
+das gleiche System den gleichen Feldern ausgesetzt wird sollte das Resultat auch das Gleiche sein, für alle Felder \(G\)
+und Zeiten \(t''-t'\). Die letzte Forderung ist eine technische Forderung, welche sicherstellt, dass wichtige dynamische Größen
+auch als mathematische Objekte existieren.
+
+Der Beweis der die Existenz einer Phase, welche Forderungen 1.-3. genügt, sicherstellt ist noch nicht 
+ausgeführt. Mein Doktorvater und ich haben allerdings eine vielversprechende Strategie identifiziert mit der wir beabsichtigen
+den Beweis zu führen. Dabei treten einige technische Schwierigkeiten auf. Interessanter Weise scheinen sehr ähnliche 
+technische Schwierigkeiten in der physikalischen Literatur welche
+sich zuerst mit diesem Thema beschäftigte aufgetreten zu sein. Es liegt deshalb nahe die historische Lösung dieses 
+Problems auf unsere Fragestellung zu verallgemeinern. Um Forderungen 1. und 2. zu garantieren,
+benötigt unsere Konstruktion der Phase eine
+spezielle Aufteilung der Änderung des Stroms in zwei Terme die gewisse Kausalitätsbedingungen und 
+Konvergenzeigenschaften erfüllen. Die Konvergenzeigenschaften reiben sich an der Divergenz der 
+Vakuumschleife der zweiten Ordnung der Streumatrix und an der logarithmischen Divergenz der vierten Ordnung
+der Streumatrix, welche der physikalischen Literatur wohlbekannt sind. Wir beabsichtigen diese Probleme 
+mittels Wickrotation und einem der Renormalisierungsverfahren aus der physikalischen Literatur beizukommen. 
+Des Weiteren werden einige Methoden der komplexen Analysis nötig sein um die Kausalitätsbedingungen sicher zu stellen.
+
+Der aktuelle Zeitplan ist wie folgt:
+
+\begin{enumerate}
+\item August - Dezember 2018: Abschätzung der 4. und höheren Ordnungen mittels Wickrotation und funktionalanalytischen Methoden
+\item Januar - Mai 2019: Anpassen des Renormierungsverfahrens der physikalischen Literatur auf die 2. Ordnung
+\item Juni - September 2019: zusammenfassen und publizieren des Ergebnisses
+\item Oktober 2019 - Januar 2020:  Verallgemeinerung des Projekts auf eine selbstkonsistente Kopplung an die Maxwell-Gleichungen.
+\item Februar 2020 - September 2020: erneute Publikation und Verteidigung der Doktorarbeit
+\end{enumerate}
+
+\section{Zeitplan für die Abschlussperspektive}
+
+Die Abschlussperspektive verschiebt sich etwas nach hinten, weil mein Doktorvater und ich die Probleme bei den
+Abschätzungen für die Existenz der Phase nicht von Anfang an richtig einschätzten. Wir sind jedoch sehr zuversichtlich,
+dass der im letzten Abschnitt dargestellte Plan funktionieren wird. 
+
+
+
+
+\section{Cusanische Aktivitäten}
+
+Seit meiner Aufnahme im Cusanuswerk habe ich an einem Jahrestreffen, einem Graduiertenkolleg, Semestereinführungsveranstaltungen und dem Stammtisch der Physiker und Informatiker des Cusanuswerks in München teilgenommen. Auf dem Jahrestreffen war ich beeindruckt davon, wieviel der Organisation des Cusanuswerks von den Stipendiaten selbst übernommen wird. 
+
+Ich versuchte soziales Engagement zu zeigen, als zu Beginn des Jahres ein Kollege Probleme hatte eine Wohnung zu finden und ich ihm deshalb ca. zwei Monate bei mir aufnahm. 
+
+\section{Wissenschaftliche Aktivitäten}
+
+Fast zeitgleich mit dem Förderbeginn organisierte mein Doktorvater ein einwöchiges Seminar am  \href{https://www.mfo.de/}{mathematischen Forschungsinstitut Oberwolfach} zu mathematischen Arbeiten mit Bezug auf Quantenelektrodynamik. Das Seminar war sehr interessant, nicht nur aufgrund der Vorträge, sondern auch weil ich die Möglichkeit hatte mit Professoren zu sprechen die schon einige Erfahrung in diesem Feld gesammelt haben.
+
+Mit einem der Wissenschaftler der auch an dem Seminar in Oberwolfach anwesend war, Prof. Volker Bach, veranstalteten wir im Januar einen intensiveren Austausch zwischen unseren Gruppen. Zu diesem Zweck fuhren wir(das sind Prof. Deckert und seine Doktoranden) nach Braunschweig um dort unsere Projekte und Ergebnisse vorzutragen und hörten uns Vorträge von Prof. Bachs Gruppe zu deren Projekten an. 
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

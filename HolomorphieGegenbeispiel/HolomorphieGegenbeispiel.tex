@@ -1,0 +1,53 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+
+%identity sign
+\usepackage{dsfont}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+Gesucht waren für \(n \in \mathbb{N}\), \(z_1,\dots z_n\in ]0,1[ \), 
+\(k_1, \dots, k_{n-1}\in \mathbb{R}^4+i \text{Causal}^+\) sodass
+
+\begin{equation}
+\sum_{\stackrel{l,j=0}{j>l}}^{n-1} z_j z_l \left( \sum_{c=l+1}^j k_c \right)^2\in \mathbb{R}^+
+\end{equation}
+gilt.
+
+Ein Beispiel hierfür ist \(n=4, \forall j: z_j=\frac{1}{4}\), \(k_1=\left( -\frac{7}{3} + i \frac{2}{\sqrt{15}}\right) e_0, k_2=k_3=\left(1+i \frac{2}{\sqrt{15}}\right) e_0\), hierfür gilt nämlich
+
+\begin{align}
+&\sum_{\stackrel{l,j=0}{j>l}}^{3} z_j z_l \left( \sum_{c=l+1}^j k_c \right)^2\\
+&=\frac{1}{16} \left(k_1^2 + k_2^2 + k_3^2 + (k_1+k_2)^2 + (k_2+k_3)^2 + (k_1+k_2+k_3)^2 \right)= \frac{1}{2}.
+\end{align}
+
+\end{document}
+

@@ -29,6 +29,8 @@
 \newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
 \newcommand{\equalmath}[1]{\ensuremath{\stackrel{#1}{=}}}
 
+\newtheorem{vermutung}{Vermutung}
+\newtheorem{satz}{Satz}
 
 \newcommand{\id}{{\mathbbm 1}}
 
@@ -45,7 +47,7 @@
 \begin{document}
 
 \begin{center}
-{\huge Verlängerungsantrag zur Förderung des Promotionsvorhabens mit dem Titel
+{\huge Arbeitsbericht zum Promotionsvorhaben mit dem Titel
 \\
 {\Large Electron-Positron Pair Creation in External Fields \\
 Rigorous Control of the Scattering Matrix Expansion}}
@@ -79,32 +81,34 @@ verhindert dann, dass weitere Elektronen diese Zustände annehmen. Dieser See au
 also sicher, dass die beschriebenen Teilchen stabileres Verhalten zeigen, als Gleichung \eqref{diraceq} zuerst vermuten lässt.
 
 
-Dirac argumentierte weiter\cite{theoriedupositron}, dass dieser See so homogen sei, dass alle Wechselwirkung zwischen 
+Dirac argumentierte weiter in seiner Veröffentlichung zur Theorie der Positronen, 
+dass dieser See so homogen sei, dass alle Wechselwirkung zwischen 
 Teilchen des Sees so symmetrisch erfolgt und sich dadurch gegenseitig aufhebt, sodass insgesamt keine Wechselwirkung 
 beobachtbar ist. Durch ein externes Feld kann das System allerdings so stark gestört werden, dass ein Elektron aus dem
 See in die Zustände positiver Energie gehoben wird und somit sowohl ein Teilchen positiver Energie als auch ein Loch
 im See übrig bleiben. Obwohl der Dirac See auf diese Weise eine schöne anschauliche Erklärung von Paarerzeugung liefert,
 bereitet die Formulierung einer mathematisch sauberen Beschreibung des Phänomens nach wie vor Probleme. 
 
-In meiner Promotion konzentriere ich mich auf Quantenelektrodynamic (QED) externer Felder, in diesem vereinfachten Modell 
+In meiner Promotion konzentriere ich mich auf Quantenelektrodynamik (QED) externer Felder, in diesem vereinfachten Modell 
 betrachtet man nicht wie sich die Teilchen gegenseitig beeinflussen sondern ausschließlich wie externe Felder auf die Teilchen
 wirken. Antworten auf Experimentelle Fragen wie ``Wie verhält sich ein System aus Elektronen nachdem es für eine längere 
 Zeit einem starken Laser ausgesetzt war?'' kann man an der sogenannten Streumatrix ablesen. Dieses Objekt wird für 
 gewöhnlich durch eine Summe aus unendlich vielen Termen dargestellt. Für viele Modelle der QED ist bekannt,
 dass eine solche perturbative Darstellung nicht konvergiert, weshalb eine andere Darstellung der Streumatrix gefunden
-werden muss. Für QED externer Felder denkt man jedoch\cite{mickelsson}, dass die Situation besser ist und 
+werden muss. Für QED externer Felder denkt man jedoch, dass die Situation besser ist und 
 die Reihe der Streumatrix konvergiert. Mein Projekt besteht darin diese Vermutung in Wissen umzusetzen.
 
 \section{Erreichte Ergebnisse}
 
 In meinem Antrag schrieb ich, dass das Hauptziel darin besteht ein Konvergenzresultat der folgenden Form zu erreichen. 
 
-{\bfseries Vermutung:}
+\begin{vermutung}
 Für alle glatten Viererpotentiale \(A\in C_c^\infty(\mathbb{R}^4)\otimes \mathbb{C}^4\), Ladungen \(e\in\mathbb{R}\)
 und Fockraumzustände \(\Psi,\Phi\in \mathcal{F}\) existiert der folgende Grenzwert
 \begin{equation}\label{Ziel}
 \lim_{n\rightarrow \infty} \langle \Psi\mid \sum_{k=0}^n \frac{e^k}{k!} T_k(A) \Phi \rangle.
 \end{equation}
+\end{vermutung}
 
 Hierbei beschreibt die Reihe in der Mitte die Streumatrix. Die \(T_k\) sind also im wesentlichen der Beitrag der
  \(k\)-ten Ordnung zur Streumatrix. Es gelten außerdem die Kommutatorbedingung der Streumatrix \(S\) für beliebige
@@ -134,7 +138,7 @@ i \slashed{\partial}\psi - m \psi = e \slashed{A}\psi
 mit positiver beziehungsweise negativer Energie. Die Darstellung der \(T_k\) ist
 
 
-{\bfseries Satz:}
+\begin{satz}
 Die \(T_k\) sind gegeben durch
 \begin{equation}
 \frac{1}{n!} T_n = \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}} 
@@ -151,15 +155,16 @@ definiert wird. Die Einteilchen Operatoren \(Z_k\) sind die Koeffizienten der Ei
 \begin{equation}
 U=\sum_{k=0}^\infty \frac{1}{k!} Z_k.
 \end{equation}
+\end{satz}
 Dadurch ergibt sich eine hübsche Darstellung der gesamten zweit quantisierten Streumatrix.
 
-{\bfseries Satz:}
+\begin{satz}
 Die zweitquantisierte Streumatrix \(S\) ist gegeben durch
 \begin{equation}\label{Smatrix}
 S= e^{i \eta} e^{G(\ln (U))},
 \end{equation}
 wobei \(\eta=-i\sum_{n\in\mathbb{N}}\frac{C_n}{n!}\) gilt.
-
+\end{satz}
 
 
 Man kann nun das Resultat \eqref{Smatrix} verwenden um dem Hauptziel näher zu kommen indem man
@@ -171,7 +176,7 @@ wohldefiniert ist wenn \(\|\id-U\|<1\) gilt. Damit ist also ein Teil des Hauptzi
 
 Diese Ergebnisse sind bereits in einem entsprechenden Kapitel meiner werdenden Doktorarbeit
  ausführlich dokumentiert, allerdings noch nicht publiziert.
-Zudem habe ich eine Analogon zum Wick'schen Satz für Produkte von \(G\) Operatoren bewiesen, dies
+Zudem habe ich ein Analogon zum Wick'schen Satz für Produkte von \(G\) Operatoren bewiesen, dies
 wird es erleichtern explizite Fehlerschranken zu schätzen wenn unsere Ergebnisse mit Experimenten
 verglichen werden.
 
@@ -204,18 +209,22 @@ System von Elektronen \(\Psi_0\) zum Zeitpunkt \(t=0\) und danach lässt er ein 
 Das resultierende System von Elektronen \(\Psi_{t'}\) sollte nun nicht davon abhängen wie das ursprüngliche System präpariert wurde,
 also insbesondere unabhängig von externen Feldern vor \(t=0\) sein. Das System \(\Psi_{t'}\) sollte auch unabhängig davon sein
 was nach dem Experiment \(t>t'\) passiert, sonst wäre die ganze experimentelle Methode unangemessen um das Verhalten von
-solchen Systemen zu bestimmen. Die Gruppeneigenschaft fordern wir aus einer sehr ähnlichen Motivation. Angenommen wir
+solchen Systemen zu bestimmen. 
+
+Die Gruppeneigenschaft fordern wir aus einer sehr ähnlichen Motivation: Angenommen wir
 haben drei Zeitpunkte \(0, t'>0\) und \(t''>t'\) und ein Experimentator führt zwei Experimente durch. Im ersten Experiment 
 präpariert er ein System von Elektronen \(\Psi_0\) und lässt ein externes Feld \(A\) bis zum Zeitpunkt \(t=t'\) wirken. Das 
 resultierende System \(\Psi_{t'}\) setzt er anschließend noch einem weiteren Feld \(G\) bis zum Zeitpunkt \(t=t''\) aus und
-erhält das System. Das zweite Experiment besteht darin, dass der Experimentator das System \(\Psi_{t'}\) zum
+erhält das System \(\Psi_{t''}\). Das zweite Experiment besteht darin, dass der Experimentator das System \(\Psi_{t'}\) zum
 Zeitpunkt t=0 präpariert und es bis zum Zeitpunkt \(t=t''-t'\) dem Feld \(G\) aussetzt. Nachdem in den beiden Experimenten
 das gleiche System den gleichen Feldern ausgesetzt wird sollte das Resultat auch das Gleiche sein, für alle Felder \(G\)
-und Zeiten \(t''-t'\). Die letzte Forderung ist eine technische Forderung, welche sicherstellt, dass wichtige dynamische Größen
+und Zeiten \(t''-t'\). 
+
+Die letzte Forderung ist eine technische Forderung, welche sicherstellt, dass wichtige dynamische Größen
 auch als mathematische Objekte existieren.
 
 Der Beweis der die Existenz einer Phase, welche Forderungen 1.-3. genügt, sicherstellt ist noch nicht 
-ausgeführt. Mein Doktorvater und ich haben allerdings eine vielversprechende Strategie identifiziert mit der wir beabsichtigen
+ausgeführt. Prof. Deckert, Prof. Merkl und ich haben allerdings eine vielversprechende Strategie identifiziert mit der wir beabsichtigen
 den Beweis zu führen. Dabei treten einige technische Schwierigkeiten auf. Interessanter Weise scheinen sehr ähnliche 
 technische Schwierigkeiten in der physikalischen Literatur welche
 sich zuerst mit diesem Thema beschäftigte aufgetreten zu sein. Es liegt deshalb nahe die historische Lösung dieses 
@@ -228,21 +237,23 @@ der Streumatrix, welche der physikalischen Literatur wohlbekannt sind. Wir beabs
 mittels Wickrotation und einem der Renormalisierungsverfahren aus der physikalischen Literatur beizukommen. 
 Des Weiteren werden einige Methoden der komplexen Analysis nötig sein um die Kausalitätsbedingungen sicher zu stellen.
 
-Der aktuelle Zeitplan ist wie folgt:
+
+\section{Zeitplan für die Abschlussperspektive}
+
+Die Abschlussperspektive verschiebt sich etwas nach hinten, weil mein Doktorvater und ich die Probleme bei den
+Abschätzungen für die Existenz der Phase nicht von Anfang an richtig einschätzten. Wir sind jedoch sehr zuversichtlich,
+dass die im letzten Abschnitt dargestellte Strategie erfolgreich sein wird. 
+
+Der aktuelle Zeitplan demnach ist wie folgt:
 
 \begin{enumerate}
 \item August - Dezember 2018: Abschätzung der 4. und höheren Ordnungen mittels Wickrotation und funktionalanalytischen Methoden
 \item Januar - Mai 2019: Anpassen des Renormierungsverfahrens der physikalischen Literatur auf die 2. Ordnung
 \item Juni - September 2019: zusammenfassen und publizieren des Ergebnisses
 \item Oktober 2019 - Januar 2020:  Verallgemeinerung des Projekts auf eine selbstkonsistente Kopplung an die Maxwell-Gleichungen.
-\item Februar 2020 - September 2020: erneute Publikation und Verteidigung der Doktorarbeit
+\item Februar 2020 - September 2020: erneute Publikation und Verteidigung der Doktorarbeit.
 \end{enumerate}
 
-\section{Zeitplan für die Abschlussperspektive}
-
-Die Abschlussperspektive verschiebt sich etwas nach hinten, weil mein Doktorvater und ich die Probleme bei den
-Abschätzungen für die Existenz der Phase nicht von Anfang an richtig einschätzten. Wir sind jedoch sehr zuversichtlich,
-dass der im letzten Abschnitt dargestellte Plan funktionieren wird. 
 
 
 
@@ -255,10 +266,14 @@ Ich versuchte soziales Engagement zu zeigen, als zu Beginn des Jahres ein Kolleg
 
 \section{Wissenschaftliche Aktivitäten}
 
-Fast zeitgleich mit dem Förderbeginn organisierte mein Doktorvater ein einwöchiges Seminar am  \href{https://www.mfo.de/}{mathematischen Forschungsinstitut Oberwolfach} zu mathematischen Arbeiten mit Bezug auf Quantenelektrodynamik. Das Seminar war sehr interessant, nicht nur aufgrund der Vorträge, sondern auch weil ich die Möglichkeit hatte mit Professoren zu sprechen die schon einige Erfahrung in diesem Feld gesammelt haben.
+Fast zeitgleich mit dem Förderbeginn organisierte Prof. Deckert zusammen mit einigen Kollegen ein einwöchiges Seminar am  \href{https://www.mfo.de/}{mathematischen Forschungsinstitut Oberwolfach} zu mathematischen Arbeiten mit Bezug zur Quantenelektrodynamik. Das Seminar war sehr interessant, nicht nur aufgrund der Vorträge, sondern auch weil ich die Möglichkeit hatte mit Professoren zu sprechen die schon einige Erfahrung in diesem Feld gesammelt haben.
 
 Mit einem der Wissenschaftler der auch an dem Seminar in Oberwolfach anwesend war, Prof. Volker Bach, veranstalteten wir im Januar einen intensiveren Austausch zwischen unseren Gruppen. Zu diesem Zweck fuhren wir(das sind Prof. Deckert und seine Doktoranden) nach Braunschweig um dort unsere Projekte und Ergebnisse vorzutragen und hörten uns Vorträge von Prof. Bachs Gruppe zu deren Projekten an. 
+Eine Zusammenarbeit mit dieser Gruppe mathematischer Physiker könnte sehr fruchtbar sein, nachdem Prof. Bach durch seine langjährige Erfahrung in der mathematischen Physik über eine sehr breite Expertise verfügt. 
 
+Im Juli 2018 fahre ich zum International Congress on Mathematical Physics nach Montreal in Canada und trage dort 
+meine bisher erreichten Ergebnisse vor. Dort bietet sich eine sehr gute Gelegenheit Feedback von führenden Wissenschaftlern
+aus mein Feld zu unserem Projekt zu erhalten und Kontakte für zukünftige Zusammenarbeit zu knüpfen.
 
 
 

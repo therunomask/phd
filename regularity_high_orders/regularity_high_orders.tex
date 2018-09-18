@@ -155,7 +155,7 @@ For this purpose let \(x^0>0\) and let \(f\in C_c^\infty (\mathbb{R}^3)\), we co
 =\frac{-1}{(2\pi)^{\frac{5}{2}}} \int_{\mathbb{R}^3} d^3p \int_{\mathbb{R}\pm i \varepsilon}dp^0 \frac{e^{-ix^0 p^0}}{(p^0-E(\vec{p}))(p^0+E(\vec{p}))}\hat{f}(\vec{p})\\\label{time sign change}
 \overset{*}{=}\frac{-1}{(2\pi)^{\frac{5}{2}}}  \left\{\begin{matrix}D_+:&&~ \int_{\mathbb{R}^3}d^3p  (-2\pi i)\left(\frac{e^{-ix^0 E(\vec{p})}}{2E(\vec{p})}+\frac{e^{ix^0 E(\vec{p})}}{-2E(\vec{p})} \right) \hat{f}(\vec{p})
 \\D_-:&& 0 \end{matrix} \right.\\
-=\frac{1}{(2\pi)^{\frac{3}{2}}} \int_{\mathbb{R}^3} d^3p\left\{ \begin{matrix}D_+: &&\sin(E(\vec{p})x^0)\\D_-:  &&0 \end{matrix}\right\} \hat{f}(\vec{p}).
+=\frac{1}{(2\pi)^{\frac{3}{2}}} \int_{\mathbb{R}^3} d^3p\left\{ \begin{matrix}D_+: &&\sin(E(\vec{p})x^0)\\D_-:  &&0 \end{matrix}\right\} \frac{\hat{f}(\vec{p})}{E(p)}.
 \end{align}
 
 where for the with \(*\) marked equality we closed the contour in the lower half plane, enclosing no pole for \(D_-\) while enclosing both
@@ -164,9 +164,9 @@ fast enough for large arguments we can introduce
 the following limit via Lebesgues theorem of dominated convergence:
 
 \begin{align}
-\int_{\mathbb{R}^3} D_+ (x) f(\vec{x})d^3x =\frac{-2i}{(2\pi)^{\frac{3}{2}}} \lim_{\varepsilon \searrow 0}\int_{\mathbb{R}^3} d^3p
+\int_{\mathbb{R}^3} D_+ (x) f(\vec{x})d^3x =\frac{-i}{2(2\pi)^{\frac{3}{2}}} \lim_{\varepsilon \searrow 0}\int_{\mathbb{R}^3} d^3p
 \left( \frac{e^{i (x^0+i \varepsilon) E(\vec{p})}}{E(\vec{p})} - \frac{e^{-i (x^0-i \varepsilon)E(\vec{p})}}{E(\vec{p})} \right) \hat{f}(\vec{p})\\
-\overset{*}{=} \frac{-2i}{(2\pi)^{3}} \lim_{\varepsilon \searrow 0}  \int_{\mathbb{R}^3} d^3 x \int_{\mathbb{R}^3} d^3 p 
+\overset{*}{=} \frac{-i}{2(2\pi)^{3}} \lim_{\varepsilon \searrow 0}  \int_{\mathbb{R}^3} d^3 x \int_{\mathbb{R}^3} d^3 p 
 \left( \frac{e^{i E(\vec{p})(x^0+i\varepsilon)}}{E(\vec{p})} 
 -\frac{e^{-i E(\vec{p})(x^0-i\varepsilon)}}{E(\vec{p})} \right)e^{i\vec{p}\cdot \vec{x}}f(\vec{x}),
 \end{align}
@@ -176,7 +176,7 @@ where for the marked equality we used the theorem of Plancherel. Now we look at 
 \begin{align}
 \int_{\mathbb{R}^3}d^3p \frac{e^{iE(\vec{p})(x^0+i\varepsilon)}}{E(\vec{p})} e^{i\vec{p}\cdot\vec{x}} \\
 = 2\pi \int_0^\infty dp \frac{p^2}{\sqrt{m^2+p^2}} e^{i \sqrt{m^2+p^2}(x^0+i\varepsilon)} \int_{-1}^1 d \cos \theta e^{i p |\vec{x}| \cos \theta}\\
-=2\pi \int_0^\infty dp \frac{p^2}{\sqrt{m^2+p^2}} e^{i \sqrt{m^2+p^2}(x^0+i\varepsilon)} \frac{1}{i p |\vec{x}} \left(e^{i p |\vec{x}|} - e^{-i p |\vec{x}|}\right)\\
+=2\pi \int_0^\infty dp \frac{p^2}{\sqrt{m^2+p^2}} e^{i \sqrt{m^2+p^2}(x^0+i\varepsilon)} \frac{1}{i p |\vec{x}|} \left(e^{i p |\vec{x}|} - e^{-i p |\vec{x}|}\right)\\
 =4\frac{\pi}{|\vec{x}|} \int_0^\infty dp \frac{p}{\sqrt{m^2+p^2}} e^{i \sqrt{m^2+p^2}(x^0+i\varepsilon)} \sin( p |\vec{x}|)\\
 \overset{\text{Gradsteyn, Ryzhik}, 3.961.1}{=} 4\pi m^2 \frac{K_1\left(m \sqrt{|\vec{x}|^2 + (\varepsilon - i x_0)^2}\right)}{m \sqrt{|\vec{x}|^2 + (\varepsilon - i x_0)^2}}
 \end{align}
@@ -191,11 +191,11 @@ putting the last three calculations together we find an explicit expression of t
 for \(x^0>0\):
 
 \begin{align}
-\int_{\mathbb{R}^3} D_+(x)f(\vec{x})d^3x= \frac{-2i}{(2\pi)^3} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3 x  m^2 4\pi \\
+\int_{\mathbb{R}^3} D_+(x)f(\vec{x})d^3x= \frac{-i}{2(2\pi)^3} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3 x  m^2 4\pi \\
 \left(\frac{K_1\left(m \sqrt{|\vec{x}|^2 + (\varepsilon - i x_0)^2}\right)}{m \sqrt{|\vec{x}|^2 + (\varepsilon - i x_0)^2}}
 -\frac{K_1\left(m \sqrt{|\vec{x}|^2 + (\varepsilon + i x_0)^2}\right)}{m \sqrt{|\vec{x}|^2 + (\varepsilon + i x_0)^2}}
   \right) f(\vec{x})\\
-  =\frac{2 m^2}{\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3x \Im\left( \frac{K_1\left(m \sqrt{|\vec{x}|^2 + (\varepsilon - i x_0)^2}\right)}{m \sqrt{|\vec{x}|^2 + (\varepsilon - i x_0)^2}}
+  =\frac{ m^2}{2\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3x \Im\left( \frac{K_1\left(m \sqrt{|\vec{x}|^2 + (\varepsilon - i x_0)^2}\right)}{m \sqrt{|\vec{x}|^2 + (\varepsilon - i x_0)^2}}
   \right) f(\vec{x}).
   \end{align}
 
@@ -206,7 +206,7 @@ a positive winding number of 1 instead of one of -1. Doing this results in
 
 \begin{align}
 \int_{\mathbb{R}^3} D_-(x)f(\vec{x})d^3x
-  =\frac{2 m^2}{\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3x \Im\left( \frac{K_1\left(m \sqrt{|\vec{x}|^2 + (\varepsilon + i x_0)^2}\right)}{m \sqrt{|\vec{x}|^2 + (\varepsilon + i x_0)^2}}
+  =\frac{ m^2}{2\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3x \Im\left( \frac{K_1\left(m \sqrt{|\vec{x}|^2 + (\varepsilon + i x_0)^2}\right)}{m \sqrt{|\vec{x}|^2 + (\varepsilon + i x_0)^2}}
   \right) f(\vec{x}).
   \end{align}
 
@@ -232,7 +232,7 @@ Summarising we write for general \(x^0\in \mathbb{R}\)
 
 \begin{equation}\label{ImK1}
 \int_{\mathbb{R}^3}d^3 x D_\pm (x) f(\vec{x}) = 
-\mp \theta_0(\pm x^0) \frac{2 m^2}{\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3}d^3 x f(\vec{x}) \Im 
+\mp \theta_0(\pm x^0) \frac{ m^2}{2\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3}d^3 x f(\vec{x}) \Im 
 \frac{K_1(m \sqrt{-x^2 +2 i \varepsilon x^0 + \varepsilon^2})}{m \sqrt{-x^2 +2 i \varepsilon x^0 + \varepsilon^2}},
 \end{equation}
 
@@ -253,45 +253,45 @@ Let \(x^0\neq 0\) and \(f\in C_c^\infty(\mathbb{R}^3)\) as before,
 we are going to massage the first part of the right hand side of \eqref{ImK1}, which is
 
 \begin{align}
-\mp \theta_0(\pm x^0) \frac{2 m^2}{\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3x f(\vec{x}) \Im \frac{1}{m^2 (-x^2 + 2 i \varepsilon x^0 + \varepsilon^2)}\\
-=\mp \theta_0(\pm x^0) \frac{2 }{\pi^2} \lim_{\varepsilon \searrow 0}\int_0^\infty dy  \overbrace{\int_{S^2} d\Omega f(\Omega, y) y^2}^{=:g(y)} \Im \frac{1}{-(x^0)^2+ y^2 + 2 i \varepsilon x^0 + \varepsilon^2}\\
-=\mp \theta_0(\pm x^0) \frac{2 }{\pi^2} \lim_{\varepsilon \searrow 0}\int_0^\infty dy~ g(y)\frac{1}{2\sqrt{(x^0)^2-i \varepsilon x^0 - \varepsilon^2}} \\
+\mp \theta_0(\pm x^0) \frac{ m^2}{2\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3x f(\vec{x}) \Im \frac{1}{m^2 (-x^2 + 2 i \varepsilon x^0 + \varepsilon^2)}\\
+=\mp \theta_0(\pm x^0) \frac{1 }{2\pi^2} \lim_{\varepsilon \searrow 0}\int_0^\infty dy  \overbrace{\int_{S^2} d\Omega f(\Omega, y) y^2}^{=:g(y)} \Im \frac{1}{-(x^0)^2+ y^2 + 2 i \varepsilon x^0 + \varepsilon^2}\\
+=\mp \theta_0(\pm x^0) \frac{1 }{2\pi^2} \lim_{\varepsilon \searrow 0}\int_0^\infty dy~ g(y)\frac{-1}{2\sqrt{(x^0)^2-i \varepsilon x^0 - \varepsilon^2}} \\
 \Im 
  \Big(\frac{1}{y+ \sqrt{(x^0)^2-2 i \varepsilon x^0 - \varepsilon^2}}-\frac{1}{y- \sqrt{(x^0)^2-2 i \varepsilon x^0 - \varepsilon^2}} \Big)\\
-=\mp \theta_0(\pm x^0) \frac{1 }{|x^0|\pi^2} 
+=\pm \theta_0(\pm x^0) \frac{1 }{4 |x^0|\pi^2} 
  \Big(\lim_{\varepsilon \searrow 0}\int_0^\infty dy~ g(y) \Im \frac{1}{y+ \sqrt{(x^0)^2-2 i \varepsilon x^0 - \varepsilon^2}}\\
 -\lim_{\varepsilon \searrow 0}\int_0^\infty dy~ g(y) \Im \frac{1}{y- \underbrace{\sqrt{(x^0)^2-2 i \varepsilon x^0 - \varepsilon^2}}_{:= \alpha_\varepsilon + i \beta_\varepsilon}}\Big)\\
-\overset{\text{Lebesgue d.c.}}{=}\mp \theta_0(\pm x^0) \frac{1 }{|x^0|\pi^2} 
+\overset{\text{Lebesgue d.c.}}{=}\pm \theta_0(\pm x^0) \frac{1 }{4 |x^0|\pi^2} 
  \left(\int_0^\infty dy~ g(y) \Im \frac{1}{y+|x^0|}\right.\\
 \left.-\lim_{\varepsilon \searrow 0}\int_0^\infty dy~ g(y) \Im \frac{1}{y- \alpha_\varepsilon -i \beta_\varepsilon}\right)\\
-=\mp \theta_0(\pm x^0) \frac{-1 }{|x^0|\pi^2} \lim_{\varepsilon \searrow 0} \int_0^\infty dy g(y) \frac{\beta_\varepsilon}{(y-\alpha_\varepsilon)^2+\beta_\varepsilon^2}\\
-\overset{|\beta_\varepsilon|(z-\alpha_\varepsilon) :=y}{=}\mp \theta_0(\pm x^0) \frac{-1 }{|x^0|\pi^2} 
+=\pm \theta_0(\pm x^0) \frac{-1 }{4 |x^0|\pi^2} \lim_{\varepsilon \searrow 0} \int_0^\infty dy g(y) \frac{\beta_\varepsilon}{(y-\alpha_\varepsilon)^2+\beta_\varepsilon^2}\\
+\overset{|\beta_\varepsilon|(z-\alpha_\varepsilon) :=y}{=}\pm \theta_0(\pm x^0) \frac{-1 }{4|x^0|\pi^2} 
 \lim_{\varepsilon \searrow 0} \int_{-\frac{\alpha_\varepsilon}{|\beta_\varepsilon|}}^\infty dz 
  g(z |\beta_\varepsilon|+\alpha_\varepsilon) \text{sgn}(\beta_\varepsilon) \frac{1}{ z^2+1}\\
- \overset{\text{Lebesuge d.c.}}{=}\mp \theta_0(\pm x^0) \frac{-1 }{|x^0|\pi^2} 
+ \overset{\text{Lebesuge d.c.}}{=}\pm \theta_0(\pm x^0) \frac{-1 }{4 |x^0|\pi^2} 
 \int_\mathbb{R} dz\frac{1}{z^2+1}\lim_{\varepsilon \searrow 0}  1_{z>-\frac{\alpha_\varepsilon}{|\beta_\varepsilon|}} g(z |\beta_\varepsilon|+\alpha_\varepsilon) \text{sgn}(\beta_\varepsilon)\\
-=\mp \theta_0(\pm x^0) \frac{-1 }{|x^0|\pi^2} \int_\mathbb{R} dz\frac{1}{z^2+1}  g(|x^0|) \text{sgn}(- x^0)\\
-=\mp \theta_0(\pm x^0) \frac{\text{sgn}(x^0)}{|x^0| \pi} g(|x^0|)\\
-=\mp \theta_0(\pm x^0) \frac{\text{sgn}(x^0)}{|x^0| \pi} \int_{S^2} d\Omega |x^0|^2 f(\Omega, |x^0|)\\
-=\mp \theta_0(\pm x^0) \frac{2~\text{sgn}(x^0)}{ \pi} \int_{\mathbb{R}^3} d^3x \delta(x^2) f(\vec{x}).
+=\pm \theta_0(\pm x^0) \frac{-1 }{4 |x^0|\pi^2} \int_\mathbb{R} dz\frac{1}{z^2+1}  g(|x^0|) \text{sgn}(- x^0)\\
+=\pm \theta_0(\pm x^0) \frac{\text{sgn}(x^0)}{4|x^0| \pi} g(|x^0|)\\
+=\pm \theta_0(\pm x^0) \frac{\text{sgn}(x^0)}{4|x^0| \pi} \int_{S^2} d\Omega |x^0|^2 f(\Omega, |x^0|)\\
+=\pm \theta_0(\pm x^0) \frac{\text{sgn}(x^0)}{2 \pi} \int_{\mathbb{R}^3} d^3x \delta(x^2) f(\vec{x}).
 \end{align}
 
 Next up is the part proportional to a logarithm, we will use the same abbreviation \(g\),
 
 \begin{align}
-\mp \theta_0(\pm x^0) \frac{2m^2}{\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3x f(\vec{x})~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
+\mp \theta_0(\pm x^0) \frac{m^2}{2\pi^2} \lim_{\varepsilon \searrow 0} \int_{\mathbb{R}^3} d^3x f(\vec{x})~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
  \Im \ln \overbrace{\frac{m^2(-x^2+2i\varepsilon x^0 + \varepsilon^2)}{4} }^{=: r_\varepsilon (|\vec{x}|)e^{i \varphi_\varepsilon (|\vec{x}|)}}I(m^2 (-x^2+2i\varepsilon x^0 + \varepsilon^2))\\
-=\mp \theta_0(\pm x^0) \frac{2m^2}{\pi^2} \lim_{\varepsilon \searrow 0} \int_\mathbb{R} dy g(y) \Im \Big[\ln r_\varepsilon(y)
+=\mp \theta_0(\pm x^0) \frac{m^2}{2\pi^2} \lim_{\varepsilon \searrow 0} \int_\mathbb{R} dy g(y) \Im \Big[\ln r_\varepsilon(y)
 I(m^2 (-(x^0)^2 + y^2+2i\varepsilon x^0 + \varepsilon^2))\Big]\\
-\mp \theta_0(\pm x^0) \frac{2m^2}{\pi^2} \lim_{\varepsilon \searrow 0} \int_\mathbb{R} dy g(y) \Im\Big[ i \varphi_\varepsilon(y)
+=\mp \theta_0(\pm x^0) \frac{m^2}{2\pi^2} \lim_{\varepsilon \searrow 0} \int_\mathbb{R} dy g(y) \Im\Big[ i \varphi_\varepsilon(y)
  I(m^2 (-(x^0)^2 + y^2+2i\varepsilon x^0 + \varepsilon^2))\Big]\\
- \overset{\text{Lebesgue d.c.}}{=}\mp \theta_0(\pm x^0) \frac{2m^2}{\pi^2}  \int_\mathbb{R} dy g(y) \Im \Big[\ln |(x^0)^2-y^2|
+ \overset{\text{Lebesgue d.c.}}{=}\mp \theta_0(\pm x^0) \frac{m^2}{2\pi^2}  \int_\mathbb{R} dy g(y) \Im \Big[\ln |(x^0)^2-y^2|
 I(m^2 (-(x^0)^2 + y^2))\Big]\\
-\mp \theta_0(\pm x^0) \frac{2m^2}{\pi^2}  \int_\mathbb{R} dy g(y)\lim_{\varepsilon \searrow 0} \Im[ i \varphi_\varepsilon(y)]
+=\mp \theta_0(\pm x^0) \frac{m^2}{2\pi^2}  \int_\mathbb{R} dy g(y)\lim_{\varepsilon \searrow 0} \Im[ i \varphi_\varepsilon(y)]
  I(m^2 (-(x^0)^2 + y^2))\\
- =\mp \theta_0(\pm x^0) \frac{2m^2}{\pi^2}  \int_\mathbb{R} dy g(y) \pi \text{sgn}(x^0) \theta((x^0)^2-y^2)
+ =\mp \theta_0(\pm x^0) \frac{m^2}{2\pi^2}  \int_\mathbb{R} dy g(y) \pi \text{sgn}(x^0) \theta((x^0)^2-y^2)
  I(m^2 (-(x^0)^2 + y^2))\\
- = \mp \theta_0(\pm x^0) \frac{2 m^2}{\pi} \int_{\mathbb{R}^3} d^3 x f(\vec{x}) \text{sgn}(x^0) \theta(x^2) I(-m^2x^2).
+ = \mp \theta_0(\pm x^0) \frac{ m^2}{2\pi} \int_{\mathbb{R}^3} d^3 x f(\vec{x}) \text{sgn}(x^0) \theta(x^2) I(-m^2x^2).
 \end{align}
 
 Now the last term in \(\frac{K_1(\sqrt{\cdot})}{\sqrt{\cdot}}\) is entire (therefore continuous on all of \(\mathbb{C}\)) 
@@ -300,17 +300,23 @@ in the last calculation this term does not survive Lebesgues dominated convergen
 So we can give representation of \(D_\pm\) without a limit
 
 \begin{align}
-\int_{\mathbb{R}^3}d^3 x D_\pm (x) f(\vec{x}) = \mp \theta_0(\pm x^0)\frac{2 ~\text{sgn}(x^0)}{\pi} \int_{\mathbb{R}^3}d^3 x ( \delta(x^2)+m^2 \theta(x^2) I(-m^2x^2))f(\vec{x})\\
-=- \theta_0(\pm x^0)\frac{2 }{\pi} \int_{\mathbb{R}^3}d^3 x ( \delta(x^2)+m^2 \theta(x^2) I(-m^2x^2))f(\vec{x}),
+\int_{\mathbb{R}^3}d^3 x D_\pm (x) f(\vec{x}) = \mp \theta_0(\pm x^0)\frac{\text{sgn}(x^0)}{2\pi} \int_{\mathbb{R}^3}d^3 x (- \delta(x^2)+m^2 \theta(x^2) I(-m^2x^2))f(\vec{x})\\
+= \theta_0(\pm x^0)\frac{1 }{2\pi} \int_{\mathbb{R}^3}d^3 x ( \delta(x^2)-m^2 \theta(x^2) I(-m^2x^2))f(\vec{x}),
 \end{align}
 
 or in other words, the equation
 
 \begin{equation}
-D_\pm (x)=- \theta_0(\pm x^0)\frac{2 }{\pi} \left( \delta(x^2)+m^2 \theta(x^2) I(-m^2x^2)\right)
+D_\pm (x)= \theta_0(\pm x^0)\frac{1 }{2\pi} \left( \delta(x^2)-m^2 \theta(x^2) I(-m^2x^2)\right)
 \end{equation}
 holds.
 
+This can also be expressed directly in terms of Bessel functions:
+
+\begin{align}
+D_\pm (x)= \theta_0(\pm x^0)\frac{1 }{2\pi} \left( \delta(x^2)-\frac{m^2}{2} \theta(x^2) \frac{I_1(m\sqrt{-x^2})}{m\sqrt{-x^2}}\right)\\
+D_\pm (x)= \theta_0(\pm x^0)\frac{1 }{2\pi} \left( \delta(x^2)-\frac{m^2}{2} \theta(x^2) \frac{J_1(m\sqrt{x^2})}{m\sqrt{x^2}}\right).
+\end{align}
 
 
 \section{Expansion}
@@ -343,26 +349,26 @@ and
 \subsection{Simple Convolutions}
 
 Considering \eqref{trace} together with \eqref{SSeries} we are going to look at pieces which are going to make up the series. Starting at the
- operator product in one summand on the right we consider  \(\Delta_+ *(\slashed{A} P^-)\). Let therefore \(f_1,f_2 \in \mathcal{H}_\Sigma\) 
+ operator product in one summand on the right we consider  \(\Delta_+ *(\slashed{A} P^-)\). Let therefore \(f_1,f_2 \in C_c^\infty(\mathbb{R}^4)\) 
 for some space-like hypersurface \(\Sigma\). The distribution in question evaluated at \(f_1, f_2\) yields
 
 \begin{align}
 &\langle f_1, \Delta_+ * (\slashed{A} P^- f_2)\rangle =\\
-&\lim_{\varepsilon \searrow 0}\int_{\Sigma_x} \overline{f}_1(x) i_\gamma(d^4 x) \int_{\mathbb{R}^4}d^4y \Delta_+ (y-x)  \int_{\Sigma_z} \slashed{A}(y) p^-(z-y - i \varepsilon u) i_\gamma(d^4z) f_2(z),
+&\lim_{\varepsilon \searrow 0}\int_{\mathbb{R}^4} \overline{f}_1(x) d^4 x \int_{\mathbb{R}^4}d^4y \Delta_+ (y-x)  \int_{\mathbb{R}^4} \slashed{A}(y) p^-(z-y - i \varepsilon u) d^4z f_2(z),
 \end{align}
 
 now in order to study regularity of the involved distribution we start with the most singular parts of \(\Delta_+\) and \(P^-\), 
 which are \(\frac{-2}{\pi}(-i\slashed{\partial}+m)\theta_0(\cdot^0)  \delta(\cdot^2)\) 
 and \(\frac{1}{4 \pi}(-i\slashed{\partial}+m) \text{sgn}(\cdot^0) \delta(\cdot^2) + P_V ?\) respectively. 
-We start with the convolution of the two derivatives of delta distributions: \textcolor{red}{geht partiall integrieren mit \(\gamma\)-Matrizen mit dem \(i_\gamma\) Maß genauso wie mit \(\gamma^0 d^3 x\) ?}
+We start with the convolution of the two derivatives of delta distributions: \textcolor{red}{Faktoren von 4 sind noch falsch}
 
 \begin{align}
-\frac{-1}{2 \pi^2}\int_{\Sigma_x} \overline{f}_1(x) i_\gamma(d^4 x) 
+\frac{-1}{2 \pi^2}\int_{\mathbb{R}^4} \overline{f}_1(x) d^4 x
 \int_{\mathbb{R}^4}d^4y (i\slashed{\partial}_x+m)\theta_0(y^0-x^0)  \delta((y-x)^2) 
-\\ \int_{\Sigma_z} \slashed{A}(y) (-i\slashed{\partial}_z+m) \text{sgn}(z^0-y^0) \delta((z-y)^2) i_\gamma(d^4z) f_2(z)\\
-=\frac{-1}{2 \pi^2}\int_{\Sigma_x} \overline{(i\slashed{\partial}+m)f}_1(x) i_\gamma(d^4 x) 
-\int_{\mathbb{R}^4}d^4y \theta_0(y^0-x^0)  \delta((y-x)^2)\\ 
-\int_{\Sigma_z} \slashed{A}(y)  \text{sgn}(z^0-y^0) \delta((z-y)^2) i_\gamma(d^4z) (-i\slashed{\partial}+m) f_2(z).
+\\ \int_{\mathbb{R}^4} \slashed{A}(y) (-i\slashed{\partial}_z+m) \text{sgn}(z^0-y^0) \delta((z-y)^2) d^4z f_2(z)\\
+=\frac{-1}{2 \pi^2}\int_{\mathbb{R}^4} \overline{(i\slashed{\partial}+m)f}_1(x) d^4 x\label{d'*d'evaluation}
+\int_{\mathbb{R}^4}d^4y \theta_0(y^0-x^0)  \delta((y-x)^2)\\ \nonumber
+\int_{\mathbb{R}^4} \slashed{A}(y)  \text{sgn}(z^0-y^0) \delta((z-y)^2) d^4z (-i\slashed{\partial}+m) f_2(z).
 \end{align}
 
 Clearly the relevant integral to evaluate is the \(y\)-integral in the centre. We try to come as close as possible to this, we
@@ -396,29 +402,59 @@ temporal and radial integrals
 We will evaluate the two summands separately. We rotate our coordinate axis such that \(e_z || \vec{w}\) holds. For \eqref{conv1} we
  and look for a solution in \(|\vec{y}|\) of \(|\vec{y}| - w^0 + |\vec{y}-\vec{w}|=0\). By squaring we find
 
-\begin{equation}
+\begin{equation}\label{yAbsoluteValueDist}
 |\vec{y}|= \frac{1}{2} \frac{w^2}{w^0 - |\vec{w}| \cos\vartheta},
 \end{equation}
 
-is a solution as long as \(w^0-|\vec{y}| \ge 0\) holds. Since also \(|\vec{y}|\) should be positive we get the stronger condition \(w^2>0\).
+is a solution as long as \(w^0-|\vec{y}| \ge 0\) holds. Also \(|\vec{y}|\ge 0\) implies the condition \(w^2>0\). For \(w^0>0\) the condition
+\(w^2>0\) suffices to ensure \(w^0-|\vec{y}| \ge 0\), for negative \(w^0\) this condition cannot be fulfilled together with \(w^2>0\).
 So plugging this into \eqref{conv1} we end up with
 
-\begin{align}
-\eqref{conv1}= \frac{\theta(w^2)}{4} w^2 \int_{S^2} d \Omega \frac{\slashed{A}(y+x)}{(w^0)^2 - 2 w^0 |\vec{w}| \cos\vartheta + \vec{w}^2}|_{y^0=|\vec{y}|=\frac{1}{2}\frac{w^2}{w^0-|\vec{w}|\cos\vartheta}}.
+\begin{align}\label{d'*d'1}
+\eqref{conv1}= \frac{\theta(w^2) \theta(w^0)}{4} w^2 \int_{S^2} d \Omega \frac{\slashed{A}(y+x)}{(w^0)^2 - 2 w^0 |\vec{w}| \cos\vartheta + \vec{w}^2}|_{y^0=|\vec{y}|=\frac{1}{2}\frac{w^2}{w^0-|\vec{w}|\cos\vartheta}}.
 \end{align}
 
-The analysis of \eqref{conv2} is analogous: we look for a solution to \(|\vec{y}|-w^0-|\vec{y}-\vec{w}|=0\) also which is given by
-
-\begin{equation}
-|\vec{y}|= \frac{1}{2} \frac{w^2}{w^0-|\vec{w}|\cos\vartheta},
-\end{equation}
-
-as long as \(|\vec{y}|-w^0\ge0\) as well as \(|\vec{y}|\ge0\); however in this case we end up with two conditions, namely \(w^2<0 \) 
+The analysis of \eqref{conv2} is analogous: we look for a solution to \(|\vec{y}|-w^0-|\vec{y}-\vec{w}|=0\) 
+also which is given by \eqref{yAbsoluteValueDist}
+as long as \(|\vec{y}|-w^0\ge0\) as well as \(|\vec{y}|\ge0\); however, in this case we end up with two conditions, namely \(w^2<0 \) 
 as well as \(w^0-|\vec{w}|\cos\vartheta <0\). Finally we find similarly to the first case 
 
-\begin{align}
-\eqref{conv2}= \frac{\theta(-w^2)}{4} w^2 \int_{S^2} d \Omega \frac{\theta(\cos\vartheta - w^0) \slashed{A}(y+x)}{(w^0)^2 + 2 w^0 |\vec{w}| \cos\vartheta + \vec{w}^2}|_{y^0=|\vec{y}|=\frac{1}{2}\frac{w^2}{w^0-|\vec{w}|\cos\vartheta}}.
+\begin{align}\label{d'*d'2}
+\eqref{conv2}= \frac{\theta(-w^2)}{4} w^2 \int_{S^2} d \Omega \left. \frac{\theta(|\vec{w}|\cos\vartheta - w^0) \slashed{A}(y+x)}{(w^0)^2 + 2 w^0 |\vec{w}| \cos\vartheta + \vec{w}^2}\right|_{y^0=|\vec{y}|=\frac{1}{2}\frac{w^2}{w^0-|\vec{w}|\cos\vartheta}}.
 \end{align}
+
+We notice that in the integrand of \eqref{d'*d'1} the arguments of \(\slashed{A}\) 
+converges to \(x + |\vec{w}|(e_0+e_z)\) for \(x^2\rightarrow 0\). We should not forget that our coordinate 
+system was chosen such that \(e_z|| \vec{w}\), so we can rewrite this vector as 
+\(x+ |\vec{w}|e_0 + \vec{w}=:x+\lambda_{\vec{w}}\). 
+This means that in order to study the 
+most singular part of the distribution at the lightcone we replace \(\slashed{A}(y+x)\) in each integrand by
+\(\slashed{A}(x+y)- \slashed{A}(x+\lambda_{\vec{w}}) + \slashed{A}(x+\lambda_{\vec{w}})\), 
+split of the last summand and study it separately since the first two 
+summands together will behave regular enough at the lightcone. So we continue to massage \eqref{d'*d'1}:
+
+\begin{align}\nonumber
+\eqref{d'*d'1}=\\\label{d'*d'remainder1}
+ \frac{\theta(w^2) \theta(w^0)}{4} w^2 \int_{S^2} d \Omega \left.\frac{\slashed{A}(y+x)-\slashed{A}(x+\lambda_{\vec{w}})}{(w^0)^2 - 2 w^0 |\vec{w}| \cos\vartheta + \vec{w}^2}
+\right|_{y^0=|\vec{y}|=\frac{1}{2}\frac{w^2}{w^0-|\vec{w}|\cos\vartheta}}\\
+-\frac{\theta(w^2) \theta(w^0)}{4} w^2 \int_{S^2} d \Omega \frac{\slashed{A}(x+\lambda_{\vec{w}})}{(w^0)^2 - 2 w^0 |\vec{w}| \cos\vartheta + \vec{w}^2}\\
+=\eqref{d'*d'remainder1} - \frac{\theta(w^2) \theta(w^0) \pi}{2} w^2 \slashed{A}(x+\lambda_{\vec{w}}) 
+\int_{-1}^1 \frac{d u}{(w^0)^2 - 2 w^0 |\vec{w}| u + \vec{w}^2}\\\label{d'*d'mostsingular1}
+=\eqref{d'*d'remainder1} -\frac{\pi}{2}\slashed{A}(x+\lambda_{\vec{w}}) 
+\theta(w^2)\theta(w^0) \frac{w^2}{w^0 |\vec{w}|} \ln \frac{w^0+|\vec{w}|}{w^0-|\vec{w}|}.
+\end{align}
+
+From the expression \eqref{d'*d'mostsingular1} we can read off the following: Once we have regularised the expression 
+by introducing \(+i \varepsilon\) terms in the logarithm and the \(w^0\) term of the denominator together with a limit of
+\(\varepsilon \rightarrow 0\) we can use dominated convergence in the integral \eqref{d'*d'evaluation} to pull the limit
+outside the integral. Next we can use partial integration to remove differentials from the text functions and 
+finally take the weak limit \(\varepsilon\rightarrow 0\) to see how singular this term really is. 
+
+But even without doing all this just from heuristic scaling arguments we can predict how bad it will turn out to be. 
+Since the term in 
+\eqref{d'*d'mostsingular1} is continuous everywhere expect at \(w=0\) where it jumps one can convince oneself that
+after taking two derivatives it will behave like \(\frac{1}{|\vec{w}|^2}\) at the centre of the lightcone which means the 
+distribution is one order more regular than \(P^-\).
 
 
 

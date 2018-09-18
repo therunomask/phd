@@ -1,0 +1,225 @@
+\documentclass[a4paper,11pt]{article}
+
+%\usepackage{german}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{slashed}
+\usepackage{authblk}
+%identity sign
+\usepackage{dsfont}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+
+\newtheorem{de}{Definition}
+\newtheorem{theo}{Theorem}
+\newtheorem{rmk}{Remark}
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+\begin{document}
+\title{The Relationship Between Hadamard States, Admissible Polarisation Classes and the Fermionic Projector}
+
+\author{Markus Nöth\thanks{noeth@math.lmu.de \\\tiny{Mathematisches Institut der Ludwig-Maximilians-Universit\"at M\"unchen,}
+    \tiny{Theresienstr. 39, 80333 M\"unchen, Germany}}
+	,
+D.-A. Deckert\thanks{deckert@math.lmu.de \\ \tiny{Mathematisches Institut der Ludwig-Maximilians-Universit\"at M\"unchen,}
+    \tiny{Theresienstr. 39, 80333 M\"unchen, Germany}}
+	 ~and
+Felix Finster\thanks{felix.finster@mathematik.uni-regensburg.de \\     \tiny{Universität Regensburg, Universitätsstraße 31, 93053 Regensburg, Germany}}
+}
+\date{\today}
+
+
+
+\maketitle
+
+\begin{abstract}
+to be written
+\end{abstract}
+
+\section{Introduction}
+This paper compares central objects of three different approaches to quantum field theory (QFT).
+These approaches have different scopes and pursue different ideas, so a comparison of the theories as a whole is difficult.
+Since they all study different aspects of QFT; however, one can make out objects in each of these theories which closely resemble
+one another. The first class of objects of interest are Hadamard states which appear in the algebraic approach to 
+QFT\cite{fulling1978singularity}. The second class of objects are the (almost) projectors \(P^\lambda_{\Sigma}\) which are 
+closely linked to polarisation classes of the vacuum of external field quantum electrodynamics (QED). 
+Polarisation classes play a central role in the analysis of external field QED\cite{ivp0, ivp1, ivp2}.
+The third class of objects are the continuum limit of the Fermionic Projectors\cite{something}. 
+In the following sections we will very briefly summarise the role of each of the targeted objects in their respective approach to QFT. 
+In these sections we want to focus on the similar physical interpretation of these objects.
+A reader familiar with some of these theories may skip the respective sections. 
+Afterwards we shift our attention to the similarities between the mathematical structure inherent in these objects.
+
+%some introductory math needs to be written also we should mention that we are concerned with the Dirac field
+
+\begin{equation}
+(i\slashed{\partial} - m - \slashed{A})\psi = 0
+\end{equation}
+
+\begin{equation}
+U_{\Sigma',\Sigma}:\mathcal{H}_\Sigma \rightarrow \mathcal{H}_{\Sigma'},
+\end{equation}
+
+\section{Hadamard States}
+In the algebraic approach to QFT one puts less emphasise on the Hilbert space as is commonly done in non relativistic physics, because 
+once one talks about quantum fields in a relativistic setting the specific representation of operators by operators on a Hilbert 
+space is no longer canonical. 
+In stead one tries to focus on the operators that represent the physical measurements one wants to perform later on. 
+One can construct an algebra which contains these operators and do most of the analysis on this algebra itself; however, 
+many construction common to that analysis already make use of special properties of special states. The so called Hadamard states 
+(We will introduce them shortly) often play a role in constructing operators that represent e.g. objects like the energy 
+momentum tensor of a quantum field. Additionally at some point in
+the physical analysis one would like to produce some numbers which can be compared to experiments. In order to do so, one
+has to pick a representation. The GNS construction is very helpful in this regard, since it reduces the construction of a representation to 
+picking one state to build a Hilbert space around. This choice has to be made on physical grounds. Two classes of states have been
+identified which have a physical meaning. 
+The first class of which, KMS states, can be viewed as thermal states, they will
+not play a major role in this paper, since we are not concerned with thermodynamics. 
+The second class of states that has a physical 
+significance are Hadamard states. They are usually interpreted as states of positive energy. This interpretation has to be taken with 
+a grain of salt. Even in Minkowski spacetime with a non vanishing external electromagnetic field but no interaction the splitting of the
+spectrum into positive and negative part becomes somewhat arbitrary, since no particular splitting is Lorentz invariant\cite{something!}.
+Instead one could interpret picking a Hadamard state as making a choice of which states one
+calls positive energy states. This may become clearer in section \ref{sec:pol classes} where we bridge the gap to another approach to
+the same problem. Hadamard states are singled out by their dynamical properties. The definition of Hadamard states is a technical one, we 
+need to introduce some notation in order to give it. Let \(M\) denote a globally hyperbolic Manifold and \(g\) its metric, let further \(\Delta\) be the van Vleck-Morette determinant\cite{Dewitt1960}. We define for \(x,y\in M\), \(n\in\mathbb{N}\)
+
+\begin{equation}
+v^{(n)}(x,y):= \sum_{k=0}^n v_k(x,y) \sigma(x,y)^k,
+\end{equation}
+
+where \(\sigma(x,y):= (x-y)^\alpha (x-y)_\alpha\) and the functions \(v_m\) are defined by the Hadamard recursion relations\cite{DeWitt1960}. 
+Now we call a state \(W\) a Hadamard state if for each \(n\in\mathbb{N}\) there is some function \(R\in C^n(M\times M)\) and \(\varepsilon>0\) 
+such that the integration kernel of the two-point function \(w\) of the state fulfils
+
+
+\begin{equation}\label{HadamardGeneral}
+w(x,y)=\frac{\xi(x,y)}{4 \pi^2} \left[\frac{\sqrt{\Delta}}{\sigma(x,y)+i\varepsilon} + v^{(n)}(x,y) \ln (\sigma(x,y)+i \varepsilon) \right]
++R(x,y),
+\end{equation}
+%This Hadamard condition is the one for scalar particles. Which one is the correct one for fermions?
+
+where \(\xi\in C^\infty(M\times M)\) is a bump function equal to 1 in some neighbourhood \(U\) of the set of pairs of points that can be connected 
+by a time-like or lightlike curve and vanishes outside some neighbourhood of \(U\). That this definition does not 
+depend on all of the apparent choices we made along the way was shown 
+by \cite{kay1991theorems} from which we also took the definition. 
+
+We will merely be concerned with the Dirac field in flat Minkowski spacetime where \eqref{HadamardGeneral} specialises to
+
+\begin{equation}
+w(x,y)=\frac{\xi(x,y)}{4 \pi^2} i(i\slashed{\partial} + m) \left[\frac{1}{\sigma(x,y)+i \varepsilon} +  \ln (\sigma(x,y)+i \varepsilon) \frac{I_1(\sqrt{-\sigma(x,y)+i \varepsilon})}{\sqrt{-\sigma(x,y)+i \varepsilon}} \right]
++R(x,y),
+\end{equation}
+
+where  \(I_1\) is a modified Bessel function of the first kind. \textcolor{red}{Das ist zusammengeschustert aus Peskin Schroeder, Abramowitz Stegun, Thaller und dem Wikipediaartikel für Propagatoren(Feynmanpropagator), kann das jemand verifizieren?}
+
+%note to self: should I mention that fields are operator valued distributions? 
+
+%write that one needs to restrict to Hadamard states for the perturbative expansion of interacting QFT (cite this wald overview paper, p.15)
+
+%give some reply to the standard argument that notions of particles are non unique in QFT in curved spacetimes. 
+
+
+
+\section{Projectors for Polarisation Classes}\label{sec:pol classes}
+
+The concept of polarisation classes arises naturally in the study of QED in external electromagnetic fields. It does need some
+machinery to be introduced and related to more familiar objects which we are going to introduce first. Throughout this section
+\(\Sigma, \Sigma', \Sigma''\) denote arbitrary Cauchy surfaces, while \(A\in C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\) 
+is a four potential and \(\Sigma_{\text{in}}\) denotes a Cauchy surface earlier than \(\text{supp}(A)\).
+
+\begin{de}
+Let \(\text{Pol} (\mathcal{H}_\Sigma)\) denote the set of all closed, linear subspaces \(V\subset \mathcal{H}\)
+such that both \(V\) and \(V^\perp\) are infinite dimensional. Any \(V\in \text{Pol}(\mathcal{H}_\Sigma)\) is called 
+\emph{polarisation} of \(\mathcal{H}_\Sigma\). For \(V\in \text{Pol}(\mathcal{H}_\Sigma)\), let \(P_\Sigma^V\rightarrow V\) 
+denote the orthogonal projection of \(\mathcal{H}_\Sigma\) onto \(V\).
+The Fock space corresponding to \(V\) on the Cauchy surface \(\Sigma\) is defined to be
+\begin{equation}
+\mathcal{F}(V,\mathcal{H}_\Sigma) := \bigoplus_{c\in\mathbb{Z}} \mathcal{F}_c (V,\mathcal{H}_\Sigma), \quad 
+\mathcal{F}_c(V,\mathcal{H}_\Sigma):= \bigoplus_{\overset{n,m\in\mathbb{N}_0}{c=m-n}}(V^\perp)^{\wedge n} \otimes \overline{V}^{\wedge m}
+\end{equation},
+\end{de}
+
+where \(\bigoplus\) is the Hilbert space direct sum, \(\wedge\) the antisymmetric tensor product of Hilbert spaces and 
+\(\overline{V}\) is the conjugate complex vector space of \(V\), which coincides with \(V\) as a set, has the same vector 
+space operators as \(V\) except for scalar multiplication, which is defined by \((z,\psi)\mapsto z^* \psi\) for 
+\(z\in\mathbb{C},\psi\in V\).
+
+\begin{rmk}\label{WhyUseApprox}
+Given two polarisations \(V,W\in \text{Pol}(\mathcal{H}_\Sigma)\), the two Fockspaces \(\mathcal{F}(V,\mathcal{H}_\Sigma)\) and 
+\(\mathcal{F}(W,\mathcal{H}_\Sigma)\) are canonically unitary equivalent if \textcolor{red}{does also \(\iff\)  hold??} 
+\(P^V_\Sigma - P^W_\Sigma \in I_2(\mathcal{H}_\Sigma)\) by the theorem of Shale and Stinespring 
+\cite{Shale Stinespring 1965},.
+\end{rmk}
+Remark \ref{WhyUseApprox} gives us a natural limit with 
+respect to which it is useful
+to analyse the regularity of Projectors \(P_\Sigma^A\). We will therefore be content with the following equivalence class.
+\begin{de}
+For \(V,W\in \text{Pol}(\mathcal{H}_\Sigma)\) we write
+\begin{equation}
+V\approx W \iff P^V_\Sigma - P^W_\Sigma \in I_2(\mathcal{H}),
+\end{equation}
+\begin{equation}
+C_\Sigma (A):= [ U_{\Sigma \Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_{\text{in}}}^-]_\approx.
+\end{equation}
+\end{de}
+
+The equivalence class \(C_\Sigma(A)\) transforms naturally with respect to gauge and Lorentz transforms\cite{ivp2}. 
+The projector \(P^{\mathcal{H}^-}_{\Sigma} \) has the well known representation as the weak limit of the integral operator 
+with the kernel\cite{ivp2}
+
+\begin{equation}
+p^-_\varepsilon(x,y)= -\frac{m^2}{4\pi^2}(-i\slashed{\partial}_y+m) \frac{K_1(m \sqrt{-(y-x-i\varepsilon e_0)^2})}{m \sqrt{-(y-x-i\varepsilon e_0)^2}},
+\end{equation}
+where the square is a Minkowski square and the square root denotes its the principle branch. By weak limit we mean
+
+\begin{align}
+\langle \phi, P^{\mathcal{H}^-}_{\Sigma} \psi\rangle = \lim_{\varepsilon \searrow 0} \int_{\Sigma\times \Sigma} \overline{\phi}(x) i_\gamma(d^4x) p^-_\varepsilon(y-x ) i_\gamma(d^4y) \psi(y),
+\end{align}
+
+for general \(\phi, \psi \in \mathcal{H}_\Sigma\).
+Now for hyperplanes \(\Sigma\cup \text{supp}(A)\neq \emptyset\) the operator \(P^{\mathcal{H}^-}_{\Sigma} \) does not represent
+\(C_\Sigma(A)\), but one can adapt the projector to something that is \(I_2\) 
+close to a projector onto a representative of \(C_\Sigma(A)\), namely
+
+\begin{align}
+\langle \phi, P^A_\Sigma \psi\rangle =& \lim_{\varepsilon \searrow 0} \langle \phi, P^{A,\varepsilon}_\Sigma \psi\rangle ,\\
+\langle \phi, P^{A,\varepsilon}_\Sigma \psi\rangle :=&
+\int_{\Sigma\times\Sigma}\overline{\phi}(x)i_\gamma(d^4x) 
+e^{\frac{-i}{2}(A(x)+A(y))_\mu(x-y)^\mu} p^-_\varepsilon(y-x)i_\gamma(d^4y) \psi(y).
+\end{align}
+
+
+\section{The Fermionic Projector}
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}
+

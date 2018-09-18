@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.22)  12 SEP 2018 11:27
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.22)  10 SEP 2018 15:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**regularity_high_orders.tex
-(./regularity_high_orders.tex
+**QFT_Communications.tex
+(./QFT_Communications.tex
 LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -302,9 +302,6 @@ Package: authblk 2001/02/27 1.3 (PWD)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/relsize/relsize.sty
-Package: relsize 2013/03/29 ver 4.1
-)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amscd.sty
 Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \athelp@=\toks27
@@ -312,29 +309,33 @@ Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \bigaw@=\dimen119
 \minCDarrowwidth=\dimen120
 )
-(./regularity_high_orders.aux)
-\openout1 = `regularity_high_orders.aux'.
+\c@de=\count114
+\c@theo=\count115
+\c@rmk=\count116
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+(./QFT_Communications.aux)
+\openout1 = `QFT_Communications.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring ON on input line 45.
+Package hyperref Info: Link coloring ON on input line 41.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -342,88 +343,70 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count114
+\c@section@level=\count117
 )
-LaTeX Info: Redefining \ref on input line 45.
-LaTeX Info: Redefining \pageref on input line 45.
-LaTeX Info: Redefining \nameref on input line 45.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
-(./regularity_high_orders.out) (./regularity_high_orders.out)
+(./QFT_Communications.out) (./QFT_Communications.out)
 \@outlinefile=\write3
-\openout3 = `regularity_high_orders.out'.
+\openout3 = `QFT_Communications.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+LaTeX Font Info:    Try loading font information for U+msa on input line 56.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 56.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-File: GammaPolesContour.png Graphic file (type bmp)
-<GammaPolesContour.png>
- [1
+
+LaTeX Warning: Citation `something' on page 1 undefined on input line 70.
 
 
+LaTeX Warning: Citation `something!' on page 1 undefined on input line 104.
 
-LaTeX Warning: No \author given.
+
+LaTeX Warning: Citation `Dewitt1960' on page 1 undefined on input line 108.
+
+[1
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <13.13995> on input line 14
-5.
+
+LaTeX Warning: Citation `DeWitt1960' on page 2 undefined on input line 114.
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13.13995> not available
-(Font)              size <12> substituted on input line 145.
+LaTeX Warning: Citation `kay1991theorems' on page 2 undefined on input line 128
+.
+
+[2]
+
+LaTeX Warning: Citation `Shale Stinespring 1965' on page 3 undefined on input l
+ine 175.
+
+(./QFT_Communications.bbl [3])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
+ [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
+ (./QFT_Communications.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 224.
 
 
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.56998> not available
-(Font)              size <7> substituted on input line 145.
+LaTeX Warning: There were undefined references.
 
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13.13995> not available
-(Font)              size <12> substituted on input line 145.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.56998> not available
-(Font)              size <7> substituted on input line 145.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13.13995> not available
-(Font)              size <12> substituted on input line 145.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.56998> not available
-(Font)              size <7> substituted on input line 145.
-
-[2] [3] [4] [5] [6] [7] [8] [9]
-Overfull \hbox (3.49155pt too wide) detected at line 493
-[]
- []
-
-[10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 519.
- [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 519.
- (./regularity_high_orders.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 519.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 519.
-
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.13995pt have occurred.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 519.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
  ) 
 Here is how much of TeX's memory you used:
- 9713 strings out of 493010
- 133103 string characters out of 6134663
- 229809 words of memory out of 5000000
- 13591 multiletter control sequences out of 15000+600000
- 12456 words of font info for 57 fonts, out of 8000000 for 9000
+ 9668 strings out of 493010
+ 132445 string characters out of 6134663
+ 221340 words of memory out of 5000000
+ 13541 multiletter control sequences out of 15000+600000
+ 12495 words of font info for 62 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 28i,24n,35p,372b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,9n,35p,290b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on regularity_high_orders.pdf (11 pages).
+Output written on QFT_Communications.pdf (4 pages).

@@ -24,11 +24,15 @@
 
 %commutative diagrams
 \usepackage{amsmath,amscd}
-
+\usepackage{enumitem}
 
 \newtheorem{de}{Definition}
-\newtheorem{theo}{Theorem}
+\newtheorem{thm}{Theorem}
 \newtheorem{rmk}{Remark}
+
+
+\newcommand{\supp}{\operatorname{supp}}
+
 
 \addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
 
@@ -72,6 +76,9 @@ In the following sections we will very briefly summarise the role of each of the
 In these sections we want to focus on the similar physical interpretation of these objects.
 A reader familiar with some of these theories may skip the respective sections. 
 Afterwards we shift our attention to the similarities between the mathematical structure inherent in these objects.
+Throughout the paper
+\(\Sigma, \Sigma', \Sigma''\) denote arbitrary Cauchy surfaces, while \(A\in C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\) 
+is a four potential and \(\Sigma_{\text{in}}\) denotes a Cauchy surface earlier than \(\text{supp}(A)\).
 
 %some introductory math needs to be written also we should mention that we are concerned with the Dirac field
 
@@ -94,47 +101,42 @@ many construction common to that analysis already make use of special properties
 momentum tensor of a quantum field. Additionally at some point in
 the physical analysis one would like to produce some numbers which can be compared to experiments. In order to do so, one
 has to pick a representation. The GNS construction is very helpful in this regard, since it reduces the construction of a representation to 
-picking one state to build a Hilbert space around. This choice has to be made on physical grounds. Two classes of states have been
-identified which have a physical meaning. 
-The first class of which, KMS states, can be viewed as thermal states, they will
-not play a major role in this paper, since we are not concerned with thermodynamics. 
-The second class of states that has a physical 
-significance are Hadamard states. They are usually interpreted as states of positive energy. This interpretation has to be taken with 
+picking one state to build a Hilbert space around. This choice has to be made on physical grounds. 
+The Hadamard states are usually interpreted as states of positive energy. This interpretation has to be taken with 
 a grain of salt. Even in Minkowski spacetime with a non vanishing external electromagnetic field but no interaction the splitting of the
 spectrum into positive and negative part becomes somewhat arbitrary, since no particular splitting is Lorentz invariant\cite{something!}.
 Instead one could interpret picking a Hadamard state as making a choice of which states one
-calls positive energy states. This may become clearer in section \ref{sec:pol classes} where we bridge the gap to another approach to
-the same problem. Hadamard states are singled out by their dynamical properties. The definition of Hadamard states is a technical one, we 
-need to introduce some notation in order to give it. Let \(M\) denote a globally hyperbolic Manifold and \(g\) its metric, let further \(\Delta\) be the van Vleck-Morette determinant\cite{Dewitt1960}. We define for \(x,y\in M\), \(n\in\mathbb{N}\)
+calls positive energy states. This may become clearer in section \ref{sec:pol classes}. 
+Hadamard states are singled out by their dynamical properties. The definition of Hadamard states is a technical one, so we will omit
+the general case and focus on the condition for Fermions in flat Minkowski spacetime subject to an external potential. This scenario was
+already considered by Dirac \cite{Dirac34}. The condition in this case reads as follows: 
 
+\begin{de}
+A state \(\omega\) is called Hadamard if its two point function \(w\in (C_c^\infty(\mathcal{M})\times C_c^\infty(\mathcal{M}))'\) 
+acts for \(f_1,f_2\in C_c^\infty(\mathcal{M})\) as 
 \begin{equation}
-v^{(n)}(x,y):= \sum_{k=0}^n v_k(x,y) \sigma(x,y)^k,
+w(f_1,f_2)=\lim_{\varepsilon\searrow 0} \int_{\mathbb{R}^4}d^4 x \overline{f_1}(x) \int_{\mathbb{R}^4} d^4y ~b_\varepsilon(x,y) f_2(y)
 \end{equation}
+with \(b_\varepsilon\) being of the form
 
-where \(\sigma(x,y):= (x-y)^\alpha (x-y)_\alpha\) and the functions \(v_m\) are defined by the Hadamard recursion relations\cite{DeWitt1960}. 
-Now we call a state \(W\) a Hadamard state if for each \(n\in\mathbb{N}\) there is some function \(R\in C^n(M\times M)\) and \(\varepsilon>0\) 
-such that the integration kernel of the two-point function \(w\) of the state fulfils
-
-
-\begin{equation}\label{HadamardGeneral}
-w(x,y)=\frac{\xi(x,y)}{4 \pi^2} \left[\frac{\sqrt{\Delta}}{\sigma(x,y)+i\varepsilon} + v^{(n)}(x,y) \ln (\sigma(x,y)+i \varepsilon) \right]
-+R(x,y),
-\end{equation}
-%This Hadamard condition is the one for scalar particles. Which one is the correct one for fermions?
-
-where \(\xi\in C^\infty(M\times M)\) is a bump function equal to 1 in some neighbourhood \(U\) of the set of pairs of points that can be connected 
-by a time-like or lightlike curve and vanishes outside some neighbourhood of \(U\). That this definition does not 
-depend on all of the apparent choices we made along the way was shown 
-by \cite{kay1991theorems} from which we also took the definition. 
-
-We will merely be concerned with the Dirac field in flat Minkowski spacetime where \eqref{HadamardGeneral} specialises to
-
+\begin{align}\nonumber
+b_\varepsilon (x,y)=-i(i\slashed{\partial}_x -\slashed{A}(x)-m)
+&\Big[\frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}}{(x-y-i \varepsilon e_0)^2}\\\label{def:hadamard}
+&+V(x,y) \ln ((x-y-i \varepsilon e_0)^2)\Big]+W(x,y).
+\end{align}
+In this equation \(V,W:\mathbb{R}^4\rightarrow \mathbb{C}^4\) are smooth functions, \(W\) is completely arbitrary and varies for
+different Hadamard states, whereas \(V\) is fixed by the external potential. For \((x-y)^2\) small enough the series
 \begin{equation}
-w(x,y)=\frac{\xi(x,y)}{4 \pi^2} i(i\slashed{\partial} + m) \left[\frac{1}{\sigma(x,y)+i \varepsilon} +  \ln (\sigma(x,y)+i \varepsilon) \frac{I_1(\sqrt{-\sigma(x,y)+i \varepsilon})}{\sqrt{-\sigma(x,y)+i \varepsilon}} \right]
-+R(x,y),
+V(x,y)=\sum_{k=0}^\infty \frac{1}{2^{k-1}k!} V_k(x,y) (x-y)^{2k}
 \end{equation}
+converges.\cite{something...}  The functions \(V_k\) fulfil a recursive set of partial differential equations
+\begin{align}\notag
+&\left((\partial_{x}^{\alpha}-i A^\alpha(x))(\partial_{x,\alpha}-i A_\alpha(x))+m^2\right) V_{n-1}(x,y)\\\label{Hadamard recursive equ.}
+ &\hspace{3cm}+ (x-y)^\alpha (\partial_{x,\alpha}-i A_\alpha(x)) V_{n}(x,y) + (2n+2) V_{n}(x,y)=0,
+\end{align}
+where \(V_{-1}(x,y)=e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}\).
+\end{de}
 
-where  \(I_1\) is a modified Bessel function of the first kind. \textcolor{red}{Das ist zusammengeschustert aus Peskin Schroeder, Abramowitz Stegun, Thaller und dem Wikipediaartikel für Propagatoren(Feynmanpropagator), kann das jemand verifizieren?}
 
 %note to self: should I mention that fields are operator valued distributions? 
 
@@ -147,9 +149,40 @@ where  \(I_1\) is a modified Bessel function of the first kind. \textcolor{red}{
 \section{Projectors for Polarisation Classes}\label{sec:pol classes}
 
 The concept of polarisation classes arises naturally in the study of QED in external electromagnetic fields. It does need some
-machinery to be introduced and related to more familiar objects which we are going to introduce first. Throughout this section
-\(\Sigma, \Sigma', \Sigma''\) denote arbitrary Cauchy surfaces, while \(A\in C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\) 
-is a four potential and \(\Sigma_{\text{in}}\) denotes a Cauchy surface earlier than \(\text{supp}(A)\).
+machinery to be introduced and related to more familiar objects which we are going to introduce first. 
+
+We start out by characterising the polarisation classes for free motion.
+\begin{de}
+The projector \(P^{\mathcal{H}^-}_{\Sigma} \) has the well known representation as the weak limit of the integral operator 
+with the kernel\cite{ivp2}
+
+\begin{equation}
+p^-_\varepsilon(x,y)= -\frac{m^2}{4\pi^2}(i\slashed{\partial}_x+m) \frac{K_1(m \sqrt{-(y-x-i \varepsilon e_0)^2})}{m \sqrt{-(y-x-i \varepsilon e_0)^2}},
+\end{equation}
+where the square is a Minkowski square and the square root denotes its principle value. By weak limit we mean
+
+\begin{align}
+\langle \phi, P^{\mathcal{H}^-}_{\Sigma} \psi\rangle = \lim_{\varepsilon \searrow 0} \int_{\Sigma\times \Sigma} \overline{\phi}(x) i_\gamma(d^4x) p^-_\varepsilon(x,y ) i_\gamma(d^4y) \psi(y),
+\end{align}
+
+for general \(\phi, \psi \in \mathcal{H}_\Sigma\).
+\end{de}
+
+\begin{rmk}
+By inserting the expansion of \(K_1\) in terms of a Laurent series and a logarithm, \cite{abramowitz1965handbook} one obtains:
+
+\begin{equation}\label{K1series}
+K_1(\xi) = \frac{1}{\xi}- \frac{\xi}{4} \sum_{k=0}^\infty \left(2 \psi(k+1)+\frac{1}{k+1}-2 \ln\frac{ \xi}{2} \right) \frac{\left(\frac{\xi^2}{4}\right)^k}{k!^2 (k+1)}.
+\end{equation}
+
+It is not obvious from the equation \eqref{Hadamard recursive equ.} but in fact well known that the
+ vacuum of Minkowski spacetime does indeed
+correspond to  a Hadamard state subject to vanishing four potential. In fact, the Hadamard states were constructed to 
+agree with the Minkowski vacuum up to smooth terms.
+\end{rmk}
+
+
+
 
 \begin{de}
 Let \(\text{Pol} (\mathcal{H}_\Sigma)\) denote the set of all closed, linear subspaces \(V\subset \mathcal{H}\)
@@ -159,14 +192,14 @@ denote the orthogonal projection of \(\mathcal{H}_\Sigma\) onto \(V\).
 The Fock space corresponding to \(V\) on the Cauchy surface \(\Sigma\) is defined to be
 \begin{equation}
 \mathcal{F}(V,\mathcal{H}_\Sigma) := \bigoplus_{c\in\mathbb{Z}} \mathcal{F}_c (V,\mathcal{H}_\Sigma), \quad 
-\mathcal{F}_c(V,\mathcal{H}_\Sigma):= \bigoplus_{\overset{n,m\in\mathbb{N}_0}{c=m-n}}(V^\perp)^{\wedge n} \otimes \overline{V}^{\wedge m}
-\end{equation},
-\end{de}
+\mathcal{F}_c(V,\mathcal{H}_\Sigma):= \bigoplus_{\overset{n,m\in\mathbb{N}_0}{c=m-n}}(V^\perp)^{\wedge n} \otimes \overline{V}^{\wedge m},
+\end{equation}
 
 where \(\bigoplus\) is the Hilbert space direct sum, \(\wedge\) the antisymmetric tensor product of Hilbert spaces and 
 \(\overline{V}\) is the conjugate complex vector space of \(V\), which coincides with \(V\) as a set, has the same vector 
-space operators as \(V\) except for scalar multiplication, which is defined by \((z,\psi)\mapsto z^* \psi\) for 
+space operations as \(V\) except for scalar multiplication, which is defined by \((z,\psi)\mapsto z^* \psi\) for 
 \(z\in\mathbb{C},\psi\in V\).
+\end{de}
 
 \begin{rmk}\label{WhyUseApprox}
 Given two polarisations \(V,W\in \text{Pol}(\mathcal{H}_\Sigma)\), the two Fockspaces \(\mathcal{F}(V,\mathcal{H}_\Sigma)\) and 
@@ -180,37 +213,68 @@ to analyse the regularity of Projectors \(P_\Sigma^A\). We will therefore be con
 \begin{de}
 For \(V,W\in \text{Pol}(\mathcal{H}_\Sigma)\) we write
 \begin{equation}
-V\approx W \iff P^V_\Sigma - P^W_\Sigma \in I_2(\mathcal{H}),
+V\approx W \iff P^V_\Sigma - P^W_\Sigma \in I_2(\mathcal{H}_\Sigma),
 \end{equation}
 \begin{equation}
 C_\Sigma (A):= [ U_{\Sigma \Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_{\text{in}}}^-]_\approx.
 \end{equation}
 \end{de}
 
+
 The equivalence class \(C_\Sigma(A)\) transforms naturally with respect to gauge and Lorentz transforms\cite{ivp2}. 
-The projector \(P^{\mathcal{H}^-}_{\Sigma} \) has the well known representation as the weak limit of the integral operator 
-with the kernel\cite{ivp2}
+Now for hyperplanes \(\Sigma\cap \text{supp}(A)\neq \emptyset\) the operator \(P^{\mathcal{H}^-}_{\Sigma} \) does not represent
+\(C_\Sigma(A)\). Because all we are interested in is representations of equivalence classes, we are content with finding
+objects that differ from a Projector onto \(U_{\Sigma,\Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_in}^-\) by a Hilbert-Schmidt operator.
+Therefore we need not keep track of the exact evolution of the projection operators, but define a whole class of admissible ones.
+
+\begin{de}
+For any function \(\lambda\in C^\infty (\mathbb{R}^4\times \mathbb{R}^4, \mathbb{R})\) fulfilling
+\begin{enumerate}[label= \roman*) ]
+\item There is a compact set \(K\subset \mathbb{R}^4\) such that \(\supp \lambda \subseteq K\times \mathbb{R}^4 \cup \mathbb{R}^4 \times K\).
+\item \(\lambda\) satisfies \(\forall x \in \mathbb{R}^4 \lambda(x,x)=0\).
+\item On the diagonal the first derivatives fulfil 
+\begin{equation}
+\forall x,y\in\mathbb{R}^4: \partial_x \lambda(x,y)=-\partial_y \lambda(x,y) = A(x),
+\end{equation}
+\end{enumerate}
+we define a corresponding (quasi) projector \(P^\lambda\):
+\begin{align}
+\langle \phi, P^\lambda_\Sigma \psi\rangle =& \lim_{\varepsilon \searrow 0} \langle \phi, P^{A,\varepsilon}_\Sigma \psi\rangle ,\\
+\langle \phi, P^{\lambda,\varepsilon}_\Sigma \psi\rangle :=&
+\int_{\Sigma\times\Sigma}\overline{\phi}(x)i_\gamma(d^4x) 
+e^{-i \lambda(x,y)} p^-_\varepsilon(y-x)i_\gamma(d^4y) \psi(y),
+\end{align}
+for general \(\phi, \psi \in \mathcal{H}_\Sigma\).
+\end{de}
+
+\begin{rmk}\label{main results of ivp2}
+\(P_{\Sigma}^\lambda\) and \( P_{\Sigma'}^\lambda\) are equivalent if transported appropriately by time evolution operators\cite[theorem 2.8]{ivp2}:
 
 \begin{equation}
-p^-_\varepsilon(x,y)= -\frac{m^2}{4\pi^2}(-i\slashed{\partial}_y+m) \frac{K_1(m \sqrt{-(y-x-i\varepsilon e_0)^2})}{m \sqrt{-(y-x-i\varepsilon e_0)^2}},
+P_{\Sigma}^\lambda-U_{\Sigma,\Sigma'}^A P_{\Sigma'}^\lambda U_{\Sigma',\Sigma}\in I_2(\mathcal{H}_\Sigma).
 \end{equation}
-where the square is a Minkowski square and the square root denotes its the principle branch. By weak limit we mean
+Also for four-potentials \(A,B\in C_c^\infty(\mathbb{R}^4)\) 
+the corresponding projectors are typically inequivalent\cite[theorem 1.5]{ivp2}
 
-\begin{align}
-\langle \phi, P^{\mathcal{H}^-}_{\Sigma} \psi\rangle = \lim_{\varepsilon \searrow 0} \int_{\Sigma\times \Sigma} \overline{\phi}(x) i_\gamma(d^4x) p^-_\varepsilon(y-x ) i_\gamma(d^4y) \psi(y),
-\end{align}
+\begin{equation}
+P_{\Sigma}^{\lambda^A} - P_{\Sigma}^{\lambda^B} \in I_2(\mathcal{H}_\Sigma) \iff \forall x\in \Sigma~ \forall z\in T_x \Sigma: z^\alpha(A_\alpha(x)-B_\alpha(x))=0.
+\end{equation}
+\end{rmk}
 
-for general \(\phi, \psi \in \mathcal{H}_\Sigma\).
-Now for hyperplanes \(\Sigma\cup \text{supp}(A)\neq \emptyset\) the operator \(P^{\mathcal{H}^-}_{\Sigma} \) does not represent
-\(C_\Sigma(A)\), but one can adapt the projector to something that is \(I_2\) 
-close to a projector onto a representative of \(C_\Sigma(A)\), namely
+Now the notion of Hadamard state and  projectors of polarisation classes are extremely close.
 
-\begin{align}
-\langle \phi, P^A_\Sigma \psi\rangle =& \lim_{\varepsilon \searrow 0} \langle \phi, P^{A,\varepsilon}_\Sigma \psi\rangle ,\\
-\langle \phi, P^{A,\varepsilon}_\Sigma \psi\rangle :=&
-\int_{\Sigma\times\Sigma}\overline{\phi}(x)i_\gamma(d^4x) 
-e^{\frac{-i}{2}(A(x)+A(y))_\mu(x-y)^\mu} p^-_\varepsilon(y-x)i_\gamma(d^4y) \psi(y).
-\end{align}
+\begin{thm}
+Given a global Hadamard state \(H\) there is a smooth function  \(w\in C^\infty(\mathbb{R}^4\times \mathbb{R}^4)\) such that
+for any hypersurface \(\Sigma\), \(H-w\) can be interpreted as linear bounded map\(:\mathcal{H}_\Sigma\rightarrow \mathcal{H}_\Sigma\).
+Furthermore for each \(\lambda\) fulfilling \(i)-iii)\), \(H-w\) and \(P^\lambda\) yield equivalent descriptions:
+\begin{equation}
+H-w-P^\lambda \in I_2(\mathcal{H}_\Sigma).
+\end{equation}
+
+
+\end{thm}
+
+
 
 
 \section{The Fermionic Projector}

@@ -1,0 +1,15 @@
+Sehr geehrter Dr. Zahn,
+
+mein Name ist Markus Nöth, ich arbeite zusammen mit meinen Doktorvätern Dirk Deckert und Franz Merkl in München an der externen Feld QED. Als Nebenprojekt versuche ich die dabei entwickelten Methoden der breiteren algebraischen QFT Gemeinde verständlich aufzubereiten. Dabei ergaben sich folgende Fragen zu deren Klärung mir Dirk riet mich an Sie zu wenden.
+
+1. Wie werden Hadamard Zustände für Diracfelder in flacher Raumzeit in externen Feldern definiert?
+
+2. Haben die Integralkerne dieser Zustände (2 Punkts-funktion) noch weitere Singularitäten, als die bei lichtartigen Abständen?
+
+Mir ist das Paper von Dirac von 1934 zur bestimmung der Elektronendichte bekannt, ich bin mir allerdings nicht sicher ob 0.5*(R_1+R_F) Hadamard Zustand genannt würde.
+
+Mit vielen Grüßen,
+
+Markus Nöth
+
+

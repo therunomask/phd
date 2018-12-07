@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{abramowitz1965handbook}
+Milton Abramowitz and Irene~A Stegun.
+\newblock {\em Handbook of mathematical functions: with formulas, graphs, and
+  mathematical tables}, volume~55.
+\newblock Courier Corporation, 1965.
+
 \bibitem{ivp0}
 D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher.
 \newblock Time-evolution of the external field problem in quantum

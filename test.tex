@@ -1,97 +1,3 @@
-%\documentclass[oneside,reqno,12pt]{amsart}
-
-
-
-
-
-\documentclass[b5paper,draft,openbib,12pt]{memoir} 
-%\documentclass[b5paper,openbib,12pt]{memoir} 
-
-
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-
-\usepackage{bbm}
-\usepackage{graphicx}
-\usepackage{slashed}
-\usepackage{eurosym}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{enumitem}
-\usepackage{longtable}
-\usepackage[mathscr]{eucal}
-
-
-%commutative diagram
-\usepackage{amsmath,amscd}
-%picture
-\usepackage{wrapfig}
-
-\usepackage[unicode=true, pdfusetitle, bookmarks=true,
-  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
-  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
-  citecolor=blue, urlcolor=blue]{hyperref}
-\hypersetup{final}
-%needed to have hyperlinks in draft mode
-
-
-% \numberwithin{equation}{section}
-\allowdisplaybreaks[1]
-
-\newtheorem{axiom}{Axiom}
-\newtheorem{Def}{Definition}[section]
-\newtheorem{Conj}[Def]{Conjecture}
-\newtheorem{Thm}[Def]{Theorem}
-\newtheorem{Prp}[Def]{Proposition}
-\newtheorem{Lemma}[Def]{Lemma}
-\newtheorem{lemma}{Lemma}
-\newtheorem{Remark}[Def]{Remark}
-\newtheorem{Corollary}[Def]{Corollary}
-\newtheorem{Example}[Def]{Example}
-\newtheorem{Assumption}[Def]{Assumption}
-
-
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\dotCup}{\mathop{\dot{\bigcup}}}
-\DeclareMathOperator{\dotcup}{\mathop{\dot{\cup}}}
-
-
-\newcommand{\id}{{\mathbbm 1}}
-\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
-\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
-\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
-\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
-
-% Annotations
-\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
-\newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
-\newcommand{\black}{ \color{black} }
-
-
-\renewcommand\chapterheadstart{
-\vspace *{\beforechapskip}
-\hrulefill
-\vskip 0pt
-}
-
-\renewcommand\afterchaptertitle{%
-\vskip 0pt
-\hrulefill
-\par \nobreak  \vskip  \afterchapskip  } 
-
-
-\setsecnumdepth{all}
-
-
-%all divisions are numbered in the text body
-
-\parindent 0cm
-
-\begin{document}
-
 
 
 \frontmatter
@@ -422,8 +328,8 @@ the operators \(T_k (A)\) are also defined for \(k\) non-identical arguments by 
 Using the \eqref{lift_condition1} one can easily derive commutation relations for the operators 
 \(T_m\), which are given by
 
-\begin{equation}\label{logarithmic lift condition}
-\left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right) T_{m-j}(A), 
+\begin{equation}
+\left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right) T_{m-j}(A), \label{Tk_commutation_relation}
 \end{equation}
 where \(a^\#\) is either \(a\) or \(a^*\).
 The matrix elements of the expansion coefficients \(T_l\) of \eqref{S_expansion} can therefore be constructed from the matrix elements of the lower expansion coefficients \(T_k\) with \(k<l\) and the vacuum expectation value of \(T_l\). As will be shown in section \ref{sec: odd orders}, the vacuum expectation value of all odd orders can naturally be chosen to zero, due to charge conjugation symmetry. I will be using the method of Eppstein and Glaser (see \cite{epstein1973role, scharf2014finite})  to find the vacuum expectation value of the even orders.
@@ -447,12 +353,12 @@ Thus to find the adjoint coefficient of order \(n\), it suffices to know the coe
 
 In the following I derive a recursive equation for the coefficients of the expansion 
 of the second quantized scattering operator. The starting point of this derivation is 
-the commutator of \(T_m\), equation \eqref{logarithmic lift condition}.
+the commutator of \(T_m\), equation \eqref{Tk_commutation_relation_creator}.
 
 \subsection{Heuristics}
 
 Why at this point one might suspect that such a representation exists is, because
-looking at equation \eqref{logarithmic lift condition} for a while, one
+looking at equation \eqref{Tk_commutation_relation_creator} for a while, one
 comes to the conclusion that if one replaces \(T_m\) by 
 \begin{equation}
 T_m - \frac{1}{2} \sum_{k=1}^{m-1} \begin{pmatrix} m \\ k\end{pmatrix} T_k T_{m-k},
@@ -467,7 +373,7 @@ operators have such commutation relations.
 So having this in Mind we start with the ansatz
 
 \begin{equation}\label{Def Gamma_m}
-\Gamma_m := \sum_{g=2}^m \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=m}} c_{b} \prod_{k=1}^g T_{b_k}.
+\Gamma_m := \sum_{g=2}^m \sum_{\stackrel{b\in\mathbb{N}^g}{|b|=n}} c_{b} \prod_{k=1}^g T_{b_k}.
 \end{equation}
 
 Now in order to show that \(T_m\) and \(\Gamma_m\) agree up to operators which have a commutation 
@@ -579,7 +485,7 @@ I will denote by \(a^\# z\) either \(a(z(\varphi_p))\) or
  operator, since the expressions all agree)
  
 In order to organize the bookkeeping of all the summands which arise from iteratively
-making use of the commutation rule \eqref{logarithmic lift condition} we organize them 
+making use of the commutation rule \eqref{Tk_commutation_relation} we organize them 
 by the looking at a spanning set of the possible terms that arise my choice is
 
 \begin{equation}\label{combinatorics span}
@@ -612,7 +518,7 @@ the product rule for the commutator:
 \sum_{\sigma_{\tilde{k}}=1}^{l_{\tilde{k}}} \binom{l_{\tilde{k}}}{\sigma_{\tilde{k}}} 
 a^\# Z_f T_{l_{\tilde{k}}-\sigma_{\tilde{k}}} \prod_{j=\tilde{k}+1}^g T_{l_j},
 \end{align*}
-in the second step we used \eqref{logarithmic lift condition}. Now we commute
+in the second step we used \eqref{Tk_commutation_relation}. Now we commute
 all the \(T_l\)s to the left of \(a^\#\) to its right:
 
 \begin{equation}\label{combinatorics ordered product}
@@ -651,9 +557,9 @@ Since we know that
 \end{align*}
 holds, all that is left to show is that 
 \begin{align}\label{combinatorics total commutator}
-&\left[-\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+&\left[\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
 \binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l}, a^\#\right]\\\notag
-&= a^\# \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
+&= a^\# \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
 \binom{n}{\vec{b}}  \prod_{l=1}^g Z_{b_l}
 \end{align}
 holds. For which we need to count the summands which are multiples of each element of \eqref{combinatorics span}
@@ -668,7 +574,7 @@ Rephrasing this problem, we can ask which products
  total contributions weighted with the factor 
  \( - \frac{(-1)^g}{g}\) borrowed from \eqref{combinatorics total sum of T} \(\#K(m_1,m_2)\).  
  Looking at the commutation relations 
-\eqref{logarithmic lift condition} we split the set of indices \(\{\gamma_1\dots \gamma_g\}\) into
+\eqref{Tk_commutation_relation} we split the set of indices \(\{\gamma_1\dots \gamma_g\}\) into
 three sets \(A,B\) and \(C\), where the commutation relation has to be used in such a way, that
 
 \begin{align*}
@@ -748,7 +654,7 @@ ones and make use of the absorption identity
 \forall a \in \mathbb{C}\ \forall b \in \mathbb{Z}: b \binom{a}{b} = a \binom{a-1}{b-1} 
 \end{equation}
 
-for \(m_2,m_1\neq 0\) as follows
+for \(m_2\neq 0\) as follows
 
 \begin{align*}
 &\#K(m_1,m_2) \\
@@ -756,26 +662,18 @@ for \(m_2,m_1\neq 0\) as follows
 &=-\sum_{g=\max(m_1,m_2)}^{m_1+m_2} \frac{(-1)^g}{g} \binom{g}{m_2}\binom{m_2}{g-m_1}\\
 &\stackrel{\eqref{absorption}}{=}-\sum_{g=\max(m_1,m_2)}^{m_1+m_2} \frac{(-1)^g}{m_2} \binom{g-1}{m_2-1}\binom{m_2}{g-m_1}\\
 &=\frac{-1}{m_2} \sum_{g=\max(m_1,m_2)}^{m_1+m_2} (-1)^g \binom{g-1}{m_2-1}\binom{m_2}{g-m_1}\\
-&\overset{m_1>0}{=}\frac{-1}{m_2} \sum_{g\in\mathbb{Z}} (-1)^g \binom{m_2}{g-m_1}\binom{g-1}{m_2-1}\\
+&=\frac{-1}{m_2} \sum_{g\in\mathbb{Z}} (-1)^g \binom{g-1}{m_2-1}\binom{m_2}{g-m_1}\\
 &\stackrel{*}{=} \frac{-1}{m_2} (-1)^{m_2-m_1} \binom{m_1-1}{-1} = 0,
 \end{align*}
 where for the marked equality we used summation rule (5.24) of \cite{graham1994concrete}. 
-So all the coefficients vanish that fulfil \(m_1,m_2\neq 0\). The sum for the remaining cases
-is trivial, since there is just one summand. Summarising we find
-
-\begin{equation*}
-\#K(m_1,m_2)= \delta_{m_2,0} \frac{(-1)^{1+m_1}}{m_1} + \delta_{m_1,0} \frac{(-1)^{1+m_2}}{m_2},
-\end{equation*}
-
-where the second summand can be ignored, since terms with \(m_1=0\) are irrelevant for our considerations.
-
- So the left hand side of 
+So all the coefficients vanish that fulfil \(m_2\neq 0\). And the sum for the remaining case
+is trivial, since there is just one summand. So the left hand side of 
 \eqref{combinatorics total commutator} can be evaluated
 
 \begin{align*}
-\left[-\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\left[\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
 \binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l}, a^\#\right]\\
-= \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|b|=n}} \frac{(-1)^{g+1}}{g} \binom{n}{\vec{b}}  a^\# \prod_{l=1}^g Z_{b_l},
+= \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|b|=n}} \frac{(-1)^g}{g} \binom{n}{\vec{b}}  a^\# \prod_{l=1}^g Z_{b_l},
 \end{align*}
 
 which is exactly equal to the right hand side of \eqref{combinatorics total commutator}. \(\Box\)
@@ -819,10 +717,9 @@ F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} \sum_{\stackrel{\vec{g}\in\mathbb{N
 
 The inner sum turns out to be \(F(g-n,k)\), so we found the recursive relation for \(F\):
 \begin{equation}\label{combinatorics solution recursive}
-F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} F(n,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} F(g-n,k),
+F(g,k)= g^k -  \sum_{n=1}^{g-1} \binom{g}{n} F(n,k).
 \end{equation}
 
-where for the last equality we used the symmetry of binomial coefficients.
 By iteratively applying this equation, we find the following formula, which we will now prove by induction
 
 \begin{multline}\label{combinatorics induction}
@@ -835,15 +732,12 @@ following remark is in order: We are only interested in the case \(d=g\) and the
 for \(d>g\); however, the additional summands in the left sum vanish, where as the right sum is empty
 for these values of \(d\) since the  upper bound of the summation index is lower than its lower bound.
 
-For the induction step, pick \(d\in\mathbb{N}_0\), use \eqref{combinatorics induction} and pull the first summand
- out of the second sum,
+For the induction step, pick \(d\in\mathbb{N}_0\), we pull the first summand out of the second sum 
+of \eqref{combinatorics induction},
 on this summand we apply the recursive relation \eqref{combinatorics solution recursive} resulting in
 
 \begin{multline}
-F(g,k)=\sum_{l=0}^d (-1)^l (g-l)^k \binom{g}{l}\\
- + (-1)^{d+1}\sum_{n=2}^{g-d-1} \binom{n+d-1}{d}\binom{g}{n+d} F(g-d-n,k)\\
-  + (-1)^{d+1} \binom{d}{d} \binom{g}{d+1} F(g-d-1,k)\\
-\overset{\eqref{combinatorics solution recursive}}{=}\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
+F(g,k)=\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
 +(-1)^{d+1} \sum_{n=2}^{g-d-1} \binom{n+d-1}{d} \binom{g}{n+d} F(g-d-n,k)\\
 -(-1)^{d+1} \binom{g}{d+1} \sum_{n=1}^{g-d-2} \binom{g-d-1}{n} F(g-d-1-n,k)\\
 =\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
@@ -859,13 +753,12 @@ F(g,k)= \sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
 \end{multline}
 
 
-In order to combine the two binomials we reassemble \(\binom{g}{d+1}\binom{g-d-1}{n}\) 
-into \(\binom{g}{n+d+1}\binom{n+d+1}{d+1}\), which can be seen to be possible by representing everything
-in terms of factorials. This results in
+In order to combine the two binomials we disassemble \(\binom{g}{d+1}\) into a product and use
+ \eqref{absorption}  \(d+1\) times, yielding
 \begin{multline}
 F(g,k)= \sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
-+(-1)^{d+2} \sum_{n=1}^{g-d-2}\left[\binom{n+d+1}{d+1} - \binom{n+d}{d}\right] \binom{g}{n+d+1} 
- F(g-d-1-n,k)\\
++ \sum_{n=1}^{g-d-2}\left[\binom{n+d+1}{d+1} - \binom{n+d}{d}\right] \binom{g}{n+d+1} 
+\\(-1)^{d+2} F(g-d-1-n,k)\\
 =\sum_{l=0}^{d+1} (-1)^l (g-l)^k \binom{g}{l}\\
 +(-1)^{d+2}  \sum_{n=1}^{g-d-2} \binom{n+d}{d+1} \binom{g}{n+d+1}  F(g-d-1-n,k),
 \end{multline}
@@ -927,8 +820,7 @@ I am now in a position to state the solution to the recursive equation \eqref{T_
 and have us prove together that it is in fact a solution. 
 
 \begin{Thm}
-For \(n\in\mathbb{N}\) the solution of the recursive equation \eqref{T_n recursive} 
-solely in terms of \(G_a\) and \(C_a\) is given by
+For \(n\in\mathbb{N}\) equation \eqref{T_n recursive} is solved by 
 
 \begin{equation}\label{recursive solution}
 T_n = \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|= n}} \sum_{\vec{d}\in {\{0,1\}}^g} 
@@ -1011,7 +903,7 @@ For \(n\in\mathbb{N}\), \(T_n\) can be written as
 Please note that for ease of notation we defined \(\mathbb{N}^0:= \{1\}\).
 \end{Corollary}
 \textbf{Proof:} By an argument completely analogous to the combinatorial argument in the proof of theorem 
-\eqref{thm: T_n recursive} we see that we can disentangle the \(F\)s in \eqref{recursive solution}
+\eqref{thm: T_n recursive} we see that we can entangle the \(F\)s in \eqref{recursive solution}
 into \(G\)s and \(C\)s if we multiply by a factor of \(\binom{c+g}{c}\) where \(c\) is the 
 number of \(C\)s and \(g\) is the number of \(G\)s giving
 
@@ -1049,10 +941,10 @@ S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
 \frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
 =\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \sum_{\vec{c}\in\mathbb{N}^c} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l}
 \sum_{g\in\mathbb{N}_0} \frac{1}{g!} \sum_{\vec{g}\in\mathbb{N}^g} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
-=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \prod_{l=1}^c \sum_{k\in\mathbb{N}} \frac{1}{k!} C_{k}
-\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \prod_{l=1}^g \sum_{b\in\mathbb{N}} \frac{1}{b!} G_{b}\\
-=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \left( \sum_{k\in\mathbb{N}} \frac{1}{k!} C_{k}\right)^c
-\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \left( \sum_{b\in\mathbb{N}} \frac{1}{b!} G_{b}\right)^g\\
+=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \prod_{l=1}^c \sum_{c_l\in\mathbb{N}} \frac{1}{c_l!} C_{c_l}
+\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \prod_{l=1}^g \sum_{g_l\in\mathbb{N}} \frac{1}{g_l!} G_{g_l}\\
+=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \left( \sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}\right)^c
+\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \left( \sum_{l\in\mathbb{N}} \frac{1}{l!} G_{l}\right)^g\\
 =e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}} e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} G_{l}}.
 \end{multline}
 \qed
@@ -1098,7 +990,7 @@ G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{
 \prod_{l=1}^g \left(\sum_{b_l\in\mathbb{N}} \frac{Z_{b_l}}{b_l!} \right) \right)\\
 =G\left( 
  \sum_{g\in\mathbb{N}} \frac{(-1)^{g+1}}{g} 
- \left(\sum_{b\in\mathbb{N}} \frac{Z_{b}}{b!} \right)^g \right)\\
+ \left(\sum_{b_l\in\mathbb{N}} \frac{Z_{b_l}}{b_l!} \right)^g \right)\\
  =G\left( 
  \sum_{g\in\mathbb{N}} \frac{(-1)^{g+1}}{g} 
  \left(U-\id \right)^g \right)
@@ -1117,7 +1009,7 @@ G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{
 
 \begin{Remark}
 If one starts with the right hand side of \eqref{sleek_second_quantised_scattering_operator} as the definition of 
-some operator \(S\), all it takes to verify that it fulfils \eqref{lift_condition1} and \eqref{lift_condition2} is the following 
+some operator \(\mathfrak{S}\), all it takes to verify that it fulfils \eqref{lift_condition1} and \eqref{lift_condition2} is the following 
 (in comparison with its derivation) short calculation:
 
 Let \(\varphi\in \mathcal{H}\), for any \(k\in \mathbb{N}_0\) we see applying the commutation relation of \(G\):
@@ -1132,7 +1024,7 @@ so we see that for \(k\in\mathbb{N}_0\)
 \begin{equation}
 \left(G(\ln U)\right)^k a^\# (\varphi) = \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( G(\ln U)\right)^{k-b}
 \end{equation}
-holds. Using that, we conclude
+holds. Using that we conclude
 \begin{multline*}
 e^{G(\ln U)}a^\#(\varphi) = \sum_{k=0}^\infty \frac{1}{k!} \left(G(\ln U)\right)^k a^\# (\varphi)\\
 =\sum_{k=0}^\infty \frac{1}{k!}  \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi \right) \left( G(\ln U)\right)^{k-b}\\
@@ -2522,8 +2414,4 @@ holds.
 \chapter{Cooperating Researchers} 
 Prof. Dr. Franz Merkl (LMU)\\
 Junior Research Group Leader Dr. Dirk Deckert (LMU)
-
-
-
-\end{document}
 

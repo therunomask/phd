@@ -9,17 +9,16 @@
 \contentsline {subsection}{\numberline {3.3.1}Heuristics}{15}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Theorem and Proof}{18}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}Solution to Recursive Equation}{25}{section.3.4}
-\contentsline {section}{\numberline {3.5}Quantitative Estimates}{46}{section.3.5}
-\contentsline {section}{\numberline {3.6}Main Conjecture}{64}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Explicit Representations}{66}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Results About All Odd Orders}{67}{subsection.3.6.2}
-\contentsline {subsubsection}{\numberline {3.6.2.1} Lifting the Charge Conjugation Operator}{67}{subsubsection.3.6.2.1}
-\contentsline {subsubsection}{\numberline {3.6.2.2}Commutation of Charge Conjugation and Scattering Operators}{68}{subsubsection.3.6.2.2}
-\contentsline {subsection}{\numberline {3.6.3} Explicit Bound of the First Order}{69}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Results about the Second Order}{69}{subsection.3.6.4}
+\contentsline {section}{\numberline {3.5}Quantitative Estimates}{47}{section.3.5}
+\contentsline {section}{\numberline {3.6}Main Conjecture}{65}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Explicit Representations}{67}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Results About All Odd Orders}{68}{subsection.3.6.2}
+\contentsline {subsubsection}{\numberline {3.6.2.1} Lifting the Charge Conjugation Operator}{68}{subsubsection.3.6.2.1}
+\contentsline {subsubsection}{\numberline {3.6.2.2}Commutation of Charge Conjugation and Scattering Operators}{69}{subsubsection.3.6.2.2}
+\contentsline {subsection}{\numberline {3.6.3} Explicit Bound of the First Order}{70}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Results about the Second Order}{70}{subsection.3.6.4}
 \contentsline {chapter}{\chapternumberline {4}Mathematical Justification}{77}{chapter.4}
 \contentsline {appendix}{\chapternumberline {A}One Particle S-Matrix; Explicit Bounds}{79}{appendix.A}
 \contentsline {section}{\numberline {A.1}Bound on \(\delimiter "026B30D ({\mathchoice {{\setbox \z@ \hbox {$\mathsurround \z@ \displaystyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \displaystyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \textstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \textstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptscriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptscriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}}-m)^{-1}\delimiter "026B30D _{\text {spec}}\)}{84}{section.A.1}
 \contentsline {section}{\numberline {A.2}Young's Inequality on \(L^2(\mathcal {M})\)}{90}{section.A.2}
-\contentsline {chapter}{Bibliography}{91}{section*.35}
-\contentsline {chapter}{Cooperating Researchers}{93}{appendix*.36}
+\contentsline {chapter}{Cooperating Researchers}{91}{appendix*.34}

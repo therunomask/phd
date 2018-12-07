@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.22)  10 SEP 2018 15:00
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.22)  8 NOV 2018 12:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -309,33 +309,41 @@ Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
 \bigaw@=\dimen119
 \minCDarrowwidth=\dimen120
 )
-\c@de=\count114
-\c@theo=\count115
-\c@rmk=\count116
+(/usr/local/texlive/2017/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip52
+\enit@outerparindent=\dimen121
+\enit@toks=\toks28
+\enit@inbox=\box29
+\enitdp@description=\count114
+)
+\c@de=\count115
+\c@thm=\count116
+\c@rmk=\count117
 
 (./QFT_Communications.aux)
 \openout1 = `QFT_Communications.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-\AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring ON on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring ON on input line 45.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -343,70 +351,74 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count117
+\c@section@level=\count118
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
 
 (./QFT_Communications.out) (./QFT_Communications.out)
 \@outlinefile=\write3
 \openout3 = `QFT_Communications.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 56.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 56.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Citation `something' on page 1 undefined on input line 70.
+LaTeX Warning: Citation `something' on page 1 undefined on input line 74.
 
 
-LaTeX Warning: Citation `something!' on page 1 undefined on input line 104.
+LaTeX Warning: Citation `something!' on page 1 undefined on input line 107.
 
 
-LaTeX Warning: Citation `Dewitt1960' on page 1 undefined on input line 108.
+LaTeX Warning: Citation `Dirac34' on page 1 undefined on input line 112.
 
 [1
 
 ]
 
-LaTeX Warning: Citation `DeWitt1960' on page 2 undefined on input line 114.
-
-
-LaTeX Warning: Citation `kay1991theorems' on page 2 undefined on input line 128
-.
+LaTeX Warning: Citation `something...' on page 2 undefined on input line 132.
 
 [2]
 
 LaTeX Warning: Citation `Shale Stinespring 1965' on page 3 undefined on input l
-ine 175.
+ine 208.
 
-(./QFT_Communications.bbl [3])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
+[3]
+Overfull \hbox (27.15674pt too wide) in paragraph at lines 255--258
+\TU/lmr/m/it/10.95 Also for four-potentials $\OML/cmm/m/it/10.95 A; B \OMS/cmsy
+/m/n/10.95 2 \OML/cmm/m/it/10.95 C[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 R[]\OT
+1/cmr/m/n/10.95 )$ \TU/lmr/m/it/10.95 the corresponding projectors are typicall
+y inequivalent[[],
+ []
+
+(./QFT_Communications.bbl [4])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 288.
+ [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 288.
  (./QFT_Communications.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 224.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 224.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 288.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 288.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 288.
  ) 
 Here is how much of TeX's memory you used:
- 9668 strings out of 493010
- 132445 string characters out of 6134663
- 221340 words of memory out of 5000000
- 13541 multiletter control sequences out of 15000+600000
+ 9950 strings out of 493010
+ 137239 string characters out of 6134663
+ 226494 words of memory out of 5000000
+ 13819 multiletter control sequences out of 15000+600000
  12495 words of font info for 62 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 30i,9n,35p,290b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,12n,35p,271b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on QFT_Communications.pdf (4 pages).
+Output written on QFT_Communications.pdf (5 pages).

@@ -199,8 +199,7 @@ In order to introduce the one-particle dynamics I introduce Diracs equation \eqr
 
 Throughout this thesis I will consider four-potentials $A, F$ or \(G\) to be smooth functions
 in \(C_{c}^\infty(\mathbb{R}^4)\otimes \mathbb{C}^4\), where the index \(c\)
-denotes that the elements have compact support. Also throughout this thesis I
-will denote by \(A, F\) and \(G\) some arbitrary but fixed four-potentials. The Dirac
+denotes that the elements have compact support. The Dirac
 equation for a wave function \(\phi \in L^2(\mathbb{R}^3)\otimes \mathbb{C}^4\)
 is
 \begin{equation}\label{dirac}
@@ -352,53 +351,67 @@ The series representing \(U^A\) therefore converges, so it gives rise to a well 
 
 
 \section{Construction of the Second Quantised Scattering-Matrix}\label{sec:second quant}
-The main objective of my thesis is to do the analogous proof of section
-\ref{sec:well-def} in the second quantised case, %\Dirk{Begriff second-quant.
-%einführen}
-i.e. to prove conjecture
-\ref{main_result}. For doing so we have gathered a lot of tools from the
-one-particle theory. In the following I outline how the construction of the
+ In the following I outline how the construction of the
 second quantised scattering operator is to be carried out, we will naturally be
-led to an informal power series representation for the scattering operator \(S\). This time the construction is more delicate, so I will consider different kinds of terms of the expansion using different techniques. 
-I will first consider all odd orders in the expansion in section \ref{sec: odd orders}, 
-then mention additional results about the first order in section \ref{sec:
-first order} and move on to the second order in section \ref{sec: second
-order}. The control of the orders greater than two are outstanding and forms the main
-part of the work in this project. In section \ref{sec:main result} below I
-will give arguments why the necessary control for the convergence can be
-achieved.
+led to an informal power series representation for the scattering operator \(S\). 
 
-First I fix some more notation. Using the space of solutions of the Dirac equation \(\mathcal{H}\)
+First I fix some more notation in agreement with \cite{ivp2}. Using a general Hilbertspace \(\mathcal{H}\) as a one-particle Hilbertspace. 
+A subspace \(\mathcal{H}^+\) of \(\mathcal{H}\) is called polarisation if both \(\mathcal{H}^+\) and \(\mathcal{H}^-:=\left(\mathcal{H}^+\right)^\perp\)
+are infinite dimensional, where by \(\perp\) I denote the orthogonal complement. With a polarisation \(\mathcal{H}^+\) comes also the orthogonal
+projection operator \(P^+\) onto the subspace \(\mathcal{H}^+\) and its complement \(P^-=1-P^+\).
 %\Dirk{am besten schon oben einführen}
-one constructs Fock space in the following way
+One constructs the Fock space associated with \(\mathcal{H}\) and a polarisation \(\mathcal{H}^+\) of \(\mathcal{H}\) in the following way
 
 \begin{equation}
-\mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\Lambda m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\Lambda p},
+\mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\wedge m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\wedge p},
 \end{equation}
-where the bar denotes complex conjugation and \(\Lambda\) in the exponent
+where \(\overline{\mathcal{H}^-}\) is identical with \(\mathcal{H}^-\) as a set
+but defines scalar multiplication as \(\mathbb{C}\times \overline{\mathcal{H}} \ni (a, \psi)\mapsto \overline{a} \psi\)
+where the bar denotes complex conjugation of complex numbers. \(\wedge\) in the exponent
 denotes that only elements which are antisymmetric with respect to permutations
 are allowed. The Factor \(\left(\mathcal{H}^{\pm}\right)^0\) is understood as
 \(\mathbb{C}\). I will denote the sectors of Fock space of fixed particle
-numbers by \(\mathcal{F}_{m,p}:= \left(\mathcal{H}^+ \right)^{\Lambda m}
-\otimes \left(\overline{\mathcal{H}^-} \right)^{\Lambda p}\). The element of
-\(\mathcal{F}_{0,0}\) of norm \(1\) will be denoted by \(\Omega\).  The
+numbers by \(\mathcal{F}_{m,p}:= \left(\mathcal{H}^+ \right)^{\wedge m}
+\otimes \left(\overline{\mathcal{H}^-} \right)^{\wedge p}\). The element of
+\(\mathcal{F}_{0,0}\) of norm \(1\) will be denoted by \(\Omega\). Both \(\otimes\) 
+and \(\bigoplus\) already include completion with respect to the
+natural topologies. The simplest and yet interesting example of this construction is
+the Fockspace constructed on a hyperplane prior to the support of an external field,
+in this case \(\mathcal{H}=L^2(\mathbb{R}^3,\mathbb{C}^4)\) and \(\mathcal{H}^+\)
+consists of the wavefunctions that can be constructed from the generalised eigenfunctions
+of positive energy with respect to the free Dirac Hamiltonian.
+
+The
 annihilation operator \(a\) acts on an arbitrary sector of Fock space
-\(\mathcal{F}_{m,p}\), for any \(m,p\in\mathbb{N}_0\) as
+\(\mathcal{F}_{m,p}\), for any \(m,p\in\mathbb{N}_0\) with either of the operator types
 
-\begin{equation}
-\begin{aligned}
-a: &\mathcal{H}\otimes \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p-1}\\
-&\phi \otimes \alpha \mapsto \langle \mathrm{P}_+ \phi (x),\alpha (x,\cdot,\dots)\rangle_x + \langle \mathrm{P}_- \phi (x),\alpha (\cdot,\dots, \cdot, x)\rangle_x,
-\end{aligned}
-\end{equation}
-where \(\langle, \rangle_x\) denotes that the scalar product of \(\mathcal{H}\) is to be taken with respect to \(x\) and \(\mathrm{P}_{\pm}\) denotes the projector onto \(\mathcal{H}^+\) and \(\mathcal{H}^-\) respectively. The vacuum sector is mapped to the zero element of Fock space. 
 
-Now we turn to the construction of the \(S\)-matrix, the second quantised analogue of \(U\). This construction is carried out axiomatically. The first axiom makes sure that the following diagram, and the analogue for the adjoint of the annihilation operator commute.
+\begin{align}
+a: &\overline{\mathcal{H}}\otimes \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p+1}\\
+a: &\overline{\mathcal{H}}\times \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p+1}
+%&\phi \otimes \alpha \mapsto \langle \mathrm{P}_+ \phi (x),\alpha (x,\cdot,\dots)\rangle_x + \langle \mathrm{P}_- \phi (x),\alpha (\cdot,\dots, \cdot, x)\rangle_x,
+\end{align}
+regardless of the exact type of the annihilation operator I will denote it by \(a\).
+I start out by defining \(a\) on elements of 
+\(\{\bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c  \mid \forall c:  \varphi_c \in \mathcal{H}^+, \phi_c \in \mathcal{H}^-   \}\)
+which spans a dense subset of \(\mathcal{F}_{m,p}\), then one continues this operator uniquely by 
+linearity and finally by the bounded linear extension theorem to all of \(\mathcal{F}_{m,p}\) and then 
+again by linearity to all of \(\overline{\mathcal{H}}\otimes \mathcal{F}_{m,p}\).
+\begin{align}
+&a\left(\phi \otimes \bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c\right)=a\left(\phi,\bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c\right)\\
+&= \sum_{k=1}^m (-1)^{1+k} \langle P^+ \phi, \varphi_k\rangle \bigwedge_{\overset{l=1}{l\neq k}} \varphi_l \otimes \bigwedge_{c=1}^p \phi_c + \bigwedge_{l=1}^m \varphi_l \otimes P^- \phi \wedge \bigwedge_{c=1}^p \phi_c
+\end{align}
+
+
+where \(\langle, \rangle\) denotes that the scalar product of \(\mathcal{H}\). The first summand on the right hand side is taken to vanish for \(m=0\). 
+For \(\varphi\in \mathcal{H}\) I will also use the abbreviation \(a(\varphi):=a(\varphi,\cdot)\).
+
+Now we turn to the construction of the \(S\)-matrix, the second quantised analogue of \(U^A\). This construction is carried out axiomatically. The first axiom makes sure that the following diagram, and the analogue for the adjoint of the annihilation operator commute.
 \begin{equation}
 \begin{CD}								%heuristics with infinite wedge space?
 \mathcal{F}     @>S^A>>  \mathcal{F}\\
 @AAaA        @AAaA\\
-\mathcal{H}\otimes \mathcal{F}     @>U^A\otimes S^A>>  \mathcal{H}\otimes \mathcal{F} 
+\overline{\mathcal{H}}\otimes \mathcal{F}     @>U^A\otimes S^A>>  \overline{\mathcal{H}}\otimes \mathcal{F} 
 \end{CD}
 \end{equation}
 \begin{axiom}
@@ -410,38 +423,32 @@ The \(S\) operator fulfils the ``lift condition''.
 \end{align}
 where \(a^*\) is the adjoint of the annihilation operator, the creation operator. 
 \end{axiom}
-The scattering operator is then expanded in an informal 
-power series
+
+In analogy to the convergent power series of the one-particle scattering operator \(U^A\):
+\begin{equation}\label{U_expansion}
+U^A = \sum_{k=0}^\infty \frac{1}{k!} Z_k(A),
+\end{equation}
+where \(Z_k(A)\) are bounded operators on \(\mathcal{H}\), which are homogeneous of degree \(k\) in \(A\),
+we try a formal power series ansatz for the second quantised scattering operator \(S^A\)
 
 \begin{equation}\label{S_expansion}
-S^A=\id_\mathcal{F}+\sum_{l=1}^\infty \frac{1}{l!} T_l(A).
+S^A=\sum_{k=0}^\infty \frac{1}{k!} T_k(A).
 \end{equation}
-In order to fully characterise \(S^A\) it is enough to characterise all of the \(T_l\) operators. For \(k\in \mathbb{N}\)
-the operators \(T_k (A)\) are also defined for \(k\) non-identical arguments by homogeneity of
-\(T_k(A)\) to be symmetric in its arguments. For ease of notation we define \(T_0:=\id_\mathcal{F}\).
-Using the \eqref{lift_condition1} one can easily derive commutation relations for the operators 
-\(T_m\), which are given by
+Here \(T_k\) are assumed to be homogeneous of degree \(k\); however, they will only turn out to be bounded on
+fixed particle number subspaces \(\mathcal{F}_{m,p}\) of Fockspace. It is the goal of the following  sections to
+show that this ansatz indeed works, that is we can identify operators \(T_k\) such that \eqref{S_expansion}
+holds up to a global phase and furthermore the question of convergence can be settled if one assumes that 
+the phase is analytic in the external field \(A\).
+In order to fully characterise \(S^A\) it is enough to characterise all of the \(T_k\) operators. 
+Using the \eqref{lift_condition1} one can derive commutation relations for the operators 
+\(T_k\) by plugging in \eqref{U_expansion} and \eqref{S_expansion} into \eqref{lift_condition1} and \eqref{lift_condition2}
+and collecting all terms with the same degree of homogeneity. They are given by
 
 \begin{equation}\label{logarithmic lift condition}
 \left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right) T_{m-j}(A), 
 \end{equation}
-where \(a^\#\) is either \(a\) or \(a^*\).
-The matrix elements of the expansion coefficients \(T_l\) of \eqref{S_expansion} can therefore be constructed from the matrix elements of the lower expansion coefficients \(T_k\) with \(k<l\) and the vacuum expectation value of \(T_l\). As will be shown in section \ref{sec: odd orders}, the vacuum expectation value of all odd orders can naturally be chosen to zero, due to charge conjugation symmetry. I will be using the method of Eppstein and Glaser (see \cite{epstein1973role, scharf2014finite})  to find the vacuum expectation value of the even orders.
-
-Besides the scattering operator I will also need the expansion coefficients of its adjoint. 
-\begin{equation}\label{S_adjoint}
-\left(S^A\right)^*=\id_\mathcal{F}+\sum_{l=1}^\infty \frac{1}{l!} \tilde{T}_l(A)
-\end{equation}
-
-Since the scattering operator has to be unitary, it is not difficult to find the following expression for the coefficients of its adjoint
-
-\begin{equation}
-\forall m>0:\quad \sum_{k=0}^m \begin{pmatrix}
-m\\k
-\end{pmatrix} T_{m-k} (A) \tilde{T}_{k}(A)=0.
-\end{equation}
-
-Thus to find the adjoint coefficient of order \(n\), it suffices to know the coefficients of \(S\) itself up to order \(n\). 
+where \(a^\#\) is either \(a\) or \(a^*\). Together \(T_k\) and \(\langle T_k\rangle\) characeterise the operator \(T_k\) on the whole algebraic
+direct sum, it can then be further extended to all of Fockspace.
 
 \section{Construction of Recursive Equation for \(T_m\)}
 
@@ -629,7 +636,7 @@ of \(T\) operators in each product. Moreover the indices of the Multinomial inde
 agree with the indices of the \(Z\) and \(T\) operators in the product. Because of 
 this, we see that if we fix an element of the spanning set \eqref{combinatorics span}
 \(a^\# \prod_{k=1}^{m_1} Z_{\alpha_k} \prod_{k=1}^{m_2}T_{\beta_k}\), each 
-summand of \eqref{combinatorics ordered product} which is a multiple of
+summand of \eqref{combinatorics ordered product} which contributes to
 this element, has the prefactor
 
 \begin{equation}
@@ -664,7 +671,8 @@ Rephrasing this problem, we can ask which products
 \begin{equation}
 \prod_{l=1}^g T_{\gamma_l}
 \end{equation}
- for suitable \(g\) and \((\gamma_l)_l\) produce multiples of \(K(m_1,m_2)\)? We will call this number of 
+ for suitable \(g\) and \((\gamma_l)_l\) produce, when commuted with a creation or annihilation operator, 
+  multiples of \(K(m_1,m_2)\)? We will call this number of 
  total contributions weighted with the factor 
  \( - \frac{(-1)^g}{g}\) borrowed from \eqref{combinatorics total sum of T} \(\#K(m_1,m_2)\).  
  Looking at the commutation relations 
@@ -679,14 +687,26 @@ three sets \(A,B\) and \(C\), where the commutation relation has to be used in s
  holds. Unfortunately not any splitting corresponds to a contribution and not any
  order of multiplication of a legal splitting corresponds to a contribution either.
  However we can be sure that \(\prod_{j} T_{\alpha_j} \prod_j T_{\beta_j}\) gives
- a contribution and we may apply the commutation relations backwards to obtain any
- valid combination. This results in the following game:
+ a contribution and it is in fact the longes product that does.
+ We may apply the commutation relations backwards to obtain any
+ shorter valid combination and hence all combinations. 
+ Transforming the commutation rule for \(T_k\) read from right to left
+ into a game results in the following rules.
  
 Starting from the string 
 \begin{equation}
 A_1A_2\dots A_{m_1} B_1 B_2 \dots B_{m_2},
 \end{equation}
-how many strings can we produce by applying the following rules?
+
+representing the longes product, where here and in the following \(A\)'s
+represent operators \(T_k\) which will turn into \(Z_k\) by the commutation rule,
+\(B\)'s represent operators \(T_k\) which will stay \(T_k\) after commutation and
+\(C\)'s represent operators \(T_k\) which will produce both a \(Z_l\) in the creation/annihilation
+operator and a \(T_{k-l}\) behind that operator. The indices are merely there to keep track of
+which operator moved where.
+
+So the game consists in the answering how many strings can we produce by 
+applying the following rules to the initial string?
 \begin{enumerate}
 \item You may replace any occurrence of \(A_k B_j\) by \(B_j A_k\) for any \(j\) and \(k\).
 \item You may replace any occurrence of \(A_k B_j\) by \(C_{k,j}\) for any \(j\) and \(k\).
@@ -707,7 +727,7 @@ C A A B A C C B B A C B B A B B B B,
 
 there is only one correct labelling to be restored, namely the one where each (first index of 
 any) \(C\) and \(A\) receive increasing labels from left to right and analogously for (the second 
- index of any) \(C\) and \(B\), resulting in
+ index of any) \(C\) and \(B\), resulting for our example in
  
 \begin{equation}
  C_{1,1} A_2 A_3 B_2 A_4 C_{5,3} C_{6,4} B_{5} B_6 A_7 C_{8,7} B_8 B_9 A_9 B_{10} B_{11} B_{12} B_{13}.
@@ -938,10 +958,8 @@ where \(F\) is given by
 \begin{equation}\label{eq resursive weak solution}
 F_{a,b} = \left\{ \begin{matrix}G_a \quad \text{for } b=0 \\ C_a \quad \text{for } b=1  \end{matrix} \right._. 
 \end{equation}
-For the readers convenience we remind her, that \(G_a\) is defined by \eqref{T_n recursive}. Whereas
-the constants \(C_n\) depend on the vacuum expectation value of \(T_n\) as well as on the products
-on the right hand side of \eqref{recursive solution} and are yet either to be found in terms of or 
-eliminated in favour of \(\langle T_n \rangle \). 
+For the readers convenience we remind her, that \(G_a\) and
+the constants \(C_n\) are defined in theorem \ref{thm: T_n recursive}. 
 \end{Thm}
 
 \textbf{Proof:} The structure of this proof will be induction over \(n\). For \(n=1\) the whole expression
@@ -1058,15 +1076,16 @@ S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
 \qed
 
 \begin{Thm}\label{sleek_second_quantised_scattering_operator}
+For \(A\) such that 
+\begin{equation}
+\|\id-U^A\|<1.
+\end{equation}
 The second quantized scattering operator fulfils
 \begin{equation}\label{eq:sleek_second_quantised_scattering_operator}
 S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))}
 \end{equation}
-for external potentials small enough, where \(C_n\) must be imaginary for any \(n\in\mathbb{N}\) in order to satisfy unitarity.
-For smallness the following condition is sufficient:
-\begin{equation}
-\|\id-U^A\|<1.
-\end{equation}
+where \(C_n\) must be imaginary for any \(n\in\mathbb{N}\) in order to satisfy unitarity.
+
 \end{Thm}
 \textbf{Proof:} Due to the last few lemmas and theorems this proof has become much less difficult.
 First the remark about \(C_n \in i \mathbb{R}\) for any \(n\) is a direct consequence of 
@@ -1156,10 +1175,10 @@ Let \(P_k,P_l\in Q\) then the following holds
 For a proof of this lemma let \(P_k,P_l \in Q\), we compute
 \begin{align*}
 &\left[G(P_k),G(P_l)\right]\stackrel{\eqref{G commutator}}{=}\\
-&=\sum_{n,b\in\mathbb{N}} \left[ a^*\left(P_k\varphi_n\right) a(\varphi_n), a^*\left(P_l\varphi_b\right)a(\varphi_n)\right]
--\sum_{-b,n\in\mathbb{N}}\left[a^*\left(P_k\varphi_n\right)a(\varphi_n), a(\varphi_b) a^*\left(P_l\varphi_b\right)\right]\\
-&-\sum_{-n,b\in\mathbb{N}}\left[a(\varphi_n)a^*\left(P_k\varphi_n\right),a^*\left(P_l\varphi_b\right)a(\varphi_b)\right]
-+\sum_{n,b\in\mathbb{N}}\left[ a(\varphi_n)a^*\left(P_k\varphi_n\right), a(\varphi_b)a^*\left(P_l\varphi_b\right)\right]\\
+&=\sum_{n,b\in\mathbb{N}} \left[ a^*\left(P_k\varphi_n\right) a(\varphi_n), a^*\left(P_l\varphi_b\right)a(\varphi_n)\right]\\
+&-\sum_{-b,n\in\mathbb{N}}\left[a^*\left(P_k\varphi_n\right)a(\varphi_n), a(\varphi_b) a^*\left(P_l\varphi_b\right)\right]\\
+&-\sum_{-n,b\in\mathbb{N}}\left[a(\varphi_n)a^*\left(P_k\varphi_n\right),a^*\left(P_l\varphi_b\right)a(\varphi_b)\right]\\
+&+\sum_{n,b\in\mathbb{N}}\left[ a(\varphi_n)a^*\left(P_k\varphi_n\right), a(\varphi_b)a^*\left(P_l\varphi_b\right)\right]\\
 &=\sum_{n,b\in\mathbb{N}} \left(a^*\left(P_k\varphi_n\right)\left<\varphi_n,P_l\varphi_b\right>a(\varphi_b)-a^*\left(P_l\varphi_b\right) \left<\varphi_b,P_k\varphi_n\right>a(\varphi_n) \right)\\
 &-\sum_{-b,n\in\mathbb{N}}\left( - \left<\varphi_b,P_k \varphi_n\right>a(\varphi_n)a^*\left(P_l\varphi_b\right) + a(\varphi_b) a^*\left(P_k\varphi_n\right)\left<\varphi_n,P_l\varphi_b\right>\right)\\
 &-\sum_{-n,b\in\mathbb{N}} \left( - \left< \varphi_n,P_l\varphi_b\right> a^*\left(P_k\varphi_n\right) a(\varphi_b) + a^*\left(P_l\varphi_b\right)a(\varphi_n)\left<\varphi_b,P_k\varphi_n\right>\right)\\

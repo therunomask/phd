@@ -81,14 +81,24 @@ Throughout the paper
 is a four potential and \(\Sigma_{\text{in}}\) denotes a Cauchy surface earlier than \(\text{supp}(A)\).
 
 %some introductory math needs to be written also we should mention that we are concerned with the Dirac field
-
-\begin{equation}
-(i\slashed{\partial} - m - \slashed{A})\psi = 0
+We will be concerned in this paper with a system of Dirac particles subject to an external electric field \(A\) each one solving 
+Dirac's equation
+\begin{equation}\label{dirac}
+(i\slashed{\partial} - m - \slashed{A})\psi:=(i\slashed{\nabla}-m)\psi = 0
 \end{equation}
-
+and collectively constituting the free vacuum prior to the support of said external field. As is well known equation \eqref{dirac} gives us a 
+one-particle time evolution operator for each pair of Cauchy surfaces \(\Sigma, \Sigma'\)
 \begin{equation}
 U_{\Sigma',\Sigma}:\mathcal{H}_\Sigma \rightarrow \mathcal{H}_{\Sigma'},
 \end{equation}
+where \(\mathcal{H}_\Sigma\) the space of square integrable functions on the Cauchy surface \(\Sigma\) is. The scalar product on \(\mathcal{H}_\Sigma\)
+is
+\begin{equation}
+\phi,\psi \mapsto \int_{\Sigma} \overline{\phi}(x) i_{\gamma}(d^4\gamma) \psi(x).
+\end{equation}
+Here \(i\) evaluates a 4-form on a vector to get a 3-form.
+The approaches differ in how they choose to describe the ensemble of Dirac particles. 
+
 
 \section{Hadamard States}
 In the algebraic approach to QFT one puts less emphasise on the Hilbert space as is commonly done in non relativistic physics, because 
@@ -96,8 +106,8 @@ once one talks about quantum fields in a relativistic setting the specific repre
 space is no longer canonical. 
 In stead one tries to focus on the operators that represent the physical measurements one wants to perform later on. 
 One can construct an algebra which contains these operators and do most of the analysis on this algebra itself; however, 
-many construction common to that analysis already make use of special properties of special states. The so called Hadamard states 
-(We will introduce them shortly) often play a role in constructing operators that represent e.g. objects like the energy 
+many constructions commonly used already need special properties of special states. The so called Hadamard states 
+(we will introduce them shortly) often play a role in constructing operators that represent e.g. objects like the energy 
 momentum tensor of a quantum field. Additionally at some point in
 the physical analysis one would like to produce some numbers which can be compared to experiments. In order to do so, one
 has to pick a representation. The GNS construction is very helpful in this regard, since it reduces the construction of a representation to 
@@ -109,34 +119,68 @@ Instead one could interpret picking a Hadamard state as making a choice of which
 calls positive energy states. This may become clearer in section \ref{sec:pol classes}. 
 Hadamard states are singled out by their dynamical properties. The definition of Hadamard states is a technical one, so we will omit
 the general case and focus on the condition for Fermions in flat Minkowski spacetime subject to an external potential. This scenario was
-already considered by Dirac \cite{Dirac34}. The condition in this case reads as follows: 
+already considered by Dirac \cite{Dirac34} and has recently attracted considerable attention \cite{zahn, shlemmerZahn}.  
+The construction of Hadamard states is usually done via a detour over the Greens functions of Dirac's equation, which is most easily 
+constructed from the hyperbolic Klein-Gordon operator.
+
+\begin{de}
+The Klein-Gordon operator corresponding to the Dirac equation \eqref{dirac} reads
+\begin{equation}
+P:=(i\slashed{\nabla}-m)(-i\slashed{\nabla}-m)=\nabla_\alpha \nabla^\alpha + \frac{i}{2} \gamma^\alpha \gamma^\beta F_{\alpha,\beta} +m^2,
+\end{equation}
+where \(F_{\alpha,\beta}=\partial_\alpha A_\beta - \partial_\beta A_\alpha\) is the field strength tensor of the electromagnetic field. Furthermore we 
+define for \(f\in \mathcal{C}_c^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{16})\) the differential operator
+\begin{equation}
+\slashed{\nabla}^* f(x,x')=\left(\frac{\partial}{\partial y^\alpha} - i A_\alpha(y)\right)f(x,y)\gamma^\alpha.
+\end{equation}
+\end{de}
+
+
+The condition in this case reads as follows: 
 
 \begin{de}
 A state \(\omega\) is called Hadamard if its two point function \(w\in (C_c^\infty(\mathcal{M})\times C_c^\infty(\mathcal{M}))'\) 
-acts for \(f_1,f_2\in C_c^\infty(\mathcal{M})\) as 
+acts for \(f_1,f_2\in C_c^\infty(\mathcal{M})\otimes \mathbb{C}^4\) as 
 \begin{equation}
-w(f_1,f_2)=\lim_{\varepsilon\searrow 0} \int_{\mathbb{R}^4}d^4 x \overline{f_1}(x) \int_{\mathbb{R}^4} d^4y ~b_\varepsilon(x,y) f_2(y)
+w(f_1,f_2)=\lim_{\varepsilon\searrow 0} \int_{\mathbb{R}^4}d^4 x \overline{f_1}(x) \int_{\mathbb{R}^4} d^4y ~h_\varepsilon(x,y) f_2(y)
 \end{equation}
-with \(b_\varepsilon\) being of the form
+with \(h_\varepsilon\) being of the form
 
 \begin{align}\nonumber
-b_\varepsilon (x,y)=-i(i\slashed{\partial}_x -\slashed{A}(x)-m)
-&\Big[\frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}}{(x-y-i \varepsilon e_0)^2}\\\label{def:hadamard}
-&+V(x,y) \ln ((x-y-i \varepsilon e_0)^2)\Big]+W(x,y).
+h_\varepsilon (x,y)=\frac{-1}{2(2\pi)^2}(-i \slashed{\nabla} + i \slashed{\nabla}^\ast -2m)
+&\Big[\frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}}{ (y-x-i \varepsilon e_0)^2}\\\label{def:hadamard}
+&+V(x,y) \ln (-(y-x-i \varepsilon e_0)^2)\Big]+W(x,y).
 \end{align}
+%
+%für das Vorzeichen, beachte, dass H^- aus dem Zahn paper genommen wird, was das gleiche ist wie x und y zu tauschen
+%
 In this equation \(V,W:\mathbb{R}^4\rightarrow \mathbb{C}^4\) are smooth functions, \(W\) is completely arbitrary and varies for
 different Hadamard states, whereas \(V\) is fixed by the external potential. For \((x-y)^2\) small enough the series
 \begin{equation}
-V(x,y)=\sum_{k=0}^\infty \frac{1}{2^{k-1}k!} V_k(x,y) (x-y)^{2k}
+V(x,y)=\sum_{k=1}^\infty \frac{1}{ 4^{k} k!(k-1)!} V_k(x,y) (x-y)^{2(k-1)}
 \end{equation}
 converges.\cite{something...}  The functions \(V_k\) fulfil a recursive set of partial differential equations
-\begin{align}\notag
-&\left((\partial_{x}^{\alpha}-i A^\alpha(x))(\partial_{x,\alpha}-i A_\alpha(x))+m^2\right) V_{n-1}(x,y)\\\label{Hadamard recursive equ.}
- &\hspace{3cm}+ (x-y)^\alpha (\partial_{x,\alpha}-i A_\alpha(x)) V_{n}(x,y) + (2n+2) V_{n}(x,y)=0,
+\begin{align}\label{Hadamard recursive equ.}
+(x-y)^\alpha (\partial_{x,\alpha}-i A_\alpha(x)) V_{n}(x,y) + n V_{n}(x,y)=-n P V_{n-1}(x,y),
 \end{align}
-where \(V_{-1}(x,y)=e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}\).
+where \(V_{0}(x,y)=e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}\).
 \end{de}
 
+\begin{rmk}\label{WavefrontRemark}
+As was first proven by Radzikofski\cite{(basically copy Zahn)} for Klein-Gordon fields and subsequently generalized \cite{something} 
+Hadamard states \(\omega\) are equivalently characterized by
+
+\begin{align}
+\omega(Df,g)=0\\
+\omega(f,g)+\omega(g,f)=i S(f,g)\\
+\overline{\omega(f,g)}=\omega(\overline{f},\overline{g})\\
+\text{WF}(\omega)\subset C_+,
+\end{align}
+where \(S(f,g)\) is the propagator of the Dirac equation, WF\((\omega)\)\footnote{for an introduction see \cite{friendly introduction, maybe also bär book}}
+ is the wave front set of the distribution \(\omega\)
+ and  \(C_+:=\{(x,y;k_1,-k_2)\in\mathbb{R}^{16}\mid (x;k_1)\approx (y;k_2) , k_1^2\ge0, k_1^0>0\}\)
+and \((x;k_1)\approx(y;k_2)\) holds whenever \((x-y)^2=0\) and \((y-x)\parallel k_1 = k_2\).
+\end{rmk}
 
 %note to self: should I mention that fields are operator valued distributions? 
 
@@ -171,11 +215,12 @@ for general \(\phi, \psi \in \mathcal{H}_\Sigma\).
 \begin{rmk}
 By inserting the expansion of \(K_1\) in terms of a Laurent series and a logarithm, \cite{abramowitz1965handbook} one obtains:
 
-\begin{equation}\label{K1series}
-K_1(\xi) = \frac{1}{\xi}- \frac{\xi}{4} \sum_{k=0}^\infty \left(2 \psi(k+1)+\frac{1}{k+1}-2 \ln\frac{ \xi}{2} \right) \frac{\left(\frac{\xi^2}{4}\right)^k}{k!^2 (k+1)}.
-\end{equation}
+\begin{align}\label{K1series}
+K_1(\xi) = \frac{1}{\xi}- \frac{\xi}{4} \sum_{k=0}^\infty \left(2 \psi(k+1)+\frac{1}{k+1}-2 \ln\frac{ \xi}{2} \right) \frac{\left(\frac{\xi^2}{4}\right)^k}{k!^2 (k+1)}\\\label{def:Q}
+=:\frac{1}{\xi} + \xi Q(\xi).
+\end{align}
 
-It is not obvious from the equation \eqref{Hadamard recursive equ.} but in fact well known that the
+It is not obvious from the equation \eqref{Hadamard recursive equ.} but well known that the
  vacuum of Minkowski spacetime does indeed
 correspond to  a Hadamard state subject to vanishing four potential. In fact, the Hadamard states were constructed to 
 agree with the Minkowski vacuum up to smooth terms.
@@ -227,7 +272,7 @@ Now for hyperplanes \(\Sigma\cap \text{supp}(A)\neq \emptyset\) the operator \(P
 objects that differ from a Projector onto \(U_{\Sigma,\Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_in}^-\) by a Hilbert-Schmidt operator.
 Therefore we need not keep track of the exact evolution of the projection operators, but define a whole class of admissible ones.
 
-\begin{de}
+\begin{de}\label{def:lambda}
 For any function \(\lambda\in C^\infty (\mathbb{R}^4\times \mathbb{R}^4, \mathbb{R})\) fulfilling
 \begin{enumerate}[label= \roman*) ]
 \item There is a compact set \(K\subset \mathbb{R}^4\) such that \(\supp \lambda \subseteq K\times \mathbb{R}^4 \cup \mathbb{R}^4 \times K\).
@@ -256,15 +301,19 @@ P_{\Sigma}^\lambda-U_{\Sigma,\Sigma'}^A P_{\Sigma'}^\lambda U_{\Sigma',\Sigma}\i
 Also for four-potentials \(A,B\in C_c^\infty(\mathbb{R}^4)\) 
 the corresponding projectors are typically inequivalent\cite[theorem 1.5]{ivp2}
 
-\begin{equation}
+\begin{equation}\label{equiv:pLambda}
 P_{\Sigma}^{\lambda^A} - P_{\Sigma}^{\lambda^B} \in I_2(\mathcal{H}_\Sigma) \iff \forall x\in \Sigma~ \forall z\in T_x \Sigma: z^\alpha(A_\alpha(x)-B_\alpha(x))=0.
 \end{equation}
 \end{rmk}
 
-Now the notion of Hadamard state and  projectors of polarisation classes are extremely close.
+
+
+Taking into account the freedom within each classification the notions Hadamard state and  projectors of polarisation classes are extremely close. This is expressed in the following
+
+\section{Comparison Between Hadamard States and \(P^\lambda\)}
 
 \begin{thm}
-Given a global Hadamard state \(H\) there is a smooth function  \(w\in C^\infty(\mathbb{R}^4\times \mathbb{R}^4)\) such that
+Given a Hadamard state \(H\) there is a smooth function  \(w\in C^\infty(\mathbb{R}^4\times \mathbb{R}^4)\) such that
 for any hypersurface \(\Sigma\), \(H-w\) can be interpreted as linear bounded map\(:\mathcal{H}_\Sigma\rightarrow \mathcal{H}_\Sigma\).
 Furthermore for each \(\lambda\) fulfilling \(i)-iii)\), \(H-w\) and \(P^\lambda\) yield equivalent descriptions:
 \begin{equation}
@@ -273,6 +322,104 @@ H-w-P^\lambda \in I_2(\mathcal{H}_\Sigma).
 
 
 \end{thm}
+
+{\bf Proof:} Let \(H\) be a Hadamard state acting as 
+\begin{equation}
+H(f_1,f_2)=\lim_{\varepsilon\searrow 0} \int_{\mathbb{R}^4}d^4 x \overline{f_1}(x) \int_{\mathbb{R}^4} d^4y ~H_\varepsilon(x,y) f_2(y).
+\end{equation}
+ Since the 
+wave front set of a distribution contains more information than its singular support
+remark \ref{WavefrontRemark} can be used
+ to characterise the singular support of \(H\):
+
+\begin{equation}
+\text{singsupp}(H)=\{(x,y)\in\mathbb{R}^8\mid (x-y)^2=0\}.
+\end{equation}
+
+Due to \eqref{equiv:pLambda}
+Pick a function \(\lambda\)  according to definition \ref{def:lambda}. For ease of comparison we also choose
+\(\tilde{\lambda}:\mathbb{R}^4\rightarrow \mathbb{C}\)
+\begin{equation}
+\tilde{\lambda}(x,y)= (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y).
+\end{equation}
+
+
+Now pick some \(\delta>0\). We pick \(w\in C_c^\infty(\mathbb{R}^4\times\mathbb{R}^4)\)
+such that for all \(x,y\in\mathbb{R}^4\):
+
+\begin{align}
+(x-y)^2< - \delta^2 &\Rightarrow H(x,y)-w(x,y) =p^\lambda(x,y)\\
+\overline{x~ y}\cap \text{supp}(A)=\emptyset &\Rightarrow  \mathrm{w}\!\!-\!\!\lim_{\varepsilon\rightarrow 0} H_\varepsilon(x,y)-w(x,y)= \mathrm{w}\!\!-\!\! \lim_{\varepsilon\rightarrow 0} p_\varepsilon(y-x)
+\end{align}
+are fulfilled. Since \(H\) is smooth everywhere outside of its singular support, the first condition can always be fulfilled.
+The second one agrees with the first one whenever both conditions apply, so we can fulfill both if we can fulfill each one.
+The second one by itself can be fulfilled, because by looking at \eqref{Hadamard recursive equ.}, we see that if  
+\(\overline{y ~x}\cap \text{supp}A=\emptyset\), \(H(x,y)\) does not contain any information of \(A\) and so agrees with \(P^{\lambda=0}\)
+up to smooth terms.
+Next pick a Cauchy surface \(\Sigma\), we define \(H-w\) as a  map on \(\mathcal{H}_\Sigma\)
+\begin{align}\label{def:H-w}
+H-w: \mathcal{H}_\Sigma \rightarrow \mathcal{H}_\Sigma\\
+\psi \mapsto \lim_{\varepsilon \rightarrow 0} \int_{\Sigma} (H_\varepsilon - w)(\cdot,y) i_\gamma(d^4y) \psi(y).
+\end{align}
+This is well defined for the following reasons: by choice of \(w\), if 
+\(\psi \mapsto \lim_{\epsilon \rightarrow 0} \int_{\Sigma \cap B_\delta (\cdot)} (H_\epsilon -w)(\cdot, y) i_\gamma(d^4 y) \psi(y)\) 
+gives a well defined map, also \eqref{def:H-w} will be well defined. Now a direct comparison of \(H_\epsilon - w\) and the 
+integral kernel of \(P_\Sigma^\lambda\) will reveal that \(\| H_\varepsilon-w-p^\lambda_{\varepsilon}\|_{L_{2}(\Sigma\times \Sigma)}\) has a finite estimate
+independent of \(\varepsilon\), implying that \(H-w-P^\lambda\) can be understood as an \( I_2(\mathcal{H}_{\Sigma})\) operator. 
+
+What follows is the estimate of \( \| H_\varepsilon-w-p^\lambda_{\varepsilon}\|_{L_{2}(\Sigma\times \Sigma)}\):
+
+We begin by noticing that \(H_\varepsilon-w-p^\lambda_{\varepsilon}|_{\Sigma\times \Sigma}\) has support only in the set \(J_\delta:=\{(x,y)\in \Sigma \times \Sigma \mid \|x-y\|<\delta\wedge \overline{x ~ y} \cap \text{supp}(A)\neq \emptyset \}\) which is bounded and therefore of finite measure.  
+Because \(P^\lambda-P^{\tilde{\lambda}}\) is locally square integrable we may replace 
+\(P^\lambda \) by \(P^{\tilde{\lambda}}\) everywhere in the estimates.
+So pick \(\varepsilon>0 \). In the following we will abbreviate \(E(x,y):=e^{-i \tilde{\lambda}(x,y)} \). Pick \(x\in \Sigma, y\in \Sigma \cap B_\delta(x) \). The difference of the main terms yields:
+
+\begin{align}\nonumber
+&\frac{E(x,y)}{4\pi^2} \lim_{\varepsilon \rightarrow 0} \left( (i \slashed{\partial}_x +m) \frac{1}{(y-x-i \varepsilon e_0)^2} -\frac{1}{E(x,y)}(i \slashed{\nabla}/2 - i \slashed{\nabla}^*/2 +m) \frac{E(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
+&=\frac{iE(x,y)}{4\pi^2} \lim_{\varepsilon \rightarrow 0} \left( \slashed{\partial}_x \frac{1}{(y-x-i \varepsilon e_0)^2} -\frac{1}{2E(x,y)}(\slashed{\partial}_x + i \slashed{A}(x) - \slashed{\partial}_y + i \slashed{A}(y) ) \frac{E(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
+&=\frac{iE(x,y)}{4\pi^2} \lim_{\varepsilon \rightarrow 0} \left(-i\frac{\slashed{A}(x) + \slashed{A}(y)}{2 (y-x-i\varepsilon e_0)^2} + \slashed{\partial}_x \frac{1}{(y-x-i \varepsilon e_0)^2} -\frac{1}{2}(\slashed{\partial}_x- \slashed{\partial}_y ) \frac{1}{(y-x-i\varepsilon e_0)^2}\right.\\\nonumber
+&\left.-\frac{1}{2E(x,y)} \frac{(\slashed{\partial}_x- \slashed{\partial}_y )E(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
+&=\frac{iE(x,y)}{4\pi^2} \lim_{\varepsilon \rightarrow 0} \left(-i\frac{\slashed{A}(x) + \slashed{A}(y)}{2 (y-x-i\varepsilon e_0)^2} +\frac{1}{2}(\slashed{\partial}_x+ \slashed{\partial}_y ) \frac{1}{(y-x-i\varepsilon e_0)^2}
++\frac{1}{2E(x,y)} \frac{(-\slashed{\partial}_x+ \slashed{\partial}_y )E(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
+&=\frac{-iE(x,y)}{8\pi^2} \lim_{\varepsilon \rightarrow 0} \frac{1}{(y-x-i\varepsilon e_0)^2} \left(i\slashed{A}(x) + i\slashed{A}(y)
++E(x,y)^{-1} \left( \slashed{\partial}_x- \slashed{\partial}_y\right) E(x,y) \right)\\\nonumber
+&=\frac{E(x,y)}{8\pi^2} \lim_{\varepsilon \rightarrow 0} \frac{1}{(y-x-i\varepsilon e_0)^2} \left(\slashed{A}(x) + \slashed{A}(y)
+-  2 \int_0^1 \mathrm{d}s \slashed{A}(s x + (1-s)y)  \right.\\\nonumber
+&\left.+(y-x)^\alpha \int_0^1 \mathrm{d}s (1-2s) (\slashed{\partial}A_\alpha)(sx+(1-s)y)   \right).
+\end{align}
+
+Now using Taylor's series for \(A\) around \(x,y\) as well as \((x+y)/2\) reveals 
+
+\begin{align}\nonumber
+\slashed{A}(x) + \slashed{A}(y)- 2 \int_0^1 \mathrm{d}s \slashed{A}(s x + (1-s)y) = \frac{(x-y)^\alpha}{4} (x-y)^\beta (\partial_\alpha \partial_\beta \slashed{A})((x+y)/2) \\\label{estimate1}
++ \mathcal{O}(\|x-y\|^2)\\\nonumber
+(x-y)^\alpha \int_0^1 \mathrm{d}s (1-2s) (\slashed{\partial}A_\alpha)(sx+(1-s)y)=
+ -\frac{(x-y)^\alpha}{2}(x-y)^\beta  (\slashed{\partial}\partial_\beta A_\alpha)((x+y)/2) \\\label{estimate2}
+ + \mathcal{O}(\|x-y\|^3),
+\end{align}
+showing that \(H_\varepsilon-w-p^\lambda_{\varepsilon}\) is locally square integrable at \(x=y\) for \(\varepsilon \rightarrow 0\), since this is the only point in \(\Sigma\) 
+where it might fail to be smooth. So we can now estimate \(\|H-w-P^\lambda\|_{I_2}\)
+
+\begin{align}
+\|H-w-P^\lambda\|_{I_2}^2
+= \lim_{\varepsilon \rightarrow 0}  \int_{\Sigma \times \Sigma}| h_\varepsilon -w - p_\varepsilon^\lambda |^2(x,y) \mathrm{d}x \mathrm{d}y\\
+=\lim_{\varepsilon \rightarrow 0}\int_{\{x,y\in J_\delta\}} | h_\varepsilon -w - p_\varepsilon^\lambda |^2(x,y)\\
+\le \lim_{\varepsilon \rightarrow 0}\int_{\{x,y\in J_\delta \}} 3(C+ \\
+| V(x,y)\ln(-(y-x-i\varepsilon e_0)^2) -Q(m \sqrt{-(y-x-i\varepsilon e_0)}) -w(x,y))  |^2) \\
++3 \|P^\lambda - P^{\tilde{\lambda}}\|_{L^2(J_\delta,\mathbb{C}^4)}^2<C_2<\infty ,
+\end{align}
+where \(C\) is the upper bound on \(\frac{\eqref{estimate1}+\eqref{estimate2}}{(y-x-i\varepsilon e_0)^2}\) and \(Q\) was defined in \eqref{def:Q}. Now the Integral in the last line is over a compact region, and the remaining summands are all locally square integrable. \qed
+
+
+%strategy:
+%1. Hadamard form of sate <=> Hadamard state fulfils microlocal condition,(cite SchlemmerZahn, as well as the original things such as Radzikowski etc.)
+% i.e. the only sets of points (x,y) where it is not smooth are those with (x-y)^2=0
+%2. subtract from the Hadamard state a smooth function such that it vanishes except in a ball of radius \epsilon (in relative coordinates). This is possible due to 1.
+% 3. compare  reducedHadamard state with P^\lambda for \lambda=-ie \int_x^y A(...) => Most divergent term is reduced to something bounded, remaining 1/(x-y) and log(x-y)
+% terms may not cancel each other, however since they are I_2 anyway, we don't care. 
+%4. Since P^\lambda and the reduced Hadamard state agree up to square integrable terms the reduced Hadamard state can also be viewed as a map H_\Sigma -> H_\Sigma
+%5. By 3. and 4. the theorem follows.
+
 
 
 

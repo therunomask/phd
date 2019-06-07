@@ -1,0 +1,155 @@
+\documentclass[a4paper,11pt]{article}
+
+%\usepackage{german}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{slashed}
+\usepackage{authblk}
+%identity sign
+\usepackage{dsfont}
+
+\usepackage{relsize}
+
+
+
+
+\DeclareMathOperator{\tr}{tr}
+
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+\begin{document}
+
+\section{\(\frac{1}{(z+i\varepsilon e_0)^2}\):}
+
+Let \(f\in C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\). We are interested in
+\begin{equation}\label{main distribution}
+\lim_{\varepsilon \rightarrow 0} \int_{\mathbb{R}^4} d^4z \frac{f(z^0,\vec{z})}{(z+i \varepsilon e_0)^2}
+=\lim_{\varepsilon \rightarrow 0}\int_{\{\vec{z}\in\mathbb{R}^3\mid \vec{z}\neq 0\}}d^3 z \int_{\mathbb{R}} dz^0 \frac{f(z^0,\vec{z})}{(z+i \varepsilon e_0)^2}.
+\end{equation}
+
+Now if we exclude the points in \(\mathbb{R}^4\) where the two poles of the integrand coincide we are able to use
+
+\begin{equation}
+\frac{1}{(z+i \varepsilon e_0)^2}=\frac{1}{(z^0 + i \varepsilon -|\vec{z}|)(z^0 + i \varepsilon +|\vec{z}|)}
+=\frac{1}{2 |\vec{z}| (z^0+ i \varepsilon - |\vec{z}|)} - \frac{1}{2 |\vec{z}| (z^0+ i \varepsilon + |\vec{z}|)}.
+\end{equation}
+
+For one of these terms and fixed \(\varepsilon>0, \vec{z}\in\mathbb{R}^3\) we obtain
+
+\begin{align}
+\int d z^0 \frac{f(z^0,\vec{z})}{z^0+i \varepsilon -|\vec{z}|}=
+\int d u \frac{f(u+|\vec{z}|,\vec{z})}{u+i \varepsilon}= 
+\int d u \frac{u f(u+|\vec{z}|,\vec{z})}{u^2+\varepsilon^2} - i \varepsilon \int du \frac{f(u+|\vec{z}|,\vec{z})}{u^2+\varepsilon^2}\\
+=\int_0^\infty du \left(f(u + |\vec{z}|,\vec{z})-f(-u + |\vec{z}|,\vec{z})\right)\frac{u}{u^2+\varepsilon^2} 
+- i \int d u \frac{f(\varepsilon u + |\vec{z}|,\vec{z})}{u^2+1}.
+\end{align}
+
+Now in order to pull the limit inside the first integral in \eqref{main distribution}, we recognize, that for \(\varepsilon\) small enough
+ the inner integral can be bounded by 
+
+\begin{equation}\label{upper bound}
+\int_0^\infty du \left|f(u + |\vec{z}|,\vec{z})-f(-u + |\vec{z}|,\vec{z})\right|\frac{1}{u} 
++  \pi \sup_{u\in [-1,1]}|f(u + |\vec{z}|,\vec{z})|,
+\end{equation}
+
+which is independend of \(\varepsilon\) and nevertheless integrable in \(\vec{z}\).
+We can also Pull the limit into the inner integral to obtain:
+
+\begin{align}
+\lim_{\varepsilon \rightarrow 0 }\int d z^0 \frac{f(z^0,\vec{z})}{z^0+i \varepsilon -|\vec{z}|}=
+\mathcal{P} \int d u \frac{f(u + |\vec{z}|,\vec{z})}{u} - i \pi f(|\vec{z}|,\vec{z})
+\end{align}
+
+So in total we obtain 
+
+\begin{align}
+\lim_{\varepsilon \rightarrow 0} \int_{\mathbb{R}^4} d^4z \frac{f(z^0,\vec{z})}{(z+i \varepsilon e_0)^2}
+=\int_{\mathbb{R}^3} d^3 z \frac{1}{2 |\vec{z}|} \left( \mathcal{P}\int du \frac{f(u +|\vec{z}|,\vec{z}) - f(u-|\vec{z}|,\vec{z})}{u} 
+- i \pi (f(|\vec{z}|,\vec{z})-f(-|\vec{z}|,\vec{z}))  \right)
+\end{align}
+
+
+\section{\(\frac{1}{(z+i\varepsilon e_0)^4}\):}
+
+In this case we follow the analogous strategy as for the first case; however, we will have to be more careful with the singularity at \(\vec{z}=0\).
+Let \(f\in C_c^\infty (\mathbb{R}^4, \mathbb{C})\). As before we have
+
+\begin{equation}
+\lim_{\varepsilon \rightarrow 0} \int_{\mathbb{R}^4}d^4z \frac{f(z^0,\vec{z})}{(z+i \varepsilon e_0)^4} 
+= \lim_{\varepsilon \rightarrow 0} \int_{\mathbb{R}^3} d^3z \int_{\mathbb{R}} d z^0 \frac{f(z^0,\vec{z})}{((z^0)^2 + 2 i \varepsilon -\varepsilon^2 - \vec{z}^2)^2}. 
+\end{equation}
+
+Similarly as before we use partial fractions to brake the integral up into parts.
+\begin{align}
+\frac{1}{((z^0)^2 + 2 i \varepsilon -\varepsilon^2 - \vec{z}^2)^2}=
+\frac{1}{(z^0+i\varepsilon - |\vec{z}|)^2(z^0+i\varepsilon + |\vec{z}|)^2)}=
+\left.\frac{1}{(z^0-a)^2(z^0-b)^2)}\right|_{a=\dots, b=\dots}=\\
+\left.\partial_a \partial_b \frac{1}{(z^0-a)(z^0-b)}\right|_{a=\dots, b=\dots}=
+\partial_a \partial_b  \left(\frac{1}{(a-b)(z^0-a)} + \frac{1}{(b-a)(z^0-b)} \right)_{a=\dots, b=\dots}=\\
+\left. \frac{1}{(a-b)^2(z^0-a)^2}-\frac{2}{(a-b)^3(z^0-a)} + \frac{1}{(b-a)^2(z^0-b)^2}-\frac{2}{(b-a)^3(z^0-b)}\right|_{a=\dots, b=\dots}=\\
+\frac{1}{4|\vec{z}|^2(z^0 + i \varepsilon -|\vec{z}|)^2} -\frac{1}{4|\vec{z}|^3(z^0+i\varepsilon -|\vec{z}|)} + \frac{1}{4|\vec{z}|^2(z^0+i\varepsilon +|\vec{z}|)^2} + \frac{1}{4|\vec{z}|^3(z^0+i\varepsilon +|\vec{z}|)}
+\end{align}
+The first and third term can be treated analogously to before. We explicitly deal with the first, the third one can be dealt with analogously
+
+\begin{align}
+\int d z^0 \frac{f(z^0,\vec{z})}{(z^0+i\varepsilon -|\vec{z}|)^2}
+=\int d z^0 f(z^0,\vec{z})\partial_0 \frac{-1}{z^0+i\varepsilon -|\vec{z}|}
+=\int d z^0 \frac{\partial_0 f(z^0,\vec{z})}{z^0+i\varepsilon -|\vec{z}|}=\\
+\int_0^\infty du (\partial_0 f(u+|\vec{z}|,\vec{z}) - \partial_0 f(-u +|\vec{z}|,\vec{z}))\frac{u}{u^2+\varepsilon^2}
+-i \int du \frac{\partial_0 f(\varepsilon u +|\vec{z}|,\vec{z})}{u^2 + \varepsilon^2}
+\end{align}
+This term is not divergent close to \(\vec{z}=0\), which means that the \(\frac{1}{|\vec{z}|^2}\) singularity, which is locally integrable, is the only one for these two terms.
+The other two terms are individually more singular, but can be dealt with together:
+
+\begin{align}
+\int d z^0 f(z^0,\vec{z}) \left( \frac{1}{z^0 + i \varepsilon + |\vec{z}|} - \frac{1}{z^0 + i \varepsilon -|\vec{z}|}\right)=\\
+\int_0^\infty du \left(f(u-|\vec{z}|,\vec{z})-f(-u-|\vec{z}|,\vec{z}) -(f(u+|\vec{z}|,\vec{z})-f(-u+|\vec{z}|,\vec{z}))\right)\frac{u}{u^2+\varepsilon^2}\\
+-i \int du \frac{f(\varepsilon u - |\vec{z}|,\vec{z}) - f(\varepsilon u +|\vec{z}|,\vec{z})}{u^2+1}.
+\end{align}
+In the last two lines we can see that the integral is \(\mathcal{O}(|\vec{z}|)\) close to \(\vec{z}=0\). 
+So in fact the term is integrable even with the \(\frac{1}{|\vec{z}|^3}\) factor, 
+once can also find an integrable upper bound analogous to \eqref{upper bound}.
+Due to these bounds we can apply Lebegues dominated convergence and pull the limit inside the integral, to obtain
+
+\begin{align}
+\lim_{\varepsilon \rightarrow 0} \int_{\mathbb{R}^4} d^4z \frac{f(z^0,\vec{z})}{(z+i\varepsilon e_0)^4} =
+\int d^3 z \left[ \frac{1}{4|\vec{z}|^2} \mathcal{P} \int du \frac{\partial_0 f(u+|\vec{z}|,\vec{z})}{u} -\frac{i\pi}{4 |\vec{z}|^2} \partial_0 f(|\vec{z}|,\vec{z}) \right.\\
++\frac{1}{4|\vec{z}|^2} \mathcal{P} \int du \frac{\partial_0 f(u-|\vec{z}|,\vec{z})}{u} - \frac{i\pi}{4|\vec{z}|^2} \partial_0 f(-|\vec{z}|,\vec{z})\\
+\left. +\frac{1}{4|\vec{z}|^3} \mathcal{P}\int du \frac{f(u-|\vec{z}|,\vec{z})-f(u+|\vec{z}|,\vec{z})}{u} - \frac{i \pi }{4 |\vec{z}|^3} (f(-|\vec{z}|,\vec{z})-f(|\vec{z}|,\vec{z}))\right].
+\end{align}
+
+
+
+
+
+
+
+
+
+
+\end{document}

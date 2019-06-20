@@ -356,27 +356,35 @@ second quantised scattering operator is to be carried out, we will naturally be
 led to an informal power series representation for the scattering operator \(S\). 
 
 First I fix some more notation in agreement with \cite{ivp2}. Using a general Hilbertspace \(\mathcal{H}\) as a one-particle Hilbertspace. 
-A subspace \(\mathcal{H}^+\) of \(\mathcal{H}\) is called polarisation if both \(\mathcal{H}^+\) and \(\mathcal{H}^-:=\left(\mathcal{H}^+\right)^\perp\)
+A closed subspace \(\mathcal{H}^+\) of \(\mathcal{H}\) is called polarisation if both \(\mathcal{H}^+\) and \(\mathcal{H}^-:=\left(\mathcal{H}^+\right)^\perp\)
 are infinite dimensional, where by \(\perp\) I denote the orthogonal complement. With a polarisation \(\mathcal{H}^+\) comes also the orthogonal
-projection operator \(P^+\) onto the subspace \(\mathcal{H}^+\) and its complement \(P^-=1-P^+\).
+projection operator \(P^+\) onto the subspace \(\mathcal{H}^+\) and its complement \(P^-=1-P^+\). For one particle operators \(C\) we 
+introduce the notation \(C_{\#\ddag}:= P^\# C P^\ddag\), where \(\#,\ddag\in\{+,-\}\).
 %\Dirk{am besten schon oben einführen}
-One constructs the Fock space associated with \(\mathcal{H}\) and a polarisation \(\mathcal{H}^+\) of \(\mathcal{H}\) in the following way
+One constructs the Fock space associated with \(\mathcal{H}\) and a polarisation \(\mathcal{H}^+\) of \(\mathcal{H}\) in the following way.
+We define \(\overline{\mathcal{H}^-}\) identical with \(\mathcal{H}^-\) as a set, but scalar multiplication as 
+\(\mathbb{C}\times \overline{\mathcal{H}} \ni (a, \psi)\mapsto \overline{a} \psi\) where the bar denotes complex conjugation of complex numbers.
+A wedge \(\wedge\) in the exponent denotes that only elements which are antisymmetric with respect to permutations
+are allowed. This antisymmetric product as well as the tensor product are to be understood in the algebraic sense. 
+The Factor \(\left(\mathcal{H}^{\pm}\right)^0\) is understood as
+\(\mathbb{C}\). We now define
 
 \begin{equation}
-\mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\wedge m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\wedge p},
+\mathcal{F}^0:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\wedge m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\wedge p},
 \end{equation}
-where \(\overline{\mathcal{H}^-}\) is identical with \(\mathcal{H}^-\) as a set
-but defines scalar multiplication as \(\mathbb{C}\times \overline{\mathcal{H}} \ni (a, \psi)\mapsto \overline{a} \psi\)
-where the bar denotes complex conjugation of complex numbers. \(\wedge\) in the exponent
-denotes that only elements which are antisymmetric with respect to permutations
-are allowed. The Factor \(\left(\mathcal{H}^{\pm}\right)^0\) is understood as
-\(\mathbb{C}\). I will denote the sectors of Fock space of fixed particle
-numbers by \(\mathcal{F}_{m,p}:= \left(\mathcal{H}^+ \right)^{\wedge m}
+
+Fock space is the completion of this set, \(\mathcal{F}:=\widehat{\mathcal{F}^0}\).
+I will denote the sectors of Fock space of fixed particle
+numbers by \(\mathcal{F}_{m,p}:=\widehat{\mathcal{F}^0_{m,p}}\), which is the 
+completion of \(\mathcal{F}^0_{m,p}:=\left(\mathcal{H}^+ \right)^{\wedge m}
 \otimes \left(\overline{\mathcal{H}^-} \right)^{\wedge p}\). The element of
-\(\mathcal{F}_{0,0}\) of norm \(1\) will be denoted by \(\Omega\). Both \(\otimes\) 
-and \(\bigoplus\) already include completion with respect to the
-natural topologies. The simplest and yet interesting example of this construction is
-the Fockspace constructed on a hyperplane prior to the support of an external field,
+\(\mathcal{F}_{0,0}\) of norm \(1\) will be denoted by \(\Omega\). We will also need
+the set
+\begin{equation}
+\mathcal{F}':=\bigoplus_{m,p=0}^\infty \mathcal{F}_{m,p}.
+\end{equation}
+The simplest and yet interesting example of this construction is
+the Fock space constructed on a hyperplane prior to the support of an external field,
 in this case \(\mathcal{H}=L^2(\mathbb{R}^3,\mathbb{C}^4)\) and \(\mathcal{H}^+\)
 consists of the wavefunctions that can be constructed from the generalised eigenfunctions
 of positive energy with respect to the free Dirac Hamiltonian.
@@ -389,9 +397,9 @@ annihilation operator \(a\) acts on an arbitrary sector of Fock space
 \begin{align}
 a: &\overline{\mathcal{H}}\otimes \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p+1}\\
 a: &\overline{\mathcal{H}}\times \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p+1}
-%&\phi \otimes \alpha \mapsto \langle \mathrm{P}_+ \phi (x),\alpha (x,\cdot,\dots)\rangle_x + \langle \mathrm{P}_- \phi (x),\alpha (\cdot,\dots, \cdot, x)\rangle_x,
 \end{align}
-regardless of the exact type of the annihilation operator I will denote it by \(a\).
+regardless of the exact type of the annihilation operator I will denote it by \(a\). Also here the tensor product is 
+understood in the algebraic sense.
 I start out by defining \(a\) on elements of 
 \(\{\bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c  \mid \forall c:  \varphi_c \in \mathcal{H}^+, \phi_c \in \mathcal{H}^-   \}\)
 which spans a dense subset of \(\mathcal{F}_{m,p}\), then one continues this operator uniquely by 
@@ -399,7 +407,7 @@ linearity and finally by the bounded linear extension theorem to all of \(\mathc
 again by linearity to all of \(\overline{\mathcal{H}}\otimes \mathcal{F}_{m,p}\).
 \begin{align}
 &a\left(\phi \otimes \bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c\right)=a\left(\phi,\bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c\right)\\
-&= \sum_{k=1}^m (-1)^{1+k} \langle P^+ \phi, \varphi_k\rangle \bigwedge_{\overset{l=1}{l\neq k}} \varphi_l \otimes \bigwedge_{c=1}^p \phi_c + \bigwedge_{l=1}^m \varphi_l \otimes P^- \phi \wedge \bigwedge_{c=1}^p \phi_c
+&= \sum_{k=1}^m (-1)^{1+k} \langle P^+ \phi, \varphi_k\rangle \bigwedge_{\overset{l=1}{l\neq k}}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c + \bigwedge_{l=1}^m \varphi_l \otimes P^- \phi \wedge \bigwedge_{c=1}^p \phi_c
 \end{align}
 
 
@@ -424,21 +432,21 @@ The \(S\) operator fulfils the ``lift condition''.
 where \(a^*\) is the adjoint of the annihilation operator, the creation operator. 
 \end{axiom}
 
-In analogy to the convergent power series of the one-particle scattering operator \(U^A\):
+There is a convergent power series of the one-particle scattering operator \(U^A\):
 \begin{equation}\label{U_expansion}
 U^A = \sum_{k=0}^\infty \frac{1}{k!} Z_k(A),
 \end{equation}
-where \(Z_k(A)\) are bounded operators on \(\mathcal{H}\), which are homogeneous of degree \(k\) in \(A\),
-we try a formal power series ansatz for the second quantised scattering operator \(S^A\)
+where \(Z_k(A)\) are bounded operators on \(\mathcal{H}\), which are homogeneous of degree \(k\) in \(A\).
+We try an analogous formal power series ansatz for the second quantised scattering operator \(S^A\)
 
 \begin{equation}\label{S_expansion}
 S^A=\sum_{k=0}^\infty \frac{1}{k!} T_k(A).
 \end{equation}
-Here \(T_k\) are assumed to be homogeneous of degree \(k\); however, they will only turn out to be bounded on
-fixed particle number subspaces \(\mathcal{F}_{m,p}\) of Fockspace. It is the goal of the following  sections to
-show that this ansatz indeed works, that is we can identify operators \(T_k\) such that \eqref{S_expansion}
+Here \(T_k\) are assumed to be homogeneous of degree \(k\) in \(A\); however, they will only turn out to be bounded on
+fixed particle number subspaces \(\mathcal{F}_{m,p}\) of Fock space. It is the goal of the following  sections to
+show that this ansatz indeed works. That is, we can identify operators \(T_k\) such that \eqref{S_expansion}
 holds up to a global phase and furthermore the question of convergence can be settled if one assumes that 
-the phase is analytic in the external field \(A\).
+the phase is analytic in the external field \(A\). %In constructing a guess for the scattering operator \(S^A\) we will assume \eqref{S_expansion} to converge absolutely when applied to an element of Fock space with finitely many particles.
 In order to fully characterise \(S^A\) it is enough to characterise all of the \(T_k\) operators. 
 Using the \eqref{lift_condition1} one can derive commutation relations for the operators 
 \(T_k\) by plugging in \eqref{U_expansion} and \eqref{S_expansion} into \eqref{lift_condition1} and \eqref{lift_condition2}
@@ -447,8 +455,269 @@ and collecting all terms with the same degree of homogeneity. They are given by
 \begin{equation}\label{logarithmic lift condition}
 \left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right) T_{m-j}(A), 
 \end{equation}
-where \(a^\#\) is either \(a\) or \(a^*\). Together \(T_k\) and \(\langle T_k\rangle\) characeterise the operator \(T_k\) on the whole algebraic
-direct sum, it can then be further extended to all of Fockspace.
+where \(a^\#\) is either \(a\) or \(a^*\). Together \(T_k\) and \(\langle T_k\rangle\) characterise the operator \(T_k\) on the whole algebraic
+direct sum, it can then be further extended to all of Fock space.
+
+Before we go on to construct a concrete form of the scattering operator, we will first define a certain kind of unitary operator on Fock space.
+
+\section{Differential second quantisation}
+
+In constructing second quantised operators the following object will be of interest. Let \(B:\mathcal{H}\rightarrow\mathcal{H}\) be a bounded
+operator on \(\mathcal{H}\), such that \(i B\) is self adjoint and \(B_{+-}\) is a Hilbert-Schmidt operator. 
+Because \(B_{-+}:\mathcal{H}^+\rightarrow \mathcal{H}^-\) is compact, there is an ONB \((\varphi_n')_{n\in\mathbb{N}}\) 
+of \(\mathcal{H}^+\) and likewise an ONB \((\varphi_{-n}')_{n\in\mathbb{N}}\) of \(\mathcal{H}^-\) such that it takes the canonical form 
+of compact operators
+
+\begin{equation}
+B_{-+} = \sum_{n\in\mathbb{N}} \lambda_n |\varphi_{-n}'\rangle \langle \varphi_{n}'| \quad \lambda \ge 0.
+\end{equation}
+Here the numbers \(\lambda_n\) fulfil \(\sum_{k=1}^\infty \lambda_k^2 = \|B_{-+}\|_{\text{HS}}<\infty\). As a consequence we have
+
+\begin{equation}
+B_{+-} = -\sum_{n\in\mathbb{N}} \lambda_n |\varphi_{n}'\rangle \langle \varphi_{-n}'|.
+\end{equation}
+
+In the following we will try to find a differential second quantisation of \(B\), \(\mathrm{d}\Gamma(B)\). 
+Finally we will define the exponential of this operator on Fock space. In order to do so, the following splitting turns out to be advantageous. 
+
+\begin{Def}
+We define the following operators of type \(\mathcal{F}^0\rightarrow \mathcal{F}\)
+
+\begin{align}\label{predefdGamma}
+\mathrm{d}\Gamma(B_{++})&:= \sum_{n\in\mathbb{N}}  a^*(B_{++} \varphi_n) a(\varphi_n) \\
+\mathrm{d}\Gamma(B_{--})&:= -\sum_{n\in\mathbb{N}}   a(\varphi_{-n})a^*(B_{--} \varphi_{-n}) \\
+\mathrm{d}\Gamma(B_{-+})&:= \sum_{n\in\mathbb{N}}  a^*(B_{-+}\varphi_{n}) a(\varphi_n)
+\end{align}
+where the sum converges in the strong operator topology and \((\varphi_n)_n , (\varphi_{-n})_n\) are arbitrary ONBs of \(\mathcal{H}^+\) and \(\mathcal{H}^-\).
+\end{Def}
+
+
+
+\begin{Lemma}
+\(\mathrm{d}\Gamma(B_{++}),\mathrm{d}\Gamma(B_{--})\) and \(\mathrm{d}\Gamma(B_{-+})\) are independent of the choice of basis. 
+Restricted to \(|_{\mathcal{F}^0_{m,p}}\) they have the following type
+\begin{align}
+\mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}&: \quad \mathcal{F}^0_{m,p} \rightarrow \mathcal{F}_{m,p}\\
+\mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}&: \quad \mathcal{F}^0_{m,p} \rightarrow \mathcal{F}_{m,p}\\
+\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}&: \quad \mathcal{F}^0_{m,p} \rightarrow \mathcal{F}_{m-1,p-1}
+\end{align}
+ and fulfil
+the following bounds for all \(m,p\)
+\begin{align}
+\|\mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}\|&\le (m+1)\|B_{++}\|\\
+\|\mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}\|&\le (p+1)\|B_{--}\|\\
+\|\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}\|&\le \|B_{-+}\|_{\text{HS}}.
+\end{align}
+\end{Lemma}
+\begin{proof}
+Pick \(\alpha\in\mathcal{F}^0_{m,p}\) for \(m,p\in\mathbb{N}_0\), \(\alpha\) can be expressed in terms of a general ONB 
+\((\tilde{\varphi}_k)_{k\in\mathbb{N}}\) of \(\mathcal{H}^+\) and \((\tilde{\varphi}_{-k})_{k\in\mathbb{N}}\) of \(\mathcal{H}^-\)
+\begin{equation}
+\alpha=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\!\!\!\!\!\!\alpha_{L,C} \prod_{l=1}^m a^*(\tilde{\varphi}_{L_l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega.
+\end{equation}
+In this expansion only finitely many coefficients \(\alpha_{\cdot, \cdot}\) are nonzero. Our operators all map the vacuum onto the zero vector, so commuting them 
+through the products of of creation and annihilation operators in the expansion of \(\alpha\) we can make the action of them more explicit:
+\begin{align}\nonumber
+\mathrm{d}\Gamma(B_{++}) \alpha =\hspace{-0.5cm} \sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\!\!\!\!\!\!\alpha_{L,C} \sum_{b=1}^m 
+\prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  \sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_n) \langle \varphi_n, \tilde{\varphi}_{L_b}\rangle \\
+\prod_{l=b+1}^m a^*(\tilde{\varphi}_{l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega\\
+=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\!\!\!\!\!\!\alpha_{L,C} \sum_{b=1}^m 
+\prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B_{++} \tilde{\varphi}_{L_b})  \!\!\!
+\prod_{l=b+1}^m a^*(\tilde{\varphi}_{l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega.
+\end{align}
+At this point we see that reversing these steps we can exchange the basis in the definition of \(\mathrm{d}\Gamma(B_{++})\) with any ONB.
+We also notice, that \(\mathrm{d}\Gamma(B_{++})\alpha \in \mathcal{F}_{m,p}\) holds. The only missing property of the first operator is therefore
+it's norm. For estimating this we see that \(B_{++}\) in the last line can be replaced by 
+\begin{equation}
+B^L_{L_b}:=\left(1-\sum_{\overset{l=1}{l\neq b}}^m |\tilde{\varphi}_{L_l}\rangle \langle \tilde{\varphi}_{L_l}|\right) B_{++},
+\end{equation}
+due to the antisymmetry of fermions. Expanding 
+\begin{align}\nonumber
+&\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 = \langle \mathrm{d}\Gamma(B_{++})\alpha, \mathrm{d}\Gamma(B_{++})\alpha \rangle \\\nonumber
+&= \hspace{-1cm}\sum_{\overset{L,C, L',C'\subset \mathbb{N}}{|L'|=|L|=m,|C'|=|C|=p}}\hspace{-1cm}\overline{\alpha_{L,C}}\alpha_{L',C'} \sum_{b,b'=1}^m 
+\left\langle \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B^{L}_{L_b} \tilde{\varphi}_{L_b})\right.  \\\nonumber
+&\prod_{l=b+1}^m a^*(\tilde{\varphi}_{L_l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega, 
+\prod_{l=1}^{b'-1} a^*(\tilde{\varphi}_{L'_l})  ~~ a^*(B_{L'_{b'}}^{L'} \tilde{\varphi}_{L'_b})  \\
+&\left.\prod_{l=b'+1}^m a^*(\tilde{\varphi}_{L'_l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C'_c}) \Omega\right\rangle
+\end{align}
+we see that in fact \(C\) and \(C'\) need to agree, because we can just commute the corresponding annihilation operators from one end of the 
+scalar product to the other. Furthermore only a single wavefunction on each side of the scalar product is modified, this implies that in order for the
+scalar product not to vanish \(|L\cap L'|\ge m-2\) has to hold. If \(L\neq L'\) the double sum over \(n,n'\) has only the contribution where 
+\(b=L_l \not\in L'\) and \(b'=L'_{l'}\not\in L\) are selected. Otherwise the full sum contributes, yielding
+\begin{align}\nonumber
+&\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 = \\\nonumber
+&= \hspace{-0.8cm}\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\sum_{n\neq n'\in\mathbb{N}\backslash L }
+\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{n'\},C}
+ \langle B^{L\cup\{n\}}_n \tilde{\varphi}_{n}, B^{L\cup\{n'\}}_{n'}\tilde{\varphi}_{n'}\rangle (-1)^{g(L,n)+g(L,n')}\\\label{B++estimate}
+&+\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.4cm} |\alpha_{L,C}|^2
+ \sum_{b,b'=1}^m 
+\left\langle \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B^{L}_{L_b} \tilde{\varphi}_{L_b})\right.  \\\nonumber
+&\prod_{l=b+1}^m a^*(\tilde{\varphi}_{L_l}) \Omega, 
+\prod_{l=1}^{b'-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B_{L_{b'}}^{L} \tilde{\varphi}_{L_b})  \left.\prod_{l=b'+1}^m a^*(\tilde{\varphi}_{L_l}) ) \Omega\right\rangle,
+\end{align}
+where \(g(L,n):=|\{l\in L \mid l<n\}|\) keeps track of the number of anti commutations. In the first sum we add and subtract the terms 
+where \(n=n'\). The enlarged sum can then be reformulated
+
+\begin{align}\nonumber
+\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\hspace{-0.5cm}\sum_{n,n'\in\mathbb{N}\backslash L} \hspace{-0.3cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{n'\},C} 
+ \langle B^{L\cup\{n\}}_n \tilde{\varphi}_{n}, B^{L\cup\{n'\}}_{n'}\tilde{\varphi}_{n'}\rangle (-1)^{g(L,n)+g(L,n')}\\
+ =\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\left\|\sum_{n\in\mathbb{N}\backslash L}\alpha_{L\cup\{n\},C}  B^{L\cup\{n\}}_n \tilde{\varphi}_{n} (-1)^{g(L,n)} \right\|^2\\\label{B++ first term}
+  =\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\left\|\left(1-\sum_{l\in L}|\tilde{\varphi}_l\rangle\langle \tilde{\varphi}_l | \right)B_{++}\sum_{n\in\mathbb{N}\backslash L}\alpha_{L\cup\{n\},C}  \tilde{\varphi}_{n} (-1)^{g(L,n)} \right\|^2
+\end{align}
+Now the operator product inside the norm has operator norm \(\|B_{++}\|\) and so we can estimate the whole object by
+\begin{equation}\label{B++estimatefinal1}
+\eqref{B++ first term}\le \|\alpha\|^2 \|B_{++}\|^2.
+\end{equation}
+Now for the first term in \eqref{B++estimate} we need to estimate the term we added to complete the norm square, this is done as follows
+\begin{align}\nonumber
+&\sum_{\overset{L,C\subset\mathbb{N}}{|L|=m-1,|C|=p}} \hspace{-0.4cm}\sum_{n\in\mathbb{N}\backslash L} |\alpha_{L\cup\{n\},C}|^2 \|B_n^{L\cup\{n\}} \tilde{\varphi}_{n}\|^2\\\label{B++estimatefinal2}
+&\le \hspace{-0.6cm}\sum_{\overset{L,C\subset\mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.5cm} \|B_{++}\|^2|\alpha_{L,C}|^2 =\|\alpha\|^2 \|B_{++}\|^2.
+\end{align}
+What remains is the second sum in \eqref{B++estimate}, for this term there are two cases.  If \(b=b'\) then the scalar product is 
+equal to \(\langle B_{L_b}^L \tilde{\varphi}_b, B_{L_{b}}^L \tilde{\varphi}_{b}\rangle\). If \(b\neq b'\) the scalar product is, up to a sign,
+equal to \(\langle B_{L_b}^L \tilde{\varphi}_b,\tilde{\varphi}_{b}\rangle \langle \tilde{\varphi}_{b'}, B_{L_{b'}}^L \tilde{\varphi}_{b'}\rangle\).
+However both of these terms can be estimated by \(\|B_{++}\|^2\). So all \(m^2\) summands of this sum contribute \(\|B_{++}\|^2\). Overall 
+this estimate yields
+\begin{align}\nonumber
+&\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 \le \eqref{B++estimatefinal1}+\eqref{B++estimatefinal2} + \|\alpha\|^2 m^2 \|B_{++}\|^2 \\\nonumber
+&= \|\alpha\|^2 (2+m^2) \|B_{++}\|^2.
+\end{align}
+For convenience of notation the estimate can be changed to 
+\begin{equation}
+\|\mathrm{d}\Gamma(B_{++})\alpha\| \le (m+1) \|B_{++}\|,
+\end{equation}
+because for all \(m\neq0\) 
+this estimate is and upper bound on what we found, but for \(m=0\) the operator \(\mathrm{d}\Gamma(B_{++})\) is actually the zero operator.
+A completely analogous argument works for \(\mathrm{d}\Gamma(B_{--})\). 
+
+So lets move on to \(\mathrm{d}\Gamma(B_{-+})\). Applying it to the same \(\alpha\in \mathcal{F}^0_{m,p}\) again we permute all the operators
+to the right, where they annihilate the vacuum. The remaining terms are
+
+\begin{align}\nonumber
+\sum_{n\in\mathbb{N}} a^*(B_{-+}\varphi_n)a(\varphi_{n})\hspace{-0.5cm}\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}  \hspace{-0.5cm}\alpha_{L,C} 
+\prod_{l=1}^m a^*(\tilde{\varphi}_{L_l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega  \\\nonumber
+=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.5cm} \alpha_{L,C} \sum_{b=1}^m \sum_{d=1}^p (-1)^{m-1+b+d} \langle B_{+-} \tilde{\varphi}_{-C_d},\tilde{\varphi}_{L_b}\rangle \\
+\prod_{\overset{l=1}{l\neq b}}^m a^*(\tilde{\varphi}_{L_l})
+\prod_{\overset{c=1}{c\neq d}}^p a(\tilde{\varphi}_{-C_c})\Omega.
+\end{align}
+Next we realise that by performing the same steps backward, we can replace the arbitrary ONB in the definition of \(\mathrm{d}\Gamma(B_{-+})\) by any other one.
+By counting the remaining creation and annihilation operators we immediately see that \(\mathrm{d}\Gamma(B_{-+})\alpha\in \mathcal{F}_{m-1,p-1}\). 
+For estimating the norm of this vector, we switch basis from \((\tilde{\varphi}_{\pm n})_n\) to \((\varphi_{\pm n}')_n\), the basis where 
+\(B_{-+}\) takes its canonical form. Then the scalar product involving \(B_{-+}\) reduces to \(\lambda_{L_b}\delta_{L_b,C_d}\). We estimate
+
+\begin{align}\nonumber
+&\|\mathrm{d}\Gamma(B_{-+})\alpha\|^2= \hspace{-0.5cm}\sum_{\overset{L,L',C,C'\subset\mathbb{N}}{\overset{|L|=|L'|=m}{|C|=|C'|=p}}} ~\sum_{a,a'=1}^m \sum_{b,b'=1}^p
+\overline{\alpha}_{L,C} \alpha_{L',C'}(-1)^{b+d+b'+d'}\lambda_{L_b} \lambda_{L_{b'}'} \\
+&\delta_{L_b,C_d} \delta_{L_{b'}',C_{d'}'} \left\langle \prod_{\overset{l=1}{l\neq b}}^m a^*(\varphi_{L_l}')\prod_{\overset{c=1}{c\neq d}}^p 
+a(\varphi_{-C_c}')\Omega, \prod_{\overset{l=1}{l\neq b'}}^m a^*(\varphi_{L_l'}')
+\prod_{\overset{c=1}{c\neq d'}}^p a(\varphi_{-C_c'}')\Omega\right\rangle.
+\end{align}
+
+The scalar product in the second line tells us that \(L\backslash \{L_b\}=L'\backslash \{L_{b'}'\}\) and \(C\backslash \{C_{d}\}=C'\backslash \{C_{d'}'\}\) have
+to hold in order for the term not to vanish. So this means that \(L\) and \(L'\) as well as \(C\) and \(C'\) can respectively differ at most by one element
+which then has to be in the intersection \(L\cap C\). Because this sum is really just a finite sum, we can reorder it in the following way
+
+\begin{align}\nonumber
+\|\mathrm{d}\Gamma(B_{-+})\alpha\|^2
+&=\hspace{-0.4cm}\sum_{\overset{L,C\subset\mathbb{N}}{\overset{|L|=m-1}{|C|=p-1}}} \sum_{b,b'\in \mathbb{N}\backslash (L\cup C)}\hspace{-0.3cm} \lambda_{b} \lambda_{b'} 
+\overline{\alpha}_{L\cup\{b\},C\cup \{b\}} \alpha_{L\cup\{b'\},C\cup\{b'\}}\\
+&(-1)^{g(L,b)+g(C,b)+g(L,b')+g(C,b')},
+\end{align}
+where \(g(L,b)=|\{l\in L \mid l<b\}|\) as before. This expression can be rewritten in terms of a scalar product in \(\ell^2(\mathbb{N})\)
+
+\begin{align}\nonumber
+\|\mathrm{d}\Gamma(B_{-+})\alpha\|^2
+&=\hspace{-0.4cm}\sum_{\overset{L,C\subset\mathbb{N}}{\overset{|L|=m-1}{|C|=p-1}}} \left|\left\langle 1_{(L\cup C)^c} \alpha_{L\cup \{\cdot \}, C\cup \{\cdot\}} (-1)^{g(L,\cdot)+g(C,\cdot)},\lambda_\cdot \right\rangle_{\ell^2}  \right|^2 \\
+&\le \hspace{-0.4cm}\sum_{\overset{L,C\subset\mathbb{N}}{\overset{|L|=m-1}{|C|=p-1}}} \sum_{b\in \mathbb{N}} 1_{(L\cup C)^c}(b) |\alpha_{L\cup\{b\},C\cup\{b\}}|^2 \sum_{d\in\mathbb{N}}\lambda_d^2\\
+&\le \|\alpha\|^2 \|B_{-+}\|^2_{\text{HS}}.
+\end{align}
+
+\end{proof}
+
+\begin{Corollary}
+The operators \(\mathrm{d}\Gamma(B_{--})\) and \(\mathrm{d}\Gamma(B_{++})\) can be extended by continuity on \(\mathcal{F}^0_{m,p}\) to unbounded operators on all of \(\mathcal{F}'\).
+The operator \(\mathrm{d}\Gamma(B_{-+})\) can be continuously extended to all of \(\mathcal{F}\).
+\end{Corollary}
+
+\begin{Lemma}
+The operator \(\left(\mathrm{d}\Gamma(B_{-+})\right)^*\)  acts on elements of \(\mathcal{F}^0\) as
+
+\begin{equation}
+- \sum_{n\in\mathbb{N}} a^*(B_{+-}\varphi_{-n}) a(\varphi_{-n})=:-\mathrm{d}\Gamma(B_{+-}).
+\end{equation}
+So also \(\mathrm{d}\Gamma(B_{+-}):\mathcal{F}^0\rightarrow \mathcal{F}\) can be extended continuously to all of \(\mathcal{F}\).
+Moreover \(\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{+-})\) is skew-adjoint.
+\end{Lemma}
+\begin{proof}
+Pick \(\beta,\alpha \in \mathcal{F}^0\). We expand those states with respect to the basis \((\varphi_k')_{k\in\mathbb{Z}\backslash \{0\}}\). Consider
+
+\begin{align}\nonumber
+\langle \beta, \mathrm{d}\Gamma(B_{-+}) \alpha \rangle=\left\langle \beta, \sum_{n\in\mathbb{N}} a^*(B_{-+}\varphi_n')a(\varphi_{n}') \alpha \right\rangle\\\nonumber
+=\sum_{n\in\mathbb{N}} \langle \beta , a^*(B_{-+}\varphi_n')a(\varphi_{n}') \alpha\rangle
+=\sum_{n\in\mathbb{N}}  \langle a^*(\varphi_{n}')  a(B_{-+}\varphi_n')\beta , \alpha\rangle\\\nonumber
+=\left\langle \sum_{n\in\mathbb{N}}a^*(\varphi_{n}')  a(B_{-+}\varphi_n') \beta, \alpha \right\rangle
+=\left\langle \sum_{n\in\mathbb{N}} \lambda_n a^*(\varphi_{n}')  a(\varphi_{-n}') \beta, \alpha \right\rangle\\
+=\left\langle \sum_{n\in\mathbb{N}}  a^*(- B_{+-}\varphi_{-n}')  a(\varphi_{-n}') \beta, \alpha \right\rangle
+=-\langle \mathrm{d}\Gamma(B_{+-})  \beta, \alpha \rangle,
+\end{align}
+where we made heavy use of the simple form of the matrix elements of both \(B_{+-}\) and \(B_{-+}\) in this basis. So we see that \(\mathrm{d}\Gamma(B_{+-})\)
+and \(\mathrm{d}\Gamma(B_{-+})^*\) agree on \(\mathcal{F}^0\) which is dense. So they are the same bounded and continuous operator on all of
+Fock space. 
+\end{proof}
+
+\begin{Lemma}
+The operator \(\mathrm{d}\Gamma(B):\mathcal{F}'\rightarrow \mathcal{F}\),
+\begin{equation}
+\mathrm{d}\Gamma(B):=\mathrm{d}\Gamma(B_{++})+\mathrm{d}\Gamma(B_{+-})+\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{--})
+\end{equation}
+is skew symmetric.
+\end{Lemma}
+\begin{proof}
+Since the sum of skew symmetric operators is skew symmetric, it suffices to show skew symmetry of \(\mathrm{d}\Gamma(B_{++})\) and \(\mathrm{d}\Gamma(B_{--})\).
+Moreover since both of these operators are extended versions of operators of the same name of type \(\mathcal{F}^0\rightarrow \mathcal{F}\) it suffices to show skew symmetry
+on this domain. We will only do the calculation for \(\mathrm{d}\Gamma(B_{++})\), the other calculation is analogous. 
+First we notice that
+\begin{equation}
+\mathrm{d}\Gamma(B_{++})=\sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_{n})a(\varphi_n)
+=\sum_{n\in\mathbb{N}} \sum_{m\in\mathbb{N}}  \langle \varphi_m, B_{++}\varphi_n\rangle a^*(\varphi_m) a(\varphi_n)
+\end{equation}
+holds.  Pick \(\alpha,\beta \in \mathcal{F}^0\). Consider
+\begin{align}\nonumber
+\left\langle \beta, \mathrm{d}\Gamma(B_{++}) \alpha \right\rangle
+= \sum_{L,L',C,C'\subset \mathbb{N}} \overline{\beta}_{L',C'}\alpha_{L,C} 
+\left\langle \prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega,\right. \\ \nonumber
+\left. \sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_{n})a(\varphi_n) \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle\\\nonumber
+= \sum_{L,L',C,C'\subset \mathbb{N}} \overline{\beta}_{L',C'}\alpha_{L,C} \sum_{n\in\mathbb{N}}
+\left\langle \prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega,\right. \\ \nonumber
+\left. a^*(B_{++}\varphi_{n})a(\varphi_n) \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle\\\nonumber
+= \sum_{L,L',C,C'\subset \mathbb{N}} \overline{\beta}_{L',C'}\alpha_{L,C} \sum_{n\in\mathbb{N}}
+\left\langle a^*(\varphi_n) a(B_{++}\varphi_{n})\prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega,\right. \\ \nonumber
+\left.  \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle\\\nonumber
+= \sum_{L,L',C,C'\subset \mathbb{N}} \overline{\beta}_{L',C'}\alpha_{L,C} 
+\left\langle \sum_{n\in\mathbb{N}} \sum_{m\in\mathbb{N}} \langle B_{++}\varphi_n,\varphi_m\rangle a^*(\varphi_n) a(\varphi_{m})\right. \\ \nonumber
+\left. \prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega, \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle.
+\end{align}
+Now because \(B_{++}^*=-B_{++}\) we see that 
+\begin{equation}
+\left\langle \beta, \mathrm{d}\Gamma(B_{++})\alpha\right\rangle =- \left\langle \mathrm{d}\Gamma(B_{++})\beta, \alpha\right\rangle 
+\end{equation}
+holds.
+\end{proof}
+
+
+
+Now we would like to define \(e^{\mathrm{d}\Gamma(B)}\), in order to do so, we will show that \(\mathrm{d}\Gamma(B)\) is essentially skew-adjoint. 
+One way of doing so is by Nelson's analytic vector theorem. 
+
+\begin{Thm}[Nelson's analytic vector theorem]
+Let \(C\) be a symmetric operator on a Hilbert space \(\mathscr{H}\). If \(D(C)\) contains a total set 
+\(S\subset \bigcap_{n=1}^\infty D(C^n)\) of analytic vectors, then \(C\) is essentially self adjoint. 
+A vector \(\phi\in \bigcap_{n=1}^\infty D(C^n)\) is called analytic if there is \(t>0\) such that
+\(\sum_{k=0}^\infty \frac{\|C^n \phi\|}{n!} t^n<\infty\) holds. A set \(S\) is said to be total if \(\overline{\text{span}(S)}=\mathscr{H}\)
+\end{Thm}
+For a proof see e.g. \cite{SimonReed2}.
+
+
 
 \section{Construction of Recursive Equation for \(T_m\)}
 
@@ -574,7 +843,7 @@ be abbreviated by \(G_n\).
 the first summand of \eqref{T_n recursive} with the creation and annihilation operator of an element of the
 basis of \(\mathcal{H}\). This will turn out to be exactly equal
 to the corresponding commutator
-of the second summand of \eqref{T_n recursive}, since two operators on Fockspace only
+of the second summand of \eqref{T_n recursive}, since two operators on Fock space only
 have the same commutator with general creation and annihilation operators if they
 agree up to multiples of the identity this will conclude our proof. 
 
@@ -646,7 +915,7 @@ this element, has the prefactor
 no matter which summation index \(l\in\mathbb{N}^g\) it corresponds to. In order
 to do the matching one may ignore the indices \(\sigma_j\) and \(l_j-\sigma_j\) 
 which vanish, because the corresponding operators \(Z_0\) and \(T_0\) are equal to
-the identity operator on \(\mathcal{H}\) respectively Fockspace. 
+the identity operator on \(\mathcal{H}\) respectively Fock space. 
 
 Since we know that 
 

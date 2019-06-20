@@ -5,20 +5,22 @@
 \contentsline {section}{\numberline {3.1}Defining One-Particle Scattering-Matrix}{6}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Well-definedness of \(U\) }{10}{subsection.3.1.1}
 \contentsline {section}{\numberline {3.2}Construction of the Second Quantised Scattering-Matrix}{12}{section.3.2}
-\contentsline {section}{\numberline {3.3}Construction of Recursive Equation for \(T_m\)}{15}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Heuristics}{15}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Theorem and Proof}{18}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Solution to Recursive Equation}{26}{section.3.4}
-\contentsline {section}{\numberline {3.5}Quantitative Estimates}{47}{section.3.5}
-\contentsline {section}{\numberline {3.6}Main Conjecture}{66}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Explicit Representations}{68}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Results About All Odd Orders}{69}{subsection.3.6.2}
-\contentsline {subsubsection}{\numberline {3.6.2.1} Lifting the Charge Conjugation Operator}{69}{subsubsection.3.6.2.1}
-\contentsline {subsubsection}{\numberline {3.6.2.2}Commutation of Charge Conjugation and Scattering Operators}{70}{subsubsection.3.6.2.2}
-\contentsline {subsection}{\numberline {3.6.3} Explicit Bound of the First Order}{71}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Results about the Second Order}{71}{subsection.3.6.4}
-\contentsline {chapter}{\chapternumberline {4}Mathematical Justification}{79}{chapter.4}
-\contentsline {appendix}{\chapternumberline {A}One Particle S-Matrix; Explicit Bounds}{81}{appendix.A}
-\contentsline {section}{\numberline {A.1}Bound on \(\delimiter "026B30D ({\mathchoice {{\setbox \z@ \hbox {$\mathsurround \z@ \displaystyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \displaystyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \textstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \textstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptscriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptscriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}}-m)^{-1}\delimiter "026B30D _{\text {spec}}\)}{86}{section.A.1}
-\contentsline {section}{\numberline {A.2}Young's Inequality on \(L^2(\mathcal {M})\)}{92}{section.A.2}
-\contentsline {chapter}{Cooperating Researchers}{93}{appendix*.34}
+\contentsline {section}{\numberline {3.3}Differential second quantisation}{16}{section.3.3}
+\contentsline {section}{\numberline {3.4}Construction of Recursive Equation for \(T_m\)}{25}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Heuristics}{25}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Theorem and Proof}{28}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Solution to Recursive Equation}{36}{section.3.5}
+\contentsline {section}{\numberline {3.6}Quantitative Estimates}{57}{section.3.6}
+\contentsline {section}{\numberline {3.7}Main Conjecture}{76}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Explicit Representations}{78}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Results About All Odd Orders}{79}{subsection.3.7.2}
+\contentsline {subsubsection}{\numberline {3.7.2.1} Lifting the Charge Conjugation Operator}{79}{subsubsection.3.7.2.1}
+\contentsline {subsubsection}{\numberline {3.7.2.2}Commutation of Charge Conjugation and Scattering Operators}{80}{subsubsection.3.7.2.2}
+\contentsline {subsection}{\numberline {3.7.3} Explicit Bound of the First Order}{81}{subsection.3.7.3}
+\contentsline {subsection}{\numberline {3.7.4}Results about the Second Order}{81}{subsection.3.7.4}
+\contentsline {chapter}{\chapternumberline {4}Mathematical Justification}{89}{chapter.4}
+\contentsline {appendix}{\chapternumberline {A}One Particle S-Matrix; Explicit Bounds}{91}{appendix.A}
+\contentsline {section}{\numberline {A.1}Bound on \(\delimiter "026B30D ({\mathchoice {{\setbox \z@ \hbox {$\mathsurround \z@ \displaystyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \displaystyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \textstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \textstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptscriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptscriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}}-m)^{-1}\delimiter "026B30D _{\text {spec}}\)}{96}{section.A.1}
+\contentsline {section}{\numberline {A.2}Young's Inequality on \(L^2(\mathcal {M})\)}{102}{section.A.2}
+\contentsline {chapter}{Bibliography}{103}{section*.35}
+\contentsline {chapter}{Cooperating Researchers}{105}{appendix*.36}

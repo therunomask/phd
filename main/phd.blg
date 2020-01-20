@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: phd.aux
+The style file: amsplain.bst
+Database file #1: ref.bib
+Warning--I didn't find a database entry for "reed1975methods"
+You've used 5 entries,
+            2213 wiz_defined-function locations,
+            535 strings with 4690 characters,
+and the built_in function-call counts, 1485 in all, are:
+= -- 127
+> -- 70
+< -- 0
++ -- 27
+- -- 22
+* -- 123
+:= -- 246
+add.period$ -- 5
+call.type$ -- 5
+change.case$ -- 26
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 56
+empty$ -- 129
+format.name$ -- 22
+if$ -- 301
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 10
+newline$ -- 25
+num.names$ -- 10
+pop$ -- 37
+preamble$ -- 1
+purify$ -- 21
+quote$ -- 0
+skip$ -- 33
+stack$ -- 0
+substring$ -- 84
+swap$ -- 5
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 18
+warning$ -- 0
+while$ -- 15
+width$ -- 6
+write$ -- 51
+(There was 1 warning)

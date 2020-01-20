@@ -1,26 +1,16 @@
 \contentsline {chapter}{Contents}{ii}{section*.1}
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\chapternumberline {2}Nonperturbative \(S\)}{3}{chapter.2}
-\contentsline {chapter}{\chapternumberline {3}Axiomatic Construction of Scattering Operator}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Defining One-Particle Scattering-Matrix}{6}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Well-definedness of \(U\) }{10}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Construction of the Second Quantised Scattering-Matrix}{12}{section.3.2}
-\contentsline {section}{\numberline {3.3}Differential second quantisation}{15}{section.3.3}
-\contentsline {section}{\numberline {3.4}Construction of Recursive Equation for \(T_m\)}{31}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Heuristics}{32}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Recursive equation for Coefficients of the second quantised scattering operator}{35}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Solution to Recursive Equation}{43}{subsection.3.4.3}
-\contentsline {section}{\numberline {3.5}Theorem and Proof}{54}{section.3.5}
-\contentsline {section}{\numberline {3.6}Quantitative Estimates}{66}{section.3.6}
-\contentsline {section}{\numberline {3.7}Main Conjecture}{84}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}Explicit Representations}{86}{subsection.3.7.1}
-\contentsline {subsection}{\numberline {3.7.2}Results About All Odd Orders}{87}{subsection.3.7.2}
-\contentsline {subsubsection}{\numberline {3.7.2.1} Lifting the Charge Conjugation Operator}{87}{subsubsection.3.7.2.1}
-\contentsline {subsubsection}{\numberline {3.7.2.2}Commutation of Charge Conjugation and Scattering Operators}{88}{subsubsection.3.7.2.2}
-\contentsline {subsection}{\numberline {3.7.3} Explicit Bound of the First Order}{89}{subsection.3.7.3}
-\contentsline {subsection}{\numberline {3.7.4}Results about the Second Order}{89}{subsection.3.7.4}
-\contentsline {chapter}{\chapternumberline {4}Mathematical Justification}{97}{chapter.4}
-\contentsline {appendix}{\chapternumberline {A}One Particle S-Matrix; Explicit Bounds}{99}{appendix.A}
-\contentsline {section}{\numberline {A.1}Bound on \(\delimiter "067D80F ({\mathchoice {{\setbox \z@ \hbox {$\mathsurround \z@ \displaystyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \displaystyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \textstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \textstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}{{\setbox \z@ \hbox {$\mathsurround \z@ \scriptscriptstyle \lambda $}\setbox \tw@ \hbox {$\mathsurround \z@ \scriptscriptstyle /$}\dimen 4\wd \z@ \dimen@ \ht \tw@ \advance \dimen@ -\dp \tw@ \advance \dimen@ -\ht \z@ \advance \dimen@ \dp \z@ \divide \dimen@ \tw@ \advance \dimen@ -0\ht \tw@ \advance \dimen@ -0\dp \tw@ \dimen@ii 0\wd \z@ \raise -\dimen@ \hbox to\dimen 4{\hss \kern \dimen@ii \box \tw@ \kern -\dimen@ii \hss }\hbox to\z@ {\hss \hbox to\dimen 4{\hss \box \z@ \hss }}}}}-m)^{-1}\delimiter "067D80F _{\text {spec}}\)}{104}{section.A.1}
-\contentsline {section}{\numberline {A.2}Young's Inequality on \(L^2(\mathcal {M})\)}{110}{section.A.2}
-\contentsline {chapter}{Cooperating Researchers}{111}{appendix*.34}
+\contentsline {chapter}{\chapternumberline {2}Quantum Field Theoretic Approach to Interactions}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Defining One-Particle Scattering-Matrix}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Well-definedness of \(U\) }{8}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Construction of the Second Quantised Scattering-Matrix}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Differential second quantisation}{13}{section.2.3}
+\contentsline {section}{\numberline {2.4}A Simple Formula for the \(S\)-Matrix}{29}{section.2.4}
+\contentsline {section}{\numberline {2.5}Quantitative Estimates}{41}{section.2.5}
+\contentsline {chapter}{Appendix}{61}{appendix*.14}
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{61}{section*.15}
+\contentsline {subsection}{Guessing Equations}{61}{section*.16}
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{64}{section*.18}
+\contentsline {subsection}{Solution to Recursive Equation}{72}{section*.20}
+\contentsline {chapter}{Bibliography}{85}{section*.23}
+\contentsline {chapter}{Cooperating Researchers}{87}{appendix*.24}

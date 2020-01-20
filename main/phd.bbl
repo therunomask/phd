@@ -1,0 +1,34 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{ivp2}
+D-A Deckert and F~Merkl, \emph{External field qed on cauchy surfaces for
+  varying electromagnetic fields}, Communications in Mathematical Physics
+  \textbf{345} (2016), no.~3, 973--1017.
+
+\bibitem{ivp1}
+D-A Deckert and Franz Merkl, \emph{Dirac equation with external potential and
+  initial data on cauchy surfaces}, Journal of Mathematical Physics \textbf{55}
+  (2014), no.~12, 122305.
+
+\bibitem{graham1994concrete}
+Ronald~L Graham, Donald~E Knuth, and Oren Patashnik, \emph{Concrete
+  mathematics: a foundation for computer science}, Addison-Wesley, Reading,
+  1994.
+
+\bibitem{hoorfar2008inequalities}
+Abdolhossein Hoorfar and Mehdi Hassani, \emph{Inequalities on the lambert w
+  function and hyperpower function}, J. Inequal. Pure and Appl. Math \textbf{9}
+  (2008), no.~2, 5--9.
+
+\bibitem{SimonReed2}
+Michael Reed and Barry Simon, \emph{Methods of modern mathematical physics,
+  vol. ii}, 1975.
+
+\end{thebibliography}

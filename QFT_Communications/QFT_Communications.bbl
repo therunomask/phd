@@ -1,10 +1,16 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{abramowitz1965handbook}
 Milton Abramowitz and Irene~A Stegun.
 \newblock {\em Handbook of mathematical functions: with formulas, graphs, and
   mathematical tables}, volume~55.
 \newblock Courier Corporation, 1965.
+
+\bibitem{bar2007wave}
+Christian B{\"a}r, Nicolas Ginoux, and Frank Pf{\"a}ffle.
+\newblock {\em Wave equations on Lorentzian manifolds and quantization},
+  volume~3.
+\newblock European Mathematical Society, 2007.
 
 \bibitem{ivp0}
 D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher.
@@ -24,10 +30,39 @@ D-A Deckert and Franz Merkl.
   surfaces(ivp1).
 \newblock {\em Journal of Mathematical Physics}, 55(12):122305, 2014.
 
+\bibitem{Dirac34}
+Paul~AM Dirac.
+\newblock Discussion of the infinite distribution of electrons in the theory of
+  the positron.
+\newblock In {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, volume~30, pages 150--163. Cambridge University Press, 1934.
+
+\bibitem{finster2006principle}
+Felix Finster.
+\newblock {\em The principle of the fermionic projector}, volume~35.
+\newblock American Mathematical Soc., 2006.
+
 \bibitem{fulling1978singularity}
 Stephen~A Fulling, Mark Sweeny, and Robert~M Wald.
 \newblock Singularity structure of the two-point function in quantum field
   theory in curved spacetime.
 \newblock {\em Communications in Mathematical Physics}, 63(3):257--264, 1978.
+
+\bibitem{hormander2003analysis}
+Lars H{\"o}rmander.
+\newblock The analysis of linear partial differential operators. i.
+  distribution theory and fourier analysis. reprint of the second (1990)
+  edition, 2003.
+
+\bibitem{schlemmer2015current}
+Jan Schlemmer and Jochen Zahn.
+\newblock The current density in quantum electrodynamics in external
+  potentials.
+\newblock {\em Annals of Physics}, 359:31--45, 2015.
+
+\bibitem{zahn2014renormalized}
+Jochen Zahn.
+\newblock The renormalized locally covariant dirac field.
+\newblock {\em Reviews in Mathematical Physics}, 26(01):1330012, 2014.
 
 \end{thebibliography}

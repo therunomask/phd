@@ -1,0 +1,330 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+\usepackage{mathrsfs} 
+\usepackage{todonotes}
+
+%identity sign
+\usepackage{bbm}
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+  
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\equalmath}[1]{\ensuremath{\stackrel{#1}{=}}}
+
+\newtheorem{vermutung}{Vermutung}
+\newtheorem{satz}{Satz}
+
+\DeclareMathOperator*{\esssup}{ess \, sup}
+\newcommand{\id}{{\mathbbm 1}}
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\begin{center}
+{\huge Arbeitsbericht zum Promotionsvorhaben mit dem Titel
+\\
+{\Large Electron-Positron Pair Creation in External Fields \\
+Rigorous Control of the Scattering Matrix Expansion}}
+\end{center}
+
+\begin{center}
+Markus Nöth
+\\ \today
+\end{center}
+
+\section{Einführende Zusammenfassung des Projekts}
+Meine Promotion fällt in den Bereich der mathematischen Physik, ein Teilbereich der Mathematik. Sie handelt von der 
+Teilchen-Antiteilchen Paarerzeugung, ein Phänomen welches zuerst von Dirac 1929 vorhergesagt und 1934 von 
+Anderson nachgewiesen wurde. Insbesondere geht es um Paarerzeugung durch externe elektrische und 
+magnetische Felder unter Vernachlässigung der Wechselwirkung der Teilchen untereinander. Experimentell könnte
+man beispielsweise Elektron-Positron Paarerzeugung beobachten, wenn man die elektromagnetischen Felder von
+mehreren extrem starken Lasern über lange Zeiträume mit den Feldern von schweren Ionen kombiniert. 
+Dies wird an der Extreme Light Infrastructure, einer europäischen Forschungseinrichtung, umgesetzt. 
+
+Die Entdeckung dieses Phänomens durch Dirac hat ihren Ursprung in den ungewöhnlichen Eigenschaften der von ihm
+entdeckten Gleichung \eqref{diraceq} für einzelne Elektronen.
+Diese Gleichung erlaubt sowohl positive kinetische 
+Energien über \(m c^2\) als auch negative kinetische Energien unter \(-mc^2\). Das ist deshalb merkwürdig, weil
+physikalische Systeme üblicherweise ihre Energie minimieren wenn ihnen durch Kopplung an externe Systeme
+die Möglichkeit dazu gegeben wird. Konkret bedeutet das, dass wenn ein Elektron durch diese Gleichung beschrieben
+wird, so würde man erwarten,
+dass dieses Elektron unendlich viel Energie abstrahlt und immer negativere kinetische Energien annimmt. So ein Verhalten
+beobachtet man allerdings nicht in der Natur. Dirac löste dieses Problem dadurch, dass er 
+der Beschreibung zugrunde legte, dass alle Zustände negativer Energie bereits besetzt sind. Paulis Ausschlussprinzip 
+verhindert dann, dass weitere Elektronen diese Zustände annehmen. Dieser See aus Teilchen negativer Energie stellt
+also sicher, dass die beschriebenen Teilchen stabileres Verhalten zeigen, als Gleichung \eqref{diraceq} zuerst vermuten lässt.
+
+
+Dirac argumentierte weiter in seiner Veröffentlichung zur Theorie der Positronen, 
+dass dieser See so homogen sei, dass alle Wechselwirkung zwischen 
+Teilchen des Sees so symmetrisch erfolgt und sich dadurch gegenseitig aufhebt, sodass insgesamt keine Wechselwirkung 
+beobachtbar ist. Durch ein externes Feld kann das System allerdings so stark gestört werden, dass ein Elektron aus dem
+See in die Zustände positiver Energie gehoben wird und somit sowohl ein Teilchen positiver Energie als auch ein Loch
+im See übrig bleiben. Obwohl der Dirac See auf diese Weise eine schöne anschauliche Erklärung von Paarerzeugung liefert,
+bereitet die Formulierung einer mathematisch sauberen Beschreibung des Phänomens nach wie vor Probleme. 
+
+In meiner Promotion konzentriere ich mich auf Quantenelektrodynamik (QED) externer Felder, in diesem vereinfachten Modell 
+betrachtet man nicht wie sich die Teilchen gegenseitig beeinflussen sondern ausschließlich wie externe Felder auf die Teilchen
+wirken. Antworten auf Experimentelle Fragen wie ``Wie verhält sich ein System aus Elektronen nachdem es für eine längere 
+Zeit einem starken Laser ausgesetzt war?'' kann man an der sogenannten Streumatrix ablesen. Dieses Objekt wird für 
+gewöhnlich durch eine Summe aus unendlich vielen Termen dargestellt. Für viele Modelle der QED ist bekannt,
+dass eine solche perturbative Darstellung nicht konvergiert, weshalb eine andere Darstellung der Streumatrix gefunden
+werden muss. Für QED externer Felder denkt man jedoch, dass die Situation besser ist und 
+die Reihe der Streumatrix konvergiert. Mein Projekt besteht darin diese Vermutung in Wissen umzusetzen.
+
+\section{Erreichte Ergebnisse}
+
+In meinem letzten Arbeitsbericht erzählte ich davon, dass die eben erwähnte Konvergenz, für Felder \(A\) welche
+\(\|\id-U^A\|_{\mathcal{H}\rightarrow \mathcal{H}}<1\)
+erfüllen, und unter Vernachlässigung einer Phase \(\eta\) welche von \(A\) abhängen darf gezeigt werden konnte.
+ Hierbei ist \(\mathcal{H}\) der Hilbertraum der Einteilchen Wellenfunktionen und \(U^A\) die Streumatrix für eben
+diese Wellenfunktionen. Für die Formulierung des Resultats benötige ich die differenzielle Liftung, diese 
+definiere ich folgendermaßen 
+\begin{equation}
+d\Gamma(E)=\sum_{n\in \mathbb{N}} \left[a^*(E\varphi_n)a(\varphi_n) - a(\varphi_{-n})a^*(E\varphi_{-n})\right],
+\end{equation}
+wobei \( (\varphi_n)_{n\in \mathbb{Z}\backslash \{0\}}\) eine Orthonormalbasis von \(\mathcal{H}\) ist, welche anhand
+des Vorzeichens des Index aufgeteilt werden kann in eine Orthonormalbasis vom Raum der Lösungen der Diracgleichung
+
+\begin{equation}\label{diraceq}
+%i \slashed{\partial}\psi - m \psi = e \slashed{A}\psi
+i \slashed{\partial}\psi - m \psi = 0
+\end{equation}
+
+mit positiver beziehungsweise negativer Energie. Der Operator \(E:\mathcal{H}\rightarrow\mathcal{H}\) ist dabei linear, beschränkt und erfüllt \(E^*=-E\). Das Resultat nimmt die folgende Form an.
+
+\begin{satz}\label{Explizite Formel}
+Die zweitquantisierte Streumatrix \(S\) ist gegeben durch
+\begin{equation}\label{Smatrix}
+S^A= e^{i \eta} e^{d\Gamma(\ln (U^A))},
+\end{equation}
+wobei \(\eta\in \mathbb{R}\) gilt.
+\end{satz}
+
+
+Diese Ergebnisse sind bereits in einem entsprechenden Kapitel meiner werdenden Doktorarbeit
+ ausführlich dokumentiert, allerdings noch nicht publiziert.
+Zudem habe ich ein Analogon zum Wick'schen Satz für Produkte von \(d\Gamma\) Operatoren bewiesen, dies
+wird es erleichtern explizite Fehlerschranken zu schätzen wenn unsere Ergebnisse mit Experimenten
+verglichen werden. Die starke Einschränkung an die Stärke des Feldes kann mit der folgenden Methode 
+überwunden werden: Zunächst ist das Resultat Satz \ref{Explizite Formel} im Wechselwirkungsbild bezüglich
+der freien Entwicklung \(U^0\) zu verstehen.
+Nun kann man das Wechselwirkungsbild nicht nur bezüglich \(U^0\), sondern bezüglich jeder beliebigen 
+Referenz \(U^{A'}\), mit externem Potential \(A'\), verwenden und das Resultat Satz \ref{Explizite Formel}
+wird auch bezüglich dieser Referenz gelten, denn für dessen Herleitung waren ausschließlich die
+algebraischen Eigenschaften von \(d\Gamma\) und \(U^A\) nötig. Die Formel in Satz \ref{Explizite Formel} gilt also
+lokal um jedes beliebige \(A'\), jeweils mit möglicherweise unterschiedlichem \(\eta(A')\). Die Streumatrix \(S\)
+ist also lokal um jedes \(A'\) eine analytische Funktion (modulo der Phase \(\eta\)) in der Störung des Feldes \(A-A'\). 
+Wenn nun also eine konsistente
+analytische Wahl der Phase möglich ist, so muss \(S\) auch eine global konvergierende Potenzreihe in \(A\) besitzen.
+
+
+
+
+Darüber hinaus habe ich im letzten Jahr zusammen mit dem Wissenschaftler Matthias Lienert an einer von ihm vorgeschlagene
+relativistischen Wellengleichung gearbeitet. Daraus resultierte bereits ein wissenschaftlicher Artikel. Dieser wurde bereits eingereicht,
+wir erwarten die Gutachten in Kürze. Eine vorläufige Version ist einsehbar unter https://arxiv.org/abs/1903.06020. 
+Die Gleichung welche wir betrachten hat die Form 
+\begin{align}
+\psi(x,y)=\psi^0(x,y) + \lambda \int_{\mathbb{R}^4} d^4 x' \int_{\mathbb{R}^4} d^4y' S_1(x-x')S_2(y-y') K(x',y') \psi(x',y').
+\end{align}
+
+Hierbei ist \(\lambda\in\mathbb{C}\) eine Zahl, \(\psi^0:\mathbb{R}^8\rightarrow \mathbb{C}^{16}\) eine Lösung der Diracgleichung \eqref{diraceq} in beiden 
+Raumzeitkoordinaten \(x\) und \(y\), \(S_i\)
+ist die Greensfunktion der Dirac Gleichung bezüglich der jeweiligen Raumzeit und Spinorindizes und \(K\) ist ein Wechselwirkungskern.
+Diese Gleichung reduziert sich auf die Dirac Gleichung mit Coulomb Wechselwirkung, wenn die Retardierung der beiden Teilchen
+vernachlässigt wird. Weil die Dirac Gleichung mit Coulomb Wechselwirkung experimentell relevant ist, ist auch die von uns betrachtete
+Gleichung ein interessanter Kandidat für die relativistische Beschreibung von mehreren wechselwirkenden Teilchen.
+Dem Modell liegen ebenfalls einige vereinfachende Annahmen zu Grunde. Teilchen Erzeugung und Vernichtung wird vernachlässigt.
+Hierbei erwarten wir, dass die üblichen Divergenzen der Quantenfeldtheorie nicht auftreten und eine wohldefinierte Dynamik existiert. 
+Der volle Wechselwirkungskern, welcher elektromagnetische Wechselwirkung vermittelt, ist
+\begin{equation}
+K(x,y)=\gamma_1^\alpha \gamma_{2,\alpha} \delta((x-y)^\beta(x-y)_{\beta}).
+\end{equation}
+
+Zuvor hatten Matthias Lienert und Roderich Tumulka bereits Existenz von Lösungen für weniger singuläre Kerne und einige weitere Vereinfachungen
+ für die analoge Gleichung für Klein-Gordon
+Teilchen gezeigt. Matthias Lienert und meine Arbeit ist die erste für Dirac Teilchen, weshalb wir ähnliche Vereinfachungen benötigten. Dennoch
+beschreibt das Endresultat eine relativistisch invariante wechselwirkende Dynamik von Dirac Teilchen in 4 dimensionaler Raumzeit, ein
+Ergebnis welches es bis dahin noch nicht gab. Das Resultat erfolgte in zwei Schritten, zunächst zeigten wir Existenz von Lösungen 
+in dem Teil der Raumzeit mit nicht negativen Zeiten \(\mathbb{R}^+\times\mathbb{R}^3\). Dieses Ergebnis ist nicht Lorentz invariant.
+Anschließend zeigten wir, dass das gleiche Resultat ebenfalls auf einer Raumzeit mit Urknall gilt, auf Friedmann-Lemaître-Robertson-Walker (FLRW)
+Raumzeiten. Der Urknall dieser Lösungen der Einstein'schen Feldgleichungen bietet auf natürliche Weise einen Anfang der Zeit, weshalb das zweite
+Resultat der vollen relativistischen Invarianz genügt. Die in unserer Arbeit notwendigen
+Vereinfachungen sind wie folgt. Die zunächst relevante Raumzeit ist \(\frac{1}{2}\mathbb{M}:=\mathbb{R}^+\times\mathbb{R}^3\), 
+Wellenfunktionen sind vom Typ \(\psi: \left(\frac{1}{2}\mathbb{M}\right)^2\rightarrow \mathbb{C}^{16}\), der Wechselwirkungskern ist vom 
+Typ \(K:\left(\frac{1}{2}\mathbb{M}\right)^2\rightarrow \mathbb{C}\), dazu erfüllt \(K\) 
+
+\begin{equation}
+		\| K \| := \sup_{x_1, x_2 \in \frac{1}{2}\mathbb{M} } \max \left\{ |K(x_1,x_2)|, |\slashed{\partial}_1 K(x_1,x_2)|, |\slashed{\partial}_2 K(x_1,x_2)|, |\slashed{\partial}_1 \slashed{\partial}_2 K(x_1,x_2)|\right\} < \infty.
+	\label{eq:normk}
+\end{equation}
+
+Wir konstruieren uns einen Lösungsraum \(\mathscr{B}_g\), 
+welcher von einer Funktion \(g:\mathbb{R}^+\rightarrow\mathbb{R}^+\) abhängt. Dieser
+ist die Vervollständigung von \(\mathscr{S}\left(\left(\frac{1}{2}\mathbb{M}\right)^2,\mathbb{C}^{16}\right)\), den Schwarzfunktionen des passenden Typs,
+unter der Norm \(\|\cdot\|_g\),  welche gegeben ist durch
+\begin{equation}
+	\| \psi \|^2_g = \esssup_{x_1^0,x_2^0 >0} \frac{1}{g(x_1^0)g(x_2^0)} [\psi]^2(x_1^0,x_2^0),
+\label{eq:normpsi}
+\end{equation}
+unter Verwendung von
+
+\begin{align}
+	[\psi]^2(x_1^0,x_2^0) ~:= \| ((i\slashed{\partial}_{1}-m)(i\slashed{\partial}_{2}-m) \psi)(x_1^0, \cdot, x_2^0,\cdot)\|^2_{L^2(\mathbb{R}^6,\mathbb{C}^{16})}\\
+	+\| ((i\slashed{\partial}_{1}-m) \psi)(x_1^0, \cdot, x_2^0,\cdot)\|^2_{L^2(\mathbb{R}^6,\mathbb{C}^{16})}\\
+	+\| ((i\slashed{\partial}_{2}-m) \psi)(x_1^0, \cdot, x_2^0,\cdot)\|^2_{L^2(\mathbb{R}^6,\mathbb{C}^{16})}
+	+\|  \psi(x_1^0, \cdot, x_2^0,\cdot)\|^2_{L^2(\mathbb{R}^6,\mathbb{C}^{16})}.
+\label{eq:spatialnorm}
+\end{align}
+
+Das erste Resultat nimmt die folgende Form an
+
+\begin{satz}
+	Sei  $0 < \| K \| < 1$,  and
+	\begin{align} 
+		g(t)& ~=~ \sqrt{1+b t^8}\, \exp(b t^8/16),	\label{eq:defg}\\
+    		b& ~=~ \frac{\|K\|^4}{(1-\|K\|)^4} \left(6+m^4\right)^4. \label{eq:defb}
+\end{align}
+	Dann hat die Gleichung 
+	
+\begin{equation}
+\psi(x,y)=\psi^0(x,y) + \lambda \int_{\frac{1}{2}\mathbb{M}} d^4 x' \int_{\frac{1}{2}\mathbb{M}} d^4y' S_1(x-x')S_2(y-y') K(x',y') \psi(x',y')
+\end{equation}
+	
+	 für jedes $\psi^0 \in \mathscr{B}_g$ eine eindeutige Lösung $\psi \in \mathscr{B}_g$.
+\end{satz}
+
+Das zweite Resultat beschreibt Lösungen auf der FLRW Raumzeit, die Metric dieser Raumzeit ist gegeben durch 
+\begin{equation}
+ds^2=a^2(\eta) (d\eta^2-d\vec{x}^2),
+\end{equation}
+hierbei wird \(\eta\in[0,\infty[\) die kosmologische Zeit genannt. Unter Verwendung von konformer Invarianz der Dirac Gleichung
+können wir das Resultat fast unverändert im Fall \(m=0\) auf diese Raumzeit übertragen. 
+
+\begin{satz}
+	Sei $0 \leq \alpha \leq 1$ und sei $a : [0,\infty) \rightarrow [0,\infty)$ differenzierbar und erfüllt $a(0)=0$, sowie $a(\eta) >0$ für $\eta>0$. 
+	Sei weiterhin $\widetilde{K} \in C^2 \left( ([0,\infty)\times \mathbb{R}^3)^2,\mathbb{C}\right)$ mit
+	\begin{equation}
+		\| a^{1-\alpha}(\eta_1) a^{1-\alpha}(\eta_2) \, \widetilde{K} \| <1.
+	\label{eq:ktildecondition}
+	\end{equation}
+Dann gibt es für jedes $\psi^0$, welches  $a^{3/2}(\eta_1) a^{3/2}(\eta_2) \psi^0 \in \mathscr{B}_g$ erfüllt, dass die Gleichung 
+\begin{align}
+	&\psi(\eta_1,\vec{x}_1,\eta_2,\vec{x}_2) = \psi^0(\eta_1,\vec{x}_1,\eta_2,\vec{x}_2) + a^{-3/2}(\eta_1) a^{-3/2}(\eta_2) \int_0^\infty d \eta_1' \int d^3 \vec{x}_1' \int_0^\infty d \eta_2' \int d^3 \vec{x}_2'\nonumber\\
+	\times &a^{5/2-\alpha}(\eta_1') a^{5/2-\alpha}(\eta_2') \, S_1^\text{ret}(\eta_1-\eta_1', \vec{x}_1-\vec{x}_1') S_2^\text{ret}(\eta_2-\eta_2',\vec{x}_2-\vec{x}_2') \, (\widetilde{K} \psi)(\eta_1',\vec{x}_1',\eta_2',\vec{x}_2').
+\end{align}
+
+eine eindeutige Lösung $\psi$ mit $a^{3/2}(\eta_1) a^{3/2}(\eta_2)\psi \in \mathscr{B}_g$ besitzt (hierbei ist \(g\) gleich zu wählen wie im letzten Satz).
+\end{satz}
+
+
+
+
+
+
+
+
+\section{Noch abzuschließende Arbeiten}
+Was nun vor allem fehlt ist zu zeigen, dass es eine konsistente Wahl für die Phase \(\eta\) gibt, welche
+einige Eigenschaften erfüllt die man aus physikalischer Intuition
+erwartet. Die Bedingungen an die Phase
+stellen wir an die Zeitentwicklung \(S_{\Sigma',\Sigma}\) von der Cauchyfläche
+ \(\Sigma\) zur Cauchyfläche \(\Sigma'\). 
+Um diese Eigenschaften zu beschreiben, ist es sinnvoll den Strom der zu einer speziellen Phase
+und einem vierer Potential gehört einzuführen. Dieser ist durch Bogoliubovs Formel gegeben:
+
+\begin{equation}
+j^A_{\Sigma}(F)=i \partial_\varepsilon \left. \langle \Omega_{\Sigma}, S^A_{\Sigma,\Sigma'} S_{\tilde{\Sigma},\Sigma}^{A+\varepsilon F} \Omega_{\Sigma}\rangle \right|_{\varepsilon=0}.
+\end{equation}
+
+Der Strom hängt von \(\eta\) ab, weil \(\eta\) eine Funktion des vierer Potentials ist. 
+Die Bedingungen die wir an die Phase \(\eta\) stellen um diese festzulegen sind:
+
+\begin{enumerate}
+\item \emph{lokale Abhängigkeit vom vierer Potential}: \(S^A_{\Sigma',\Sigma}\) hängt nur von \(A\) innerhalb des Volumens das von \(\Sigma\) und \(\Sigma'\) aufgespannt wird ab.
+\item \emph{Gruppeneigenschaft}: Die Zeitentwicklungen zwischen drei beliebigen Cauchyflächen \(\Sigma,\Sigma',\Sigma''\) erfüllen die Bedingungen \(S_{\Sigma'',\Sigma'}^A S_{\Sigma',\Sigma}^A = S_{\Sigma'',\Sigma}^A\)
+\item \emph{Regulariät}: Der Strom \(j^A_{\Sigma}(F)\) und seine Ableitung \(\partial_\delta j^{A+\delta G}_{\Sigma}(F)\) existiert für beliebige Cauchyflächen \(\Sigma\) und vierer Potentiale \(A,F\) und \(G\).
+\end{enumerate}
+
+Wie bereits oben erwähnt, reicht es aus eine Phasenwahl für jedes \(A\) in einer kleinen Umgebung um dieses \(A\) zu treffen.
+
+Dieser Existenzbeweis ist allerdings noch nicht ausgeführt, wir treffen dabei auf ähnliche Schwierigkeiten wie sie damals bei der
+Formulierung der Quantenelektrodynamik auftraten. Wir hoffen diese Schwierigkeiten mit einem der Renormalisierungsverfahren aus
+der physikalischen Literatur beikommen zu können.
+
+
+Der bereits eingereichten Veröffentlichung mit Matthias Lienert, wird bald eine zweite folgen, in der wir den vollen singulären Wechselwirkungskern für
+Klein-Gordon Teilchen betrachten. Hierbei trat zwar die Schwierigkeit mit der bisherigen Beweismethode auf, dass der Kern des Integraloperators (nachdem 
+alle \(\delta-\)Distributionen ausintegriert wurden) nicht lokal quadrat-integrierbar ist. Dies ist deshalb problematisch, weil wir zum Abschätzen der räumlichen
+Norm in der Konstruktion der Lösung bisher immer auf eine Anwendung der Cauchy-Schwarz Ungleichung angewiesen waren. Wir haben aber
+einen anderen Lösungsraum gefunden für welchen wir diese Ungleichung nicht anwenden müssen und welcher immer noch viele physikalisch sinnvolle
+Funktionen enthält. Wir sind daher sehr zuversichtlich, dass die dadurch modifizierte Beweisstrategie funktionieren wird.
+
+\section{Zeitplan für die Abschlussperspektive}
+
+Der aktuelle Zeitplan ist wie folgt:
+
+\begin{enumerate}
+\item August bis Dezember 2019: Identifikation der korrekten Phase der Streumatrix
+\item Januar bis März 2020: Publikation des Ergebnisses der Phase und Publikation des Ergebnisses in Zusammenarbeit mit Matthias Lienert
+\item April 2020 - September 2020:  Verallgemeinerung des Projekts auf eine selbstkonsistente Kopplung an die Maxwell-Gleichungen und Verteidigung der Doktorarbeit
+\end{enumerate}
+
+
+
+
+
+\section{Cusanische Aktivitäten}
+
+Im letzten Jahr nahm ich an Graduiertentagungen teil. Durch den regen Austausch zu anderen Promovierenden sind diese Veranstaltungen eine Quelle großer
+Inspiration für mich. Ich nahm außerdem an Semesterabschlussgottesdiensten und den Stammtisch der Physiker und Informatiker des Cusanuswerks in München teil.
+
+Ich konnte leider aufgrund von einer plötzlich auftretenden Erkrankung nicht zum Jahrestreffen kommen. Ich hoffe das nächstes Jahr nachzuholen.
+
+\section{Wissenschaftliche Aktivitäten}
+
+Ich präsentierte bisher erreichte Ergebnisse auf dem International Congress on Mathematical Physics in Montreal, sowie auf gemeinsam mit der Gruppe von Prof. Bach 
+organisierten Treffen zum wissenschaftlichen Austausch. Diese fanden bereits in Braunschweig, sowie in München statt. Eine Zusammenarbeit mit Prof. Bach könnte
+sehr hilfreich für die Kommunikation der Ergebnisse sein, weil er langjährige Erfahrung in meinem Bereich der mathematischen Physik besitzt und dort sehr gut angesehen ist.
+Weiterhin werde ich das mit Matthias Lienert zusammen erzielte Resultat auf dem mathematischen Physik Kongress qmath14 im August 2019 in Aarhus 
+in Dänemark vorstellen. Ich hoffe dort 
+weiteren Kontakt zu Wissenschaftern knüpfen zu können die an verwandten Fragestellungen arbeiten.
+
+
+
+
+
+
+
+
+
+\end{document}
+

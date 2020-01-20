@@ -19,6 +19,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{mathabx}
 \usepackage{enumitem}
 \usepackage{longtable}
 \usepackage[mathscr]{eucal}
@@ -365,24 +366,17 @@ One constructs the Fock space associated with \(\mathcal{H}\) and a polarisation
 We define \(\overline{\mathcal{H}^-}\) identical with \(\mathcal{H}^-\) as a set, but scalar multiplication as 
 \(\mathbb{C}\times \overline{\mathcal{H}} \ni (a, \psi)\mapsto \overline{a} \psi\) where the bar denotes complex conjugation of complex numbers.
 A wedge \(\wedge\) in the exponent denotes that only elements which are antisymmetric with respect to permutations
-are allowed. This antisymmetric product as well as the tensor product are to be understood in the algebraic sense. 
+are allowed. This antisymmetric product as well as the tensor product are to be understood in the Hilbert space sense. 
 The Factor \(\left(\mathcal{H}^{\pm}\right)^0\) is understood as
-\(\mathbb{C}\). We now define
+\(\mathbb{C}\). We now define Fock space as
 
 \begin{equation}
-\mathcal{F}^0:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\wedge m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\wedge p},
+\mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\wedge m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\wedge p}.
 \end{equation}
 
-Fock space is the completion of this set, \(\mathcal{F}:=\widehat{\mathcal{F}^0}\).
 I will denote the sectors of Fock space of fixed particle
-numbers by \(\mathcal{F}_{m,p}:=\widehat{\mathcal{F}^0_{m,p}}\), which is the 
-completion of \(\mathcal{F}^0_{m,p}:=\left(\mathcal{H}^+ \right)^{\wedge m}
-\otimes \left(\overline{\mathcal{H}^-} \right)^{\wedge p}\). The element of
-\(\mathcal{F}_{0,0}\) of norm \(1\) will be denoted by \(\Omega\). We will also need
-the set
-\begin{equation}
-\mathcal{F}':=\bigoplus_{m,p=0}^\infty \mathcal{F}_{m,p}.
-\end{equation}
+numbers by \(\mathcal{F}_{m,p}\). The element of
+\(\mathcal{F}_{0,0}\) of norm \(1\) will be denoted by \(\Omega\).
 The simplest and yet interesting example of this construction is
 the Fock space constructed on a hyperplane prior to the support of an external field,
 in this case \(\mathcal{H}=L^2(\mathbb{R}^3,\mathbb{C}^4)\) and \(\mathcal{H}^+\)
@@ -462,23 +456,42 @@ Before we go on to construct a concrete form of the scattering operator, we will
 
 \section{Differential second quantisation}
 
-In constructing second quantised operators the following object will be of interest. Let \(B:\mathcal{H}\rightarrow\mathcal{H}\) be a bounded
+Let \(B:\mathcal{H}\rightarrow\mathcal{H}\) be a bounded
 operator on \(\mathcal{H}\), such that \(i B\) is self adjoint and \(B_{+-}\) is a Hilbert-Schmidt operator. 
-Because \(B_{-+}:\mathcal{H}^+\rightarrow \mathcal{H}^-\) is compact, there is an ONB \((\varphi_n')_{n\in\mathbb{N}}\) 
-of \(\mathcal{H}^+\) and likewise an ONB \((\varphi_{-n}')_{n\in\mathbb{N}}\) of \(\mathcal{H}^-\) such that it takes the canonical form 
+We would like to construct a version \(\mathrm{d}\Gamma(B)\) of \(B\) that acts on Fock space and also is skew adjoint.
+The strategy of this section is to construct an operator in two steps that is essentially self adjoint of the Fock space of 
+finitely many particles, a dense subset of Fock space. It is denoted by
+
+\begin{Def}
+\begin{equation}
+\mathcal{F}':=\bigobot_{m,p=0}^\infty \mathcal{F}_{m,p},
+\end{equation}
+where \(\bigobot\) refers to the algebraic direct sum.
+\end{Def}
+Because \(B_{-+}:\mathcal{H}^+\rightarrow \mathcal{H}^-\) is compact, there is an ONB \((\varphi_n)_{n\in\mathbb{N}}\) 
+of \(\mathcal{H}^+\) and likewise an ONB \((\varphi_{-n})_{n\in\mathbb{N}}\) of \(\mathcal{H}^-\) such that it takes the canonical form 
 of compact operators
 
 \begin{equation}
-B_{-+} = \sum_{n\in\mathbb{N}} \lambda_n |\varphi_{-n}'\rangle \langle \varphi_{n}'| \quad \lambda \ge 0.
+B_{-+} = \sum_{n\in\mathbb{N}} \lambda_n |\varphi_{-n}\rangle \langle \varphi_{n}|, \quad \lambda_n \ge 0.
 \end{equation}
 Here the numbers \(\lambda_n\) fulfil \(\sum_{k=1}^\infty \lambda_k^2 = \|B_{-+}\|_{\text{HS}}<\infty\). As a consequence we have
 
 \begin{equation}
-B_{+-} = -\sum_{n\in\mathbb{N}} \lambda_n |\varphi_{n}'\rangle \langle \varphi_{-n}'|.
+B_{+-} = -\sum_{n\in\mathbb{N}} \lambda_n |\varphi_{n}\rangle \langle \varphi_{-n}|.
 \end{equation}
 
-In the following we will try to find a differential second quantisation of \(B\), \(\mathrm{d}\Gamma(B)\). 
-Finally we will define the exponential of this operator on Fock space. In order to do so, the following splitting turns out to be advantageous. 
+With respect to this basis we define the set of finite linear combinations of product states of finitely many particles
+
+\begin{Def}
+We define
+\begin{equation}
+\mathcal{F}^0\!\!:=\! \mathrm{span}\!\! \left\{\prod_{k=1}^m \!a^*\!(\varphi_{L_k}\!)\!\prod_{c=1}^p\!\! a(\varphi_{-C_c})\Omega\mid m,p\!\in\!\!\mathbb{N}, (L_k)_k,\!(C_c)_c\!\subset\!\mathbb{N} \!\right\}\!,
+\end{equation}
+we will refer to a subset of this set for fixed values of \(m\) and \(p\) by \(\mathcal{F}^0_{m,p}\).
+\end{Def}
+
+In order to do so, the following splitting turns out to be advantageous. 
 
 \begin{Def}
 We define the following operators of type \(\mathcal{F}^0\rightarrow \mathcal{F}\)
@@ -494,8 +507,8 @@ where the sum converges in the strong operator topology and \((\varphi_n)_n , (\
 
 
 \begin{Lemma}
-\(\mathrm{d}\Gamma(B_{++}),\mathrm{d}\Gamma(B_{--})\) and \(\mathrm{d}\Gamma(B_{-+})\) are independent of the choice of basis. 
-Restricted to \(|_{\mathcal{F}^0_{m,p}}\) they have the following type
+The operators \(\mathrm{d}\Gamma(B_{++}),\mathrm{d}\Gamma(B_{--})\) and \(\mathrm{d}\Gamma(B_{-+})\) 
+restricted to \(|_{\mathcal{F}^0_{m,p}}\) they have the following type
 \begin{align}
 \mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}&: \quad \mathcal{F}^0_{m,p} \rightarrow \mathcal{F}_{m,p}\\
 \mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}&: \quad \mathcal{F}^0_{m,p} \rightarrow \mathcal{F}_{m,p}\\
@@ -525,9 +538,8 @@ through the products of of creation and annihilation operators in the expansion 
 \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B_{++} \tilde{\varphi}_{L_b})  \!\!\!
 \prod_{l=b+1}^m a^*(\tilde{\varphi}_{l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega.
 \end{align}
-At this point we see that reversing these steps we can exchange the basis in the definition of \(\mathrm{d}\Gamma(B_{++})\) with any ONB.
-We also notice, that \(\mathrm{d}\Gamma(B_{++})\alpha \in \mathcal{F}_{m,p}\) holds. The only missing property of the first operator is therefore
-it's norm. For estimating this we see that \(B_{++}\) in the last line can be replaced by 
+We notice, that \(\mathrm{d}\Gamma(B_{++})\alpha \in \mathcal{F}_{m,p}\) holds. What is left to show for the first operator is therefore
+its norm. For estimating this we see that \(B_{++}\) in the last line can be replaced by 
 \begin{equation}
 B^L_{L_b}:=\left(1-\sum_{\overset{l=1}{l\neq b}}^m |\tilde{\varphi}_{L_l}\rangle \langle \tilde{\varphi}_{L_l}|\right) B_{++},
 \end{equation}
@@ -546,8 +558,8 @@ scalar product not to vanish \(|L\cap L'|\ge m-2\) has to hold. If \(L\neq L'\) 
 \(b=L_l \not\in L'\) and \(b'=L'_{l'}\not\in L\) are selected. Otherwise the full sum contributes, yielding
 \begin{align}\nonumber
 &\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 = \\\nonumber
-&= \hspace{-0.8cm}\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\sum_{n\neq n'\in\mathbb{N}\backslash L }
-\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{n'\},C}
+&= \hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-1}}}\hspace{-0.2cm}\sum_{n\neq n'\in\mathbb{N}\backslash L }
+\hspace{-0.4cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{n'\},C}
  \langle B^{L\cup\{n\}}_n \tilde{\varphi}_{n}, B^{L\cup\{n'\}}_{n'}\tilde{\varphi}_{n'}\rangle (-1)^{g(L,n)+g(L,n')}\\\label{B++estimate}
 &+\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.4cm} |\alpha_{L,C}|^2
  \sum_{b,b'=1}^m 
@@ -559,10 +571,10 @@ where \(g(L,n):=|\{l\in L \mid l<n\}|\) keeps track of the number of anti commut
 where \(n=n'\). The enlarged sum can then be reformulated
 
 \begin{align}\nonumber
-\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\hspace{-0.5cm}\sum_{n,n'\in\mathbb{N}\backslash L} \hspace{-0.3cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{n'\},C} 
- \langle B^{L\cup\{n\}}_n \tilde{\varphi}_{n}, B^{L\cup\{n'\}}_{n'}\tilde{\varphi}_{n'}\rangle (-1)^{g(L,n)+g(L,n')}\\
- =\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\left\|\sum_{n\in\mathbb{N}\backslash L}\alpha_{L\cup\{n\},C}  B^{L\cup\{n\}}_n \tilde{\varphi}_{n} (-1)^{g(L,n)} \right\|^2\\\label{B++ first term}
-  =\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\left\|\left(1-\sum_{l\in L}|\tilde{\varphi}_l\rangle\langle \tilde{\varphi}_l | \right)B_{++}\sum_{n\in\mathbb{N}\backslash L}\alpha_{L\cup\{n\},C}  \tilde{\varphi}_{n} (-1)^{g(L,n)} \right\|^2
+&\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|L|=m-1}{|C|=p}}}\hspace{-0.1cm}\sum_{n,n'\in\mathbb{N}\backslash L} \hspace{-0.3cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{n'\},C} 
+ \langle B^{L\cup\{n\}}_n \tilde{\varphi}_{n}, B^{L\cup\{n'\}}_{n'}\tilde{\varphi}_{n'}\rangle (-1)^{g(L,n)+g(L,n')}\\\nonumber
+ &=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\left\|\sum_{n\in\mathbb{N}\backslash L}\alpha_{L\cup\{n\},C}  B^{L\cup\{n\}}_n \tilde{\varphi}_{n} (-1)^{g(L,n)} \right\|^2\\\label{B++ first term}
+  &=\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|L|=m-1}{|C|=p}}}\left\|\left(1-\sum_{l\in L}|\tilde{\varphi}_l\rangle\langle \tilde{\varphi}_l | \right)B_{++}\hspace{-0.2cm}\sum_{n\in\mathbb{N}\backslash L}\hspace{-0.2cm}\alpha_{L\cup\{n\},C}  \tilde{\varphi}_{n} (-1)^{g(L,n)} \right\|^2
 \end{align}
 Now the operator product inside the norm has operator norm \(\|B_{++}\|\) and so we can estimate the whole object by
 \begin{equation}\label{B++estimatefinal1}
@@ -582,7 +594,7 @@ this estimate yields
 &\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 \le \eqref{B++estimatefinal1}+\eqref{B++estimatefinal2} + \|\alpha\|^2 m^2 \|B_{++}\|^2 \\\nonumber
 &= \|\alpha\|^2 (2+m^2) \|B_{++}\|^2.
 \end{align}
-For convenience of notation the estimate can be changed to 
+For convenience of notation the estimate can be weakened to 
 \begin{equation}
 \|\mathrm{d}\Gamma(B_{++})\alpha\| \le (m+1) \|B_{++}\|,
 \end{equation}
@@ -600,7 +612,6 @@ to the right, where they annihilate the vacuum. The remaining terms are
 \prod_{\overset{l=1}{l\neq b}}^m a^*(\tilde{\varphi}_{L_l})
 \prod_{\overset{c=1}{c\neq d}}^p a(\tilde{\varphi}_{-C_c})\Omega.
 \end{align}
-Next we realise that by performing the same steps backward, we can replace the arbitrary ONB in the definition of \(\mathrm{d}\Gamma(B_{-+})\) by any other one.
 By counting the remaining creation and annihilation operators we immediately see that \(\mathrm{d}\Gamma(B_{-+})\alpha\in \mathcal{F}_{m-1,p-1}\). 
 For estimating the norm of this vector, we switch basis from \((\tilde{\varphi}_{\pm n})_n\) to \((\varphi_{\pm n}')_n\), the basis where 
 \(B_{-+}\) takes its canonical form. Then the scalar product involving \(B_{-+}\) reduces to \(\lambda_{L_b}\delta_{L_b,C_d}\). We estimate
@@ -652,15 +663,15 @@ Moreover \(\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{+-})\) is skew-adjoint.
 Pick \(\beta,\alpha \in \mathcal{F}^0\). We expand those states with respect to the basis \((\varphi_k')_{k\in\mathbb{Z}\backslash \{0\}}\). Consider
 
 \begin{align}\nonumber
-\langle \beta, \mathrm{d}\Gamma(B_{-+}) \alpha \rangle=\left\langle \beta, \sum_{n\in\mathbb{N}} a^*(B_{-+}\varphi_n')a(\varphi_{n}') \alpha \right\rangle\\\nonumber
-=\sum_{n\in\mathbb{N}} \langle \beta , a^*(B_{-+}\varphi_n')a(\varphi_{n}') \alpha\rangle
-=\sum_{n\in\mathbb{N}}  \langle a^*(\varphi_{n}')  a(B_{-+}\varphi_n')\beta , \alpha\rangle\\\nonumber
-=\left\langle \sum_{n\in\mathbb{N}}a^*(\varphi_{n}')  a(B_{-+}\varphi_n') \beta, \alpha \right\rangle
-=\left\langle \sum_{n\in\mathbb{N}} \lambda_n a^*(\varphi_{n}')  a(\varphi_{-n}') \beta, \alpha \right\rangle\\
-=\left\langle \sum_{n\in\mathbb{N}}  a^*(- B_{+-}\varphi_{-n}')  a(\varphi_{-n}') \beta, \alpha \right\rangle
+&\langle \beta, \mathrm{d}\Gamma(B_{-+}) \alpha \rangle=\left\langle \beta, \sum_{n\in\mathbb{N}} a^*(B_{-+}\varphi_n)a(\varphi_{n}) \alpha \right\rangle\\\nonumber
+&=\sum_{n\in\mathbb{N}} \langle \beta , a^*(B_{-+}\varphi_n)a(\varphi_{n}) \alpha\rangle
+=\sum_{n\in\mathbb{N}}  \langle a^*(\varphi_{n})  a(B_{-+}\varphi_n)\beta , \alpha\rangle\\\nonumber
+&=\left\langle \sum_{n\in\mathbb{N}}a^*(\varphi_{n})  a(B_{-+}\varphi_n) \beta, \alpha \right\rangle
+=\left\langle \sum_{n\in\mathbb{N}} \lambda_n a^*(\varphi_{n})  a(\varphi_{-n}) \beta, \alpha \right\rangle\\
+&=\left\langle \sum_{n\in\mathbb{N}}  a^*(- B_{+-}\varphi_{-n})  a(\varphi_{-n}) \beta, \alpha \right\rangle
 =-\langle \mathrm{d}\Gamma(B_{+-})  \beta, \alpha \rangle,
 \end{align}
-where we made heavy use of the simple form of the matrix elements of both \(B_{+-}\) and \(B_{-+}\) in this basis. So we see that \(\mathrm{d}\Gamma(B_{+-})\)
+ So we see that \(\mathrm{d}\Gamma(B_{+-})\)
 and \(\mathrm{d}\Gamma(B_{-+})^*\) agree on \(\mathcal{F}^0\) which is dense. So they are the same bounded and continuous operator on all of
 Fock space. 
 \end{proof}
@@ -716,6 +727,181 @@ A vector \(\phi\in \bigcap_{n=1}^\infty D(C^n)\) is called analytic if there is 
 \(\sum_{k=0}^\infty \frac{\|C^n \phi\|}{n!} t^n<\infty\) holds. A set \(S\) is said to be total if \(\overline{\text{span}(S)}=\mathscr{H}\)
 \end{Thm}
 For a proof see e.g. \cite{SimonReed2}.
+
+\begin{Lemma}\label{Gamma exponential bound}
+For any \( \alpha \in \mathcal{F}', t>0\) the operator \(\mathrm{d}\Gamma(B):\mathcal{F}'\rightarrow \mathcal{F}\) satisfies
+\begin{equation}
+\sum_{k=0}^\infty \frac{\|\mathrm{d}\Gamma(B)^k \alpha\|}{k!} t^k <\infty.
+\end{equation}
+\end{Lemma}
+\begin{proof}
+ By definition of \(\mathcal{F}'\) there are \(m,p\in\mathbb{N}\) such that \(\alpha \in \bigobot_{l=0}^m\bigobot_{c=0}^p \mathcal{F}_{l,p}\). Fix \(t>0\). 
+We dissect \(\alpha\) into its parts of fixed particle numbers:
+\begin{equation}
+\sum_{k=0}^\infty \frac{\|\mathrm{d}\Gamma(B)^k \alpha\|}{k!} t^k \le \sum_{l=0}^m\sum_{c=0}^p \sum_{k=0}^\infty \frac{\|\mathrm{d}\Gamma(B)^k \alpha_{l,c}\|}{k!} t^k .
+\end{equation}
+ Using the following abbreviations
+\begin{align}
+&\Gamma_{-1}:=\mathrm{d}\Gamma(B)_{-+}\\
+&\Gamma_0:=\mathrm{d}\Gamma(B)_{++}+\mathrm{d}\Gamma(B)_{--}\\
+&\Gamma_{+1}:=\mathrm{d}\Gamma(B)_{+-}\\
+&\beta:=\max\{\|B_{++}\|+\|B_{--}\|,\|B_{-+},\|_{\mathrm{HS}}\}
+\end{align}
+we estimate
+\begin{align}\nonumber
+\|\mathrm{d}\Gamma(B)^k \alpha_{l,c}\|\le \sum_{x\in \{-1,0,+1\}^k} \left\| \prod_{b=1}^k \Gamma_{x_b}\alpha_{l,c}\right\|\\\label{essentialSelfadjointnessOperatorProduct}
+\le  \sum_{x\in \{-1,0,+1\}^k} \prod_{b=1}^k \left\| \Gamma_{x_b}|_{\mathcal{F}_{l+\sum_{d=1}^{b-1} x_d,c+\sum_{d=1}^{b-1} x_d}}\right\| \|\alpha_{l,c}\|\\
+\le 3^k \|\alpha\| \max_{x\in \{-1,0,+1\}^k} \prod_{b=1}^k\left\| \Gamma_{x_b}|_{\mathcal{F}_{l+\sum_{d=1}^{b-1} x_d,c+\sum_{d=1}^{b-1} x_d}}\right\|  .
+\end{align}
+At this point the factors only depend on the number of particles the Fock space vector attains as we act on it with the operators \(\Gamma_{\cdot}\). 
+As these bounds increase with the particle number we can restrict the set \(\{-1,0,+1\}\) in the last line to \(\{0,+1\}\).
+We notice that the bound in \eqref{essentialSelfadjointnessOperatorProduct} will only increase if  we exchange each pair 
+\(x_{i}=1, x_{h}=0\) by the pair \(x_{\max\{i,h\}}=1, x_{\min\{i,h\}}=0\) so that the norm of the operator that acts like
+a particle number operator is taken after the particle number is increased. The maximum therefore has the form \((c+l+2+2d)^{k-d}\), which we bound by
+\(2^k (c/2+d/2+1+d)^{k-d}\).
+For maximising this object we treat \(d\) as a continuous variable take the derivative and set it to zero. From the form of the function to be maximised
+it is clear that it is equal to \(1\) for \(d=k\) and at \(d=-c/2-l/2\), but for \(k\) large it will be bigger in between. We abbreviate \(y=c/2+l/2+1\).
+\begin{align}
+0= (y+d)^{k-d} (-\ln(y+d) + \frac{k-d}{y+d})\\
+\iff \frac{k-d}{y+d}= \ln (y+d)\\
+\iff \frac{k+y}{y+d}  -1 = -1 + \ln (e (y+d))\\
+\iff e(k+y)=e(y+d)\ln(e(y+d))\\
+\iff e(k+y)=\ln(e(y+d)) e^{\ln(e(y+d))}\\
+\iff W_0(e(k+y))=\ln(e(y+d))\\
+\iff e^{W_0(e(k+y))-1}-y=d,
+\end{align}
+
+where we made use of the Lambert W function, which is the inverse function of \(x\mapsto x e^x\) and has multiple branches; however as \(e(y+d)>0\) 
+\(W_0\) is the only real branch which is applicable here, it corresponds to the inverse of \(x\mapsto x e^x\) for \(x>-1\). 
+From the form of the maximising value we see, that it is always bigger than \(-y\). Plugging this back onto our
+function we find its maximum
+
+\begin{align}\nonumber
+&\max_{d\in ]-y,\infty[} (y+d)^{k-d}=e^{(W_0(e(k+y))-1) (k+y)- (W_0(e(k+y))-1)e^{W_0(e(k+y))-1}}\\\nonumber
+&=e^{-(k+y) + (k+y)W_0(e(k+y)) + e^{W_0(e(k+y))-1} -((k+y)e)/e}\\\nonumber
+&=e^{-2(k+y) + (k+y)W_0((k+y)e)+ \frac{e(k+y)}{eW_0((k+y)e)}}\\
+&=e^{(k+y)(-2+W_0((k+y)e) + W_0((k+y)e)^{-1})},
+\end{align}
+where we repeatedly used \(W_0(x)e^{W_0(x)}=x\). Putting things together we find
+
+\begin{align}
+\|\Gamma(B)^k\alpha_{l,c}\|\le (6\beta )^k \|\alpha\| e^{(k+y)(-2+W_0((k+y)e) + W_0((k+y)e)^{-1})}.
+\end{align}
+Dividing this by \(k!\) and using the lower bound given by Sterling's formula we would like to prove that 
+
+\begin{align}\label{essentialSelfadjointnessSimplifiedSum}
+\sum_{k=1}^\infty (6\beta t )^k   e^{k(1-\ln(k))-\frac{1}{2}\ln(k) +(k+y)(-2+W_0((k+y)e) + W_0((k+y)e)^{-1})}<\infty
+\end{align}
+holds, where we neglected constant factors and the summand \(k=0\) which do not matter for the task at hand. Next we are going
+to use an inequality about the growth of \(W_0\) proven in \cite{hoorfar2008inequalities}. For any \(x\ge e\) 
+\begin{equation}
+W_0(x)\le \ln(x)-\ln( \ln (x)) + \frac{e}{e-1}\frac{\ln (\ln (x))}{\ln (x)}
+\end{equation}
+holds true. Plugging this into our sum the exponent is bounded from above by
+
+\begin{align}\nonumber
+&k(1-\ln(k))-\frac{1}{2}\ln(k) +(k+y)\Big[-1+\ln(k+y) - \ln(1+ \ln (k+y))\\ \nonumber
+&\left.+\frac{e}{e-1} \frac{\ln(1+\ln(k+y))}{1+\ln(k+y)} + W_0((k+y)e)^{-1}\right]\\\nonumber
+&=-y + k \ln\left(1+\frac{y}{k}\right) + y \ln (k+y) -\frac{1}{2}\ln(k) +\\\nonumber
+&(k+y)\left[ \ln (1+\ln(k+y))\frac{1-(e-1)\ln(k+y)}{(e-1)(1+\ln(k+y))} + W_0((k+y)e)^{-1}\right]\\\label{essentialSelfadjointnessExponent}
+&\le y \ln (k+y) -\frac{1}{2}\ln(k) + (k+y)W_0((k+y)e)^{-1} +\\\nonumber
+&(k+y) \ln (1+\ln(k+y))\frac{1-(e-1)\ln(k+y)}{(e-1)(1+\ln(k+y))} .
+\end{align}
+Now it is important to notice that the only remaining term that grows faster than linearly in magnitude is the last summand.
+This term; however, is negative for large \(k\), as the fraction converges to \(-(e-1)\) for large \(k\), while the double logarithm
+in front grows without bounds. So there is a \(k^*\) big enough such that  for all \(k>k^*\) \eqref{essentialSelfadjointnessExponent} 
+is smaller than \(- k (\ln(6\beta t) + 1)\), proving that \eqref{essentialSelfadjointnessSimplifiedSum} in fact holds.
+
+\end{proof}
+
+
+
+\begin{Thm}\label{Gamma essential selfadjointness}
+The operator \(\mathrm{d}\Gamma(B):\mathcal{F}'\rightarrow \mathcal{F}\) is essentially skew adjoint and hence by Stones theorem
+ generates a strongly continuous unitary group \(\left( e^{t ~\widehat{\mathrm{d}\Gamma(B)}}\right)_t\), where \(\widehat{\mathrm{d}\Gamma(B)}\) is the closure of 
+ \(\mathrm{d}\Gamma(B)\).
+\end{Thm}
+\begin{proof}
+In order to apply Nelson's analytic vector theorem we pick \(C=\mathcal{F}'\). Pick \(\alpha \in\mathcal{F}'\). We need to show that there is \(t>0\) such that
+\begin{equation}
+\sum_{k=0}^\infty \frac{\|\mathrm{d}\Gamma(B)^k \alpha\|}{k!} t^k <\infty
+\end{equation}
+holds. This is guaranteed by the last lemma.
+\end{proof}
+
+Lastly in this chapter, we will investigate the commutation properties of \(\mathrm{d}\Gamma(B)\) with general creation and annihilation operators.
+These properties are the reason we are interested in this operator, they will prove to be very useful in the next chapter.
+
+\begin{Thm}\label{Commutation Gamma}
+For \(\psi \in \mathcal{H}\) we have
+\begin{equation}
+[\mathrm{d}\Gamma(B),a^\# (\psi)]=a^\#(B\psi),
+\end{equation}
+where \(a^\#\) can be either \(a\) or \(a^*\).
+\end{Thm}
+\begin{proof}
+Because \(\mathrm{d}\Gamma(B)\) is defined as the extension of an operator on \(\mathcal{F}^0\) it suffices to show the desired identity on this space. In order to do so
+we first restrict \(\psi\in \text{span}\{\varphi_{n}| n \in \mathbb{Z}\backslash\{0\}\}\). We will first cover the case \(a(\psi)\).  
+As a first step we decompose \(\mathrm{d}\Gamma(B)\) into its four parts
+
+\begin{align}
+\left[ \mathrm{d}\Gamma(B),a(\psi) \right] = \left[ \mathrm{d}\Gamma(B_{++})
++\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{--}),a(\psi) \right],
+\end{align}
+each of those parts is evaluated directly. We begin with the \(B_{++}\) part, this can be expressed as
+
+\begin{align}
+\left[ \mathrm{d}\Gamma(B_{++}),a(\psi) \right] \\
+= \sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_n)a(\varphi_n) a(\psi) - \sum_{n\in\mathbb{N}} a(\psi) a^*(B_{++}\varphi_n)a(\varphi_n) \\
+=\sum_{n\in\mathbb{N}} \left[ -\langle \psi, B_{++} \varphi_n\rangle a(\varphi_n) +a(\psi) a^*(B_{++}\varphi_n)a(\varphi_n) \right]  \\
+- \sum_{n\in\mathbb{N}} a(\psi) a^*(B_{++}\varphi_n)a(\varphi_n).
+\end{align}
+
+Let \(\alpha \in \mathcal{F}^0\). Now applying the expression in the last two lines to \(\alpha\) online finitely many elements of the sum in fact contribute.
+So we may split the firs sum into two and observe the cancellation between the last two terms. Continuing we find
+
+\begin{align}
+\left[ \mathrm{d}\Gamma(B_{++}),a(\psi) \right] \alpha
+=-\sum_{n\in\mathbb{N}}  \langle \psi, B_{++} \varphi_n\rangle a(\varphi_n)\alpha\\
+=-a\left(\sum_{n\in\mathbb{N}} \langle B_{++}\varphi_n, \psi\rangle  \varphi_n  \right)\alpha
+=a\left(\sum_{n\in\mathbb{N}} \langle \varphi_n, B_{++}\psi\rangle  \varphi_n  \right)\alpha\\
+=a(B_{++}\psi)\alpha,
+\end{align}
+
+where we used \(B^*=-B^*\). Now for a general \(\psi\in\mathcal{H}\) we pick a sequence 
+\((\psi_k)_{k\in\mathbb{N}}\subset \text{span}\{\varphi_{n}| n \in \mathbb{Z}\backslash\{0\}\}\)
+such that \(\lim_{k\rightarrow \infty} \psi_k = \psi\). Now because of the calculation we have the equality
+
+\begin{equation}
+\left[ \mathrm{d}\Gamma(B_{++}),a(\psi_k) \right] \alpha =a(B_{++}\psi_k)\alpha
+\end{equation}
+
+for each \(k\in\mathbb{N}\) and hence if a limit exists it also holds in the limit. Now on the right hand side, because
+\(a\) is a bounded operator on all of \(\mathcal{F}\) clearly the limit exists and is equal to \(a(B_{++}\psi)\alpha\).
+On the left hand side we know \(\mathrm{d}\Gamma(B)\) to be bounded and hence continuous on every \(\mathcal{F}_{m,p}\)
+for every \(m,p\in\mathbb{N}\).  Furhtermore since \(\alpha\in\mathcal{F}^0\) there is are \(m',p'\in\mathbb{N}\) such that 
+\(\alpha \in \bigobot_{m=0}^{m'}\bigobot_{p=0}^{p'} \mathcal{F}_{m,p}\) holds and hence we can exchange the limit also 
+with \(\mathrm{d}\Gamma(B)\) and find
+
+\begin{equation}
+\left[ \mathrm{d}\Gamma(B_{++}),a(\psi) \right] \alpha =a(B_{++}\psi)\alpha
+\end{equation}
+
+for general \(\psi\in\mathcal{H}\). The final extension of this equation to all \(\alpha \in \mathcal{F}'\) happens via the continuous linear
+extension theorem on \(\mathcal{F}_{m,p}\) for each \(m,p\in\mathbb{N}\). The proof in all seven other cases are completely analogous.
+Putting thins together again we obtain
+
+\begin{align}
+\left[ \mathrm{d}\Gamma(B_{++}),a(\psi) \right] +\left[ \mathrm{d}\Gamma(B_{-+}),a(\psi) \right] \\
++\left[ \mathrm{d}\Gamma(B_{+-}),a(\psi) \right] +\left[ \mathrm{d}\Gamma(B_{--}),a(\psi) \right]  =\\
+a(B_{++}\psi)+a(B_{+-}\psi)+a(B_{-+}\psi)+a(B_{--}\psi)\iff \\
+\left[ \mathrm{d}\Gamma(B),a(\psi) \right] =a(B\psi)
+\end{align}
+on all of \(\mathcal{F}'\).
+
+\end{proof}
+
+
 
 
 
@@ -823,34 +1009,59 @@ c_{\alpha_1,\dots, \alpha_k} = \frac{(-1)^k}{k} \begin{pmatrix}\sum_{l=1}^k \alp
 \end{equation}
 where the last factor is the multinomial coefficient of the indices \(\alpha_1,\dots, \alpha_k\in\mathbb{N}\).
 
-\subsection{Theorem and Proof}
+\subsection{Recursive equation for Coefficients of the second quantised scattering operator}
 
-The above considerations lead us to the following
+For the rest of this chapter, we are going to derive a concrete form of the second quantised scattering matrix. In order to turn the ``conjectures'' 
+into ``theorems'' not only would one have to turn the rough sketches of the combinatorics into proofs, one also would have to show linearity (over real numbers) and
+continuity of \(\mathrm{d}\Gamma(B)\) in \(B\).
+However, since the final result can be verified to be well defined and to fulfil the lift conditions, this will not be necessary.
+We will nonetheless come across various combinatorial assertions that we are going to prove rigorously. 
+These will be clearly marked: ``lemma'' and ``proof''.
 
-\begin{Thm}\label{thm: T_n recursive}
-For any \(n\in\mathbb{N}\) the nth expansion coefficient of the second quantized scattering operator \(T_n\) is given by
+We are going to use the following definition of binomial coefficients:
+\begin{Def}
+For \(a\in\mathbb{C}, b\in\mathbb{Z}\) we define
+
+\begin{equation}
+\binom{a}{b} := \left\{\begin{matrix}
+\prod_{l=0}^{b-1} \frac{a-l}{l+1} \quad \text{for } b\ge 0\\
+0 \hspace{1.7cm} \text{otherwise.}
+\end{matrix}\right.
+\end{equation}
+\end{Def}
+
+Defining the binomial coefficient for negative lower index to be zero has the merit, that one can extend the
+range of validity of many rules and sums involving binomial coefficients, also one does not have 
+to worry about the range of summation in many cases.
+
+
+
+The coefficients which we have already guessed more generally to be
+
+\begin{Conj}\label{thm: T_n recursive}
+For any \(n\in\mathbb{N}\) the n-th expansion coefficient of the second quantised scattering operator \(T_n\) is given by
 \begin{align}\notag
 &T_n = \sum_{g=2}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
 \binom{n}{\vec{b}} \prod_{l=1}^g T_{b_l} + C_n \id_{\mathcal{F}} \\ \label{T_n recursive}
-&+ G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
+&+ d\Gamma\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
 \binom{n}{\vec{b}} \prod_{l=1}^g Z_{b_l}  \right),
 \end{align}
 for some \(C_n\in \mathbb{C}\) which depends on the external field \(A\). The last summand will henceforth
-be abbreviated by \(G_n\).
-\end{Thm}
+be abbreviated by \(\Gamma_n\).
+\end{Conj}
 
-\textbf{Proof:} The way we will prove this is to compute the commutator of the difference between \(T_n\) and
+\textbf{Motivation:} The way we will prove this is to compute the commutator of the difference between \(T_n\) and
 the first summand of \eqref{T_n recursive} with the creation and annihilation operator of an element of the
 basis of \(\mathcal{H}\). This will turn out to be exactly equal
 to the corresponding commutator
 of the second summand of \eqref{T_n recursive}, since two operators on Fock space only
 have the same commutator with general creation and annihilation operators if they
-agree up to multiples of the identity this will conclude our proof. 
+agree up to multiples of the identity this will conclude the motivation of this conjecture. 
 
  In order to simplify the notation as much as possible, 
 I will denote by \(a^\# z\) either \(a(z(\varphi_p))\) or
  \(a^*(z(\varphi_p))\) for any one particle operator \(z\) and any element
- \(\varphi_p\) of the orthonormal basis \((\varphi_p)_{p\in\mathbb{Z}}\) of
+ \(\varphi_p\) of the orthonormal basis \((\varphi_p)_{p\in\mathbb{Z}\backslash\{0\}}\) of
  \(\mathcal{H}\). (We need not decide between creation and annihilation 
  operator, since the expressions all agree)
  
@@ -892,11 +1103,11 @@ in the second step we used \eqref{logarithmic lift condition}. Now we commute
 all the \(T_l\)s to the left of \(a^\#\) to its right:
 
 \begin{equation}\label{combinatorics ordered product}
-= \sum_{\stackrel{\vec{l}\in\mathbb{N}^g}{|l|=n}} \frac{(-1)^g}{g} \binom{n}{\vec{l}}
-\sum_{\tilde{k}=1}^g \sum_{\stackrel{\forall 1\le j <\tilde{k}}{0\le \sigma_{j}\le l_j}}
-\sum_{\sigma_{\tilde{k}}=1}^{l_{\tilde{k}}} \prod_{j=1}^{\tilde{k}} \binom{l_j}{\sigma_j}
+=\!\!\! \sum_{\stackrel{\vec{l}\in\mathbb{N}^g}{|l|=n}} \!\!\frac{(-1)^g}{g}\! \binom{n}{\vec{l}}
+\!\! \sum_{\tilde{k}=1}^g \!\sum_{\stackrel{\forall 1\le j <\tilde{k}}{0\le \sigma_{j}\le l_j}}
+\!\sum_{\sigma_{\tilde{k}}=1}^{l_{\tilde{k}}} \prod_{j=1}^{\tilde{k}}\! \binom{l_j}{\sigma_j}
 a^\# \prod_{j=1}^{\tilde{k}} Z_{\sigma_j} \prod_{j=1}^{\tilde{k}} T_{l_j-\sigma_j}
-\prod_{j=\tilde{k}+1}^g T_{l_j}.
+\!\!\prod_{j=\tilde{k}+1}^g T_{l_j}.
 \end{equation}
 At this point we notice that the multinomial coefficient can be combined with all
 the binomial coefficients to form a single multinomial coefficient of degree
@@ -920,7 +1131,7 @@ the identity operator on \(\mathcal{H}\) respectively Fock space.
 Since we know that 
 
 \begin{align*}
-\left[ G\left(\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
+\left[ d\Gamma\left(\sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
 \binom{n}{\vec{b}}  \prod_{l=1}^g Z_{b_l}\right), a^\#\right]\\
 = a^\# \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^g}{g} 
 \binom{n}{\vec{b}}  \prod_{l=1}^g Z_{b_l}
@@ -932,7 +1143,7 @@ holds, all that is left to show is that
 &= a^\# \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
 \binom{n}{\vec{b}}  \prod_{l=1}^g Z_{b_l}
 \end{align}
-holds. For which we need to count the summands which are multiples of each element of \eqref{combinatorics span}
+also holds. For which we need to count the summands which are multiples of each element of \eqref{combinatorics span}
  corresponding to each \(g\) in \eqref{combinatorics total sum of T}. So let us fix some element
  \(K(m_1,m_2)\) of \eqref{combinatorics span} corresponding to some \(m_1\in\mathbb{N},
  m_2\in\mathbb{N}_0, \alpha \in \mathbb{N}^{m_1}\) and \( \beta\in \mathbb{N}^{m_2}\).
@@ -953,9 +1164,9 @@ three sets \(A,B\) and \(C\), where the commutation relation has to be used in s
 \wedge& \forall k: \gamma_k \in B \iff \exists j\le m_2: \gamma_k = \beta_j\\
 \wedge & \forall k: \gamma_k \in C \iff \exists j\le m_1, l\le m_2: \gamma_k = \alpha_j + \beta_l
 \end{align*}
- holds. Unfortunately not any splitting corresponds to a contribution and not any
+ holds. Unfortunately not every splitting corresponds to a contribution and not every
  order of multiplication of a legal splitting corresponds to a contribution either.
- However we can be sure that \(\prod_{j} T_{\alpha_j} \prod_j T_{\beta_j}\) gives
+ However \(\prod_{j} T_{\alpha_j} \prod_j T_{\beta_j}\) gives
  a contribution and it is in fact the longes product that does.
  We may apply the commutation relations backwards to obtain any
  shorter valid combination and hence all combinations. 
@@ -994,9 +1205,9 @@ we consider one such string without labelling, e.g.
 C A A B A C C B B A C B B A B B B B,
 \end{equation}
 
-there is only one correct labelling to be restored, namely the one where each (first index of 
-any) \(C\) and \(A\) receive increasing labels from left to right and analogously for (the second 
- index of any) \(C\) and \(B\), resulting for our example in
+there is only one correct labelling to be restored, namely the one where each \(A\) and the first index of 
+any \(C\)  receive increasing labels from left to right and analogously for \(B\) and the second 
+ index of any \(C\), resulting for our example in
  
 \begin{equation}
  C_{1,1} A_2 A_3 B_2 A_4 C_{5,3} C_{6,4} B_{5} B_6 A_7 C_{8,7} B_8 B_9 A_9 B_{10} B_{11} B_{12} B_{13}.
@@ -1012,24 +1223,8 @@ So returning to our Operators, we found the number \(\#K(m_1,m_2)\) it is
 where the total minus sign comes from the total minus sign in front of \eqref{combinatorics total commutator}
 with respect to \eqref{T_n recursive}. 
 
-Now a quick route to evaluate this sum requires us to slightly generalize the standard definition of
-binomial coefficient to the one in \cite{graham1994concrete}:
-
-\begin{Def}
-For \(a\in\mathbb{C}, b\in\mathbb{Z}\) we define
-
-\begin{equation}
-\binom{a}{b} := \left\{\begin{matrix}
-\prod_{l=0}^{b-1} \frac{a-l}{l+1} \quad \text{for } b\ge 0\\
-0 \hspace{1.7cm} \text{otherwise.}
-\end{matrix}\right.
-\end{equation}
-\end{Def}
-
-Defining the binomial coefficient for negative lower index to be zero has the merit, that one can extend the
-range of validity of many rules and sums involving binomial coefficients, also one does not have 
-to worry about the range of summation in many cases.
-
+Now since we introduced the slightly non-standard definition of binomial coefficients used in \cite{graham1994concrete} we
+can make use of the rules for summing binomial coefficients derived there.
 As a first step to evaluate \eqref{combinatorics binomial sum} we split the trinomial coefficient into binomial
 ones and make use of the absorption identity
 
@@ -1048,9 +1243,10 @@ for \(m_2,m_1\neq 0\) as follows
 &\overset{m_1>0}{=}\frac{-1}{m_2} \sum_{g\in\mathbb{Z}} (-1)^g \binom{m_2}{g-m_1}\binom{g-1}{m_2-1}\\
 &\stackrel{*}{=} \frac{-1}{m_2} (-1)^{m_2-m_1} \binom{m_1-1}{-1} = 0,
 \end{align*}
-where for the marked equality we used summation rule (5.24) of \cite{graham1994concrete}. 
+where for the second but last equality \(m_1>0\) is needed for the \(g=0\) summand not to contribute and
+for the marked equality we used summation rule (5.24) of \cite{graham1994concrete}. 
 So all the coefficients vanish that fulfil \(m_1,m_2\neq 0\). The sum for the remaining cases
-is trivial, since there is just one summand. Summarising we find
+is readily computed, since there is just one summand. Summarising we find
 
 \begin{equation*}
 \#K(m_1,m_2)= \delta_{m_2,0} \frac{(-1)^{1+m_1}}{m_1} + \delta_{m_1,0} \frac{(-1)^{1+m_2}}{m_2},
@@ -1067,9 +1263,11 @@ where the second summand can be ignored, since terms with \(m_1=0\) are irreleva
 = \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|b|=n}} \frac{(-1)^{g+1}}{g} \binom{n}{\vec{b}}  a^\# \prod_{l=1}^g Z_{b_l},
 \end{align*}
 
-which is exactly equal to the right hand side of \eqref{combinatorics total commutator}. \(\Box\)
+which is exactly equal to the right hand side of \eqref{combinatorics total commutator}. This ends the motivation of the conjecture.
 
-\section{Solution to Recursive Equation}
+
+
+\subsection{Solution to Recursive Equation}
 
 So we found a recursive equation for the \(T_n\)s, now we need to solve it. 
 In order to do so we need the following lemma about combinatorial distributions
@@ -1212,10 +1410,10 @@ exponential and change order summation and differentiation. This results in
 
 
 
-I am now in a position to state the solution to the recursive equation \eqref{T_n recursive}
-and have us prove together that it is in fact a solution. 
+We are now in a position to state the solution to the recursive equation \eqref{T_n recursive}
+and motivate that it is in fact a solution. 
 
-\begin{Thm}
+\begin{Conj}
 For \(n\in\mathbb{N}\) the solution of the recursive equation \eqref{T_n recursive} 
 solely in terms of \(G_a\) and \(C_a\) is given by
 
@@ -1225,23 +1423,23 @@ T_n = \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|= n}} \sum_{
 \end{equation}
 where \(F\) is given by
 \begin{equation}\label{eq resursive weak solution}
-F_{a,b} = \left\{ \begin{matrix}G_a \quad \text{for } b=0 \\ C_a \quad \text{for } b=1  \end{matrix} \right._. 
+F_{a,b} = \left\{ \begin{matrix}\mathrm\Gamma_a \quad \text{for } b=0 \\ C_a \quad \text{for } b=1  \end{matrix} \right._. 
 \end{equation}
-For the readers convenience we remind her, that \(G_a\) and
+For the readers convenience we remind her, that \(\mathrm\Gamma_a\) and
 the constants \(C_n\) are defined in theorem \ref{thm: T_n recursive}. 
-\end{Thm}
+\end{Conj}
 
-\textbf{Proof:} The structure of this proof will be induction over \(n\). For \(n=1\) the whole expression
-on the right hand side collapses to \(C_1 + G_1\), which we already know to be equal to \(T_1\). For
+\textbf{Motivation:} The structure of this proof will be induction over \(n\). For \(n=1\) the whole expression
+on the right hand side collapses to \(C_1 + \mathrm\Gamma_1\), which we already know to be equal to \(T_1\). For
 arbitrary \(n+1\in\mathbb{N}\backslash\{1\}\) we apply the recursive equation \eqref{T_n recursive}
 once and use the induction hypothesis for all \(k\le n\) and thereby arrive at the rather convoluted 
 expression
 
 \begin{multline}\label{recursive weak conjecture proof}
 T_{n+1} \stackrel{\eqref{T_n recursive}}{=} 
-G_{n+1} + C_{n+1}+ \sum_{g=2}^{n+1} \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n+1}} 
+\mathrm\Gamma_{n+1} + C_{n+1}+ \sum_{g=2}^{n+1} \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n+1}} 
 \frac{(-1)^g}{g} \binom{n+1}{\vec{b}} \prod_{l=1}^g T_{b_l}\\
-\stackrel{\text{induction hyp}}{=} G_{n+1} + C_{n+1}+ \sum_{g=2}^{n+1} \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n+1}} 
+\stackrel{\text{induction hyp}}{=} \mathrm\Gamma_{n+1} + C_{n+1}+ \sum_{g=2}^{n+1} \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n+1}} 
 \frac{(-1)^g}{g} \binom{n+1}{\vec{b}} \prod_{l=1}^g \\
 \sum_{g_l=1}^{b_l} \sum_{\stackrel{\vec{c}_l \in\mathbb{N}^{g_l}}{|\vec{c}_l|=b_l}} \sum_{\vec{e}_l \in \{0,1\}^{g_l}}
 \frac{1}{g_l!} \binom{b_l}{\vec{c}_l} \prod_{k=1}^{g_l} F_{c_{l,k},e_{l,k}}.
@@ -1285,28 +1483,28 @@ Now proving \eqref{combinatorics weak conjecture reformulated into equation} is 
 realizing, that one can include the right hand side into the sum as the \(g=1\) summand, dividing
 the equation by \(\tilde{g}!\) and using lemma \ref{combinatorics weak conjecture lemma 2}
 with \(k=\tilde{g}\). The remaining case, \(\tilde{g}=1\), can directly be
-read off of \eqref{recursive weak conjecture proof}. \qed
+read off of \eqref{recursive weak conjecture proof}. This ends the motivation of this conjecture.
 
-\begin{Corollary}\label{Corollary T_n by G's and C's}
+\begin{Conj}\label{Corollary T_n by G's and C's}
 For \(n\in\mathbb{N}\), \(T_n\) can be written as
 
 \begin{equation}
 \frac{1}{n!} T_n = \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}} 
 \sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
-\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}.
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} \mathrm\Gamma_{g_l}.
 \end{equation}
 Please note that for ease of notation we defined \(\mathbb{N}^0:= \{1\}\).
-\end{Corollary}
-\textbf{Proof:} By an argument completely analogous to the combinatorial argument in the proof of theorem 
+\end{Conj}
+\textbf{Motivation:} By an argument completely analogous to the combinatorial argument in the motivation of conjecture
 \eqref{thm: T_n recursive} we see that we can disentangle the \(F\)s in \eqref{recursive solution}
-into \(G\)s and \(C\)s if we multiply by a factor of \(\binom{c+g}{c}\) where \(c\) is the 
-number of \(C\)s and \(g\) is the number of \(G\)s giving
+into \(\mathrm\Gamma\)s and \(C\)s if we multiply by a factor of \(\binom{c+g}{c}\) where \(c\) is the 
+number of \(C\)s and \(g\) is the number of \(\mathrm\Gamma\)s giving
 
 \begin{multline}
 T_n = \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}}
 \sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
 \binom{c+g}{c} \frac{1}{(c+g)!} \binom{n}{\vec{g}\oplus \vec{c}}
-\prod_{l=1}^c  C_{c_l} \prod_{l=1}^g G_{g_l},
+\prod_{l=1}^c  C_{c_l} \prod_{l=1}^g \mathrm\Gamma_{g_l},
 \end{multline}
 
 which directly reduces to the equation we wanted to prove, by plugging in the multinomials in terms of
@@ -1316,51 +1514,50 @@ factorials.
 As a formal power series, the second quantized scattering operator can be written in the form
 \begin{equation}\label{Corollary double exp}
 S= e^{\sum_{l\in\mathbb{N}} \frac{C_{l}}{l!}}
- e^{\sum_{l\in\mathbb{N}} \frac{G_{l}}{l!}},
+ e^{\sum_{l\in\mathbb{N}} \frac{\mathrm\Gamma_{l}}{l!}}.
 \end{equation}
-which the author finds quite amusing.
 \end{Corollary}
-\textbf{Proof:} We plug corollary \ref{Corollary T_n by G's and C's} into the defining Series for the \(T_n\)s
+\textbf{Proof:} We plug conjecture \ref{Corollary T_n by G's and C's} into the defining Series for the \(T_n\)s
 giving
 
-\begin{multline}
-S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
-=\id_{\mathcal{F}}+ \sum_{n\in\mathbb{N}} \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}} 
+\begin{align}
+&S= \sum_{n\in\mathbb{N}_0} \frac{1}{n!} T_n \\
+&=\id_{\mathcal{F}}+ \sum_{n\in\mathbb{N}} \sum_{\stackrel{1\le c+g\le n}{c,g\in\mathbb{N}_0}} 
 \sum_{\stackrel{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}}{|\vec{c}| + |\vec{g}|=n}} 
-\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
-=\id_{\mathcal{F}}+  \sum_{\stackrel{1\le c+g }{c,g\in\mathbb{N}_0}} 
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} \mathrm\Gamma_{g_l}\\
+&=\id_{\mathcal{F}}+  \sum_{\stackrel{1\le c+g }{c,g\in\mathbb{N}_0}} 
 \sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}} 
-\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
-=\sum_{c,g\in\mathbb{N}_0}
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} \mathrm\Gamma_{g_l}\\
+&=\sum_{c,g\in\mathbb{N}_0}
 \sum_{\stackrel{\vec{g}\in\mathbb{N}^g}{\vec{c}\in\mathbb{N}^c}} 
-\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
-=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \sum_{\vec{c}\in\mathbb{N}^c} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l}
-\sum_{g\in\mathbb{N}_0} \frac{1}{g!} \sum_{\vec{g}\in\mathbb{N}^g} \prod_{l=1}^g \frac{1}{g_l!} G_{g_l}\\
-=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \prod_{l=1}^c \sum_{k\in\mathbb{N}} \frac{1}{k!} C_{k}
-\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \prod_{l=1}^g \sum_{b\in\mathbb{N}} \frac{1}{b!} G_{b}\\
-=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \left( \sum_{k\in\mathbb{N}} \frac{1}{k!} C_{k}\right)^c
-\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \left( \sum_{b\in\mathbb{N}} \frac{1}{b!} G_{b}\right)^g\\
-=e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}} e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} G_{l}}.
-\end{multline}
-\qed
+\frac{1}{c! g!} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l} \prod_{l=1}^g \frac{1}{g_l!} \mathrm\Gamma_{g_l}\\
+&=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \sum_{\vec{c}\in\mathbb{N}^c} \prod_{l=1}^c \frac{1}{c_l!} C_{c_l}
+\sum_{g\in\mathbb{N}_0} \frac{1}{g!} \sum_{\vec{g}\in\mathbb{N}^g} \prod_{l=1}^g \frac{1}{g_l!} \mathrm\Gamma_{g_l}\\
+&=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \prod_{l=1}^c \sum_{k\in\mathbb{N}} \frac{1}{k!} C_{k}
+\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \prod_{l=1}^g \sum_{b\in\mathbb{N}} \frac{1}{b!} \mathrm\Gamma_{b}\\
+&=\sum_{c\in\mathbb{N}_0} \frac{1}{c!} \left( \sum_{k\in\mathbb{N}} \frac{1}{k!} C_{k}\right)^c
+\sum_{g\in\mathbb{N}_0} \frac{1}{g!}  \left( \sum_{b\in\mathbb{N}} \frac{1}{b!} \mathrm\Gamma_{b}\right)^g\\
+&=e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} C_{l}} e^{\sum_{l\in\mathbb{N}} \frac{1}{l!} \mathrm\Gamma_{l}}.
+\end{align}
 
-\begin{Thm}\label{sleek_second_quantised_scattering_operator}
+
+\begin{Conj}
 For \(A\) such that 
 \begin{equation}
 \|\id-U^A\|<1.
 \end{equation}
 The second quantized scattering operator fulfils
 \begin{equation}\label{eq:sleek_second_quantised_scattering_operator}
-S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{G(\ln (U))}
+S= e^{\sum_{n\in\mathbb{N}} \frac{C_n}{n!}} e^{\mathrm{d}\Gamma(\ln (U))}
 \end{equation}
 where \(C_n\) must be imaginary for any \(n\in\mathbb{N}\) in order to satisfy unitarity.
 
-\end{Thm}
-\textbf{Proof:} Due to the last few lemmas and theorems this proof has become much less difficult.
+\end{Conj}
+\textbf{Motivation:} 
 First the remark about \(C_n \in i \mathbb{R}\) for any \(n\) is a direct consequence of 
 the second factor of \eqref{eq:sleek_second_quantised_scattering_operator} begin unitary.
-This in turn follows directly from \(G^* (K)=-G(K)\) for any \(K\) in the domain of \(G\).
-That \(\ln U\) is in the domain of \(G\) follows from \( (\ln U)^*=\ln U^*=\ln U^{-1}=-\ln U\)
+This in turn follows directly from \(\mathrm{d}\Gamma^* (K)=-\mathrm{d}\Gamma(K)\) for any \(K\) in the domain of \(\mathrm{d}\Gamma\).
+That \(\ln U\) is in the domain of \(\mathrm{d}\Gamma\) follows from \( (\ln U)^*=\ln U^*=\ln U^{-1}=-\ln U\)
 and \(\|U-\id\|<1\).
 
  We are going to change the sum in the second exponential of 
@@ -1368,68 +1565,102 @@ and \(\|U-\id\|<1\).
 we can step by step simplify
 
 \begin{multline}
-\sum_{l\in\mathbb{N}} \frac{G_{l}}{l!}= 
+\sum_{l\in\mathbb{N}} \frac{\mathrm\Gamma_{l}}{l!}= 
 \sum_{n \in\mathbb{N}} \frac{1}{n!} 
-G\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
+\mathrm{d}\Gamma\left( \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
 \binom{n}{\vec{b}} \prod_{l=1}^g Z_{b_l}  \right)\\
-=G\left( \sum_{n \in\mathbb{N}} \frac{1}{n!} 
+=\mathrm{d}\Gamma\left( \sum_{n \in\mathbb{N}} \frac{1}{n!} 
  \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
 \binom{n}{\vec{b}} \prod_{l=1}^g Z_{b_l}  \right)\\
-=G\left( \sum_{n \in\mathbb{N}}
+=\mathrm{d}\Gamma\left( \sum_{n \in\mathbb{N}}
  \sum_{g=1}^n \sum_{\stackrel{\vec{b}\in\mathbb{N}^g}{|\vec{b}|=n}}\frac{(-1)^{g+1}}{g} 
  \prod_{l=1}^g \frac{Z_{b_l}}{b_l!}  \right)\\
-=G\left( 
+=\mathrm{d}\Gamma\left( 
  \sum_{g\in\mathbb{N}} \sum_{\vec{b}\in\mathbb{N}^g}\frac{(-1)^{g+1}}{g} 
 \prod_{l=1}^g \frac{Z_{b_l}}{b_l!}  \right)\\
-=G\left( 
+=\mathrm{d}\Gamma\left( 
  \sum_{g\in\mathbb{N}} \frac{(-1)^{g+1}}{g} 
 \prod_{l=1}^g \left(\sum_{b_l\in\mathbb{N}} \frac{Z_{b_l}}{b_l!} \right) \right)\\
-=G\left( 
+=\mathrm{d}\Gamma\left( 
  \sum_{g\in\mathbb{N}} \frac{(-1)^{g+1}}{g} 
  \left(\sum_{b\in\mathbb{N}} \frac{Z_{b}}{b!} \right)^g \right)\\
- =G\left( 
+ =\mathrm{d}\Gamma\left( 
  \sum_{g\in\mathbb{N}} \frac{(-1)^{g+1}}{g} 
  \left(U-\id \right)^g \right)
- =G\left( -
+ =\mathrm{d}\Gamma\left( -
  \sum_{g\in\mathbb{N}} \frac{1}{g} 
  \left(\id-U \right)^g \right)\\
-  =G\left( 
+  =\mathrm{d}\Gamma\left( 
  \ln \left(\id-\left(\id-U\right) \right) \right)
- =G\left( \ln \left(U\right)\right).
+ =\mathrm{d}\Gamma\left( \ln \left(U\right)\right).
 \end{multline}
-\qed
 
-\begin{Remark}
-\(\sum_{n\in\mathbb{N}} \frac{C_n}{n!}\) will henceforth be abbreviated by \(i \varphi\).
-\end{Remark}
 
-\begin{Remark}
-If one starts with the right hand side of \eqref{sleek_second_quantised_scattering_operator} as the definition of 
-some operator \(S\), all it takes to verify that it fulfils \eqref{lift_condition1} and \eqref{lift_condition2} is the following 
-(in comparison with its derivation) short calculation:
 
-Let \(\varphi\in \mathcal{H}\), for any \(k\in \mathbb{N}_0\) we see applying the commutation relation of \(G\):
+The last conjecture will be the starting point of the axiomatic approach in the next chapter.
+
+
+
+\section{Theorem and Proof}
+
+In this chapter we take the last conjecture and turn it into a theorem by verifying it directly.
+
+
+\begin{Thm}\label{sleek_second_quantised_scattering_operator}
+For \(A\) such that 
+\begin{equation}
+\|\id-U^A\|<1.
+\end{equation}\label{eq:sleek_scattering}
+The second quantized scattering operator fulfils
+\begin{equation}\label{eq:sleek_second_quantised_scattering_operator}
+S^A= e^{i \varphi^A} e^{\mathrm{d}\Gamma(\ln (U^A))}
+\end{equation}
+for some phase \(\varphi^A\in\mathbb{R}\), that may depend on the external field \(A\).
+
+\end{Thm}
+\begin{proof}
+In order to establish this theorem we need to verify that the expression given in \eqref{eq:sleek_scattering} for the scattering operator
+ is a well defined object
+and fulfils \eqref{lift_condition1} and \eqref{lift_condition2}. Because these conditions uniquely fix the Operator \(S^A\)  up to a phase this suffices as a proof.
+
+Well definedness is established, by theorem \ref{Gamma essential selfadjointness}, because for unitary \(U^A\)
+with \(\|1-U^A\|<1\) the power series of the logarithm converges and fulfils
+\begin{align}
+\|\ln(U^A)\|=\|\ln (1-(1-U^A))\|= \left\| -\sum_{k=1}^\infty \frac{(1-U^A)^k}{k} \right\|\\
+ \le   \sum_{k=1}^\infty \frac{\|1-U^A\|^k}{k}=-\ln(1-\|1-U^A\|)
+\end{align}
+implying that the power series of the logarithm around the identity is a well defined map from the one particle operators of norm less than
+one to the bounded one particle operators. Moreover this operator fulfils \([\ln (U^A)]^*=\ln (U^A)^*= \ln (U^A)^{-1}=-\ln (U^A)\), so 
+\(\mathrm{d}\Gamma(\ln U^A)\) is a well defined unbounded operator that is essentially self adjoint on the finite particle sector of Fockspace \(\mathcal{F}'\).
+
+
+Let \(\varphi\in \mathcal{H}\), for any \(k\in \mathbb{N}_0\) we see applying the commutation relation of \(\mathrm{d}\Gamma\):
 \begin{multline*}
-G(\ln U) \sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(G(\ln U)\right)^{k-l} = \\
-\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^{l+1} \varphi \right) \left(G(\ln U)\right)^{k-l}
-+\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(G(\ln U)\right)^{k-l+1}\\
-= \sum_{b=0}^{k+1} \left( \binom{k}{b-1} + \binom{k}{b}\right) a^\#\left( (\ln U)^b \varphi\right) \left( G(\ln U)\right)^{k+1-b}\\
-=\sum_{b=0}^{k+1}  \binom{k+1}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( G(\ln U)\right)^{k+1-b},
+\mathrm{d}\Gamma(\ln U) \sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l} = \\
+\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^{l+1} \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l}\\
++\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l+1}\\
+= \sum_{b=0}^{k+1} \left( \binom{k}{b-1} + \binom{k}{b}\right) a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b}\\
+=\sum_{b=0}^{k+1}  \binom{k+1}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b},
 \end{multline*}
 so we see that for \(k\in\mathbb{N}_0\)
 \begin{equation}
-\left(G(\ln U)\right)^k a^\# (\varphi) = \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( G(\ln U)\right)^{k-b}
+\left(\mathrm{d}\Gamma(\ln U)\right)^k a^\# (\varphi) = \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}
 \end{equation}
-holds. Using that, we conclude
+holds. Let \(\alpha \in \mathcal{F}'\). Using what we just obtained, we conclude
 \begin{multline*}
-e^{G(\ln U)}a^\#(\varphi) = \sum_{k=0}^\infty \frac{1}{k!} \left(G(\ln U)\right)^k a^\# (\varphi)\\
-=\sum_{k=0}^\infty \frac{1}{k!}  \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi \right) \left( G(\ln U)\right)^{k-b}\\
-=\sum_{c=0}^\infty \sum_{l=0}^\infty \frac{1}{c! l!} a^\#\left( (\ln U)^c \varphi \right) \left( G(\ln U)\right)^{l}\\
-=a^\#\left( e^{\ln U} \varphi \right) e^{G( \ln U)}=a^\#\left( U \varphi \right) e^{G( \ln U)}.
+e^{\mathrm{d}\Gamma(\ln U)}a^\#(\varphi) = \sum_{k=0}^\infty \frac{1}{k!} \left(\mathrm{d}\Gamma(\ln U)\right)^k a^\# (\varphi)\alpha\\
+=\sum_{k=0}^\infty \frac{1}{k!}  \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi \right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}\alpha\\
+\overset{*}{=}\sum_{c=0}^\infty \sum_{l=0}^\infty \frac{1}{c! l!} a^\#\left( (\ln U)^c \varphi \right) \left( \mathrm{d}\Gamma(\ln U)\right)^{l}\alpha\\
+=a^\#\left( e^{\ln U} \varphi \right) e^{\mathrm{d}\Gamma( \ln U)}\alpha
+=a^\#\left( U \varphi \right) e^{\mathrm{d}\Gamma( \ln U)}\alpha.
 \end{multline*}
+For the marked equality changing oder of summation is justified, because by the bounds
+ \(\|a^\#((\ln U)^c \varphi)\|\le \|\ln U\|^c\) and  lemma \ref{Gamma exponential bound} the sum obtained by changing the order
+ of summands converges absolutely.
 Clearly multiplying the second quantised operator by an additional phase as in 
 \eqref{sleek_second_quantised_scattering_operator} does not influence this calculation.
-\end{Remark}
+\end{proof}
+
 
 As a preparation for calculating the vacuum polarisation current we proof the following 
 \begin{Lemma}\label{G_kommutator}
@@ -1832,14 +2063,14 @@ f_b:\{l\in\mathbb{N}\mid l\le |b|\}\rightarrow b\\
 \end{Def}
 
 \begin{Def}
-We denote for any set \(b\) by \(S(b)\) the symmetric group (group of permutations) over \(b\).
+For any set \(b\), we denote by \(S(b)\) the symmetric group (group of permutations) over \(b\).
 \end{Def}
 
 \begin{Def}
 Let for  \(b\subset Y\), such that \(|b|<\infty\) and \(\sigma_b \in S(b)\)
 \begin{align*}
-\text{VZ}^l_{\sigma_b}: \{k\in\mathbb{N}\mid k<|b|\} \rightarrow \{-1,1\}\\
-\text{VZ}^l_{\sigma_b}(k):=\text{sgn}\big[f_b^{-1}(\sigma_b(f_b(k+1))) - f_b^{-1}(\sigma_b(f_b(k)))  \big]
+\text{VZ}^b_{\sigma_b}: \{k\in\mathbb{N}\mid k<|b|\} \rightarrow \{-1,1\}\\
+\text{VZ}^b_{\sigma_b}(k):=\text{sgn}\big[f_b^{-1}(\sigma_b(f_b(k+1))) - f_b^{-1}(\sigma_b(f_b(k)))  \big]
 \end{align*}
 \end{Def}
 
@@ -1855,7 +2086,7 @@ W(b,\sigma_b):= \left( \prod_{k=1}^{|b|-1} \sigma_{b}(f_b(k)) P_{\text{VZ}_{\sig
 \begin{Def} Let \(l\) be any finite subset of \(Y\). Denote by \(X^l_{\text{max}}\) the operator \(X_k\in l \)
 such that for any \(X_c\in l \) the relation \(k\ge c\) is fulfilled. Furthermore define
 \begin{align*}
-&\text{PT}: \{T\subset \mathcal{P}(Y)\mid |T|<\infty\}\rightarrow \mathbb{C}\\
+&\text{PT}: \{T\subset \mathcal{P}(Y)\mid |T|<\infty, \forall b\in T: |b|<\infty\}\rightarrow \mathbb{C}\\
 &\text{for: } T=\emptyset: \text{PT}(T)=1, \text{ otherwise: }\\
 &\text{PT}(T)=\sum_{\stackrel{\forall l \in T:}{\sigma_l \in S(l \backslash \{X_{\text{max}}^l\})}} \prod_{l\in T} 
 \tr [P_+ X^l_{\text{max}} P_- W(l, \sigma_l)]
@@ -1877,7 +2108,7 @@ Let \(n\in\mathbb{N}\), \(X_1,\dots, X_n \in Y\) then the following equation hol
 
 \begin{equation}\label{eq:ProductG}
 \prod_{k=1}^n G(X_k)= 
-\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T) \text{Op}(R,D),
+\sum_{\stackrel{\langle n \rangle = \dot{\Cup}_{l\in T} l \dot{\cup} \dot{\Cup}_{l\in D} l \dot{\cup} R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T) \text{Op}(R,D),
 \end{equation}
 where the abbreviation \(\langle n\rangle:= \{X_k\mid k\le n\}\) was used.
 \end{Thm}

@@ -1,0 +1,667 @@
+\documentclass[a4paper,11pt]{article}
+
+%\usepackage{german}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+\usepackage{mathabx}
+
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{slashed}
+\usepackage{authblk}
+%identity sign
+
+\usepackage{cancel}
+\usepackage{dsfont}
+\usepackage{todonotes}
+
+\setlength{\marginparwidth}{2.6cm}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+\usepackage{enumitem}
+
+\newtheorem{de}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+
+\newcommand{\supp}{\operatorname{supp}}
+\DeclareMathOperator{\tr}{tr}
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+\begin{document}
+\title{The Phase of the Second Quantised Time Evolution Operator}
+
+\author{
+D.-A. Deckert\thanks{deckert@math.lmu.de \\ \tiny{Mathematisches Institut der Ludwig-Maximilians-Universit\"at M\"unchen,}
+    \tiny{Theresienstr. 39, 80333 M\"unchen, Germany}},
+Franz Merkl\thanks{merkl@math.lmu.de \\     \tiny{Mathematisches Institut der Ludwig-Maximilians-Universit\"at M\"unchen,}
+    \tiny{Theresienstr. 39, 80333 M\"unchen, Germany}}
+	 ~and
+Markus Nöth\thanks{noeth@math.lmu.de \\\tiny{Mathematisches Institut der Ludwig-Maximilians-Universit\"at M\"unchen,}
+    \tiny{Theresienstr. 39, 80333 M\"unchen, Germany}}
+
+}
+\date{\today}
+
+
+
+\maketitle
+
+\begin{abstract}
+abstract to be written
+\end{abstract}
+
+\section{Introduction}
+
+
+We follow the necessary definitions in \cite{ivp2}.\todo{is das ok hier ivp2 so ausgiebig zu zitieren? Mir scheint aber, die ganzen Sachen müssen eben genau nochmal eingeführt werden.}
+\begin{de}
+For a Cauchy surface \(\Sigma\), we define \(\mathcal{H}_\Sigma\) to be the Hilbert space of \(\mathcal{C}^4\) valued, square integrable functions on \(\Sigma\).
+Furthermore, let \(\mathrm{Pol}(\mathcal{H}_\Sigma)\) denote the set of all closed, linear subspaces \(V\subset \mathcal{H}_\Sigma\) such that both
+\(V\) and \(V^\perp\) are infinite dimensional. Any \(V\in \mathrm{Pol}(\mathcal{H}_\Sigma)\) is called a polarisation of \(\mathcal{H}\). For \(V\in \mathrm{Pol}\),
+let \(P^V_\Sigma:\mathcal{H}_\Sigma\rightarrow V\) denote the orthogonal projection of \(\mathcal{H}_\Sigma\) onto \(V\).
+
+The Fock space corresponding to polarisation \(V\) on Cauchy surface \(\Sigma\) is then defined by 
+
+\begin{equation}
+\mathcal{F}(V,\mathcal{H}_\Sigma):=\bigoplus_{c\in\mathbb{Z}}\mathcal{F}_c(V,\mathcal{H}_\Sigma), \quad 
+\mathcal{F}_c(V,\mathcal{H}_\Sigma):=\bigoplus_{\overset{n,m\in\mathbb{N}_0}{c=m-n}} \big( V^\perp\big)^{\wedge n} \otimes {\overline{V}}^{\wedge m},
+\end{equation}
+where \(\bigoplus\) denotes the Hilbert space direct sum, \(\wedge\) the antisymmetric tensor product of Hilbert spaces, and \(\overline{V}\) the conjugate complex vector
+space of \(V\), which coincides with \(V\) as a set and has the same vector space operations as \(V\) with the exception of the scalar multiplication, which is 
+replaced by \((z,\psi)\mapsto z^*\psi\) for \(z\in\mathbb{C}),\psi\in V\).
+\end{de}
+
+Each polarisation \(V\) splits the Hilbert space \(\mathcal{H}_\Sigma\) into a direct sum, i.e., \(\mathcal{H}_\Sigma=V^\perp \oplus V\). The ''standard`` polarisation 
+\(\mathcal{H}^+_\Sigma\) and \(\mathcal{H}^-_\Sigma\) are determined by the orthogonal projectors \(P^+_\Sigma\) and \(P^-_\Sigma\) onto the free positive and 
+negative energy Dirac solutions, respectively, restricted to \(\Sigma\):
+\begin{equation}
+\mathcal{H}_\Sigma^+:=P^+_\Sigma \mathcal{H}=(1-P_\Sigma^-)\mathcal{H}_\Sigma, \quad \mathcal{H}^-_\Sigma:=P^-_\Sigma \mathcal{H}_\Sigma.
+\end{equation}
+
+Given two Cauchy surfaces \(\Sigma, \Sigma'\) and two polarisations \(V\in \mathrm{Pol}(\mathcal{H}_\Sigma)\) and \(W\in \mathrm{Pol}(\Sigma_{\Sigma'})\)
+a sensible lift of the one particle Dirac evolution \(U_{\Sigma'\Sigma}^A:\mathcal{H}\rightarrow \mathcal{H}_{\Sigma}\) should be given by a unitary operator
+\(\tilde{U}_{\Sigma',\Sigma}^A:\mathcal{F}(V,\mathcal{H}_\Sigma)\rightarrow \mathcal{F}(W,\mathcal{H}_{\Sigma'})\) that fulfils 
+\begin{equation}\label{liftcondition}
+\tilde{U}^A_{\Sigma',\Sigma}\psi_{V,\Sigma}(f)(\tilde{U}^A_{\Sigma',\Sigma})^{-1}=\psi_{W,\Sigma'}(U^A_{\Sigma',\Sigma}f),\quad \forall f\in \mathcal{H}_\Sigma.
+\end{equation}
+
+Here, \(\psi_{V,\Sigma}\) denotes the Dirac field operator corresponding to Fock space \(\mathcal{F}(V,\Sigma)\), i.e.,
+\begin{equation}
+\psi_{V,\Sigma}(f):=b_{\Sigma}\big(P^{V^\perp}_\Sigma f\big) + d^*_\Sigma\big(P^V_\Sigma f\big), \quad \forall f \in \mathcal{H}_\Sigma,
+\end{equation}
+
+where \(b_\Sigma\), \(d^*_\Sigma\) denote the annihilation and creation operators on the \(V^\perp\) and \(\overline{V}\) sectors of 
+\(\mathcal{F}_c(V,\mathcal{H}_\Sigma)\), respectively. Note that \(P^{V^\perp}_\Sigma:\mathcal{H}_\Sigma\rightarrow \overline{V}\) is anti-linear; 
+thus, \(\psi_{V,\Sigma}(f)\) is anti-linear in its argument \(f\). The condition under which such a lift \(\tilde{U}_{\Sigma',\Sigma}^A\) exists can be inferred from
+a straight-forward application of Shale and Stinespring's well-known theorem \cite{shale stinespring?}
+
+\begin{thm}[Shale-Stinespring]
+The following statements are equivalent:
+\begin{itemize}
+\item There is a unitary operator \(\tilde{U}_{\Sigma \Sigma'}^A:\mathcal{F}(V,\mathcal{H}_\Sigma)\rightarrow \mathcal{F}(W,\mathcal{H}_{\Sigma'})\) which 
+fulfils \eqref{liftcondition}.
+\item The off-diagonals \(P_{\Sigma'}^{W^\perp} U_{\Sigma' \Sigma}^A P^V_\Sigma\) and \(P^W_{\Sigma'}U^A_{\Sigma' \Sigma}\) are Hilbert-Schmidt operators.
+\end{itemize}
+\end{thm}
+
+Please note that condition \eqref{liftcondition} is for fixed polarisations \(V\), \(W\) and general external field \(A\) not always satisfied; see e.g. \cite{18 of ivp2}. 
+However, when carefully adapting the choices of polarisation \(V\) to \(A |_{\Sigma}\) and \(W\) to \(A|_{\Sigma'}\) one can always fulfil condition \eqref{liftcondition}
+and therefore construct a lift \(\tilde{U}_{\Sigma' \Sigma}^A\), see \cite{ivp0,ivp1,ivp2}. 
+
+Furthermore condition \eqref{liftcondition} does not fix the phase of the lift \(\tilde{U}_{\Sigma' \Sigma}^A\). Considering Bogolyubov's formula
+
+\begin{align}
+j^\mu(x)=i \tilde{U}^A_{\Sigma_{\mathrm{in},\Sigma_{\mathrm{out}}}}\frac{\delta \tilde{U}^A_{\Sigma_{\mathrm{out},\Sigma_{\mathrm{in}}}}}{\delta A_\mu (x)},
+\end{align}
+
+we notice that the current operator depends in a rather sensitive way on the phase of \(\tilde{U}^A\). Since the current is experimentally accessible 
+we would like to fix the phase by additional physical constraints. This paper is a step this direction. 
+
+Throughout this paper \(A,A',B,C,F,G,H\in C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\) denote external electromagnetic four-potentials. Furthermore, 
+\(\Sigma, \Sigma', \Sigma_{\mathrm{in}}, \Sigma_{\mathrm{ou}}\)  denote Cauchy surfaces, \(\Sigma{\mathrm{in}}\) is in the remote past and 
+\(\Sigma{\mathrm{out}}\) in the far future. We introduce the standard polarisation in the remote past
+
+\begin{align}
+P^-:=P_{\Sigma_{\mathrm{in}}}^{-}, \quad P^+=1-P^-,
+\end{align}
+given by the negative respectively positive energy subspaces of \(\mathcal{H}_{\Sigma_{\mathrm{in}}}\). 
+
+\textcolor{green}{... some glue text}
+
+\begin{de}
+We define for all four potentials \(A,B \)
+\begin{align}
+S_{A,B}:=U^{A}_{\Sigma_{\mathrm{in}},\Sigma_{\mathrm{out}}}U^{B}_{\Sigma_{\mathrm{out}},\Sigma_{\mathrm{in}}}.
+\end{align}
+Using the notation of \cite{ivp0,ivp2} we choose for all \(S_{A,B}\in U_{\mathrm{res}}(\mathcal{H}_{\Sigma_{\mathrm{in}}},\mathcal{H}^-)\)
+such that \(P^- S_{A,B}P^-\) is invertible the lift
+\begin{align}
+\overline{S}_{A,B}=\mathcal{R}_{P^- S_{B,A}P^- |P^- S_{B,A}P^-|^{-1}} \mathcal{L}_{S_{A,B}}.
+\end{align}
+Furthermore, we define for any complex number \(z\in \mathbb{C}\backslash \{0\}\)
+\begin{equation}
+\overset{\circ}{z}:=\frac{z}{|z|}
+\end{equation}
+and for four-potentials \(A,B,C\) such that \(P^{\pm} S_{A,B}P^{\mp},P^{\pm} S_{B,C}P^{\mp},P^{\pm} S_{C,A}P^{\mp}\in I_2(\mathcal{H}_{\Sigma_{\mathrm{in}}})\),
+ the complex number of unit magnitude\todo{should I remove all outermost factors fo \(P^-\), or will that decrease ease of reading?}
+\begin{align}
+\gamma_{A,B,C}&:=\det_{\mathcal{H}^-}(P^--P^-S_{A,C}P^+S_{C,A}P^- - P^- S_{A,B} P^+ S_{B,C} P^- S_{C,A} P^-),\\
+\Gamma_{A,B,C}&:=\overset{\circ}{\gamma}_{A,B,C},
+\end{align}
+where \(\Omega\) is a vacuum vector corresponding to the standard polarisation on \(\mathcal{H}_{{\Sigma}_{\mathrm{in}}}\).
+Here, \(\Gamma\) is defined whenever \(\gamma\neq 0\).
+Lastly we introduce the partial derivative in the direction of any four-potential \(F\) by
+\begin{equation}
+\partial_F T(F):=\partial_{\varepsilon}T(\varepsilon F)|_{\varepsilon =0}
+\end{equation}
+and for four-potentials \(A,B,C\) the function
+\begin{equation}
+c_A(F,G):=-i \partial_F \partial_G  \Im \tr [P^- S_{A,A+F} P^+ S_{A,A+G} P^-] .
+\end{equation}
+\end{de}
+
+\section{Main Result}
+
+
+\begin{de}
+We define a causal splitting as a function 
+\begin{align}
+&c^+:(C_c^\infty(\mathbb{R}^4,\mathbb{R}^4))^3\rightarrow \mathbb{C}, \\
+&(A,F,G)\mapsto c_A^+(F,G),
+\end{align}
+smooth in the first and linear in the second and third argument, satisfying
+\begin{align}\label{c+ 1}
+c_A(F,G)=c_A^+(F,G)-c_A^+(G,F),\\\label{c+ 2}
+\partial_H c^+_{A+H}(F,G)=\partial_G c^+_{A+G}(F,H),\\\label{c+ 3}
+\forall F \prec G: c_A^+(F,G)=0.
+\end{align}
+\end{de}
+
+\begin{de}
+Given a lift \(\hat{S}_{A,B}\) of the one-particle scattering operator \(S_{A,B}\) we define the associated current by Bogolyubov's formula:
+\begin{equation}
+j_A^{\hat{S}}(F):=i\partial_F \left\langle \Omega, \hat{S}_{A,A+F} \Omega\right\rangle.
+\end{equation}
+\end{de}
+
+\begin{thm}
+Given a causal splitting \(c^+\), there is a second quantised scattering operator \(\tilde{S}\), lift of the one-particle scattering operator \(S\)
+with the following properties
+\begin{align}
+&\forall A,B,C\in C_c^\infty:\tilde{S}_{A,B}\tilde{S}_{B,C}=\tilde{S}_{A,C}\\
+&\forall F\prec G: \tilde{S}_{A,A+F}=\tilde{S}_{A+G,A+F+G}
+\end{align}
+and the associated current satisfies
+\begin{equation}
+\partial_G j_{A+G}^{\tilde{S}}(F)=\left\{\begin{matrix} -2i c_A(F,G)  &\text{ for } G\prec F\\ 0 &\text{  otherwise.}  \end{matrix} \right.
+\end{equation}
+\end{thm}
+
+\section{Proofs}
+
+Throughout this section we will assume we have a function \(c^+\) fulfilling \eqref{c+ 1},\eqref{c+ 2} and \eqref{c+ 3}.
+Since the phase of a lift relative to any other lift is fixed by a single matrix element, we may use the vacuum expectation values to characterise the
+phase of a lift. The function \(c\) captures the dependence of this object on variation of the external fields, the connection between vacuum expectation
+values and \(c\) becomes clearer with the next lemma.
+
+\begin{lem}\label{gamma attri}
+The function \(\Gamma\) has the following properties for all four-potentials \(A,B,C\) such that the expressions occurring in each equation are well defined,
+as well as \(\alpha, \beta \in \mathbb{R}\):
+\begin{align}\label{gamma attri1}
+&\Gamma_{A,B,C}=\overset{\circ}{\det_{\mathcal{H}^-} (P^- S_{C,A} P^- S_{A,B} P^- S_{B,C})}\tag{\textcolor{brown}{1}}\\\label{gamma attri2}
+&\Gamma_{A,B,C}=\overset{\circ}{ \langle \Omega, \overline{S}_{A,B} \overline{S}_{B,C} \overline{S}_{C,A}\Omega\rangle }\tag{\textcolor{brown}{2}}\\\label{gamma attri3}
+&\Gamma_{A,B,C}=\Gamma_{B,C,A}=\frac{1}{\Gamma_{B,A,C}}\\\label{gamma attri4}
+&\Gamma_{A,A,B}=1\\\label{gamma attri5}
+&\Gamma_{A,B,C}\Gamma_{B,A,D}\Gamma_{A,C,D}\Gamma_{C,B,D}=1 \quad \textcolor{red}{\Leftarrow\mathrm{is\,\, that\,\, necessary?}}\tag{\textcolor{brown}{3}}\\\label{gamma attri6}
+&\overline{S}_{A,C}=\Gamma_{A,B,C}\overline{S}_{A,B}\overline{S}_{B,C}\\\label{gamma attri7}
+&c_A(B,C)=\partial_B \partial_C \ln \Gamma_{A,A+B,A+C}.
+\end{align}
+\end{lem}
+
+In order to construct the desired lift, we first construct a reference lift \(\hat{S}\), that is well defined for any four-potential \(A\) 
+such that \(\supp \vec{A} \cap \Sigma_{\mathrm{in}} = \emptyset \). Afterwards we will study the dependence of the relative phase between 
+this global lift \(\hat{S}_{0,A}\) and a local lift given by \(\hat{S}_{0,B}\overline{S}_{B,A}\) for \(B-A\) small as a multiplication operator 
+on one-particle wave functions. By exploiting properties of this phase we will be able to construct a global lift that has the desired properties.
+Since \(C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\) is star shaped, we may reach any four-potential \(A\) from \(0\) through the straight line
+\(\{t A\mid t \in [0,1]\}\). 
+
+\begin{de}
+For any four-potentials \(A,B\) and any two lifts \(S_{A,B}', S_{A,B}''\) of the one particle scattering operator \(S_{A,B}\)
+we define
+\begin{equation}
+\frac{S_{A,B}'}{S_{A,B}''}
+\end{equation}
+to be the unique complex number \(z\in S^1\) such that 
+\begin{equation}
+\frac{S_{A,B}'}{S_{A,B}''} S_{A,B}'' = S_{A,B}'
+\end{equation}
+holds.
+Furthermore, for any four-potential \(A\) we define the lift \(\hat{S}_{0,A}\) as the unique solution of the differential equation
+\begin{equation}\label{def s hat}
+A,B\text{ linearly dependent}\Rightarrow \partial_B \frac{\hat{S}_{0,A+B}}{\hat{S}_{0,A}\overline{S}_{A,A+B}}=0,
+\end{equation}
+subject to the boundary condition \(\hat{S}_{0,0}=\mathds{1}\)
+\end{de}
+\begin{rmk}
+The lift \(\hat{S}_{0,A}\) can also be constructed differently: pick \(N\in\mathbb{N}\) such that \(\|\mathds{1}-S_{0,N^{-1}A}\|<1\) holds true. 
+Then \(P^-S_{n N^{-1} A,(n+1)N^{-1} A}P^-\) is invertible for \(N>n\in \mathbb{N}_0\).
+Now, 
+\begin{equation}\label{hat finite spacing}
+\hat{S}_{0,A}=\prod_{n=0}^{N-1} \overline{S}_{n N^{-1} A,(n+1)N^{-1} A}.
+\end{equation}
+This can be seen as follows: by \eqref{gamma attri6} we notice that if \(\Gamma_{\alpha A, \beta A, \gamma A}\) were equal to \(1\) 
+for all \(\alpha,\beta,\gamma\in \mathbb{R}^+\)
+small enough,
+the claim would follow by taking the continuum limit \(1/N\rightarrow 0\) in \eqref{hat finite spacing}. However, we do have this equality, as
+the following calculation shows:
+\begin{align}
+\ln &\Gamma_{A,\beta A, \gamma A} = \int_1^\beta d \beta' \partial_{\beta'}\ln \Gamma_{A,\beta' A, \gamma A} + \overbrace{\ln \Gamma_{A,A,\gamma A}}^{=0}\\
+&= \int_1^\beta d\beta' \left(\int_1^\gamma d\gamma' \partial_{\gamma'}\partial_{\beta'} \ln \Gamma_{A,\beta' A, \gamma' A} 
++ \partial_{\beta'} \overbrace{\ln \Gamma_{A,\beta' A, A}}^{=0} \right)\\
+&=\int_1^\beta d\beta' \int_1^\gamma d\gamma' c_A(\beta' A, \gamma' A)
+=\int_1^\beta d\beta' \int_1^\gamma d\gamma'  \beta' \gamma' \overbrace{c_A( A,  A) }^{=0}=0,
+\end{align}
+where we have without loss of generality restricted to \(\alpha =1\) and used various properties of lemma \ref{gamma attri}.
+\end{rmk}
+
+\begin{de}
+Let \(A,B \in\mathcal{A}\) such that \(\|1-S_{A,B}\|<1\) holds. We define \(\theta_{A,B}\in [-\pi,\pi[\) by
+\begin{equation}\label{def theta}
+e^{i \theta_{A,B}}:=\frac{\hat{S}_{0,B}}{\hat{S}_{0,A}\overline{S}_{A,B}}.
+\end{equation}
+\end{de}
+
+
+\begin{lem}
+For all \(A,F,G\in\mathcal{A}\) such that \(\|1-S_{A,F}\|<1, \|1-S_{F,G}\|<1, \|1-S_{A,G}\|<1\) hold, as well as for all \(H,K\in \mathcal{A}\), we have
+\begin{align}\label{theta antisym}
+\theta_{A,F}&=-\theta_{F,A}\\\label{theta gamma}
+e^{i(\theta_{F,A}+\theta_{A,G}+\theta_{G,F})}&=\Gamma_{F,A,G}\\\label{theta c}
+i\partial_{\varepsilon_1}\partial_{\varepsilon_2} \theta_{A+\varepsilon_1 H,A+\varepsilon_2 K}&=c_A(H,K).
+\end{align}
+\end{lem}
+\begin{proof}
+Pick \(A,F,G\in\mathcal{A}\) as in the lemma. We start off by analysing
+\begin{align}
+&\hat{S}_{0,F}\overline{S}_{F,G}\overset{\eqref{def theta}}{=}e^{i\theta_{A,F}}\hat{S}_{0,A}\overline{S}_{A,F}\overline{S}_{F,G}\\\label{phase comparison}
+&\overset{\eqref{gamma attri6}}{=}e^{i\theta_{A,F}} \Gamma_{A,F,G}^{-1} \hat{S}_{0,A} \overline{S}_{A,G}.
+\end{align}
+Exchanging  \(A\) and \(F\) in this equation and bringing the phases to the other side leads to
+\begin{equation}
+\hat{S}_{0,F} \overline{S}_{F,G}=e^{-i\theta_{F,A}} \Gamma_{F,A,G} \hat{S}_{0,A}\overline{S}_{A,G}~,
+\end{equation}
+taking \eqref{gamma attri3} into account this means that 
+\begin{equation}
+\theta_{A,F}=-\theta_{F,A}
+\end{equation}
+holds true. Equation \eqref{phase comparison} solved for \(\hat{S}_{0,A}\overline{S}_{A,G}\) also gives us
+
+\begin{align}
+\hat{S}_{0,G}\overset{\eqref{def theta}}{=}e^{i\theta_{A,G}}\hat{S}_{0,A}\overline{S}_{A,G}\overset{\eqref{phase comparison}}{=}e^{i\theta_{A,G}}e^{-i\theta_{A,F}}\Gamma_{A,F,G}\hat{S}_{0,F}\overline{S}_{F,G}.
+\end{align}
+The latter equation compared with 
+\begin{equation}
+\hat{S}_{0,G}\overset{\eqref{def theta}}{=}e^{i\theta_{F,G}}\hat{S}_{0,F}\overline{S}_{F,G},
+\end{equation}
+yields  a direct connection between \(\Gamma\) and \(\theta\):
+\begin{equation}
+e^{i\theta_{A,G}-i\theta_{A,F}}\Gamma_{A,F,G}=e^{i\theta_{F,G}},
+\end{equation}
+or by \eqref{theta antisym}
+\begin{equation}
+\Gamma_{A,F,G}=e^{i \theta_{F,G}+i\theta_{A,F}+i\theta_{G,A}}.
+\end{equation}
+Finally, in this equation we replace \(F=A+\varepsilon_1 H\) as well as  \(G=A+\varepsilon_2 K\), where \(\varepsilon_1,\varepsilon_2\) is small enough so that 
+\(\theta\) and \(\Gamma\) are still well defined. Then we take the logarithm and derivatives to find
+\begin{equation}
+i \partial_{\varepsilon_1}\partial_{\varepsilon_2} \theta_{A+\varepsilon_1 H,A+\varepsilon_2 K}=\partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln\Gamma_{A,A+\varepsilon_1 H,A+\varepsilon_2 K}\overset{\eqref{gamma attri7}}{=}c_A(H,K). 
+\end{equation}
+
+\end{proof}
+
+So we find that \(\theta\) is an anti derivative of \(c\). In the following we will characterise \(\theta\) more thoroughly by \(c\) and \(c^+\).
+\begin{de}
+We define the one form \(\chi\in \Omega^1(\mathcal{A})\) by
+\begin{equation}\label{de chi}
+\chi_A(B):=\partial_B \theta_{A,A+B}
+\end{equation}
+for all \(A,B\in\mathcal{A}\).
+Furthermore for a differential form \(\omega\in \Omega^p(\mathcal{A})\) for some \(p\in\mathbb{N}\) we define the exterior derivative of 
+\(\omega\), \(d \omega\in\Omega^{p+1}(\mathcal{A})\) by
+\begin{equation}
+(d\omega)_A(B_1,\dots, B_{p+1}):=\sum_{k=1}^{p+1} (-1)^{k+1} \partial_{B_k}\omega_{A+B_k}(B_1,\dots , \cancel{B_k},\dots, B_{p+1}),
+\end{equation}
+for general \(A,B_1,\dots, B_{p+1}\in\mathcal{A}\), where the notation \(\cancel{B_k}\) denotes that \(B_k\) is not to be inserted as an argument.
+
+\end{de}
+
+\begin{lem}
+The differential form \(\chi\) fulfils 
+\begin{equation}
+(d\chi)_A(F,G)=c_A(F,G)
+\end{equation}
+for all \(A,F,G\in\mathcal{A}\).
+\end{lem}
+\begin{proof}
+Pick \(A,F,G\in \mathcal{A}\), we calculate
+\begin{align}
+&(d\omega)_A(F,G)=\partial_F\partial_G \theta_{A+F,A+F+G}-\partial_F \partial_G \theta_{A+G,A+F+G}\\
+&=\partial_F\partial_G ( \theta_{A,A+F+G}+\theta_{A+F,A+G}) - \partial_F\partial_G(\theta_{A,A+F+G}+\theta_{A+G,A+F})\\
+&\overset{\eqref{theta antisym}}{=} 2 \partial_F\partial_G\theta_{A+F,A+G}\overset{\eqref{theta c}}{=}-2i c_A(F,G).
+\end{align}
+\end{proof}
+
+Now since \(d c=0\), we might have by Poincaré's lemma a way independent of \(\theta\) to construct a differential form \(\omega\) such that \(d\omega=c\). 
+In order to execute this plan, we first need to prove Poincaré's lemma for our setting:
+
+\begin{lem}[Poincaré]\label{lem poincare}
+Let \(\omega\in \Omega^p(\mathcal{A})\) for \(p\in\mathbb{R}\) be closed, i.e. \(d \omega =0\). Then \(\omega\) is also exact, moreover we have
+\begin{equation}
+\omega=d \int_{0}^1 \iota^*_t i_X f^* \omega dt,
+\end{equation}
+where \(Y\), \(\iota_t\) and \(f\) are given by \(X: \mathbb{R}\times\mathcal{A}\rightarrow \mathbb{R}\times\mathcal{A}, (t,B)\mapsto (1,0)\), \(\iota: \mathcal{A}\rightarrow \mathbb{R}\times\mathcal{A}, B\mapsto (t,B)\) and \(f:\mathbb{R}\times \mathcal{A}\mapsto \mathcal{A}, (t,B) \mapsto t B\). The function \(f_t\) is then given by \(f_t=f(t,\cdot)\).
+\end{lem}
+\begin{proof}
+Pick some \(\omega \in \Omega^p(\mathcal{A})\).
+We will first show the more general formula 
+\begin{equation}\label{poincare more general}
+f^*_b\omega-f^*_a \omega=d \int_{a}^b \iota_t^* i_X f^* \omega ~dt+ \int_{a}^b \iota_t^* i_X f^* d \omega dt.
+\end{equation}
+The lemma follows then by \(b=1, a= 0\), \(f^*_1\omega=\omega, f^*_0 \omega=0\) and \(d \omega=0\) for a closed \(\omega\). 
+First, to prove \eqref{poincare more general}. We begin by summarising the right hand side of \eqref{poincare more general}:
+\begin{equation}\label{poincare 1 manipulation}
+d \int_{a}^b \iota_t^* i_X f^* \omega ~dt+ \int_{a}^b \iota_t^* i_X f^* d \omega dt=
+\int_a^b (d\iota_t^* i_X f^* \omega+ \iota_t^* i_X f^* d \omega )dt.
+\end{equation}
+Next we look at both of these terms separately. Let therefore \(p\in \mathbb{N}\), \(t, s_k\in \mathbb{R}\) and \(A,B_k\in \mathcal{A}\) for each \(p+1\ge k\in\mathbb{N}\).
+First, we calculate \(d \iota^*_t i_X f^* \omega\)
+\begin{align}
+&(f^*\omega)_{(t,A)}((s_1,B_1),\dots, (s_p,B_p))=\omega_{tA}(s_1A+tB_1,\dots, s_p A+t B_p)\\[0.3cm]
+&(i_X f^* \omega)_{(t,A)}((s_1,B_1),\dots, (s_{p-1},B_{p-1}))=\omega_{tA}(A,s_1A+tB_1,\dots, s_{p-1}A + t B_{p-1}\\[0.3cm]
+&(\iota^*_t i_X f^* \omega)_{A}(B_1,\dots, B_{p-1})= t^{p-1} \omega_{t A}(A,B_1,\dots, B_{p-1})\\[0.3cm]
+&(d\iota^*_t i_X f^* \omega)_{A}(B_1,\dots, B_{p})=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{t A + \varepsilon t B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\\
+&+ \partial_\varepsilon|_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} \omega_{tA}(A+\varepsilon B_k,B_1,\dots, \cancel{B_k},\dots, B_p)\\\label{li derivative 1}
+&=\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p t^p (-1)^{k+1} \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)+p t^{p-1}\omega_{tA}(B_1,\dots, B_p).
+\end{align}
+
+
+Now, we calculate \(\iota^*_t i_X f^* d \omega\):
+\begin{align}
+&(d\omega)_A(B_1,\cdots, B_{p+1})=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^{p+1} (-1)^{k+1} \omega_{A+\varepsilon B_k}(B_1,\dots , \cancel{B_k}, \dots, B_{p+1})\\[0.3cm]
+&(f^* d \omega){(t,A)}((s_1,B_1),\dots , (s_{p+1},B_{p+1}))= (d\omega)_{tA}(s_1A + t B_1, \dots, s_{p+1}A+t B_{p+1})\\
+&=\partial_{\varepsilon}|_{\varepsilon =0} \sum_{k=1}^{p+1}(-1)^{k+1} \omega_{tA + \varepsilon(s_kA + t B_k)}(s_1A+tB_1, \dots,  \cancel{s_k A + t B_k},\dots , s_p A  + t B_p )\\
+&+ \partial_{\varepsilon}|_{\varepsilon =0} \omega_{(t+\varepsilon)A}(s_1 A + t B_{1},\dots, s_p A + t B_p)\\[0.4cm]
+&(i_X f^* d \omega)_{(t,A)}((s_1,B_1),\dots , (s_p, B_p))= \partial_{\varepsilon} |_{\varepsilon =0} \omega_{(t+\varepsilon)A}(s_1A+tB_1, \dots, s_pA+t B_p)\\
+&+\partial_{\varepsilon}|_{\varepsilon=0} \sum_{k=1}^p (-1)^k \omega_{tA + \varepsilon(s_k A + t B_k)} (A,s_1A+t B_1, \dots, \cancel{s_k A + t B_k},\dots, s_p A + t B_p)\\
+&=\partial_{\varepsilon}|_{\varepsilon=0} \sum_{k=1}^p(s_k t^{p-1} (-1)^{k+1} \omega_{(t+\varepsilon)A}(A,B_1,\dots, B_p) + t^p \omega_{tA + \varepsilon t B_k}(A,B_1,\dots, ,\cancel{B_k},\dots, B_p))\\
+&+\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p(-1)^k t^{p-1}(\omega_{(t+s_k\varepsilon)A}(A,B_1,\dots, \cancel{B_k},\dots, B_p) + \omega_{tA + \varepsilon t B_k}(A,B_1, \dots, \cancel{B_k},\dots, B_p))\\
+&=t^p\partial_{\varepsilon}|_{\varepsilon=0} \left(\omega_{(t+\varepsilon)A}(B_1,\dots, B_p) +\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\right)\\
+&(\iota_t^* i_X f^* d \omega)_{A}(B_1,\dots ,  B_p)=t^p\partial_{\varepsilon}|_{\varepsilon=0} \Big(\omega_{(t+\varepsilon)A}(B_1,\dots, B_p)\\\label{li derivative 2}
+&\hspace{5cm}+\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\Big)
+\end{align}
+
+Adding \eqref{li derivative 1} and \eqref{li derivative 2} we find for \eqref{poincare 1 manipulation}:
+
+\begin{align}
+\int_a^b (d\iota_t^* i_X f^* \omega+ \iota_t^* i_X f^* d \omega )dt=\\
+\int_a^b  \Big( t^p\partial_{\varepsilon}|_{\varepsilon=0} \omega_{(t+\varepsilon)A}(B_1,\dots, B_p)
++p t^{p-1}\omega_{tA}(B_1,\dots, B_p)\Big) dt\\
+=\int_a^b  \frac{d}{dt} (t^p \omega_{tA}(B_1,\dots, B_p))dt =\int_a^b  \frac{d}{dt} (f^*_t \omega)_{A}(B_1,\dots, B_p))dt\\
+=(f^*_b\omega)_A(B_1,\dots,B_p)-(f^*_a\omega)_A(B_1,\dots,B_p).
+\end{align}
+
+\end{proof}
+
+\begin{de}
+For a closed exterior form \(\omega\in\Omega^{p}(\mathcal{A})\) we define the form \(\prod\![\omega]\)
+\begin{equation}
+\prod\![\omega]:=\int_{0}^1 \iota^*_t i_X f^* \omega dt.
+\end{equation}
+For \(A,B_1,\dots , B_{p-1}\in\mathcal{A}\) it takes the form 
+\begin{equation}
+\prod\![\omega]_A(B_1,\dots, B_p)=\int_0^1 t^{p-1} \omega_{tA}(A,B_1,\dots, B_{p-1})dt.
+\end{equation}
+By lemma \ref{lem poincare} we know \(d\prod\![\omega]=\omega\).
+\end{de}
+
+Now we found two one forms each produces \(c\) when the exterior derivative is taken. The next lemma informs us about their relationship.
+
+\begin{lem}
+The following equality holds
+\begin{equation}
+\chi=-2i \prod\![c].
+\end{equation}
+\end{lem}
+\begin{proof}
+We have \(d(c+2i \prod\![c])=0\) so by lemma \ref{lem poincare} we know that there is \(v:\mathcal{A}\rightarrow \mathbb{R}\) such that
+\begin{equation}
+dv=\chi+2i \prod\![c]
+\end{equation}
+holds. Now \eqref{def s hat} translates into the following ODE for \(\theta\):
+\begin{equation}
+\partial_B \theta_{0,B}=0, \quad \partial_B \theta_{A,A+B}|_{A=B}=0
+\end{equation}
+for all \(A,B\in\mathcal{A}\). This means that
+\begin{equation}
+\chi_0(B)=0=\prod\![c]_0(B), \quad \chi_{A,A}=0=\prod\![c]_A(A)
+\end{equation}
+hold. This implies
+\begin{equation}
+\partial_\varepsilon v_{A+\varepsilon A}=0, \quad \partial_\varepsilon v_{\varepsilon A}=0,
+\end{equation}
+which means that \(v\) is constant.
+\end{proof}
+
+Recall equation \eqref{c+ 2}: 
+\begin{equation}
+\forall A,F,G,H: \partial_H c_{A+H}^+(F,G)=\partial_G c^+_{A+G}(F,H).
+\end{equation}
+
+For a fixed \(F\in\mathcal{A}\), this condition can be read as \(d( c^+_{\cdot} (F,\cdot))=0\). As a consequence we can apply lemma \ref{lem poincare} to define a one form.
+
+\begin{de}
+For any \(F\in\mathcal{A}\), we define
+
+\begin{equation}
+\beta_A(F):=2i \prod\![c^+_{\cdot}(F,\cdot)]_A.
+\end{equation}
+\end{de}
+
+\begin{lem}
+The following two equations hold:
+\begin{align}\label{beta c}
+&d \beta=-2i c\\
+&d(\beta -\chi)=0.
+\end{align}
+\end{lem}
+\begin{proof}
+We start with the exterior derivative of \(\beta\). Pick \(A,F,G\in\mathcal{A}\):
+\begin{align}
+d\beta_A(F,G)=\partial_F \beta_{A+F}(G)-\partial_G \beta_{A+G}(F)\\
+=d\Big(\prod\![c^+_\cdot(G,\cdot)]\Big)_A(F)-d\Big(\prod\![c^+_\cdot(F,\cdot)]\Big)_A(G)\\
+=2i c^+_A(G,F)-2i c_A^+(F,G)\overset{\eqref{c+ 1}}{=}-2i c_A(F,G).
+\end{align}
+This proves the first equality. The second equality follows directly by \(d \chi=-2i c\).
+\end{proof}
+
+\begin{de}
+Since \(\beta-\chi\) is closed, we may use lem \ref{lem poincare} again to define the phase
+\begin{equation}\label{def alpha}
+\alpha:=\prod\![\beta-\chi].
+\end{equation}
+Furthermore, for all \(A,B\in\mathcal{A}\) we define the corrected second quantised scattering operator 
+\begin{align}
+&\tilde{S}_{0,A}:=e^{i\alpha_A} \hat{S}_{0,A}\\
+&\tilde{S}_{A,B}:=\tilde{S}^{-1}_{0,A}\tilde{S}_{0,B}.
+\end{align}
+\end{de}
+
+\begin{cor}
+We have \(\tilde{S}_{A,B} \tilde{S}_{B,C}=\tilde{S}_{A,C}\) for all \(A,B,C\in\mathcal{A}\).
+\end{cor}
+
+\begin{thm}
+The corrected second quantised scattering operator fulfils the following causality condition for all \(A,F,G\in \mathcal{A}\) such that \(F\prec G\):
+\begin{equation}
+\tilde{S}_{A,A+F}=\tilde{S}_{A+G,A+G+F}.
+\end{equation}
+\end{thm}
+\begin{proof}
+Let \(A,F,G\in\mathcal{A}\) such that \(F\prec G\) We note that for the first quantised scattering operator we have
+\begin{equation}
+S_{A+G,A+G+F}=S_{A,A+F},
+\end{equation}
+so by definition of \(\overline{S}\) we also have
+\begin{equation}\label{s bar causal}
+\overline{S}_{A+G,A+G+F}=\overline{S}_{A,A+F}.
+\end{equation}
+So for any lift this equality is true up to a phase, meaning that 
+
+\begin{equation}\label{f causal}
+f(A,F,G):=\frac{\tilde{S}_{A+G,A+G+F}}{\tilde{S}_{A,A+F}}
+\end{equation}
+is well defined. We see immediately
+\begin{equation}\label{vanish at axis}
+f(A,0,G)=1=F(A,F,0).
+\end{equation}
+
+Pick \(F_1,F_2\prec G_1,G_1\). We abbreviate \(F=F_1+F_2, G=G_1+G_2\), we calculate
+\begin{align}
+&f(A,F,G)=\frac{\tilde{S}_{A+G,A+F+G}}{\tilde{S}_{A,A+F}}\\
+&=\frac{\tilde{S}_{A+G,A+F+G}}{\tilde{S}_{A+G_1,A+G_1+F}}\frac{\tilde{S}_{A+G_1,A+G_1+F}}{\tilde{S}_{A,A+F}}\\
+&=\frac{\tilde{S}_{A+G,A+G+F_1} \tilde{S}_{A+G+F_1,A+F+G}}{\tilde{S}_{ A+G_1,A+F_1+G_1} \tilde{S}_{ A+G_1+F_1,A+G_1+F}}  \frac{\tilde{S}_{A+G_1,A+G_1+F}}{\tilde{S}_{A,A+F}}\\
+&=\frac{\tilde{S}_{A+G,A+G+F_1}}{\tilde{S}_{A+G_1,A+F_1+G_1}} \frac{\tilde{S}_{A+G+F_1,A+F+G}}{\tilde{S}_{A+G_1+F_1,A+G_1+F}}   f(A,G_1,F_1+F_2)\\
+&=f(A+G_1,F_1,G_2)f(A+G_1+F_1,G_2,F_2)f(A,G_1,F_1+F_2).
+\end{align}
+Taking the logarithm and differentiating we find:
+\begin{equation}\label{shift to small G,F}
+\partial_{F_2}\partial_{G_2}\ln f(A,F_1+F_2,G_1+G_2)=\partial_{F_2}\partial_{G_2}\ln f(A+F_1+G_1,F_2,G_2).
+\end{equation}
+Next we pick \(F_2=\alpha_1 F_1\) and \(G_2=\alpha_2 G_2\) for \(\alpha_1,\alpha_2\in\mathbb{R}^+\) small enough so that
+
+ \begin{align}
+ \|1-S_{A+F+G,A+F_1+G_1}\|<1\\
+ \|1-S_{A+F+G,A+F_1+G}\|<1\\
+ \|1-S_{A+F+G,A+F+G_1}\|<1
+ \end{align} 
+ hold. We abbreviate \(A'=A+G_1+F_1\) and compute
+ 
+ \begin{align}
+ f(A',F_2,G_2)=\frac{e^{i\alpha_{A'+F_2+G_2}+i\theta_{A',A'+F_2+G_2}-i\alpha_{A'+G_2}-i\theta_{A',A'+G_2}}}{e^{i\alpha_{A'+F_2}+i\theta_{A',A'+F_2}-i\alpha_{A'}-i\theta_{A',A'}}} 
+ \frac{\overline{S}_{A'+G_2,A'}\overline{S}_{A',A'+F_2+G_2}}{\overline{S}_{A',A'}\overline{S}_{A',A'+F_2}}.
+ \end{align}
+
+The second factor in this product can be simplified significantly:
+\begin{align}
+ \frac{\overline{S}_{A'+G_2,A'}\overline{S}_{A',A'+F_2+G_2}}{\overline{S}_{A',A'}\overline{S}_{A',A'+F_2}}
+ = \frac{\overline{S}_{A'+G_2,A'}\overline{S}_{A',A'+F_2+G_2}}{\overline{S}_{A',A'+F_2}}\\
+ \overset{\eqref{gamma attri6}}{=}\Gamma^{-1}_{A'+G_2,A',A'+F_2+G_2}\frac{\overline{S}_{A'+G_2,A'+F_2+G_2}}{\overline{S}_{A',A'+F_2}}\\
+ \overset{\eqref{s bar causal}}{=}\Gamma_{A',A'+G_2,A'+F_2+G_2}
+\overset{ \eqref{theta gamma}}{=}e^{i\theta_{A',A'+G_2}+i\theta_{A'+G_2,A'+G_2+F_2}+i\theta_{A'+F_2+G_2,A'}}.
+\end{align}
+So in total we find
+
+\begin{align}
+f(A',F_2,G_2)=\frac{e^{i\alpha_{A'+F_2+G_2}+i\theta_{A',A'+F_2+G_2}-i\alpha_{A'+G_2}-i\theta_{A',A'+G_2}}}{e^{i\alpha_{A'+F_2}+i\theta_{A',A'+F_2}-i\alpha_{A'}-i\theta_{A',A'}}}  \times \\e^{i\theta_{A',A'+G_2}+i\theta_{A'+G_2,A'+G_2+F_2}+i\theta_{A'+F_2+G_2,A'}}\\
+=\exp(i\alpha_{A'+F_2+G_2}-i\alpha_{A'+G_2}-i\alpha_{A'+F_2}+i\alpha_{A'} +i\theta_{A'+G_2,A'+G_2+F_2}-i\theta_{A',A'+F_2}).
+\end{align}
+Most of the terms in the exponent do not depend on \(F_2\) and \(G_2\), so taking the mixed logarithmic derivative things simplify:
+\begin{align}
+\partial_{G_2}\partial_{F_2} \ln f(A',F_2,G_2)=i \partial_{G_2}\partial_{F_2} (\alpha_{A'+F_2+G_2} + \theta_{A'+G_2,A'+G_2+F_2})\\
+\overset{\eqref{def alpha}, \eqref{de chi}}{=} i \partial_{G_2} (\beta_{A'+G_2}(F_2)-\chi_{A'+G_2}(F_2) + \chi_{A'+G_2}(F_2))\\
+\overset{\eqref{beta c}}{=}-2 c^+_{A'}(F_2,G_2)\overset{F_2\prec G_2}{=}0.
+\end{align}
+So by \eqref{shift to small G,F} we also have
+\begin{equation}
+\partial_{F_2}\partial_{G_2}\ln f(A,F_1+F_2,G_1+G_2)=0=\partial_{\alpha_1}\partial_{\alpha_2}\ln f(A,F_1(1+\alpha_1),G_1(1+\alpha_2))
+\end{equation}
+But then we can integrate and obtain
+\begin{align}
+&0=\int_{-1}^0d \alpha_1 \int_{-1}^0d \alpha_2  \partial_{\alpha_1}\partial_{\alpha_2}\ln f(A,F_1(1+\alpha_1),G_1(1+\alpha_2))\\
+&=\ln f(A,F_1,G_1)-\ln f(A,0,G_1)-\ln f(A,F_1,0) + \ln f(A,0,0)\\
+&\overset{\eqref{vanish at axis}}{=}\ln f(A,F_1,G_1).
+\end{align}
+remembering equation \eqref{f causal}, the definition of \(f\),  this ends our proof.
+\end{proof}
+
+Using \(\tilde{S}\) we introduce the current associated to it.
+
+\begin{de}
+Let \(A,F\in\mathcal{A}\), define
+\begin{equation}
+j_A(F):=i\partial_F \left\langle\Omega, \tilde{S}_{A,A+F}\Omega\right\rangle = i \partial_F \ln \left\langle\Omega, \tilde{S}_{A,A+F}\Omega\right\rangle.
+\end{equation}
+\end{de}
+
+\begin{thm}
+For general \(A,F\in\mathcal{A}\) we have
+\begin{equation}
+j_A(F)=-\beta_A(F).
+\end{equation}
+So in particular for \(G\in\mathcal{A}\)
+\begin{equation}
+\partial_G j_{A+G}(F)=-2i c_A(F,G).
+\end{equation}
+holds.
+\end{thm}
+\begin{proof}
+Pick \(A,F\in\mathcal{A}\) as in the theorem. We calculate
+\begin{align}
+i\partial_F \ln \left\langle\Omega, \tilde{S}_{A,A+F}\Omega\right\rangle\\
+=i\partial_F\left( i\alpha_{A+F}-i\alpha_A + \ln \left\langle\Omega, \hat{S}_{0,A}^{-1} \hat{S}_{0,A+F}\Omega\right\rangle\right)\\
+=i\partial_F\left( i\alpha_{A+F}+i\theta_{A,A+F} + \ln \left\langle\Omega, \overline{S}_{A,A+F}\Omega\right\rangle\right)
+\end{align}
+The last summand vanishes, as can be seen by the following calculation
+\begin{align}
+\partial_{F} \ln \left\langle \Omega, \overline{S}_{A,A+F}\Omega\right\rangle
+=\partial_{F} \ln \det P^-\overline{S}_{A,A+F}P^-\overline{S}_{A,A+F}^{-1}P^- \\
+=\partial_{F} \ln \det(P^-- P^-\overline{S}_{A,A+F}P^+\overline{S}_{A+F,A}P^-)
+\overset{*}{=}-\partial_{F}\tr (P^-\overline{S}_{A,A+F}P^+\overline{S}_{A+F,A}P^-)\\
+=-\partial_{F}\tr (P^-\overline{S}_{A,A+F}P^+\overline{S}_{A,A}P^-)-\partial_{F}\tr (P^-\overline{S}_{A,A}P^+\overline{S}_{A+F,A}P^-)=0,
+\end{align}
+where for the marked identity we used that for any \(f:\mathbb{R}\rightarrow I_1\) we have
+\begin{equation}
+\partial_{\varepsilon} \det (1+ f(\varepsilon))=\tr(\partial_{\varepsilon}f(\varepsilon)).
+\end{equation}
+So we are left with
+\begin{equation}
+j_A(F)=-\partial_F (\alpha_{A+F}+\theta_{A,A+F})=-(\beta_A(F)-\chi_A(F)+\chi_A(F))=-\beta_A(F).
+\end{equation}
+
+Finally by taking the derivative with respect to \(G\in\mathcal{A}\) and using the definition of \(\beta\) we find
+\begin{equation}
+\partial_G j_{A+G}(F)=-2i c_A^+(F,G).
+\end{equation}
+
+
+\end{proof}
+
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}
+

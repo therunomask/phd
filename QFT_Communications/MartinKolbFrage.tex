@@ -1,0 +1,77 @@
+\documentclass[a4paper,11pt]{article}
+
+%\usepackage{german}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{slashed}
+\usepackage{authblk}
+%identity sign
+\usepackage{dsfont}
+\usepackage{todonotes}
+
+\setlength{\marginparwidth}{2.6cm}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+\usepackage{enumitem}
+
+\newtheorem{de}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+
+\newcommand{\supp}{\operatorname{supp}}
+\DeclareMathOperator{\term}{Term}
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+\begin{document}
+
+Wir haben eine Funktion \(c: (C_c^\infty(\mathbb{R}^4,\mathbb{R}^4))^3\rightarrow \mathbb{C}, (A,F,G)\mapsto c_A(F,G)\) mit folgenden Eigenschaften:
+
+\begin{align}
+&\forall A,F,G \in C_c^\infty(\mathbb{R}^4,\mathbb{R}^4): c_A(F,G)=-c_A(G,F)\\
+&\forall A,F,G, H \in C_c^\infty(\mathbb{R}^4,\mathbb{R}^4), \forall \lambda \in \mathbb{C}: c_A(F,G+\lambda H)= c_A(F,G)+ \lambda c_A(F,H).
+\end{align} 
+
+Man kann \(c\) also als 2-Form über \( C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\) verstehen. Zusätzlich erfüllt \(c\) die Eigenschaft, dass für alle 
+\( A,F,G, H \in C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\): 
+\begin{align}
+\partial_\varepsilon c_{A+\varepsilon F}(G,H)|_{\varepsilon =0}+\partial_\varepsilon c_{A+\varepsilon G}(H,F)|_{\varepsilon =0} 
++ \partial_{\varepsilon} c_{A+\varepsilon H}(F,G)|_{\varepsilon =0}=: (d c)_A (F,G,H)=0
+\end{align}
+gilt.
+Man kann also sagen, dass \(c\) geschlossen ist. Weil \(C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\) sternförmig ist, stellt sich die Frage ob \(c\) auch exakt ist, 
+so wie das für alle 2-Formen auf endlich dimensionalen sternförmigen Gebieten der Fall ist. 
+
+
+
+\newpage
+
+\begin{align}
+\int_{(\mathbb{R}^+\times \mathbb{R}^3)^2} (\square_x + m^2)(\square_y + m^2) \varphi(x,y) (G_1\otimes G_2) * (\delta((\cdot_1-\cdot_2)^2) \psi) (x,y) d^4 x d^4 y\\
+=\int_{(\mathbb{R}^+\times \mathbb{R}^3)^2} \varphi(x,y) \delta ( (\cdot_1 - \cdot_2)^2) \psi(x,y) d^4 x d^4y\\
+:=\int\varphi(x,y) \delta ( (\cdot_1 - \cdot_2)^2) \psi(x,y) 1_{x,y\in \mathbb{R}^+\times \mathbb{R}^3} d^4 x d^4y
+\end{align}
+
+\end{document}

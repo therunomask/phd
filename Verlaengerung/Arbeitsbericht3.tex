@@ -1,0 +1,100 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{german}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{slashed}
+\usepackage{mathrsfs} 
+\usepackage{todonotes}
+
+%identity sign
+\usepackage{bbm}
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+  
+%commutative diagrams
+\usepackage{amsmath,amscd}
+
+\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\equalmath}[1]{\ensuremath{\stackrel{#1}{=}}}
+
+\newtheorem{vermutung}{Vermutung}
+\newtheorem{satz}{Satz}
+
+\DeclareMathOperator*{\esssup}{ess \, sup}
+\newcommand{\id}{{\mathbbm 1}}
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+\begin{center}
+{\huge Arbeitsbericht zum Promotionsvorhaben mit dem Titel
+\\
+{\Large Electron-Positron Pair Creation in External Fields \\
+Rigorous Control of the Scattering Matrix Expansion}}
+\end{center}
+
+\begin{center}
+Markus Nöth
+\\ \today
+\end{center}
+
+\section{Fortschritte seit dem letzten Bericht und Abschlussperspektive}
+
+Seit meinem letzten Verlängerungsantrag habe ich eine Veröffentlichung geschrieben in der die Herangehensweise meiner Betreuer
+ an die Probleme der Quantenelektrodynamik mit der Herangehensweise der algebraischen Quantenfeldtheorie verglichen wird. 
+ In der algebraischen Quantenfeldtheorie werden sogenannte Hadamard Zustände diskutiert, diese bilden eine spezielle Klasse von Zuständen
+ welche als besonders relevant für die Modellierung realistischer Situationen angesehen werden. Es stellt sich heraus, dass 
+ wir in meiner Arbeitsgruppe ein Objekt verwenden welches in intimen Zusammenhang zu diesen Zuständen steht. Die Projektoren auf einen
+ Teilraum der Lösungen der Dirak Gleichung. Diese Veröffentlichung kann wichtig für unsere Gruppe sein, weil wir dadurch in Zukunft ein größeres
+ Publikum erreichen können. Sie kann aber auch wichtig sein für Vertreter der algebraischen Quantenfeldtheorie sein, weil unsere Perspektive eine gröbere 
+ Beschreibung erlaubt und damit einfacher zu handhaben sein kann.
+ Ich bin zuversichtlich dieses Schriftstück in Kürze in einem Journal veröffentlichen zu können. 
+ 
+ Weiterhin habe ich in Zusammenarbeit mit Matthias Lienert Fortschritte gemacht. Die Form der Gleichung an der wir zusammen arbeiten hat die Form
+ 
+ \begin{align}
+\psi(x,y)=\psi^0(x,y) + \lambda \int_{\mathbb{R}^4} d^4 x' \int_{\mathbb{R}^4} d^4y' S_1(x-x')S_2(y-y') K(x',y') \psi(x',y').
+\end{align}
+
+Idealerweise sollten \(S_1\) und \(S_2\) eine der Greensfunktionen der Dirak Gleichung  und \(K\) sollte gleich der zeitsymmetrischen Greensfunktion
+der Wellengleichung sein. Zuletzt hatten wir es geschafft Lösungen dieser Gleichung zu konstruieren in dem Fall, dass \(S_1\) und \(S_2\) 
+retardierte Greensfunktionen der Dirakt Gleichung sind und in der \(K\) eine glatte und beschränkte Funktion ist. Zuvor hatte Matthias Lienert zusammen
+mit Roderich Tumulka Lösungen für \(S_1\) und \(S_2\) Greensfunktionen der Klein-Gordon Gleichung und und für glatte \(K\) konstruiert.
+Nun ist es Matthias Lienert und mir gelungen auch Lösungen zu konstruieren wenn \(S_1\) und \(S_2\) Greensfunktionen der Klein-Gordon Gleichung 
+sind und \(K\) die gewünschte Greensfunktion der Wellengleichung ist. Dieses Resultat muss noch ausführlich aufgeschrieben und Publiziert werden.
+
+In den nächsten Monaten werde ich mich darauf konzentrieren die noch ausstehenden Veröffentlichungen einzureichen und ausführlich in meine Dissertation 
+einzuarbeiten. Ich beabsichtige eine erste vollständige Version meiner Doktorarbeit im Mai fertig gestellt zu haben, damit 
+einer Verteidigung im September nichts im Wege steht.
+
+
+
+
+
+
+
+
+
+\end{document}
+

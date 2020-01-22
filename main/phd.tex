@@ -47,7 +47,6 @@
 \newtheorem{Thm}[Def]{Theorem}
 \newtheorem{Prp}[Def]{Proposition}
 \newtheorem{Lemma}[Def]{Lemma}
-\newtheorem{lemma}{Lemma}
 \newtheorem{Remark}[Def]{Remark}
 \newtheorem{Corollary}[Def]{Corollary}
 \newtheorem{Example}[Def]{Example}
@@ -160,6 +159,162 @@ and the time evolution operator.
 
 %\show\afterchaptertitle
 \noch{Historische Einleitung durch Anfänge relativistischer Quantenphysik, Strahlungskatastrophe (unbounded below). No potentials resultat Lukas}
+
+
+
+\chapter[Direct Interaction in Relativistic Quantum Mechanics][Direct Interaction]{Direct Interaction in Relativistic Quantum Mechanics}
+As we have seen in the last chapter, having interaction mediated by potentials in a Dirac equation does not seem to be a viable option.
+One alternative approach to this problem is to reformulate Diracs equation as an integral equation and to introduce interaction
+afterwards. For the benefit of the unfamiliar reader, we will first follow the heuristic derivation of this type of equation
+ in \cite{lienert2018direct}, then briefly review the mathematical results that had been established in the past and finally 
+ discuss new results for which the author is at least partially to blame.
+
+\section{Overview}
+\subsection{Derivation}
+\noch{Check whether copying from \cite{lienert2018direct} like this is fine.}
+\newcommand{\free}{{\textup free}}
+\newcommand{\ret}{{\textup ret}}
+\newcommand{\adv}{{\textup adv}}
+\newcommand{\sym}{{\textup sym}}
+\newcommand{\vx}{{\mathbf{x}} }
+\newcommand{\vy}{{\mathbf{y}} }
+
+We now present almost verbatim the heuristic derivation of \cite{lienert2018direct} 
+for the two-particle equation for a multi-time wave function 
+that expresses direct interaction along light-like configurations proposed in that article. 
+This type of equation will then keep us occupied for the rest of this chapter. 
+To this end, we start from a reformulation of the single-particle  Schr{\"o}dinger equation as an integral equation. 
+Extending this equation to the two-particle case with Poincar\'{e} invariance in mind naturally leads to an 
+integral equation for a multi-time wave function.
+
+Consider the single-particle  Schr{\"o}dinger equation for the wave function $\varphi(t,\vx)$:
+\begin{equation}
+	i \partial_t \varphi(t,\vx) = \big( H^\free + V(t,\vx) \big) \varphi(t,\vx),
+	\label{eq:singlepartschroed}
+\end{equation}
+where $H^\free$ denotes the free Hamiltonian, for example $H^\free = -\frac{1}{2m}\Delta$ or $H^\free = H^{\textup Dirac}$.\\
+Let $G^\ret(t,\vx)$ be the retarded Green's function of the free  Schr{\"o}dinger equation, i.e.
+\begin{equation}
+	\big( i \partial_t - H^\free \big) G^\ret(t,\vx) = \delta(t) \delta^{(3)}(\vx)
+	\label{eq:schroedgreensfn}
+\end{equation}
+with $G^\ret(t,\vx) = 0$ for $t< t_0$.
+Then the initial value problem consisting of \eqref{eq:singlepartschroed} for $t\geq t_0$ with $\varphi(t_0,\vx) = \varphi_0(\vx)$ is equivalent to the integral equation (see \cite{feynman1949theory})
+\begin{equation}
+	\varphi(t,\vx) = \varphi^\free(t,\vx) + \int_{t_0}^\infty \! dt' \int d^3 \vx' \, G^\ret(t-t',\vx-\vx') V(t',\vx') \varphi(t',\vx'),
+	\label{eq:singlepartint}
+\end{equation}
+where $\varphi^\free(t,\vx) = [e^{-i H^\free (t-t_0)} \varphi_0](\vx)$ is the respective solution of the free  Schr{\"o}dinger equation. The time integral in \eqref{eq:singlepartint} effectively only runs up to $t$ as $G^\ret(t-t',\vx-\vx') = 0$ for $t < t'$. One can easily check that a solution of \eqref{eq:singlepartint} satisfies \eqref{eq:singlepartschroed} by acting with $(i \partial_t - H^\free)$ on both sides of \eqref{eq:singlepartint} and using the Green's function property \eqref{eq:schroedgreensfn}. The initial conditions are satisfied as for $t=t_0$ the integral vanishes and $\varphi(t_0,\vx) = \varphi^\free(t_0,\vx) = \varphi_0(\vx)$. Conversely, we obtain \eqref{eq:singlepartint} from \eqref{eq:singlepartschroed} by inverting the operator $(i \partial_t - H^\free)$.
+Note that the reformulation is exact (non-perturbative).
+
+For two non-relativistic particles, one can proceed analogously.\footnote{In fact, this case is mathematically equivalent to the case of a single particle in 6 space dimensions.} The initial value problem $\varphi(t_0,\vx_1,\vx_2) = \varphi_0(\vx_1,\vx_2)$ of the  Schr{\"o}dinger equation
+\begin{equation}
+	i \partial_t \varphi(t,\vx_1,\vx_2) = \big(H_1^\free + H_2^\free + V(t,\vx_1,\vx_2)\big) \varphi(t,\vx_1,\vx_2)
+	\label{eq:twopartschroed}
+\end{equation}
+for $t \geq t_0$ is equivalent to the integral equation
+\begin{align}
+	\varphi(t,\vx_1,\vx_2) = \varphi^\free&(t,\vx_1,\vx_2) + \int_{t_0}^\infty \! dt' \! \int d^3 \vx_1'\,  d^3 \vx_2'\, G_1^\ret(t-t',\vx_1-\vx_1') \nonumber\\
+	\times&G_2^\ret(t-t',\vx_2-\vx_2') V(t',\vx_1',\vx_2') \varphi(t',\vx_1',\vx_2'),
+	\label{eq:twopartschroedint}
+\end{align}
+where $\varphi^\free(t,\vx_1,\vx_2) = [e^{-i(H_1^\free + H_2^\free)(t-t_0)}\varphi_0](\vx_1,\vx_2)$ and $G_k^\ret(t,\vx_k)$ are the retarded Green's functions of the operators $(i\partial_t - H_k^\free)$. Note that the synchronized product $G_1^\ret(t,\vx_1) G_2^\ret(t,\vx_2)$ is the retarded Green's function of the operator $(i\partial_t - H_1^\free - H_2^\free)$.
+
+While \eqref{eq:twopartschroedint} constitutes a viable equation for non-relativistic quantum physics, it is clearly not Lorentz invariant as it makes use of just a single time variable. Let us therefore pause and reconsider the step from the single-particle to the two-particle integral equation.\\
+As we aim at a manifestly Poincar\'{e} invariant equation, it is helpful rewrite the single-particle integral equation \eqref{eq:singlepartint} in terms of spacetime variables:
+\begin{equation}
+	\psi(x) = \psi^\free(x) + \int d^4 x' \, G^\ret(x-x') V(x') \psi(x'),
+	\label{eq:singlepartintspacetime}
+\end{equation}
+where we wrote $\psi$ instead of $\varphi$. In order to obtain a Poincar\'{e} invariant domain of integration, we take the initial time $t_0$ to $-\infty$. Note that the limits of the time integration as well as the choice of the Green's function mainly play a role for the initial value problem. A solution of the integral equation solves  Schr{\"o}dinger's equation regardless of these choices.
+
+Now \eqref{eq:singlepartintspacetime} straightforwardly suggests a two-particle generalization in terms of a multi-time wave function:
+\begin{align}\label{eq:twopartintgeneral}
+  \psi(x_1,x_2) = &\psi^\free(x_1,x_2) \\\nonumber
+  &+ \int d^4 x_1'\, d^4 x_2' \, G_1(x_1-x_1') G_2(x_2-x_2') K(x_1',x_2') \psi(x_1',x_2').
+\end{align}
+Here, the integration runs over $mathbb{RM} \times \mathbb{M}$ and $\psi^\free$ is (similarly to $\varphi^\free$ before) a given solution of the free multi-time equations. These are assumed to be covariant equations of the form
+\begin{equation}
+	D_k  \psi^\free(x_1,x_2) = 0,~~k=1,2,
+	\label{eq:freemultitime}
+\end{equation}
+where $D_k$ is a first-order covariant differential operator, the main example being the Dirac operator $D_k = ( -i \gamma_k^\mu \partial_{k,\mu} + m_k)$.
+Finally, $G_k(x_k)$ is a Green's function of the $k$-th free multi-time equation, i.e.
+\begin{equation}
+	D_k G_k(x_k) = \delta^{(4)}(x_k).
+\end{equation}
+In the following, we use the notation $G$ for a generic Green's functions of some covariant operator. If we want to be more specific which case we are considering, we indicate this by introducing new symbols or indices.
+Apart from retarded Green's functions, which are expected to be relevant to the past initial value problem, we also allow for different choices such as advanced, time-symmetric and Feynman Green's functions here. Note that \eqref{eq:twopartintgeneral} is only manifestly time reversal invariant if the Green's functions are.
+
+$K(x_1,x_2)$ is an, as yet, arbitrary function (or distribution) which we call the \textit{interaction kernel}. $K$ deserves this name as it occurs in the same place in \eqref{eq:twopartintgeneral} as the interaction potential in \eqref{eq:twopartschroedint}. As we aim at a Poincar\'{e} invariant equation, $K$ must be a Poincar\'{e} invariant function of $x_1,x_2$. Perhaps the most natural possibility is that $K$ depends on $x_1,x_2$ only through the Minkowski distance $s^2(x_1,x_2) = (x_1-x_2)^\mu (x_1-x_2)_\mu$. Stipulating that interaction happens exactly at light-like separation, we are led to
+\begin{equation}
+	K(x_1,x_2) = \kappa \; \delta(s^2(x_1,x_2)),
+	\label{eq:twopartkernel}
+\end{equation}
+where $\kappa$ is a Poincar\'{e} invariant prefactor that may include coupling constants such as charges $e_1,e_2$ and $\gamma$-matrices. If $\gamma$-matrices are admitted, $\kappa$ can be non-constant, as then Poincar\'{e} invariant quantities besides $s^2(x_1,x_2)$ exist. For example, $\kappa$ could depend on $\gamma_i^\mu (x_1-x_2)_\mu$ for $i=1,2$. 
+
+Thus, we arrive at the following class of integral equations:
+\begin{align}\label{eq:twopartint}
+  \psi&(x_1,x_2) = \psi^\free(x_1,x_2) \\\nonumber
+  &+ \int d^4 x_1' \, d^4 x_2' \; G_1(x_1-x_1') G_2(x_2-x_2') \, \kappa \, \delta(s^2(x_1',x_2')) \psi(x_1',x_2').
+\end{align}
+The equation becomes fully specified by the choices of (a) the free multi-time equations \eqref{eq:freemultitime}, (b) the particular Green's functions of these equations, and (c) the prefactor $\kappa$.
+
+\subsubsection{Examples.}
+\begin{enumerate}
+  \item \textit{Dirac particles.} In this case, the Green's functions are commonly denoted by $S^\ret$, $S^\sym$, $S_F$ etc. 
+  In view of time-reversal invariance, the most natural choice is the symmetric Green's function  
+  $S^\sym(x) = \frac{1}{2}( S^\ret(x)+S^\adv(x)$. Also the Feynman propagator $S_F$ is time-symmetric. A natural choice for $\kappa$ turns out to be:
+	\begin{equation}
+		\kappa = i\, \lambda \, \gamma_1^\mu \gamma_{2,\mu},
+		\label{eq:naturalkappa}
+  \end{equation}
+  where $\lambda$ is a positive constant. Later, we shall see $\lambda = \frac{e_1e_2}{4\pi}$ where $e_1, e_2$ are 
+  the charges of the particles. The factor $i$ is necessary to obtain the correct non-relativistic limit 
+  (see Sec. \cite[3.6]{lienert2018direct}). Then \eqref{eq:twopartint} becomes (we here admit generic Green's functions):
+	\begin{align}\label{eq:twopartintspin}
+    &\psi(x_1,x_2) = \psi^\free(x_1,x_2)+i\lambda \! \int \! d^4 x_1' \, d^4 x_2' \, \\\nonumber
+    & \times S_1(x_1-x_1') S_2(x_2-x_2') \gamma_1^\mu \gamma_{2,\mu} \delta(s^2(x_1',x_2')) \psi(x_1',x_2').
+  \end{align}
+  Section \ref{sec:direct dirac} will be about first results concerning Dirac particles.
+	%
+  \item \textit{KG particles.} Even though we have motivated \eqref{eq:twopartint} for cases where the 
+  free multi-time equations are of first order, it is possible to consider \eqref{eq:twopartint} also for the case 
+  that free multi-time equations are KG equations (which are of second order). In this case, 
+  $\kappa \in \mathbb{R}$ and one uses the Green's functions of the KG equation instead of $G_1,G_2$ .
+  All of the previously established results concern this case. In section \ref{sec:KG lightcones} we present a novel result, 
+  incorporating the full singular interaction Kernel \(K=i\kappa\delta(s^2(x_1,x_2))\).
+  \noch{check consistency of naming of the constant factors}
+\end{enumerate}
+
+
+\subsection{Previous Results on Directly Interacting Particles}
+In this chapter we summarise existence results on equations of the type of 
+\eqref{eq:twopartintgeneral}. Because this line of work is still fairely young,
+it can still readily be summarised. The results are taken from \cite{lienertfirst} and 
+\cite{lienertcurved}. The theorems are about slightly different versions of equations
+of the type of \eqref{eq:twopartintgeneral} or of a related type and make use of
+different function spaces. I tried to contain the necessary notation to within each
+of the theorems. 
+
+\begin{Thm}[Thm 3.1 of \cite{lienertfirst}]
+Let \(T>0\), \(M,N\in\mathbb{N}\), consider 
+the Banach space \(\mathcal{B}=L^\infty ([0,T]^N,L^2(\mathbb{R}^M))\).
+Let \(\mathcal{L}:[0,T]^{2N}\rightarrow L^2(\mathbb{R}^{2M})\) such that 
+\begin{equation}
+\sup_{t,t'\in[0,T]^{N}}\|\mathcal{L}(t,t')\|^2<\infty,
+\end{equation}
+then for any \(f_0\in\mathcal{B}\) the equation
+\begin{equation}
+f(t,x)=f_0(t,x)+ \int_0^t dt' \int dx' L(t,t',x,x') f(t',x')
+\end{equation}
+has a unique solution \(f\in\mathcal{B}\).
+\end{Thm}
+
+
+\section{Directly Interacting Dirac Particles}\label{sec:direct dirac}
+
+\section{KG-Particles Interacting Directly Along Lightcones}\label{sec:KG lightcones}
 
 
 \chapter[Quantum Field Theoretic Approach to Interactions][Interaction in QFT]{Quantum Field Theoretic Approach to Interactions} \label{sec:QFT}
@@ -310,42 +465,7 @@ Z_k(A)\phi(y)= (-1)^{k} L^0_A \left({L_A^+}^{k-1}( \phi)\right) (y),
 \end{equation}
 where the upper right index for an operator means iterative application of said operator.
 
-\subsection{Well-definedness of \(U\) }\label{sec:well-def}
-
-I will outline in this section how to prove that the informally inferred series
-expansion of \(U\) in \eqref{DefU} is well-defined, i.e. that the series
- converges. In doing so it is crucial to find appropriate bounds
-on the summands of said series. 
-The domain of integration of the temporal variables in the iterated form of
-equation \eqref{dirac_integral} is a simplex. The volume of this simplex is
-related to the volume of the cube by the factor \(n!\), using this one usually
-introduces the time ordering Operator and the factor of \(\frac{1}{n!}\). This
-line of argument has been translated into the momentum space, which might turn
-out to be more convenient for proving the main conjecture. 
-
-Using Parsevals theorem one translates the operators \(Z_k\) into momentum space, then one applies standard approximation techniques and the theorem of Paley and Wiener and Youngs inequality for convolution operators. Next one minimizes with respect to the arbitrary \(\epsilon\) in the equation \eqref{explicit_Zk}, which can be done due to the rules for changing the contour of integration of analytic functions. The estimate is valid only for \(k>1\), it is given by
-\begin{equation}
-\|Z_k(A)\|\le \left(\frac{1}{\sqrt{2} }\right)^{k-1} \frac{\left(e a\right)^{k-1}}{(k-1)^{k-1}} \frac{ C_N^k}{\pi^{4k+2}8}  f^{k-1}  g,
-\end{equation}
-where \(C_N>0\) is a constant obtained by application of the theorem of Paley and Wiener (it can for example be found in \cite{reed1975methods}). In order to simplify the notation I used \(a:=\text{diam}(\text{supp}(A))\), \(f:=\left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}^1(\mathbb{R}^4, \mathrm{d}^4x)}\), \(g:=\left\|\frac{1}{(1+|\cdot |)^N} \right\|_{\mathcal{L}^1(\mathcal{M},\mathfrak{i}_p \mathrm{d}^4p)} \) and \(e\) being Euler's number. By \(\mathcal{L}^1(E, \mathrm{d}\mu )\) I denote the space of functions with domain of definition \(E\) which are integrable with respect to the measure \(\mathrm{d}\mu\), i.e.
-\begin{equation}
-\mathcal{L}^1(E, \mathrm{d}\mu ):=\{ \psi: E\rightarrow \mathbb{C}  \mid \int_E \|\psi (x)\| \mathrm{d}\mu (x)< \infty \}.
-\end{equation}
-
-For the operator norm of \(Z_1 (A)\) the bound
-\begin{equation}
-\|Z_1(A)\|\le \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})}
-\end{equation}
-
-can be found more easily. It is finite, because in position space \(A\) is compactly supported, which means that at infinity its Fourier transform falls off faster than any polynomial.
-Some lengthy calculations and the use of the well known bound on the factorial \(n!\le \sqrt{2\pi n} \left(\frac{n}{e}\right)^n e^\frac{1}{12n}\)  result in the following bound for the series representing the operator \(U\)
-\begin{multline}
-\|U^A\|=\left\|\sum_{k=0}^\infty Z_k(A) \right\|
-\le  1+ \left\| \|\slashed{A}\|_{spec} \right\|_{\mathcal{L}^1(\mathcal{M})} + f g \frac{a    C^2_N }{\pi^{\frac{19}{2}}4}
- e^{\frac{a C_N f}{\pi^4\sqrt{2}}+\frac{1}{12}} <\infty.
-\end{multline}
-The series representing \(U^A\) therefore converges, so it gives rise to a well defined operator.
-
+\noch{delete derivation; simply state series representation and convergence result citing something}
 
 \section{Construction of the Second Quantised Scattering-Matrix}\label{sec:second quant}
  In the following I outline how the construction of the
@@ -960,7 +1080,7 @@ Clearly multiplying the second quantised operator by an additional phase as in
 \eqref{sleek_second_quantised_scattering_operator} does not influence this calculation.
 \end{proof}
 
-
+\noch{decide whether to use or delete this part.}
 As a preparation for calculating the vacuum polarisation current we proof the following 
 \begin{Lemma}\label{G_kommutator}
 Let \(P_k,P_l\in Q\) then the following holds
@@ -1230,7 +1350,7 @@ the first two summands into \(-i \partial_{\varepsilon} j_{A+\varepsilon H} (F)\
 of theorem \ref{thm:CurrentExact}.\qed
 
 \section{Quantitative Estimates}
-
+\noch{probably this part cannot be made rigorous. Decide whether to keep it as heuristics}
 Since we do not only want to give an expression for the time evolution operator, but also give bounds on the numerical errors
 which are due to truncate the occurring series we need to look at these series a little closer. The series involve powers of the 
 second quantisation operator \(G\), so we start by examining these in greater depth. In order to do so we define an object 

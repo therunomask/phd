@@ -17,6 +17,10 @@ D-A Deckert and Franz Merkl, \emph{Dirac equation with external potential and
   initial data on cauchy surfaces}, Journal of Mathematical Physics \textbf{55}
   (2014), no.~12, 122305.
 
+\bibitem{feynman1949theory}
+Richard~P Feynman, \emph{The theory of positrons}, Physical Review \textbf{76}
+  (1949), no.~6, 749.
+
 \bibitem{graham1994concrete}
 Ronald~L Graham, Donald~E Knuth, and Oren Patashnik, \emph{Concrete
   mathematics: a foundation for computer science}, Addison-Wesley, Reading,
@@ -26,6 +30,21 @@ Ronald~L Graham, Donald~E Knuth, and Oren Patashnik, \emph{Concrete
 Abdolhossein Hoorfar and Mehdi Hassani, \emph{Inequalities on the lambert w
   function and hyperpower function}, J. Inequal. Pure and Appl. Math \textbf{9}
   (2008), no.~2, 5--9.
+
+\bibitem{lienert2018direct}
+Matthias Lienert, \emph{Direct interaction along light cones at the quantum
+  level}, Journal of Physics A: Mathematical and Theoretical \textbf{51}
+  (2018), no.~43, 435302.
+
+\bibitem{lienertfirst}
+Matthias Lienert and Roderich Tumulka, \emph{A new class of volterra-type
+  integral equations from relativistic quantum physics}, arXiv preprint
+  arXiv:1803.08792 (2018).
+
+\bibitem{lienertcurved}
+\bysame, \emph{Interacting relativistic quantum dynamics of two particles on
+  spacetimes with a big bang singularity}, Journal of Mathematical Physics
+  \textbf{60} (2019), no.~4, 042302.
 
 \bibitem{SimonReed2}
 Michael Reed and Barry Simon, \emph{Methods of modern mathematical physics,

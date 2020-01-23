@@ -3,7 +3,7 @@
 \contentsline {chapter}{\chapternumberline {2}Direct Interaction in Relativistic Quantum Mechanics}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Overview}{4}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Derivation}{4}{subsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.1.1}Examples.}{7}{subsubsection.2.1.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Special Cases}{7}{subsubsection.2.1.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Previous Results on Directly Interacting Particles}{8}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Directly Interacting Dirac Particles}{11}{section.2.2}
 \contentsline {section}{\numberline {2.3}KG-Particles Interacting Directly Along Lightcones}{11}{section.2.3}

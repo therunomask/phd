@@ -172,7 +172,7 @@ afterwards. For the benefit of the unfamiliar reader, we will first follow the h
 \section{Overview}
 \subsection{Derivation}
 \noch{Check whether copying from \cite{lienert2018direct} like this is fine.}
-\newcommand{\free}{{\textup free}}
+\newcommand{\free}{{0}}
 \newcommand{\ret}{{\textup ret}}
 \newcommand{\adv}{{\textup adv}}
 \newcommand{\sym}{{\textup sym}}
@@ -180,97 +180,139 @@ afterwards. For the benefit of the unfamiliar reader, we will first follow the h
 \newcommand{\vy}{{\mathbf{y}} }
 
 We now follow the heuristic derivation of \cite{lienert2018direct} 
-for the two-particle equation for a multi-time wave function 
-that expresses direct interaction along light-like configurations proposed in that article. 
+for an equation for a multi-time wave function for two particles  
+that expresses direct interaction along light-like configurations. 
 This type of equation will then keep us occupied for the rest of this chapter. 
-To this end, we start from a reformulation of the single-particle  Schr{\"o}dinger equation as an integral equation. 
-Extending this equation to the two-particle case with Poincar\'{e} invariance in mind naturally leads to an 
+We begin by reformulating the Schr{\"o}dinger equation for one particle as an integral equation. 
+Extending this equation to two particles and imposing Poincar\'{e} invariance naturally leads us to an 
 integral equation for a multi-time wave function.
 
-Consider the single-particle  Schr{\"o}dinger equation for the wave function $\varphi(t,\vx)$:
+Consider the one particle  Schr{\"o}dinger equation for the wave function $\varphi(t,\vx)$:
 \begin{equation}
 	i \partial_t \varphi(t,\vx) = \big( H^\free + V(t,\vx) \big) \varphi(t,\vx),
 	\label{eq:singlepartschroed}
 \end{equation}
-where $H^\free$ denotes the free Hamiltonian, for example $H^\free = -\frac{1}{2m}\Delta$ or $H^\free = H^{\textup Dirac}$.\\
-Let $G^\ret(t,\vx)$ be the retarded Green's function of the free  Schr{\"o}dinger equation, i.e.
+where $H^\free$ denotes the non interacting Hamiltonian of the Schrödinger equation.\\
+We denote by $G^\ret(t,\vx)$ the retarded Green's function of the non interacting equation, i.e.
 \begin{equation}
 	\big( i \partial_t - H^\free \big) G^\ret(t,\vx) = \delta(t) \delta^{(3)}(\vx)
 	\label{eq:schroedgreensfn}
 \end{equation}
 with $G^\ret(t,\vx) = 0$ for $t< t_0$.
-Then the initial value problem consisting of \eqref{eq:singlepartschroed} for $t\geq t_0$ with $\varphi(t_0,\vx) = \varphi_0(\vx)$ is equivalent to the integral equation (see \cite{feynman1949theory})
+Then the initial value problem induced by \eqref{eq:singlepartschroed} for $t\geq t_0$ with $\varphi(t_0,\vx) = \varphi_0(\vx)$ is equivalent to the integral equation (see \cite{feynman1949theory})
 \begin{equation}
 	\varphi(t,\vx) = \varphi^\free(t,\vx) + \int_{t_0}^\infty \! dt' \int d^3 \vx' \, G^\ret(t-t',\vx-\vx') V(t',\vx') \varphi(t',\vx'),
 	\label{eq:singlepartint}
 \end{equation}
-where $\varphi^\free(t,\vx) = [e^{-i H^\free (t-t_0)} \varphi_0](\vx)$ is the respective solution of the free  Schr{\"o}dinger equation. The time integral in \eqref{eq:singlepartint} effectively only runs up to $t$ as $G^\ret(t-t',\vx-\vx') = 0$ for $t < t'$. One can easily check that a solution of \eqref{eq:singlepartint} satisfies \eqref{eq:singlepartschroed} by acting with $(i \partial_t - H^\free)$ on both sides of \eqref{eq:singlepartint} and using the Green's function property \eqref{eq:schroedgreensfn}. The initial conditions are satisfied as for $t=t_0$ the integral vanishes and $\varphi(t_0,\vx) = \varphi^\free(t_0,\vx) = \varphi_0(\vx)$. Conversely, we obtain \eqref{eq:singlepartint} from \eqref{eq:singlepartschroed} by inverting the operator $(i \partial_t - H^\free)$.
+where $\varphi^\free(t,\vx) = [e^{-i H^\free (t-t_0)} \varphi_0](\vx)$ 
+is the solution of the non interacting equation. The domain of integration of the time integral 
+in \eqref{eq:singlepartint} effectively bounded by $t$ because of the 
+support properties of \(G^\ret\). On the one hand one can easily verify that a solution of 
+\eqref{eq:singlepartint} also satisfies \eqref{eq:singlepartschroed}. It follows directly by acting with 
+$(i \partial_t - H^\free)$ on both sides of \eqref{eq:singlepartint} and the Green's 
+function property \eqref{eq:schroedgreensfn}. The initial conditions are satisfied due to the integral 
+vanishing at \(t=t0\) and $\varphi(t_0,\vx) = \varphi^\free(t_0,\vx) = \varphi_0(\vx)$. On the other hand
+we obtain \eqref{eq:singlepartint} from \eqref{eq:singlepartschroed} by convolving both sides of 
+\eqref{eq:singlepartschroed} with \(G^\ret \).
 Note that the reformulation is exact (non-perturbative).
 
-For two non-relativistic particles, one can proceed analogously.\footnote{In fact, this case is mathematically equivalent to the case of a single particle in 6 space dimensions.} The initial value problem $\varphi(t_0,\vx_1,\vx_2) = \varphi_0(\vx_1,\vx_2)$ of the  Schr{\"o}dinger equation
+For two non-relativistic particles, the analogous procedure can be carried out.
+The initial value problem for \(\varphi(t_0,\vx_1,\vx_2)=\varphi_0(\vx_1,\vx_2)\)
+and the equation
 \begin{equation}
 	i \partial_t \varphi(t,\vx_1,\vx_2) = \big(H_1^\free + H_2^\free + V(t,\vx_1,\vx_2)\big) \varphi(t,\vx_1,\vx_2)
 	\label{eq:twopartschroed}
 \end{equation}
-for $t \geq t_0$ is equivalent to the integral equation
+is equivalent to the integral equation
 \begin{align}
 	\varphi(t,\vx_1,\vx_2) = \varphi^\free&(t,\vx_1,\vx_2) + \int_{t_0}^\infty \! dt' \! \int d^3 \vx_1'\,  d^3 \vx_2'\, G_1^\ret(t-t',\vx_1-\vx_1') \nonumber\\
 	\times&G_2^\ret(t-t',\vx_2-\vx_2') V(t',\vx_1',\vx_2') \varphi(t',\vx_1',\vx_2'),
 	\label{eq:twopartschroedint}
 \end{align}
-where $\varphi^\free(t,\vx_1,\vx_2) = [e^{-i(H_1^\free + H_2^\free)(t-t_0)}\varphi_0](\vx_1,\vx_2)$ and $G_k^\ret(t,\vx_k)$ are the retarded Green's functions of the operators $(i\partial_t - H_k^\free)$. Note that the synchronized product $G_1^\ret(t,\vx_1) G_2^\ret(t,\vx_2)$ is the retarded Green's function of the operator $(i\partial_t - H_1^\free - H_2^\free)$.
+where 
+$\varphi^\free(t,\vx_1,\vx_2) = \left(e^{-i(H_1^\free + H_2^\free)(t-t_0)}\varphi_0\right)(\vx_1,\vx_2)$
+and $G_k^\ret(t,\vx_k)$ are the retarded Green's functions of the operators $(i\partial_t - H_k^\free)$. 
+Note that the synchronized product $G_1^\ret(t,\vx_1) G_2^\ret(t,\vx_2)$ is the retarded Green's function 
+of the operator $(i\partial_t - H_1^\free - H_2^\free)$.
 
-While \eqref{eq:twopartschroedint} constitutes a viable equation for non-relativistic quantum physics, it is clearly not Lorentz invariant as it makes use of just a single time variable. Let us therefore pause and reconsider the step from the single-particle to the two-particle integral equation.\\
-As we aim at a manifestly Poincar\'{e} invariant equation, it is helpful rewrite the single-particle integral equation \eqref{eq:singlepartint} in terms of spacetime variables:
+Equation \eqref{eq:twopartschroedint} is an adequate equation for non-relativistic quantum physics; however,
+as it employs just a single temporal coordinate, it is clearly not Lorentz invariant. We shall therefore 
+reconsider the step leading from the one particle to the two particle integral equation.\\
+As we would like to find a manifestly Poincar\'{e} invariant equation, let us rewrite the 
+single-particle integral equation \eqref{eq:singlepartint} in terms of spacetime variables:
 \begin{equation}
 	\psi(x) = \psi^\free(x) + \int d^4 x' \, G^\ret(x-x') V(x') \psi(x'),
 	\label{eq:singlepartintspacetime}
 \end{equation}
-where we wrote $\psi$ instead of $\varphi$. In order to obtain a Poincar\'{e} invariant domain of integration, we take the initial time $t_0$ to $-\infty$. Note that the limits of the time integration as well as the choice of the Green's function mainly play a role for the initial value problem. A solution of the integral equation solves  Schr{\"o}dinger's equation regardless of these choices.
+where we wrote $\psi$ instead of $\varphi$ to denote the shift to a relativistic notation. 
+In order to form a Poincar\'{e} invariant domain of integration, we replace the initial 
+time $t_0$ to $-\infty$. The limits of the time integration as well as the choice of the 
+Green's function are decided by the choice of initial value problem. Solving the integral
+equation implies solving Schr{\"o}dinger's equation irrespective of these choices.
 
-Now \eqref{eq:singlepartintspacetime} straightforwardly suggests a two-particle generalization in terms of a multi-time wave function:
+Now \eqref{eq:singlepartintspacetime} immediately suggests a generalization to a two 
+particle equation in terms of a multi-time wave function:
 \begin{align}\label{eq:twopartintgeneral}
   \psi(x_1,x_2) = &\psi^\free(x_1,x_2) \\\nonumber
   &+ \int d^4 x_1'\, d^4 x_2' \, G_1(x_1-x_1') G_2(x_2-x_2') K(x_1',x_2') \psi(x_1',x_2').
 \end{align}
-Here, the integration runs over $mathbb{RM} \times \mathbb{M}$ and $\psi^\free$ is (similarly to $\varphi^\free$ before) a given solution of the free multi-time equations. These are assumed to be covariant equations of the form
+Here, domain of integration is $\mathbb{R}^4 \times \mathbb{R}^4$ and $\psi^\free$ is a 
+given solution of the free multi-time equations. These are assumed to be
+of the form
 \begin{equation}
 	D_k  \psi^\free(x_1,x_2) = 0,~~k=1,2,
 	\label{eq:freemultitime}
 \end{equation}
-where $D_k$ is a first-order covariant differential operator, the main example being the Dirac operator $D_k = ( -i \gamma_k^\mu \partial_{k,\mu} + m_k)$.
-Finally, $G_k(x_k)$ is a Green's function of the $k$-th free multi-time equation, i.e.
+where $D_k$ is the Dirac operator $D_k = ( -i \gamma_k^\mu \partial_{k,\mu} + m_k)$.
+Lastly, $G_k(x_k)$ is a Green's function of the $k$-th non interacting equation,
 \begin{equation}
 	D_k G_k(x_k) = \delta^{(4)}(x_k).
 \end{equation}
-In the following, we use the notation $G$ for a generic Green's functions of some covariant operator. If we want to be more specific which case we are considering, we indicate this by introducing new symbols or indices.
-Apart from retarded Green's functions, which are expected to be relevant to the past initial value problem, we also allow for different choices such as advanced, time-symmetric and Feynman Green's functions here. Note that \eqref{eq:twopartintgeneral} is only manifestly time reversal invariant if the Green's functions are.
+In the following, we denote by $G$ a generic Green's functions of some covariant operator. 
+More concrete examples will be indicated by introducing new symbols or indices.
+Now we also allow for choices of Green's functions other than the retarded ones such as 
+advanced, time-symmetric and Feynman Green's functions. Note that the equation 
+\eqref{eq:twopartintgeneral} is only manifestly time reversal invariant if the Green's 
+functions are.
 
-$K(x_1,x_2)$ is an, as yet, arbitrary function (or distribution) which we call the \textit{interaction kernel}. $K$ deserves this name as it occurs in the same place in \eqref{eq:twopartintgeneral} as the interaction potential in \eqref{eq:twopartschroedint}. As we aim at a Poincar\'{e} invariant equation, $K$ must be a Poincar\'{e} invariant function of $x_1,x_2$. Perhaps the most natural possibility is that $K$ depends on $x_1,x_2$ only through the Minkowski distance $s^2(x_1,x_2) = (x_1-x_2)^\mu (x_1-x_2)_\mu$. Stipulating that interaction happens exactly at light-like separation, we are led to
+The object $K(x_1,x_2)$ has not yet been specified, we will call it
+\textit{interaction kernel}. It deserves this name as it occurs in 
+\eqref{eq:twopartintgeneral} exactly where the interaction potential occurs in 
+\eqref{eq:twopartschroedint}. As we would like a Poincar\'{e} invariant equation, $K$ 
+must be a Poincar\'{e} invariant function of $x_1,x_2$ and the corresponding spinor indices. 
+The most natural possibility is that $K$ depends only directly on the Minkowski scaler 
+$s^2(x_1,x_2) = (x_1-x_2)^\mu (x_1-x_2)_\mu$. Inspired by Wheeler-Feynman electrodynamics, we
+impose that interaction happens exactly at light-like separation and are thus led to
 \begin{equation}
 	K(x_1,x_2) = \kappa \; \delta(s^2(x_1,x_2)),
 	\label{eq:twopartkernel}
 \end{equation}
-where $\kappa$ is a Poincar\'{e} invariant prefactor that may include coupling constants such as charges $e_1,e_2$ and $\gamma$-matrices. If $\gamma$-matrices are admitted, $\kappa$ can be non-constant, as then Poincar\'{e} invariant quantities besides $s^2(x_1,x_2)$ exist. For example, $\kappa$ could depend on $\gamma_i^\mu (x_1-x_2)_\mu$ for $i=1,2$. 
+where $\kappa$ is an invariant prefactor that may depend on constants such as charges $e_1,e_2$ 
+and $\gamma$-matrices. If we admit $\gamma$-matrices, $\kappa$ may be non-constant, due to the 
+existence of invariant quantities such as $\gamma_i^\mu (x_1-x_2)_\mu$ for $i=1,2$. 
 
-Thus, we arrive at the following class of integral equations:
+Hence, we arrive at the integral equation:
 \begin{align}\label{eq:twopartint}
   \psi&(x_1,x_2) = \psi^\free(x_1,x_2) \\\nonumber
   &+ \int d^4 x_1' \, d^4 x_2' \; G_1(x_1-x_1') G_2(x_2-x_2') \, \kappa \, \delta(s^2(x_1',x_2')) \psi(x_1',x_2').
 \end{align}
-The equation becomes fully specified by the choices of (a) the free multi-time equations \eqref{eq:freemultitime}, (b) the particular Green's functions of these equations, and (c) the prefactor $\kappa$.
-
-\subsubsection{Examples.}
-\begin{enumerate}
-  \item \textit{Dirac particles.} In this case, the Green's functions are commonly denoted by $S^\ret$, $S^\sym$, $S_F$ etc. 
-  In view of time-reversal invariance, the most natural choice is the symmetric Green's function  
-  $S^\sym(x) = \frac{1}{2}( S^\ret(x)+S^\adv(x)$. Also the Feynman propagator $S_F$ is time-symmetric. A natural choice for $\kappa$ turns out to be:
+The equation becomes fully specified by the choices of 
+\begin{itemize}
+\item the particular Green's functions of these equations 
+\item the prefactor $\kappa$.
+\end{itemize}
+\subsubsection{Special Cases}
+\begin{itemize}
+  \item For \emph{Dirac particles} the Green's functions are usually denoted by $S^\ret$, $S^\sym$, $S_F$ etc. 
+  For enforcing manifest time-reversal invariance, the most natural choice is the symmetric Green's function  
+  $S^\sym(x) = \frac{1}{2}( S^\ret(x)+S^\adv(x)$. A natural choice for $\kappa$ turns out to be:
 	\begin{equation}
-		\kappa = i\, \lambda \, \gamma_1^\mu \gamma_{2,\mu},
+		\kappa = i\, \frac{e_1e_2}{4\pi} \gamma_1^\mu \gamma_{2,\mu},
 		\label{eq:naturalkappa}
   \end{equation}
-  where $\lambda$ is a positive constant. Later, we shall see $\lambda = \frac{e_1e_2}{4\pi}$ where $e_1, e_2$ are 
-  the charges of the particles. The factor $i$ is necessary to obtain the correct non-relativistic limit 
+  where \(e_1,e_2>0\) are the charges of the particles. This is mainly motivated by the no-retardation limit done in 
+  \cite[section 3.6]{lienertfirst} resulting in an equation similar to the Breit equation. 
+  The factor $i$ is necessary to obtain the correct non-relativistic limit 
   (see Sec. \cite[3.6]{lienert2018direct}). Then \eqref{eq:twopartint} becomes (we here admit generic Green's functions):
 	\begin{align}\label{eq:twopartintspin}
     &\psi(x_1,x_2) = \psi^\free(x_1,x_2)+i\lambda \! \int \! d^4 x_1' \, d^4 x_2' \, \\\nonumber
@@ -285,7 +327,7 @@ The equation becomes fully specified by the choices of (a) the free multi-time e
   All of the previously established results concern this case. In section \ref{sec:KG lightcones} we present a novel result, 
   incorporating the full singular interaction Kernel \(K=i\kappa\delta(s^2(x_1,x_2))\).
   \noch{check consistency of naming of the constant factors}
-\end{enumerate}
+\end{itemize}
 
 
 \subsection{Previous Results on Directly Interacting Particles}

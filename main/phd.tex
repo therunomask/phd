@@ -179,7 +179,7 @@ afterwards. For the benefit of the unfamiliar reader, we will first follow the h
 \newcommand{\vx}{{\mathbf{x}} }
 \newcommand{\vy}{{\mathbf{y}} }
 
-We now present almost verbatim the heuristic derivation of \cite{lienert2018direct} 
+We now follow the heuristic derivation of \cite{lienert2018direct} 
 for the two-particle equation for a multi-time wave function 
 that expresses direct interaction along light-like configurations proposed in that article. 
 This type of equation will then keep us occupied for the rest of this chapter. 
@@ -301,15 +301,68 @@ of the theorems.
 Let \(T>0\), \(M,N\in\mathbb{N}\), consider 
 the Banach space \(\mathcal{B}=L^\infty ([0,T]^N,L^2(\mathbb{R}^M))\).
 Let \(\mathcal{L}:[0,T]^{2N}\rightarrow L^2(\mathbb{R}^{2M})\) such that 
-\begin{equation}
+\begin{equation*}
 \sup_{t,t'\in[0,T]^{N}}\|\mathcal{L}(t,t')\|^2<\infty,
-\end{equation}
+\end{equation*}
 then for any \(f_0\in\mathcal{B}\) the equation
-\begin{equation}
+\begin{equation*}
 f(t,x)=f_0(t,x)+ \int_0^t dt' \int dx' L(t,t',x,x') f(t',x')
-\end{equation}
+\end{equation*}
 has a unique solution \(f\in\mathcal{B}\).
 \end{Thm}
+
+\begin{Thm}[Thm 3.2 \((d=1)\) of \cite{lienertfirst}]
+Let \(T>0, \lambda\in\mathbb{C}, m_1,m_2\ge 0\), every
+\begin{equation*}
+\psi^\free \in \mathcal{B}_1=L^\infty ([0,T]^2,L^2(\mathbb{R}^2)),
+\end{equation*}
+and every essentially bounded \(K:\mathbb{R}^4\rightarrow \mathbb{C}\), the integral equation 
+\begin{align*}
+\psi(t_1,z_1,t_2,z_2)=\psi^\free(t_1,z_1,t_2,z_2)+\frac{\lambda}{4}\int_0^{t_1}dt_1'\int_0^{t_2}dt_2'\int dz_1'dz_2'\\
+ \times H(t_1-t_1'-|z_1-z_1'|) J_0(m_1\sqrt{(t_1-t_1')^2-|z_1-z_1'|^2})\\
+ \times H(t_2-t_2'-|z_2-z_2'|) J_0(m_2\sqrt{(t_2-t_2')^2-|z_2-z_2'|^2})\\
+  \times K(t_1',z_1',t_2',z_2')\psi(t_1',z_1',t_2',z_2')
+\end{align*}
+has a unique solution \(\psi \in \mathcal{B}_1\).
+\end{Thm}
+
+\begin{Thm}[Thm 3.3 \((d=2)\) of \cite{lienertfirst}]
+Let \(T>0, \lambda\in\mathbb{C}, m_1,m_2\ge 0\), for every essentially bounded \(K:\mathbb{R}^6\rightarrow\mathbb{C}\)
+and every \(\psi^\free \in \mathcal{B}_2=L^\infty([0,T]^2,L^2(\mathbb{R}^4))\) the equation
+\begin{align*}
+&\psi(t_1,\vx_1,t_2,\vx_2)=\psi^\free(t_1,\vx_1,t_2,\vx_2)+\frac{\lambda}{(2\pi)^2}\int_0^{t_1}dt_1'\int_0^{t_2}dt_2'\\
+&\times\int d^2\vx_1'd^2\vx_2' H(t_1-t_1'-|\vx_1-\vx_1'|)\frac{\cos(m_1\sqrt{(t_1-t_1')^2-|\vx_1-\vx_1'|^2})}{\sqrt{(t_1-t_1')^2-|\vx_1-\vx_1'|^2}}\\
+&\quad \times H(t_2-t_2'-|\vx_2-\vx_2'|)\frac{\cos(m_2\sqrt{(t_2-t_2')^2-|\vx_2-\vx_2'|^2})}{\sqrt{(t_2-t_2')^2-|\vx_2-\vx_2'|^2}} \\
+&\quad \quad\quad \quad \times K(t_1',\vx_1',t_2',\vx_2')\psi(t_1',\vx_1',t_2',\vx_2')
+\end{align*}
+has a unique solution \(\psi \in \mathcal{B}_2\).
+\end{Thm}
+
+\begin{Thm}[Thm 3.4 \((d=3)\) of \cite{lienertfirst}]
+Let \(T>0, \lambda\in\mathbb{C}\), for every bounded \(K:\mathbb{R}^8\rightarrow\mathbb{C}\) and every
+\(\psi^\free \in\mathcal{B}_3=L^\infty([0,T]^2,L^2(\mathbb{R}^6))\)
+the equation 
+
+\begin{align*}
+&\psi(t_1,\vx_1,t_2,\vx_2)=\psi^\free(t_1,\vx_1,t_2,\vx_2)+\frac{\lambda}{(4\pi)^2}\int d\vx_1' d\vx_2'\\
+&\times \frac{H(t_1-|\vx_1-\vx_1'|)}{|\vx_1-\vx_1'|}\frac{H(t_2-|\vx_2-\vx_2'|)}{|\vx_2-\vx_2'|}K(t_1-|\vx_1-\vx_1'|,\vx_1',t_2-|\vx_2-\vx_2'|,\vx_2')\\
+&\quad\quad\quad\quad \times\psi(t_1-|\vx_1-\vx_1'|,\vx_1',t_2-|\vx_2-\vx_2'|,\vx_2')
+\end{align*}
+has a unique solution \(\psi\in\mathcal{B}_3\).
+\end{Thm}
+
+\begin{Thm}[Thm 3.5 of \cite{lienertfirst}]
+  Let \(T>0, \lambda\in\mathbb{C}\), for every bounded \(f:\mathbb{R}^8\rightarrow \mathbb{C}\) and every \(\psi^\free \in \mathcal{B}_3\) the equation
+\begin{align*}
+&\psi(t_1,\vx_1,t_2,\vx_2)=\psi^\free(t_1,\vx_1,t_2,\vx_2) + \frac{\lambda}{(4\pi)^2}\int d^3\vx_1'd^3\vx_2'\\
+& \times \frac{H(t_1-|\vx_1-\vx_1'|)}{|\vx_1-\vx_1'|} \frac{H(t_2-|\vx_2-\vx_2'|)}{|\vx_2-\vx_2'|} \frac{f(t_1-|\vx_1-\vx_1'|,\vx_1',t_2-|\vx_2-\vx_2'|,\vx_2')}{|\vx_1'-\vx_1|}\\
+&\quad \quad \quad \times \psi(t_1-|\vx_1-\vx_1'|,\vx_1',t_2-|\vx_2-\vx_2'|,\vx_2'),
+\end{align*}
+has a unique solution \(\psi\in\mathcal{B}_3\).
+\end{Thm}
+
+
+
 
 
 \section{Directly Interacting Dirac Particles}\label{sec:direct dirac}

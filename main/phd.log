@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.22)  22 JAN 2020 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.22)  23 JAN 2020 10:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1380,330 +1380,340 @@ Overfull \hbox (27.74506pt too wide) in paragraph at lines 287--287
 [][][] |
  []
 
-[8] [9] [10
+[8] [9]
+Overfull \hbox (35.24113pt too wide) detected at line 350
+[]|
+ []
+
+
+Overfull \hbox (33.85574pt too wide) detected at line 360
+[]|
+ []
+
+[10] [11] [12
 
 ]
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 322--322
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 375--375
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 322--322
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 375--375
 [][][] |
  []
 
 
-LaTeX Warning: Reference `main_result' on page 11 undefined on input line 324.
+LaTeX Warning: Reference `main_result' on page 13 undefined on input line 377.
 
 
-LaTeX Warning: Reference `sec:well-def' on page 11 undefined on input line 333.
+LaTeX Warning: Reference `sec:well-def' on page 13 undefined on input line 386.
 
 
-LaTeX Warning: Reference `main_result' on page 11 undefined on input line 336.
+LaTeX Warning: Reference `main_result' on page 13 undefined on input line 389.
 
 
-LaTeX Warning: Reference `sec:main result' on page 11 undefined on input line 336.
+LaTeX Warning: Reference `sec:main result' on page 13 undefined on input line 389.
 
 
-LaTeX Warning: Reference `sec: odd orders' on page 11 undefined on input line 337.
+LaTeX Warning: Reference `sec: odd orders' on page 13 undefined on input line 390.
 
 
-LaTeX Warning: Reference `sec: first order' on page 11 undefined on input line 337.
+LaTeX Warning: Reference `sec: first order' on page 13 undefined on input line 390.
 
 
-LaTeX Warning: Reference `sec: second order' on page 11 undefined on input line 337.
+LaTeX Warning: Reference `sec: second order' on page 13 undefined on input line 390.
 
-[11]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 358.
+[13]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 411.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-LaTeX Font Info:    Try loading font information for U+euf on input line 370.
+LaTeX Font Info:    Try loading font information for U+euf on input line 423.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [12] [13] [14]
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 434--434
+) [14] [15] [16]
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 487--487
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 434--434
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 487--487
 [][][] |
  []
 
-[15]
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 468--468
+[17]
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 521--521
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 468--468
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 521--521
 [][][] |
  []
 
-[16]
+[18]
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 518.
+(in both cases you will find help in the memoir manual). on input line 571.
 
 
-Overfull \vbox (14.49998pt too high) has occurred while \output is active []
-
- [17] [18]
 Overfull \vbox (14.49998pt too high) has occurred while \output is active []
 
  [19] [20]
-Overfull \hbox (13.14725pt too wide) in paragraph at lines 619--621
+Overfull \vbox (14.49998pt too high) has occurred while \output is active []
+
+ [21] [22]
+Overfull \hbox (13.14725pt too wide) in paragraph at lines 672--674
 \T1/cmr/m/it/12 where the sum con-verges in the strong op-er-a-tor topol-ogy and $\U/matha/m/n/12 p\OML/cmm/m/it/12 '[]\U/matha/m/n/12 q[]\OML/cmm/m/it/12 ; \U/matha/m/n/12 p\OML/cmm/m/it/12 '[]\U/matha/m/n/12 q[]$|
  []
 
-[21] [22] [23]
-Overfull \hbox (15.6602pt too wide) in paragraph at lines 703--709
+[23] [24] [25]
+Overfull \hbox (15.6602pt too wide) in paragraph at lines 756--762
 \OML/cmm/m/it/12 b \U/matha/m/n/12 ^^X \OML/cmm/m/it/12 b[]$ \T1/cmr/m/n/12 the scalar prod-uct is, up to a sign, equal to $\U/matha/m/n/12 x\OML/cmm/m/it/12 B[][]; []\U/matha/m/n/12 yx[]\OML/cmm/m/it/12 ; B[][]\U/matha/m/n/12 y$\T1/cmr/m/n/12 .|
  []
 
-[24] [25] [26] [27]
-Overfull \hbox (4.94772pt too wide) detected at line 826
+[26] [27] [28] [29]
+Overfull \hbox (4.94772pt too wide) detected at line 879
 []|
  []
 
-[28]
-LaTeX Font Info:    Try loading font information for U+eus on input line 840.
+[30]
+LaTeX Font Info:    Try loading font information for U+eus on input line 893.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
-Overfull \hbox (19.81529pt too wide) in paragraph at lines 854--856
+Overfull \hbox (19.81529pt too wide) in paragraph at lines 907--909
 []\T1/cmr/m/n/12 By def-i-ni-tion of $\OMS/cmsy/m/n/12 F[]$ \T1/cmr/m/n/12 there are $\OML/cmm/m/it/12 m; p \U/matha/m/n/12 P \U/msb/m/n/12 N$ \T1/cmr/m/n/12 such that $\OML/cmm/m/it/12  \U/matha/m/n/12 P [][] [][] \OMS/cmsy/m/n/12 F[]$\T1/cmr/m/n/12 .|
  []
 
-[29] [30] [31] [32] [33] [34]
+[31] [32] [33] [34] [35] [36]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1022.
+(hyperref)                removing `math shift' on input line 1075.
 
-[35] [36] [37]
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1083--1083
+[37] [38] [39]
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1136--1136
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1083--1083
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1136--1136
 [][][] |
  []
 
 
-LaTeX Warning: Reference `G commutator' on page 38 undefined on input line 1120.
+LaTeX Warning: Reference `G commutator' on page 40 undefined on input line 1173.
 
 
-LaTeX Warning: Reference `G commutator' on page 38 undefined on input line 1120.
+LaTeX Warning: Reference `G commutator' on page 40 undefined on input line 1173.
 
-[38] [39]
-Overfull \hbox (32.10994pt too wide) detected at line 1155
+[40] [41]
+Overfull \hbox (32.10994pt too wide) detected at line 1208
  []$[] [] []$ |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1171--1171
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1224--1224
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1171--1171
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1224--1224
 [][][] |
  []
 
-[40]
-Overfull \hbox (5.80243pt too wide) detected at line 1189
+[42]
+Overfull \hbox (5.80243pt too wide) detected at line 1242
 []|
  []
 
 
-Overfull \hbox (10.1031pt too wide) detected at line 1196
+Overfull \hbox (10.1031pt too wide) detected at line 1249
  []$[]  \U/matha/m/n/12 B[]|[]\OML/cmm/m/it/12 e[] \U/matha/m/n/12 ^^P \OML/cmm/m/it/12 e[] [][] dz [] []\U/matha/m/n/12 B[]|[] []$ |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1199--1199
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1252--1252
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1199--1199
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1252--1252
 [][][] |
  []
 
-[41pdfTeX warning (ext4): destination with the same identifier (name{equation.3.4.107}) has been already used, duplicate ignored
+[43pdfTeX warning (ext4): destination with the same identifier (name{equation.3.4.107}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1207 \end{multline}
+l.1260 \end{multline}
                      pdfTeX warning (ext4): destination with the same identifier (name{equation.3.4.107}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1207 \end{multline}
+l.1260 \end{multline}
                      ]
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1211--1211
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1264--1264
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1211--1211
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1264--1264
 [][][] |
  []
 
 
 Underfull \vbox (badness 4899) has occurred while \output is active []
 
- [42] [43]
-Overfull \hbox (38.3411pt too wide) detected at line 1268
+ [44] [45]
+Overfull \hbox (38.3411pt too wide) detected at line 1321
  []$[] [] \OML/cmm/m/it/12 i\U/matha/m/n/12 B[] [][]$ |
  []
 
 
 Underfull \vbox (badness 6157) has occurred while \output is active []
 
- [44] [45]
-Overfull \hbox (52.5286pt too wide) detected at line 1321
+ [46] [47]
+Overfull \hbox (52.5286pt too wide) detected at line 1374
 []|
  []
 
 
-Overfull \hbox (13.82231pt too wide) in paragraph at lines 1323--1325
+Overfull \hbox (13.82231pt too wide) in paragraph at lines 1376--1378
 []\T1/cmr/m/n/12 Now there are a few fur-ther sim-pli-fi-ca-tions to ap-pre-ci-ate: since $\U/matha/m/n/12 x\OT1/cmr/m/n/12 
 \OML/cmm/m/it/12 ; G\OT1/cmr/m/n/12 
 \U/matha/m/n/12 y ^^P|
  []
 
-[46]
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1353--1353
+[48]
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1406--1406
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1353--1353
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1406--1406
 [][][] |
  []
 
-[47] [48]
+[49] [50]
 Underfull \vbox (badness 1215) has occurred while \output is active []
 
- [49] [50] [51]
+ [51] [52] [53]
 Underfull \vbox (badness 4713) has occurred while \output is active []
 
- [52] [53] [54] [55] [56] [57]
-Overfull \hbox (13.87834pt too wide) detected at line 1633
+ [54] [55] [56] [57] [58] [59]
+Overfull \hbox (13.87834pt too wide) detected at line 1686
 []|
  []
 
-[58] [59] [60] [61] [62]
-Overfull \hbox (15.86958pt too wide) detected at line 1747
+[60] [61] [62] [63] [64]
+Overfull \hbox (15.86958pt too wide) detected at line 1800
 []|
  []
 
-[63] [64] [65] [66
+[65] [66] [67] [68
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1775.
+(hyperref)                removing `math shift' on input line 1828.
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1793--1793
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1846--1846
 [][][] |
  []
 
 
-Overfull \hbox (27.74506pt too wide) in paragraph at lines 1793--1793
+Overfull \hbox (27.74506pt too wide) in paragraph at lines 1846--1846
 [][][] |
  []
 
-[67
+[69
 
 ]
 
-LaTeX Warning: Reference `G commutator' on page 68 undefined on input line 1803.
+LaTeX Warning: Reference `G commutator' on page 70 undefined on input line 1856.
 
 
-Overfull \hbox (9.59323pt too wide) in paragraph at lines 1802--1809
+Overfull \hbox (9.59323pt too wide) in paragraph at lines 1855--1862
 \T1/cmr/m/n/12 a com-mu-ta-tion re-la-tion of the form [], we cal-cu-late $[]$|
  []
 
-[68]
+[70]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [69]
-Overfull \hbox (24.99347pt too wide) in paragraph at lines 1876--1878
+ [71]
+Overfull \hbox (24.99347pt too wide) in paragraph at lines 1929--1931
 \T1/cmr/m/n/12 where the last fac-tor is the multi-no-mial co-ef-fi-cient of the in-dices $\OML/cmm/m/it/12 []; [] ; [] \U/matha/m/n/12 P|
  []
 
-[70] [71]
-Overfull \hbox (8.54222pt too wide) detected at line 1943
+[72] [73]
+Overfull \hbox (8.54222pt too wide) detected at line 1996
 [] [][]|
  []
 
 
 Underfull \vbox (badness 3482) has occurred while \output is active []
 
- [72] [73] [74] [75]
-Overfull \hbox (3.00203pt too wide) in paragraph at lines 2083--2086
+ [74] [75] [76] [77]
+Overfull \hbox (3.00203pt too wide) in paragraph at lines 2136--2139
 [] \OML/cmm/m/it/12 T$\T1/cmr/m/n/12 . So re-turn-ing to our Op-er-a-tors, we found the num-ber $\OT1/cmr/m/n/12 #\OML/cmm/m/it/12 K\U/matha/m/n/12 p\OML/cmm/m/it/12 m[]; m[]\U/matha/m/n/12 q$|
  []
 
 
-Overfull \hbox (20.85677pt too wide) detected at line 2089
+Overfull \hbox (20.85677pt too wide) detected at line 2142
 []\OT1/cmr/m/n/12 #\OML/cmm/m/it/12 K\U/matha/m/n/12 p\OML/cmm/m/it/12 m[]; m[]\U/matha/m/n/12 q ^^P ^^A [] [][]\OML/cmm/m/it/12 ;|
  []
 
-[76] [77]pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.164}) has been already used, duplicate ignored
+[78] [79]pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.164}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2144 \begin{equation}
+l.2197 \begin{equation}
                        pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.164}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2144 \begin{equation}
+l.2197 \begin{equation}
                        pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.164}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2144 \begin{equation}
+l.2197 \begin{equation}
                        pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.164}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2144 \begin{equation}
-                        [78] [79] [80]
-Overfull \hbox (11.78394pt too wide) detected at line 2225
+l.2197 \begin{equation}
+                        [80] [81] [82]
+Overfull \hbox (11.78394pt too wide) detected at line 2278
  []$[] \U/matha/m/n/12 ^^@ p^^A\OT1/cmr/m/n/12 1\U/matha/m/n/12 q[] [] [] []\OML/cmm/m/it/12 F\U/matha/m/n/12 p\OML/cmm/m/it/12 g \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 d \U/matha/m/n/12 ^^A \OT1/cmr/m/n/12 1 \U/matha/m/n/12 ^^A \OML/cmm/m/it/12 n; k\U/matha/m/n/12 q$ |
  []
 
-[81] [82] [83]pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.174}) has been already used, duplicate ignored
+[83] [84] [85]pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.174}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2287 \begin{equation}
+l.2340 \begin{equation}
                        \label{recursive solution}pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.174}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2287 \begin{equation}
+l.2340 \begin{equation}
                        \label{recursive solution}pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.174}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2287 \begin{equation}
+l.2340 \begin{equation}
                        \label{recursive solution}pdfTeX warning (ext4): destination with the same identifier (name{equation.Alph0.0.174}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2287 \begin{equation}
+l.2340 \begin{equation}
                        \label{recursive solution}
 Underfull \vbox (badness 2680) has occurred while \output is active []
 
- [84]
+ [86]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [85] [86] [87]
+ [87] [88] [89]
 Underfull \vbox (badness 2689) has occurred while \output is active []
 
- [88] (/Users/noeth/Documents/uni/qed/tex-files/main/phd.bbl [89] [90
+ [90] (/Users/noeth/Documents/uni/qed/tex-files/main/phd.bbl [91] [92
 
 ]
 bibitemlist
@@ -1712,45 +1722,45 @@ Underfull \hbox (badness 1117) in paragraph at lines 25--28
 []\T1/cmr/m/n/12 Ronald L Gra-ham, Don-ald E Knuth, and Oren Patash-nik,
  []
 
-[91]) [92]
+[93]) [94]
 
 Class memoir Warning: The material used in the headers is too large
 (28.99998pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 2489.
+(in both cases you will find help in the memoir manual). on input line 2542.
 
-[93
+[95
 
 ]
 \tf@toc=\write6
 \openout6 = `phd.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2489.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2489.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2542.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2542.
  (/Users/noeth/Documents/uni/qed/tex-files/main/phd.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2489.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2489.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2542.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2542.
 Package rerunfilecheck Info: File `phd.out' has not changed.
 (rerunfilecheck)             Checksum: 9A000171B1E0063B30AF2CA0A14AB548;3327.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2489.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2542.
  ) 
 Here is how much of TeX's memory you used:
- 25277 strings out of 492985
- 428879 string characters out of 6132585
- 535039 words of memory out of 5000000
+ 25281 strings out of 492985
+ 428899 string characters out of 6132585
+ 535041 words of memory out of 5000000
  28014 multiletter control sequences out of 15000+600000
  44196 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,22n,104p,869b,1022s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} </Users/noeth/Library/texlive/2017/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/mathabx-type1/mathb6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti0600.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on /Users/noeth/Documents/uni/qed/tex-files/main/phd.pdf (97 pages, 777468 bytes).
+Output written on /Users/noeth/Documents/uni/qed/tex-files/main/phd.pdf (99 pages, 782262 bytes).
 PDF statistics:
- 1498 PDF objects out of 1728 (max. 8388607)
- 1087 compressed objects within 11 object streams
- 398 named destinations out of 1000 (max. 500000)
+ 1512 PDF objects out of 1728 (max. 8388607)
+ 1099 compressed objects within 11 object streams
+ 402 named destinations out of 1000 (max. 500000)
  237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

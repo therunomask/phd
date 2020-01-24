@@ -176,32 +176,37 @@ afterwards. For the benefit of the unfamiliar reader, we will first follow the h
 \newcommand{\ret}{{\textup ret}}
 \newcommand{\adv}{{\textup adv}}
 \newcommand{\sym}{{\textup sym}}
-\newcommand{\vx}{{\mathbf{x}} }
-\newcommand{\vy}{{\mathbf{y}} }
+\newcommand{\vx}{{\vec{x}} }
+\newcommand{\vy}{{\vec{y}} }
 
 We now follow the heuristic derivation of \cite{lienert2018direct} 
 for an equation for a multi-time wave function for two particles  
 that expresses direct interaction along light-like configurations. 
 This type of equation will then keep us occupied for the rest of this chapter. 
-We begin by reformulating the Schr{\"o}dinger equation for one particle as an integral equation. 
-Extending this equation to two particles and imposing Poincar\'{e} invariance naturally leads us to an 
-integral equation for a multi-time wave function.
+The derivatin is organised as follows: We start out reformulating Diracs equation
+for a single particle 
+as an integral equation. The reformulated version is then extended to  two particles
+in an Poincaré invariant manner. Extending the equation is conveniently done in 
+the framework of multi-time wavefunctions.
 
-Consider the one particle  Schr{\"o}dinger equation for the wave function $\varphi(t,\vx)$:
+
+Diracs equation for one particle subject to a potential \(V\) takes the form
 \begin{equation}
-	i \partial_t \varphi(t,\vx) = \big( H^\free + V(t,\vx) \big) \varphi(t,\vx),
+	i \partial_t \phi(t,\vx) = \big( H^\free + V(t,\vx) \big) \phi(t,\vx),
 	\label{eq:singlepartschroed}
 \end{equation}
-where $H^\free$ denotes the non interacting Hamiltonian of the Schrödinger equation.\\
-We denote by $G^\ret(t,\vx)$ the retarded Green's function of the non interacting equation, i.e.
+here \(\phi\) denotes the wavefunction in question, \(\vx\in\mathbb{R}^3, t\in\mathbb{R}\)
+and \(H^\free\) is the Hamiltonian associated with a free Dirac particle.
+We denote by \(G^\ret\) the retarded Green's function of the non interacting Dirac equation,
+that is \(G^\ret\) satisfies
+\begin{align}\label{eq:schroedgreensfn}
+  \big( i \partial_t - H^\free \big) G^\ret = \delta^4,\\
+  G^\ret(t,\vx) = 0 \quad \text{for} t< t_0.
+\end{align}
+Then inverting the differential operator \(i\partial_t -H^\free\) in  \eqref{eq:singlepartschroed}
+results in 
 \begin{equation}
-	\big( i \partial_t - H^\free \big) G^\ret(t,\vx) = \delta(t) \delta^{(3)}(\vx)
-	\label{eq:schroedgreensfn}
-\end{equation}
-with $G^\ret(t,\vx) = 0$ for $t< t_0$.
-Then the initial value problem induced by \eqref{eq:singlepartschroed} for $t\geq t_0$ with $\varphi(t_0,\vx) = \varphi_0(\vx)$ is equivalent to the integral equation (see \cite{feynman1949theory})
-\begin{equation}
-	\varphi(t,\vx) = \varphi^\free(t,\vx) + \int_{t_0}^\infty \! dt' \int d^3 \vx' \, G^\ret(t-t',\vx-\vx') V(t',\vx') \varphi(t',\vx'),
+	\phi(t,\vx) = \phi^\free(t,\vx) + \int_{t_0}^\infty \! dt' \int d^3 \vx' \, G^\ret(t-t',\vx-\vx') V(t',\vx') \phi(t',\vx').
 	\label{eq:singlepartint}
 \end{equation}
 where $\varphi^\free(t,\vx) = [e^{-i H^\free (t-t_0)} \varphi_0](\vx)$ 
@@ -312,18 +317,17 @@ The equation becomes fully specified by the choices of
   \end{equation}
   where \(e_1,e_2>0\) are the charges of the particles. This is mainly motivated by the no-retardation limit done in 
   \cite[section 3.6]{lienertfirst} resulting in an equation similar to the Breit equation. 
-  The factor $i$ is necessary to obtain the correct non-relativistic limit 
-  (see Sec. \cite[3.6]{lienert2018direct}). Then \eqref{eq:twopartint} becomes (we here admit generic Green's functions):
+  Then equation \eqref{eq:twopartint} becomes:
 	\begin{align}\label{eq:twopartintspin}
     &\psi(x_1,x_2) = \psi^\free(x_1,x_2)+i\lambda \! \int \! d^4 x_1' \, d^4 x_2' \, \\\nonumber
     & \times S_1(x_1-x_1') S_2(x_2-x_2') \gamma_1^\mu \gamma_{2,\mu} \delta(s^2(x_1',x_2')) \psi(x_1',x_2').
   \end{align}
   Section \ref{sec:direct dirac} will be about first results concerning Dirac particles.
 	%
-  \item \textit{KG particles.} Even though we have motivated \eqref{eq:twopartint} for cases where the 
-  free multi-time equations are of first order, it is possible to consider \eqref{eq:twopartint} also for the case 
-  that free multi-time equations are KG equations (which are of second order). In this case, 
-  $\kappa \in \mathbb{R}$ and one uses the Green's functions of the KG equation instead of $G_1,G_2$ .
+  \item \textit{KG particles.} Although \eqref{eq:twopartint} was motivated for cases where the 
+  free multi-time equations are of first order, it is possible to consider \eqref{eq:twopartint} also for 
+  KG particles. In this case, 
+  $\kappa \in \mathbb{R}$ and $G_1,G_2$ are replaced by Green's function of the KG equation.
   All of the previously established results concern this case. In section \ref{sec:KG lightcones} we present a novel result, 
   incorporating the full singular interaction Kernel \(K=i\kappa\delta(s^2(x_1,x_2))\).
   \noch{check consistency of naming of the constant factors}

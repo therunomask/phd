@@ -3,20 +3,19 @@
 \contentsline {chapter}{\chapternumberline {2}Direct Interaction in Relativistic Quantum Mechanics}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Overview}{4}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Derivation}{4}{subsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.1.1}Special Cases}{7}{subsubsection.2.1.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Previous Results on Directly Interacting Particles}{8}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Directly Interacting Dirac Particles}{11}{section.2.2}
-\contentsline {section}{\numberline {2.3}KG-Particles Interacting Directly Along Lightcones}{11}{section.2.3}
-\contentsline {chapter}{\chapternumberline {3}Quantum Field Theoretic Approach to Interactions}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Defining One-Particle Scattering-Matrix}{14}{section.3.1}
-\contentsline {section}{\numberline {3.2}Construction of the Second Quantised Scattering-Matrix}{18}{section.3.2}
-\contentsline {section}{\numberline {3.3}Differential second quantisation}{22}{section.3.3}
-\contentsline {section}{\numberline {3.4}A Simple Formula for the \(S\)-Matrix}{37}{section.3.4}
-\contentsline {section}{\numberline {3.5}Quantitative Estimates}{49}{section.3.5}
-\contentsline {chapter}{Appendix}{69}{appendix*.19}
-\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{69}{section*.20}
-\contentsline {subsection}{Guessing Equations}{69}{section*.21}
-\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{72}{section*.23}
-\contentsline {subsection}{Solution to Recursive Equation}{80}{section*.25}
-\contentsline {chapter}{Bibliography}{93}{section*.28}
-\contentsline {chapter}{Cooperating Researchers}{95}{appendix*.29}
+\contentsline {subsection}{\numberline {2.1.2}Previous Results on Directly Interacting Particles}{7}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Directly Interacting Dirac Particles}{8}{section.2.2}
+\contentsline {section}{\numberline {2.3}KG-Particles Interacting Directly Along Lightcones}{8}{section.2.3}
+\contentsline {chapter}{\chapternumberline {3}Quantum Field Theoretic Approach to Interactions}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Defining One-Particle Scattering-Matrix}{10}{section.3.1}
+\contentsline {section}{\numberline {3.2}Construction of the Second Quantised Scattering-Matrix}{14}{section.3.2}
+\contentsline {section}{\numberline {3.3}Differential second quantisation}{18}{section.3.3}
+\contentsline {section}{\numberline {3.4}A Simple Formula for the \(S\)-Matrix}{33}{section.3.4}
+\contentsline {section}{\numberline {3.5}Quantitative Estimates}{45}{section.3.5}
+\contentsline {chapter}{Appendix}{65}{appendix*.18}
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{65}{section*.19}
+\contentsline {subsection}{Guessing Equations}{65}{section*.20}
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{68}{section*.22}
+\contentsline {subsection}{Solution to Recursive Equation}{76}{section*.24}
+\contentsline {chapter}{Bibliography}{89}{section*.27}
+\contentsline {chapter}{Cooperating Researchers}{91}{appendix*.28}

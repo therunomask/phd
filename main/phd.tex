@@ -197,192 +197,167 @@ Diracs equation for one particle subject to a potential \(V\) takes the form
 \end{equation}
 here \(\phi\) denotes the wavefunction in question, \(\vx\in\mathbb{R}^3, t\in\mathbb{R}\)
 and \(H^\free\) is the Hamiltonian associated with a free Dirac particle.
-We denote by \(G^\ret\) the retarded Green's function of the non interacting Dirac equation,
-that is \(G^\ret\) satisfies
+We denote by \(S^\ret\) the retarded Green's function of the non interacting Dirac equation,
+that is \(S^\ret\) satisfies
 \begin{align}\label{eq:schroedgreensfn}
-  \big( i \partial_t - H^\free \big) G^\ret = \delta^4,\\
-  G^\ret(t,\vx) = 0 \quad \text{for} t< t_0.
+  \big( i \partial_t - H^\free \big) S^\ret &= \delta^4,\\
+  S^\ret(t,\vx) &= 0 \quad \text{for }\, t< t_0.
 \end{align}
 Then inverting the differential operator \(i\partial_t -H^\free\) in  \eqref{eq:singlepartschroed}
 results in 
 \begin{equation}
-	\phi(t,\vx) = \phi^\free(t,\vx) + \int_{t_0}^\infty \! dt' \int d^3 \vx' \, G^\ret(t-t',\vx-\vx') V(t',\vx') \phi(t',\vx').
+	\phi(t,\vx) = \phi^\free(t,\vx) + \int_{t_0}^\infty \! dt' \int d^3 \vx' \, S^\ret(t-t',\vx-\vx') V(t',\vx') \phi(t',\vx'),
 	\label{eq:singlepartint}
 \end{equation}
-where $\varphi^\free(t,\vx) = [e^{-i H^\free (t-t_0)} \varphi_0](\vx)$ 
-is the solution of the non interacting equation. The domain of integration of the time integral 
-in \eqref{eq:singlepartint} effectively bounded by $t$ because of the 
-support properties of \(G^\ret\). On the one hand one can easily verify that a solution of 
-\eqref{eq:singlepartint} also satisfies \eqref{eq:singlepartschroed}. It follows directly by acting with 
-$(i \partial_t - H^\free)$ on both sides of \eqref{eq:singlepartint} and the Green's 
-function property \eqref{eq:schroedgreensfn}. The initial conditions are satisfied due to the integral 
-vanishing at \(t=t0\) and $\varphi(t_0,\vx) = \varphi^\free(t_0,\vx) = \varphi_0(\vx)$. On the other hand
-we obtain \eqref{eq:singlepartint} from \eqref{eq:singlepartschroed} by convolving both sides of 
-\eqref{eq:singlepartschroed} with \(G^\ret \).
-Note that the reformulation is exact (non-perturbative).
+where $\phi^\free$ 
+is the solution of the non interacting equation subject to the 
+initial condition \(\phi^\free(t_0)=\phi_0\). 
+Equations \eqref{eq:singlepartint} and \eqref{eq:singlepartschroed} subject to 
+\(\phi(t_0)=\phi_0\) yield equivalent 
+descriptions, as can be verified directly: An action of \(i\partial_t -H^\free\) on 
+\eqref{eq:singlepartint} shows that a solution thereof also solves \eqref{eq:singlepartschroed}.
+Also the initial condition is fulfilled, as the integral term vanishes for \(t=t_0\).
+Conversely equation \eqref{eq:singlepartschroed} can be considered a free Dirac equation 
+involving an inhomogeneous term of the form \(V \phi\), whose solutions are known to be
+of the form \eqref{eq:singlepartint}.
+Executing the analogous procedure for the two particle Dirac equation
 
-For two non-relativistic particles, the analogous procedure can be carried out.
-The initial value problem for \(\varphi(t_0,\vx_1,\vx_2)=\varphi_0(\vx_1,\vx_2)\)
-and the equation
 \begin{equation}
-	i \partial_t \varphi(t,\vx_1,\vx_2) = \big(H_1^\free + H_2^\free + V(t,\vx_1,\vx_2)\big) \varphi(t,\vx_1,\vx_2)
+	i \partial_t \phi(t,\vx_1,\vx_2) = \big(H_1^\free + H_2^\free + V(t,\vx_1,\vx_2)\big) \phi(t,\vx_1,\vx_2),
 	\label{eq:twopartschroed}
 \end{equation}
-is equivalent to the integral equation
+subject to the initial condition  \(\phi(t_0)=\phi_0\), 
+results in the integral equation
 \begin{align}
-	\varphi(t,\vx_1,\vx_2) = \varphi^\free&(t,\vx_1,\vx_2) + \int_{t_0}^\infty \! dt' \! \int d^3 \vx_1'\,  d^3 \vx_2'\, G_1^\ret(t-t',\vx_1-\vx_1') \nonumber\\
-	\times&G_2^\ret(t-t',\vx_2-\vx_2') V(t',\vx_1',\vx_2') \varphi(t',\vx_1',\vx_2'),
+	\phi(t,\vx_1,\vx_2) = \phi^\free&(t,\vx_1,\vx_2) + \int_{t_0}^\infty \! dt' \! \int d^3 \vx_1'\,  d^3 \vx_2'\, S_1^\ret(t-t',\vx_1-\vx_1') \nonumber\\
+	\times&S_2^\ret(t-t',\vx_2-\vx_2') V(t',\vx_1',\vx_2') \phi(t',\vx_1',\vx_2'),
 	\label{eq:twopartschroedint}
 \end{align}
 where 
-$\varphi^\free(t,\vx_1,\vx_2) = \left(e^{-i(H_1^\free + H_2^\free)(t-t_0)}\varphi_0\right)(\vx_1,\vx_2)$
-and $G_k^\ret(t,\vx_k)$ are the retarded Green's functions of the operators $(i\partial_t - H_k^\free)$. 
-Note that the synchronized product $G_1^\ret(t,\vx_1) G_2^\ret(t,\vx_2)$ is the retarded Green's function 
-of the operator $(i\partial_t - H_1^\free - H_2^\free)$.
+$\phi^\free(t)$ is a solution to the free Dirac equation for two particles subject
+to \(\phi^\free (t_0)=\phi_0\) and \(S_k^\ret\) is the retarded Green's function
+of the free Dirac equation of particle number \(k\). Here it is crucial to notice that
+The Green's function of the free two particle Dirac equation factorises into a product 
+of two Green's functions of the Dirac equation for one particle.
 
-Equation \eqref{eq:twopartschroedint} is an adequate equation for non-relativistic quantum physics; however,
-as it employs just a single temporal coordinate, it is clearly not Lorentz invariant. We shall therefore 
-reconsider the step leading from the one particle to the two particle integral equation.\\
-As we would like to find a manifestly Poincar\'{e} invariant equation, let us rewrite the 
-single-particle integral equation \eqref{eq:singlepartint} in terms of spacetime variables:
+Since equation \eqref{eq:twopartschroedint} contains only one temporal variable, but six spatial ones,
+it is not obvious how it might be considered a relativistic equation at all. So we will 
+the step from one to two particles, but before we do so let us first rewrite equation 
+\eqref{eq:singlepartint} in a more suggestive way:
 \begin{equation}
-	\psi(x) = \psi^\free(x) + \int d^4 x' \, G^\ret(x-x') V(x') \psi(x'),
+	\psi(x) = \psi^\free(x) + \int d^4 x' \, S^\ret(x-x') V(x') \psi(x'),
 	\label{eq:singlepartintspacetime}
 \end{equation}
-where we wrote $\psi$ instead of $\varphi$ to denote the shift to a relativistic notation. 
-In order to form a Poincar\'{e} invariant domain of integration, we replace the initial 
-time $t_0$ to $-\infty$. The limits of the time integration as well as the choice of the 
-Green's function are decided by the choice of initial value problem. Solving the integral
-equation implies solving Schr{\"o}dinger's equation irrespective of these choices.
+where non bold letters denote elements of Minkowski spacetime and we replaced \(\phi\)
+by \(\psi\) in order to make a visible switch to relativistic notation. 
+Furthermore we replaced the lower bound in the temporal integral domain by \(-\infty\)
+in order to render the total domain of integral Poincaré invariant.
 
-Now \eqref{eq:singlepartintspacetime} immediately suggests a generalization to a two 
-particle equation in terms of a multi-time wave function:
+Equation \eqref{eq:singlepartintspacetime} immediately inspres us to write down the
+following generalisation
 \begin{align}\label{eq:twopartintgeneral}
   \psi(x_1,x_2) = &\psi^\free(x_1,x_2) \\\nonumber
-  &+ \int d^4 x_1'\, d^4 x_2' \, G_1(x_1-x_1') G_2(x_2-x_2') K(x_1',x_2') \psi(x_1',x_2').
+  &+ \int d^4 x_1'\, d^4 x_2' \, S^\ret_1(x_1-x_1') S^\ret_2(x_2-x_2') K(x_1',x_2') \psi(x_1',x_2').
 \end{align}
-Here, domain of integration is $\mathbb{R}^4 \times \mathbb{R}^4$ and $\psi^\free$ is a 
-given solution of the free multi-time equations. These are assumed to be
-of the form
-\begin{equation}
-	D_k  \psi^\free(x_1,x_2) = 0,~~k=1,2,
+we integrate over all of \(\mathbb{R}^8\) and \(\psi^\free\) a solution of the free 
+Dirac equation both in \(x_1\) and \(x_2\) and their respective spinor indices:
+\begin{align}
+  D_1  \psi^\free(x_1,x_2) = 0,\\
+  D_2  \psi^\free(x_1,x_2) = 0,
 	\label{eq:freemultitime}
-\end{equation}
-where $D_k$ is the Dirac operator $D_k = ( -i \gamma_k^\mu \partial_{k,\mu} + m_k)$.
-Lastly, $G_k(x_k)$ is a Green's function of the $k$-th non interacting equation,
+\end{align}
+For the object \(K\), called the ''interaction kernel``, the optimal choice is not yet known.
+However, for \eqref{eq:twopartintgeneral} to be Poincaré invariant, it should be invariant
+itself. A simple way to ensure this is to let it only depend directly 
+the squared Minkowski distance \((x_1-x_2)^2\). A choice that shows some resemblence of 
+Wheeler-Feynman electrodynamics is
 \begin{equation}
-	D_k G_k(x_k) = \delta^{(4)}(x_k).
-\end{equation}
-In the following, we denote by $G$ a generic Green's functions of some covariant operator. 
-More concrete examples will be indicated by introducing new symbols or indices.
-Now we also allow for choices of Green's functions other than the retarded ones such as 
-advanced, time-symmetric and Feynman Green's functions. Note that the equation 
-\eqref{eq:twopartintgeneral} is only manifestly time reversal invariant if the Green's 
-functions are.
-
-The object $K(x_1,x_2)$ has not yet been specified, we will call it
-\textit{interaction kernel}. It deserves this name as it occurs in 
-\eqref{eq:twopartintgeneral} exactly where the interaction potential occurs in 
-\eqref{eq:twopartschroedint}. As we would like a Poincar\'{e} invariant equation, $K$ 
-must be a Poincar\'{e} invariant function of $x_1,x_2$ and the corresponding spinor indices. 
-The most natural possibility is that $K$ depends only directly on the Minkowski scaler 
-$s^2(x_1,x_2) = (x_1-x_2)^\mu (x_1-x_2)_\mu$. Inspired by Wheeler-Feynman electrodynamics, we
-impose that interaction happens exactly at light-like separation and are thus led to
-\begin{equation}
-	K(x_1,x_2) = \kappa \; \delta(s^2(x_1,x_2)),
+	K(x_1,x_2) = i\, \frac{e_1e_2}{4\pi} \gamma_1^\mu \gamma_{2,\mu} \; \delta((x_1-x_2)^2).
 	\label{eq:twopartkernel}
 \end{equation}
-where $\kappa$ is an invariant prefactor that may depend on constants such as charges $e_1,e_2$ 
-and $\gamma$-matrices. If we admit $\gamma$-matrices, $\kappa$ may be non-constant, due to the 
-existence of invariant quantities such as $\gamma_i^\mu (x_1-x_2)_\mu$ for $i=1,2$. 
+In an equation incorporating \eqref{eq:twopartkernel} the interaction between the particles 
+happens along light-like distances. The constant in front of \eqref{eq:twopartkernel}
+is fixed by the non-relativistic limit, recovering an equation very much like the Breit equation,
+see \cite[section 3.6]{lienertfirst}.
 
-Hence, we arrive at the integral equation:
+Summarising this results in the equation
 \begin{align}\label{eq:twopartint}
-  \psi&(x_1,x_2) = \psi^\free(x_1,x_2) \\\nonumber
-  &+ \int d^4 x_1' \, d^4 x_2' \; G_1(x_1-x_1') G_2(x_2-x_2') \, \kappa \, \delta(s^2(x_1',x_2')) \psi(x_1',x_2').
+  \psi&(x_1,x_2) = \psi^\free(x_1,x_2)+i\, \frac{e_1e_2}{4\pi} \int d^4 x_1' \, d^4 x_2' \\\nonumber
+  & \times S^\ret_1(x_1-x_1') S^\ret_2(x_2-x_2') \, \gamma_1^\mu \gamma_{2,\mu}\delta((x_1'-x_2')^2) \psi(x_1',x_2').
 \end{align}
-The equation becomes fully specified by the choices of 
-\begin{itemize}
-\item the particular Green's functions of these equations 
-\item the prefactor $\kappa$.
-\end{itemize}
-\subsubsection{Special Cases}
-\begin{itemize}
-  \item For \emph{Dirac particles} the Green's functions are usually denoted by $S^\ret$, $S^\sym$, $S_F$ etc. 
-  For enforcing manifest time-reversal invariance, the most natural choice is the symmetric Green's function  
-  $S^\sym(x) = \frac{1}{2}( S^\ret(x)+S^\adv(x)$. A natural choice for $\kappa$ turns out to be:
-	\begin{equation}
-		\kappa = i\, \frac{e_1e_2}{4\pi} \gamma_1^\mu \gamma_{2,\mu},
-		\label{eq:naturalkappa}
-  \end{equation}
-  where \(e_1,e_2>0\) are the charges of the particles. This is mainly motivated by the no-retardation limit done in 
-  \cite[section 3.6]{lienertfirst} resulting in an equation similar to the Breit equation. 
-  Then equation \eqref{eq:twopartint} becomes:
-	\begin{align}\label{eq:twopartintspin}
-    &\psi(x_1,x_2) = \psi^\free(x_1,x_2)+i\lambda \! \int \! d^4 x_1' \, d^4 x_2' \, \\\nonumber
-    & \times S_1(x_1-x_1') S_2(x_2-x_2') \gamma_1^\mu \gamma_{2,\mu} \delta(s^2(x_1',x_2')) \psi(x_1',x_2').
-  \end{align}
-  Section \ref{sec:direct dirac} will be about first results concerning Dirac particles.
-	%
-  \item \textit{KG particles.} Although \eqref{eq:twopartint} was motivated for cases where the 
-  free multi-time equations are of first order, it is possible to consider \eqref{eq:twopartint} also for 
-  KG particles. In this case, 
-  $\kappa \in \mathbb{R}$ and $G_1,G_2$ are replaced by Green's function of the KG equation.
-  All of the previously established results concern this case. In section \ref{sec:KG lightcones} we present a novel result, 
-  incorporating the full singular interaction Kernel \(K=i\kappa\delta(s^2(x_1,x_2))\).
-  \noch{check consistency of naming of the constant factors}
-\end{itemize}
+
+
+Despite the fact that the motivation for \eqref{eq:twopartint} holds for Dirac particles, 
+it is also conceivable to replace \(\psi\), \(S^\ret\) and all the constant factor by 
+quantities related to the Klein Gordon equation and arrive at 
+
+\begin{align}\label{eq:KGtwopartint}
+  \psi&(x_1,x_2) = \psi^\free(x_1,x_2)+\lambda \int d^4 x_1' \, d^4 x_2' \\\nonumber
+  & \times G^\ret_1(x_1-x_1') G^\ret_2(x_2-x_2') \,\delta((x_1'-x_2')^2) \psi(x_1',x_2'),
+\end{align}
+where \(\psi\) and \(\psi\free\) are no longer spinor valued, \(\psi^\free\) is a
+solution to the free Klein Gordone equation in both \(x_1\) and \(x_2\),
+\begin{align}
+  (\Box_{x_1} + m_1^2)\psi=0\\
+  (\Box_{x_2} + m_2^2)\psi=0
+\end{align}
+and \(G^\ret\) is the retarded Green's function of the Klein Gordon equation.
+
+In fact,  most of the rigorous results about equations of a similar 
+type as the ones motivated in this chapter are about the Klein 
+Gordon version \eqref{eq:KGtwopartint}.
 
 
 \subsection{Previous Results on Directly Interacting Particles}
-In this chapter we summarise existence results on equations of the type of 
+In this chapter we summarise the most important existence results on equations of the type of 
 \eqref{eq:twopartintgeneral}. Because this line of work is still fairely young,
 it can still readily be summarised. The results are taken from \cite{lienertfirst} and 
 \cite{lienertcurved}. The theorems are about slightly different versions of equations
-of the type of \eqref{eq:twopartintgeneral} or of a related type and make use of
-different function spaces. I tried to contain the necessary notation to within each
-of the theorems. 
+of the type of \eqref{eq:KGtwopartint}. I tried to contain the necessary notation to within each
+of the theorems. I only cited the theorems that are about a four dimensional spacetime, 
+there are also results about three and two dimensional spacetime, the interested reader 
+is refered to \cite{lienert2018direct,lienertcurved}. 
 
-\begin{Thm}[Thm 3.1 of \cite{lienertfirst}]
-Let \(T>0\), \(M,N\in\mathbb{N}\), consider 
-the Banach space \(\mathcal{B}=L^\infty ([0,T]^N,L^2(\mathbb{R}^M))\).
-Let \(\mathcal{L}:[0,T]^{2N}\rightarrow L^2(\mathbb{R}^{2M})\) such that 
-\begin{equation*}
-\sup_{t,t'\in[0,T]^{N}}\|\mathcal{L}(t,t')\|^2<\infty,
-\end{equation*}
-then for any \(f_0\in\mathcal{B}\) the equation
-\begin{equation*}
-f(t,x)=f_0(t,x)+ \int_0^t dt' \int dx' L(t,t',x,x') f(t',x')
-\end{equation*}
-has a unique solution \(f\in\mathcal{B}\).
-\end{Thm}
+%\begin{Thm}[Thm 3.1 of \cite{lienertfirst}]
+%Let \(T>0\), \(M,N\in\mathbb{N}\), consider 
+%the Banach space \(\mathcal{B}=L^\infty ([0,T]^N,L^2(\mathbb{R}^M))\).
+%Let \(\mathcal{L}:[0,T]^{2N}\rightarrow L^2(\mathbb{R}^{2M})\) such that 
+%\begin{equation*}
+%\sup_{t,t'\in[0,T]^{N}}\|\mathcal{L}(t,t')\|^2<\infty,
+%\end{equation*}
+%then for any \(f_0\in\mathcal{B}\) the equation
+%\begin{equation*}
+%f(t,x)=f_0(t,x)+ \int_0^t dt' \int dx' L(t,t',x,x') f(t',x')
+%\end{equation*}
+%has a unique solution \(f\in\mathcal{B}\).
+%\end{Thm}
 
-\begin{Thm}[Thm 3.2 \((d=1)\) of \cite{lienertfirst}]
-Let \(T>0, \lambda\in\mathbb{C}, m_1,m_2\ge 0\), every
-\begin{equation*}
-\psi^\free \in \mathcal{B}_1=L^\infty ([0,T]^2,L^2(\mathbb{R}^2)),
-\end{equation*}
-and every essentially bounded \(K:\mathbb{R}^4\rightarrow \mathbb{C}\), the integral equation 
-\begin{align*}
-\psi(t_1,z_1,t_2,z_2)=\psi^\free(t_1,z_1,t_2,z_2)+\frac{\lambda}{4}\int_0^{t_1}dt_1'\int_0^{t_2}dt_2'\int dz_1'dz_2'\\
- \times H(t_1-t_1'-|z_1-z_1'|) J_0(m_1\sqrt{(t_1-t_1')^2-|z_1-z_1'|^2})\\
- \times H(t_2-t_2'-|z_2-z_2'|) J_0(m_2\sqrt{(t_2-t_2')^2-|z_2-z_2'|^2})\\
-  \times K(t_1',z_1',t_2',z_2')\psi(t_1',z_1',t_2',z_2')
-\end{align*}
-has a unique solution \(\psi \in \mathcal{B}_1\).
-\end{Thm}
+%\begin{Thm}[Thm 3.2 \((d=1)\) of \cite{lienertfirst}]
+%Let \(T>0, \lambda\in\mathbb{C}, m_1,m_2\ge 0\), every
+%\begin{equation*}
+%\psi^\free \in \mathcal{B}_1=L^\infty ([0,T]^2,L^2(\mathbb{R}^2)),
+%\end{equation*}
+%and every essentially bounded \(K:\mathbb{R}^4\rightarrow \mathbb{C}\), the integral equation 
+%\begin{align*}
+%\psi(t_1,z_1,t_2,z_2)=\psi^\free(t_1,z_1,t_2,z_2)+\frac{\lambda}{4}\int_0^{t_1}dt_1'\int_0^{t_2}dt_2'\int dz_1'dz_2'\\
+% \times H(t_1-t_1'-|z_1-z_1'|) J_0(m_1\sqrt{(t_1-t_1')^2-|z_1-z_1'|^2})\\
+% \times H(t_2-t_2'-|z_2-z_2'|) J_0(m_2\sqrt{(t_2-t_2')^2-|z_2-z_2'|^2})\\
+%  \times K(t_1',z_1',t_2',z_2')\psi(t_1',z_1',t_2',z_2')
+%\end{align*}
+%has a unique solution \(\psi \in \mathcal{B}_1\).
+%\end{Thm}
 
-\begin{Thm}[Thm 3.3 \((d=2)\) of \cite{lienertfirst}]
-Let \(T>0, \lambda\in\mathbb{C}, m_1,m_2\ge 0\), for every essentially bounded \(K:\mathbb{R}^6\rightarrow\mathbb{C}\)
-and every \(\psi^\free \in \mathcal{B}_2=L^\infty([0,T]^2,L^2(\mathbb{R}^4))\) the equation
-\begin{align*}
-&\psi(t_1,\vx_1,t_2,\vx_2)=\psi^\free(t_1,\vx_1,t_2,\vx_2)+\frac{\lambda}{(2\pi)^2}\int_0^{t_1}dt_1'\int_0^{t_2}dt_2'\\
-&\times\int d^2\vx_1'd^2\vx_2' H(t_1-t_1'-|\vx_1-\vx_1'|)\frac{\cos(m_1\sqrt{(t_1-t_1')^2-|\vx_1-\vx_1'|^2})}{\sqrt{(t_1-t_1')^2-|\vx_1-\vx_1'|^2}}\\
-&\quad \times H(t_2-t_2'-|\vx_2-\vx_2'|)\frac{\cos(m_2\sqrt{(t_2-t_2')^2-|\vx_2-\vx_2'|^2})}{\sqrt{(t_2-t_2')^2-|\vx_2-\vx_2'|^2}} \\
-&\quad \quad\quad \quad \times K(t_1',\vx_1',t_2',\vx_2')\psi(t_1',\vx_1',t_2',\vx_2')
-\end{align*}
-has a unique solution \(\psi \in \mathcal{B}_2\).
-\end{Thm}
+%\begin{Thm}[Thm 3.3 \((d=2)\) of \cite{lienertfirst}]
+%Let \(T>0, \lambda\in\mathbb{C}, m_1,m_2\ge 0\), for every essentially bounded \(K:\mathbb{R}^6\rightarrow\mathbb{C}\)
+%and every \(\psi^\free \in \mathcal{B}_2=L^\infty([0,T]^2,L^2(\mathbb{R}^4))\) the equation
+%\begin{align*}
+%&\psi(t_1,\vx_1,t_2,\vx_2)=\psi^\free(t_1,\vx_1,t_2,\vx_2)+\frac{\lambda}{(2\pi)^2}\int_0^{t_1}dt_1'\int_0^{t_2}dt_2'\\
+%&\times\int d^2\vx_1'd^2\vx_2' H(t_1-t_1'-|\vx_1-\vx_1'|)\frac{\cos(m_1\sqrt{(t_1-t_1')^2-|\vx_1-\vx_1'|^2})}{\sqrt{(t_1-t_1')^2-|\vx_1-\vx_1'|^2}}\\
+%&\quad \times H(t_2-t_2'-|\vx_2-\vx_2'|)\frac{\cos(m_2\sqrt{(t_2-t_2')^2-|\vx_2-\vx_2'|^2})}{\sqrt{(t_2-t_2')^2-|\vx_2-\vx_2'|^2}} \\
+%&\quad \quad\quad \quad \times K(t_1',\vx_1',t_2',\vx_2')\psi(t_1',\vx_1',t_2',\vx_2')
+%\end{align*}
+%has a unique solution \(\psi \in \mathcal{B}_2\).
+%\end{Thm}
 
 \begin{Thm}[Thm 3.4 \((d=3)\) of \cite{lienertfirst}]
 Let \(T>0, \lambda\in\mathbb{C}\), for every bounded \(K:\mathbb{R}^8\rightarrow\mathbb{C}\) and every

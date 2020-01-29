@@ -66,7 +66,7 @@
 \newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
 
 % Annotations
-\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.75cm]{todonotes}
+\usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.5cm]{todonotes}
 \newcommand{\noch}[1]{ \todo[color=blue!20]{Todo: #1} }
 \newcommand{\black}{ \color{black} }
 
@@ -316,7 +316,31 @@ it can still readily be summarised. The results are taken from \cite{lienertfirs
 of the type of \eqref{eq:KGtwopartint}. I tried to contain the necessary notation to within each
 of the theorems. I only cited the theorems that are about a four dimensional spacetime, 
 there are also results about three and two dimensional spacetime, the interested reader 
-is refered to \cite{lienert2018direct,lienertcurved}. 
+is refered to \cite{lienert2018direct,lienertcurved}. The versions of 
+equation \eqref{eq:KGtwopartint} in the theorems are considerably modified:
+
+\begin{itemize}
+\item The spacetime of equation \eqref{eq:KGtwopartint} is \(\mathbb{R}^4\), Minkowski spacetime, whilst 
+the spacetime of all the theorems in flat spacetime is 
+\(\mathbb{R}^+\times\mathbb{R}^3=:\frac{1}{2}\mathbb{M}\). 
+That is, there is a beginning in time. This modification has technical reasons. However, as current 
+cosmological models of our universe do have a beginning in time this modification does not necessarily
+mean that the equation can no longer describe certain aspects of physics. As these cosmological models 
+have nonzero curature the authors of \cite{lienertcurved} 
+have shown existence of solutions of versions of equation \eqref{eq:KGtwopartint}
+on Friedmann-Lemaître-Robertson-Walker (FLRW) spacetime. In section \ref{sec:direct dirac} and 
+\ref{sec:KG lightcones} \noch{really also in the second paper?} we will also employ this 
+simplification and show existence on FLRW spacetime. This is not an attempt to treat 
+general curved spacetimes, it is done as an act of consistency. We introduce a beginning in time 
+and try to justify this by cosmological arguments and hence we treat a spacetime commonly used
+in cosmology.
+\item The interaction kernel \(K\) which we motivated to be proportional to \(\delta((x_1-x_2)^2)\)
+is replaced by various less singular objects. This modification is purely technical and we do not 
+justify it. The previous results approach the singular \(K\) introduced in the last section to different
+degrees. In section \ref{sec:direct dirac} where we treat Dirac particles 
+we will use a rather soft interaction kernel. The new result about Klein Gordon particles in 
+section \ref{sec:KG lightcones} employs the fully singular \(\delta((x_1-x_2)^2)\) kernel. 
+\end{itemize}
 
 %\begin{Thm}[Thm 3.1 of \cite{lienertfirst}]
 %Let \(T>0\), \(M,N\in\mathbb{N}\), consider 
@@ -382,6 +406,10 @@ has a unique solution \(\psi\in\mathcal{B}_3\).
 has a unique solution \(\psi\in\mathcal{B}_3\).
 \end{Thm}
 
+
+The next results will be about FLRW spacetime. We have to introduce some notation before we can 
+present them. Here we cite \cite[sec 3.2]{selfDirac}. 
+\noch{entscheide ob man hier vielleicht Matt+mein KG paper zitieren kann, dann muss man nicht umformulieren.}
 
 
 

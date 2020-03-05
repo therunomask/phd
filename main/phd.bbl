@@ -5,7 +5,12 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{ivp0}
+D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher, \emph{Time-evolution of
+  the external field problem in quantum electrodynamics}, Journal of
+  Mathematical Physics \textbf{51} (2010), no.~12, 122301.
 
 \bibitem{ivp2}
 D-A Deckert and F~Merkl, \emph{External field qed on cauchy surfaces for

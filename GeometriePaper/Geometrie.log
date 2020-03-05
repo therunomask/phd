@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.22)  6 DEC 2019 15:10
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.22)  3 MAR 2020 12:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -935,35 +935,77 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box40
 \enitdp@description=\count143
 )
-\c@de=\count144
-\c@thm=\count145
-\c@cor=\count146
-\c@rmk=\count147
-\c@lem=\count148
+(/usr/local/texlive/2017/texmf-dist/tex/latex/moreenum/moreenum.sty
+Package: moreenum 2011/11/03 v1.03
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/alphalph.sty
+Package: alphalph 2016/05/16 v2.5 Convert numbers to letters (HO)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fmtcount 2017/09/16 v3.04
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count144
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fcprefix 2012/09/28
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fmtcount/fcnumparser.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fcnumparser 2017/06/15
+\fc@digit@counter=\count145
+))
+\c@padzeroesN=\count146
+\fc@tmpcatcode=\count147
+\@DT@modctr=\count148
+\@ordinalctr=\count149
+\@orgargctr=\count150
+\@strctr=\count151
+\@tmpstrctr=\count152
+\@DT@loopN=\count153
+\@DT@X=\count154
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/fmtcount/fc-english.def
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+File: fc-english.def 2016/01/12
+)))
+\c@de=\count155
+\c@thm=\count156
+\c@cor=\count157
+\c@rmk=\count158
+\c@lem=\count159
+\c@claim=\count160
 
 (./Geometrie.aux)
 \openout1 = `Geometrie.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 \AtBeginShipoutBox=\box41
-Package hyperref Info: Link coloring ON on input line 53.
+Package hyperref Info: Link coloring ON on input line 58.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -971,92 +1013,130 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count149
+\c@section@level=\count161
 )
-LaTeX Info: Redefining \ref on input line 53.
-LaTeX Info: Redefining \pageref on input line 53.
-LaTeX Info: Redefining \nameref on input line 53.
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
 
 (./Geometrie.out) (./Geometrie.out)
 \@outlinefile=\write4
 \openout4 = `Geometrie.out'.
 
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 70.
+LaTeX Font Info:    Try loading font information for U+msa on input line 75.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 70.
+LaTeX Font Info:    Try loading font information for U+msb on input line 75.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `ivp2' on page 1 undefined on input line 79.
-
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 79.
+ine 82.
 
-LaTeX Warning: Citation `shale stinespring?' on page 1 undefined on input line 
-119.
+
+LaTeX Warning: Citation `ivp2' on page 1 undefined on input line 86.
 
 [1
 
 ]
 
-LaTeX Warning: Citation `18 of ivp2' on page 2 undefined on input line 130.
+LaTeX Warning: Citation `shale stinespring?' on page 2 undefined on input line 
+127.
 
 
-LaTeX Warning: Citation `ivp0' on page 2 undefined on input line 132.
+LaTeX Warning: Citation `18 of ivp2' on page 2 undefined on input line 138.
 
 
-LaTeX Warning: Citation `ivp1' on page 2 undefined on input line 132.
+LaTeX Warning: Citation `ivp0' on page 2 undefined on input line 140.
 
 
-LaTeX Warning: Citation `ivp2' on page 2 undefined on input line 132.
+LaTeX Warning: Citation `ivp1' on page 2 undefined on input line 140.
 
 
-LaTeX Warning: Citation `ivp0' on page 2 undefined on input line 159.
+LaTeX Warning: Citation `ivp2' on page 2 undefined on input line 140.
+
+[2]
+Overfull \hbox (0.25667pt too wide) in paragraph at lines 230--236
+\TU/lmr/m/it/10.95 So pick $\OML/cmm/m/it/10.95 n \U/matha/m/n/10.95 P \U/msb/m
+/n/10.95 N$\TU/lmr/m/it/10.95 , $\OML/cmm/m/it/10.95 A[] \U/matha/m/n/10.95 P \
+OMS/cmsy/m/n/10.95 V$ \TU/lmr/m/it/10.95 for $\OML/cmm/m/it/10.95 i \U/matha/m/
+n/10.95 P \U/msb/m/n/10.95 N\OML/cmm/m/it/10.95 ; i \U/matha/m/n/10.95 ¤ \OT1/c
+mr/m/n/10.95 2\OML/cmm/m/it/10.95 n$ \TU/lmr/m/it/10.95 and $\OML/cmm/m/it/10.9
+5 s \U/matha/m/n/10.95 P \U/msb/m/n/10.95 R[]$ \TU/lmr/m/it/10.95 such that $[]
+ \U/matha/m/n/10.95 P
+ []
 
 
-LaTeX Warning: Citation `ivp2' on page 2 undefined on input line 159.
+Overfull \hbox (17.94998pt too wide) in paragraph at lines 230--236
+[] []$\TU/lmr/m/it/10.95 . We have to find a neighbourhood $\OML/cmm/m/it/10.95
+ U \U/matha/m/n/10.95 ^^84 \U/msb/m/n/10.95 R[]$ \TU/lmr/m/it/10.95 of $\OML/cm
+m/m/it/10.95 s$ \TU/lmr/m/it/10.95 such that $\U/matha/m/n/10.95 t[] |
+ []
 
-[2] [3]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 266.
+[3] [4]
+Overfull \hbox (4.88959pt too wide) in paragraph at lines 300--301
+[][]\TU/lmr/bx/n/10.95 Lemma 2 \TU/lmr/m/n/10.95 (properties of $\OT1/cmr/m/n/1
+0.95 ^^@$\TU/lmr/m/n/10.95 )\TU/lmr/bx/n/10.95 . []\TU/lmr/m/it/10.95 The funct
+ion $\OT1/cmr/m/n/10.95 ^^@$ \TU/lmr/m/it/10.95 has the following properties fo
+r all $\OML/cmm/m/it/10.95 A; B; C; D \U/matha/m/n/10.95 P
+ []
 
- (/usr/local/texlive/2017/texmf-dist/tex/latex/doublestroke/Udsrom.fd
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-[4] [5] [6]
-Overfull \hbox (8.80682pt too wide) detected at line 424
+
+LaTeX Warning: Citation `ruisnaar&ivp0' on page 5 undefined on input line 331.
+
+
+LaTeX Warning: Citation `ivp0' on page 5 undefined on input line 336.
+
+
+LaTeX Warning: Citation `ivp0' on page 5 undefined on input line 337.
+
+[5] [6]
+Overfull \hbox (30.54622pt too wide) in paragraph at lines 413--417
+\TU/lmr/m/n/10.95 holds whenever both $\OML/cmm/m/it/10.95 O[]$ \TU/lmr/m/n/10.
+95 and $\OML/cmm/m/it/10.95 O[]$ \TU/lmr/m/n/10.95 have a determinant. Moreover
+ for any $\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 P[]S[]P[]\U/matha/m/n/10.95 q
+[]\OML/cmm/m/it/10.95 P[]S[]P[]$
+ []
+
+
+Overfull \hbox (16.96284pt too wide) detected at line 456
 []
  []
 
-[7] [8] [9] [10] [11]
+[7]
+
+LaTeX Warning: Citation `ivp0' on page 8 undefined on input line 458.
+
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 468.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+) [8]
+[9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22]
 No file Geometrie.bbl.
-[12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 666.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 666.
+[23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1352.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1352.
  (./Geometrie.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 666.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 666.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1352.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1352.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 666.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1352.
  ) 
 Here is how much of TeX's memory you used:
- 20438 strings out of 493010
- 361289 string characters out of 6134663
- 427156 words of memory out of 5000000
- 24050 multiletter control sequences out of 15000+600000
+ 21294 strings out of 493010
+ 374049 string characters out of 6134663
+ 477701 words of memory out of 5000000
+ 24865 multiletter control sequences out of 15000+600000
  19062 words of font info for 83 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 62i,19n,76p,430b,885s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,19n,76p,917b,893s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Geometrie.pdf (12 pages).
+Output written on Geometrie.pdf (23 pages).

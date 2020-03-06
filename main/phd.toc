@@ -8,19 +8,20 @@
 \contentsline {section}{\numberline {2.3}KG-Particles Interacting Directly Along Lightcones}{9}{section.2.3}
 \contentsline {chapter}{\chapternumberline {3}Quantum Field Theoretic Approach to Interactions}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}The Relationship Between Hadamard States, the Fermionic Projector, and Admissible Polarisation Classes}{12}{section.3.1}
-\contentsline {section}{\numberline {3.2}Geometric Construction of the Phase}{12}{section.3.2}
-\contentsline {section}{\numberline {3.3}Main Result}{15}{section.3.3}
-\contentsline {section}{\numberline {3.4}Proofs}{16}{section.3.4}
-\contentsline {section}{\numberline {3.5}Simple Formula for the Scattering Operator}{49}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Defining One-Particle Scattering-Matrix}{49}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Construction of the Second Quantised Scattering-Matrix}{50}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Differential second quantisation}{53}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Presentation and Proof of the Formula}{69}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}Quantitative Estimates}{81}{subsection.3.5.5}
-\contentsline {chapter}{Appendix}{101}{appendix*.28}
-\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{101}{section*.29}
-\contentsline {subsection}{Guessing Equations}{101}{section*.30}
-\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{104}{section*.32}
-\contentsline {subsection}{Solution to Recursive Equation}{112}{section*.34}
-\contentsline {chapter}{Bibliography}{125}{section*.37}
-\contentsline {chapter}{Cooperating Researchers}{127}{appendix*.38}
+\contentsline {section}{\numberline {3.2}Analyticity of the One Particle Scattering Operator}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}Geometric Construction of the Phase}{12}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Main Result of Construction}{16}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Proofs}{17}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Simple Formula for the Scattering Operator}{51}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Defining One-Particle Scattering-Matrix}{51}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Construction of the Second Quantised Scattering-Matrix}{52}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Differential second quantisation}{55}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Presentation and Proof of the Formula}{71}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Quantitative Estimates}{83}{subsection.3.4.5}
+\contentsline {chapter}{Appendix}{103}{appendix*.29}
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{103}{section*.30}
+\contentsline {subsection}{Guessing Equations}{103}{section*.31}
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{106}{section*.33}
+\contentsline {subsection}{Solution to Recursive Equation}{114}{section*.35}
+\contentsline {chapter}{Bibliography}{127}{section*.38}
+\contentsline {chapter}{Cooperating Researchers}{129}{appendix*.39}

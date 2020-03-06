@@ -448,7 +448,25 @@ These results give an intuition on how to control the convergence of the informa
 \todo{necessary: more thorough introduction to Franz and Dirk stuff for handling the geometry part}
 
 
-\section{Geometric Construction of the Phase}
+\section{Analyticity of the One Particle Scattering Operator}
+
+In this section we analyse the construction of the one particle 
+scattering operator \(S_A\)
+carried out in \cite{ivp0} and answer the question whether
+operators like
+\begin{equation}
+P^+ \partial_B S_{A}^* S_{A+B}P^-
+\end{equation}
+are Hilbert-Schmidt operators. This will turn out to be important 
+for the geometric construction carried out in 
+chapter \ref{chapter geometery}. 
+\todo{write recursive equation for U, introduce R,F,G etc.}
+
+
+
+
+
+\section{Geometric Construction of the Phase}\label{chapter geometery}
 Next we introduce the set of four potentials we work with, as well as the argument of a complex number and an 
 invertible bounded operator. For complex numbers the convention we chose here differs slightly from the standard in the literature,
 which is why we also use a slightly non standard name for this function.
@@ -466,6 +484,16 @@ Furthermore, we define for any complex number \(z\in \mathbb{C}\backslash \{0\}\
 \begin{equation}
 \ag(z):=\frac{z}{|z|} .
 \end{equation}
+In abuse of notation we will define the expression
+\begin{equation}
+\partial_t \ln f(t):=\frac{\partial_t f(t)}{f(t)},
+\end{equation}
+for any differentiable \(f:\mathbb{R}\rightarrow \mathbb{C}\backslash \{0\} \), 
+even if the expression \(\ln f(t)\) cannot be interpreted as the principle
+branch of the logarithm.
+
+We also introduce \(S^1:=\{z\in\mathbb{C}\mid |z|=1\}\).
+
 \end{Def}
 
 We introduce the standard polarisation for the free Dirac equation\todo{think of some more intuitive notation for the projector.}
@@ -488,12 +516,13 @@ where \(\Sigma_{\mathrm{out}}\) and \(\Sigma_{\mathrm{int}}\)  are Cauchy-surfac
 \end{align}
 holds.
 Let 
-\begin{equation}
-\mathrm{dm}:=\{A,B\in\mathcal{V}\mid P^- S_{A,B}P^-\text{ and } P^- S_{B,A}P^-:\mathcal{H}^- \righttoleftarrow  \text{ are invertible}\},
-\end{equation}
+\begin{align}
+\mathrm{dm}:=\{(A,B)\in\mathcal{V}^2\mid P^- S_{A,B}P^-\text{ and }\\
+ P^- S_{B,A}P^-:\mathcal{H}^- \righttoleftarrow  \text{ are invertible}\},
+\end{align}
 we define
 \begin{equation}\label{dom s bar}
-\dom\overline{S}:=\{A,B\in \mathrm{dm}\mid \{A\}\times \overline{A~B} \cup \overline{A~B}\times \{B\}\subseteq \mathrm{dm} \},
+\dom\overline{S}:=\{(A,B)\in \mathrm{dm}\mid  \overline{A~B}\times\overline{A~B} \subseteq \mathrm{dm} \},
 \end{equation}
 where \(\overline{A~B}\) is the line segment connecting \(A\) and \(B\) in \(\mathcal{V}\).
 Furthermore, we choose for all \(A,B\in \dom \overline{S}\) the lift
@@ -519,7 +548,7 @@ c_A(F,G):=-i \partial_F \partial_G  \Im \tr [P^- S_{A,A+F} P^+ S_{A,A+G} P^-] .
 \end{equation}
 \end{Def}
 
-\begin{Lemma}
+\begin{Lemma}[properties of \(\dom\overline{S}\)]\label{lem properties of dom s bar}
 The set \(\dom \overline{S}\) has the following properties:
 \begin{enumerate}
 \item contains the diagonal: \(\{(A,A)\mid A\in\mathcal{V}\}\subseteq \dom\overline{S}\).
@@ -533,24 +562,22 @@ We will only prove openness, as the other properties follow directly from the de
 such that \(\left(\sum_{k=1}^n s_k A_k,\sum_{k=n+1}^{2n} s_{k} A_{k} \right)\in\dom\overline{S}\). 
 We have to find a neighbourhood \(U\subseteq \mathbb{R}^{2n}\) of \(s\) such that 
 \(\{ \left(\sum_{k=1}^n s_k' A_k,\sum_{k=n+1}^{2n} s_{k}' A_{k} \right) \mid s'\in U\}\subseteq \dom\overline{S}\) holds. 
-In doing so we have to ensure that the lines 
+In doing so we have to ensure that the square
 
 \begin{align}
-\left\{\sum_{k=1}^n s_k A_k\right\} \times \overline{\sum_{k=1}^n s_k A_k~~~\sum_{k=n+1}^{2n} s_{k} A_{k} }\\
-\overline{\sum_{k=1}^n s_k A_k~~~\sum_{k=n+1}^{2n} s_{k} A_{k}} \times \left\{\sum_{k=n+1}^{2n} s_{k} A_{k}\right\} 
+  \overline{\sum_{k=1}^n s_k A_k~~~\sum_{k=n+1}^{2n} s_{k} A_{k} }^2
 \end{align}
-stay subsets of \(\mathrm{dm}\) for all \(s'\in U\). Now pick a metric \(d\) on \(\mathbb{R}^n\) and define 
+stays a subsets of \(\mathrm{dm}\) for all \(s'\in U\). Now pick a metric \(d\) on \(\mathbb{R}^n\) and define 
 \begin{align}\nonumber
-r:=\inf \left\{d(s,s')\mid  \left\{\sum_{k=1}^n s_k' A_k\right\}\times \overline{\sum_{k=1}^n s_k' A_k~~\sum_{k=n+1}^{2n} s_k' A_k } ~~\cap \mathrm{dm}^c\neq \emptyset \vee\right.\\
- \left. \overline{\sum_{k=1}^n s_k' A_k~~\sum_{k=n+1}^{2n} s_k' A_k }\times \left\{\sum_{k=n_1}^{2n} s_k' A_k \right\}~~\cap \mathrm{dm}^c\neq \emptyset  \right\}.
+&r:=\inf \left\{d(s,s')\mid \overline{\sum_{k=1}^n s_k' A_k~~\sum_{k=n+1}^{2n} s_k' A_k }^2 ~~\cap \mathrm{dm}^c\neq \emptyset \right\}.
 \end{align}
-It cannot be the case that \(r=0\), because the metric is continuous, the line segment compact in \(\mathbb{R}^{2n}\) 
+It cannot be the case that \(r=0\), because the metric is continuous, the square compact in \(\mathbb{R}^{2n}\) 
 and the set of invertible bounded operators (defining \(\mathrm{dm}\)) is open in the topology generated by the operator norm.
  \todo{reicht das, oder soll ich das ausführlicher schreiben?}
 If \(r=\infty\) then \(U=\mathbb{R}^{2n}\) will suffice. If \(r\in\mathbb{R}^+\) then \(U=B_r(s,t)\) the open ball of radius \(r\) around \(s\) works.
 \end{Lemma}
 
-\section{Main Result}
+\subsection{Main Result of Construction}
 
 
 \begin{Def}[causal splitting]
@@ -590,7 +617,7 @@ and the associated current satisfies
 \end{equation}
 \end{Thm}
 
-\section{Proofs}
+\subsection{Proofs}
 
 
 Since the phase of a lift relative to any other lift is fixed by a single matrix element, we may use the vacuum expectation values to characterise the
@@ -600,13 +627,15 @@ values and \(c\) becomes clearer with the next lemma.
 \begin{Lemma}[properties of \(\Gamma\)]\label{gamma attri}
 The function \(\Gamma\) has the following properties for all  \(A,B,C,D\in\mathcal{V}\) such that the expressions occurring in each equation are well defined:
 \begin{align}\label{gamma attri0}
-&\gamma_{A,B,C}\neq 0\\\label{gamma attri1}
-&\Gamma_{A,B,C}=\det_{\mathcal{H}^-}(P^--P^-S_{A,C}P^+S_{C,A}P^- - P^- S_{A,B} P^+ S_{B,C} P^- S_{C,A} P^-)\\\label{gamma attri2}
+&\gamma_{A,B,C}\neq 0\\\notag
+&\Gamma_{A,B,C}=\det_{\mathcal{H}^-}(P^--P^-S_{A,C}P^+S_{C,A}P^- \\\label{gamma attri1}
+&\hspace{5cm}- P^- S_{A,B} P^+ S_{B,C} P^- S_{C,A} P^-)\\\label{gamma attri2}
 &\Gamma_{A,B,C}^{-1}=\ag(\langle \Omega, \overline{S}_{A,B} \overline{S}_{B,C} \overline{S}_{C,A}\Omega\rangle )\\\label{gamma attri3}
 &\Gamma_{A,B,C}=\Gamma_{B,C,A}=\frac{1}{\Gamma_{B,A,C}}\\\label{gamma attri4}
 &\Gamma_{A,A,B}=1\\\label{gamma attri5}
 &\Gamma_{A,B,C}\Gamma_{B,A,D}\Gamma_{A,C,D}\Gamma_{C,B,D}=1 \\\label{gamma attri6}
-&\overline{S}_{A,C}=\Gamma_{A,B,C}\overline{S}_{A,B}\overline{S}_{B,C}\\\label{gamma attri7}
+&\Gamma_{A,B,C}=\Gamma_{D,B,C}\Gamma_{A,D,C}\Gamma_{A,B,D} \\\label{gamma attri7}
+&\overline{S}_{A,C}=\Gamma_{A,B,C}\overline{S}_{A,B}\overline{S}_{B,C}\\\label{gamma attri8}
 &c_A(B,C)=\partial_B \partial_C \ln \Gamma_{A,A+B,A+C}.
 \end{align}
 \end{Lemma}
@@ -638,34 +667,41 @@ Borrowing notation from \cite[section 2]{ivp0} to identify \(\Omega=\bigwedge \P
 and \(\bigwedge\) is used to construct the infinite wedge spaces that are the perspective of Fock space introduced in \cite{ivp0}. 
 We begin by reformulating the right hand side of  \eqref{gamma attri2}
 \begin{align}
- \langle \Omega, \overline{S}_{A,B} \overline{S}_{B,C} \overline{S}_{C,A}\Omega\rangle \\\notag
-=\langle \bigwedge \Phi, \bigwedge \left(S_{A,B}S_{B,C}S_{C,A}\Phi \AG(P^-S_{C,A} P^-)^{-1}\right.\\
-\left. \AG(P^-S_{B,C} P^-)^{-1} \AG(P^-S_{A,B} P^-)^{-1}  \right)\rangle \\
-=\langle \bigwedge \Phi, \bigwedge \left(\Phi \AG(P^-S_{C,A} P^-)^{-1} \AG(P^-S_{B,C} P^-)^{-1} \AG(P^-S_{A,B} P^-)^{-1}  \right)\rangle \\
-=\det_{\mathcal{H}^-}\left( (\Phi)^*  \left[\Phi \AG(P^- S_{C,A} P^-)^{-1} \AG(P^-S_{B,C} P^-)^{-1} \AG(P^-S_{A,B} P^-)^{-1} \right] \right)\\
-=\det_{\mathcal{H}^-}\left(  \AG(P^- S_{C,A} P^-)^{-1} \AG(P^- S_{B,C} P^-)^{-1} \AG(P^-S_{A,B} P^-)^{-1}  \right)\\\label{eq:1/arg}
-=\frac{1}{\det_{\mathcal{H}^-}\left(  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) \AG(P^-S_{C,A} P^-)  \right)}.
+ &\langle \Omega, \overline{S}_{A,B} \overline{S}_{B,C} \overline{S}_{C,A}\Omega\rangle \\\notag
+&=\langle \bigwedge \Phi, \bigwedge \left(S_{A,B}S_{B,C}S_{C,A}\Phi \AG(P^-S_{C,A} P^-)^{-1}\right.\\\notag
+&\hspace{3cm}\left. \AG(P^-S_{B,C} P^-)^{-1} \AG(P^-S_{A,B} P^-)^{-1}  \right)\rangle \\
+&=\langle \bigwedge \Phi, \bigwedge \left(\Phi \AG(P^-S_{C,A} P^-)^{-1}\right.\\\notag
+&\hspace{3cm}\times\left. \AG(P^-S_{B,C} P^-)^{-1} \AG(P^-S_{A,B} P^-)^{-1}  \right)\rangle \\
+&=\det_{\mathcal{H}^-}\left( (\Phi)^*  \left[\Phi \AG(P^- S_{C,A} P^-)^{-1} \AG(P^-S_{B,C} P^-)^{-1}\right.\right.\\\notag
+&\hspace{6cm}\times\left.\left. \AG(P^-S_{A,B} P^-)^{-1} \right] \right)\\
+&=\det_{\mathcal{H}^-}  \left()\AG(P^- S_{C,A} P^-)^{-1} \AG(P^- S_{B,C} P^-)^{-1}\right.\\ \notag
+&\hspace{6cm}\left.\times\AG(P^-S_{A,B} P^-)^{-1}\right)  \\\label{eq:1/arg}
+&=\frac{1}{\det_{\mathcal{H}^-}  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) \AG(P^-S_{C,A} P^-) }.
 \end{align}
 We first note that \(\det_{\mathcal{H}^-}|P^- S_{X,Y}P^-|\in\mathbb{R}^+\) for \(X,Y\in \{A,B,C\}\). This is well defined because 
 \begin{align}
 &\langle \Omega, \overline{S}_{X,Y}\Omega\rangle
 =\langle \bigwedge \Phi, \bigwedge(S_{X,Y}\Phi \AG(P^- S_{X,Y}P^-)^{-1})\rangle\\
-&=\det_{\mathcal{H}^-} \left( \Phi^* S_{X,Y}\Phi \AG(P^- S_{X,Y}P^-)^{-1}\right)
-=\det_{\mathcal{H}^-} \left( P^- S_{X,Y} P^- \AG(P^- S_{X,Y}P^-)^{-1}\right)\\
+&=\det_{\mathcal{H}^-} \left( \Phi^* S_{X,Y}\Phi \AG(P^- S_{X,Y}P^-)^{-1}\right)\\
+&=\det_{\mathcal{H}^-} \left( P^- S_{X,Y} P^- \AG(P^- S_{X,Y}P^-)^{-1}\right)\\
 &=\det_{\mathcal{H}^-} \left(\AG(P^- S_{X,Y}P^-)^{-1} P^- S_{X,Y} P^- \right)\\
-&=\det_{\mathcal{H}^-} \left(\AG(P^- S_{X,Y}P^-)^{-1} \AG(P^- S_{X,Y}P^-) |P^- S_{X,Y} P^-| \right)
-=\det_{\mathcal{H}^-} |P^- S_{X,Y}P^-|
+&=\det_{\mathcal{H}^-} \left(\AG(P^- S_{X,Y}P^-)^{-1} \AG(P^- S_{X,Y}P^-) |P^- S_{X,Y} P^-| \right)\\
+&=\det_{\mathcal{H}^-} |P^- S_{X,Y}P^-|
 \end{align}
-holds. Moreover this determinant does not vanish, since the \(P^- S_{X,Y}P^-\) is invertible. Also clearly the eigenvalues are positive
+holds. Moreover this determinant does not vanish, since the\\ \(P^- S_{X,Y}P^-\) is invertible. Also clearly the eigenvalues are positive
 since \(|P^- S_{X,Y}P^-|\) is an absolute value. We continue with the result of \eqref{eq:1/arg}. Thus, we find
 \begin{align}\label{eq: arg representation}
-&\langle \Omega, \overline{S}_{A,B} \overline{S}_{B,C} \overline{S}_{C,A}\Omega\rangle^{-1}
-=\det_{\mathcal{H}^-}\left(  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) \AG(P^-S_{C,A} P^-)  \right)\\
-&=\det_{\mathcal{H}^-}\left(  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) P^-S_{C,A} P^- |P^-S_{C,A} P^-|^{-1}  \right)\\
-&=\det_{\mathcal{H}^-}\left(  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) P^-S_{C,A} P^-  \right) \det_{\mathcal{H}^-}|P^-S_{C,A} P^-|^{-1} \\
-&=\det_{\mathcal{H}^-}\left( P^-S_{C,A} P^- \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-)  \right) \det_{\mathcal{H}^-}|P^-S_{C,A} P^-|^{-1} \\
+&\langle \Omega, \overline{S}_{A,B} \overline{S}_{B,C} \overline{S}_{C,A}\Omega\rangle^{-1}\\
+&=\det_{\mathcal{H}^-}\left(  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) \AG(P^-S_{C,A} P^-)  \right)\\\notag
+&=\det_{\mathcal{H}^-}\left(  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) P^-S_{C,A} P^-\right.\\
+&\hspace{7.5cm}\times\left. |P^-S_{C,A} P^-|^{-1}  \right)\\\notag
+&=\det_{\mathcal{H}^-}\left(  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) P^-S_{C,A} P^-  \right)\\
+&\hspace{7cm}\times \det_{\mathcal{H}^-}|P^-S_{C,A} P^-|^{-1} \\\notag
+&=\det_{\mathcal{H}^-}\left( P^-S_{C,A} P^- \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-)  \right)\\
+&\hspace{7cm}\times \det_{\mathcal{H}^-}|P^-S_{C,A} P^-|^{-1} \\\notag
 &=\frac{\det_{\mathcal{H}^-}\left(P^- S_{A,B} P^- P^- S_{B,C} P^- P^-S_{C,A} P^-  \right)}
-{\det_{\mathcal{H}^-}|P^- S_{A,B} P^-| \cdot \det_{\mathcal{H}^-}|P^-S_{B,C} P^-| \cdot  \det_{\mathcal{H}^-}|P^-S_{C,A} P^-|}.
+{\det_{\mathcal{H}^-}|P^- S_{A,B} P^-| \cdot \det_{\mathcal{H}^-}|P^-S_{B,C} P^-|}\\
+&\hspace{7cm}\times\frac{1}{\det_{\mathcal{H}^-}|P^-S_{C,A} P^-|}.
 \end{align}
 Now since the denominator of this fraction is real we can use \eqref{gamma attri1} to identity
 \begin{equation}
@@ -720,43 +756,57 @@ its determinant is positive which means that
 \end{equation}
 These three rules will be repeatedly used. We calculate
 \begin{align}
-&\Gamma_{A,B,C}\Gamma_{B,A,D}\Gamma_{A,C,D}\Gamma_{C,B,D}\\
-&=\ag \det_{\mathcal{H}^-}P^- S_{A,B}P^- S_{B,C}P^- S_{C,A}P^- \ag \det_{\mathcal{H}^-}P^- S_{B,A}P^- S_{A,D}P^- S_{D,B}P^-~~ \Gamma_{A,C,D}\Gamma_{C,B,D}\\
+&\Gamma_{A,B,C}\Gamma_{B,A,D}\Gamma_{A,C,D}\Gamma_{C,B,D}\\\notag
+&=\ag \det_{\mathcal{H}^-}P^- S_{A,B}P^- S_{B,C}P^- S_{C,A}P^- \\
+&\hspace{1,5cm}\times\ag \det_{\mathcal{H}^-}P^- S_{B,A}P^- S_{A,D}P^- S_{D,B}P^-~~ \Gamma_{A,C,D}\Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 1}}{=}
-\ag \det_{\mathcal{H}^-}P^-S_{A,D}P^- S_{D,B}P^- S_{B,A}P^- \ag \det_{\mathcal{H}^-}P^- S_{A,B}P^- S_{B,C}P^- S_{C,A}P^- ~~  \Gamma_{A,C,D}\Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}P^-S_{A,D}P^- S_{D,B}P^- S_{B,A}P^- \\
+&\hspace{1.5cm}\times \ag \det_{\mathcal{H}^-}P^- S_{A,B}P^- S_{B,C}P^- S_{C,A}P^- ~~  \Gamma_{A,C,D}\Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 2}}{=}
-\ag \det_{\mathcal{H}^-}P^-S_{A,D}P^- S_{D,B} \big[P^- S_{B,A} P^- S_{A,B}P^-\big] S_{B,C}P^- S_{C,A}P^- ~~ \Gamma_{A,C,D}\Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}\big(P^-S_{A,D}P^- S_{D,B} \big[P^- S_{B,A} P^- S_{A,B}P^-\big]\\
+&\hspace{5cm}\times S_{B,C}P^- S_{C,A}P^-\big) ~ \Gamma_{A,C,D}\Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 1}}{=}
-\ag \det_{\mathcal{H}^-}P^-S_{B,C}P^- S_{C,A}P^-S_{A,D}P^- S_{D,B} \big[P^- S_{B,A} P^- S_{A,B}P^-\big]  ~~ \Gamma_{A,C,D}\Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}P^-S_{B,C}P^- S_{C,A}P^-S_{A,D}P^- S_{D,B} \big[P^- S_{B,A} P^- S_{A,B}P^-\big]  \\
+&\hspace{8cm}\times \Gamma_{A,C,D}\Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 2}}{=}
-\ag \det_{\mathcal{H}^-}P^-S_{B,C}P^- S_{C,A}P^-S_{A,D}P^- S_{D,B}P^-  \ag \det_{\mathcal{H}^-} P^- S_{B,A} P^- S_{A,B}P^-  ~~ \Gamma_{A,C,D}\Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}P^-S_{B,C}P^- S_{C,A}P^-S_{A,D}P^- S_{D,B}P^-\\
+&  \hspace{4cm}\times\ag \det_{\mathcal{H}^-} P^- S_{B,A} P^- S_{A,B}P^-  ~~ \Gamma_{A,C,D}\Gamma_{C,B,D}\\
 &\overset{\eqref{tetraeder 3}}{=}
 \ag \det_{\mathcal{H}^-}P^-S_{B,C}P^- S_{C,A}P^-S_{A,D}P^- S_{D,B}P^-   ~~ \Gamma_{A,C,D}\Gamma_{C,B,D}\\
 &\overset{\eqref{tetraeder 1}}{=}
-\ag \det_{\mathcal{H}^-}P^-S_{A,D}P^- S_{D,B}P^-S_{B,C}P^- S_{C,A}P^-   ~~ \Gamma_{A,C,D} \Gamma_{C,B,D}\\
-&=\ag \det_{\mathcal{H}^-}P^- S_{A,C}P^- S_{C,D}P^- S_{D,A}P^-
-\ag \det_{\mathcal{H}^-}P^-S_{A,D}P^- S_{D,B}P^-S_{B,C}P^- S_{C,A}P^-   ~~ \Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}P^-S_{A,D}P^- S_{D,B}P^-S_{B,C}P^- S_{C,A}P^-   ~~ \Gamma_{A,C,D} \Gamma_{C,B,D}\\\notag
+&=\ag \det_{\mathcal{H}^-}P^- S_{A,C}P^- S_{C,D}P^- S_{D,A}P^-\\
+&\hspace{1.5cm}\times\ag \det_{\mathcal{H}^-}P^-S_{A,D}P^- S_{D,B}P^-S_{B,C}P^- S_{C,A}P^-   ~~ \Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 2}}{=}
-\ag \det_{\mathcal{H}^-}P^- S_{A,C}P^- S_{C,D}P^-\big[ P^- S_{D,A}P^-P^-S_{A,D}P^- \big] S_{D,B}P^-S_{B,C}P^- S_{C,A}P^-   ~~ \Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}\big(P^- S_{A,C}P^- S_{C,D}P^-\big[ P^- S_{D,A}P^-P^-S_{A,D}P^- \big]\\
+&\hspace{4cm}\times  S_{D,B}P^-S_{B,C}P^- S_{C,A}P^-\big)   ~~ \Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 1}}{=}
-\ag \det_{\mathcal{H}^-}P^- S_{D,B}P^-S_{B,C}P^- S_{C,A}P^- S_{A,C}P^- S_{C,D}P^-\big[P^- S_{D,A}P^-P^-S_{A,D}P^- \big]    ~~ \Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}\big(P^- S_{D,B}P^-S_{B,C}P^- S_{C,A}P^- S_{A,C}P^- S_{C,D}P^-\\
+&\hspace{4cm}\times\big[P^- S_{D,A}P^-P^-S_{A,D}P^- \big]\big)    ~~ \Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 2}}{=}
-\ag \det_{\mathcal{H}^-}P^- S_{D,B}P^-S_{B,C}P^- S_{C,A}P^- S_{A,C}P^- S_{C,D}P^- \ag \det_{\mathcal{H}^-} P^-S_{D,A}P^-P^-S_{A,D}P^-    ~~ \Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}P^- S_{D,B}P^-S_{B,C}P^- S_{C,A}P^- S_{A,C}P^- S_{C,D}P^- \\
+&\hspace{4cm}\times\ag \det_{\mathcal{H}^-} P^-S_{D,A}P^-P^-S_{A,D}P^-    ~~ \Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 3}}{=}
-\ag \det_{\mathcal{H}^-}P^- S_{D,B}P^-S_{B,C}P^-\big[P^- S_{C,A}P^- S_{A,C}P^-\big] P^- S_{C,D}P^-    ~~ \Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}\big(P^- S_{D,B}P^-S_{B,C}P^-\big[P^- S_{C,A}P^- S_{A,C}P^-\big]\\
+&\hspace{7cm}\times P^- S_{C,D}P^-\big)     \Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 1}}{=}
-\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^- \big[P^- S_{C,A}P^- S_{A,C}P^-\big]     ~~ \Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^- \big[P^- S_{C,A}P^- S_{A,C}P^-\big]\\     
+&\hspace{9cm}\times \Gamma_{C,B,D}\\\notag
 &\overset{\eqref{tetraeder 2}}{=}
-\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^- \ag \det P^- S_{C,A}P^- S_{A,C}P^-     ~~ \Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^-\\
+&\hspace{4cm}\times \ag \det P^- S_{C,A}P^- S_{A,C}P^-     ~~ \Gamma_{C,B,D}\\
 &\overset{\eqref{tetraeder 3}}{=}
-\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^-  ~~ \Gamma_{C,B,D}\\
+\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^-  ~~ \Gamma_{C,B,D}\\\notag
 &=
-\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^-  \ag \det_{\mathcal{H}^-} P^- S_{C,B}P^- S_{B,D}P^- S_{D,C}P^- \\
+\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^- \\
+&\hspace{4cm}\times \ag \det_{\mathcal{H}^-} P^- S_{C,B}P^- S_{B,D}P^- S_{D,C}P^- \\
 &=
 |\ag \det_{\mathcal{H}^-}P^- S_{C,D}P^- S_{D,B}P^-S_{B,C}P^-|^2=1. 
 \end{align}
 
-For \eqref{gamma attri6} we realise that according to \cite{ivp0} that two lifts can only differ by a phase,
+Equation \eqref{gamma attri6} is a direct consequence of \eqref{gamma attri5} and \eqref{gamma attri3}.
+
+For \eqref{gamma attri7} we realise that according to \cite{ivp0} that two lifts can only differ by a phase,
 that is
 \begin{equation}
 \overline{S}_{A,C}=\alpha \overline{S}_{A,B} \overline{S}_{B,C}
@@ -773,13 +823,14 @@ Now we take the vacuum expectation value on both sides of this equation and use 
 \alpha^{-1}=\langle\Omega,\overline{S}_{A,B} \overline{S}_{B,C}\overline{S}_{C,A}\Omega\rangle = \Gamma_{A,B,C}^{-1}.
 \end{equation}
 
-Finally we prove \eqref{gamma attri7}. We start from the right hand side of this equation 
+Finally we prove \eqref{gamma attri8}. We start from the right hand side of this equation 
 and work our way towards the left hand side of it. In the following calculation we will repeatedly make use of the fact that 
 \((P^-S_{A,A+B}P^-S_{A+B,A}P^- )\) is the absolute value squared of an invertible operator and has a determinant, which is therefore positive. 
 For the marked equality we will use that for a differentiable function \(z:\mathbb{R}\rightarrow \mathbb{C}\) at points \(t\) where \(z(t)\in\mathbb{R}^+\)
 holds, we have
-\begin{align}
-(z/|z|)'(t)=\frac{z'}{|z|}(t)+\frac{-z}{|z|^2}\frac{z'z^*+ {z^*}'z}{2|z|}(t) =\frac{z'}{2|z|}(t)-\frac{z^2{z^*}'}{2 |z|^3}(t)=i (\Im (z'))/z(t).
+\begin{align}\notag
+(z/|z|)'(t)=\frac{z'}{|z|}(t)+\frac{-z}{|z|^2}\frac{z'z^*+ {z^*}'z}{2|z|}(t) =\frac{z'}{2|z|}(t)-\frac{z^2{z^*}'}{2 |z|^3}(t)\\
+=i (\Im (z'))/z(t).
 \end{align}
 Furthermore, we will use the following  expressions for the derivative of the determinant which holds for all functions 
 \(M:\mathbb{R}\rightarrow (\mathcal{H}\rightarrow \mathcal{H})\) such that \(M(t)-1\) is traceclass and \(M\) is invertible 
@@ -794,31 +845,36 @@ likewise we need the following expression for the derivative of \(M^{-1}\) for
 \end{equation}
 We compute
 \begin{align}
-\partial_B \partial_C \ln \Gamma_{A,A+B,A+C}
+\partial_B \partial_C \ln \Gamma_{A,A+B,A+C}\\
 \overset{\eqref{gamma attri1}}{=} 
 \partial_B \partial_C \ln \ag(\det_{\mathcal{H}^-} (P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-))\\
 =\partial_B \frac{\partial_C\ag(\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-))}{\ag(\det_{\mathcal{H}^-} (P^-S_{A,A+B}P^-S_{A+B,A}P^- ))}\\
 =\partial_B \partial_C\ag(\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-))\\
 \overset{*}{=}
 i\partial_B \frac{\Im \partial_C \det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-)}{\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A}P^-)}\\\notag
-=i\partial_B \Big[\frac{\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A}P^-)}{\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A}P^-)}\\
-\times \Im  \tr ((P^-S_{A,A+B}P^-S_{A+B,A}P^-)^{-1}\partial_C P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-)\Big]\label{eq ca 1}
+=i\partial_B \Big[\frac{\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A}P^-)}{\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A}P^-)}\\\notag
+\times \Im  \tr ((P^-S_{A,A+B}P^-S_{A+B,A}P^-)^{-1}\\
+\times\partial_C P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-)\Big]\label{eq ca 1}
 \end{align}
 The fraction in front of the trace equals \(1\). As a next step we replace the second but last projector \(P^-=1-P^+\), the resulting first summand vanishes,
 because the dependence on \(C\) cancels. This results in 
-\begin{align}
-\eqref{eq ca 1}=-i\partial_B \Im \tr((P^-S_{A,A+B}P^-S_{A+B,A}P^-)^{-1}\partial_C P^-S_{A,A+B}P^-S_{A+B,A+C}P^+ S_{A+C,A}P^-).\label{eq ca 2}
+\begin{align}\notag
+&\eqref{eq ca 1}=-i\partial_B \Im \tr((P^-S_{A,A+B}P^-S_{A+B,A}P^-)^{-1}\\
+&\hspace{3cm}\times\partial_C P^-S_{A,A+B}P^-S_{A+B,A+C}P^+ S_{A+C,A}P^-).\label{eq ca 2}
 \end{align}
 Now, because \(P^+P^-=0\) only one summand of the product rule survives:
-\begin{align}
-\eqref{eq ca 2}=-i\partial_B \Im \tr((P^-S_{A,A+B}P^-S_{A+B,A}P^-)^{-1}\partial_C P^-S_{A,A+B}P^-S_{A+B,A}P^+ S_{A+C,A}P^-).\label{eq ca 3}
+\begin{align}\notag
+&\eqref{eq ca 2}=-i\partial_B \Im \tr((P^-S_{A,A+B}P^-S_{A+B,A}P^-)^{-1}\\
+&\hspace{3cm}\times\partial_C P^-S_{A,A+B}P^-S_{A+B,A}P^+ S_{A+C,A}P^-).\label{eq ca 3}
 \end{align}
 Next we use 
 \((M N )^{-1}= N^{-1} M^{-1}\) for invertible operators \(M\) and \(N\) for the first factor in the trace and cancel as much as possible of
 the second factor:
-\begin{align}
-\eqref{eq ca 3}=-i\partial_B \Im \tr((P^-S_{A+B,A}P^-)^{-1}  P^-S_{A+B,A}P^+ \partial_C S_{A+C,A}P^-)\\
-=-i \Im \tr(\partial_B[(P^-S_{A+B,A}P^-)^{-1}  P^-S_{A+B,A}P^+ \partial_C S_{A+C,A}P^-])\\
+\begin{align}\notag
+\eqref{eq ca 3}=-i\partial_B \Im \tr((P^-S_{A+B,A}P^-)^{-1}  P^-S_{A+B,A}\\
+\times P^+ \partial_C S_{A+C,A}P^-)\\\notag
+=-i \Im \tr(\partial_B[(P^-S_{A+B,A}P^-)^{-1}  P^-S_{A+B,A}\\
+\times P^+ \partial_C S_{A+C,A}P^-])\\
 =-i \Im \tr(\partial_B  P^-S_{A+B,A}P^+ \partial_C S_{A+C,A}P^-)\\
 =-i \Im \tr(\partial_B  P^-S_{A,A+B}P^+ \partial_C S_{A,A+C}P^-)\\
 =-i \partial_B\partial_C\Im \tr(  P^-S_{A,A+B}P^+  S_{A,A+C}P^-)
@@ -851,8 +907,10 @@ holds.
 \end{Def}
 
 \begin{Thm}[existence of global lift]\label{thm: ex s hat}
-There is a unique operator \(\hat{S}\) which for any  \(A\in\mathcal{V}\) is a lift of \(S_{0,A}\) and solvesthe differential equation
-\begin{equation}\label{def s hat}
+  There is a unique map \(\hat{S}_{0,\cdot}:\mathcal{V}\to U(\mathcal{F})\) 
+    which maps  \(A\in\mathcal{V}\) to a lift of \(S_{0,A}\) and solves the 
+    differential equation
+  \begin{equation}\label{def s hat}
 A,B\in\mathcal{V}\text{ linearly dependent}\Rightarrow \partial_B \frac{\hat{S}_{0,A+B}}{\hat{S}_{0,A}\overline{S}_{A,A+B}}=0,
 \end{equation}
 subject to the initial condition \(\hat{S}_{0,0}=1\).
@@ -890,7 +948,7 @@ and the initial condition
 z(A,A)=1
 \end{equation}
  for any \(A\in \mathcal{V}\). The phase \(z\) takes the form
-\begin{equation}
+\begin{equation}\label{z solution}
 z(tA,xA)=\exp\left(-\int_{t}^x dx' \left.\left( \frac{d}{dx'} \ln \Gamma_{tA,y A, x' A}\right)\right|_{y=x'}\right).
 \end{equation}
 Please note that both differential equation and initial condition are invariant under rescaling of the potential \(A\), so \(z\) is well defined. 
@@ -923,39 +981,58 @@ We define
 \begin{equation}\label{def phi}
 \phi_A(t,s):=z(t A, s A) \overline{S}_{t A, s A},
 \end{equation}
-for \((tA,sA)\in\dom\overline{S}\). Having introduced \(\phi_A\) we realise that \eqref{phi prop1} and \eqref{phi prop3} 
-are direct consequences of the way \(\phi_A\) was constructed. Equation \eqref{phi prop4} follows by plugging in 
-\eqref{def phi} and using the differential equation for \(z\). It remains to see that \eqref{phi prop2},  
+for \((tA,sA)\in\dom\overline{S}\). Since \(\overline{S}\) is a lift of \(S\), we see that
+ \eqref{phi prop1} holds. Equation \eqref{phi prop3} follows from \eqref{z initial} and 
+ \(\overline{S}_{tA, tA}=1\) for general \(t\in\mathbb{R}\).
+ Equation \eqref{phi prop4} follows by plugging in 
+\eqref{def phi} and using the differential equation for \(z\) \eqref{z initial}:
+\begin{align}
+\partial_s \left.\frac{\phi_A(t,s)}{\overline{S}_{t A,sA}}\right|_{s=t}
+=\partial_s \left.\frac{z(tA,sA)\overline{S}_{t A, sA}}{\overline{S}_{t A, s A}}\right|_{s=t}\\
+=\partial_t \left.z(tA, sA)\right|_{t=s}=0.
+\end{align}
+
+
+It remains to see that \eqref{phi prop2}, i.e. that 
 
 \begin{align}\label{consistency phi}
 \phi_A(t,s)\phi_A(s,l)=\phi_A(t,l)
 \end{align}
-holds for \((tA,sA),(sA,lA),(tA,lA)\in\dom\overline{S}\). In order to do so we plug in the definition of \(\phi\) and obtain
+holds for \((tA,sA),(sA,lA),(tA,lA)\in\dom\overline{S}\). 
+In order to do so we plug in the definition \eqref{def phi} of \(\phi_A\) and obtain
 \begin{align}
 \phi_A(t,s)\phi_A(s,l)=\phi_A(t,l)\\
 \iff z(tA,sA) z(sA,lA)\overline{S}_{tA,sA}\overline{S}_{sA,lA}=z(tA,lA)\overline{S}_{tA,lA}\\
-\iff z(tA,sA) z(sA,lA)\overline{S}_{tA,sA}\overline{S}_{sA,lA}=z(tA,lA)\overline{S}_{tA,s A} \overline{S}_{sA,lA}\Gamma_{tA,sA,lA}\\
+\iff z(tA,sA) z(sA,lA)\overline{S}_{tA,sA}\overline{S}_{sA,lA}\\
+=z(tA,lA)\overline{S}_{tA,s A} \overline{S}_{sA,lA}\Gamma_{tA,sA,lA}\\
 \iff z(tA,sA) z(sA,lA)z(tA,lA)^{-1}=\Gamma_{tA,sA,lA}.
 \end{align}
-In order to check the validity of this equality we plug in the integral formula for \(z\), we also abbreviate \(\frac{d}{d x}=\partial_x\)
+In order to check the validity of the last equality we plug in the 
+ntegral formula \eqref{z solution} for \(z\), we also abbreviate 
+\(\frac{d}{d x}=\partial_x\)
 
 \begin{align}
 z(tA,sA) z(sA,lA)z(tA,lA)^{-1}\\
-=e^{-\int_t^s d x' \left.(\partial_{x'} \ln \Gamma_{tA,yA,x'A} )\right|_{y=x'}  -\int_s^l d x' \left.(\partial_{x'} \ln \Gamma_{sA,yA,x'A} )\right|_{y=x'}  +\int_t^l d x' \left.(\partial_{x'} \ln \Gamma_{tA,yA,x'A} )\right|_{y=x'}  }\\
+=e^{-\int_t^s d x' \left.(\partial_{x'} \ln \Gamma_{tA,yA,x'A} )\right|_{y=x'} -\int_s^l d x' \left.(\partial_{x'} \ln \Gamma_{sA,yA,x'A} )\right|_{y=x'} }\\
+\times e^{   +\int_t^l d x' \left.(\partial_{x'} \ln \Gamma_{tA,yA,x'A} )\right|_{y=x'}  }\\
 =e^{-\int_l^s d x' \left.(\partial_{x'} \ln \Gamma_{tA,yA,x'A} )\right|_{y=x'}  -\int_s^l d x' \left.(\partial_{x'} \ln \Gamma_{sA,yA,x'A} )\right|_{y=x'} }\\
-\overset{\eqref{gamma attri5}}{=}
+\overset{\eqref{gamma attri6}}{=}
 e^{-\int_l^s d x' \left.(\partial_{x'} \ln \Gamma_{sA,yA,x'A} )\right|_{y=x'} 
 -\int_l^s d x' \left.(\partial_{x'} \ln \Gamma_{tA,sA,x'A} )\right|_{y=x'}}\\ 
-e^{-\int_l^s d x' \left.(\partial_{x'} \ln \Gamma_{tA,yA,sA} )\right|_{y=x'} 
+\times e^{-\int_l^s d x' \left.(\partial_{x'} \ln \Gamma_{tA,yA,sA} )\right|_{y=x'} 
  -\int_s^l d x' \left.(\partial_{x'} \ln \Gamma_{sA,yA,x'A} )\right|_{y=x'} }\\
  =e^{-\int_l^s d x' \left.(\partial_{x'} \ln \Gamma_{tA,sA,x'A} )\right|_{y=x'}}\\
-  =e^{-\int_l^s d x'\partial_{x'} \ln \Gamma_{tA,sA,x'A} }=e^{-\ln \Gamma_{t A, s A, s A} + \ln\Gamma_{t A, s A, l A}}\\
+  =e^{-\int_l^s d x'\partial_{x'} \ln \Gamma_{tA,sA,x'A} }\\
   \overset{\eqref{gamma attri4}}{=}\Gamma_{t A, s A, l A},
 \end{align}
-which proves the validity of the consistency relation \eqref{consistency phi}.
+which proves the validity of the consistency relation 
+\eqref{consistency phi}.
 
-In order to prove uniqueness we pick \(A\in \mathcal{V}\) and assume there is \(phi'\) also defined on \(\dom \phi_A\) 
-satisfying \eqref{phi prop1}-\eqref{phi prop4}. Then we may use \eqref{phi prop1} to conclude that for any \((t,s)\in\dom\phi_A\) there is
+In order to prove uniqueness we pick \(A\in \mathcal{V}\) 
+and assume there is \(\phi'\) also defined on \(\dom \phi_A\) 
+and satisfies \eqref{phi prop1}-\eqref{phi prop4}. Then we may 
+use \eqref{phi prop1} to conclude that for any \((t,s)\in\dom\phi_A\) 
+there is
 \(\gamma(t,s)\in S^1\) such that
 \begin{equation}
 \phi_A(t,s)=\phi'(t,s) \gamma(t,s)
@@ -975,7 +1052,7 @@ From property \eqref{phi prop3} we find
 \gamma(t,t)=1,
 \end{equation}
 for any \(t\).
-Furthermore equation \eqref{phi prop4} helps us to conclude that 
+Using equation \eqref{phi prop4} we conclude that 
 
 \begin{align}
 0=\partial_t \left.\frac{\phi'(s,t)}{\overline{S}_{sA,tA}}\right|_{t=s}
@@ -988,14 +1065,16 @@ Finally we find for general \((s,t)\in \dom\phi_A\):
 \begin{equation}
 \partial_x \gamma(s,x)|_{x=t}=\partial_x ( \gamma(s,t) \gamma(t,x))|_{x=t}=\gamma(s,t) \partial_x \gamma(t,x)|_{x=t}=0.
 \end{equation}
-So \(\gamma(t,s)=1\) everywhere.
+So \(\gamma(t,s)=1\) everywhere. We conclude \(\phi_A=\phi'\).
 
 \end{proof}
 
 
 
 \begin{Lemma}[\(\phi\) global existence and uniqueness]\label{lem: phi global}
-The unitary operator \(\phi\) constructed in lemma \ref{lem phi local} can for any \(A\in\mathcal{V}\) be uniquely extended to all of \(\mathbb{R}^2\), 
+For any \(A\in\mathcal{V}\) the map \(\phi_A\) constructed in 
+lemma \ref{lem phi local} 
+can  be uniquely extended to all of \(\mathbb{R}^2\)
 keeping its defining properties 
 \begin{align}\label{global phi prop1}
 \forall (t,s)\in \mathbb{R}^2: \phi_A(t,s) \text{ is a lift of } S_{tA, sA}\\\label{global phi prop2}
@@ -1005,32 +1084,60 @@ keeping its defining properties
 \end{align}
 \end{Lemma}
 \begin{proof}
+Pick \(A\in\mathcal{V}\). For \(x\in\mathbb{R}\) we define the set
+\begin{equation}\label{def U x}
+U_x:=\{y\in\mathbb{R}\mid (x A, y A)\in \dom\overline{S}\},
+\end{equation}
+which according to lemma \ref{lem properties of dom s bar} is open and
+fulfills that \(\bigcup_{x\in\mathbb{R}} U_x\times U_x\) is an open 
+neighbourhood of the diagonal \(\{(x,x)\mid x \in\mathbb{R}\}\).
+Furthermore for any \(x\in \mathbb{R}\) the set \(U_x\) is connected, 
+as \(\dom\overline{S}\) is star-shaped in the sense of property
+4 of lemma \ref{lem properties of dom s bar}.
+Therefore \(\phi_A\) is defined for arguments that are
+close enough to each other. Since 
+properties \eqref{global phi prop4} and \eqref{global phi prop3} 
+only concern the behavior of \(\phi_A\) at the diagonal any
+extension fulfils them. 
 
- 
-Because of the structure of \(\dom\overline{S}=\bigcup_{x\in\mathbb{R}} \{x\} \cup U_x\), where \(U_x\) is open for any \(x\) 
-we have defined \(\phi_A\) defined for arguments that are
-close enough to each other. Since any extension is going to fulfil properties \eqref{global phi prop4} and \eqref{global phi prop3} 
-we don't prove them in the induction step.
 
-
-
-
-
-The proof is by induction over the domain of definition of \(\phi_A\). 
+The proof is by induction over the domain of definition of our 
+extention of \(\phi_A\). 
 The induction hypothesis is that \(\psi_n\) defined
- on  \(\dom \psi_n=\dom_n \times\dom_n\), is the unique function satisfying the conditions
- \begin{align}\label{induction psi1}
- \forall (t,s)\in \dom_n\times \dom_n: \phi_A(t,s) \text{ is a lift of } S_{tA, sA}\\\label{induction psi2}
-\forall s,k,l\in\dom_n: \psi_n(k,s)\psi_n(s,l)=\psi_n(k,l),\\\label{induction psi3}
-\forall (x,y)\in\dom_n: (xA, yA)\in\dom\overline{S}\Rightarrow  \psi_n(x,y)=\phi_A(x,y).
+on  \(\dom \psi_n=\dom_n \times\dom_n\). The set 
+\(\dom_n\) is any open interval of the form 
+\begin{equation}
+\bigcup_{k=0}^n U_{x_k},
+\end{equation}
+with \((x_k)_k\) such that 
+\begin{align}
+  \forall k\le n: U_{x_k} \cap \bigcup_{l=0}^k U_{x_l}\neq \emptyset\\
+  \forall k\le n: U_{x_k} \cap 
+  \left(\bigcup_{l=0}^k U_{x_l}\right)^c\neq \emptyset,
 \end{align}
+holds. Moreover \(\psi_n\) satisfies the conditions
+ \begin{align}\label{induction psi1}
+ \forall (t,s)\in \dom_n\times \dom_n: \psi_n(t,s) \text{ is a lift of } S_{tA, sA}\\\label{induction psi2}
+\forall s,k,l\in\dom_n: \psi_n(k,s)\psi_n(s,l)=\psi_n(k,l)\\\label{induction psi3}
+\forall (x,y)\in\dom_n: (xA, yA)\in\dom\overline{S}\Rightarrow  \psi_n(x,y)=\phi_A(x,y)
+\end{align}
+and any other function fulfilling properties 
+\eqref{induction psi1}-\eqref{induction psi3} possibly being defined
+on a larger domain coincides with \(\psi_n\) on \(\dom_n\).
 
 We start with \(\psi_0=\phi_A\)  
-restricted to \(U_0 \times U_0\) chosen such that for any \(t,s\in U_0\), \((t A, s A)\in\dom\overline{S}\) holds. 
- This function is an extension of \(\phi_A\) and because of lemma \ref{lem phi local} it 
- fulfils all of the required properties directly. 
+restricted to \(U_{x_0} \times U_{x_0}\) for some \(x_0\in\mathbb{R}\).
+This function is an extension of \(\phi_A\) and because of 
+lemma \ref{lem phi local} it 
+fulfils all of the required properties directly. 
  
-For the induction step we pick \(z\in \partial \dom_n\) and \(U_z\ni z\) open such that \(U_z\times U_z \subseteq \dom\overline{S}\) holds.
+For the induction step we pick 
+\(z\) such that 
+\begin{align}
+U_{z} \cap \dom_n \neq \emptyset\\
+U_{z} \cap \dom_n^c\neq \emptyset
+\end{align}
+hold and define the open interval \(U_{z}\cup \dom_{n+1}\).
 Fix \(t\in U_z\cap \dom_n\).
  We define \(\psi_{n+1}\) on the domain \((\dom_n\cup U_z)\times (\dom_n\cup U_z)\) by
  \begin{equation}\label{psi induction def}
@@ -1041,18 +1148,22 @@ Fix \(t\in U_z\cap \dom_n\).
  \phi_A(x,t)\psi_n(t,y)\quad &\text{for } y\in \dom_n, x\in U_z.
  \end{matrix} \right.
  \end{equation} 
-  In order to complete the induction step we have to show that \(\psi_{n+1}\) is well defined and fulfils \eqref{induction psi1}-\eqref{induction psi3} 
-  with \(\psi_n\) replaced by \(\psi_{n+1}\)  and is the unique function to do so.
+In order to complete the induction step we have to show that 
+\(\psi_{n+1}\) is well defined and fulfils properties
+\eqref{induction psi1}-\eqref{induction psi3} 
+with \(\psi_n\) replaced by \(\psi_{n+1}\)  and is the unique function 
+to do so.
   
-  To see that \(\psi_{n+1}\) is well defined we have to check that the cases in the definition agree when they overlap. 
-  In each item we will implicitly assume that \(x\) and \(y\) are such that none of the previous items applies.
-  \begin{enumerate}
+To see that \(\psi_{n+1}\) is well defined we have to check that the cases in the definition agree when they overlap. 
+In each item we will implicitly assume that \(x\) and \(y\) are such that none of the previous items applies.
+\begin{enumerate}
   \item If we have \(x,y \in \dom_n\cap U_z\) all four cases overlap; however, the cases all equal \(\phi_A(x,y)\) because of the
   induction hypothesis  \eqref{induction psi3} and \eqref{consistency phi}:
-  \begin{equation}
+\begin{align}\nonumber
   \psi_n(x,y)\overset{\eqref{induction psi3}}{=}\phi_A(x,y)\overset{\eqref{consistency phi}}{=}\phi_A(x,t) \phi_A(t,y)
-  \overset{\eqref{induction psi3}}{=}\left\{\begin{matrix}\psi_A(x,t) \phi_n(t,y)\\ \phi_A(x,t) \psi_n(t,y)\end{matrix}\right..
-  \end{equation}
+  \\
+\overset{\eqref{induction psi3}}{=}\left\{\begin{matrix}\psi_A(x,t) \phi_n(t,y)\\ \phi_A(x,t) \psi_n(t,y).\end{matrix}\right.
+  \end{align}
   \item If we have \(x\in \dom_n\), \(y\in \dom_n\cap U_z\) case one and three overlap. Here both cases are equal to
   \(\psi_n(x,y)\), since \(x,y\in \dom_n\) and we may apply \eqref{induction psi2} and \eqref{induction psi3}:
   \begin{equation}
@@ -1092,9 +1203,10 @@ Equation \eqref{induction psi2} we will again show in a case by case manner depe
 \begin{enumerate}
 \item Let \(s,k,l\in \dom_{n}\): then equation  \eqref{induction psi2} follows directly from the induction hypothesis.
 \item Let \(s,k\in \dom_{n}\) and \(l\in U_z\): then we have
-\begin{equation*}
-\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\psi_n(s,k)\psi_n(k,t)\phi_A(t,l)\overset{\eqref{induction psi2}}{=} \psi_n(s,t)\phi_A(t,l)=\psi_{n+1}(s,l)
-\end{equation*}
+\begin{align}\nonumber
+\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\psi_n(s,k)\psi_n(k,t)\phi_A(t,l)\\
+\overset{\eqref{induction psi2}}{=} \psi_n(s,t)\phi_A(t,l)=\psi_{n+1}(s,l)
+\end{align}
 \item Let \(s,l\in \dom_n\) and  \(k\in U_z\): then we have
 \begin{align*}
 \psi_{n+1}(s,k)\psi_{n+1}(k,l)=\psi_{n}(s,t)\phi_A(t,k)\phi_A(t,k)\psi_n(t,l)\overset{\eqref{phi prop3},\eqref{phi prop2}}{=}\\
@@ -1102,32 +1214,38 @@ Equation \eqref{induction psi2} we will again show in a case by case manner depe
 \end{align*}
 \item Let \(s\in \dom_n\) and  \(k,l\in U_z\): then we have
 \begin{align*}
-\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\psi_n(s,t)\phi_A(t,k)\phi_A(k,l)\overset{\eqref{phi prop2}}{=}\psi_n(s,t)\phi_A(t,l)
+\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\psi_n(s,t)\phi_A(t,k)\phi_A(k,l)\\
+\overset{\eqref{phi prop2}}{=}\psi_n(s,t)\phi_A(t,l)
 =\psi_{n+1}(s,l).
 \end{align*}
 \item Let \(k,l\in \dom_n\) and  \(s\in U_z\): then we have
 \begin{align*}
-\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\phi_A(s,t)\psi_n(t,k)\psi_n(k,l)\overset{\eqref{induction psi2}}{=}\phi_A(s,t)\psi_n(t,l)=\psi_{n+1}(s,l).
+\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\phi_A(s,t)\psi_n(t,k)\psi_n(k,l)\\
+\overset{\eqref{induction psi2}}{=}\phi_A(s,t)\psi_n(t,l)=\psi_{n+1}(s,l).
 \end{align*}
 \item Let \(k\in \dom_n\) and  \(s,l\in U_z\): then we have
 \begin{align*}
 \psi_{n+1}(s,k)\psi_{n+1}(k,l)=\phi_A(s,t)\psi_n(t,k)\psi_n(k,t)\phi_A(t,l)\\
 \overset{\eqref{induction psi2}}{=}\phi_A(s,t)\psi(t,t)\phi_A(t,l)
-\overset{\eqref{induction psi3},\eqref{phi prop3}}{=}\phi_A(s,t)\phi_A(t,l)\overset{\eqref{phi prop2}}{=} \phi_A(s,l)=\psi_{n+1}(s,l).
+\overset{\eqref{induction psi3},\eqref{phi prop3}}{=}\phi_A(s,t)\phi_A(t,l)\\
+\overset{\eqref{phi prop2}}{=} \phi_A(s,l)=\psi_{n+1}(s,l).
 \end{align*}
 \item Let \(l\in \dom_n\) and  \(s,k\in U_z\): then we have
 \begin{align*}
-\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\phi_A(s,k)\phi_A(k,t)\psi_n(t,l)\overset{\eqref{phi prop2}}{=}\phi_A(s,t)\psi_n(t,l)=\psi_{n+1}(s,l).
+\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\phi_A(s,k)\phi_A(k,t)\psi_n(t,l)\\
+\overset{\eqref{phi prop2}}{=}\phi_A(s,t)\psi_n(t,l)=\psi_{n+1}(s,l).
 \end{align*}
 \item Let \(s,k,l\in U_z\): then we have
 \begin{align*}
-\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\phi_A(s,k)\phi_A(k,l)\overset{\eqref{phi prop2}}{=}\phi_A(s,l)=\psi_{n+1}(s,l).
+\psi_{n+1}(s,k)\psi_{n+1}(k,l)=\phi_A(s,k)\phi_A(k,l)\\
+\overset{\eqref{phi prop2}}{=}\phi_A(s,l)=\psi_{n+1}(s,l).
 \end{align*}
 \end{enumerate}
 To see \eqref{induction psi3}, that  \(\psi_{n+1}\) is coincides with \(\phi_A\) where both functions are defined pick \(x,y\in \dom_{n+1}\cap\dom\overline{S}\). 
 Now in the definition of \(\psi_{n+1}\),  \eqref{psi induction def} we may use the first line to see that \(\psi_{n+1}(x,y)=\phi_A(x,y)\)
 
-Now only uniqueness is left to show. So let \(\tilde{\psi}\) defined on \((\dom_n\cup U_z)\times(\dom_n\cup U_z)\) fulfil 
+Now only uniqueness is left to show. So let \(\tilde{\psi}\) defined 
+at least on\(\dom_{n+1}\times\dom_{n+1}\) fulfil 
  \begin{align}\label{uniqueness0}
   \forall (t,s)\in \dom_n\times \dom_n: \tilde{\psi}(t,s) \text{ is a lift of } S_{tA, sA}\\\label{uniqueness psi1}
 \forall s,k,l\in\mathbb{R}: \tilde{\psi}(k,s)\tilde{\psi}(s,l)=\tilde{\psi}(k,l),\\\label{uniqueness psi2}
@@ -1147,8 +1265,28 @@ is an open cover of \([x,y]\). Without loss of generality let \(z_1=x, z_n=y\). 
 \begin{equation}
 \tilde{\psi}(x,y)=\prod_{i=1}^{n=1}\tilde{\psi}(z_i,z_{i+1})=\prod_{i=1}^{n=1}\phi_A(z_i,z_{i+1}),
 \end{equation}
-by repeated application of equation \eqref{uniqueness psi1} and application of \eqref{uniqueness psi2}. By the very same procedure we can reduce \(\psi_{n+1}(x,y)\) to the same 
-product, proving \(\psi_{n+1}(x,y)=\tilde{\psi}(x,y)\). This ends the induction and proves the lemma.
+by repeated application of equation 
+\eqref{uniqueness psi1} and application of \eqref{uniqueness psi2}. 
+By the very same procedure we can reduce \(\psi_{n+1}(x,y)\) to the same 
+product, proving \(\psi_{n+1}(x,y)=\tilde{\psi}(x,y)\). This ends the 
+induction. 
+
+Now we have established an extension \(\psi_n\) of \(\phi_A\)
+fulfilling properties \eqref{induction psi1}-\eqref{induction psi3}
+and coinciding with any other function on its domain 
+\(\dom_n\) that also satisfies 
+these properties. The domain is of the form
+\begin{equation}
+\bigcup_{k=0}^n U_{x_k}
+\end{equation}
+with \(x_k\) such that \(\bigcup_{k=0}^l U_{x_k}\) is connected for all 
+\(l\). This also yields a global unique extension of \(\phi_A\) because
+we can pick points \((x_n)_{n\in\mathbb{N}}\) such that 
+\(\bigcup_{k=0}^n U_{x_k}\) is connected for all \(n\) and
+\begin{equation}
+  \mathbb{R}= \bigcup_{n\in\mathbb{N}} U_{x_n}
+\end{equation}
+holds.
 
 \end{proof}
 
@@ -1157,7 +1295,7 @@ product, proving \(\psi_{n+1}(x,y)=\tilde{\psi}(x,y)\). This ends the induction 
 Lemma \ref{lem: phi global} enables us to define a global lift.
 For any \(A\in\mathcal{V}\) we define 
 \begin{equation}
-\hat{S}_{0,A}:=\phi_A(1,0) 1.
+\hat{S}_{0,A}:=\phi_A(1,0).
 \end{equation}
 The operator \(\hat{S}\) fulfils the required differential equation and its uniqueness is inherited from the 
 uniqueness of \(\phi_A\) for \(A\in\mathcal{V}\).
@@ -1200,7 +1338,7 @@ uniqueness of \(\phi_A\) for \(A\in\mathcal{V}\).
 %&= \int_1^\beta d\beta' \left(\int_1^\gamma d\gamma' \partial_{\gamma'}\partial_{\beta'} \ln \Gamma_{A,\beta' A, \gamma' A} 
 %+ \partial_{\beta'} \overbrace{\ln \Gamma_{A,\beta' A, A}}^{\overset{\eqref{gamma attri4}}{=}0} \right)\\
 %&=\int_1^\beta d\beta' \int_1^\gamma d\gamma' c_A((\beta'-1) A, (\gamma'-1) A)\\
-%&=\int_1^\beta d\beta' \int_1^\gamma d\gamma'  (\beta'-1) (\gamma'-1) \overbrace{c_A( A,  A) }^{\overset{\eqref{gamma attri3},\eqref{gamma attri7}}{=}0}=0,
+%&=\int_1^\beta d\beta' \int_1^\gamma d\gamma'  (\beta'-1) (\gamma'-1) \overbrace{c_A( A,  A) }^{\overset{\eqref{gamma attri3},\eqref{gamma attri8}}{=}0}=0,
 %\end{align}
 %where we have used various properties of lemma \ref{gamma attri}.
 %
@@ -1307,7 +1445,7 @@ or by \eqref{z antisym}
 Finally, in this equation we replace \(F=A+\varepsilon_1 H\) as well as  \(G=A+\varepsilon_2 K\), where \(\varepsilon_1,\varepsilon_2\) is small enough so that 
 \(z\) and \(\Gamma\) are still well defined. Then we take the logarithm and derivatives to find
 \begin{equation}
- \partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln  z(A+\varepsilon_1 H,A+\varepsilon_2 K)=\partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln\Gamma_{A,A+\varepsilon_1 H,A+\varepsilon_2 K}\overset{\eqref{gamma attri7}}{=}c_A(H,K). 
+ \partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln  z(A+\varepsilon_1 H,A+\varepsilon_2 K)=\partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln\Gamma_{A,A+\varepsilon_1 H,A+\varepsilon_2 K}\overset{\eqref{gamma attri8}}{=}c_A(H,K). 
 \end{equation}
 
 \end{proof}
@@ -1343,10 +1481,11 @@ for all \(A,F,G\in\mathcal{V}\).
 \end{Lemma}
 \begin{proof}
 Pick \(A,F,G\in \mathcal{V}\), we calculate
-\begin{align}
-&(d\chi)_A(F,G)=\partial_F\partial_G \ln z(A+F,A+F+G)-\partial_F \partial_G \ln z(A+G,A+F+G)\\
+\begin{align}\nonumber
+&(d\chi)_A(F,G)=\partial_F\partial_G \ln z(A+F,A+F+G)\\
+&\hspace{3cm}-\partial_F \partial_G \ln z(A+G,A+F+G)\\
 &=\partial_F\partial_G (\ln  z(A,A+F+G)+\ln z(A+F,A+G))\\
- &\quad - \partial_F\partial_G(  \ln z(A,A+F+G)+\ln z(A+G,A+F))\\
+ &\hspace{1cm} - \partial_F\partial_G(  \ln z(A,A+F+G)+\ln z(A+G,A+F))\\
 &\overset{\eqref{z antisym}}{=} 2 \partial_F\partial_G \ln z(A+F,A+G)\overset{\eqref{z c}}{=}2 c_A(F,G).
 \end{align}
 \end{proof}
@@ -1378,36 +1517,46 @@ f^*_b\omega-f^*_a \omega=d \int_{a}^b \iota_t^* i_X f^* \omega ~dt+ \int_{a}^b \
 \end{equation}
 The lemma follows then by \(b=1, a= 0\), \(f^*_1\omega=\omega, f^*_0 \omega=0\) and \(d \omega=0\) for a closed \(\omega\). 
 We begin by rewriting the right hand side of \eqref{poincare more general}:
-\begin{equation}\label{poincare 1 manipulation}
-d \int_{a}^b \iota_t^* i_X f^* \omega ~dt+ \int_{a}^b \iota_t^* i_X f^* d \omega dt=
-\int_a^b (d\iota_t^* i_X f^* \omega+ \iota_t^* i_X f^* d \omega )dt.
-\end{equation}
+\begin{align}\nonumber
+d \int_{a}^b \iota_t^* i_X f^* \omega ~dt+ \int_{a}^b \iota_t^* i_X f^* d \omega dt\\\label{poincare 1 manipulation}
+=\int_a^b (d\iota_t^* i_X f^* \omega+ \iota_t^* i_X f^* d \omega )dt.
+\end{align}
 Next we look at both of these terms separately. Let therefore \(p\in \mathbb{N}\), \(t, s_k\in \mathbb{R}\) and \(A,B_k\in \mathcal{V}\) for each \(p+1\ge k\in\mathbb{N}\).
-First, we calculate \(d \iota^*_t i_X f^* \omega\)
+First, we calculate \(d \iota^*_t i_X f^* \omega\):
 \begin{align}
-&(f^*\omega)_{(t,A)}((s_1,B_1),\dots, (s_p,B_p))=\omega_{tA}(s_1A+tB_1,\dots, s_p A+t B_p)\\[0.3cm]
-&(i_X f^* \omega)_{(t,A)}((s_1,B_1),\dots, (s_{p-1},B_{p-1}))=\omega_{tA}(A,s_1A+tB_1,\dots, s_{p-1}A + t B_{p-1}\\[0.3cm]
-&(\iota^*_t i_X f^* \omega)_{A}(B_1,\dots, B_{p-1})= t^{p-1} \omega_{t A}(A,B_1,\dots, B_{p-1})\\[0.3cm]\notag
-&(d\iota^*_t i_X f^* \omega)_{A}(B_1,\dots, B_{p})=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{t A + \varepsilon t B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\\
-&+ \partial_\varepsilon|_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{tA}(A+\varepsilon B_k,B_1,\dots, \cancel{B_k},\dots, B_p)\\\label{li derivative 1}
-&=\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p t^p (-1)^{k+1} \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)+p t^{p-1}\omega_{tA}(B_1,\dots, B_p).
+&(f^*\omega)_{(t,A)}((s_1,B_1),\dots, (s_p,B_p))\\\nonumber
+&\hspace{3cm}=\omega_{tA}(s_1A+tB_1,\dots, s_p A+t B_p)\\[0.3cm]
+&\Rightarrow (i_X f^* \omega)_{(t,A)}((s_1,B_1),\dots, (s_{p-1},B_{p-1}))\\\nonumber
+&\hspace{3cm}=\omega_{tA}(A,s_1A+tB_1,\dots, s_{p-1}A + t B_{p-1}\\[0.3cm]
+&\Rightarrow (\iota^*_t i_X f^* \omega)_{A}(B_1,\dots, B_{p-1})= t^{p-1} \omega_{t A}(A,B_1,\dots, B_{p-1})\\[0.3cm]\notag
+&\Rightarrow (d\iota^*_t i_X f^* \omega)_{A}(B_1,\dots, B_{p}) \\
+&\quad=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{t A + \varepsilon t B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\\
+&\quad+ \partial_\varepsilon|_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{tA}(A+\varepsilon B_k,B_1,\dots, \cancel{B_k},\dots, B_p)\\\notag
+&=\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p t^p (-1)^{k+1} \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\\\label{li derivative 1}
+&\hspace{6cm}+p t^{p-1}\omega_{tA}(B_1,\dots, B_p).
 \end{align}
 
 
 Now, we calculate \(\iota^*_t i_X f^* d \omega\):
-\begin{align}
-&(d\omega)_A(B_1,\cdots, B_{p+1})=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^{p+1} (-1)^{k+1} \omega_{A+\varepsilon B_k}(B_1,\dots , \cancel{B_k}, \dots, B_{p+1})\\[0.3cm]
-&(f^* d \omega){(t,A)}((s_1,B_1),\dots , (s_{p+1},B_{p+1}))= (d\omega)_{tA}(s_1A + t B_1, \dots, s_{p+1}A+t B_{p+1})\\
-&=\partial_{\varepsilon}|_{\varepsilon =0} \sum_{k=1}^{p+1}(-1)^{k+1} \omega_{tA + \varepsilon(s_kA + t B_k)}(s_1A+tB_1, \dots,  \cancel{s_k A + t B_k},\dots , s_p A  + t B_p )\\[0.4cm]
-&(i_X f^* d \omega)_{(t,A)}((s_1,B_1),\dots , (s_p, B_p))= \partial_{\varepsilon} |_{\varepsilon =0} \omega_{(t+\varepsilon)A}(s_1A+tB_1, \dots, s_pA+t B_p)\\
-&+\partial_{\varepsilon}|_{\varepsilon=0} \sum_{k=1}^p (-1)^k \omega_{tA + \varepsilon(s_k A + t B_k)} (A,s_1A+t B_1, \dots, \cancel{s_k A + t B_k},\dots, s_p A + t B_p)\\
+\begin{align}\notag
+&(d\omega)_A(B_1,\cdots, B_{p+1})\\
+&\hspace{2cm}=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^{p+1} (-1)^{k+1} \omega_{A+\varepsilon B_k}(B_1,\dots , \cancel{B_k}, \dots, B_{p+1})\\[0.3cm]
+&(f^* d \omega){(t,A)}((s_1,B_1),\dots , (s_{p+1},B_{p+1}))\\\notag
+&= (d\omega)_{tA}(s_1A + t B_1, \dots, s_{p+1}A+t B_{p+1})\\
+&=\partial_{\varepsilon}|_{\varepsilon =0} \sum_{k=1}^{p+1}(-1)^{k+1}\\\notag
+&\quad \times\omega_{tA + \varepsilon(s_kA + t B_k)}(s_1A+tB_1, \dots,  \cancel{s_k A + t B_k},\dots , s_p A  + t B_p )\\[0.4cm]
+&(i_X f^* d \omega)_{(t,A)}((s_1,B_1),\dots , (s_p, B_p))\\\notag
+&\quad= \partial_{\varepsilon} |_{\varepsilon =0} \omega_{(t+\varepsilon)A}(s_1A+tB_1, \dots, s_pA+t B_p)\\\notag
+&+\partial_{\varepsilon}|_{\varepsilon=0} \sum_{k=1}^p (-1)^k\\\notag
+&\times\omega_{tA + \varepsilon(s_k A + t B_k)} (A,s_1A+t B_1, \dots, \cancel{s_k A + t B_k},\dots, s_p A + t B_p)\\
 &= t^p \partial_{\varepsilon}|_{\varepsilon=0}\omega_{(t+\varepsilon)A }(B_1,\dots, ,\cancel{B_k},\dots, B_p))\\
-&\hspace{3cm}+ \sum_{k=1}^p s_k t^{p-1} (-1)^{k+1} \partial_{\varepsilon}|_{\varepsilon=0}\omega_{(t+\varepsilon)A}(A,B_1,\dots, B_p) \\
+&\hspace{2cm}+ \sum_{k=1}^p s_k t^{p-1} (-1)^{k+1} \partial_{\varepsilon}|_{\varepsilon=0}\omega_{(t+\varepsilon)A}(A,B_1,\dots, B_p) \\
 &+\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p(-1)^k t^{p-1}(\omega_{(t+s_k\varepsilon)A}(A,B_1,\dots, \cancel{B_k},\dots, B_p) \\
-&\hspace{3cm} + \omega_{tA + \varepsilon t B_k}(A,B_1, \dots, \cancel{B_k},\dots, B_p))\\
-&=t^p\partial_{\varepsilon}|_{\varepsilon=0} \left(\omega_{(t+\varepsilon)A}(B_1,\dots, B_p) +\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\right)\\
-&(\iota_t^* i_X f^* d \omega)_{A}(B_1,\dots ,  B_p)=t^p\partial_{\varepsilon}|_{\varepsilon=0} \Big(\omega_{(t+\varepsilon)A}(B_1,\dots, B_p)\\\label{li derivative 2}
-&\hspace{5cm}+\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\Big)
+&\hspace{2cm} + \omega_{tA + \varepsilon t B_k}(A,B_1, \dots, \cancel{B_k},\dots, B_p))\\
+&=t^p\partial_{\varepsilon}|_{\varepsilon=0} \Big(\omega_{(t+\varepsilon)A}(B_1,\dots, B_p)\\\notag
+&\hspace{2cm} +\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\Big)\\\label{li derivative 2}
+&(\iota_t^* i_X f^* d \omega)_{A}(B_1,\dots ,  B_p)=t^p\partial_{\varepsilon}|_{\varepsilon=0} \Big(\omega_{(t+\varepsilon)A}(B_1,\dots, B_p)\\\notag
+&\hspace{2cm}+\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\Big)
 \end{align}
 
 Adding \eqref{li derivative 1} and \eqref{li derivative 2} we find for \eqref{poincare 1 manipulation}:
@@ -1542,8 +1691,9 @@ Pick \(F_1,F_2\prec G_1,G_2\). We abbreviate \(F=F_1+F_2, G=G_1+G_2\) and we cal
 &f(A,F,G)=\frac{\tilde{S}_{A+G,A+F+G}}{\tilde{S}_{A,A+F}}\\
 &=\frac{\tilde{S}_{A+G,A+F+G}}{\tilde{S}_{A+G_1,A+G_1+F}}\frac{\tilde{S}_{A+G_1,A+G_1+F}}{\tilde{S}_{A,A+F}}\\
 &=\frac{\tilde{S}_{A+G,A+G+F_1} \tilde{S}_{A+G+F_1,A+F+G}}{\tilde{S}_{ A+G_1,A+F_1+G_1} \tilde{S}_{ A+G_1+F_1,A+G_1+F}}  \frac{\tilde{S}_{A+G_1,A+G_1+F}}{\tilde{S}_{A,A+F}}\\
-&=\frac{\tilde{S}_{A+G,A+G+F_1}}{\tilde{S}_{A+G_1,A+F_1+G_1}} \frac{\tilde{S}_{A+G+F_1,A+F+G}}{\tilde{S}_{A+G_1+F_1,A+G_1+F}}   f(A,G_1,F_1+F_2)\\
-&=f(A+G_1,F_1,G_2)f(A+G_1+F_1,G_2,F_2)f(A,G_1,F_1+F_2).
+&=\frac{\tilde{S}_{A+G,A+G+F_1}}{\tilde{S}_{A+G_1,A+F_1+G_1}} \frac{\tilde{S}_{A+G+F_1,A+F+G}}{\tilde{S}_{A+G_1+F_1,A+G_1+F}}  f(A,G_1,F_1+F_2)\\\notag
+&=f(A+G_1,F_1,G_2)f(A+G_1+F_1,G_2,F_2)\\
+&\hspace{2cm} \times f(A,G_1,F_1+F_2).
 \end{align}
 Taking the logarithm and differentiating we find:
 \begin{equation}\label{shift to small G,F}
@@ -1559,8 +1709,9 @@ Next we pick \(F_2=\alpha_1 F_1\) and \(G_2=\alpha_2 G_1\) for \(\alpha_1,\alpha
  hold. We abbreviate \(A'=A+G_1+F_1\), use \eqref{def z} and compute
  
  \begin{align}\notag
- f(A',F_2,G_2)=\frac{e^{-\alpha_{A'+F_2+G_2}+\alpha_{A'+G_2}}z(A',A'+F_2+G_2)z^{-1}(A',A'+G_2)}{e^{-\alpha_{A'+F_2}+\alpha_{A'}}z(A',A'+F_2)z^{-1}(A',A')} \\
- \frac{\overline{S}_{A'+G_2,A'}\overline{S}_{A',A'+F_2+G_2}}{\overline{S}_{A',A'}\overline{S}_{A',A'+F_2}}.
+ &f(A',F_2,G_2)=\\\notag
+ &\frac{e^{-\alpha_{A'+F_2+G_2}+\alpha_{A'+G_2}}z(A',A'+F_2+G_2)z^{-1}(A',A'+G_2)}{e^{-\alpha_{A'+F_2}+\alpha_{A'}}z(A',A'+F_2)z^{-1}(A',A')} \\
+&\hspace{3cm}\times \frac{\overline{S}_{A'+G_2,A'}\overline{S}_{A',A'+F_2+G_2}}{\overline{S}_{A',A'}\overline{S}_{A',A'+F_2}}.
  \end{align}
 
 The second factor in this product can be simplified significantly:
@@ -1568,31 +1719,37 @@ The second factor in this product can be simplified significantly:
  \frac{\overline{S}_{A'+G_2,A'}\overline{S}_{A',A'+F_2+G_2}}{\overline{S}_{A',A'}\overline{S}_{A',A'+F_2}}
  = \frac{\overline{S}_{A'+G_2,A'}\overline{S}_{A',A'+F_2+G_2}}{\overline{S}_{A',A'+F_2}}\\
  \overset{\eqref{gamma attri6}}{=}\Gamma^{-1}_{A'+G_2,A',A'+F_2+G_2}\frac{\overline{S}_{A'+G_2,A'+F_2+G_2}}{\overline{S}_{A',A'+F_2}}\\
- \overset{\eqref{s bar causal}}{=}\Gamma_{A',A'+G_2,A'+F_2+G_2}\\
-\overset{ \eqref{z gamma}}{=}z(A',A'+G_2)z(A'+G_2,A'+G_2+F_2)z(A'+F_2+G_2,A').
+ \overset{\eqref{s bar causal}}{=}\Gamma_{A',A'+G_2,A'+F_2+G_2}\\\notag
+\overset{ \eqref{z gamma}}{=}z(A',A'+G_2)z(A'+G_2,A'+G_2+F_2)\\
+ \times z(A'+F_2+G_2,A').
 \end{align}
 So in total we find
 
-\begin{align}
-f(A',F_2,G_2)=\frac{e^{-\alpha_{A'+F_2+G_2}+\alpha_{A'+G_2}}z(A',A'+F_2+G_2)z^{-1}(A',A'+G_2)}{e^{-\alpha_{A'+F_2}+\alpha_{A'}}z(A',A'+F_2)z^{-1}(A',A')}  \\\
-\times z(A',A'+G_2)z(A'+G_2,A'+G_2+F_2)z(A'+F_2+G_2,A')\\
+\begin{align}\notag
+f(A',F_2,G_2)=\\
+\frac{e^{-\alpha_{A'+F_2+G_2}+\alpha_{A'+G_2}}z(A',A'+F_2+G_2)z^{-1}(A',A'+G_2)}{e^{-\alpha_{A'+F_2}+\alpha_{A'}}z(A',A'+F_2)z^{-1}(A',A')}  \\\notag
+\times z(A',A'+G_2)z(A'+G_2,A'+G_2+F_2)\\\notag
+\times z(A'+F_2+G_2,A')\\
 =\exp(-\alpha_{A'+F_2+G_2}+\alpha_{A'+G_2}+\alpha_{A'+F_2}-\alpha_{A'})\\
 \times z(A'+G_2,A'+G_2+F_2)z^{-1}(A',A'+F_2).
 \end{align}
 Most of the factors do not depend on \(F_2\) and \(G_2\), so taking the mixed logarithmic derivative things simplify:
-\begin{align}
-\partial_{G_2}\partial_{F_2} \ln f(A',F_2,G_2)= \partial_{G_2}\partial_{F_2} ( -\alpha_{A'+F_2+G_2} + \ln z(A'+G_2,A'+G_2+F_2))\\
+\begin{align}\notag
+\partial_{G_2}\partial_{F_2} \ln f(A',F_2,G_2)= \\
+\partial_{G_2}\partial_{F_2} ( -\alpha_{A'+F_2+G_2} + \ln z(A'+G_2,A'+G_2+F_2))\\
 \overset{\eqref{def alpha}, \eqref{de chi}}{=}  \partial_{G_2} (-\beta_{A'+G_2}(F_2)-\chi_{A'+G_2}(F_2) + \chi_{A'+G_2}(F_2))\\
 \overset{\eqref{beta c}}{=}2 c^+_{A'}(F_2,G_2)\overset{F_2\prec G_2, \eqref{c+ 3}}{=}0.
 \end{align}
 So by \eqref{shift to small G,F} we also have
-\begin{equation}
-\partial_{F_2}\partial_{G_2}\ln f(A,F_1+F_2,G_1+G_2)=0=\partial_{\alpha_1}\partial_{\alpha_2}\ln f(A,F_1(1+\alpha_1),G_1(1+\alpha_2))
-\end{equation}
+\begin{align}
+\partial_{F_2}\partial_{G_2}\ln f(A,F_1+F_2,G_1+G_2)=0\\
+=\partial_{\alpha_1}\partial_{\alpha_2}\ln f(A,F_1(1+\alpha_1),G_1(1+\alpha_2))
+\end{align}
 But then we can integrate and obtain
 \begin{align}
 &0=\int_{-1}^0d \alpha_1 \int_{-1}^0d \alpha_2  \partial_{\alpha_1}\partial_{\alpha_2}\ln f(A,F_1(1+\alpha_1),G_1(1+\alpha_2))\\
-&=\ln f(A,F_1,G_1)-\ln f(A,0,G_1)-\ln f(A,F_1,0) + \ln f(A,0,0)\\
+&=\ln f(A,F_1,G_1)-\ln f(A,0,G_1)-\ln f(A,F_1,0)\\\notag 
+&\hspace{3cm}+ \ln f(A,0,0)\\
 &\overset{\eqref{vanish at axis}}{=}\ln f(A,F_1,G_1).
 \end{align}
 remembering equation \eqref{f causal}, the definition of \(f\),  this ends our proof.
@@ -1627,16 +1784,19 @@ i\partial_F \ln \left\langle\Omega, \tilde{S}_{A,A+F}\Omega\right\rangle\\
 \end{align}
 The last summand vanishes, as can be seen by the following calculation
 \begin{align}
-\partial_{F} \ln \left\langle \Omega, \overline{S}_{A,A+F}\Omega\right\rangle
+\partial_{F} \ln \left\langle \Omega, \overline{S}_{A,A+F}\Omega\right\rangle\\
 =i\partial_F\ln \det_{\mathcal{H}^-} (P^-S_{A,A+F}P^-\AG(P^-S_{A,A+F}P^-)^{-1})\\
-=i\partial_F\ln \det_{\mathcal{H}^-} |P^-S_{A,A+F}P^-|=\frac{i}{2} \partial_F \ln \det_{\mathcal{H}^-} ((P^- S_{A,A+F}P^-)^*P^- S_{A,A+F}P^-)\\
-=\frac{i}{2} \partial_F \det (P^- S_{A+F,A}P^-S_{A,A+F}P^-)=\frac{i}{2}\tr(\partial_F P^-S_{A+F,A}P^-S_{A,A+F}P^-)\\
+=i\partial_F\ln \det_{\mathcal{H}^-} |P^-S_{A,A+F}P^-|\\
+=\frac{i}{2} \partial_F \ln \det_{\mathcal{H}^-} ((P^- S_{A,A+F}P^-)^*P^- S_{A,A+F}P^-)\\
+=\frac{i}{2} \partial_F \det (P^- S_{A+F,A}P^-S_{A,A+F}P^-)\\
+=\frac{i}{2}\tr(\partial_F P^-S_{A+F,A}P^-S_{A,A+F}P^-)\\
 =\frac{i}{2}\tr(\partial_F P^-S_{A,A+F}P^-+\partial_F P^-S_{A+F,A}P^-)=0\end{align}
 where we made use of \eqref{diff det}.
 So we are left with
-\begin{equation}
-j_A(F)=i\partial_F (-\alpha_{A+F}+\ln z(A,A+F))=i(-\beta_A(F)-\chi_A(F)+\chi_A(F))=-i\beta_A(F).
-\end{equation}
+\begin{align}
+j_A(F)=i\partial_F (-\alpha_{A+F}+\ln z(A,A+F))\\
+=i(-\beta_A(F)-\chi_A(F)+\chi_A(F))=-i\beta_A(F).
+\end{align}
 
 Finally by taking the derivative with respect to \(G\in\mathcal{V}\) and using the definition of \(\beta\) we find
 \begin{equation}

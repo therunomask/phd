@@ -61,6 +61,8 @@
 \DeclareMathOperator{\ag}{ag}
 \DeclareMathOperator{\AG}{AG}
 \DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\odd}{odd}
 
 \newcommand{\id}{{\mathbbm 1}}
 \newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
@@ -543,7 +545,7 @@ C_1 T_1=C(t_1)T_1(t_1,t_0)\\
 C_1C_2=C_1(t_1),
 \end{align}
 as maps of the same type as \(T_1, T_1\) and \(C_1\) respectively.
-Pick \(A,F\in\mathcal{V}\) and \(t_1,t_0\) as in the theorem. 
+Pick \(A,H\in\mathcal{V}\) and \(t_1,t_0\) as in the theorem. 
 Furhtermore we introduce the integral operator 
 \({Q'}^A:\mathcal{H}\righttoleftarrow\) by it's kernel
 \begin{equation}
@@ -552,27 +554,96 @@ Furhtermore we introduce the integral operator
 \end{equation}
 where the time dependence is due to the time dependence of the 
 four-potential \(A\).
-Because of the choice of \(t_1,t_0\) we have
-\begin{equation}\label{def R}
-R^{A+F}(t_1,t_0):=[(1-Q^{A+F})U^{A+F}(1+Q^{A+F})](t_1,t_0)=U^{A+F}(t_1,t_0).
+The following notion of even and odd part of 
+an arbitrary bounded linear operator 
+\(T:\mathcal{F}\righttoleftarrow\) on 
+Fock space will come in handy:
+\begin{equation}
+T_{\mathrm{odd}}:=P^+TP^- + P^-TP^+\\
+T_{\mathrm{ev}}:=P^+TP^+ + P^-TP^-.
 \end{equation}
 
+
+Because of the choice of \(t_1,t_0\) we have
+\begin{equation}\label{def R}
+R^{A+H}(t_1,t_0):=[(1-Q^{A+H})U^{A+H}(1+Q^{A+H})](t_1,t_0)=U^{A+H}(t_1,t_0),
+\end{equation}
+because \(A+F=0\) both at \(t_1\) and \(t_0\).
+
 So it suffices to study the family of operators \(R\). 
-Form the analysis carried out in \cite{ivp0} we know that 
-\(R^B\) for \(B\in\mathcal{V}\) is the limit in the sense of the operator norm of 
-the sequence
+From the analysis carried out in \cite{ivp0} we know that 
+\(R^B\) for \(B\in\mathcal{V}\) is the limit in the sense of the 
+operator norm of the sequence
 \begin{align}
-R^B_{(0)}:=0, \quad R^B_{(n+1)}:=U^0 F^B R^B_{(n-1)}+ U^0 + G^B,
+R^B_{0}:=0, \quad R^B_{n+1}:=U^0 F^B R^B_{n}+ U^0 + G^B,
 \end{align}
 where \(F\) and \(G\) are given By
 
 \begin{align}
-F^B:= (-{Q'}^B+Z^B_{\mathrm{ev}}-Q^BZ^B)(1+Q^B)\\
-G^B:=- U^0(1-Q^BQ^B) + U^0(-{Q'}^B+Z_{\mathrm{ev}}-Q^B Z^B)Q^B Q^B U^B (1+Q^B)\\
-Z^B_{\mathrm{ev}}=P^+ Z^B P^++P^- Z^B P^-
-Z^B_N{\mathrm{odd}}=Z^B-Z^B_{\mathrm{ev}}.
+F^B:= (-{Q'}^B+Z^B_{\mathrm{ev}}-Q^BZ^B)(1+Q^B),\\
+G^B:=- U^0(1-Q^BQ^B) + U^0(-{Q'}^B\\
++Z_{\mathrm{ev}}-Q^B Z^B)Q^B Q^B U^B (1+Q^B).
 \end{align}
 
+\begin{Lemma}
+We are going to prove that
+\begin{align}
+  R^{A}_n&\xrightarrow[n\rightarrow \infty]{\|\cdot\|_{\mathrm{op}+I_2}}R^A\\
+  \partial_F R^{A+F}_n&\xrightarrow[n\rightarrow \infty]{\|\cdot\|_{\mathrm{op}+I_2}} \partial_FR^{A+F}
+\end{align}
+holds.
+\end{Lemma}
+
+\begin{proof}
+From the analysis of \cite{ivp0} also follows that the 
+recursive equation \cite[(3.42)]{ivp0}
+
+\begin{align}
+R^B_{n}=U^0F^B_{\ev}R^B_{n-1}+U^0F^B_{\odd} U^0F^B R^B_{n-2}\\
++U^0 F^B_{\odd} +U^0F^B_{\odd} U^0 + U^0 +G^B
+\end{align}
+is fulfilled by the same sequence of operators for \(n\ge 2\).
+Hence we have for \(n\ge 2\):
+\begin{align}\notag
+  R^B-R^B_{n}=U^0F^B_{\ev}(R^B-R^B_{n-1})\\\label{R recurisve}
+  +U^0F^B_{\odd} U^0F^B (R^B-R^B_{n-2}).
+\end{align}
+Abbreviating \(U^0F^B_{\ev}=:a,U^0F^B_{\odd}U^0 F^B:=b\), this 
+can be brought into the vectorised form:
+\begin{align}
+\binom{R^B-R^B_{n}}{R^B-R^B_{n-1}}
+=\begin{pmatrix}&a &b \\ &1 & 0 \end{pmatrix}
+  \binom{R^B-R^B_{n-1}}{R^B-R^B_{n-2}},
+\end{align}
+which by induction yields
+\begin{align}
+  \binom{R^B-R^B_{n}}{R^B-R^B_{n-1}}
+  =\begin{pmatrix}&U^0F^B_{\ev} &U^0F^B_{\odd}U^0 F^B \\ &1 & 0 \end{pmatrix}^{n-1}
+    \binom{R^B-R^B_{1}}{R^B}.
+\end{align}
+Taking the derivative of \eqref{R recurisve} we find
+\begin{align}\notag
+  \partial_H (R^{A+F}-R^{A+H}_{n})
+  =U^0F^A_{\ev}\partial_H(R^{A+H}-R^{A+H}_{n-1})\\\notag
+  +U^0F^A_{\odd} U^0F^A \partial_H(R^{A+H}-R^{A+H}_{n-2})
+  +\partial_H U^0F^{A+H}_{\ev}(R^{A}-R^{A}_{n-1})\\\label{R dot recurisve}
+  +\partial_H U^0F^{A+H}_{\odd} U^0F^{A+H} (R^{A}-R^{A}_{n-2}).
+\end{align}
+Using the furher abbreviations 
+\begin{align}
+c:=\partial_H U^0F^{A+H}_{\ev}\\
+d:=\partial_H U^0F^{A+H}_{\odd} U^0F^{A+H}\\
+T_n:= R^{A}-R^{A}_{n}\\
+\dot{T}_n:= \partial_H (R^{A+H}-R^{A+H}_{n}),
+\end{align}
+we vectorise the recursive equation and arrive at 
+\begin{align}
+asd
+\end{align}
+
+
+
+\end{proof}
 
 
 \end{proof}

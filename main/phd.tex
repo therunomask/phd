@@ -506,27 +506,32 @@ U^{A+F}(t_1,t_0)=U^A(t_1,t_0) + \int_{t_0}^{t_1}dt U^A(t_1,t) Z^F(t) U^{A+F}(t,t
 
 \begin{Thm}[Analyticity of S]\todo{think about 
   generalisation to higher derivatives}
-Let \(A,F\in\mathcal{V}\), pick \(t_1\) 
-after \(\supp A\cup\supp F\) and \(t_0\)
-before \(\supp A\cup\supp F\) then 
+Let \(n\in\mathbb{N}\),  \(A,H_{k}\in\mathcal{V}\) for 
+\(k\le n\), pick \(t_1\) 
+after \(\supp A\cup \bigcup_{k\le n}\supp H_k\) and \(t_0\)
+before \(\supp A\cup\bigcup_{k\le n}\supp H_k\) then 
 \begin{align}\label{derivative U}
-\partial_F U^{A+F}(t_1,t_0)=\int_{t_0}^{t_1}dt~ U(t_1,t)Z^F(t) U^{A}(t,t_0)
+\partial_{H_1} U^{A+H_1}(t_1,t_0)=\int_{t_0}^{t_1}dt~ U^A(t_1,t)Z^{H_1}(t) U^{A}(t,t_0)
 \end{align}
 holds with respect to the topology induced by the
 norm
 \begin{equation}
-T:\mathcal{F}\righttoleftarrow \|T\|_{\mathrm{op}+I_2}=\|T\|+\|P^+ T P^-\|_{I_2}+\|P^- T P^+\|_{I_2},
+T:\mathcal{H}\righttoleftarrow \|T\|_{\mathrm{op}+I_2}=\|T\|+\|P^+ T P^-\|_{I_2}+\|P^- T P^+\|_{I_2},
 \end{equation}
 where \(\|\cdot\|\) is the operator norm and \(\|\cdot\|_{I_2}\) is the 
 Hilbert-Schmidt norm.
-Furthermore let \(T_1\in I_2(\mathcal{F})\) then\todo{how well does cyclicity of the trace hold for operators?}
+Additionally the derivatives 
+\begin{equation}
+\partial_{H_1}\dots \partial_{H_k}U^{A+\sum_{b=1}^k F_b}(t_1,t_0)
+\end{equation}
+all exist with respect to the topology just mentioned.
+Furthermore let \(T_1\in I_2(\mathcal{F})\) then the following formulas hold:\todo{how well does cyclicity of the trace hold for operators?}
 \begin{align}\notag
-\partial_F \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+F}(t_1,t_0))\\\label{pull derivative into trace}
-= \tr(T_1 P^+ U^{A}(t_0,t_1)\partial_F U^{A+F}(t_1,t_0)P^- )\\\notag
-\partial_F \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+F}(t_1,t_0))\\
-= \tr(T_1 P^- U^{A}(t_0,t_1)\partial_F U^{A+F}(t_1,t_0)P^+ )
+\partial_{H_1} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H_1}(t_1,t_0)P^-)\\\label{pull derivative into trace}
+= \tr(T_1 P^+ U^{A}(t_0,t_1)\partial_{H_1} U^{A+H_1}(t_1,t_0)P^- )\\\notag\vspace{2cm}
+\partial_{H_1} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H_1}(t_1,t_0)P^+)\\
+= \tr(T_1 P^- U^{A}(t_0,t_1)\partial_{H_1} U^{A+H_1}(t_1,t_0)P^+ ).
 \end{align}
-is true.
 \end{Thm}
 \begin{proof}
 Following \cite{ivp0} we will throughout this proof make use of the 
@@ -544,8 +549,10 @@ T_1C_1=T_1(t_1,t_0)C_1(t_0)\\
 C_1 T_1=C(t_1)T_1(t_1,t_0)\\
 C_1C_2=C_1(t_1),
 \end{align}
-as maps of the same type as \(T_1, T_1\) and \(C_1\) respectively.
-Pick \(A,H\in\mathcal{V}\) and \(t_1,t_0\) as in the theorem. 
+as maps of the same type as \(T_1, T_1\) and \(C_1\) 
+respectively.
+Pick\(n\in\mathbb{N}\), \(A,H_b\in\mathcal{V}\) for \(b\le k\) 
+and \(t_1,t_0\) as in the theorem. 
 Furhtermore we introduce the integral operator 
 \({Q'}^A:\mathcal{H}\righttoleftarrow\) by it's kernel
 \begin{equation}
@@ -563,12 +570,15 @@ T_{\mathrm{odd}}:=P^+TP^- + P^-TP^+\\
 T_{\mathrm{ev}}:=P^+TP^+ + P^-TP^-.
 \end{equation}
 
-
+We abbreviate
+\begin{equation}
+H:=\sum_{b=1}^k H_b, \quad B:=A+H
+\end{equation}
 Because of the choice of \(t_1,t_0\) we have
 \begin{equation}\label{def R}
 R^{A+H}(t_1,t_0):=[(1-Q^{A+H})U^{A+H}(1+Q^{A+H})](t_1,t_0)=U^{A+H}(t_1,t_0),
 \end{equation}
-because \(A+F=0\) both at \(t_1\) and \(t_0\).
+because \(A+H=0\) both at \(t_1\) and \(t_0\).
 
 So it suffices to study the family of operators \(R\). 
 From the analysis carried out in \cite{ivp0} we know that 
@@ -586,7 +596,7 @@ G^B:=- U^0(1-Q^BQ^B) + U^0(-{Q'}^B\\
 \end{align}
 
 \begin{Lemma}
-We are going to prove that
+We are going to prove that for \(n\in\mathbb{N}\) and 
 \begin{align}
   R^{A}_n&\xrightarrow[n\rightarrow \infty]{\|\cdot\|_{\mathrm{op}+I_2}}R^A\\
   \partial_F R^{A+F}_n&\xrightarrow[n\rightarrow \infty]{\|\cdot\|_{\mathrm{op}+I_2}} \partial_FR^{A+F}
@@ -595,7 +605,22 @@ holds.
 \end{Lemma}
 
 \begin{proof}
-From the analysis of \cite{ivp0} also follows that the 
+First we introduce the auxiliary norms for operators \(T\) 
+and \(W\) depending on one and two 
+scalar variables respectively.
+
+\begin{align}
+  \|T \|_{\mathrm{op}+I_2,\gamma}
+  &:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \left(\|T(t)\|
+  +\| T_{\odd}(t)\|_{I_2}\right)\\
+  \|T \|_{\mathrm{op},\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \|T(t)\|\\
+  \|W \|_{\mathrm{op},\infty}&:=\sup_{t,t'\in[t_1,t_0]} \|W(t,t')\|\\
+  \|T \|_{I_2 ,\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \| T(t)\|_{I_2},\\
+  \|W \|_{I_2 ,\infty}&:=\sup_{t,t'\in[t_1,t_0]} \| W(t,t')\|_{I_2},
+\end{align}
+for some \(\gamma\ge 0 \).
+
+From the analysis of \cite{ivp0} follows that the 
 recursive equation \cite[(3.42)]{ivp0}
 
 \begin{align}
@@ -605,20 +630,92 @@ R^B_{n}=U^0F^B_{\ev}R^B_{n-1}+U^0F^B_{\odd} U^0F^B R^B_{n-2}\\
 is fulfilled by the same sequence of operators for \(n\ge 2\).
 Hence we have for \(n\ge 2\):
 \begin{align}\notag
-  R^B-R^B_{n}=U^0F^B_{\ev}(R^B-R^B_{n-1})\\\label{R recurisve}
+  R^B-R^B_{n}=U^0F^B_{\ev}(R^B-R^B_{n-1})\\
   +U^0F^B_{\odd} U^0F^B (R^B-R^B_{n-2}).
 \end{align}
-Abbreviating \(U^0F^B_{\ev}=:a,U^0F^B_{\odd}U^0 F^B:=b\), this 
-can be brought into the vectorised form:
+Abbreviating \(U^0F^B_{\ev}=:a,U^0F^B_{\odd}U^0 F^B:=b\), we obtain
+\begin{align}\notag
+  R^B-R^B_{n}=a(R^B-R^B_{n-1})\\\label{R recurisve}
+  +b (R^B-R^B_{n-2}).
+\end{align}
+Furthermore, we introduce the notation for \(k\in\mathbb{N}\)
 \begin{align}
+\forall k \in \mathbb{N} [k]&:=\{l\in\mathbb{R}\mid l\le k\}\\
+\forall u\subseteq [k]:\partial_{u}&:=\prod_{k\in u}\partial_{H_k},\\
+R^B-R^B_n&:=\Delta^n,
+\end{align}
+where the product of derivatives is to be understood as the 
+mixed derivative with respect to all the factors.
+Now we estimate for some set \(u\subset [k]\)
+
+\begin{align}
+\|\partial_u \Delta^n_{\odd} \|_{I_2}
+\le\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+\left\| \sum_{w\subseteq u} (\partial_{u\backslash w}a ~
+\partial_w \Delta^{n-1}_{\odd})(t,t_0)\right\|_{I_2}\\
++\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+\left\|P^+ \sum_{w\subseteq u} (\partial_{u\backslash w}b ~
+\partial_w \Delta^{n-2})(t,t_0) P^-\right\|_{I_2}\\
++\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+\left\|P^- \sum_{w\subseteq u} (\partial_{u\backslash w}b ~
+\partial_w \Delta^{n-2})(t,t_0) P^+\right\|_{I_2}\\
+\le 
+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+\| \partial_{u\backslash w}(a ~
+\partial_w \Delta^{n-1}_{\odd})(t,t_0)\|_{I_2}\\
++2\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+\|  (\partial_{u\backslash w}b ~
+\partial_w \Delta^{n-2})(t,t_0) \|_{I_2}\\
+\le
+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+\int_{t_0}^{t}dt' 
+\| \partial_{u\backslash w}a(t,t') ~
+\partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
++2 \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
+t_{t_0}^{t}dt'  
+\|  \partial_{u\backslash w}b(t,t') ~
+\partial_w \Delta^{n-2}(t',t_0) \|_{I_2}\\
+\le
+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+\int_{t_0}^{t}dt' 
+\| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
+\|\partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
++2 \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
+\int_{t_0}^{t}dt'  
+\|  \partial_{u\backslash w}b(t,t')\|_{I_2}
+\|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+\le
+\sup_{t\in[t_0,t_1]} e^{-\gamma t} \sum_{w\subseteq u} 
+\int_{t_0}^{t}dt' e^{\gamma t'}
+\| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
+\|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
++2 \sup_{t\in[t_0,t_1]} e^{-\gamma t}\sum_{w\subseteq u} 
+\int_{t_0}^{t}dt'  e^{\gamma t'}
+\|  \partial_{u\backslash w}b\|_{I_2,\infty}
+\|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op},\gamma}\\
+\le
+\frac{1}{\gamma} \sum_{w\subseteq u} 
+\| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
+\|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
++\frac{2}{\gamma} \sup_{t\in[t_0,t_1]}\sum_{w\subseteq u} 
+\|  \partial_{u\backslash w}b\|_{I_2,\infty}
+\|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op},\gamma}\\
+\end{align}
+
+
+
+
+, this 
+can be brought into the vectorised form:
+\begin{align}\label{T iterated}
 \binom{R^B-R^B_{n}}{R^B-R^B_{n-1}}
-=\begin{pmatrix}&a &b \\ &1 & 0 \end{pmatrix}
+=\begin{pmatrix} a &b \\ 1 & 0 \end{pmatrix}
   \binom{R^B-R^B_{n-1}}{R^B-R^B_{n-2}},
 \end{align}
 which by induction yields
 \begin{align}
   \binom{R^B-R^B_{n}}{R^B-R^B_{n-1}}
-  =\begin{pmatrix}&U^0F^B_{\ev} &U^0F^B_{\odd}U^0 F^B \\ &1 & 0 \end{pmatrix}^{n-1}
+  =\begin{pmatrix}a &b \\ 1 & 0 \end{pmatrix}^{n-1}
     \binom{R^B-R^B_{1}}{R^B}.
 \end{align}
 Taking the derivative of \eqref{R recurisve} we find
@@ -638,10 +735,31 @@ T_n:= R^{A}-R^{A}_{n}\\
 \end{align}
 we vectorise the recursive equation and arrive at 
 \begin{align}
-asd
+\begin{pmatrix}\dot{T}_n\\\dot{T}_{n-1}\end{pmatrix}
+= \begin{pmatrix} a & b \\  1 & 0\end{pmatrix}
+\begin{pmatrix}\dot{T}_{n-1}\\\dot{T}_{n-2}\end{pmatrix}
++\begin{pmatrix} c & 0 \\  0 & d\end{pmatrix}
+\begin{pmatrix}T_{n-1}\\ T_{n-2}\end{pmatrix}.
 \end{align}
-
-
+This yields by induction
+\begin{align}
+\begin{pmatrix}\dot{T}_n\\\dot{T}_{n-1}\end{pmatrix}
+&= \begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{n-1}
+\begin{pmatrix}\dot{T}_{1}\\\dot{T}_{0}\end{pmatrix}\\
+&+\sum_{k=0}^{n-2}\begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{k}
+\begin{pmatrix} c & 0 \\  0 & d\end{pmatrix}
+\begin{pmatrix}T_{n-1-k}\\ T_{n-2-k}\end{pmatrix}.
+\end{align}
+Inserting \eqref{T iterated} then gives
+\begin{align}
+\begin{pmatrix}\dot{T}_n\\\dot{T}_{n-1}\end{pmatrix}
+&= \begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{n-1}
+\begin{pmatrix}\dot{T}_{1}\\\dot{T}_{0}\end{pmatrix}\\
+&+\sum_{k=0}^{n-2}\begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{k}
+\begin{pmatrix} c & 0 \\  0 & d\end{pmatrix}
+\begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{n-2-k}
+\begin{pmatrix}T_{1}\\ T_{0}\end{pmatrix}.
+\end{align}
 
 \end{proof}
 
@@ -1093,14 +1211,14 @@ holds.
   There is a unique map \(\hat{S}_{0,\cdot}:\mathcal{V}\to U(\mathcal{F})\) 
     which maps  \(A\in\mathcal{V}\) to a lift of \(S_{0,A}\) and solves the 
     differential equation
-  \begin{equation}\label{def s hat}
+  \begin{equation}\label{diff s hat}
 A,B\in\mathcal{V}\text{ linearly dependent}\Rightarrow \partial_B \frac{\hat{S}_{0,A+B}}{\hat{S}_{0,A}\overline{S}_{A,A+B}}=0,
 \end{equation}
 subject to the initial condition \(\hat{S}_{0,0}=1\).
 \end{Thm}
 
 The proof of theorem \ref{thm: ex s hat} is divided into two lemmas due to its length. We will introduce the integral flow \(\phi_A\) associated 
-with the differential equation \eqref{def s hat} for some \(A\in\mathcal{V}\). We will then study the properties of \(\phi_A\)
+with the differential equation \eqref{diff s hat} for some \(A\in\mathcal{V}\). We will then study the properties of \(\phi_A\)
 in the two lemmas and finally construct \(\hat{S}_{0,A}=1 \phi_A(0,1)\). In the first lemma we will establish the existence of a 
 local solution. The solution will be constructed along the line \(\overline{0 ~~ A}\). In the second lemma we patch local solutions together
 to a global one.
@@ -1119,8 +1237,8 @@ satisfying
 \end{Lemma}
 \begin{proof}
 We first define the phase
-\begin{align}
-z:\{(A,B)\in\dom\overline{S}\mid A, B \text{ linear dependent}\} \rightarrow S^1
+\begin{align}\label{def local z}
+z:\{(A,B)\in\dom\overline{S}\mid A, B \text{ linearly dependent}\} \rightarrow S^1
 \end{align}
 by the differential equation
 \begin{equation}
@@ -1135,13 +1253,13 @@ z(A,A)=1
 z(tA,xA)=\exp\left(-\int_{t}^x dx' \left.\left( \frac{d}{dx'} \ln \Gamma_{tA,y A, x' A}\right)\right|_{y=x'}\right).
 \end{equation}
 Please note that both differential equation and initial condition are invariant under rescaling of the potential \(A\), so \(z\) is well defined. 
-We will now construct a local solution to \eqref{def s hat} and define \(\phi_A\) using this solution.
+We will now construct a local solution to \eqref{diff s hat} and define \(\phi_A\) using this solution.
 Pick \(A\in \mathcal{V}\) the expression
 \begin{equation}\label{loc s hat}
 \hat{S}_{0,s A} = \hat{S}_{0, A} \overline{S}_{ A, s A} z( A, s A)
 \end{equation}
-solves \eqref{def s hat} locally. Local here means that \(s\) is close enough to \(1\) such that \(( A, s A)\in\dom\overline{S}\).
-Calculating the argument of the derivative of \eqref{def s hat} we find:
+solves \eqref{diff s hat} locally. Local here means that \(s\) is close enough to \(1\) such that \(( A, s A)\in\dom\overline{S}\).
+Calculating the argument of the derivative of \eqref{diff s hat} we find:
 \begin{align}
 0= \frac{\hat{S}_{0,(s+\varepsilon) A}}{\hat{S}_{0,s A}\overline{S}_{s A, (s+\varepsilon)A}}
 = \frac{\hat{S}_{0,A} \overline{S}_{A, (s+\varepsilon)A} z(A, (s+\varepsilon)A)}
@@ -1500,16 +1618,25 @@ holds.
 
 \end{proof}
 
-
-\begin{Def}[global lift]\label{de: s hat}
 Lemma \ref{lem: phi global} enables us to define a global lift.
+\begin{Def}[global lift]\label{de: s hat}
 For any \(A\in\mathcal{V}\) we define 
 \begin{equation}
 \hat{S}_{0,A}:=\phi_A(1,0).
 \end{equation}
-The operator \(\hat{S}\) fulfils the required differential equation and its uniqueness is inherited from the 
-uniqueness of \(\phi_A\) for \(A\in\mathcal{V}\).
 \end{Def}
+using lemma  \ref{lem: phi global} we are now in a position
+to prove theorem \ref{thm: ex s hat}.
+\begin{proof}[proof of theorem \ref{thm: ex s hat}]
+The operator \(\hat{S}\) fulfils the claimed differential 
+equation \eqref{diff s hat} due to the global 
+multiplication property 
+\eqref{global phi prop2} and the differential 
+equation \eqref{global phi prop4}.
+Its uniqueness is inherited from the 
+uniqueness of \(\phi_A\) for \(A\in\mathcal{V}\)
+from lemma \ref{lem: phi global}.
+\end{proof}
 
 
 %\begin{rmk}
@@ -1569,7 +1696,7 @@ uniqueness of \(\phi_A\) for \(A\in\mathcal{V}\).
 
 %Because of \eqref{gamma equal 1} we see that \eqref{hat finite spacing} is actually independent of the choice of sequence \((\delta_k)_{k}\).
 %The right side of equation \eqref{hat finite spacing} satisfies the initial condition of the ordinary differential equation, so we only need to check the differential equation itself.
-%Next we reformulate the ordinary differential equation \eqref{def s hat}, pick \(B=t A\) then we have
+%Next we reformulate the ordinary differential equation \eqref{diff s hat}, pick \(B=t A\) then we have
 %\begin{equation}
 %0=\partial_B \frac{\hat{S}_{0,A+B}}{\hat{S}_{0,A}\overline{S}_{A,A+B}}
 %=\partial_\varepsilon \frac{\hat{S}_{0,A(1+\varepsilon t)}}{\hat{S}_{0,A}\overline{S}_{A,A(1+\varepsilon t)}}
@@ -1600,21 +1727,39 @@ uniqueness of \(\phi_A\) for \(A\in\mathcal{V}\).
 %\end{rmk}
 
 \begin{Def}[relative phase]
-Let \(A,B \in\dom\overline{S}\), we define \(z(A,B)\in S^1\) by
+Let \((A,B) \in\dom\overline{S}\), we define \(z(A,B)\in S^1\) by
 \begin{equation}\label{def z}
 z(A,B):=\frac{\hat{S}_{0,B}}{\hat{S}_{0,A}\overline{S}_{A,B}}.
 \end{equation}
-Please note that for such \(A,B\) the lift \(\bar{S}_{A,B}\) is well defined. This means that the product in the denominator is a lift of \(S_{0,B}\)
-and according to def \ref{de: s hat} the ratio is well defined.
+Please note that for such \(A,B\) the lift \(\bar{S}_{A,B}\) 
+is well defined. This means that the product in the 
+denominator is a lift of \(S_{0,B}\)
+and according to definition \ref{de: s hat} the 
+ratio is well defined. 
 \end{Def}
+
+\begin{Remark}
+The global function \(z\) defined here is an extension 
+of the funtion \(z\) appearing locally 
+in the 
+the proof of lemma \ref{lem phi local},
+cf. formula \eqref{def local z}.
+
+Please note that \(z\) is smooth
+when restricted to  \(\mathcal{W}^2\cap \dom\overline{S}\) 
+for any finite dimensional subspace
+ \(\mathcal{W}\subseteq \mathcal{V}\).
+\end{Remark}
 
 
 \begin{Lemma}[properties of the relative phase]
-For all \((A,F),(F,G),(G,A)\in\dom\overline{S}\), as well as for all \(H,K\in \mathcal{V}\), we have
+For all \\
+\((A,F),(F,G),(G,A)\in\dom\overline{S}\), as well as 
+or all \(H,K\in \mathcal{V}\), we have
 \begin{align}\label{z antisym}
-z(A,F)&=z^{-1}(F,A)\\\label{z gamma}
+z(A,F)&=z(F,A)^{-1}\\\label{z gamma}
 z(F,A)z(A,G)z(G,F)&=\Gamma_{F,A,G}\\\label{z c}
-\partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln  z_(A+\varepsilon_1 H,A+\varepsilon_2 K)&=c_A(H,K).
+\partial_{H}\partial_{K}\ln  z(A+ H,A+ K)&=c_A(H,K).
 \end{align}
 \end{Lemma}
 \begin{proof}
@@ -1629,16 +1774,21 @@ Exchanging  \(A\) and \(F\) in this equation yields
 \end{equation}
 This is equivalent to
 \begin{equation}
-\hat{S}_{0,F} \overline{S}_{F,G}=z(F,A)^{-1} \Gamma_{F,A,G} \hat{S}_{0,A}\overline{S}_{A,G}~,
+\hat{S}_{0,F} \overline{S}_{F,G}=z(F,A)^{-1} \Gamma_{F,A,G} \hat{S}_{0,A}\overline{S}_{A,G}~.
 \end{equation}
-taking \eqref{gamma attri3} into account this means that 
+Comparing the last equation with 
+formula \eqref{phase comparison} 
+and taking the permutation properties 
+ \eqref{gamma attri3} of \(\Gamma\) into 
+ account this implies that 
 \begin{equation}
-z(A,F)=z^{-1}(F,A)
+z(A,F)=z(F,A)^{-1}
 \end{equation}
 holds true. Equation \eqref{phase comparison} solved for \(\hat{S}_{0,A}\overline{S}_{A,G}\) also gives us
 
 \begin{align}
-\hat{S}_{0,G}\overset{\eqref{def z}}{=}z(A,G)\hat{S}_{0,A}\overline{S}_{A,G}\overset{\eqref{phase comparison}}{=}z(A,G)z^{-1}(A,F)\Gamma_{A,F,G}\hat{S}_{0,F}\overline{S}_{F,G}.
+\hat{S}_{0,G}\overset{\eqref{def z}}{=}z(A,G)\hat{S}_{0,A}\overline{S}_{A,G}\\
+\overset{\eqref{phase comparison}}{=}z(A,G)z(A,F)^{-1}\Gamma_{A,F,G}\hat{S}_{0,F}\overline{S}_{F,G}.
 \end{align}
 The latter equation compared with 
 \begin{equation}
@@ -1648,12 +1798,17 @@ yields  a direct connection between \(\Gamma\) and \(z\):
 \begin{equation}
 \frac{z(A,G)}{z(A,F)}\Gamma_{A,F,G}=z(F,G),
 \end{equation}
-or by \eqref{z antisym}
+which we rewrite using the antisymmetry 
+\eqref{z antisym} of \(z\)  as
 \begin{equation}
 \Gamma_{A,F,G}=z(F,G)z(A,F)z(G,A).
 \end{equation}
-Finally, in this equation we replace \(F=A+\varepsilon_1 H\) as well as  \(G=A+\varepsilon_2 K\), where \(\varepsilon_1,\varepsilon_2\) is small enough so that 
-\(z\) and \(\Gamma\) are still well defined. Then we take the logarithm and derivatives to find
+Finally, in this equation, we substitute 
+\(F=A+\varepsilon_1 H\) as well as  
+\(G=A+\varepsilon_2 K\), where 
+\(\varepsilon_1,\varepsilon_2\) is small enough so that 
+\(z\) and \(\Gamma\) are still well defined. Then we 
+take the second logarithmic derivative to find
 \begin{align}\notag
  \partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln  z(A+\varepsilon_1 H,A+\varepsilon_2 K)=\partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln\Gamma_{A,A+\varepsilon_1 H,A+\varepsilon_2 K}\\
  \overset{\eqref{gamma attri8}}{=}c_A(H,K). 
@@ -1661,25 +1816,35 @@ Finally, in this equation we replace \(F=A+\varepsilon_1 H\) as well as  \(G=A+\
 
 \end{proof}
 
-So we find that \(c\) is the mixed derivative of \(z\). In the following we will characterise \(z\) more thoroughly by \(c\) and \(c^+\).
-\begin{Def}[p-forms of four potentials, phase integral]
-We introduce for \(p\in\mathbb{N}\)
-\begin{align}\notag
-&\Omega^p:=\{\omega :\mathcal{V}^{p+1}\rightarrow \mathbb{C}\mid \forall \sigma \in S^p, \alpha\in\mathbb{R}, A_1,\dots, A_{p+1}\in\mathcal{V}: \\
-&\hspace{2cm}\omega(A_1,\alpha A_{\sigma(1)},\dots, A_{\sigma(p)})=\mathrm{sgn}(\sigma) \alpha \omega(A_1,A_2,\dots, A_2)\},
-\end{align}
-where \(\mathrm{sgn}(\sigma)\) is the sign of the permutation \(\sigma\).
-We define the one form \(\chi\in \Omega^1(\mathcal{V})\) by
+So we find that \(c_A\) is the second mixed logarithmic 
+derivative of \(z\). In the following we will 
+characterise \(z\) more thoroughly by \(c\) and \(c^+\).
+\begin{Def}[\(p\)-forms of four potentials, phase integral]
+For \(p\in\mathbb{N}\), we introduce the set \(\Omega^p\) 
+of \(p\)-forms 
+to consist of all maps 
+\(\omega: \mathcal{V}\times \mathcal{V}^{p}\rightarrow \mathbb{C}\)
+such that \(\omega\) is linear and antisymmetric in its 
+\(p\) last arguments and smooth in its first argument
+when restricted to any finite
+dimensional subspace of \(\mathcal{V}\).
+
+Additionally, we define the \(1\)-form 
+\(\chi\in \Omega^1(\mathcal{V})\) by
 \begin{equation}\label{de chi}
 \chi_A(B):=\partial_B\ln z(A,A+B)
 \end{equation}
 for all \(A,B\in\mathcal{V}\).
-Furthermore for a differential form \(\omega\in \Omega^p(\mathcal{V})\) for some \(p\in\mathbb{N}\) we define the exterior derivative of 
-\(\omega\), \(d \omega\in\Omega^{p+1}(\mathcal{V})\) by
+Furthermore, for \(p\in\mathbb{N}\) and any differential 
+form \(\omega\in \Omega^p(\mathcal{V})\), 
+we define its exterior derivative, 
+\(d \omega\in\Omega^{p+1}(\mathcal{V})\) by
 \begin{equation}
 (d\omega)_A(B_1,\dots, B_{p+1}):=\sum_{k=1}^{p+1} (-1)^{k+1} \partial_{B_k}\omega_{A+B_k}(B_1,\dots , \cancel{B_k},\dots, B_{p+1}),
 \end{equation}
-for general \(A,B_1,\dots, B_{p+1}\in\mathcal{V}\), where the notation \(\cancel{B_k}\) denotes that \(B_k\) is not to be inserted as an argument.
+for \(A,B_1,\dots, B_{p+1}\in\mathcal{V}\), where 
+the notation \(\cancel{B_k}\) denotes that \(B_k\) is  
+dropped as an argument.
 
 \end{Def}
 
@@ -1807,7 +1972,7 @@ We have \(d(\chi-2 \prod\![c])=0\) so by lemma \ref{lem poincare} we know that t
 \begin{equation}
 dv=\chi-2 \prod\![c]
 \end{equation}
-holds. Now \eqref{def s hat} translates into the following ODE for \(z\):
+holds. Now \eqref{diff s hat} translates into the following ODE for \(z\):
 \begin{equation}
 \partial_B \ln z(0,B)=0, \quad \partial_\varepsilon \ln z(A,(1+\varepsilon)A)|_{\varepsilon =0}=0
 \end{equation}

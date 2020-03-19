@@ -504,6 +504,86 @@ U^{A+F}(t_1,t_0)=U^A(t_1,t_0) + \int_{t_0}^{t_1}dt U^A(t_1,t) Z^F(t) U^{A+F}(t,t
 \dots
 \end{proof}
 
+\begin{Def}
+For any \(A\in\mathcal{V}\), we introduce the 
+integral operator 
+\({Q'}^A:\mathcal{H}\righttoleftarrow\) by it's kernel
+\begin{equation}
+\mathbb{R}\times\mathbb{R}^3\times\mathbb{R}^3
+\ni(t,p,q)\mapsto {Q'}^A(t,p,q)=\partial_t Q^A(t,p,q),
+\end{equation}
+where the time dependence is due to the time dependence of the 
+four-potential \(A\).
+The following notion of even and odd part of 
+an arbitrary bounded linear operator 
+\(T:\mathcal{F}\righttoleftarrow\) on 
+Fock space will come in handy:
+\begin{align}
+T_{\mathrm{odd}}&:=P^+TP^- + P^-TP^+\\
+T_{\mathrm{ev}}&:=P^+TP^+ + P^-TP^-.
+\end{align}
+
+Additionally, we define the norm 
+\begin{equation}
+    T:\mathcal{H}\righttoleftarrow \|T\|_{\mathrm{op}+I_2}=\|T\|_{\mathrm{op}}++\|T_{\odd}\|_{I_2},
+\end{equation}
+where \(\|\cdot\|_{\mathrm{op}}\) is the operator norm and \(\|\cdot\|_{I_2}\) is the 
+Hilbert-Schmidt norm and the space
+\begin{equation}
+  I_2^{\odd}:=\{T:\mathcal{F}\rightarrow \mathcal{F}\mid
+  \|T\|<\infty, \|T_{\odd}\|_{I_2}<\infty\}.
+\end{equation}
+\end{Def}
+
+
+\begin{Lemma}
+The space \(I_2^{\odd}\)
+equipped with the norm 
+\(\|\cdot\|_{\mathrm{op}+I_2}\) is a 
+Banach space.
+\end{Lemma}
+\begin{proof}
+Let \((T_n)_{n\in\mathbb{R}}\subset I_2^{\odd}\)
+be a Cauchy sequence with 
+respect to \(\|\cdot\|_{\mathrm{op}+I_2}\). 
+Then it follows directly that 
+\((T_n)_{n\in\mathbb{R}}\)
+is also a Cauchy sequence with 
+respect to \(\|\cdot\|_{\mathrm{op}}\) and
+\((T_{n,\odd})_{n\in\mathbb{R}}\) is a Cauchy
+sequence with respect to
+\(\|\cdot\|_{I_2}\). Since 
+the space of bounded operators equipped with
+\(\|\cdot\|_{\mathrm{op}}\) and
+the space of Hilber-Schmidt oeprators 
+equipped with \(\|\cdot\|_{I_2}\) both are
+complete we have
+
+\begin{align}
+  T_n\xrightarrow[\|\cdot\|_{\mathrm{op}}]{n\rightarrow \infty} T^1\\
+  T_{n,\odd}\xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty} T^2
+\end{align}
+for some bounded operator \(T^1\) and some 
+Hilbert-Schmidt operator \(T^2\). Now because 
+the Hilbert-Schmidt norm is stronger than 
+the operator norm we obtain directly
+\begin{equation}
+  T_{n,\odd}\xrightarrow[\|\cdot\|_{\mathrm{op}}]{n\rightarrow \infty} T^2,
+\end{equation}
+hence \(T^1_{\odd}=T^2\). 
+Therefore \(T^1\in I_2^{\odd}\) holds. 
+Finally since 
+\(\|\cdot\|_{\mathrm{op}+I_2}
+=\|\cdot\|_{\mathrm{op}}
++\|\cdot_{\odd}\|_{I_2}\) holds, 
+we find 
+\begin{equation}
+T_n\xrightarrow[\|\cdot\|_{\mathrm{op}+I_2}]{n\rightarrow \infty} T^1,
+\end{equation}
+proving completeness.
+\end{proof}
+
+
 \begin{Thm}[Analyticity of S]\todo{think about 
   generalisation to higher derivatives}
 Let \(n\in\mathbb{N}\),  \(A,H_{k}\in\mathcal{V}\) for 
@@ -514,12 +594,7 @@ before \(\supp A\cup\bigcup_{k\le n}\supp H_k\) then
 \partial_{H_1} U^{A+H_1}(t_1,t_0)=\int_{t_0}^{t_1}dt~ U^A(t_1,t)Z^{H_1}(t) U^{A}(t,t_0)
 \end{align}
 holds with respect to the topology induced by the
-norm
-\begin{equation}
-T:\mathcal{H}\righttoleftarrow \|T\|_{\mathrm{op}+I_2}=\|T\|+\|P^+ T P^-\|_{I_2}+\|P^- T P^+\|_{I_2},
-\end{equation}
-where \(\|\cdot\|\) is the operator norm and \(\|\cdot\|_{I_2}\) is the 
-Hilbert-Schmidt norm.
+norm\(\|\cdot\|_{\mathrm{op}+I_2}\).
 Additionally the derivatives 
 \begin{equation}
 \partial_{H_1}\dots \partial_{H_k}U^{A+\sum_{b=1}^k F_b}(t_1,t_0)
@@ -553,22 +628,6 @@ as maps of the same type as \(T_1, T_1\) and \(C_1\)
 respectively.
 Pick\(n\in\mathbb{N}\), \(A,H_b\in\mathcal{V}\) for \(b\le k\) 
 and \(t_1,t_0\) as in the theorem. 
-Furhtermore we introduce the integral operator 
-\({Q'}^A:\mathcal{H}\righttoleftarrow\) by it's kernel
-\begin{equation}
-\mathbb{R}\times\mathbb{R}^3\times\mathbb{R}^3
-\ni(t,p,q)\mapsto {Q'}^A(t,p,q)=\partial_t Q^A(t,p,q),
-\end{equation}
-where the time dependence is due to the time dependence of the 
-four-potential \(A\).
-The following notion of even and odd part of 
-an arbitrary bounded linear operator 
-\(T:\mathcal{F}\righttoleftarrow\) on 
-Fock space will come in handy:
-\begin{equation}
-T_{\mathrm{odd}}:=P^+TP^- + P^-TP^+\\
-T_{\mathrm{ev}}:=P^+TP^+ + P^-TP^-.
-\end{equation}
 
 We abbreviate
 \begin{equation}
@@ -619,7 +678,7 @@ scalar variables respectively.
   \|W \|_{I_2 ,\infty}&:=\sup_{t,t'\in[t_1,t_0]} \| W(t,t')\|_{I_2},
 \end{align}
 for some \(\gamma\ge 0 \).
-
+\todo{\(\infty\) durch 0 ersetzen}
 From the analysis of \cite{ivp0} follows that the 
 recursive equation \cite[(3.42)]{ivp0}
 
@@ -630,136 +689,236 @@ R^B_{n}=U^0F^B_{\ev}R^B_{n-1}+U^0F^B_{\odd} U^0F^B R^B_{n-2}\\
 is fulfilled by the same sequence of operators for \(n\ge 2\).
 Hence we have for \(n\ge 2\):
 \begin{align}\notag
-  R^B-R^B_{n}=U^0F^B_{\ev}(R^B-R^B_{n-1})\\
-  +U^0F^B_{\odd} U^0F^B (R^B-R^B_{n-2}).
+  R^B_{n+1}-R^B_{n}=U^0F^B_{\ev}(R^B_n-R^B_{n-1})\\
+  +U^0F^B_{\odd} U^0F^B (R^B_{n-1}-R^B_{n-2}).
 \end{align}
 Abbreviating \(U^0F^B_{\ev}=:a,U^0F^B_{\odd}U^0 F^B:=b\), we obtain
 \begin{align}\notag
-  R^B-R^B_{n}=a(R^B-R^B_{n-1})\\\label{R recurisve}
-  +b (R^B-R^B_{n-2}).
+  R^B_{n+1}-R^B_{n}=a(R^B_n-R^B_{n-1})\\\label{R recurisve}
+  +b (R^B_{n-1}-R^B_{n-2}).
 \end{align}
 Furthermore, we introduce the notation for \(k\in\mathbb{N}\)
 \begin{align}
-\forall k \in \mathbb{N} [k]&:=\{l\in\mathbb{R}\mid l\le k\}\\
+\forall k \in \mathbb{N}: [k]&:=\{l\in\mathbb{N}\mid l\le k\}\\
 \forall u\subseteq [k]:\partial_{u}&:=\prod_{k\in u}\partial_{H_k},\\
-R^B-R^B_n&:=\Delta^n,
+R^B_{n+1}-R^B_n&:=\Delta^n,
 \end{align}
 where the product of derivatives is to be understood as the 
 mixed derivative with respect to all the factors.
 Now we estimate for some set \(u\subset [k]\)
 
 \begin{align}
-\|\partial_u \Delta^n_{\odd} \|_{I_2}
-\le\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+&\sup_{p\subseteq u}\|\partial_p \Delta^n_{\odd} \|_{I_2,\gamma}\\
+&\le \sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
 \left\| \sum_{w\subseteq u} (\partial_{u\backslash w}a ~
 \partial_w \Delta^{n-1}_{\odd})(t,t_0)\right\|_{I_2}\\
-+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+&+\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
 \left\|P^+ \sum_{w\subseteq u} (\partial_{u\backslash w}b ~
 \partial_w \Delta^{n-2})(t,t_0) P^-\right\|_{I_2}\\
-+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+&+\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
 \left\|P^- \sum_{w\subseteq u} (\partial_{u\backslash w}b ~
 \partial_w \Delta^{n-2})(t,t_0) P^+\right\|_{I_2}\\
-\le 
-\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+&\le 
+\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} 
+\sum_{w\subseteq u} 
 \| \partial_{u\backslash w}(a ~
 \partial_w \Delta^{n-1}_{\odd})(t,t_0)\|_{I_2}\\
-+2\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+&+2\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} 
+e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
 \|  (\partial_{u\backslash w}b ~
 \partial_w \Delta^{n-2})(t,t_0) \|_{I_2}\\
-\le
-\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+&\le
+\sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} 
+\sum_{w\subseteq u} 
 \int_{t_0}^{t}dt' 
 \| \partial_{u\backslash w}a(t,t') ~
 \partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
-+2 \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
-t_{t_0}^{t}dt'  
+&+2 \sup_{p\subseteq u}
+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
+\int_{t_0}^{t}dt'  
 \|  \partial_{u\backslash w}b(t,t') ~
 \partial_w \Delta^{n-2}(t',t_0) \|_{I_2}\\
-\le
-\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+&\le
+\sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
+e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
 \int_{t_0}^{t}dt' 
 \| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
 \|\partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
-+2 \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
+&+2 \sup_{p\subseteq u}
+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
 \int_{t_0}^{t}dt'  
 \|  \partial_{u\backslash w}b(t,t')\|_{I_2}
 \|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
-\le
-\sup_{t\in[t_0,t_1]} e^{-\gamma t} \sum_{w\subseteq u} 
+&\le
+\sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
+e^{-\gamma t} \sum_{w\subseteq u} 
 \int_{t_0}^{t}dt' e^{\gamma t'}
 \| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
 \|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
-+2 \sup_{t\in[t_0,t_1]} e^{-\gamma t}\sum_{w\subseteq u} 
+&+2 \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
+e^{-\gamma t}\sum_{w\subseteq u} 
 \int_{t_0}^{t}dt'  e^{\gamma t'}
 \|  \partial_{u\backslash w}b\|_{I_2,\infty}
-\|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op},\gamma}\\
-\le
-\frac{1}{\gamma} \sum_{w\subseteq u} 
+\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+&\le
+\frac{1}{\gamma} \sup_{p\subseteq u} \sum_{w\subseteq u} 
 \| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
 \|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
-+\frac{2}{\gamma} \sup_{t\in[t_0,t_1]}\sum_{w\subseteq u} 
+&+\frac{2}{\gamma} \sup_{p\subseteq u} \sum_{w\subseteq u} 
 \|  \partial_{u\backslash w}b\|_{I_2,\infty}
-\|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op},\gamma}\\
+\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+&\le
+\frac{2^{|u|}}{\gamma} \sup_{u'\subseteq u} 
+\| \partial_{u'}a\|_{\mathrm{op},\infty} \sup_{p\subseteq u} 
+\|\partial_p \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
+&+\frac{2^{|u|+1}}{\gamma} \sup_{u'\subseteq u} 
+\|  \partial_{u'}b\|_{I_2,\infty}\sup_{p\subseteq u}
+\|\partial_p \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}
 \end{align}
+
+Similarly we compute the operator norm:
+
+\begin{align}
+  &\sup_{p\subseteq u}\|\partial_p \Delta^n \|_{\mathrm{op},\gamma}\\
+  &\le 
+  \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sup_{p\subseteq u} 
+  \sum_{w\subseteq p} 
+  \| \partial_{p\backslash w}(a ~
+  \partial_w \Delta^{n-1})(t,t_0)\|_{\mathrm{op},}\\
+  &+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sup_{p\subseteq u} 
+  \sum_{w\subseteq p} 
+  \|  (\partial_{p\backslash w}b ~
+  \partial_p \Delta^{n-2})(t,t_0) \|_{\mathrm{op}}\\
+  &\le
+  \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+  \sup_{p\subseteq u} \sum_{w\subseteq p} 
+  \int_{t_0}^{t}dt' 
+  \| \partial_{p\backslash w}a(t,t') ~
+  \partial_p \Delta^{n-1}(t',t_0)\|_{\mathrm{op}}\\
+  &+ \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+  \sup_{p\subseteq u}\sum_{w\subseteq u} 
+  \int_{t_0}^{t}dt'  
+  \|  \partial_{p\backslash w}b(t,t') ~
+  \partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+  &\le
+  \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+  \sup_{p\subseteq u} \sum_{w\subseteq p} 
+  \int_{t_0}^{t}dt' 
+  \| \partial_{p\backslash w}a(t,t')\|_{\mathrm{op}}
+  \|\partial_w \Delta^{n-1}(t',t_0)\|_{\mathrm{op}}\\
+  &+ \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+  \sup_{p\subseteq u} \sum_{w\subseteq p} 
+  \int_{t_0}^{t}dt'  
+  \|  \partial_{p\backslash w}b(t,t')\|_{\mathrm{op}}
+ \|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+ &\le
+ \sup_{t\in[t_0,t_1]} e^{-\gamma t}
+ \sup_{p\subseteq u} \sum_{w\subseteq p} 
+ \int_{t_0}^{t}dt' e^{\gamma t'}
+ \| \partial_{p\backslash w}a \|_{\mathrm{op},\infty}
+ \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+ &+ \sup_{t\in[t_0,t_1]} e^{-\gamma t}
+ \sup_{p\subseteq u}\sum_{w\subseteq p} 
+ \int_{t_0}^{t}dt'  e^{\gamma t}
+ \|  \partial_{u\backslash p}b\|_{\mathrm{op},\infty}
+\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+&\le
+\frac{1}{\gamma}\sup_{p\subseteq u} \sum_{w\subseteq p} 
+\| \partial_{p\backslash w}a \|_{\mathrm{op},\infty}
+\|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+&+ \frac{1}{\gamma}
+\sup_{p\subseteq u} \sum_{w\subseteq p} 
+\|  \partial_{p\backslash w}b\|_{\mathrm{op},\infty}
+\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+&\le
+\frac{2^{|u|}}{\gamma}
+\sup_{u'\subseteq u}\| \partial_{u'}a \|_{\mathrm{op},\infty}
+ \sup_{w\subseteq u} 
+\|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+&+ \frac{2^{|u|}}{\gamma}
+\sup_{u'\subseteq u}\| \partial_{u'}b \|_{\mathrm{op},\infty}
+\sup_{w\subseteq u}
+\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}
+\end{align}
+
+Introducing the abbreviation
+\begin{equation}
+\alpha=\frac{2^{|u|+1}}{\gamma} \sup_{u'\subseteq u}
+\left\{\|\partial_{u'}a\|_{\mathrm{op},\infty},
+\|\partial_{u'}a\|_{\mathrm{op},\infty},
+\|\partial_{u'}b\|_{I_2,\infty},
+\|\partial_{u'}b\|_{\mathrm{op},\infty}  \right\},
+\end{equation}
+
+we can thus summarise the last two calculations 
+
+\begin{align}
+&\begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{n} \|_{\mathrm{op}+I_2,\gamma}\\
+\sup_{p\subseteq u} \|\partial_p \Delta^{n-1}\|_{\mathrm{op}+I_2,\gamma}\end{pmatrix}\\
+&=\begin{pmatrix}\alpha & \alpha \\ 1 & 0 \end{pmatrix}
+\begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{n-1}\|_{\mathrm{op}+I_2,\gamma}\\
+\sup_{p\subseteq u} \|\partial_p \Delta^{n-2}\|_{\mathrm{op}+I_2,\gamma} \end{pmatrix}\\\label{analyticity converging recursion}
+&=\begin{pmatrix}\alpha & \alpha \\ 1 & 0 \end{pmatrix}^{n-1}
+  \begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{1}\|_{\mathrm{op}+I_2,\gamma}\\
+  \sup_{p\subseteq u} \|\partial_p \Delta^{0}\|_{\mathrm{op}+I_2,\gamma} \end{pmatrix}.
+\end{align}
+
+This matrix can be diagonalised, it's eigenvalues are
+\begin{align}
+\lambda_{\pm}= \frac{\alpha}{2}\left(1\pm \sqrt{1+\frac{4}{\alpha}}\right).
+\end{align}
+The larger eigenvalue \(\lambda_+\) is less than \(1\) if
+and only if
+\(0<\alpha<0.5\) holds true, as can be seen from a quick 
+calculation:
+\begin{align}
+\frac{\alpha}{2}(1+\sqrt{1+\frac{4}{\alpha}})<1 \\
+\iff \sqrt{1+\frac{4}{\alpha}}<\frac{2}{\alpha}-1.
+\end{align}
+If \(\alpha\ge \frac{1}{2}\) or \(\alpha<0\) this inequality is not satisfied, otherwise
+we may square both sides to find
+\begin{align}
+1+\frac{4}{\alpha}<(2/\alpha -1)^2=4/\alpha^2 - 4/\alpha +1\\
+\iff \alpha < \frac{1}{2}.
+\end{align}
+So we conclude that for \(\gamma\) large enough 
+the right hand 
+side of \eqref{analyticity converging recursion}
+tends to zero as \(c \lambda_+^n\) for
+some \(c>0\) and
+for \(n\rightarrow \infty\), i.e.
+
+\begin{equation}
+\sup_{p\subseteq u}
+\|\partial_p \Delta^n\|_{\mathrm{op}+I_2,\gamma}
+\le \lambda_+^n c
+\xrightarrow{n\rightarrow \infty} 0.
+\end{equation} Hence also 
+for \(m\in\mathbb{N}\) 
+
+\begin{align}
+\sup_{p\subseteq u}\| \partial_p R^B_m -
+\partial_p R^B_n\|_{\mathrm{op}+I_2,\gamma} \\
+\le 
+\sum_{k=\min\{m,n\}}^{\max\{m,n\}-1}
+\sup_{p\subseteq u}
+\| \partial_p \Delta^k\|_{\mathrm{op}+I_2,\gamma} \\
+\le 
+|m-n| \lambda_+^{\min\{m,n\}} c
+\xrightarrow{\min\{m,n\}\rightarrow \infty}0
+\end{align}
+since the the norms
+\(\|\cdot\|_{\mathrm{op}+I_2}\) and
+\(\|\cdot\|_{\mathrm{op}+I_2,\gamma}\) are 
+equivalent, we have just proven 
+that \(\partial_u R^B_m\) for any 
+finite set \(u\subset \mathbb{N}\) is a 
+Cauchy sequence with respect to the norm 
+\(\|\cdot\|_{\mathrm{op}+I_2}\).
 
 
 
 
-, this 
-can be brought into the vectorised form:
-\begin{align}\label{T iterated}
-\binom{R^B-R^B_{n}}{R^B-R^B_{n-1}}
-=\begin{pmatrix} a &b \\ 1 & 0 \end{pmatrix}
-  \binom{R^B-R^B_{n-1}}{R^B-R^B_{n-2}},
-\end{align}
-which by induction yields
-\begin{align}
-  \binom{R^B-R^B_{n}}{R^B-R^B_{n-1}}
-  =\begin{pmatrix}a &b \\ 1 & 0 \end{pmatrix}^{n-1}
-    \binom{R^B-R^B_{1}}{R^B}.
-\end{align}
-Taking the derivative of \eqref{R recurisve} we find
-\begin{align}\notag
-  \partial_H (R^{A+F}-R^{A+H}_{n})
-  =U^0F^A_{\ev}\partial_H(R^{A+H}-R^{A+H}_{n-1})\\\notag
-  +U^0F^A_{\odd} U^0F^A \partial_H(R^{A+H}-R^{A+H}_{n-2})
-  +\partial_H U^0F^{A+H}_{\ev}(R^{A}-R^{A}_{n-1})\\\label{R dot recurisve}
-  +\partial_H U^0F^{A+H}_{\odd} U^0F^{A+H} (R^{A}-R^{A}_{n-2}).
-\end{align}
-Using the furher abbreviations 
-\begin{align}
-c:=\partial_H U^0F^{A+H}_{\ev}\\
-d:=\partial_H U^0F^{A+H}_{\odd} U^0F^{A+H}\\
-T_n:= R^{A}-R^{A}_{n}\\
-\dot{T}_n:= \partial_H (R^{A+H}-R^{A+H}_{n}),
-\end{align}
-we vectorise the recursive equation and arrive at 
-\begin{align}
-\begin{pmatrix}\dot{T}_n\\\dot{T}_{n-1}\end{pmatrix}
-= \begin{pmatrix} a & b \\  1 & 0\end{pmatrix}
-\begin{pmatrix}\dot{T}_{n-1}\\\dot{T}_{n-2}\end{pmatrix}
-+\begin{pmatrix} c & 0 \\  0 & d\end{pmatrix}
-\begin{pmatrix}T_{n-1}\\ T_{n-2}\end{pmatrix}.
-\end{align}
-This yields by induction
-\begin{align}
-\begin{pmatrix}\dot{T}_n\\\dot{T}_{n-1}\end{pmatrix}
-&= \begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{n-1}
-\begin{pmatrix}\dot{T}_{1}\\\dot{T}_{0}\end{pmatrix}\\
-&+\sum_{k=0}^{n-2}\begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{k}
-\begin{pmatrix} c & 0 \\  0 & d\end{pmatrix}
-\begin{pmatrix}T_{n-1-k}\\ T_{n-2-k}\end{pmatrix}.
-\end{align}
-Inserting \eqref{T iterated} then gives
-\begin{align}
-\begin{pmatrix}\dot{T}_n\\\dot{T}_{n-1}\end{pmatrix}
-&= \begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{n-1}
-\begin{pmatrix}\dot{T}_{1}\\\dot{T}_{0}\end{pmatrix}\\
-&+\sum_{k=0}^{n-2}\begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{k}
-\begin{pmatrix} c & 0 \\  0 & d\end{pmatrix}
-\begin{pmatrix} a & b \\  1 & 0\end{pmatrix}^{n-2-k}
-\begin{pmatrix}T_{1}\\ T_{0}\end{pmatrix}.
-\end{align}
 
 \end{proof}
 
@@ -1210,7 +1369,7 @@ holds.
 \begin{Thm}[existence of global lift]\label{thm: ex s hat}
   There is a unique map \(\hat{S}_{0,\cdot}:\mathcal{V}\to U(\mathcal{F})\) 
     which maps  \(A\in\mathcal{V}\) to a lift of \(S_{0,A}\) and solves the 
-    differential equation
+    parallel transport differential equation
   \begin{equation}\label{diff s hat}
 A,B\in\mathcal{V}\text{ linearly dependent}\Rightarrow \partial_B \frac{\hat{S}_{0,A+B}}{\hat{S}_{0,A}\overline{S}_{A,A+B}}=0,
 \end{equation}
@@ -1401,7 +1560,7 @@ extension fulfils them.
 
 We pick a sequence \((x_k)_{k\in\mathbb{N}}\subset \mathbb{R}\) such
 that 
-\begin{equation}
+\begin{equation}\label{open cover of R}
 \bigcup_{k\in\mathbb{N}_0} U_{x_k} = \mathbb{R}
 \end{equation}
 holds and 
@@ -1418,7 +1577,7 @@ which satisfies the conditions
 \forall x,y\in\dom_n: (xA, yA)\in\dom\overline{S}\Rightarrow  \psi_n(x,y)=\phi_A(x,y)
 \end{align}
 and is the unique function to do so, i.e. 
-any other function fulfilling properties 
+any other function \(\tilde{\psi}_{n}\) fulfilling properties 
 \eqref{induction psi1}-\eqref{induction psi3} possibly being defined
 on a larger domain coincides with \(\psi_n\) on \(\dom_n\times\dom_n\).
 
@@ -1551,7 +1710,7 @@ Recall the definition of \(\psi_{n+1}\)
   \psi_n(x,y) \quad &\text{for }x,y\in \dom_n,\\
   \phi_A(x,y) \quad &\text{for } x,y\in U_{x_{n+1}},\\
   \psi_n(x,t)\phi_A(t,y)\quad &\text{for } x\in \dom_n, y\in U_{x_{n+1}},\\
-  \phi_A(x,t)\psi_n(t,y)\quad &\text{for } y\in \dom_n, x\in U_{x_{n+1}},
+  \phi_A(x,t)\psi_n(t,y)\quad &\text{for } y\in \dom_n, x\in U_{x_{n+1}}.
   \end{matrix} \right.
 \end{equation} 
 
@@ -1560,11 +1719,11 @@ and if \(x,y\in U_{x_{n+1}}\) we also arrived a the claim we want to prove.
 Excluding these cases, we are left with rows number three and four of this
 definition with the restriction
 \begin{enumerate}
-  \item[3.] \(x\in \dom_n\backslash~ U_{x_{n+1}}, y\in U_{x_{n+1}}\backslash~ \dom_n \) and
+  \item[3.] \(x\in \dom_n\backslash~ U_{x_{n+1}}, y\in U_{x_{n+1}}\backslash~ \dom_n \) or
   \item[4.] \(y\in \dom_n\backslash~ U_{x_{n+1}}, x\in U_{x_{n+1}}\backslash~ \dom_n \),
 \end{enumerate}
 respectively.
-Because \(t\) appearing in the definition of \(\psi_{n+1}\) satisfies
+Because \(t\) satisfies
 \(t\in \dom_n\cap U_{x_{n+1}}\), we have in both cases \(t\in \overline{x~y}\).
 By using property 4 of lemma \ref{lem properties of dom s bar} we infer 
 from \((xA,yA)\in \dom\overline{S}\) that in both cases
@@ -1572,49 +1731,66 @@ from \((xA,yA)\in \dom\overline{S}\) that in both cases
 also holds. Hence we may apply the induction hypothesis 
 \(\eqref{induction psi3}_{n}\).
 
-Now only uniqueness is left to show. So let \(\tilde{\psi}\) defined 
-at least on\(\dom_{n+1}\times\dom_{n+1}\) fulfil 
- \begin{align}\label{uniqueness0}
-  \forall (t,s)\in \dom_n\times \dom_n: \tilde{\psi}(t,s) \text{ is a lift of } S_{tA, sA}\\\label{uniqueness psi1}
-\forall s,k,l\in\mathbb{R}: \tilde{\psi}(k,s)\tilde{\psi}(s,l)=\tilde{\psi}(k,l),\\\label{uniqueness psi2}
-\forall (x,y)\in\dom_n: (xA, yA)\in\dom\overline{S}\Rightarrow  \tilde{\psi}(x,y)=\phi_A(x,y).
+It remains to show uniqueness. 
+So let \(\tilde{\psi}_{n+1}\) be defined 
+on \(\dom_{n+1}\times\dom_{n+1}\) fulfil 
+ \begin{align}\label{uniqueness psi1}\tag{\(\ref{induction psi1}_{\tilde{\psi}}\)}
+  \forall (t,s)\in \dom_{n+1}\times \dom_{n+1}: \tilde{\psi}(t,s) \text{ is a lift of } S_{tA, sA},\\\label{uniqueness psi2}\tag{\(\ref{induction psi2}_{\tilde{\psi}}\)}
+\forall s,k,l\in\mathbb{R}: \tilde{\psi}(k,s)\tilde{\psi}(s,l)=\tilde{\psi}(k,l),\\\label{uniqueness psi3}\tag{\(\ref{induction psi3}_{\tilde{\psi}}\)}
+\forall (x,y)\in\dom_{n+1}: (xA, yA)\in\dom\overline{S}\Rightarrow  \tilde{\psi}(x,y)=\phi_A(x,y).
 \end{align}
-Now pick \(x,y \in (\dom_n\cup U_z)\). Let without loss of generality \(y>x\). 
-Pick for each \(z \in [x,y]\) an open set \(U_z \subseteq \dom\overline{S}\) then 
+Now pick \(x,y \in (\dom_n\cup U_{x_{n+1}})\). We proceed 
+in a case by case manner
+\begin{enumerate}
+\item If \(x,y\in\dom_n\) holds, then 
+\(\psi_{n+1}(x,y)=\tilde{\psi}_{n+1}(x,y)\) follows directly
+from the induction hypothesis.
+\item Similarly if \(x,y\in U_{x_{n+1}}\) holds, we have
 \begin{equation}
- \bigcup_{z\in [x,y]} U_z \supseteq [x,y]
+  \psi_{n+1}(x,y)=\phi_A(x,y)=\tilde{\psi}_{n+1}(x,y).
 \end{equation}
-is an open cover of \([x,y]\). Since \([x,y]\) is compact there is a finite selection of \(z_i\in [x,y], 1\le i\le n\in\mathbb{N}\) such that
-also 
-\begin{equation}
- \bigcup_{i=1}^n U_{z_i}\supseteq [x,y]
-\end{equation}
-is an open cover of \([x,y]\). Without loss of generality let \(z_1=x, z_n=y\). We next reduce \(\tilde{\psi}(x,y)\) to the following product
-\begin{equation}
-\tilde{\psi}(x,y)=\prod_{i=1}^{n=1}\tilde{\psi}(z_i,z_{i+1})=\prod_{i=1}^{n=1}\phi_A(z_i,z_{i+1}),
-\end{equation}
-by repeated application of equation 
-\eqref{uniqueness psi1} and application of \eqref{uniqueness psi2}. 
-By the very same procedure we can reduce \(\psi_{n+1}(x,y)\) to the same 
-product, proving \(\psi_{n+1}(x,y)=\tilde{\psi}(x,y)\). This ends the 
-induction. 
+\item Additionally, if 
+\(x\in \dom_n, y \in U_{x_{n+1}}\) holds, then 
+\begin{align}
+\psi_{n+1}(x,y)
+\overset{\eqref{induction psi2}}{=}
+\psi_{n+1}(x,t)\psi_{n+1}(t,y)\\
+\overset{t\in \dom_n\cap U_{x_{n+1}}}{=}\tilde{\psi}_{n+1}(x,t)\tilde{\psi}_{n+1}(t,y)
+\overset{\eqref{uniqueness psi2}}{=}
+\tilde{\psi}_{n+1}(x,y)
+\end{align}
+is satisfied. 
+\item Conversely, if 
+\(y\in \dom_n, x \in U_{x_{n+1}}\) holds, we may 
+use the same calculation to obtain 
+\begin{align}
+\psi_{n+1}(x,y)
+\overset{\eqref{induction psi2}}{=}
+\psi_{n+1}(x,t)\psi_{n+1}(t,y)\\
+\overset{t\in \dom_n\cap U_{x_{n+1}}}{=}\tilde{\psi}_{n+1}(x,t)\tilde{\psi}_{n+1}(t,y)
+\overset{\eqref{uniqueness psi2}}{=}
+\tilde{\psi}_{n+1}(x,y).
+\end{align}
+\end{enumerate}
 
 Now we have established an extension \(\psi_n\) of \(\phi_A\)
-fulfilling properties \eqref{induction psi1}-\eqref{induction psi3}
-and coinciding with any other function on its domain 
-\(\dom_n\) that also satisfies 
-these properties. The domain is of the form
-\begin{equation}
-\bigcup_{k=0}^n U_{x_k}
-\end{equation}
-with \(x_k\) such that \(\bigcup_{k=0}^l U_{x_k}\) is connected for all 
-\(l\). This also yields a global unique extension of \(\phi_A\) because
-we can pick points \((x_n)_{n\in\mathbb{N}}\) such that 
-\(\bigcup_{k=0}^n U_{x_k}\) is connected for all \(n\) and
-\begin{equation}
-  \mathbb{R}= \bigcup_{n\in\mathbb{N}} U_{x_n}
-\end{equation}
-holds.
+fulfilling properties \eqref{induction psi1}-\eqref{induction psi3}.
+
+We know that for each \(n\in\mathbb{N}\) the function
+\(\psi_{n+1}:\dom_{n+1}^2\rightarrow U(\mathcal{F})\) is 
+an extention of 
+\(\psi_{n+1}:\dom_{n}^2\rightarrow U(\mathcal{F})\).
+Furhtermore, the sets \(\dom_n\) cover 
+\(\mathbb{R}\) according 
+to equation \eqref{open cover of R}. Consequently 
+there is a unique common extension, by small abuse of 
+notation again called 
+\(\phi_A:\mathbb{R}^2\to U(\mathcal{F})\), 
+of all \(\psi_n\). This function fulfills the claim 
+\eqref{global phi prop1}-\eqref{global phi prop4}, because 
+any \(t,l,s\in\mathbb{R}\) are contained in some \(\dom_n\).
+
+
 
 \end{proof}
 
@@ -1625,7 +1801,7 @@ For any \(A\in\mathcal{V}\) we define
 \hat{S}_{0,A}:=\phi_A(1,0).
 \end{equation}
 \end{Def}
-using lemma  \ref{lem: phi global} we are now in a position
+Using lemma  \ref{lem: phi global} we are now in a position
 to prove theorem \ref{thm: ex s hat}.
 \begin{proof}[proof of theorem \ref{thm: ex s hat}]
 The operator \(\hat{S}\) fulfils the claimed differential 
@@ -1726,7 +1902,7 @@ from lemma \ref{lem: phi global}.
 %so in both cases the ordinary differential equation is satisfied. 
 %\end{rmk}
 
-\begin{Def}[relative phase]
+\begin{Def}[relative phase]\label{def relative phase}
 Let \((A,B) \in\dom\overline{S}\), we define \(z(A,B)\in S^1\) by
 \begin{equation}\label{def z}
 z(A,B):=\frac{\hat{S}_{0,B}}{\hat{S}_{0,A}\overline{S}_{A,B}}.
@@ -1840,10 +2016,11 @@ form \(\omega\in \Omega^p(\mathcal{V})\),
 we define its exterior derivative, 
 \(d \omega\in\Omega^{p+1}(\mathcal{V})\) by
 \begin{equation}
-(d\omega)_A(B_1,\dots, B_{p+1}):=\sum_{k=1}^{p+1} (-1)^{k+1} \partial_{B_k}\omega_{A+B_k}(B_1,\dots , \cancel{B_k},\dots, B_{p+1}),
+(d\omega)_A(B_1,\dots, B_{p+1}):=\sum_{k=1}^{p+1} (-1)^{k+1} 
+\partial_{B_k}\omega_{A+B_k}(B_1,\dots , \widehat{B_k},\dots, B_{p+1}),
 \end{equation}
 for \(A,B_1,\dots, B_{p+1}\in\mathcal{V}\), where 
-the notation \(\cancel{B_k}\) denotes that \(B_k\) is  
+the notation \(\widehat{B_k}\) denotes that \(B_k\) is  
 dropped as an argument.
 
 \end{Def}
@@ -1870,7 +2047,9 @@ Now since \(d c=0\), we might use Poincaré's lemma as a method independent of \
 In order to execute this plan, we first need to prove Poincaré's lemma for our setting:
 
 \begin{Lemma}[Poincaré]\label{lem poincare}
-Let \(\omega\in \Omega^p(\mathcal{V})\) for \(p\in\mathbb{R}\) be closed, i.e. \(d \omega =0\). Then \(\omega\) is also exact, more precisely we have
+Let \(\omega\in \Omega^p(\mathcal{V})\) for 
+\(p\in\mathbb{N}\) be closed, i.e. \(d \omega =0\). 
+Then \(\omega\) is also exact, more precisely we have
 \begin{equation}
 \omega=d \int_{0}^1 \iota^*_t i_X f^* \omega dt,
 \end{equation}
@@ -1882,14 +2061,20 @@ where \(X\), \(\iota_t\) for \(t\in\mathbb{R}\) and \(f\) are given by
 &\hspace{2cm} B\mapsto (t,B)\\
 &f:\mathbb{R}\times \mathcal{V}\mapsto \mathcal{V},\\
 &\hspace{2cm} (t,B) \mapsto t B\\
- &\forall t \in \mathbb{R}: f_t:=f(t,\cdot).
+&i_X: \Omega^p(\mathcal{V})\rightarrow \Omega^{p-1}(\mathcal{V}),\\
+&\hspace{2cm} \omega \mapsto ((A;Y_1,\dots, Y_{p-1})\mapsto \omega_A(X,Y_1,\dots,Y_{p-1}))
  \end{align}
 \end{Lemma}
 \begin{proof}
+  \todo{put proof into appendix}
 Pick some \(\omega \in \Omega^p(\mathcal{V})\).
 We will first show the more general formula 
 \begin{equation}\label{poincare more general}
-f^*_b\omega-f^*_a \omega=d \int_{a}^b \iota_t^* i_X f^* \omega ~dt+ \int_{a}^b \iota_t^* i_X f^* d \omega dt.
+f^*_b\omega-f^*_a \omega=d \int_{a}^b \iota_t^* i_X f^* \omega ~dt+ \int_{a}^b \iota_t^* i_X f^* d \omega dt,
+\end{equation}
+where \(f_t\) is defined as
+\begin{equation}
+\forall t \in \mathbb{R}: f_t:=f(t,\cdot).
 \end{equation}
 The lemma follows then by \(b=1, a= 0\), \(f^*_1\omega=\omega, f^*_0 \omega=0\) and \(d \omega=0\) for a closed \(\omega\). 
 We begin by rewriting the right hand side of \eqref{poincare more general}:
@@ -1903,12 +2088,12 @@ First, we calculate \(d \iota^*_t i_X f^* \omega\):
 &(f^*\omega)_{(t,A)}((s_1,B_1),\dots, (s_p,B_p))\\\nonumber
 &\hspace{3cm}=\omega_{tA}(s_1A+tB_1,\dots, s_p A+t B_p)\\[0.3cm]
 &\Rightarrow (i_X f^* \omega)_{(t,A)}((s_1,B_1),\dots, (s_{p-1},B_{p-1}))\\\nonumber
-&\hspace{3cm}=\omega_{tA}(A,s_1A+tB_1,\dots, s_{p-1}A + t B_{p-1}\\[0.3cm]
+&\hspace{3cm}=\omega_{tA}(A,s_1A+tB_1,\dots, s_{p-1}A + t B_{p-1})\\[0.3cm]
 &\Rightarrow (\iota^*_t i_X f^* \omega)_{A}(B_1,\dots, B_{p-1})= t^{p-1} \omega_{t A}(A,B_1,\dots, B_{p-1})\\[0.3cm]\notag
 &\Rightarrow (d\iota^*_t i_X f^* \omega)_{A}(B_1,\dots, B_{p}) \\
-&\quad=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{t A + \varepsilon t B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\\
-&\quad+ \partial_\varepsilon|_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{tA}(A+\varepsilon B_k,B_1,\dots, \cancel{B_k},\dots, B_p)\\\notag
-&=\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p t^p (-1)^{k+1} \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\\\label{li derivative 1}
+&\quad=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{t A + \varepsilon t B_k}(A,B_1,\dots, \widehat{B_k},\dots, B_p)\\
+&\quad+ \partial_\varepsilon|_{\varepsilon=0} \sum_{k=1}^p (-1)^{k+1} t^{p-1} \omega_{tA}(A+\varepsilon B_k,B_1,\dots, \widehat{B_k},\dots, B_p)\\\notag
+&=\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p t^p (-1)^{k+1} \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \widehat{B_k},\dots, B_p)\\\label{li derivative 1}
 &\hspace{6cm}+p t^{p-1}\omega_{tA}(B_1,\dots, B_p).
 \end{align}
 
@@ -1916,23 +2101,23 @@ First, we calculate \(d \iota^*_t i_X f^* \omega\):
 Now, we calculate \(\iota^*_t i_X f^* d \omega\):
 \begin{align}\notag
 &(d\omega)_A(B_1,\cdots, B_{p+1})\\
-&\hspace{2cm}=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^{p+1} (-1)^{k+1} \omega_{A+\varepsilon B_k}(B_1,\dots , \cancel{B_k}, \dots, B_{p+1})\\[0.3cm]
+&\hspace{2cm}=\partial_\varepsilon |_{\varepsilon=0} \sum_{k=1}^{p+1} (-1)^{k+1} \omega_{A+\varepsilon B_k}(B_1,\dots , \widehat{B_k}, \dots, B_{p+1})\\[0.3cm]
 &(f^* d \omega){(t,A)}((s_1,B_1),\dots , (s_{p+1},B_{p+1}))\\\notag
 &= (d\omega)_{tA}(s_1A + t B_1, \dots, s_{p+1}A+t B_{p+1})\\
 &=\partial_{\varepsilon}|_{\varepsilon =0} \sum_{k=1}^{p+1}(-1)^{k+1}\\\notag
-&\quad \times\omega_{tA + \varepsilon(s_kA + t B_k)}(s_1A+tB_1, \dots,  \cancel{s_k A + t B_k},\dots , s_p A  + t B_p )\\[0.4cm]
+&\quad \times\omega_{tA + \varepsilon(s_kA + t B_k)}(s_1A+tB_1, \dots,  \widehat{s_k A + t B_k},\dots , s_p A  + t B_p )\\[0.4cm]
 &(i_X f^* d \omega)_{(t,A)}((s_1,B_1),\dots , (s_p, B_p))\\\notag
 &\quad= \partial_{\varepsilon} |_{\varepsilon =0} \omega_{(t+\varepsilon)A}(s_1A+tB_1, \dots, s_pA+t B_p)\\\notag
 &+\partial_{\varepsilon}|_{\varepsilon=0} \sum_{k=1}^p (-1)^k\\\notag
-&\times\omega_{tA + \varepsilon(s_k A + t B_k)} (A,s_1A+t B_1, \dots, \cancel{s_k A + t B_k},\dots, s_p A + t B_p)\\
-&= t^p \partial_{\varepsilon}|_{\varepsilon=0}\omega_{(t+\varepsilon)A }(B_1,\dots, ,\cancel{B_k},\dots, B_p))\\
+&\times\omega_{tA + \varepsilon(s_k A + t B_k)} (A,s_1A+t B_1, \dots, \widehat{s_k A + t B_k},\dots, s_p A + t B_p)\\
+&= t^p \partial_{\varepsilon}|_{\varepsilon=0}\omega_{(t+\varepsilon)A }(B_1,\dots, ,\widehat{B_k},\dots, B_p))\\
 &\hspace{2cm}+ \sum_{k=1}^p s_k t^{p-1} (-1)^{k+1} \partial_{\varepsilon}|_{\varepsilon=0}\omega_{(t+\varepsilon)A}(A,B_1,\dots, B_p) \\
-&+\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p(-1)^k t^{p-1}(\omega_{(t+s_k\varepsilon)A}(A,B_1,\dots, \cancel{B_k},\dots, B_p) \\
-&\hspace{2cm} + \omega_{tA + \varepsilon t B_k}(A,B_1, \dots, \cancel{B_k},\dots, B_p))\\
+&+\partial_{\varepsilon}|_{\varepsilon=0}\sum_{k=1}^p(-1)^k t^{p-1}(\omega_{(t+s_k\varepsilon)A}(A,B_1,\dots, \widehat{B_k},\dots, B_p) \\
+&\hspace{2cm} + \omega_{tA + \varepsilon t B_k}(A,B_1, \dots, \widehat{B_k},\dots, B_p))\\
 &=t^p\partial_{\varepsilon}|_{\varepsilon=0} \Big(\omega_{(t+\varepsilon)A}(B_1,\dots, B_p)\\\notag
-&\hspace{2cm} +\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\Big)\\\label{li derivative 2}
+&\hspace{2cm} +\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \widehat{B_k},\dots, B_p)\Big)\\\label{li derivative 2}
 &(\iota_t^* i_X f^* d \omega)_{A}(B_1,\dots ,  B_p)=t^p\partial_{\varepsilon}|_{\varepsilon=0} \Big(\omega_{(t+\varepsilon)A}(B_1,\dots, B_p)\\\notag
-&\hspace{2cm}+\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \cancel{B_k},\dots, B_p)\Big)
+&\hspace{2cm}+\sum_{k=1}^p (-1)^k \omega_{tA+\varepsilon B_k}(A,B_1,\dots, \widehat{B_k},\dots, B_p)\Big)
 \end{align}
 
 Adding \eqref{li derivative 1} and \eqref{li derivative 2} we find for \eqref{poincare 1 manipulation}:
@@ -1947,16 +2132,16 @@ Adding \eqref{li derivative 1} and \eqref{li derivative 2} we find for \eqref{po
 
 \end{proof}
 
-\begin{Def}[integral of a closed p form]
-For a closed exterior form \(\omega\in\Omega^{p}(\mathcal{V})\) we define the form \(\prod [\omega]\)
+\begin{Def}[antiderivative of a closed \(p\) form]\label{antiderivative}
+For a closed exterior form \(\omega\in\Omega^{p}(\mathcal{V})\) we define the form \(\Pi [\omega]\)
 \begin{equation}
-\prod\![\omega]:=\int_{0}^1 \iota^*_t i_X f^* \omega dt.
+\Pi\![\omega]:=\int_{0}^1 \iota^*_t i_X f^* \omega dt.
 \end{equation}
 For \(A,B_1,\dots , B_{p-1}\in\mathcal{V}\) it takes the form 
 \begin{equation}
-\prod\![\omega]_A(B_1,\dots, B_p)=\int_0^1 t^{p-1} \omega_{tA}(A,B_1,\dots, B_{p-1})dt.
+\Pi\![\omega]_A(B_1,\dots, B_{p-1})=\int_0^1 t^{p-1} \omega_{tA}(A,B_1,\dots, B_{p-1})dt.
 \end{equation}
-By lemma \ref{lem poincare} we know \(d\prod [\omega]=\omega\) if \(d\omega=0\).
+By lemma \ref{lem poincare} we know \(d\Pi [\omega]=\omega\) if \(d\omega=0\).
 \end{Def}
 
 Now we found two one forms each produces \(c\) when the exterior derivative is taken. The next lemma informs us about their relationship.
@@ -1964,27 +2149,36 @@ Now we found two one forms each produces \(c\) when the exterior derivative is t
 \begin{Lemma}[inversion of lemma \ref{connection between c and the relative phase}]
 The following equality holds
 \begin{equation}
-\chi=2 \prod\![c].
+\chi=2 \Pi\![c].
 \end{equation}
 \end{Lemma}
 \begin{proof}
-We have \(d(\chi-2 \prod\![c])=0\) so by lemma \ref{lem poincare} we know that there is \(v:\mathcal{V}\rightarrow \mathbb{R}\) such that
+By definition \ref{antiderivative} of \(\Pi\) and 
+lemma \ref{connection between c and the relative phase}
+we have \(d(\chi-2 \Pi\![c])=0\). Hence, 
+by the Poincaré lemma 
+\ref{lem poincare}, we know that there is 
+\(v:\mathcal{V}\rightarrow \mathbb{R}\) such that
 \begin{equation}
-dv=\chi-2 \prod\![c]
-\end{equation}
-holds. Now \eqref{diff s hat} translates into the following ODE for \(z\):
+dv=\chi-2 \Pi\![c]
+\end{equation}%{def relative phase}
+holds. Using the definition \ref{def relative phase} of \(z\), 
+ the parallel transport equation \eqref{diff s hat} 
+ translates into the 
+following ODE for \(z\):
 \begin{equation}
 \partial_B \ln z(0,B)=0, \quad \partial_\varepsilon \ln z(A,(1+\varepsilon)A)|_{\varepsilon =0}=0
 \end{equation}
-for all \(A,B\in\mathcal{V}\). This means that
+for all \(A,B\in\mathcal{V}\). Therefore have
 \begin{equation}
-\chi_0(B)=0=\prod\![c]_0(B), \quad \chi_{A,A}=0=\prod\![c]_A(A)
+\chi_0(B)=0=\Pi\![c]_0(B), \quad \chi_{A}(A)=0=\Pi\![c]_A(A),
 \end{equation}
-hold. This implies
+which implies
 \begin{equation}
-\partial_\varepsilon v_{\varepsilon A}=0, \quad \partial_\varepsilon v_{A+\varepsilon A}=0,
+\partial_\varepsilon v_{\varepsilon A}|_{\varepsilon=0}=0, 
+\quad \partial_\varepsilon v_{A+\varepsilon A}|_{\varepsilon=0}=0.
 \end{equation}
-which means that \(v\) is constant.
+In conclusion, \(v\) is constant.
 \end{proof}
 
 
@@ -2000,7 +2194,7 @@ For a fixed \(F\in\mathcal{V}\), this condition can be read as \(d( c^+_{\cdot} 
 For any \(F\in\mathcal{V}\), we define
 
 \begin{equation}
-\beta_A(F):=2 \prod\![c^+_{\cdot}(F,\cdot)]_A.
+\beta_A(F):=2 \Pi\![c^+_{\cdot}(F,\cdot)]_A.
 \end{equation}
 \end{Def}
 
@@ -2015,7 +2209,7 @@ The following two equations hold:
 We start with the exterior derivative of \(\beta\). Pick \(A,F,G\in\mathcal{V}\):
 \begin{align}
 d\beta_A(F,G)=\partial_F \beta_{A+F}(G)-\partial_G \beta_{A+G}(F)\\
-=d\Big(\prod\![c^+_\cdot(G,\cdot)]\Big)_A(F)-d\Big(\prod\![c^+_\cdot(F,\cdot)]\Big)_A(G)\\
+=d\Big(\Pi\![c^+_\cdot(G,\cdot)]\Big)_A(F)-d\Big(\Pi\![c^+_\cdot(F,\cdot)]\Big)_A(G)\\
 =2 c^+_A(G,F)-2 c_A^+(F,G)\overset{\eqref{c+ 1}}{=}-2 c_A(F,G).
 \end{align}
 This proves the first equality. The second equality follows directly by \(d \chi=2 c\).
@@ -2024,7 +2218,7 @@ This proves the first equality. The second equality follows directly by \(d \chi
 \begin{Def}[corrected lift]
 Since \(\beta+\chi\) is closed, we may use lem \ref{lem poincare} again to define the phase
 \begin{equation}\label{def alpha}
-\alpha:=\prod\![\beta+\chi].
+\alpha:=\Pi\![\beta+\chi].
 \end{equation}
 Furthermore, for all \(A,B\in\mathcal{V}\) we define the corrected second quantised scattering operator 
 \begin{align}

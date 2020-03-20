@@ -492,7 +492,8 @@ P^-:=1_{\mathrm{spec}(H^0)<0}, \quad P^+=1-P^-.
 
 
 \begin{Lemma}
-For general \(A,F\in\mathcal{V}\) we have the well known equations for
+For general \(A,F\in\mathcal{V}\) and \(t_0,t_1\in\mathbb{R}\) 
+we have the well known equations for
 the one-particle time evolution operators
 
 \begin{align}
@@ -575,7 +576,7 @@ Therefore \(T^1\in I_2^{\odd}\) holds.
 Finally since 
 \(\|\cdot\|_{\mathrm{op}+I_2}
 =\|\cdot\|_{\mathrm{op}}
-+\|\cdot_{\odd}\|_{I_2}\) holds, 
++\|\cdot_{\odd}\|_{I_2}\) is true, 
 we find 
 \begin{equation}
 T_n\xrightarrow[\|\cdot\|_{\mathrm{op}+I_2}]{n\rightarrow \infty} T^1,
@@ -584,345 +585,410 @@ proving completeness.
 \end{proof}
 
 
-\begin{Thm}[Analyticity of S]\todo{think about 
-  generalisation to higher derivatives}
-Let \(n\in\mathbb{N}\),  \(A,H_{k}\in\mathcal{V}\) for 
-\(k\le n\), pick \(t_1\) 
-after \(\supp A\cup \bigcup_{k\le n}\supp H_k\) and \(t_0\)
-before \(\supp A\cup\bigcup_{k\le n}\supp H_k\) then 
-\begin{align}\label{derivative U}
-\partial_{H_1} U^{A+H_1}(t_1,t_0)=\int_{t_0}^{t_1}dt~ U^A(t_1,t)Z^{H_1}(t) U^{A}(t,t_0)
-\end{align}
-holds with respect to the topology induced by the
-norm\(\|\cdot\|_{\mathrm{op}+I_2}\).
-Additionally the derivatives 
+\begin{Thm}[Smoothness of S]\label{thm smoothness of S}
+  Let \(n\in\mathbb{N}\),  \(A,H_{k}\in\mathcal{V}\) for 
+  \(k\le n\), pick \(t_1\) 
+  after \(\supp A\cup \bigcup_{k\le n}\supp H_k\) and \(t_0\)
+  before \(\supp A\cup\bigcup_{k\le n}\supp H_k\) then 
+  the derivatives 
+  \begin{equation}
+    \partial_{H_1}\dots \partial_{H_k}U^{A+\sum_{b=1}^k F_b}(t_1,t_0)
+  \end{equation}
+  all exist with respect to the topology induced by 
+  the norm \(\|\cdot\|_{\mathrm{op}+I_2}\).
+\end{Thm}
+\begin{proof}
+  Following \cite{ivp0} we will throughout this proof make use of the 
+  following shorthand notation. For operator valued maps 
+  \(T_1,T_2:\mathbb{R}^2\to (\mathcal{H}\righttoleftarrow) \) we define 
+  for \(t_1,t_0\in\mathbb{R}\)
+  \begin{equation}
+  T_1T_2 = \int_{t_0}^{t_1}dt~ T_1(t_1,t)T_2(t,t_0),
+  \end{equation}
+  as a map of the same type as \(T_1\) and \(T_2\)
+  whenever this is well defined. Furthermore for operator valued functions
+  \(C_1,C_2:\mathbb{R}\to (\mathcal{H}\righttoleftarrow)\) we define
+  \begin{align}
+  T_1C_1=T_1(t_1,t_0)C_1(t_0)\\
+  C_1 T_1=C(t_1)T_1(t_1,t_0)\\
+  C_1C_2=C_1(t_1),
+  \end{align}
+  as maps of the same type as \(T_1, T_1\) and \(C_1\) 
+  respectively.
+  Pick \(k\in\mathbb{N}\), \(A,H_b\in\mathcal{V}\) for \(b\le k\) 
+  and \(t_1,t_0\) as in the theorem. 
+  
+  We abbreviate
+  \begin{equation}
+  H:=\sum_{b=1}^k H_b, \quad B:=A+H
+  \end{equation}
+  Because of the choice of \(t_1,t_0\) we have
+  \begin{equation}\label{def R}
+  R^{A+H}(t_1,t_0):=[(1-Q^{A+H})U^{A+H}(1+Q^{A+H})](t_1,t_0)=U^{A+H}(t_1,t_0),
+  \end{equation}
+  because \(A+H=0\) both at \(t_1\) and \(t_0\).
+  
+  So it suffices to study the family of operators \(R\). 
+  From the analysis carried out in \cite{ivp0} we know that 
+  \(R^B\) for \(B\in\mathcal{V}\) is the limit in the sense of the 
+  operator norm of the sequence
+  \begin{align}
+  R^B_{0}:=0, \quad R^B_{n+1}:=U^0 F^B R^B_{n}+ U^0 + G^B,
+  \end{align}
+  where \(F\) and \(G\) are given By
+  
+  \begin{align}
+  F^B:= (-{Q'}^B+Z^B_{\mathrm{ev}}-Q^BZ^B)(1+Q^B),\\
+  G^B:=- U^0(1-Q^BQ^B) + U^0(-{Q'}^B\\
+  +Z_{\mathrm{ev}}-Q^B Z^B)Q^B Q^B U^B (1+Q^B).
+  \end{align}
+  
+  First we introduce the auxiliary norms for operators \(T\) 
+  and \(W\) depending on one and two 
+  scalar variables respectively.
+  
+  \begin{align}
+    \|T \|_{\mathrm{op}+I_2,\gamma}
+    &:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \left(\|T(t)\|
+    +\| T_{\odd}(t)\|_{I_2}\right)\\
+    \|T \|_{\mathrm{op},\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \|T(t)\|\\
+    \|W \|_{\mathrm{op},0}&:=\sup_{t,t'\in[t_1,t_0]} \|W(t,t')\|\\
+    \|T \|_{I_2 ,\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \| T(t)\|_{I_2},\\
+    \|W \|_{I_2 ,0}&:=\sup_{t,t'\in[t_1,t_0]} \| W(t,t')\|_{I_2},
+  \end{align}
+  for \(\gamma\ge 0 \).
+  From the analysis of \cite{ivp0} follows that the 
+  recursive equation \cite[(3.42)]{ivp0}
+  
+  \begin{align}
+  R^B_{n}=U^0F^B_{\ev}R^B_{n-1}+U^0F^B_{\odd} U^0F^B R^B_{n-2}\\
+  +U^0 F^B_{\odd} +U^0F^B_{\odd} U^0 + U^0 +G^B
+  \end{align}
+  is fulfilled by the same sequence of operators for \(n\ge 2\).
+  Hence we have for \(n\ge 2\):
+  \begin{align}\notag
+    R^B_{n+1}-R^B_{n}=U^0F^B_{\ev}(R^B_n-R^B_{n-1})\\
+    +U^0F^B_{\odd} U^0F^B (R^B_{n-1}-R^B_{n-2}).
+  \end{align}
+  Abbreviating \(U^0F^B_{\ev}=:a,\quad U^0F^B_{\odd}U^0 F^B:=b\), we obtain
+  \begin{align}\notag
+    R^B_{n+1}-R^B_{n}=a(R^B_n-R^B_{n-1})\\\label{R recurisve}
+    +b (R^B_{n-1}-R^B_{n-2}).
+  \end{align}
+  Furthermore, we introduce the notation
+  \begin{align}
+  [k]&:=\{l\in\mathbb{N}\mid l\le k\}\\
+  \forall u\subseteq [k]:\partial_{u}&:=\prod_{k\in u}\partial_{H_k},\\
+  R^B_{n+1}-R^B_n&:=\Delta^n,
+  \end{align}
+  where the product of derivatives is to be understood as the 
+  mixed derivative with respect to all the factors.
+  Now we estimate for any set \(u\subset [k]\):
+  
+  \begin{align}
+  &\sup_{p\subseteq u}\|\partial_p \Delta^n_{\odd} \|_{I_2,\gamma}\\
+  &\le \sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+  \left\| \sum_{w\subseteq u} (\partial_{u\backslash w}a ~
+  \partial_w \Delta^{n-1}_{\odd})(t,t_0)\right\|_{I_2}\\
+  &+\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+  \left\|P^+ \sum_{w\subseteq u} (\partial_{u\backslash w}b ~
+  \partial_w \Delta^{n-2})(t,t_0) P^-\right\|_{I_2}\\
+  &+\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+  \left\|P^- \sum_{w\subseteq u} (\partial_{u\backslash w}b ~
+  \partial_w \Delta^{n-2})(t,t_0) P^+\right\|_{I_2}\\
+  &\le 
+  \sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} 
+  \sum_{w\subseteq u} 
+  \| \partial_{u\backslash w}(a ~
+  \partial_w \Delta^{n-1}_{\odd})(t,t_0)\|_{I_2}\\
+  &+2\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} 
+  e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+  \|  (\partial_{u\backslash w}b ~
+  \partial_w \Delta^{n-2})(t,t_0) \|_{I_2}\\
+  &\le
+  \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} 
+  \sum_{w\subseteq u} 
+  \int_{t_0}^{t}dt' 
+  \| \partial_{u\backslash w}a(t,t') ~
+  \partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
+  &+2 \sup_{p\subseteq u}
+  \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
+  \int_{t_0}^{t}dt'  
+  \|  \partial_{u\backslash w}b(t,t') ~
+  \partial_w \Delta^{n-2}(t',t_0) \|_{I_2}\\
+  &\le
+  \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
+  e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
+  \int_{t_0}^{t}dt' 
+  \| \partial_{u\backslash w}a\|_{\mathrm{op},0}
+  \|\partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
+  &+2 \sup_{p\subseteq u}
+  \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
+  \int_{t_0}^{t}dt'  
+  \|  \partial_{u\backslash w}b(t,t')\|_{I_2}
+  \|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+  &\le
+  \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
+  e^{-\gamma t} \sum_{w\subseteq u} 
+  \int_{t_0}^{t}dt' e^{\gamma t'}
+  \| \partial_{u\backslash w}a\|_{\mathrm{op},0}
+  \|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
+  &+2 \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
+  e^{-\gamma t}\sum_{w\subseteq u} 
+  \int_{t_0}^{t}dt'  e^{\gamma t'}
+  \|  \partial_{u\backslash w}b\|_{I_2,0}
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+  &\le
+  \frac{1}{\gamma} \sup_{p\subseteq u} \sum_{w\subseteq u} 
+  \| \partial_{u\backslash w}a\|_{\mathrm{op},0}
+  \|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
+  &+\frac{2}{\gamma} \sup_{p\subseteq u} \sum_{w\subseteq u} 
+  \|  \partial_{u\backslash w}b\|_{I_2,0}
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+  &\le
+  \frac{2^{|u|}}{\gamma} \sup_{u'\subseteq u} 
+  \| \partial_{u'}a\|_{\mathrm{op},0} \sup_{p\subseteq u} 
+  \|\partial_p \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
+  &+\frac{2^{|u|+1}}{\gamma} \sup_{u'\subseteq u} 
+  \|  \partial_{u'}b\|_{I_2,0}\sup_{p\subseteq u}
+  \|\partial_p \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}
+  \end{align}
+  
+  Similarly we compute the operator norm:
+  
+  \begin{align}
+    &\sup_{p\subseteq u}\|\partial_p \Delta^n \|_{\mathrm{op},\gamma}\\
+    &\le 
+    \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sup_{p\subseteq u} 
+    \sum_{w\subseteq p} 
+    \| \partial_{p\backslash w}(a ~
+    \partial_w \Delta^{n-1})(t,t_0)\|_{\mathrm{op}}\\
+    &+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sup_{p\subseteq u} 
+    \sum_{w\subseteq p} 
+    \|  (\partial_{p\backslash w}b ~
+    \partial_p \Delta^{n-2})(t,t_0) \|_{\mathrm{op}}\\
+    &\le
+    \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+    \sup_{p\subseteq u} \sum_{w\subseteq p} 
+    \int_{t_0}^{t}dt' 
+    \| \partial_{p\backslash w}a(t,t') ~
+    \partial_p \Delta^{n-1}(t',t_0)\|_{\mathrm{op}}\\
+    &+ \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+    \sup_{p\subseteq u}\sum_{w\subseteq u} 
+    \int_{t_0}^{t}dt'  
+    \|  \partial_{p\backslash w}b(t,t') ~
+    \partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+    &\le
+    \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+    \sup_{p\subseteq u} \sum_{w\subseteq p} 
+    \int_{t_0}^{t}dt' 
+    \| \partial_{p\backslash w}a(t,t')\|_{\mathrm{op}}
+    \|\partial_w \Delta^{n-1}(t',t_0)\|_{\mathrm{op}}\\
+    &+ \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
+    \sup_{p\subseteq u} \sum_{w\subseteq p} 
+    \int_{t_0}^{t}dt'  
+    \|  \partial_{p\backslash w}b(t,t')\|_{\mathrm{op}}
+   \|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+   &\le
+   \sup_{t\in[t_0,t_1]} e^{-\gamma t}
+   \sup_{p\subseteq u} \sum_{w\subseteq p} 
+   \int_{t_0}^{t}dt' e^{\gamma t'}
+   \| \partial_{p\backslash w}a \|_{\mathrm{op},0}
+   \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+   &+ \sup_{t\in[t_0,t_1]} e^{-\gamma t}
+   \sup_{p\subseteq u}\sum_{w\subseteq p} 
+   \int_{t_0}^{t}dt'  e^{\gamma t}
+   \|  \partial_{u\backslash p}b\|_{\mathrm{op},0}
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+  &\le
+  \frac{1}{\gamma}\sup_{p\subseteq u} \sum_{w\subseteq p} 
+  \| \partial_{p\backslash w}a \|_{\mathrm{op},0}
+  \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+  &+ \frac{1}{\gamma}
+  \sup_{p\subseteq u} \sum_{w\subseteq p} 
+  \|  \partial_{p\backslash w}b\|_{\mathrm{op},0}
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+  &\le
+  \frac{2^{|u|}}{\gamma}
+  \sup_{u'\subseteq u}\| \partial_{u'}a \|_{\mathrm{op},0}
+   \sup_{w\subseteq u} 
+  \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+  &+ \frac{2^{|u|}}{\gamma}
+  \sup_{u'\subseteq u}\| \partial_{u'}b \|_{\mathrm{op},0}
+  \sup_{w\subseteq u}
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}
+  \end{align}
+  
+  Introducing the abbreviation
+  \begin{equation}
+  \alpha=\frac{2^{|u|+1}}{\gamma} \sup_{u'\subseteq u}
+  \left\{\|\partial_{u'}a\|_{\mathrm{op},0},
+  \|\partial_{u'}b\|_{I_2,\infty},
+  \|\partial_{u'}b\|_{\mathrm{op},0}  \right\},
+  \end{equation}
+  
+  we can thus summarise the last two calculations 
+  
+  \begin{align}
+  &\begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{n} \|_{\mathrm{op}+I_2,\gamma}\\
+  \sup_{p\subseteq u} \|\partial_p \Delta^{n-1}\|_{\mathrm{op}+I_2,\gamma}\end{pmatrix}\\
+  &=\begin{pmatrix}\alpha & \alpha \\ 1 & 0 \end{pmatrix}
+  \begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{n-1}\|_{\mathrm{op}+I_2,\gamma}\\
+  \sup_{p\subseteq u} \|\partial_p \Delta^{n-2}\|_{\mathrm{op}+I_2,\gamma} \end{pmatrix}\\\label{analyticity converging recursion}
+  &=\begin{pmatrix}\alpha & \alpha \\ 1 & 0 \end{pmatrix}^{n-1}
+    \begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{1}\|_{\mathrm{op}+I_2,\gamma}\\
+    \sup_{p\subseteq u} \|\partial_p \Delta^{0}\|_{\mathrm{op}+I_2,\gamma} \end{pmatrix}.
+  \end{align}
+  
+  This matrix can be diagonalised, it's eigenvalues are
+  \begin{align}
+  \lambda_{\pm}= \frac{\alpha}{2}\left(1\pm \sqrt{1+\frac{4}{\alpha}}\right).
+  \end{align}
+  The larger eigenvalue \(\lambda_+\) is less than \(1\) if
+  and only if
+  \(0<\alpha<0.5\) holds true, as can be seen from a quick 
+  calculation:
+  \begin{align}
+  \frac{\alpha}{2}(1+\sqrt{1+\frac{4}{\alpha}})<1 \\
+  \iff \sqrt{1+\frac{4}{\alpha}}<\frac{2}{\alpha}-1.
+  \end{align}
+  If \(\alpha\ge \frac{1}{2}\) or \(\alpha<0\) this inequality is not satisfied, otherwise
+  we may square both sides to find
+  \begin{align}
+  1+\frac{4}{\alpha}<(2/\alpha -1)^2=4/\alpha^2 - 4/\alpha +1\\
+  \iff \alpha < \frac{1}{2}.
+  \end{align}
+  So we conclude that for \(\gamma\) large enough 
+  the right hand 
+  side of \eqref{analyticity converging recursion}
+  tends to zero as \(c \lambda_+^n\) for
+  \(n\rightarrow \infty\), with
 \begin{equation}
-\partial_{H_1}\dots \partial_{H_k}U^{A+\sum_{b=1}^k F_b}(t_1,t_0)
+  c=\sqrt{\sup_{p\subseteq u} \|\partial_p \Delta^1\|^2_{\mathrm{op}+I_2,\gamma}
+  +\sup_{p\subseteq u} \|\partial_p \Delta^0\|^2_{\mathrm{op}+I_2,\gamma}}.
 \end{equation}
-all exist with respect to the topology just mentioned.
-Furthermore let \(T_1\in I_2(\mathcal{F})\) then the following formulas hold:\todo{how well does cyclicity of the trace hold for operators?}
+
+That is, we have  
+  \begin{equation}
+  \sup_{p\subseteq u}
+  \|\partial_p \Delta^n\|_{\mathrm{op}+I_2,\gamma}
+  \le \lambda_+^n c
+  \xrightarrow{n\rightarrow \infty} 0.
+  \end{equation} Hence also 
+  for \(m\in\mathbb{N}\) 
+  
+  \begin{align}
+  \sup_{p\subseteq u}\| \partial_p R^B_m -
+  \partial_p R^B_n\|_{\mathrm{op}+I_2,\gamma} \\
+  \le 
+  \sum_{k=\min\{m,n\}}^{\max\{m,n\}-1}
+  \sup_{p\subseteq u}
+  \| \partial_p \Delta^k\|_{\mathrm{op}+I_2,\gamma} \\
+  \le 
+  |m-n| \lambda_+^{\min\{m,n\}} c
+  \xrightarrow{\min\{m,n\}\rightarrow \infty}0
+  \end{align}
+  since the the norms
+  \(\|\cdot\|_{\mathrm{op}+I_2}\) and
+  \(\|\cdot\|_{\mathrm{op}+I_2,\gamma}\) are 
+  equivalent, we have just proven 
+  that \(\partial_{[k]} R^B_m\) is a 
+  Cauchy sequence with respect to the norm 
+  \(\|\cdot\|_{\mathrm{op}+I_2}\).
+  
+  
+\end{proof}
+
+The following lemma is 
+\begin{Lemma}
+For any \(n\in\mathbb{N}\) and 
+\(A,H_k\in\mathcal{V}\) for \(k\le n\)
+we have for any \(u\subset [n]\) 
+the following bounds:
+
+\begin{align}
+\|\partial_u U^0 F_{\odd} U^0\|_{I_2,0}&<\infty \\
+\|\partial_u G\|_{I_2,0}&<\infty.
+\end{align}
+\end{Lemma}
+
+
+
+
+
+
+\begin{Thm}[Propterties of Derivatives of S]
+Let  \(A,H\in\mathcal{V}\), pick \(t_1\) 
+after \(\supp A\cup\supp H\) and \(t_0\)
+before \(\supp A\cup\supp H\), 
+let \(T_1\in I_2(\mathcal{F})\) 
+then the following equalities are satisfied:
 \begin{align}\notag
-\partial_{H_1} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H_1}(t_1,t_0)P^-)\\\label{pull derivative into trace}
-= \tr(T_1 P^+ U^{A}(t_0,t_1)\partial_{H_1} U^{A+H_1}(t_1,t_0)P^- )\\\notag\vspace{2cm}
-\partial_{H_1} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H_1}(t_1,t_0)P^+)\\
-= \tr(T_1 P^- U^{A}(t_0,t_1)\partial_{H_1} U^{A+H_1}(t_1,t_0)P^+ ).
+&\partial_{H} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H}(t_1,t_0)P^-)\\\label{pull derivative into trace}
+&= \tr(T_1 P^+ U^{A}(t_0,t_1)\partial_{H} U^{A+H}(t_1,t_0)P^- )\\[0.5cm]\notag
+&\partial_{H} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H}(t_1,t_0)P^+)\\\label{pull derivative into trace2}
+&= \tr(T_1 P^- U^{A}(t_0,t_1)\partial_{H} U^{A+H}(t_1,t_0)P^+ ).
 \end{align}
 \end{Thm}
 \begin{proof}
-Following \cite{ivp0} we will throughout this proof make use of the 
-following shorthand notation. For operator valued maps 
-\(T_1,T_2:\mathbb{R}^2\to (\mathcal{H}\righttoleftarrow) \) we define 
-for \(t_1,t_0\in\mathbb{R}\)
-\begin{equation}
-T_1T_2 = \int_{t_0}^{t_1}dt~ T_1(t_1,t)T_2(t,t_0),
-\end{equation}
-as a map of the same type as \(T_1\) and \(T_2\)
-whenever this is well defined. Furthermore for operator valued functions
-\(C_1,C_2:\mathbb{R}\to (\mathcal{H}\righttoleftarrow)\) we define
+Let \(A,H\in\mathcal{V}\) and \(t_0,t_1\in\mathbb{R}\)
+and \(T_1\) be 
+as in the theorem. The trace is linear, so we have
 \begin{align}
-T_1C_1=T_1(t_1,t_0)C_1(t_0)\\
-C_1 T_1=C(t_1)T_1(t_1,t_0)\\
-C_1C_2=C_1(t_1),
+&\partial_{H} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H}(t_1,t_0)P^-)\\
+&=\lim_{\varepsilon\rightarrow 0} 
+\tr\left(T_1 P^+ U^{A}(t_0,t_1) 
+\frac{1}{\varepsilon}(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0))P^-\right)\\
+&=\lim_{\varepsilon\rightarrow 0} 
+\left\langle T_1^* ,  P^+ U^{A}(t_0,t_1) 
+\frac{1}{\varepsilon}\big(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\big)P^- \right\rangle_{I_2}.
 \end{align}
-as maps of the same type as \(T_1, T_1\) and \(C_1\) 
-respectively.
-Pick\(n\in\mathbb{N}\), \(A,H_b\in\mathcal{V}\) for \(b\le k\) 
-and \(t_1,t_0\) as in the theorem. 
-
-We abbreviate
-\begin{equation}
-H:=\sum_{b=1}^k H_b, \quad B:=A+H
-\end{equation}
-Because of the choice of \(t_1,t_0\) we have
-\begin{equation}\label{def R}
-R^{A+H}(t_1,t_0):=[(1-Q^{A+H})U^{A+H}(1+Q^{A+H})](t_1,t_0)=U^{A+H}(t_1,t_0),
-\end{equation}
-because \(A+H=0\) both at \(t_1\) and \(t_0\).
-
-So it suffices to study the family of operators \(R\). 
-From the analysis carried out in \cite{ivp0} we know that 
-\(R^B\) for \(B\in\mathcal{V}\) is the limit in the sense of the 
-operator norm of the sequence
-\begin{align}
-R^B_{0}:=0, \quad R^B_{n+1}:=U^0 F^B R^B_{n}+ U^0 + G^B,
-\end{align}
-where \(F\) and \(G\) are given By
-
-\begin{align}
-F^B:= (-{Q'}^B+Z^B_{\mathrm{ev}}-Q^BZ^B)(1+Q^B),\\
-G^B:=- U^0(1-Q^BQ^B) + U^0(-{Q'}^B\\
-+Z_{\mathrm{ev}}-Q^B Z^B)Q^B Q^B U^B (1+Q^B).
-\end{align}
-
-\begin{Lemma}
-We are going to prove that for \(n\in\mathbb{N}\) and 
-\begin{align}
-  R^{A}_n&\xrightarrow[n\rightarrow \infty]{\|\cdot\|_{\mathrm{op}+I_2}}R^A\\
-  \partial_F R^{A+F}_n&\xrightarrow[n\rightarrow \infty]{\|\cdot\|_{\mathrm{op}+I_2}} \partial_FR^{A+F}
-\end{align}
-holds.
-\end{Lemma}
-
-\begin{proof}
-First we introduce the auxiliary norms for operators \(T\) 
-and \(W\) depending on one and two 
-scalar variables respectively.
-
-\begin{align}
-  \|T \|_{\mathrm{op}+I_2,\gamma}
-  &:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \left(\|T(t)\|
-  +\| T_{\odd}(t)\|_{I_2}\right)\\
-  \|T \|_{\mathrm{op},\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \|T(t)\|\\
-  \|W \|_{\mathrm{op},\infty}&:=\sup_{t,t'\in[t_1,t_0]} \|W(t,t')\|\\
-  \|T \|_{I_2 ,\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \| T(t)\|_{I_2},\\
-  \|W \|_{I_2 ,\infty}&:=\sup_{t,t'\in[t_1,t_0]} \| W(t,t')\|_{I_2},
-\end{align}
-for some \(\gamma\ge 0 \).
-\todo{\(\infty\) durch 0 ersetzen}
-From the analysis of \cite{ivp0} follows that the 
-recursive equation \cite[(3.42)]{ivp0}
-
-\begin{align}
-R^B_{n}=U^0F^B_{\ev}R^B_{n-1}+U^0F^B_{\odd} U^0F^B R^B_{n-2}\\
-+U^0 F^B_{\odd} +U^0F^B_{\odd} U^0 + U^0 +G^B
-\end{align}
-is fulfilled by the same sequence of operators for \(n\ge 2\).
-Hence we have for \(n\ge 2\):
-\begin{align}\notag
-  R^B_{n+1}-R^B_{n}=U^0F^B_{\ev}(R^B_n-R^B_{n-1})\\
-  +U^0F^B_{\odd} U^0F^B (R^B_{n-1}-R^B_{n-2}).
-\end{align}
-Abbreviating \(U^0F^B_{\ev}=:a,U^0F^B_{\odd}U^0 F^B:=b\), we obtain
-\begin{align}\notag
-  R^B_{n+1}-R^B_{n}=a(R^B_n-R^B_{n-1})\\\label{R recurisve}
-  +b (R^B_{n-1}-R^B_{n-2}).
-\end{align}
-Furthermore, we introduce the notation for \(k\in\mathbb{N}\)
-\begin{align}
-\forall k \in \mathbb{N}: [k]&:=\{l\in\mathbb{N}\mid l\le k\}\\
-\forall u\subseteq [k]:\partial_{u}&:=\prod_{k\in u}\partial_{H_k},\\
-R^B_{n+1}-R^B_n&:=\Delta^n,
-\end{align}
-where the product of derivatives is to be understood as the 
-mixed derivative with respect to all the factors.
-Now we estimate for some set \(u\subset [k]\)
-
-\begin{align}
-&\sup_{p\subseteq u}\|\partial_p \Delta^n_{\odd} \|_{I_2,\gamma}\\
-&\le \sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
-\left\| \sum_{w\subseteq u} (\partial_{u\backslash w}a ~
-\partial_w \Delta^{n-1}_{\odd})(t,t_0)\right\|_{I_2}\\
-&+\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
-\left\|P^+ \sum_{w\subseteq u} (\partial_{u\backslash w}b ~
-\partial_w \Delta^{n-2})(t,t_0) P^-\right\|_{I_2}\\
-&+\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
-\left\|P^- \sum_{w\subseteq u} (\partial_{u\backslash w}b ~
-\partial_w \Delta^{n-2})(t,t_0) P^+\right\|_{I_2}\\
-&\le 
-\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} 
-\sum_{w\subseteq u} 
-\| \partial_{u\backslash w}(a ~
-\partial_w \Delta^{n-1}_{\odd})(t,t_0)\|_{I_2}\\
-&+2\sup_{p\subseteq u} \sup_{t\in[t_0,t_1]} 
-e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
-\|  (\partial_{u\backslash w}b ~
-\partial_w \Delta^{n-2})(t,t_0) \|_{I_2}\\
-&\le
-\sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)} 
-\sum_{w\subseteq u} 
-\int_{t_0}^{t}dt' 
-\| \partial_{u\backslash w}a(t,t') ~
-\partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
-&+2 \sup_{p\subseteq u}
-\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
-\int_{t_0}^{t}dt'  
-\|  \partial_{u\backslash w}b(t,t') ~
-\partial_w \Delta^{n-2}(t',t_0) \|_{I_2}\\
-&\le
-\sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
-e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
-\int_{t_0}^{t}dt' 
-\| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
-\|\partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
-&+2 \sup_{p\subseteq u}
-\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
-\int_{t_0}^{t}dt'  
-\|  \partial_{u\backslash w}b(t,t')\|_{I_2}
-\|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
-&\le
-\sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
-e^{-\gamma t} \sum_{w\subseteq u} 
-\int_{t_0}^{t}dt' e^{\gamma t'}
-\| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
-\|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
-&+2 \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
-e^{-\gamma t}\sum_{w\subseteq u} 
-\int_{t_0}^{t}dt'  e^{\gamma t'}
-\|  \partial_{u\backslash w}b\|_{I_2,\infty}
-\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
-&\le
-\frac{1}{\gamma} \sup_{p\subseteq u} \sum_{w\subseteq u} 
-\| \partial_{u\backslash w}a\|_{\mathrm{op},\infty}
-\|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
-&+\frac{2}{\gamma} \sup_{p\subseteq u} \sum_{w\subseteq u} 
-\|  \partial_{u\backslash w}b\|_{I_2,\infty}
-\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
-&\le
-\frac{2^{|u|}}{\gamma} \sup_{u'\subseteq u} 
-\| \partial_{u'}a\|_{\mathrm{op},\infty} \sup_{p\subseteq u} 
-\|\partial_p \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
-&+\frac{2^{|u|+1}}{\gamma} \sup_{u'\subseteq u} 
-\|  \partial_{u'}b\|_{I_2,\infty}\sup_{p\subseteq u}
-\|\partial_p \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}
-\end{align}
-
-Similarly we compute the operator norm:
-
-\begin{align}
-  &\sup_{p\subseteq u}\|\partial_p \Delta^n \|_{\mathrm{op},\gamma}\\
-  &\le 
-  \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sup_{p\subseteq u} 
-  \sum_{w\subseteq p} 
-  \| \partial_{p\backslash w}(a ~
-  \partial_w \Delta^{n-1})(t,t_0)\|_{\mathrm{op},}\\
-  &+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sup_{p\subseteq u} 
-  \sum_{w\subseteq p} 
-  \|  (\partial_{p\backslash w}b ~
-  \partial_p \Delta^{n-2})(t,t_0) \|_{\mathrm{op}}\\
-  &\le
-  \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
-  \sup_{p\subseteq u} \sum_{w\subseteq p} 
-  \int_{t_0}^{t}dt' 
-  \| \partial_{p\backslash w}a(t,t') ~
-  \partial_p \Delta^{n-1}(t',t_0)\|_{\mathrm{op}}\\
-  &+ \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
-  \sup_{p\subseteq u}\sum_{w\subseteq u} 
-  \int_{t_0}^{t}dt'  
-  \|  \partial_{p\backslash w}b(t,t') ~
-  \partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
-  &\le
-  \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
-  \sup_{p\subseteq u} \sum_{w\subseteq p} 
-  \int_{t_0}^{t}dt' 
-  \| \partial_{p\backslash w}a(t,t')\|_{\mathrm{op}}
-  \|\partial_w \Delta^{n-1}(t',t_0)\|_{\mathrm{op}}\\
-  &+ \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
-  \sup_{p\subseteq u} \sum_{w\subseteq p} 
-  \int_{t_0}^{t}dt'  
-  \|  \partial_{p\backslash w}b(t,t')\|_{\mathrm{op}}
- \|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
- &\le
- \sup_{t\in[t_0,t_1]} e^{-\gamma t}
- \sup_{p\subseteq u} \sum_{w\subseteq p} 
- \int_{t_0}^{t}dt' e^{\gamma t'}
- \| \partial_{p\backslash w}a \|_{\mathrm{op},\infty}
- \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
- &+ \sup_{t\in[t_0,t_1]} e^{-\gamma t}
- \sup_{p\subseteq u}\sum_{w\subseteq p} 
- \int_{t_0}^{t}dt'  e^{\gamma t}
- \|  \partial_{u\backslash p}b\|_{\mathrm{op},\infty}
-\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
-&\le
-\frac{1}{\gamma}\sup_{p\subseteq u} \sum_{w\subseteq p} 
-\| \partial_{p\backslash w}a \|_{\mathrm{op},\infty}
-\|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
-&+ \frac{1}{\gamma}
-\sup_{p\subseteq u} \sum_{w\subseteq p} 
-\|  \partial_{p\backslash w}b\|_{\mathrm{op},\infty}
-\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
-&\le
-\frac{2^{|u|}}{\gamma}
-\sup_{u'\subseteq u}\| \partial_{u'}a \|_{\mathrm{op},\infty}
- \sup_{w\subseteq u} 
-\|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
-&+ \frac{2^{|u|}}{\gamma}
-\sup_{u'\subseteq u}\| \partial_{u'}b \|_{\mathrm{op},\infty}
-\sup_{w\subseteq u}
-\|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}
-\end{align}
-
-Introducing the abbreviation
-\begin{equation}
-\alpha=\frac{2^{|u|+1}}{\gamma} \sup_{u'\subseteq u}
-\left\{\|\partial_{u'}a\|_{\mathrm{op},\infty},
-\|\partial_{u'}a\|_{\mathrm{op},\infty},
-\|\partial_{u'}b\|_{I_2,\infty},
-\|\partial_{u'}b\|_{\mathrm{op},\infty}  \right\},
+Now the scalar product of Hilbert-Schmidt operators is 
+continuous with respect to the Hilbert-Schmidt norm, so if 
+the limit 
+\begin{equation}\label{hilbert schmidt limit}
+  \lim_{\varepsilon\rightarrow 0} P^+ U^{A}(t_0,t_1) 
+  \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)P^-
 \end{equation}
 
-we can thus summarise the last two calculations 
-
+exists with respect to the Hilbert-Schmidt norm we are done. 
+We insert the identity in the form \(P^++P^-\) and obtain
 \begin{align}
-&\begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{n} \|_{\mathrm{op}+I_2,\gamma}\\
-\sup_{p\subseteq u} \|\partial_p \Delta^{n-1}\|_{\mathrm{op}+I_2,\gamma}\end{pmatrix}\\
-&=\begin{pmatrix}\alpha & \alpha \\ 1 & 0 \end{pmatrix}
-\begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{n-1}\|_{\mathrm{op}+I_2,\gamma}\\
-\sup_{p\subseteq u} \|\partial_p \Delta^{n-2}\|_{\mathrm{op}+I_2,\gamma} \end{pmatrix}\\\label{analyticity converging recursion}
-&=\begin{pmatrix}\alpha & \alpha \\ 1 & 0 \end{pmatrix}^{n-1}
-  \begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{1}\|_{\mathrm{op}+I_2,\gamma}\\
-  \sup_{p\subseteq u} \|\partial_p \Delta^{0}\|_{\mathrm{op}+I_2,\gamma} \end{pmatrix}.
+P^+ U^{A}(t_0,t_1) 
+  \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)P^-\\
+=P^+ U^{A}(t_0,t_1) P^+
+\frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)P^-\\
++P^+ U^{A}(t_0,t_1) P^-
+\frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)P^-.
 \end{align}
-
-This matrix can be diagonalised, it's eigenvalues are
+Now because of the Smoothness of S theorem 
+\ref{thm smoothness of S}
+we know that 
 \begin{align}
-\lambda_{\pm}= \frac{\alpha}{2}\left(1\pm \sqrt{1+\frac{4}{\alpha}}\right).
+  P^-
+  \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)
+  P^-\xrightarrow[\|\cdot\|_{\mathrm{op}}]{\varepsilon\rightarrow 0} P^- \partial_H U^{A+H}(t_1,t_0)P^-\\
+  P^+
+  \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)
+  P^-\xrightarrow[\|\cdot\|_{I_2}]{\varepsilon\rightarrow 0} P^+ \partial_H U^{A+H}(t_1,t_0)P^-
 \end{align}
-The larger eigenvalue \(\lambda_+\) is less than \(1\) if
-and only if
-\(0<\alpha<0.5\) holds true, as can be seen from a quick 
-calculation:
+holds true. Because \(P^+ U^A(t_0,t_1)P^-\in I_2(\mathcal{F})\)
+and because of the general rules \todo{check def of set of bounded operators}
 \begin{align}
-\frac{\alpha}{2}(1+\sqrt{1+\frac{4}{\alpha}})<1 \\
-\iff \sqrt{1+\frac{4}{\alpha}}<\frac{2}{\alpha}-1.
+  \forall T\in\mathcal{B}(\mathcal{F}) &
+  \forall (T_{n}')_{n\in\mathbb{N}}\xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty}T'\in I_2:\\
+  &T T_{n}'  \xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty}T T'\in I_2(\mathcal{F})\\
+\forall T\in I_2(\mathcal{F}) &
+\forall (T_n')_{n\in\mathbb{N}}\subset \mathcal{B}(\mathcal{F}), 
+T_{n}'\xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty}T'\in  
+\mathcal{B}(\mathcal{F}):\\
+&T T_{n}'  \xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty}
+T T'\in I_2(\mathcal{F})
 \end{align}
-If \(\alpha\ge \frac{1}{2}\) or \(\alpha<0\) this inequality is not satisfied, otherwise
-we may square both sides to find
-\begin{align}
-1+\frac{4}{\alpha}<(2/\alpha -1)^2=4/\alpha^2 - 4/\alpha +1\\
-\iff \alpha < \frac{1}{2}.
-\end{align}
-So we conclude that for \(\gamma\) large enough 
-the right hand 
-side of \eqref{analyticity converging recursion}
-tends to zero as \(c \lambda_+^n\) for
-some \(c>0\) and
-for \(n\rightarrow \infty\), i.e.
-
-\begin{equation}
-\sup_{p\subseteq u}
-\|\partial_p \Delta^n\|_{\mathrm{op}+I_2,\gamma}
-\le \lambda_+^n c
-\xrightarrow{n\rightarrow \infty} 0.
-\end{equation} Hence also 
-for \(m\in\mathbb{N}\) 
-
-\begin{align}
-\sup_{p\subseteq u}\| \partial_p R^B_m -
-\partial_p R^B_n\|_{\mathrm{op}+I_2,\gamma} \\
-\le 
-\sum_{k=\min\{m,n\}}^{\max\{m,n\}-1}
-\sup_{p\subseteq u}
-\| \partial_p \Delta^k\|_{\mathrm{op}+I_2,\gamma} \\
-\le 
-|m-n| \lambda_+^{\min\{m,n\}} c
-\xrightarrow{\min\{m,n\}\rightarrow \infty}0
-\end{align}
-since the the norms
-\(\|\cdot\|_{\mathrm{op}+I_2}\) and
-\(\|\cdot\|_{\mathrm{op}+I_2,\gamma}\) are 
-equivalent, we have just proven 
-that \(\partial_u R^B_m\) for any 
-finite set \(u\subset \mathbb{N}\) is a 
-Cauchy sequence with respect to the norm 
-\(\|\cdot\|_{\mathrm{op}+I_2}\).
-
-
-
-
-
-\end{proof}
-
-
+the limit \eqref{hilbert schmidt limit} exists in the 
+Hilbert-Schmidt topology. 
+The proof of \eqref{pull derivative into trace2} is 
+completely analogous.
 \end{proof}
 
 
@@ -968,7 +1034,6 @@ We define for all \(A,B\in\mathcal{V} \)
 \begin{align}
 S_{A,B}:=U^{A}_{\Sigma_{\mathrm{in}},\Sigma_{\mathrm{out}}}U^{B}_{\Sigma_{\mathrm{out}},\Sigma_{\mathrm{in}}},
 \end{align}
-\todo{vllt direkt mit \(S_A\) definieren, warte ab bis abschätzung der ableitungen geschehen ist}
 where \(\Sigma_{\mathrm{out}}\) and \(\Sigma_{\mathrm{int}}\)  are Cauchy-surfaces of Minkowski spacetime such that 
 \begin{align}
 &\forall (x,y)\in \supp A\cup\supp B\times \Sigma_{\mathrm{in}}: (x-y)^2 \ge 0\Rightarrow x^0>y^0,\\
@@ -1027,14 +1092,20 @@ In doing so we have to ensure that the square
 \begin{align}
   \overline{\sum_{k=1}^n s_k A_k~~~\sum_{k=n+1}^{2n} s_{k} A_{k} }^2
 \end{align}
-stays a subsets of \(\mathrm{dm}\) for all \(s'\in U\). Now pick a metric \(d\) on \(\mathbb{R}^n\) and define 
+stays a subsets of \(\mathrm{dm}\) for all \(s'\in U\). 
+Now pick a metric \(d\) on \(\mathbb{R}^n\) and define 
 \begin{align}\nonumber
 &r:=\inf \left\{d(s,s')\mid \overline{\sum_{k=1}^n s_k' A_k~~\sum_{k=n+1}^{2n} s_k' A_k }^2 ~~\cap \mathrm{dm}^c\neq \emptyset \right\}.
 \end{align}
-It cannot be the case that \(r=0\), because the metric is continuous, the square compact in \(\mathbb{R}^{2n}\) 
-and the set of invertible bounded operators (defining \(\mathrm{dm}\)) is open in the topology generated by the operator norm.
- \todo{reicht das, oder soll ich das ausführlicher schreiben?}
-If \(r=\infty\) then \(U=\mathbb{R}^{2n}\) will suffice. If \(r\in\mathbb{R}^+\) then \(U=B_r(s,t)\) the open ball of radius \(r\) around \(s\) works.
+It cannot be the case that \(r=0\), because the 
+metric is continuous, the square compact in 
+\(\mathbb{R}^{2n}\) 
+and the set of invertible bounded operators 
+(defining \(\mathrm{dm}\)) is open in the topology 
+generated by the operator norm.
+If \(r=\infty\) then \(U=\mathbb{R}^{2n}\) will 
+suffice. If \(r\in\mathbb{R}^+\) then \(U=B_r(s,t)\) 
+the open ball of radius \(r\) around \(s\) works.
 \end{Lemma}
 
 \subsection{Main Result of Construction}

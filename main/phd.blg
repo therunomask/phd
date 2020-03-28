@@ -1,50 +1,63 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: phd.aux
 The style file: amsplain.bst
 Database file #1: ref.bib
+Warning--entry type for "phd_nickel" isn't style-file defined
+--line 410 of file ref.bib
+Warning--I didn't find a database entry for "lienertfirst"
+Warning--I didn't find a database entry for "Linertcurved"
+Warning--I didn't find a database entry for "int_eq_curved"
 Warning--I didn't find a database entry for "ruisnaar&ivp0"
+Warning--missing pages in haantjes
+Warning--can't use both volume and number if series info is missing
+in BibTeX entry type `inproceedings'
+Warning--missing pages in ibc_model
 Warning--missing pages in selfDirac
-Warning--missing pages in lienertfirst
-You've used 10 entries,
+Warning--missing journal name in selfKG
+Warning--missing pages in selfKG
+Warning--can't use both volume and number if series info is missing
+in BibTeX entry type `inproceedings'
+Warning--missing pages in lienertcurved
+You've used 44 entries,
             2213 wiz_defined-function locations,
-            564 strings with 5495 characters,
-and the built_in function-call counts, 2877 in all, are:
-= -- 245
-> -- 132
-< -- 0
-+ -- 53
-- -- 42
-* -- 253
-:= -- 475
-add.period$ -- 10
-call.type$ -- 10
-change.case$ -- 52
+            770 strings with 9969 characters,
+and the built_in function-call counts, 12521 in all, are:
+= -- 1128
+> -- 456
+< -- 3
++ -- 194
+- -- 141
+* -- 1100
+:= -- 1991
+add.period$ -- 44
+call.type$ -- 44
+change.case$ -- 208
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 111
-empty$ -- 250
-format.name$ -- 42
-if$ -- 583
+cite$ -- 50
+duplicate$ -- 519
+empty$ -- 1148
+format.name$ -- 141
+if$ -- 2603
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 20
-newline$ -- 40
-num.names$ -- 19
-pop$ -- 67
+int.to.str$ -- 44
+missing$ -- 90
+newline$ -- 142
+num.names$ -- 81
+pop$ -- 251
 preamble$ -- 1
-purify$ -- 42
+purify$ -- 164
 quote$ -- 0
-skip$ -- 61
+skip$ -- 291
 stack$ -- 0
-substring$ -- 164
-swap$ -- 12
-text.length$ -- 0
+substring$ -- 862
+swap$ -- 75
+text.length$ -- 3
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 38
-warning$ -- 2
-while$ -- 27
-width$ -- 12
-write$ -- 92
-(There were 3 warnings)
+top$ -- 2
+type$ -- 170
+warning$ -- 8
+while$ -- 130
+width$ -- 46
+write$ -- 391
+(There were 13 warnings)

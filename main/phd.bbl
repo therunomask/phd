@@ -7,6 +7,10 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{10}
 
+\bibitem{haantjes}
+IM~Benn and Philip Charlton, \emph{Dirac symmetry operators from conformal
+  killing-yano tensors}, arXiv preprint gr-qc/9612011 (1996).
+
 \bibitem{ivp0}
 D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher, \emph{Time-evolution of
   the external field problem in quantum electrodynamics}, Journal of
@@ -22,38 +26,185 @@ D-A Deckert and Franz Merkl, \emph{Dirac equation with external potential and
   initial data on cauchy surfaces}, Journal of Mathematical Physics \textbf{55}
   (2014), no.~12, 122305.
 
+\bibitem{deckert_nickel_2016}
+Dirk-Andr{\'e} Deckert and Lukas Nickel, \emph{Consistency of multi-time dirac
+  equations with general interaction potentials}, Journal of Mathematical
+  Physics \textbf{57} (2016), no.~7, 072301.
+
+\bibitem{dirk_martin_2018}
+Dirk-Andr{\'e} Deckert and Martin Oelker, \emph{Distinguished self-adjoint
+  extension of the two-body dirac operator with coulomb interaction}, Annales
+  Henri Poincar{\'e}, vol.~20, Springer, 2019, pp.~2407--2445.
+
+\bibitem{dirac_32}
+Paul Adrien~Maurice Dirac, \emph{Relativistic quantum mechanics}, Proceedings
+  of the Royal Society of London. Series A, Containing Papers of a Mathematical
+  and Physical Character \textbf{136} (1932), no.~829, 453--464.
+
+\bibitem{drozvincent_1981}
+Ph~Droz-Vincent, \emph{Relativistic wave equations for a system of two
+  particles with spin 1/2}, Lettere al Nuovo Cimento \textbf{30} (1981),
+  no.~12, 375--378.
+
+\bibitem{dubinskii_1991}
+Yu~A Dubinskii, \emph{Sobolev spaces of infinite order}, Russian Mathematical
+  Surveys \textbf{46} (1991), no.~6, 107.
+
+\bibitem{glimm_jaffe}
+James Glimm and Arthur Jaffe, \emph{Quantum physics: a functional integral
+  point of view}, Springer Science \& Business Media, 2012.
+
 \bibitem{graham1994concrete}
 Ronald~L Graham, Donald~E Knuth, and Oren Patashnik, \emph{Concrete
   mathematics: a foundation for computer science}, Addison-Wesley, Reading,
   1994.
+
+\bibitem{guenther_1952}
+Marian G{\"u}nther, \emph{The relativistic configuration space formulation of
+  the multi-electron problem}, Physical Review \textbf{88} (1952), no.~6, 1411.
 
 \bibitem{hoorfar2008inequalities}
 Abdolhossein Hoorfar and Mehdi Hassani, \emph{Inequalities on the lambert w
   function and hyperpower function}, J. Inequal. Pure and Appl. Math \textbf{9}
   (2008), no.~2, 5--9.
 
-\bibitem{lienert2018direct}
-Matthias Lienert, \emph{Direct interaction along light cones at the quantum
-  level}, Journal of Physics A: Mathematical and Theoretical \textbf{51}
-  (2018), no.~43, 435302.
+\bibitem{ibison}
+Michael Ibison, \emph{On the conformal forms of the robertson-walker metric},
+  Journal of Mathematical Physics \textbf{48} (2007), no.~12, 122501.
+
+\bibitem{jaffe_cft}
+Arthur Jaffe, \emph{Constructive quantum field theory}, Mathematical physics
+  (2000), 111--127.
+
+\bibitem{john}
+RW~John, \emph{The hadamard construction of green's functions on a curved
+  space-time with symmetries}, Annalen der Physik \textbf{499} (1987), no.~7,
+  531--544.
+
+\bibitem{ibc_model}
+M~Lienert and L~Nickel, \emph{Multi-time formulation of creation and
+  annihilation of particles via interior-boundary conditions}, Preprint:
+  \url{https://arxiv.org/abs/1808} \textbf{4192} (2018).
+
+\bibitem{2bd_current_cons}
+Matthias Lienert, \emph{On the question of current conservation for the
+  two-body dirac equations of constraint theory}, Journal of Physics A:
+  Mathematical and Theoretical \textbf{48} (2015), no.~32, 325302.
+
+\bibitem{1d_model}
+\bysame, \emph{A relativistically interacting exactly solvable multi-time model
+  for two massless dirac particles in 1+ 1 dimensions}, Journal of Mathematical
+  Physics \textbf{56} (2015), no.~4, 042301.
+
+\bibitem{direct_interaction_quantum}
+\bysame, \emph{Direct interaction along light cones at the quantum level},
+  Journal of Physics A: Mathematical and Theoretical \textbf{51} (2018),
+  no.~43, 435302.
+
+\bibitem{nt_model}
+Matthias Lienert and Lukas Nickel, \emph{A simple explicitly solvable
+  interacting relativistic n-particle model}, Journal of Physics A:
+  Mathematical and Theoretical \textbf{48} (2015), no.~32, 325301.
 
 \bibitem{selfDirac}
 Matthias Lienert and Markus N{\"o}th, \emph{Existence of relativistic dynamics
   for two directly interacting dirac particles in 1+ 3 dimensions}, arXiv
   preprint arXiv:1903.06020 (2019).
 
-\bibitem{lienertfirst}
-Matthias Lienert and Roderich Tumulka, \emph{A new class of volterra-type
-  integral equations from relativistic quantum physics}, arXiv preprint
-  arXiv:1803.08792 (2018).
+\bibitem{selfKG}
+Matthias Lienert and Markus N{\"o}th, \emph{Singular light cone interactions of
+  scalar particles in 1+3 dimensions},  (2020).
+
+\bibitem{dice_paper}
+Matthias Lienert, S{\"o}ren Petrat, and Roderich Tumulka, \emph{Multi-time wave
+  functions}, Journal of Physics: Conference Series, vol. 880, IOP Publishing,
+  2017, p.~012006.
+
+\bibitem{lpt_2017b}
+\bysame, \emph{Multi-time wave functions versus multiple timelike dimensions},
+  Foundations of Physics \textbf{47} (2017), no.~12, 1582--1590.
 
 \bibitem{lienertcurved}
-\bysame, \emph{Interacting relativistic quantum dynamics of two particles on
-  spacetimes with a big bang singularity}, Journal of Mathematical Physics
-  \textbf{60} (2019), no.~4, 042302.
+Matthias Lienert and Roderich Tumulka, \emph{Interacting relativistic quantum
+  dynamics of two particles on spacetimes with a big bang singularity}, Journal
+  of Mathematical Physics \textbf{60} (2019), no.~4.
+
+\bibitem{generalized_born}
+\bysame, \emph{Born’s rule for arbitrary cauchy surfaces}, Letters in
+  Mathematical Physics \textbf{110} (2020), no.~4, 753--804.
+
+\bibitem{mtve}
+Matthias Lienert, Roderich Tumulka, et~al., \emph{A new class of volterra-type
+  integral equations from relativistic quantum physics}, Journal of Integral
+  Equations and Applications \textbf{31} (2019), no.~4, 535--569.
+
+\bibitem{marx_1974}
+Egon Marx, \emph{Many-times formalism and coulomb interaction}, International
+  Journal of Theoretical Physics \textbf{9} (1974), no.~3, 195--217.
+
+\bibitem{phd_nickel}
+L.~Nickel, \emph{Phd thesis. on the dynamics of multi-time systems}, 2019.
+
+\bibitem{penrose_rindler}
+Roger Penrose and Wolfgang Rindler, \emph{Spinors and space-time: Volume 1,
+  two-spinor calculus and relativistic fields}, vol.~1, Cambridge University
+  Press, 1984.
+
+\bibitem{multitime_pair_creation}
+S{\"o}ren Petrat and Roderich Tumulka, \emph{Multi-time formulation of pair
+  creation}, Journal of Physics A: Mathematical and Theoretical \textbf{47}
+  (2014), no.~11, 112001.
+
+\bibitem{nogo_potentials}
+\bysame, \emph{Multi-time schr{\"o}dinger equations cannot contain interaction
+  potentials}, Journal of Mathematical Physics \textbf{55} (2014), no.~3,
+  032302.
+
+\bibitem{qftmultitime}
+\bysame, \emph{Multi-time wave functions for quantum field theory}, Annals of
+  Physics \textbf{345} (2014), 17--54.
 
 \bibitem{SimonReed2}
 Michael Reed and Barry Simon, \emph{Methods of modern mathematical physics,
   vol. ii}, 1975.
+
+\bibitem{bs_equation}
+Edwin~E Salpeter and Hans~Albrecht Bethe, \emph{A relativistic equation for
+  bound-state problems}, Physical Review \textbf{84} (1951), no.~6, 1232.
+
+\bibitem{sazdjian_2bd}
+Hagop Sazdjian, \emph{Relativistic wave equations for the dynamics of two
+  interacting particles}, Physical Review D \textbf{33} (1986), no.~11, 3401.
+
+\bibitem{schweber}
+Silvan~S Schweber, \emph{An introduction to relativistic quantum field theory},
+  Courier Corporation, 2011.
+
+\bibitem{schwinger}
+Julian Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation},
+  Physical Review \textbf{74} (1948), no.~10, 1439.
+
+\bibitem{thirring_model}
+Walter~E Thirring, \emph{A soluble relativistic field theory}, Annals of
+  Physics \textbf{3} (1958), no.~1, 91--112.
+
+\bibitem{tomonaga}
+Sin-itiro Tomonaga, \emph{On a relativistically invariant formulation of the
+  quantum theory of wave fields.}, Progress of Theoretical Physics \textbf{1}
+  (1946), no.~2, 27--42.
+
+\bibitem{2bdem}
+Peter Van~Alstine and Horace~W Crater, \emph{A tale of three equations: Breit,
+  eddington—gaunt, and two-body dirac}, Foundations of Physics \textbf{27}
+  (1997), no.~1, 67--79.
+
+\bibitem{wf1}
+John~Archibald Wheeler and Richard~Phillips Feynman, \emph{Interaction with the
+  absorber as the mechanism of radiation}, Reviews of modern physics
+  \textbf{17} (1945), no.~2-3, 157.
+
+\bibitem{wf2}
+\bysame, \emph{Classical electrodynamics in terms of direct interparticle
+  action}, Reviews of modern physics \textbf{21} (1949), no.~3, 425.
 
 \end{thebibliography}

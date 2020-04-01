@@ -70,8 +70,7 @@
 \newcommand{\vy}{\mathbf{y}}
 \newcommand{\vz}{\mathbf{z}}
 \newcommand{\vb}{\mathbf{b}}
-\newcommand{\be}{\begin{equation}}
-\newcommand{\ee}{\end{equation}}
+
 \newcommand{\ret}{{\textup ret}}
 \newcommand{\sym}{{\textup sym}}
 \newcommand{\adv}{{\textup adv}}
@@ -474,9 +473,9 @@ present them, in order to do so we follow \cite[sec 3.3]{selfKG}.
 
 We consider particles on a flat (FLRW) spacetime which is 
 described by the metric
-\be
+\begin{equation}
 	ds^2 = a^2(\eta) \left( d\eta^2 - dr^2 - r^2 d \Omega^2 \right),
-\ee
+\end{equation}
 where $\eta$ denotes conformal time, $d \Omega$ denotes the 
 surface measure on $\mathbb{S}^2$ and $a(\eta)$ is the so-called 
 \textit{scale function}, a continuous function with $a(0) = 0$ 
@@ -486,10 +485,10 @@ space $\tfrac{1}{2}\M$, with conformal factor $a(\eta)$.
 
 In this spacetime the free wave equation takes the form 
 
-\be
+\begin{equation}
 	\left( \Box_g - \xi R \right) \chi = 0,
 	\label{eq:conformalwaveeq}
-\ee
+\end{equation}
 where $R$ denotes the Ricci scalar and in 1+3 dimensions $\xi = \frac{1}{6}$.
 
 In this case, it is well-known that the Green's 
@@ -500,9 +499,9 @@ coordinates $x=(\eta,\vx)$ and $x'=(\eta',\vx')$ with
 $\eta,\eta' \in [0,\infty)$ and $\vx,\vx' \in \R^3$; see 
 \cite{lienertcurved} for a more detailed explanation):
 
-\be
+\begin{equation}
 	G_{\mathcal{M}}(x,x') ~=~ \frac{1}{a(\eta)} \frac{1}{a(\eta')} G_{\frac{1}{2}\M}(x,x').
-\ee
+\end{equation}
 Inserting the well-known expression for the retarded and symmetric 
 Green's functions on $\tfrac{1}{2}\M$ (see \eqref{later...} below) 
 yields:
@@ -517,9 +516,9 @@ to curved spacetimes is straightforward: $\psi$ becomes a scalar
 function on $\mathcal{M}\times\mathcal{M}$, one exchanges the 
 Minkowski spacetime volume element with 
 
-\be
+\begin{equation}
 	dV(x) = a^4(\eta) \, d\eta \, d^3 \vx,
-\ee
+\end{equation}
 the invariant 4-volume 
 element on $\mathcal{M}$, and the Green's functions on 
 $\tfrac{1}{2}\M$ get replaced with those on $\mathcal{M}$ as well. 
@@ -580,10 +579,10 @@ the integral equation \eqref{KG curved bounded} has a unique solution
 
 
 The Dirac equation is perhaps the most important equation in relativistic quantum theory, thus it may seem surprising that no completely satisfactory mathematical mechanism of interaction has been found for it. Usually, interactions between many particles are implemented in one of the following ways: (a) adding a potential to the free Hamiltonian, (b) using a second quantized electromagnetic field which mediates the interaction. Both approaches face difficulties. Approach (a) corresponds to postulating the equation
-\be
+\begin{equation}
 	i \partial_t \varphi(t,\vx_1,\vx_2) = \left(H_1^\Dirac + H_2^\Dirac + V(t,\vx_1,\vx_2) \right) \varphi(t,\vx_1,\vx_2),
 \label{eq:singletimedirac}
-\ee
+\end{equation}
 where $V$ is a potential and $H_k^\Dirac$ the Dirac Hamiltonian acting on the variables of the $k$-th particle. Under appropriate circumstances, it is clear that \eqref{eq:singletimedirac} defines an interacting dynamics  (see e.g.\ \cite{dirk_martin_2018} and references therein). 
 However, \eqref{eq:singletimedirac} is not Lorentz invariant.
 
@@ -598,19 +597,19 @@ problem to prove the existence of the dynamics for any interacting
 and completely relativistic model.
 
 In this paper, we pursue a new approach to defining interacting dynamics, neither via potentials nor via second quantized fields, but rather through \textit{direct interactions with time delay}, and prove the existence of dynamics for the simple case of two Dirac particles in 1+3 dimensions. The key innovation is to make use of \textit{multi-time wave functions}. This concept goes back to Dirac \cite{dirac_32}, played an important role in the works of Tomonaga \cite{tomonaga} and Schwinger \cite{schwinger}, has been studied by different authors over the years \cite{guenther_1952,marx_1974,schweber,drozvincent_1981,sazdjian_2bd,2bdem} and has recently undergone considerable developments \cite{nogo_potentials,qftmultitime,multitime_pair_creation,1d_model,nt_model,2bd_current_cons,deckert_nickel_2016,lpt_2017b,generalized_born,ibc_model,phd_nickel}; an overview can be found in \cite{dice_paper}. For two Dirac particles in Minkowski spacetime $\M$, a multi-time wave function is a map
-\be
+\begin{equation}
 	\psi : \M \times \M \rightarrow \CC^4 \otimes \CC^4\cong \CC^{16},~~~(x_1,x_2) \mapsto \psi(x_1,x_2).
 \label{eq:multitimewavefn}
-\ee	
+\end{equation}	
 $\psi$ can be considered a generalization of the single-time wave function $\varphi$ in the Schr\"odinger picture, as in Eq.\ \eqref{eq:singletimedirac}. The relation of $\psi$ to $\varphi$ is straightforwardly given by
-\be
+\begin{equation}
 	\varphi(t,\vx_1,\vx_2) = \psi((t,\vx_1),(t,\vx_2)).
 	\label{eq:singlemulti}
-\ee
+\end{equation}
 Contrary to the single-time wave function $\varphi$ (which refers to a frame), $\psi$ is a manifestly covariant object. Under a Poincar\'{e} transformation $(a,\Lambda)$, $\psi$ transforms as
-\be
+\begin{equation}
 	\psi'(x_1,x_2) = S[\Lambda]\otimes S[\Lambda] \psi(\Lambda^{-1}(x_1-a), \Lambda^{-1}(x_2-a)),
-\ee
+\end{equation}
 where $S[\Lambda]$ are the matrices appearing in the spinor representation of the Lorentz group.
 
 For the present purposes, it is crucial that $\psi$ is defined on general space-time configurations $(x_1,x_2)\in \M\times \M$, not only on equal-time configurations as $\varphi$. By relating configurations $(x_1,x_2)$ with different time coordinates $x_1^0 \neq x_2^0$ one can express \textit{interactions with a time delay}. It has been pointed out in \cite{direct_interaction_quantum} that in this way, \textit{direct relativistic interactions} (unmediated by fields) can be expressed at the quantum level. 
@@ -657,9 +656,9 @@ demonstrated.
 
 %%%
 \subsubsection{Goal of the paper.} Here we would like to extend the previous results to the case of Dirac instead of KG particles. This is desirable as the Dirac equation describes actual elementary particles (fermions) while the KG equation is usually considered only a toy equation as its currents do not have the right properties to play the role of a probability current. Mathematically, the Dirac case is more challenging than the KG case as contrary to the latter, the Dirac Green's functions contain distributional derivatives. A Green's function of the Dirac equation is given by acting with the adjoint Dirac operator $\overline{D} = (-i \gamma^\mu \partial_\mu - m)$ on a Green's function $G(x)$ of the KG equation, i.e.\:
-\be
+\begin{equation}
 	S(x)= \overline{D}G(x).
-\ee
+\end{equation}
 Consequently, one has to define the integral operator in \eqref{eq:inteq} on a function space where one can take certain weak derivatives. In contrast to most of non-relativistic physics, this also concerns the time derivatives here. The choice of function space can be a tricky issue, as the convergence of an iteration scheme (and of the Neumann series, our strategy of proof) requires the integral operator to preserve the regularity, so that the regularity needs to be in harmony with the structure of the integral equation (see Sec.\ \ref{sec:choiceofB}).
 
 
@@ -700,15 +699,15 @@ future research.
 
 In this section, we show how the integral operator in \eqref{eq:inteq} can be defined rigorously on test functions.
 We consider the integral equation \eqref{eq:inteq} on the Minkowski half space $\frac{1}{2}\M := [0,\infty) \times \R^3$ equipped with the metric $g = \text{diag}(1,-1,-1,-1)$. We focus on retarded Green's functions of the Dirac equation, $S^\ret(x) = \overline{D} G^\ret(x)$ where $G^\ret(x)$ is the retarded Green's function of the KG equation. Explicitly,
-\be
+\begin{equation}
 	G^\ret(x) = \frac{1}{4\pi} \frac{\delta(x^0-|\vx|)}{|\vx|} - \frac{m}{4\pi} H(x^0-|\vx|) \frac{J_1(m \sqrt{x^2})}{\sqrt{x^2}}
-\ee
+\end{equation}
 where $H$ denotes the Heaviside function, $J_1$ a Bessel function and $x^2 = (x^0)^2 - |\vx|^2$.
 
 In order to define the meaning of the Green's functions as distributions, we introduce a suitable space of test functions:
-\be
+\begin{equation}
 	\mathscr{D} = \mathscr{S}\big( (\tfrac{1}{2}\M)^2,\CC^{16} \big),
-\ee
+\end{equation}
 the space of 16-component Schwarz functions on $(\tfrac{1}{2}\M)^2$.
 For a smooth interaction kernel $K$ and a test function $\psi \in \mathscr{D}$, we then understand \eqref{eq:inteq} by formally integrating by parts so that all partial derivatives act on $K \psi$:
 \begin{align}
@@ -750,15 +749,15 @@ as well as
 &= i \gamma^0\frac{m}{4\pi} \int_{B_{x^0}(0)}d^3 \vy ~ \frac{J_1(m\sqrt{(x^0)^2 - \vy^2})}{\sqrt{(x^0)^2 - \vy^2}} f(0,\vx+\vy).
 \end{align}
 This yields the form of the integral equation which shall be the basis of our investigation:
-\be
+\begin{equation}
 	\psi(x_1,x_2) = \psi^\free(x_1,x_2) + (A \psi)(x_1,x_2).
 \label{eq:inteqschematic}
-\ee
+\end{equation}
 The operator $A$ is first defined on test functions $\psi \in \mathscr{D}$ as
-\be
+\begin{equation}
 	A\psi ~=~ \prod_{j=1,2} \left(A_j^{(1)}(m) + A_j^{(2)}(m) + A_j^{(3)}(m) + A_j^{(4)}(m)\right)
  \label{eq:defa}   
-\ee
+\end{equation}
 where for $j=1,2$, $k=1,2,3,4$ the operator \\
 \(A_j^{(k)}(m) : \mathscr{D} \rightarrow C^\infty\big((\frac{1}{2}\M)^2,\CC^{16}\big)\)  
 is defined by letting the respective operator $A^{(k)}(m)$, given 
@@ -771,45 +770,46 @@ the tensor product of Banach spaces is an ambiguous notion.}
 	\left(A^{(2)}(m) \,\psi\right)(x) ~&=~ -\frac{m}{4\pi} \int_{-x^0}^0 dy^0 \int_{B_{|y^0|}(0)} d^3 \vy ~ \frac{J_1(m\sqrt{y^2})}{\sqrt{y^2}} \psi(x+y),\label{eq:a2}\\
 	\left(A^{(3)}(m)\, \psi\right)(x) ~&=~ \frac{i \gamma^0}{4\pi} \int_{\partial B_{x^0}(0)}d\sigma(\vy) ~ \frac{\psi(0,\vx+\vy)}{x^0}, \label{eq:a3}\\\nonumber
   \left(A^{(4)}(m) \, \psi\right)(x) ~&=~ - i \gamma^0 \frac{m}{4\pi} \int_{B_{x^0}(0)}d^3 \vy ~ \frac{J_1(m\sqrt{(x^0)^2 - \vy^2})}{\sqrt{(x^0)^2 - \vy^2}}\\
-  & \psi(0,\vx+\vy).\label{eq:a4}
+  &\hspace{2cm} \times\psi(0,\vx+\vy).\label{eq:a4}
 \end{align}
 Here, the dependence of $A_j^{(1)}$ and $A_j^{(3)}$ on $m$ is only for notational convenience.\\
 We now turn to the question of a suitable Banach space for Eq.\ \eqref{eq:inteqschematic}.
 
-\subsection{Choice of Banach space} \label{sec:choiceofB}
+\subsubsection{Choice of Banach space} \label{sec:choiceofB}
 
 In order to prove the existence and uniqueness of solutions, we would like to demonstrate the convergence of the Neumann series. First of all, this requires to extend the integral operator $A$ to an operator on a suitable Banach space $\Banach$. The behavior of solutions $\psi^\free(x_1,x_2)$ of the free Dirac equation in each spacetime variable $x_1,x_2$ suggests to choose the Bochner space
-	\be
+\begin{equation}
 		\Banach_0 = L^\infty \left([0,\infty)^2_{(x_1^0,x_2^0)}, \,  L^2(\R^6,\CC^{16})_{(\vx_1,\vx_2)}\right)
 	\label{eq:banach0}
-	\ee
+\end{equation}
 with norm
-\be
+\begin{equation}
 	\| \psi \|_{\Banach_0} = \esssup_{x_1^0,x_2^0 > 0} \, \| \psi(x_1^0,\cdot,x_2^0,\cdot)\|_{L^2}.
-\ee
+\end{equation}
 The reason for choosing $\Banach_0$ is that the spatial norm $\| \psi^\free(x_1^0,\cdot,x_2^0,\cdot)\|_{L^2}$ of a solution of the free Dirac equations is constant in the two time variables $x_1^0,x_2^0$. A very similar space as $\Banach_0$ has been used for analyzing \eqref{eq:inteq} in the KG case \cite{mtve}.
 
 However, as \eqref{eq:defa} involves the Dirac operators $D_1, D_2$, $\Banach_0$ is not sufficient for our problem. An appropriate Banach space $\Banach$ must allow us to take at least weak derivatives of $\psi$.  The choice of $\Banach$ is a delicate matter. One can easily go wrong with demanding too much regularity, as we shall illustrate now.
 
 %%%
-\subsubsection{Possible problems with the choice of space.}
+\paragraph{Possible problems with the choice of space.}
+
 
 The problem can best be illustrated with an example which is structurally related to \eqref{eq:inteq} but otherwise simpler. Consider the equation
-\be
+\begin{equation}
 	f(t,x) = f^\free(t,z) + \int_0^t dz' \, K(z,z') \partial_t f(t,z'),
 	\label{eq:modelinteq}
-\ee
+\end{equation}
 where $f^\free, f, K : \R^2 \rightarrow \CC$ and $f^\free$ is given. \eqref{eq:modelinteq} is inspired by the term $A_1 D_1$ in \eqref{eq:defa}.
 
 We would like to set up an iteration scheme for \eqref{eq:modelinteq}. As we cannot integrate by parts to shift the $t$-derivative to $K$, we must demand at least weak differentiability of $f$ with respect to $t$. This suggests using a Banach space such as $\Banach = H^1(\R^2)$.
 To prove that the integral operator in \eqref{eq:modelinteq} maps $\Banach$ to $\Banach$ (the first step in every iteration scheme), we then have to estimate the $L^2$-norm of
-\be
+\begin{equation}
 	\partial_t \int_0^t dz' \, K(z,z') \partial_t f(t,z') = K(t,t) (\partial_t f)(t,t) + \int_0^t dz' \, K(z,z') \partial_t^2 f(t,z').
-\ee
+\end{equation}
 This expression, however, contains $\partial_t^2 f$. For this to make sense, we must be allowed to take the second weak time derivative of $f$. This, in turn, requires to choose a different Sobolev space, such as $H^2(\R^2)$, and to estimate the $L^2$-norm of the second time derivative of the integral operator acting on $f$ which involves $\partial_t^3 f$, and so on. One is thus led to a Sobolev space where all weak $n$-th time derivatives have to exist. Such infinite-order Sobolev spaces have, in fact, been investigated in \cite{dubinskii_1991}. However, it does not seem realistic to get an iteration to converge on these spaces. We therefore take a different approach. 
 
 %%%
-\subsubsection{A Banach space adapted to our integral equation.} Considering the form of the integral operator $A$ \eqref{eq:defa}, one can see that it is sufficient that the derivatives $D_1 \psi$, $D_2 \psi$ and $D_1 D_2 \psi$ exist in a weak sense. As we want to prove later that $A$ maps the Banach space to itself, we have to estimate, among other things, a suitable norm of $D_1 (A \psi)$. If $\psi \in \mathscr{D}$ is a test function and $K$ is smooth, we have
+\paragraph{A Banach space adapted to our integral equation.} Considering the form of the integral operator $A$ \eqref{eq:defa}, one can see that it is sufficient that the derivatives $D_1 \psi$, $D_2 \psi$ and $D_1 D_2 \psi$ exist in a weak sense. As we want to prove later that $A$ maps the Banach space to itself, we have to estimate, among other things, a suitable norm of $D_1 (A \psi)$. If $\psi \in \mathscr{D}$ is a test function and $K$ is smooth, we have
 \begin{align}\nonumber
   D_1 (A \psi)(x_1,x_2) &= D_1 \int d^4 x_1' \, d^4 x_2' \, S_1(x_1-x_2') S_2(x_2-x_2')\\
   &\hspace{1cm}\times K(x_1',x_2') \psi(x_1',x_2')\nonumber\\
@@ -819,22 +819,22 @@ This expression, however, contains $\partial_t^2 f$. For this to make sense, we 
 where we have used $D_1 S_1(x_1-x_1') = \delta^{(4)}(x_1-x_1')$. The crucial point now is that \eqref{eq:d1apsi} does not contain higher-order derivatives such as $D_1^2 \psi$. The same holds true also for $D_2 (A \psi)$ and $D_1 D_2 (A\psi)$. Thus, the problem of the toy example \eqref{eq:modelinteq} is avoided.
 
 Together with the previous considerations about $\Banach_0$ \eqref{eq:banach0}, we are led to define the Banach space $\Banach_g$ as the completion of $\mathscr{D}$ with respect to the following Sobolev-type norm:
-\be
+\begin{equation}
 	\| \psi \|^2_g = \esssup_{x_1^0,x_2^0 >0} \frac{1}{g(x_1^0)g(x_2^0)} [\psi]^2(x_1^0,x_2^0)
 \label{eq:normpsi}
-\ee
+\end{equation}
 where \(g : [0,\infty) \rightarrow (0,\infty) \) is a monotonically increasing function which is such that the function $1/g$ is bounded. We admit such a weight factor with hindsight. As we shall see, a suitable choice of $g$ will make a contraction mapping argument possible.
 
 In \eqref{eq:normpsi} we use the notation
-\be
+\begin{equation}
 	[\psi]^2(x_1^0,x_2^0) ~= \sum_{k=0}^3 \| (\mathcal{D}_k \psi)(x_1^0, \cdot, x_2^0,\cdot)\|^2_{L^2(\R^6,\CC^{16})}
 \label{eq:spatialnorm}
-\ee
+\end{equation}
 with
-\be
+\begin{equation}
 	\mathcal{D}_k = \left\{ \begin{array}{cl} 1, &k=0\\ D_1, & k=1\\ D_2, & k=2 \\ D_1 D_2, & k=3 \end{array}\right. 
 \label{eq:defdk}
-\ee
+\end{equation}
 
 %%%
 \begin{Remark} 
@@ -923,10 +923,10 @@ strategy for setting up the Banach space for granted, we therefore think that on
 %
 	\item \textit{Cauchy problem.} Thm.\ \ref{thm:minkhalfspace} shows that $\psi^\free$ uniquely determines the solution $\psi$. However, specifying a whole function in $\Banach_g$ amounts to a lot of data. In case $\psi^\free$ is a solution of the free multi-time Dirac equations $D_1 \psi^\free = 0 = D_2 \psi^\free$ much less data are needed. $\psi^\free$ is then determined uniquely by Cauchy data, and hence $\psi$ is as well. 
 Furthermore, if $\psi^\free$ is differentiable, \eqref{eq:inteq} yields
-	\be
+\begin{equation}
 		\psi(0,\vx_1,0,\vx_2) ~=~ \psi^\free(0,\vx_1,0,\vx_2).
 	\label{eq:cauchyproblem}
-	\ee
+	\end{equation}
 	Thus, Cauchy data for $\psi^\free$ at $x_1^0 = x_2^0 = 0$ are also Cauchy data for $\psi$. The procedure works for arbitrary Cauchy data which are appropriate for the free multi-time Dirac equations.  Note, however, that a Cauchy problem for $\psi$ for times $x_1^0 = t_0 = x_2^0$ with $t_0 > 0$ is not possible. The reason is that $\psi(t_0,\vx_1,t_0,\vx_2) \neq \psi^\free(t_0,\vx_1,t_0,\vx_2)$ in general (and contrary to \eqref{eq:cauchyproblem} the point-wise evaluation may not make sense for $\psi$).
 \end{enumerate}
 
@@ -958,10 +958,10 @@ a natural generalization to curved spacetimes $\mathcal{M}$,
 \end{align}
 Here, $dV(x)$ is the spacetime volume element, $S_i$ are (retarded) 
 Green's functions of the respective free wave equation, i.e.\
-\be
+\begin{equation}
 	D G(x,x') = [-g(x)]^{-1/2} \, \delta^{(4)}(x,x'),
 	\label{eq:greensfndefcurved}
-\ee
+\end{equation}
 where $g(x)$ is the metric determinant, $D$ the covariant Dirac 
 operator on $\mathcal{M}$, and $\psi$ a section of the tensor 
 spinor bundle over $\mathcal{M} \times \mathcal{M}$.
@@ -974,10 +974,10 @@ a strong (global in time) existence and uniqueness result. We
 therefore focus on the case of a flat FLRW universe where it is 
 easy to determine the Green's functions explicitly. In that case, 
 the metric is given by
-\be
+\begin{equation}
 	ds^2 = a^2(\eta) [d \eta^2 - d \vx^2]
 	\label{eq:metricflrw}
-\ee
+\end{equation}
 where $\eta$ is cosmological time and $a(\eta)$ denotes the 
 so-called \textit{scale factor}. The coordinate ranges are given 
 by $\eta \in [0,\infty)$ and $\vx \in \R^3$. For a FLRW universe 
@@ -985,34 +985,34 @@ with a Big Bang singularity, $a(\eta)$ is a continuous,
 monotonically increasing function of $\eta$ with $a(\eta)=0$, 
 corresponding to the Big Bang singularity. The spacetime volume 
 element reads
-\be
+\begin{equation}
 	dV(x) = a^4(\eta) \, d \eta\, d^3 \vx.
-\ee
+\end{equation}
 The crucial point now is that according to \eqref{eq:metricflrw} 
 the spacetime is globally conformally equivalent to $\frac{1}{2}\M$, 
 with conformal factor
-\be
+\begin{equation}
 	\Omega(x) = a(\eta).
-\ee
+\end{equation}
 In addition, for $m=0$, the Dirac equation is known to be 
 conformally invariant (see e.g.\ \cite{penrose_rindler}). More 
 accurately, consider two spacetimes $\mathcal{M}$ and 
 $\widetilde{\mathcal{M}}$ with metrics
-\be
+\begin{equation}
 	\widetilde{g}_{ab} = \Omega^2 \, g_{ab}.
-\ee
+\end{equation}
 Then the massless Dirac operator $D$ on $\mathcal{M}$ is related to 
 the massless Dirac operator $\widetilde{D}$ on 
 $\widetilde{\mathcal{M}}$ by (see \cite{haantjes}):
-\be
+\begin{equation}
 	\widetilde{D} = \Omega^{-5/2} \, D \, \Omega^{3/2}.
 	\label{eq:diracoperatortrafo}
-\ee
+\end{equation}
 This implies the following transformation behavior of the Green's 
 functions:
-\be
+\begin{equation}
 	\widetilde{G}(x,x') = \Omega^{-3/2}(x) \,\Omega^{-3/2}(x') \, G(x,x').
-\ee
+\end{equation}
 One can verify this easily using \eqref{eq:diracoperatortrafo} and 
 the definition of Green's functions on curved spacetimes 
 \eqref{eq:greensfndefcurved}.
@@ -1021,9 +1021,9 @@ Denoting the Green's functions of the Dirac operator on Minkowski
 spacetime by $G(x,x')=S(x-x')$ and using coordinates $\eta, \vx$ 
 we thus obtain the Green's functions $\widetilde{G}$ on flat FLRW 
 spacetimes as:
-\be
+\begin{equation}
 	\widetilde{G}(\eta,\vx; \eta', \vx') = a^{-3/2}(\eta) a^{-3/2}(\eta')\, S(\eta-\eta', \vx-\vx').
-\ee
+\end{equation}
 With this result, we can write out in detail the multi-time integral 
 equation \eqref{eq:inteqcurved} for massless Dirac particles on flat 
 FLRW spacetimes (using retarded Green's functions):
@@ -1039,10 +1039,10 @@ $\eta, \vx$ cover the flat FLRW spacetime manifold globally.
 
 It seems reasonable to allow for a singularity of the interaction 
 kernel, i.e.\
-\be
+\begin{equation}
 	K(\eta_1,\vx_1,\eta_2,\vx_2) = a^{-\alpha}(\eta_1)  a^{-\alpha}(\eta_1) \, \widetilde{K}(\eta_1,\vx_1,\eta_2,\vx_2).
 	\label{eq:ksingularity}
-\ee
+\end{equation}
 Here, $\alpha \geq 0$. The singular behavior is motivated by that of 
 the Green's functions of the conformal wave equation
 \footnote{The conformal wave equation reads $(\Box- R/6)\phi = 0$ 
@@ -1054,9 +1054,9 @@ Green's function of the wave equation -- a concept that can be
 generalized to curved spacetimes using the conformal wave equation. 
 Now, under conformal transformations, Green's functions of that 
 equation transform as \cite{john}
-\be
+\begin{equation}
 	\widetilde{G}(x,x') = \Omega^{-1}(x) \,\Omega^{-1}(x') \, G(x,x'),
-\ee
+\end{equation}
 which corresponds to $\alpha = 1$ in \eqref{eq:ksingularity}.
 
 Considering \eqref{eq:ksingularity}, our integral equation becomes:
@@ -1071,10 +1071,10 @@ Apart from the scale factors which produce a certain singularity of
 $\psi$ for $\eta_1,\eta_2 \rightarrow 0$, this integral equation has 
 the form of \eqref{eq:inteq} on $\frac{1}{2}\M$. Indeed, we can use 
 the transformation
-\be
+\begin{equation}
 	\chi(\eta_1,\vx_1,\eta_2,\vx_2) = a^{3/2}(\eta_1) a^{3/2}(\eta_2)\, \psi(\eta_1,\vx_1,\eta_2,\vx_2)
 	\label{eq:psichi}
-\ee
+\end{equation}
 to transform the two equations into each other. We arrive at the 
 following result.
 
@@ -1082,10 +1082,10 @@ following result.
 \begin{Thm}[Existence and uniqueness of dynamics on a flat 
   FLRW universe] \label{thm:flrw}
 	Let, $0 \leq \alpha \leq 1$ and let $a : [0,\infty) \rightarrow [0,\infty)$ be a differentiable function with $a(0)=0$ and $a(\eta) >0$ for $\eta>0$. Moreover, assume that $\widetilde{K} \in C^2 \left( ([0,\infty)\times \R^3)^2,\CC\right)$ with
-	\be
+  \begin{equation}
 		\| a^{1-\alpha}(\eta_1) a^{1-\alpha}(\eta_2) \, \widetilde{K} \| <1.
 	\label{eq:ktildecondition}
-	\ee
+	\end{equation}
  Then for every $\psi^\free$ with 
  $a^{3/2}(\eta_1) a^{3/2}(\eta_2) \psi^\free \in \Banach_g$, 
  \eqref{eq:inteqcurvedexplicit} has a unique solution $\psi$ with 
@@ -1113,9 +1113,9 @@ This equation has the form of \eqref{eq:inteq} on $\frac{1}{2}\M$ with $K$ repla
 	\item For $\alpha < 1$, $\widetilde{K}$ has to compensate the singularities caused by $a^{-3/2}(\eta_1) a^{-3/2}(\eta_2)$ in order for \eqref{eq:ktildecondition} to hold. In the most natural case $\alpha = 1$, however, $\widetilde{K}$ only needs to satisfy $\| \widetilde{K} \| < 1$, i.e.\, the same condition as for $K$ in Thm.\ \ref{thm:minkhalfspace}. 
 %
 	\item Let $\chi^\free = a^{3/2}(\eta_1) a^{3/2}(\eta_2) \psi^\free$ be differentiable and let $\chi$ be the unique solution of \eqref{eq:inteqcurvedexplicit2}. Then, by \eqref{eq:inteqcurvedexplicit2}, we have:
-	\be
+  \begin{equation}
 		\chi^\free(0,\vx_1,0,\vx_2) = \chi(0,\vx_1,0,\vx_2),
-	\ee
+	\end{equation}
 	i.e.\, $\chi$ satisfies a Cauchy problem "at the Big Bang".
 %
   \item Remarkably, Thm.\ \ref{thm:flrw} covers a class of manifestly 
@@ -1123,9 +1123,9 @@ This equation has the form of \eqref{eq:inteq} on $\frac{1}{2}\M$ with $K$ repla
   the interaction kernel $\widetilde{K}$ has to be covariant as 
   well. A class of examples (see also \cite{lienertcurved}) is 
   given by $\alpha = 1$ and 
-\be
+  \begin{equation}
 	\widetilde{K}(x_1,x_2) = \left\{ \begin{array}{cl} f(d(x_1,x_2))& \text{if } x_1, x_2 \text{ are time-like related}\\ 0 &  \text{else}, \end{array} \right.
-\ee
+\end{equation}
 where $d(x_1,x_2) = (|\eta_1-\eta_2| -|\vx_1-\vx_2|) \int_0^1 d 
 \tau \, a(\tau \eta_1 + (1-\tau) \eta_2)$ denotes the time-like 
 distance of the spacetime points $x_1 = (\eta_1,\vx_1)$ and 
@@ -1141,7 +1141,7 @@ which leads to $\| \widetilde{K} \| < 1$.
 \subsection{Proofs} \label{sec:proofs}
 
 %%%%%
-\subsubsection{Proof of Lemma \ref{thm:freesolutionsinbanach}}
+\subsubsection{Proof of lemma \ref{thm:freesolutionsinbanach}}
 
 \label{sec:freesolutionsinbanach}
 
@@ -1158,9 +1158,9 @@ satisfying \(\psi_m \xrightarrow{\|\cdot\|_g ,~m\rightarrow \infty}
 \psi^\free\). Let \(\eta : \mathbb{R}\rightarrow \mathbb{R}\) be 
 zero for arguments less than \(0\) and greater than \(1\) and in 
 between given by (see also Fig. \ref{fig:eta})
-\be
+\begin{equation}
 	\eta(t)=  \exp\left(-\frac{1}{t} \exp\left({\frac{1}{t-1}}\right)\right).
-\ee
+\end{equation}
 %
 \begin{figure}
 	\centering
@@ -1262,9 +1262,9 @@ $[A\psi]^2(x_1^0,x_2^0)$.
   on the $j$-th variable of $\phi(t_1,t_2)$.
 Then we have for all $\psi \in \mathscr{D}$, all $m_1,m_2\geq 0$ and 
 all $k,l=1,2,3,4$:
-\be
+\begin{equation}
 		\left\| A_1^{(k)}(m_1) A_2^{(l)}(m_2)  \psi(t_1,\cdot,t_2,\cdot) \right\|^2_{L^2} \!\!\leq\! \mathcal{A}_j^{(k)}(m_1) \mathcal{A}_j^{(l)}(m_2)\, \|\psi(t_1,\cdot,t_2,\cdot)\|^2_{L^2}.\label{eq:aestimate}
-	\ee
+	\end{equation}
 Here, it is understood that the operators $\mathcal{A}_j^{(k)}$ 
 are applied to the functions defined by the norms which follow them, 
 e.g.\, \\
@@ -1336,21 +1336,21 @@ Exchanging the order of the $x$ and $y$ integrals yields:
 
 \begin{proof}
 	We start with \eqref{eq:apsiestimate}. Recalling \eqref{eq:defa}, the expression $A\psi$ contains terms such as $D_1 D_2 (K \psi)$ and $D_i(K\psi)$, $i=1,2$. Recalling also the definition of $\mathcal{D}_k$ (Eq.\ \eqref{eq:defdk}), we have:
-\be
+\begin{equation}
 	D_1 D_2 (K\psi) = \sum_{k=0}^3 (\nabla_{3-k}K)(\mathcal{D}_k \psi)
-\ee
+\end{equation}
 with
-\be
+\begin{equation}
 \nabla_k := \left\{\begin{array}{cl} 1, & k=0\\ i\slashed{\partial}_1, & k=1 \\ i \slashed{\partial}_2, & k=2 \\ -\slashed{\partial}_1\slashed{\partial}_2, & k=3. \end{array}\right.
-\ee
+\end{equation}
 Hence, noting \eqref{eq:normk}:
-\be
+\begin{equation}
 	|D_1D_2 \psi| \leq \| K \| \sum_{k=0}^3 |\mathcal{D}_k \psi|.
-\ee
+\end{equation}
 Similarly, we find:
-\be
+\begin{equation}
 	D_i (K\psi) \leq \| K\| \sum_{k=0}^3 |\mathcal{D}_k \psi|,~~i=1,2.
-\ee
+\end{equation}
 Considering the definition of $A_j^{(k)}(m),$ $j=1,2$, $k=1,2,3,4$ 
 it follows that
 \begin{align}\nonumber
@@ -1366,9 +1366,9 @@ The idea now is to make use of lemma
 lemma, we first note that by Young's inequality for 
 $a_1,...,a_N \in \R$, we have 
 $\left(\sum_{i=1}^N a_i\right)^2 \leq N \sum_{i=1}^N a_i^2$ and thus:
-\be
+\begin{equation}
 	|A\psi (x_1,x_2)|^2 ~\leq~ 64\, \|K\|^2 \sum_{i,j=1}^4 \sum_{k=0}^3 \big| A_1^{(i)}(m_1) A_2^{(j)}(m_2) \, |\mathcal{D}_k \psi|\big|^2.
-\ee
+\end{equation}
 Integrating over this expression and using lemma 
 \ref{thm:estimatetensoroperators}, we obtain:
 \begin{align}\nonumber
@@ -1383,21 +1383,21 @@ form of the integral equation \eqref{eq:inteq} and use that as a
 distributional identity on test functions $\psi \in \mathscr{D}_T$, 
 we have $D_1 S^\ret(x_1-x_1') = \delta^{(4)}(x_1-x_1')$. Thus, we 
 obtain:
-\be
+\begin{equation}
 	(D_1 A \psi)(x_1,x_2) = \int_{\tfrac{1}{2} \M} d^4 x_2' ~S_2^\ret(x_2-x_2') (K \psi)(x_1,x_2').
-\ee
+\end{equation}
 Proceeding similarly as for \eqref{eq:defa} we rewrite this as:
-\be
+\begin{equation}
 	D_1 (A \psi)\! =\! \left( A_2^{(1)}(m_2)\, D_2\! +\! A_2^{(2)}(m_2) D_2 \!+\! A_2^{(3)}(m_2) \!+\! A_2^{(4)}(m_2)\right)\! (K\psi).
-\ee
+\end{equation}
 Considering the form of $A_j^{(k)}(m_j)$ this implies:
-\be
+\begin{equation}
 	|D_1 (A \psi)| ~\leq~  \| K \| \sum_{i=1}^4 \sum_{k\in \{ 0,2\}} A_2^{(i)}(m_2)\, |\mathcal{D}_k \psi|.
-\ee
+\end{equation}
 We now square and use Young's inequality, finding:
-\be
+\begin{equation}
 	|D_1 (A \psi)|^2 ~\leq~  8 \, \| K \|^2 \sum_{i=1}^4 \sum_{k\in \{ 0,2\}} A_2^{(i)}(m_2) \, | \mathcal{D}_k \psi|^2.
-\ee
+\end{equation}
 Integrating and using lemma \ref{thm:estimatetensoroperators} yields:
 \begin{align}\nonumber
   \| D_1 (A \psi)(x_1^0,\cdot,x_2^0,\cdot)\|^2_{L^2} ~\leq~ 8 \, &\| K \|^2 \sum_{i=1}^4 \sum_{k\in \{ 0,2\}} \mathcal{A}_2^{(i)}(m_2)\,\\
@@ -1411,9 +1411,9 @@ The estimate \eqref{eq:d2apsiestimate} follows in an analogous way.
 Finally, for \eqref{eq:d1d2apsiestimate} we also start from the 
 initial integral equation \eqref{eq:inteq} and use 
 $D_i S_i^\ret(x_i-x_i') = \delta^{(4)}(x_i-x_i')$. This results in:
-\be
+\begin{equation}
 	D_1 D_2 (A \psi) = K \psi.
-\ee
+\end{equation}
 Squaring and integrating gives us:
 \begin{align}\nonumber
   \| D_1 D_2 (A \psi)(x_1^0,\cdot,x_2^0,\cdot) \|^2 ~ &\leq ~\| K \|^2 \, \| \psi(x_1^0,\cdot,x_2^0,\cdot) \|^2_{L^2} \\
@@ -1428,9 +1428,9 @@ These estimates are the core of:
 \begin{proof}[Proof of Lemma\ \ref{thm:boundsa}:]
 	
 	We use lemma \ref{thm:spatialnormestimates} together with the definition of $[\psi]^2(x_1^0,x_2^0)$ to obtain:
-	\be
+  \begin{equation}
 		[A \psi]^2(x_1^0,x_2^0) ~\leq~ \eqref{eq:apsiestimate} + \eqref{eq:d1apsiestimate}+ \eqref{eq:d2apsiestimate}+ \eqref{eq:d1d2apsiestimate}.
-	\ee
+  \end{equation}
 	Summarizing the operators into a product yields \eqref{eq:spatialnormapsi}.
 
 \end{proof}
@@ -1445,9 +1445,9 @@ whole of $\Banach_g$ . We start with Eq. \eqref{eq:spatialnormapsi}
 of Thm. \ref{sec:minkhalfspace} using the definition of 
 \(\mathcal{A}_j\) for \(j=1,2\), as well as the following 
 estimate, valid for all \(\psi \in \mathscr{D}, t_1,t_2>0\):
-\be 
+\begin{equation}
 	[\psi](t_1,t_2) ~=~ [\psi](t_1,t_2) \, \frac{g(t_1)g(t_2)}{g(t_1)g(t_2)} ~\le~ \|\psi\|_g\, g(t_1)g(t_2).
-\ee 
+\end{equation}
 Using this in \eqref{eq:spatialnormapsi} yields:
 \begin{align}
 \|A\psi\|^2_g ~&\le~ \sup_{x_1^0,x_2^0>0}\frac{1}{(g(x_1^0)g(x_2^0))^2} \,  \|K\|^2 \prod_{j=1,2} \left( \id + 8\mathcal{A}_j(m_j) \right) [\psi]^2(x_1^0,x_2^0),\\\nonumber
@@ -1466,9 +1466,9 @@ motivated choosing $g$ as in \eqref{eq:defg}.
 %%%
 \begin{Lemma}\label{lem:int}
  For all \(t>0\), we have
-\be 
+\begin{equation}
 	\int_0^t d\tau \, g^2(\tau) = \frac{t}{1+b t^8} \, g^2(t).
-\ee 
+\end{equation}
 \end{Lemma}
 \begin{proof}[Proof:] Differentiating the right side of the equation 
   and using the concrete function \(g^2\) as in \eqref{eq:defg} shows 
@@ -1479,15 +1479,15 @@ motivated choosing $g$ as in \eqref{eq:defg}.
 %%%
 \begin{Lemma}\label{lem:someidentities}
 For $c<8$ we have
-\be
+\begin{equation}
 	\sup_{t>0} \frac{t^c}{1+b t^8}  ~=~\frac{c}{8}\,  b^{-c/8} \left( \frac{8}{c}-1\right)^{-c/8},
 	\label{eq:firstequality}
-\ee
+\end{equation}
 and furthermore for $c=8$:
-\be
+\begin{equation}
 	\sup_{t>0} \frac{t^8}{1+b t^8} ~=~\frac{1}{b}.
 	\label{eq:secondequality}
-\ee
+\end{equation}
 \end{Lemma}
 
 \begin{proof}
@@ -1503,6 +1503,7 @@ $\frac{t^8}{1+b t^8} = \frac{1}{b} \frac{1}{1/(b t^8) +1} \leq
 
 \paragraph{Proof of Thm. \ref{thm:minkhalfspace}:} Applying 
 Lemma \ref{lem:int} to \(\mathcal{A}(\mu) \,g^2\) yields:
+
 \begin{align}
     \big(\mathcal{A}^{(1)}(\mu) \, g^2\big)(t)&~=~ t \int_0^t d\rho \, (t-\rho)^2\, g^2(\rho)~\le~ t^3 \int_0^t d\rho \,g^2(\rho)\nonumber\\
     &\hspace{2cm} = \frac{t^4}{1+b t^8} \,g^2(t),\nonumber\\
@@ -1525,9 +1526,9 @@ right hand sides are inversely proportional to powers of $b$) to
 estimate the norm of $A$. According to \eqref{est:NormA1}, we have, 
 first on $\mathscr{D}$ and by linear extension also on the whole of 
 $\Banach_g$: 
-\be
+\begin{equation}
 	\|A\| ~\leq~ \|K\| \, \sup_{t>0}\, g^{-2}(t) \big((\id + 8\mathcal{A}(\mu)) \, g^2 \big)(t) .
-\ee
+\end{equation}
 Now we use \eqref{eq:gtotheminus2estimates} for the various 
 contributions 
 $A^{(k)}(\mu) $ to $\mathcal{A}(\mu) = \sum_{k=1}^4 A^{(k)}(\mu)$, 
@@ -1539,9 +1540,9 @@ finding:
 \end{align}
 Recalling that $b=\frac{\|K\|^4}{(1-\|K\|)^4} (6+\mu^4)^4$ (see 
 \eqref{eq:defb}), we finally obtain that:
-\be
+\begin{equation}
 	\|A\| ~<~ \|K\| + \frac{\|K\|}{b^{1/4}} (6 + \mu^4 ) ~= ~ \|K\| + 1-\|K\| =1.
-\ee
+\end{equation}
 We have thus shown that $A$ defines (by linear extension) a 
 contraction on $\Banach_g$. Thus, the Neumann series 
 $\psi = \sum_{k=0}^\infty A^k \psi^\free$ yields the unique 
@@ -1551,7 +1552,7 @@ $\psi = \sum_{k=0}^\infty A^k \psi^\free$ yields the unique
 
 %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%
-\section{Conclusion and outlook} \label{sec:discussion}
+\subsection{Conclusion and outlook} \label{sec:discussion}
 
 Extending previous work for Klein-Gordon particles 
 \cite{mtve,lienertcurved} to the Dirac case, we have established the 
@@ -1705,15 +1706,24 @@ is also denoted by \(Q^A\):
 :=\frac{Z^A_{+-}(p,q)-Z^A_{-+}(p,q)}{i(E(p)+E(q))}\\
 \text{with }Z^A_{\pm\mp}(p,q):=P_\pm (p)Z^A(p-q)P_\mp (q),\\
 Z^A=-i e\gamma^0 \gamma^\alpha \hat{A}_\alpha,\\
-\hat{A}_\mu(t):\mathcal{H} \righttoleftarrow, \hat{A}_\mu(t)\psi:= \hat{A}_\mu(t) \ast \psi,\\
+%\hat{A}_\mu(t):\mathcal{H} \righttoleftarrow, \hat{A}_\mu(t)\psi:= \hat{A}_\mu(t) \ast \psi,\\
 \hat{A}_\mu := \frac{1}{(2\pi)^{3/2}}\int_{\mathbb{R}^3} A_\mu (x)e^{-i p x} d^3x,\\ 
 \text{and } E(p):=\sqrt{m^2+|p|^2}.
 \end{align}
 
-We introduce the standard polarisation for the free Dirac equation\todo{think of some more intuitive notation for the projector.}
+We introduce the standard polarisation of \(\mathcal{H}\) for the free Dirac 
+equation\todo{think of some more intuitive notation for the projector.}
 \begin{align}
 P^-:=1_{\mathrm{spec}(H^0)<0}, \quad P^+=1-P^-.
 \end{align}
+
+Lastly we introduce the partial derivative in 
+the direction of any four-potential \(F\) of an operator valued 
+function \(F:\mathcal{V}\rightarrow \mathcal{B}(\mathcal{F})\) by
+\begin{equation}\label{def derivative}
+\partial_F T(F):=\partial_{\varepsilon}T(\varepsilon F)|_{\varepsilon =0},
+\end{equation}
+where the limit is taken with respect to the operator norm topology.
 \end{Def}
 
 
@@ -1724,8 +1734,8 @@ we have the well known equations for
 the one-particle time evolution operators
 
 \begin{align}
-U^A(t_1,t_0)=U^0(t_1,t_0) + \int_{t_0}^{t_1}dt U^0(t_1,t) Z^A(t) U^{A}(t,t_0)\\
-U^{A+F}(t_1,t_0)=U^A(t_1,t_0) + \int_{t_0}^{t_1}dt U^A(t_1,t) Z^F(t) U^{A+F}(t,t_0).
+U^A(t_1,t_0)=U^0(t_1,t_0) + \int_{t_0}^{t_1}dt~ U^0(t_1,t) Z^A(t) U^{A}(t,t_0)\\
+U^{A+F}(t_1,t_0)=U^A(t_1,t_0) + \int_{t_0}^{t_1}dt ~U^A(t_1,t) Z^F(t) U^{A+F}(t,t_0).
 \end{align}
 \end{Lemma}
 \begin{proof}
@@ -1753,18 +1763,22 @@ T_{\mathrm{ev}}&:=P^+TP^+ + P^-TP^-.
 
 Additionally, we define the norm 
 \begin{equation}
-    T:\mathcal{H}\righttoleftarrow \|T\|_{\mathrm{op}+I_2}=\|T\|_{\mathrm{op}}++\|T_{\odd}\|_{I_2},
+    T:\mathcal{H}\righttoleftarrow \|T\|_{\mathrm{op}+I_2}=\|T\|+\|T_{\odd}\|_{I_2},
 \end{equation}
-where \(\|\cdot\|_{\mathrm{op}}\) is the operator norm and \(\|\cdot\|_{I_2}\) is the 
+where \(\|\cdot\|\) is the operator norm and \(\|\cdot\|_{I_2}\) is the 
 Hilbert-Schmidt norm and the space
 \begin{equation}
   I_2^{\odd}:=\{T:\mathcal{F}\rightarrow \mathcal{F}\mid
   \|T\|<\infty, \|T_{\odd}\|_{I_2}<\infty\}.
 \end{equation}
+
+\todo{def derivative w.r.t. A}
 \end{Def}
 
 
-\begin{Lemma}
+
+
+\begin{Lemma}\label{completeness of I_2 odd}
 The space \(I_2^{\odd}\)
 equipped with the norm 
 \(\|\cdot\|_{\mathrm{op}+I_2}\) is a 
@@ -1773,37 +1787,39 @@ Banach space.
 \begin{proof}
 Let \((T_n)_{n\in\mathbb{R}}\subset I_2^{\odd}\)
 be a Cauchy sequence with 
-respect to \(\|\cdot\|_{\mathrm{op}+I_2}\). 
+respect to \(\left\|\cdot\right\|_{\mathrm{op}+I_2}\). 
 Then it follows directly that 
-\((T_n)_{n\in\mathbb{R}}\)
+\((T_n)_{n\in\mathbb{N}}\)
 is also a Cauchy sequence with 
-respect to \(\|\cdot\|_{\mathrm{op}}\) and
-\((T_{n,\odd})_{n\in\mathbb{R}}\) is a Cauchy
+respect to \(\|\cdot\|\) and
+\((T_{n,\odd})_{n\in\mathbb{N}}\) is a Cauchy
 sequence with respect to
 \(\|\cdot\|_{I_2}\). Since 
 the space of bounded operators equipped with
-\(\|\cdot\|_{\mathrm{op}}\) and
-the space of Hilber-Schmidt oeprators 
+\(\|\cdot\|\) and
+the space of Hilbert-Schmidt oeprators 
 equipped with \(\|\cdot\|_{I_2}\) both are
 complete we have
 
 \begin{align}
-  T_n\xrightarrow[\|\cdot\|_{\mathrm{op}}]{n\rightarrow \infty} T^1\\
+  T_n\xrightarrow[\|\cdot\|]{n\rightarrow \infty} T^1\\
   T_{n,\odd}\xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty} T^2
 \end{align}
 for some bounded operator \(T^1\) and some 
 Hilbert-Schmidt operator \(T^2\). Now because 
-the Hilbert-Schmidt norm is stronger than 
-the operator norm we obtain directly
+the Hilbert-Schmidt norm  fulfills
 \begin{equation}
-  T_{n,\odd}\xrightarrow[\|\cdot\|_{\mathrm{op}}]{n\rightarrow \infty} T^2,
+\|T\|\le \|T\|_{I_2},
+\end{equation} 
+we obtain directly
+\begin{equation}
+  T_{n,\odd}\xrightarrow[\|\cdot\|]{n\rightarrow \infty} T^2,
 \end{equation}
 hence \(T^1_{\odd}=T^2\). 
-Therefore \(T^1\in I_2^{\odd}\) holds. 
-Finally since 
+Therefore, \(T^1\in I_2^{\odd}\) holds. 
+Finally, since 
 \(\|\cdot\|_{\mathrm{op}+I_2}
-=\|\cdot\|_{\mathrm{op}}
-+\|\cdot_{\odd}\|_{I_2}\) is true, 
+=\|\cdot\|+\|\cdot_{\odd}\|_{I_2}\) is true, 
 we find 
 \begin{equation}
 T_n\xrightarrow[\|\cdot\|_{\mathrm{op}+I_2}]{n\rightarrow \infty} T^1,
@@ -1817,46 +1833,53 @@ proving completeness.
   \(k\le n\), pick \(t_1\) 
   after \(\supp A\cup \bigcup_{k\le n}\supp H_k\) and \(t_0\)
   before \(\supp A\cup\bigcup_{k\le n}\supp H_k\) then 
-  the derivatives 
+  the derivative 
   \begin{equation}
-    \partial_{H_1}\dots \partial_{H_k}U^{A+\sum_{b=1}^k F_b}(t_1,t_0)
+    \partial_{H_1}\dots \partial_{H_k}U^{A+\sum_{b=1}^k H_b}(t_1,t_0)
   \end{equation}
-  all exist with respect to the topology induced by 
+  exists with respect to the topology induced by 
   the norm \(\|\cdot\|_{\mathrm{op}+I_2}\).
 \end{Thm}
 \begin{proof}
-  Following \cite{ivp0} we will throughout this proof make use of the 
+  Following \cite{ivp0} throughout this proof, we make use of the 
   following shorthand notation. For operator valued maps 
-  \(T_1,T_2:\mathbb{R}^2\to (\mathcal{H}\righttoleftarrow) \) we define 
+  \(T_1,T_2:\mathbb{R}^2\to \mathcal{B}(\mathcal{H}) \) we define 
   for \(t_1,t_0\in\mathbb{R}\)
   \begin{equation}
   T_1T_2 = \int_{t_0}^{t_1}dt~ T_1(t_1,t)T_2(t,t_0),
   \end{equation}
   as a map of the same type as \(T_1\) and \(T_2\)
-  whenever this is well defined. Furthermore for operator valued functions
-  \(C_1,C_2:\mathbb{R}\to (\mathcal{H}\righttoleftarrow)\) we define
-  \begin{align}
-  T_1C_1=T_1(t_1,t_0)C_1(t_0)\\
-  C_1 T_1=C(t_1)T_1(t_1,t_0)\\
-  C_1C_2=C_1(t_1),
+  whenever this is well defined. Furthermore, for operator valued functions
+  \(W_1,W_2:\mathbb{R}\to \mathcal{B}(\mathcal{H})\) we define
+  \begin{align}\label{ivp0 shortnotation 1}
+  T_1W_1~(t',t)=T_1(t',t)C_1(t)\\\label{ivp0 shortnotation 2}
+  W_1 T_1~(t',t)=W(t_1)T_1(t',t)\\
+  W_1W_2~(t)=W_1(t)W_2(t),
   \end{align}
   as maps of the same type as \(T_1, T_1\) and \(C_1\) 
   respectively.
+
   Pick \(k\in\mathbb{N}\), \(A,H_b\in\mathcal{V}\) for \(b\le k\) 
-  and \(t_1,t_0\) as in the theorem. 
-  
-  We abbreviate
+  and \(t_1,t_0\) as in the theorem. Whenever the shorthand 
+  \eqref{ivp0 shortnotation 1} and \eqref{ivp0 shortnotation 1}
+  is used without specific arguments, by convention 
+  \(t'=t_1,t=t_0\).  We abbreviate
   \begin{equation}
-  H:=\sum_{b=1}^k H_b, \quad B:=A+H
+  H:=\sum_{b=1}^k H_b, \quad B:=A+H.
   \end{equation}
+  We introduce 
+  \begin{equation}
+    R^B(t',t)=(1-Q^B)U^B(1+Q^B)(t',t),
+  \end{equation}
+  for general \(t',t\in\mathbb{R}\).
   Because of the choice of \(t_1,t_0\) we have
   \begin{equation}\label{def R}
-  R^{A+H}(t_1,t_0):=[(1-Q^{A+H})U^{A+H}(1+Q^{A+H})](t_1,t_0)=U^{A+H}(t_1,t_0),
+  R^B(t_1,t_0)=(1-Q^B)U^B(1+Q^B)=U^B(t_1,t_0),
   \end{equation}
-  because \(A+H=0\) both at \(t_1\) and \(t_0\).
+  because \(B=0\) both at \(t_1\) and \(t_0\).
   
-  So it suffices to study the family of operators \(R\). 
-  From the analysis carried out in \cite{ivp0} we know that 
+  So it suffices to study the family of operators \(R^B\). 
+  As shown in the proof of \cite[lemma 3.5]{ivp0}
   \(R^B\) for \(B\in\mathcal{V}\) is the limit in the sense of the 
   operator norm of the sequence
   \begin{align}
@@ -1878,39 +1901,43 @@ proving completeness.
     \|T \|_{\mathrm{op}+I_2,\gamma}
     &:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \left(\|T(t)\|
     +\| T_{\odd}(t)\|_{I_2}\right)\\
-    \|T \|_{\mathrm{op},\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \|T(t)\|\\
-    \|W \|_{\mathrm{op},0}&:=\sup_{t,t'\in[t_1,t_0]} \|W(t,t')\|\\
+    \|T \|_{\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \|T(t)\|\\
+    \|W \|_{0}&:=\sup_{t,t'\in[t_1,t_0]} \|W(t,t')\|\\
     \|T \|_{I_2 ,\gamma}&:=\sup_{t\in[t_1,t_0]}e^{-\gamma (t-t_0)} \| T(t)\|_{I_2},\\
     \|W \|_{I_2 ,0}&:=\sup_{t,t'\in[t_1,t_0]} \| W(t,t')\|_{I_2},
   \end{align}
   for \(\gamma\ge 0 \).
-  From the analysis of \cite{ivp0} follows that the 
-  recursive equation \cite[(3.42)]{ivp0}
-  
+  In the proof of the same lemma in \cite[equation (3.42)]{ivp0}
+  we also have the recursive equation 
   \begin{align}
   R^B_{n}=U^0F^B_{\ev}R^B_{n-1}+U^0F^B_{\odd} U^0F^B R^B_{n-2}\\
   +U^0 F^B_{\odd} +U^0F^B_{\odd} U^0 + U^0 +G^B
   \end{align}
   is fulfilled by the same sequence of operators for \(n\ge 2\).
-  Hence we have for \(n\ge 2\):
-  \begin{align}\notag
-    R^B_{n+1}-R^B_{n}=U^0F^B_{\ev}(R^B_n-R^B_{n-1})\\
-    +U^0F^B_{\odd} U^0F^B (R^B_{n-1}-R^B_{n-2}).
-  \end{align}
-  Abbreviating \(U^0F^B_{\ev}=:a,\quad U^0F^B_{\odd}U^0 F^B:=b\), we obtain
-  \begin{align}\notag
-    R^B_{n+1}-R^B_{n}=a(R^B_n-R^B_{n-1})\\\label{R recurisve}
-    +b (R^B_{n-1}-R^B_{n-2}).
-  \end{align}
   Furthermore, we introduce the notation
   \begin{align}\label{derivative set 1}
-  [k]&:=\{l\in\mathbb{N}\mid l\le k\}\\\label{derivative set 2}
-  \forall u\subseteq [k]:\partial_{u}&:=\prod_{k\in u}\partial_{H_k},\\
-  R^B_{n+1}-R^B_n&:=\Delta^n,
+  [k]&=\{l\in\mathbb{N}\mid l\le k\}\\\label{derivative set 2}
+  \forall u\subseteq [k]:\partial_{u}&=\prod_{k\in u}\partial_{H_k},\\
+  \Delta^n&=R^B_{n+1}-R^B_n,
   \end{align}
   where the product of derivatives is to be understood as the 
   mixed derivative with respect to all the factors.
-  Now we estimate for any set \(u\subset [k]\):
+
+  Hence we have for such \(n\):
+  \begin{align}\notag
+    \Delta_{n}=&U^0F^B_{\ev}\Delta_{n-1}
+    +U^0F^B_{\odd} U^0F^B \Delta_{n-2}.
+  \end{align}
+  Abbreviating \(U^0F^B_{\ev}=:a,\quad U^0F^B_{\odd}U^0 F^B:=b\), we obtain
+  \begin{align}\label{R recurisve}
+    \Delta_{n}=a\Delta_{n-1}
+    +b \Delta_{n-2}.
+  \end{align}
+
+  Using the derivative defined in 
+  \eqref{def derivative} and the recursion 
+  \eqref{R recurisve},
+  we estimate for any set \(u\subset [k]\):
   
   \begin{align}
   &\sup_{p\subseteq u}\|\partial_p \Delta^n_{\odd} \|_{I_2,\gamma}\\
@@ -1947,114 +1974,135 @@ proving completeness.
   \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
   e^{-\gamma(t-t_0)} \sum_{w\subseteq u} 
   \int_{t_0}^{t}dt' 
-  \| \partial_{u\backslash w}a\|_{\mathrm{op},0}
+  \| \partial_{u\backslash w}a\|_{0}
   \|\partial_w \Delta^{n-1}_{\odd}(t',t_0)\|_{I_2}\\
   &+2 \sup_{p\subseteq u}
   \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sum_{w\subseteq u} 
   \int_{t_0}^{t}dt'  
   \|  \partial_{u\backslash w}b(t,t')\|_{I_2}
-  \|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+  \|\partial_w \Delta^{n-2}(t',t_0) \|\\
   &\le
   \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
   e^{-\gamma t} \sum_{w\subseteq u} 
   \int_{t_0}^{t}dt' e^{\gamma t'}
-  \| \partial_{u\backslash w}a\|_{\mathrm{op},0}
+  \| \partial_{u\backslash w}a\|_{0}
   \|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
   &+2 \sup_{p\subseteq u}\sup_{t\in[t_0,t_1]} 
   e^{-\gamma t}\sum_{w\subseteq u} 
   \int_{t_0}^{t}dt'  e^{\gamma t'}
   \|  \partial_{u\backslash w}b\|_{I_2,0}
-  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\gamma}\\
   &\le
   \frac{1}{\gamma} \sup_{p\subseteq u} \sum_{w\subseteq u} 
-  \| \partial_{u\backslash w}a\|_{\mathrm{op},0}
+  \| \partial_{u\backslash w}a\|_{0}
   \|\partial_w \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
   &+\frac{2}{\gamma} \sup_{p\subseteq u} \sum_{w\subseteq u} 
   \|  \partial_{u\backslash w}b\|_{I_2,0}
-  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\gamma}\\
   &\le
   \frac{2^{|u|}}{\gamma} \sup_{u'\subseteq u} 
-  \| \partial_{u'}a\|_{\mathrm{op},0} \sup_{p\subseteq u} 
+  \| \partial_{u'}a\|_{0} \sup_{p\subseteq u} 
   \|\partial_p \Delta^{n-1}_{\odd}(\cdot,t_0)\|_{I_2,\gamma}\\
   &+\frac{2^{|u|+1}}{\gamma} \sup_{u'\subseteq u} 
   \|  \partial_{u'}b\|_{I_2,0}\sup_{p\subseteq u}
-  \|\partial_p \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}
+  \|\partial_p \Delta^{n-2}(\cdot,t_0) \|_{\gamma}
   \end{align}
   
   Similarly we compute the operator norm:
   
   \begin{align}
-    &\sup_{p\subseteq u}\|\partial_p \Delta^n \|_{\mathrm{op},\gamma}\\
+    &\sup_{p\subseteq u}\|\partial_p \Delta^n \|_{\gamma}\\
     &\le 
     \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sup_{p\subseteq u} 
     \sum_{w\subseteq p} 
     \| \partial_{p\backslash w}(a ~
-    \partial_w \Delta^{n-1})(t,t_0)\|_{\mathrm{op}}\\
+    \partial_w \Delta^{n-1})(t,t_0)\|\\
     &+\sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}\sup_{p\subseteq u} 
     \sum_{w\subseteq p} 
     \|  (\partial_{p\backslash w}b ~
-    \partial_p \Delta^{n-2})(t,t_0) \|_{\mathrm{op}}\\
+    \partial_p \Delta^{n-2})(t,t_0) \|\\
     &\le
     \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
     \sup_{p\subseteq u} \sum_{w\subseteq p} 
     \int_{t_0}^{t}dt' 
     \| \partial_{p\backslash w}a(t,t') ~
-    \partial_p \Delta^{n-1}(t',t_0)\|_{\mathrm{op}}\\
+    \partial_p \Delta^{n-1}(t',t_0)\|\\
     &+ \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
     \sup_{p\subseteq u}\sum_{w\subseteq u} 
     \int_{t_0}^{t}dt'  
     \|  \partial_{p\backslash w}b(t,t') ~
-    \partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+    \partial_w \Delta^{n-2}(t',t_0) \|\\
     &\le
     \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
     \sup_{p\subseteq u} \sum_{w\subseteq p} 
     \int_{t_0}^{t}dt' 
-    \| \partial_{p\backslash w}a(t,t')\|_{\mathrm{op}}
-    \|\partial_w \Delta^{n-1}(t',t_0)\|_{\mathrm{op}}\\
+    \| \partial_{p\backslash w}a(t,t')\|
+    \|\partial_w \Delta^{n-1}(t',t_0)\|\\
     &+ \sup_{t\in[t_0,t_1]} e^{-\gamma(t-t_0)}
     \sup_{p\subseteq u} \sum_{w\subseteq p} 
     \int_{t_0}^{t}dt'  
-    \|  \partial_{p\backslash w}b(t,t')\|_{\mathrm{op}}
-   \|\partial_w \Delta^{n-2}(t',t_0) \|_{\mathrm{op}}\\
+    \|  \partial_{p\backslash w}b(t,t')\|
+   \|\partial_w \Delta^{n-2}(t',t_0) \|\\
    &\le
    \sup_{t\in[t_0,t_1]} e^{-\gamma t}
    \sup_{p\subseteq u} \sum_{w\subseteq p} 
    \int_{t_0}^{t}dt' e^{\gamma t'}
-   \| \partial_{p\backslash w}a \|_{\mathrm{op},0}
-   \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+   \| \partial_{p\backslash w}a \|_{0}
+   \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\gamma}\\
    &+ \sup_{t\in[t_0,t_1]} e^{-\gamma t}
    \sup_{p\subseteq u}\sum_{w\subseteq p} 
    \int_{t_0}^{t}dt'  e^{\gamma t}
-   \|  \partial_{u\backslash p}b\|_{\mathrm{op},0}
-  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+   \|  \partial_{u\backslash p}b\|_{0}
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\gamma}\\
   &\le
   \frac{1}{\gamma}\sup_{p\subseteq u} \sum_{w\subseteq p} 
-  \| \partial_{p\backslash w}a \|_{\mathrm{op},0}
-  \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+  \| \partial_{p\backslash w}a \|_{0}
+  \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\gamma}\\
   &+ \frac{1}{\gamma}
   \sup_{p\subseteq u} \sum_{w\subseteq p} 
-  \|  \partial_{p\backslash w}b\|_{\mathrm{op},0}
-  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}\\
+  \|  \partial_{p\backslash w}b\|_{0}
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\gamma}\\
   &\le
   \frac{2^{|u|}}{\gamma}
-  \sup_{u'\subseteq u}\| \partial_{u'}a \|_{\mathrm{op},0}
+  \sup_{u'\subseteq u}\| \partial_{u'}a \|_{0}
    \sup_{w\subseteq u} 
-  \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\mathrm{op},\gamma}\\
+  \|\partial_w \Delta^{n-1}(\cdot,t_0)\|_{\gamma}\\
   &+ \frac{2^{|u|}}{\gamma}
-  \sup_{u'\subseteq u}\| \partial_{u'}b \|_{\mathrm{op},0}
+  \sup_{u'\subseteq u}\| \partial_{u'}b \|_{0}
   \sup_{w\subseteq u}
-  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\mathrm{op},\gamma}
+  \|\partial_w \Delta^{n-2}(\cdot,t_0) \|_{\gamma}
   \end{align}
   
-  Introducing the abbreviation
+  We can summarise the last calculations more briefly
+  using the abbreviation
   \begin{equation}
   \alpha=\frac{2^{|u|+1}}{\gamma} \sup_{u'\subseteq u}
-  \left\{\|\partial_{u'}a\|_{\mathrm{op},0},
+  \left\{\|\partial_{u'}a\|_{0},
   \|\partial_{u'}b\|_{I_2,\infty},
-  \|\partial_{u'}b\|_{\mathrm{op},0}  \right\},
+  \|\partial_{u'}b\|_{0}  \right\}.
   \end{equation}
-  
-  we can thus summarise the last two calculations 
+  Here \(\alpha\) is finite. This can be seen as follows:
+  firstly, \(\partial_u b=U^0 \partial_u F^B_{\odd}U^0\) 
+  vanishes if \(|u|\ge 6\) because the factors 
+  \({Q'}^B\), \(Q^B\) and \(Z^B\) are all linear in 
+  \(B\) and the longest product of such operators 
+  appearing in \(b\) has three factors, analogously 
+  all derivatives \(\partial_u a=0\) for \(|b|\ge 3\).
+  Secondly, each of the operators  \({Q'}^C\), \(Q^C\) 
+  and \(Z^C\) are bounded for every \(C\in\mathcal{V}\),
+  hence the polynomials \(a\) and \(b\) of these 
+  operators are also bounded. This shows finiteness 
+  of the two operator norms appearing in the expression 
+  for \(\alpha\). For the Hilbert-Schmidt norm we 
+   see 
+  that \(\partial_u b\) is always a sum of terms 
+  where each term has a factor 
+  \(U^0 \partial_p F_{\odd}^B U^0\) with \(p\subseteq u\).
+  This factor has finite Hilbert-Schmidt norm due to 
+  the \(I_2\) estimate lemma 
+  \ref{F, G off diagonal hilbert schmidt}.
+
+  We can thus summarise the last two calculations 
   
   \begin{align}
   &\begin{pmatrix} \sup_{p\subseteq u} \|\partial_p \Delta^{n} \|_{\mathrm{op}+I_2,\gamma}\\
@@ -2076,7 +2124,7 @@ proving completeness.
   \(0<\alpha<0.5\) holds true, as can be seen from a quick 
   calculation:
   \begin{align}
-  \frac{\alpha}{2}(1+\sqrt{1+\frac{4}{\alpha}})<1 \\
+  \frac{\alpha}{2}\left(1+\sqrt{1+\frac{4}{\alpha}}\right)<1 \\
   \iff \sqrt{1+\frac{4}{\alpha}}<\frac{2}{\alpha}-1.
   \end{align}
   If \(\alpha\ge \frac{1}{2}\) or \(\alpha<0\) this inequality is not satisfied, otherwise
@@ -2095,25 +2143,28 @@ proving completeness.
   +\sup_{p\subseteq u} \|\partial_p \Delta^0\|^2_{\mathrm{op}+I_2,\gamma}}.
 \end{equation}
 
+The two summands in the last equation are finite due 
+to lemma \ref{F, G off diagonal hilbert schmidt}.
+
 That is, we have  
   \begin{equation}
   \sup_{p\subseteq u}
   \|\partial_p \Delta^n\|_{\mathrm{op}+I_2,\gamma}
   \le \lambda_+^n c
   \xrightarrow{n\rightarrow \infty} 0.
-  \end{equation} Hence also 
-  for \(m\in\mathbb{N}\) 
-  
+  \end{equation}
+  For \(2\le m\le n\) we obtain  
   \begin{align}
-  \sup_{p\subseteq u}\| \partial_p R^B_m -
-  \partial_p R^B_n\|_{\mathrm{op}+I_2,\gamma} \\
+  &\sup_{p\subseteq u}\| \partial_p R^B_n -
+  \partial_p R^B_m\|_{\mathrm{op}+I_2,\gamma} 
   \le 
-  \sum_{k=\min\{m,n\}}^{\max\{m,n\}-1}
+  \sum_{k=m}^{n-1}
   \sup_{p\subseteq u}
   \| \partial_p \Delta^k\|_{\mathrm{op}+I_2,\gamma} \\
-  \le 
-  |m-n| \lambda_+^{\min\{m,n\}} c
-  \xrightarrow{\min\{m,n\}\rightarrow \infty}0
+  &\le \sum_{k=m}^{\infty}
+  \lambda_+^k c
+  = \frac{\lambda_+^m }{1-\lambda_+} c
+  \xrightarrow{m\rightarrow \infty}0
   \end{align}
   since the the norms
   \(\|\cdot\|_{\mathrm{op}+I_2}\) and
@@ -2121,37 +2172,46 @@ That is, we have
   equivalent, we have just proven 
   that \(\partial_{[k]} R^B_m\) is a 
   Cauchy sequence with respect to the norm 
-  \(\|\cdot\|_{\mathrm{op}+I_2}\).
+  \(\|\cdot\|_{\mathrm{op}+I_2}\) and 
+  hence convergence by 
+  lemma \ref{completeness of I_2 odd}.
   
   
 \end{proof}
 
-The following lemma is 
-\begin{Lemma}
-For any \(n\in\mathbb{N}\) and 
-\(A,H_k\in\mathcal{V}\) for \(k\le n\)
-we have for any \(u\subset [n]\) 
+The following lemma is a necessary ingredient for
+theorem \ref{thm smoothness of S}. Morally, it 
+has already been proven in 
+\cite[Lemma 3.7]{ivp0}; however, as that paper
+was not concerned with multiple four-potentials 
+the lemma was not formulated general enough 
+for our needs here. So we restate it and 
+show how to modify the original proof.
+
+\begin{Lemma}[\(I_2\) estimates]\label{F, G off diagonal hilbert schmidt}
+Let \(k\in\mathbb{N}\) and 
+\(A,H_b\in\mathcal{V}\) for \(b\le k\). 
+Using the abbreviations introduced in \eqref{derivative set 1}
+and \eqref{derivative set 2}
+we have for any \(u\subset [k]\) 
 the following bounds:
 
-\begin{align}
-\|\partial_u U^0 F_{\odd} U^0\|_{I_2,0}&<\infty \\
-\|\partial_u G\|_{I_2,0}&<\infty.
+\begin{align}\label{I2 estimate 1}
+\|\partial_u U^0 F_{\odd}^{A+\sum_{b=1}^k H_b} U^0\|_{I_2,0}&<\infty \\\label{I2 estimate 2}
+\|\partial_u G^{A+\sum_{b=1}^k H_b}\|_{I_2,0}&<\infty.
 \end{align}
 \end{Lemma}
 \begin{proof}
 For \(B\in\mathcal{V}\) recall 
 \begin{align}
-  F^B_{\odd}:=& ((-{Q'}^B+Z^B_{\mathrm{ev}}-Q^BZ^B)(1+Q^B))_{\odd}\\
+  F^B_{\odd}:=& ((-{Q'}^B+Z^B_{\mathrm{ev}}-Q^BZ^B)(1+Q^B))_{\odd}\\\label{Fodd sum}
   =&-{Q'}^{B}+Z_{\ev}^B Q^B -Q^BZ^B_{\ev} - Q^B Z_{\odd}^B Q^B,\\
   G^B:=&- U^0Q^BQ^B \\
   +& U^0(-{Q'}^B+Z_{\mathrm{ev}}-Q^B Z^B)Q^B Q^B U^B (1+Q^B).
 \end{align}
 
-Also in this proof we will be using the abbreviations 
-for derivatives with respect to sets of four-potentials
-\eqref{derivative set 1},\eqref{derivative set 2}.
-Pick \(n\in\mathbb{N}\)
-and  \(A,B, H_k\in\mathcal{V}\) for \(k\le n\).
+Pick \(k\in\mathbb{N}\)
+and  \(A,B, H_b\in\mathcal{V}\) for \(b\le k\).
 
 According to \cite[lemma 3.7]{ivp0} the operators 
 \(U^0Z_{\ev}^B Q^B U^0,\) \(U^0 Q^B Z_{\ev}^B U^0,\) 
@@ -2180,23 +2240,23 @@ proving
 \end{align}
 and therefore also 
 \begin{equation}
-  \|\partial_u U^0 F_{\odd}^{A+\sum_{k=0}^n H_k}U^0\|_{I_2,0}<\infty 
-  \text{ and } \|\partial_u G^{A+\sum_{k=0}^n H_k}\|_{I_2,0}<\infty
+  \|\partial_u U^0 F_{\odd}^{A+\sum_{b=0}^k H_b}U^0\|_{I_2,0}<\infty 
+  \text{ and } \|\partial_u G^{A+\sum_{b=0}^k H_b}\|_{I_2,0}<\infty
 \end{equation}
-for any \(u\subseteq [n]\). 
+for any \(u\subseteq [k]\). 
 
 For the benefit of the reader,
-we will reproduce the proof of 
+we will reproduce the proof of the estimate
 \begin{equation}\label{HS property of G}
-  \|\partial_u G^{A+\sum_{k=0}^n H_k}\|_{I_2,0}<\infty,
+  \|\partial_u G^{A+\sum_{b=0}^k H_b}\|_{I_2,0}<\infty,
 \end{equation}
 to make clear the structure of the entire proof.
 
-The operator \(G^{A+\sum_{k=0}^n H_k}\) consists of 
+The operator \(G^{A+\sum_{b=0}^k H_b}\) consists of 
 two summands. Each summand is a product of operators 
-with operator norm uniformly bounded in time,
+with operator norm uniformly bounded in time and
 containing a factor of 
-\(Q^{A+\sum_{k=0}^n H_k} Q^{A+\sum_{k=0}^n H_k}\).
+\(Q^{A+\sum_{b=0}^k H_b} Q^{A+\sum_{b=0}^k H_b}\).
 All the other factors contributing to \(G\)
 stay bounded when differentiated and
 the map \(Q:\mathcal{V}\rightarrow I_2\) is 
@@ -2206,16 +2266,16 @@ linear, so the bound
 \end{equation}
 for general \(B,D\in\mathcal{V}\) will suffice to prove
 \eqref{HS property of G}. 
-\todo{ask why ivp0 (3.58) is useful.}
+
 
 Pick \(B,D\in\mathcal{V}\), we estimate 
 \begin{align}\label{QQ norm}
 \sup_{t\in \mathbb{R}}\| Q^B (t) Q^D(t)\|_{I_2}\\
 \le \sum_{\mu,\nu=0}^3 
-(\sup_{p,k,q\in\mathbb{R}^3} 
+\big(\sup_{p,k,q\in\mathbb{R}^3} 
 |P_+(p)\gamma^0\gamma^\mu P_-(k)\gamma^0\gamma^\nu P_+(q)|\\
 +\sup_{p,k,q\in\mathbb{R}^3} 
-|P_-(p)\gamma^0\gamma^\mu P_+(k)\gamma^0\gamma^\nu P_-(q)|)\\
+|P_-(p)\gamma^0\gamma^\mu P_+(k)\gamma^0\gamma^\nu P_-(q)|\big)\\\label{QQ norm end}
 \sup_{t\in\mathbb{R}}\left\| \int_{\mathbb{R}^3} dk 
 \frac{\hat{B}_\mu (t,p-k)\hat{D}_\nu(t,k-q)|}{(E(p)+E(k))(E(k)+E(q))} 
 \right\|_{I_2,(p,q)},
@@ -2223,10 +2283,11 @@ Pick \(B,D\in\mathcal{V}\), we estimate
 where the index in the norm indicates 
 with respect to which variables the integral of the norm 
 is to be performed. The prefactor is finite since 
-\(P_\pm (p)\) is a projector for any \(p\in\mathbb{R}^3\).
+\(P_\pm (p):\mathbb{C}^4\rightarrow\mathbb{C}^4\) 
+is a projector for any \(p\in\mathbb{R}^3\).
 Abbreviating 
 \begin{align}
-c:=\sum_{\mu,\nu=0}^3 
+\tilde{c}:=\sum_{\mu,\nu=0}^3 
 (\sup_{p,k,q\in\mathbb{R}^3} 
 |P_+(p)\gamma^0\gamma^\mu P_-(k)\gamma^0\gamma^\nu P_+(q)|\\
 +\sup_{p,k,q\in\mathbb{R}^3} 
@@ -2236,7 +2297,7 @@ and using the integral estimate lemma
 \cite[lemma 3.8 (iii)]{ivp0} we find
 \begin{align}\label{QQ estimate final}
 \eqref{QQ norm}\le 
-c~ C_{8,\text{of }\cite{ivp0}} \sum_{\mu,\nu=0}^3 
+\tilde{c}~ C_{8,\text{of }\cite{ivp0}} \sum_{\mu,\nu=0}^3 
 \sup_{t\in\mathbb{R}}\|\hat{B}_\mu(t) \|_{I_1} \|\hat{D}_{\nu}(t) \|_{I_2}.
 \end{align}
 Because of 
@@ -2244,6 +2305,18 @@ Because of
 \(\hat{B}(t),\hat{D}(t)\) are analytic functions
 decaying faster than any negative power at anfinity
 for any \(t\), so \eqref{QQ estimate final} is finite. 
+
+Also in order to proof the first estimate in 
+\eqref{I2 estimate 1} the proof of \cite[lemma 3.7]{ivp0}
+can be followed almost verbatim. 
+First one dissects \(F_{\odd}\) into the sum 
+\(U^0\eqref{Fodd sum}U^0\),
+next the summands have to be bounded individually.
+This is achieved by repeating the proof of the
+partial integration lemma \cite[lemma 3.6]{ivp0},
+estimates of the form of \eqref{QQ norm}-\eqref{QQ norm end}
+and making use of the integral estimate lemma 
+\cite[lemma 3.8]{ivp0}.
 
 \end{proof}
 
@@ -2254,7 +2327,7 @@ for any \(t\), so \eqref{QQ estimate final} is finite.
 
 
 
-\begin{Thm}[Propterties of Derivatives of S]
+\begin{Thm}[Properties of Derivatives of S]
 Let  \(A,H\in\mathcal{V}\), pick \(t_1\) 
 after \(\supp A\cup\supp H\) and \(t_0\)
 before \(\supp A\cup\supp H\), 
@@ -2262,34 +2335,27 @@ let \(T_1\in I_2(\mathcal{F})\)
 then the following equalities are satisfied:
 \begin{align}\notag
 &\partial_{H} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H}(t_1,t_0)P^-)\\\label{pull derivative into trace}
-&= \tr(T_1 P^+ U^{A}(t_0,t_1)\partial_{H} U^{A+H}(t_1,t_0)P^- )\\[0.5cm]\notag
-&\partial_{H} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H}(t_1,t_0)P^+)\\\label{pull derivative into trace2}
-&= \tr(T_1 P^- U^{A}(t_0,t_1)\partial_{H} U^{A+H}(t_1,t_0)P^+ ).
+&= \tr(T_1 P^\pm U^{A}(t_0,t_1)\partial_{H} U^{A+H}(t_1,t_0)P^\mp )
 \end{align}
 \end{Thm}
 \begin{proof}
 Let \(A,H\in\mathcal{V}\) and \(t_0,t_1\in\mathbb{R}\)
 and \(T_1\) be 
-as in the theorem. The trace is linear, so we have
-\begin{align}
-&\partial_{H} \tr(T_1 P^+ U^{A}(t_0,t_1)U^{A+H}(t_1,t_0)P^-)\\
-&=\lim_{\varepsilon\rightarrow 0} 
+as in the theorem. The proof of the two equalities is 
+analogous, so we only explicitly prove the first one.
+The trace is linear, so we have
+\begin{align}\notag
+&\bigg|
 \tr\left(T_1 P^+ U^{A}(t_0,t_1) 
 \frac{1}{\varepsilon}(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0))P^-\right)\\
-&=\lim_{\varepsilon\rightarrow 0} 
-\left\langle T_1^* ,  P^+ U^{A}(t_0,t_1) 
-\frac{1}{\varepsilon}\big(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\big)P^- \right\rangle_{I_2}.
+&\quad- \tr(T_1 P^+ U^{A}(t_0,t_1)\partial_{H}U^{A+H}(t_1,t_0)P^-)\bigg|\\\notag
+&\le \|T_1\|_{I_2} \bigg\|  P^+ U^{A}(t_0,t_1) 
+\frac{1}{\varepsilon}\big(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\big)P^- \\\label{derivative trace estimate}
+&\quad-P^+ U^{A}(t_0,t_1)\partial_{H}U^{A+H}(t_1,t_0)P^-\bigg\|_{I_2}
 \end{align}
-Now the scalar product of Hilbert-Schmidt operators is 
-continuous with respect to the Hilbert-Schmidt norm, so if 
-the limit 
-\begin{equation}\label{hilbert schmidt limit}
-  \lim_{\varepsilon\rightarrow 0} P^+ U^{A}(t_0,t_1) 
-  \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)P^-
-\end{equation}
 
-exists with respect to the Hilbert-Schmidt norm we are done. 
-We insert the identity in the form \(P^++P^-\) and obtain
+For the first summand we insert the identity in the 
+form \(P^++P^-\) and obtain
 \begin{align}
 P^+ U^{A}(t_0,t_1) 
   \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)P^-\\
@@ -2298,34 +2364,30 @@ P^+ U^{A}(t_0,t_1)
 +P^+ U^{A}(t_0,t_1) P^-
 \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)P^-.
 \end{align}
+Analogously for the second summand.
 Now because of the Smoothness of S theorem 
 \ref{thm smoothness of S}
 we know that 
 \begin{align}
   P^-
   \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)
-  P^-\xrightarrow[\|\cdot\|_{\mathrm{op}}]{\varepsilon\rightarrow 0} P^- \partial_H U^{A+H}(t_1,t_0)P^-\\
+  P^-\xrightarrow[\|\cdot\|]{\varepsilon\rightarrow 0} P^- \partial_H U^{A+H}(t_1,t_0)P^-\\
   P^+
   \frac{1}{\varepsilon}\left(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\right)
   P^-\xrightarrow[\|\cdot\|_{I_2}]{\varepsilon\rightarrow 0} P^+ \partial_H U^{A+H}(t_1,t_0)P^-
 \end{align}
-holds true. Because \(P^+ U^A(t_0,t_1)P^-\in I_2(\mathcal{F})\)
-and because of the general rules \todo{check def of set of bounded operators}
+holds true. Hence we find in total 
 \begin{align}
-  \forall T\in\mathcal{B}(\mathcal{F}) &
-  \forall (T_{n}')_{n\in\mathbb{N}}\xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty}T'\in I_2:\\
-  &T T_{n}'  \xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty}T T'\in I_2(\mathcal{F})\\
-\forall T\in I_2(\mathcal{F}) &
-\forall (T_n')_{n\in\mathbb{N}}\subset \mathcal{B}(\mathcal{F}), 
-T_{n}'\xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty}T'\in  
-\mathcal{B}(\mathcal{F}):\\
-&T T_{n}'  \xrightarrow[\|\cdot\|_{I_2}]{n\rightarrow \infty}
-T T'\in I_2(\mathcal{F})
+&\frac{\eqref{derivative trace estimate}}{\|T_1\|_{I_2}}\\
+&\le \notag
+\bigg\|  P^+ U^{A}(t_0,t_1)\bigg\| \bigg\| P^+
+\frac{1}{\varepsilon}\big(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\big)P^- \\
+&\quad- P^+\partial_{H}U^{A+H}(t_1,t_0)P^-\bigg\|_{I_2}\\
+&+\bigg\|  P^+ U^{A}(t_0,t_1)P^- \bigg\| \bigg\|  \notag
+\frac{1}{\varepsilon}\big(U^{A+\varepsilon H}(t_1,t_0)-U^{A}(t_1,t_0)\big)P^- \\
+&\quad-\partial_{H}U^{A+H}(t_1,t_0)P^-\bigg\|_{I_2}\xrightarrow{\varepsilon \rightarrow 0} 0.
 \end{align}
-the limit \eqref{hilbert schmidt limit} exists in the 
-Hilbert-Schmidt topology. 
-The proof of \eqref{pull derivative into trace2} is 
-completely analogous.
+
 \end{proof}
 
 
@@ -2398,13 +2460,11 @@ For \((A,B),(B,C), (C,A)\in\dom\overline{S}\), we define
 \gamma_{A,B,C}&:=\ag(\det_{\mathcal{H}^-} (P^- S_{A,B} P^- S_{B,C} P^- S_{C,A}P^-)),\\
 \Gamma_{A,B,C}&:=\ag(\gamma_{A,B,C}).
 \end{align}
-We will see in lemma \ref{gamma attri} that \(\gamma_{A,B,C}\neq 0\) and
-\( P^-S_{A,B}P^-S_{B,C}P^-S_{C,A}-1\) is traceclass, so that \(\Gamma_{A,B,C}\) is well-defined.
-Lastly we introduce the partial derivative in the direction of any four-potential \(F\) by
-\begin{equation}
-\partial_F T(F):=\partial_{\varepsilon}T(\varepsilon F)|_{\varepsilon =0}
-\end{equation}
-and for  \(A,B,C\in\mathcal{V}\) the function
+We will see in lemma \ref{gamma attri} that 
+\(\gamma_{A,B,C}\neq 0\) and
+\( P^-S_{A,B}P^-S_{B,C}P^-S_{C,A}-1\) is traceclass, so 
+that \(\Gamma_{A,B,C}\) is well-defined.
+Lastly we introduce for \(A,B,C\in\mathcal{V}\) the function
 \begin{equation}
 c_A(F,G):=-i \partial_F \partial_G  \Im \tr [P^- S_{A,A+F} P^+ S_{A,A+G} P^-] .
 \end{equation}
@@ -5925,14 +5985,6 @@ The last conjecture is proven directly in section \ref{sec:proof simple formula}
 %\renewcommand{\section}[2]{}
 \bibliographystyle{amsplain}
 \bibliography{ref}
-
-%\bibliography{../../aarbeit/felix}
-%\include{bib}
-%\endgroup
-
-\chapter{Cooperating Researchers} 
-Prof. Dr. Franz Merkl (LMU)\\
-Junior Research Group Leader Dr. Dirk Deckert (LMU)
 
 
 

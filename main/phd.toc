@@ -12,35 +12,34 @@
 \contentsline {subsubsection}{\numberline {2.2.1.4}Overview.}{18}{subsubsection.2.2.1.4}% 
 \contentsline {subsection}{\numberline {2.2.2}Setting of the problem}{18}{subsection.2.2.2}% 
 \contentsline {subsubsection}{\numberline {2.2.2.1}Definition of the integral operator on test functions}{18}{subsubsection.2.2.2.1}% 
-\contentsline {subsection}{\numberline {2.2.3}Choice of Banach space}{22}{subsection.2.2.3}% 
-\contentsline {subsubsection}{\numberline {2.2.3.1}Possible problems with the choice of space.}{22}{subsubsection.2.2.3.1}% 
-\contentsline {subsubsection}{\numberline {2.2.3.2}A Banach space adapted to our integral equation.}{23}{subsubsection.2.2.3.2}% 
-\contentsline {subsection}{\numberline {2.2.4}Results}{25}{subsection.2.2.4}% 
-\contentsline {subsubsection}{\numberline {2.2.4.1}Results for a Minkowski half space}{25}{subsubsection.2.2.4.1}% 
-\contentsline {subsubsection}{\numberline {2.2.4.2}Results for a FLRW universe with a Big Bang singularity}{27}{subsubsection.2.2.4.2}% 
-\contentsline {subsection}{\numberline {2.2.5}Proofs}{33}{subsection.2.2.5}% 
-\contentsline {subsubsection}{\numberline {2.2.5.1}Proof of Lemma \ref {thm:freesolutionsinbanach}}{33}{subsubsection.2.2.5.1}% 
-\contentsline {subsubsection}{\numberline {2.2.5.2}Proof of Lemma \ref {thm:boundsa}}{35}{subsubsection.2.2.5.2}% 
-\contentsline {subsubsection}{\numberline {2.2.5.3}Proof of Theorem \ref {thm:minkhalfspace}}{42}{subsubsection.2.2.5.3}% 
-\contentsline {paragraph}{\numberline {2.2.5.3.1}Proof of Thm. \ref {thm:minkhalfspace}:}{43}{paragraph.2.2.5.3.1}% 
-\contentsline {section}{\numberline {2.3}Conclusion and outlook}{45}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}KG-Particles Interacting Directly Along Lightcones}{48}{section.2.4}% 
+\contentsline {subsubsection}{\numberline {2.2.2.2}Choice of Banach space}{22}{subsubsection.2.2.2.2}% 
+\contentsline {paragraph}{\numberline {2.2.2.2.1}Possible problems with the choice of space.}{22}{paragraph.2.2.2.2.1}% 
+\contentsline {paragraph}{\numberline {2.2.2.2.2}A Banach space adapted to our integral equation.}{23}{paragraph.2.2.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Results}{25}{subsection.2.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.1}Results for a Minkowski half space}{25}{subsubsection.2.2.3.1}% 
+\contentsline {subsubsection}{\numberline {2.2.3.2}Results for a FLRW universe with a Big Bang singularity}{27}{subsubsection.2.2.3.2}% 
+\contentsline {subsection}{\numberline {2.2.4}Proofs}{33}{subsection.2.2.4}% 
+\contentsline {subsubsection}{\numberline {2.2.4.1}Proof of lemma \ref {thm:freesolutionsinbanach}}{33}{subsubsection.2.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.2.4.2}Proof of Lemma \ref {thm:boundsa}}{35}{subsubsection.2.2.4.2}% 
+\contentsline {subsubsection}{\numberline {2.2.4.3}Proof of Theorem \ref {thm:minkhalfspace}}{42}{subsubsection.2.2.4.3}% 
+\contentsline {paragraph}{\numberline {2.2.4.3.1}Proof of Thm. \ref {thm:minkhalfspace}:}{43}{paragraph.2.2.4.3.1}% 
+\contentsline {subsection}{\numberline {2.2.5}Conclusion and outlook}{45}{subsection.2.2.5}% 
+\contentsline {section}{\numberline {2.3}KG-Particles Interacting Directly Along Lightcones}{48}{section.2.3}% 
 \contentsline {chapter}{\chapternumberline {3}Quantum Field Theoretic Approach to Interactions}{49}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}The Relationship Between Hadamard States, the Fermionic Projector, and Admissible Polarisation Classes}{50}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Analyticity of the One Particle Scattering Operator}{50}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}Geometric Construction of the Phase}{65}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Main Result of Construction}{68}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Proofs}{69}{subsection.3.3.2}% 
-\contentsline {section}{\numberline {3.4}Simple Formula for the Scattering Operator}{103}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Defining One-Particle Scattering-Matrix}{103}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Construction of the Second Quantised Scattering-Matrix}{104}{subsection.3.4.2}% 
-\contentsline {subsection}{\numberline {3.4.3}Differential second quantisation}{107}{subsection.3.4.3}% 
-\contentsline {subsection}{\numberline {3.4.4}Presentation and Proof of the Formula}{123}{subsection.3.4.4}% 
-\contentsline {subsection}{\numberline {3.4.5}Quantitative Estimates}{135}{subsection.3.4.5}% 
-\contentsline {chapter}{Appendix}{155}{appendix*.36}% 
-\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{155}{section*.37}% 
-\contentsline {subsection}{Guessing Equations}{155}{section*.38}% 
-\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{158}{section*.40}% 
-\contentsline {subsection}{Solution to Recursive Equation}{166}{section*.42}% 
-\contentsline {chapter}{Bibliography}{179}{appendix*.44}% 
-\contentsline {chapter}{Cooperating Researchers}{185}{appendix*.45}% 
+\contentsline {section}{\numberline {3.4}Simple Formula for the Scattering Operator}{104}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Defining One-Particle Scattering-Matrix}{104}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Construction of the Second Quantised Scattering-Matrix}{105}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.3}Differential second quantisation}{108}{subsection.3.4.3}% 
+\contentsline {subsection}{\numberline {3.4.4}Presentation and Proof of the Formula}{124}{subsection.3.4.4}% 
+\contentsline {subsection}{\numberline {3.4.5}Quantitative Estimates}{136}{subsection.3.4.5}% 
+\contentsline {chapter}{Appendix}{155}{appendix*.35}% 
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{155}{section*.36}% 
+\contentsline {subsection}{Guessing Equations}{155}{section*.37}% 
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{158}{section*.39}% 
+\contentsline {subsection}{Solution to Recursive Equation}{166}{section*.41}% 
+\contentsline {chapter}{Bibliography}{179}{appendix*.43}% 

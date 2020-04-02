@@ -2250,15 +2250,77 @@ The proof can be found in Sec.\@ \ref{sec:proofexistence}.
 %%%
 \begin{Remarks}
 	\begin{enumerate}
-		\item \textit{Comparison of Thms. \ref{thm:exponentialg} and \ref{thm:existence} in the massless case.} On the first glance, the result of Thm.\@ \ref{thm:exponentialg} looks stronger in the sense that for $g(t)=e^{\gamma t}$, the estimate of $\|A_0\|$ goes with $\gamma^{-2}$ while for $g(t)=(1+\alpha t^2 )e^{\alpha t^2/2}$, the estimate of $\|A_0\|$ goes with $\alpha^{-1}$. However, one should note that $\gamma$ is the constant in front of $t$ while $\alpha$ occurs in combination with $t^2$. Thus, if one wants to draw a comparison between these different cases at all, then it should be between $\gamma$ and $\sqrt{\alpha}$. Of course, the main difference between the two theorems is the admitted growth rate of the solutions. In this regard, Thm.\@ \ref{thm:exponentialg} contains the stronger statement.
+    \item \textit{Comparison of Thms. 
+    \ref{thm:exponentialg} and \ref{thm:existence} in 
+    the massless case.} On the first glance, the result 
+    of Thm.\@ \ref{thm:exponentialg} looks stronger in 
+    the sense that for $g(t)=e^{\gamma t}$, the estimate 
+    of $\|A_0\|$ goes with $\gamma^{-2}$ while for 
+    $g(t)=(1+\alpha t^2 )e^{\alpha t^2/2}$, the 
+    estimate of $\|A_0\|$ goes with $\alpha^{-1}$. 
+    However, one should note that $\gamma$ is the 
+    constant in front of $t$ while $\alpha$ occurs in 
+    combination with $t^2$. Thus, if one wants to draw 
+    a comparison between these different cases at all, 
+    then it should be between $\gamma$ and 
+    $\sqrt{\alpha}$. Of course, the main difference 
+    between the two theorems is the admitted growth 
+    rate of the solutions. In this regard, Thm.\@ 
+    \ref{thm:exponentialg} contains the stronger 
+    statement.
 	%
-		\item A \textit{physically realistic value of $\lambda$} is $\frac{1}{137}$, the value of the fine structure constant. In that case, $\alpha$ need not even be particularly large in order for condition \eqref{eq:condexistencemassive} to be satisfied.
+    \item A \textit{physically realistic value of 
+    $\lambda$} is $\frac{1}{137}$, the value of the 
+    fine structure constant. In that case, $\alpha$ 
+    need not even be particularly large in order for 
+    condition \eqref{eq:condexistencemassive} to be 
+    satisfied.
 	%
-		\item \textit{Initial value problem.} By the integral equation \eqref{eq:inteq}, we obtain that the solution $\psi$ satisfies $\psi(0,\vx,0,\vy) = \psi^\free(0,\vx,0,\vy)$. If $\psi^\free$ is a solution of the free multi-time Klein-Gordon equations, then it is itself determined by initial data at $x_1^0,x_2^0=0$. (As the Klein-Gordon equation is of second order in time, these initial data include data for $\partial_{x^0}\psi$, $\partial_{y^0}\psi$ and $\partial_{x^0} \partial_{y^0} \psi$, see \cite[chap. 5]{phd_nickel}.) Thus, we find that $\psi$ is determined by these data at $x_1^0,x_2^0=0$ as well. Note that for later times, $\psi$ and $\psi^\free$ do not, in general, coincide and consequently a similar statement does not hold.
+    \item \textit{Initial value problem.} By the 
+    integral equation \eqref{eq:inteq}, we obtain that 
+    the solution $\psi$ satisfies $\psi(0,\vx,0,\vy) = 
+    \psi^\free(0,\vx,0,\vy)$. If $\psi^\free$ is a 
+    solution of the free multi-time Klein-Gordon 
+    equations, then it is itself determined by initial 
+    data at $x_1^0,x_2^0=0$. (As the Klein-Gordon 
+    equation is of second order in time, these initial 
+    data include data for $\partial_{x^0}\psi$, 
+    $\partial_{y^0}\psi$ and $\partial_{x^0} 
+    \partial_{y^0} \psi$, see 
+    \cite[chap. 5]{phd_nickel}.) Thus, we find that 
+    $\psi$ is determined by these data at 
+    $x_1^0,x_2^0=0$ as well. Note that for later 
+    times, $\psi$ and $\psi^\free$ do not, in general, 
+    coincide and consequently a similar statement does 
+    not hold.
 	%
-	\item \textit{Finite propagation speed.} The theorem implies that $\psi = \sum_{k=0}^\infty A^k\psi^\free$. As $(A \psi^\free)(x,y)$ involves only values of $\psi^\free$ in $\past(x) \times \past(y)$ where $\past(x)$ denotes the causal past of $x \in \frac{1}{2}\M$ (see Eqs.\@ \eqref{eq:defa0}, \eqref{eq:defa1}, \eqref{eq:defa2}, \eqref{eq:defa12}), so do $A^k \psi^\free$ for all $k \in \N$ and $\psi$. Therefore, we obtain: if the initial data for $\psi^\free$ at $x^0 = 0 = y^0$ are compactly supported in a region $R \subset \left( \{ 0\} \times \R^3\right)^2$, then for all Cauchy surfaces $\Sigma \subset \frac{1}{2}\M$, $\psi|_{\Sigma \times \Sigma}$ is supported in the causally grown set  $\text{Gr}(R,\Sigma) = \left(\bigcup_{(x,y)\in R} \future(x) \times \future(y) \right) \cap (\Sigma \times \Sigma)$ where $\future(x)$ stands for the causal future of $x \in \frac{1}{2}\M$.
+  \item \textit{Finite propagation speed.} The theorem 
+  implies that \linebreak 
+  $\psi = \sum_{k=0}^\infty A^k\psi^\free$. 
+  As $(A \psi^\free)(x,y)$ involves only values of 
+  $\psi^\free$ in $\past(x) \times \past(y)$ where 
+  $\past(x)$ denotes the causal past of $x \in 
+  \frac{1}{2}\M$ (see Eqs.\@ \eqref{eq:defa0}, 
+  \eqref{eq:defa1}, \eqref{eq:defa2}, 
+  \eqref{eq:defa12}), so do $A^k \psi^\free$ for 
+  all $k \in \N$ and $\psi$. Therefore, we obtain: 
+  if the initial data for $\psi^\free$ at $x^0 = 0 
+  = y^0$ are compactly supported in a region 
+  $R \subset \left( \{ 0\} \times \R^3\right)^2$, 
+  then for all Cauchy surfaces $\Sigma \subset 
+  \frac{1}{2}\M$, $\psi|_{\Sigma \times \Sigma}$ is 
+  supported in the causally grown set  
+  $\text{Gr}(R,\Sigma) = \left(\bigcup_{(x,y)\in R} 
+  \future(x) \times \future(y) \right) \cap 
+  (\Sigma \times \Sigma)$ where $\future(x)$ stands 
+  for the causal future of $x \in \frac{1}{2}\M$.
 %
-	\item \textit{Square integrable solutions.} As a consequence of the previous item, compactly supported and bounded initial data for $\psi^\free$ lead to a compactly supported and bounded solution $\psi$. In particular, this implies that $\psi(x^0,\cdot,y^0)$ lies in $L^2(\R^6)$ for all times $x^0,y^0\geq 0$.
+  \item \textit{Square integrable solutions.} As a 
+  consequence of the previous item, compactly supported 
+  and bounded initial data for $\psi^\free$ lead to a 
+  compactly supported and bounded solution $\psi$. In 
+  particular, this implies that $\psi(x^0,\cdot,y^0)$ 
+  lies in $L^2(\R^6)$ for all times $x^0,y^0\geq 0$.
 	\end{enumerate}
 \end{Remarks}
 
@@ -2266,23 +2328,42 @@ The proof can be found in Sec.\@ \ref{sec:proofexistence}.
 %%%%%
 \subsubsection{The $N$-particle case} \label{sec:Npart}
 
-Here we extend Thm.\@ \ref{thm:existence} from two to $N\geq 3$ scalar particles. While there are different possibilities to generalize the two-particle integral equation \eqref{eq:inteq}, we focus on the one advocated in \cite{direct_interaction_quantum} as the most promising. For
+Here we extend Thm.\@ \ref{thm:existence} from two to 
+$N\geq 3$ scalar particles. While there are different 
+possibilities to generalize the two-particle integral 
+equation \eqref{eq:inteq}, we focus on the one 
+advocated in \cite{direct_interaction_quantum} as the 
+most promising. For
 \begin{equation}
 	\psi : \big(\tfrac{1}{2}\M\big)^N \rightarrow \CC,~~~~~(x_1,...,x_N) \mapsto \psi(x_1,...,x_N)
 \end{equation}
 we consider the integral equation
-\begin{align}
-	\psi(x_1,...,x_N) ~=~ &\psi^\free(x_1,...,x_N) +\frac{ \lambda}{4\pi} \sum_{i,j =1,...,N; \, i<j} \int_{\tfrac{1}{2}\M} d^4 x_i \int_{\tfrac{1}{2}\M} d^4 x_j~G^\ret_i(x_i-x_i') \nonumber\\
-&\times ~G^\ret(x_j-x_j')\delta((x_i'-x_j')^2) \psi(x_1,...,x_i, ...,x_j,..., x_N).
-	\label{eq:npartint}
+\begin{align}\label{eq:npartint}
+  \psi(x_1,...,x_N) &~=~ \psi^\free(x_1,...,x_N) +\frac{ \lambda}{4\pi} \sum_{i,j =1,...,N; \, i<j}\\
+&\times \int_{\tfrac{1}{2}\M} d^4 x_i \int_{\tfrac{1}{2}\M} d^4 x_j~G^\ret_i(x_i-x_i')G^\ret(x_j-x_j') \nonumber\\
+&\times \delta((x_i'-x_j')^2) \psi(x_1,...,x_i, ...,x_j,..., x_N).\notag
 \end{align}
-Here, $\psi^\free$ is again a solution of the free Klein-Gordon equations $(\Box_k + m_k^2)\phi(x_k)$ in each spacetime variable and $G^\ret_k$ stands for the retarded Green's function of the operator $(\Box_k + m_k^2)$, $k=1,2,...,N$.
+Here, $\psi^\free$ is again a solution of the free 
+Klein-Gordon equations $(\Box_k + m_k^2)\phi(x_k)$ in 
+each spacetime variable and $G^\ret_k$ stands for the 
+retarded Green's function of the operator 
+$(\Box_k + m_k^2)$, $k=1,2,...,N$.
 
-Eq.\@ \eqref{eq:npartint} is written down in an informal way. To define a rigorous version, let $\psi \in \mathcal{S}\big( (\tfrac{1}{2}\M)^N\big)$ be a test function. Moreover, let $A^{(ij)}$ be the integral operator of the two-particle problem acting on the variables $x_i$ and $x_j$ instead of $x = x_1$ and $y=x_2$. We define
+Eq.\@ \eqref{eq:npartint} is written down in an 
+informal way. To define a rigorous version, let 
+$\psi \in \mathcal{S}\big( (\tfrac{1}{2}\M)^N\big)$ 
+be a test function. Moreover, let $A^{(ij)}$ be the 
+integral operator of the two-particle problem acting 
+on the variables $x_i$ and $x_j$ instead of $x = x_1$ 
+and $y=x_2$. We define
 \begin{equation}
 	\,^{(N)}\! A ~=~ \sum_{i,j =1,...,N; \, i<j} A^{(ij)}.
 \end{equation}
-As will be shown below, $\! \,^{(N)}\! A$ can be linearly extended to a bounded operator on the Banach space $\! \,^{(N)}\!\Banach_g$. That space is defined as the completion of $\mathcal{S}\big( (\tfrac{1}{2}\M)^N\big)$ with respect to the norm
+As will be shown below, $\! \,^{(N)}\! A$ can be 
+linearly extended to a bounded operator on the Banach 
+space $\! \,^{(N)}\!\Banach_g$. That space is defined 
+as the completion of $\mathcal{S}\big( 
+  (\tfrac{1}{2}\M)^N\big)$ with respect to the norm
 \begin{equation}
 	\|\psi \|_g ~=~ \esssup_{x_1,...,x_N \in \frac{1}{2}\M} \frac{|\psi|(x_1,...,x_N)}{g(x_1^0)\cdots g(x_N^0)},
 \end{equation}
@@ -2293,77 +2374,166 @@ Then we take the equation
 	\,^{(N)}\! A ~=~\psi^\free + \! \,^{(N)}\! A \psi.
 \label{eq:npartintabstract}
 \end{equation}
-to be the rigorous version of \eqref{eq:npartint} on $\! \,^{(N)}\!\Banach_g$.
+to be the rigorous version of \eqref{eq:npartint} on 
+$\! \,^{(N)}\!\Banach_g$.
 
-With these preparations, we are ready to formulate the $N$-particle existence and uniqueness theorem.
+With these preparations, we are ready to formulate 
+the $N$-particle existence and uniqueness theorem.
 
 %%%%%
 \begin{Thm}[Existence of dynamics for $N$ particles.]
 	\label{thm:Npart}~\\
 		For any $\alpha > 0$, let $g(t) = (1+\alpha t^2)e^{\alpha t^2/2}$. Then the operator $\! \,^{(N)}\! A$ can be linearly extended to a bounded operator on $\! \,^{(N)}\!\Banach_g$ with norm
 	\begin{equation}
-		\|\! \,^{(N)}\! A\| ~\leq~\frac{\lambda}{8\pi \alpha} \sum_{i,j =1,...,N; \, i<j}  \left( \frac{1}{4} + \frac{5(m_i^2 + m_j^2)}{2} \frac{1}{\alpha} + \frac{m_i^2 \, m_j^2}{10} \frac{1}{\alpha^2} \right).
+    \|\! \,^{(N)}\! A\| \leq\frac{\lambda}{8\pi \alpha}\! \sum_{i,j =1,...,N; \, i<j} \! 
+    \left( \frac{1}{4} \!+\! \frac{5(m_i^2 + m_j^2)}{2} \frac{1}{\alpha} 
+    \!+ \!\frac{m_i^2 \, m_j^2}{10} \frac{1}{\alpha^2} \right).
 	\end{equation}
-	If $\alpha > 0$ is such that this expression is strictly smaller than one, the integral equation \eqref{eq:npartintabstract} has a unique solution $\psi \in \! \,^{(N)}\!\Banach_g$ for every $\psi^\free \in \! \,^{(N)}\!\Banach_g$.
+  If $\alpha > 0$ is such that this expression is 
+  strictly smaller than one, the integral equation 
+  \eqref{eq:npartintabstract} has a unique solution 
+  $\psi \in \! \,^{(N)}\!\Banach_g$ for every 
+  $\psi^\free \in \! \,^{(N)}\!\Banach_g$.
 \end{Thm}
 
-The proof follows straightforwardly from that of Thm.\@ \ref{thm:existence} using
+The proof follows straightforwardly from that of 
+Thm.\@ \ref{thm:existence} using
 \begin{equation}
 	\|\! \,^{(N)}\! A\| \leq \sum_{i,j =1,...,N; \, i<j} \| A^{(ij)}\|_g.
 \end{equation}
-For the norms of the operators $A^{(ij)}$, one can use the previous expressions as these operators act only as the identity on variables $x_k$ with $k \notin \{i,j\}$.
+For the norms of the operators $A^{(ij)}$, one can 
+use the previous expressions as these operators act 
+only as the identity on variables $x_k$ with 
+$k \notin \{i,j\}$.
 
 %%%
 \begin{Remark}
-	To the best of our knowledge, Thm.\@ \ref{thm:Npart} is the first result about the existence and uniqueness of solutions of multi-time integral equations for $N$ particles. While for the present contraction argument the generalization to $N$ particles has been straightforward, this is not the case for other works. For example, the Volterra iterations used in \cite{mtve} become increasingly complicated with increasing particle number $N$. For Dirac particles,  a similar technique as ours was used in \cite{selfDirac}. However, as the Dirac Green's functions contain distributional derivatives, one has to control weak derivatives of the solutions, and the number of such derivatives depends on $N$. That situation also does not allow for such a straightforward generalization to $N$ particles as has been possible here.
+  To the best of our knowledge, Thm.\@ \ref{thm:Npart} 
+  is the first result about the existence and 
+  uniqueness of solutions of multi-time integral 
+  equations for $N$ particles. While for the present 
+  contraction argument the generalization to $N$ 
+  particles has been straightforward, this is not 
+  the case for other works. For example, the Volterra 
+  iterations used in \cite{mtve} become increasingly 
+  complicated with increasing particle number $N$. For 
+  Dirac particles,  a similar technique as ours was 
+  used in \cite{selfDirac}. However, as the Dirac 
+  Green's functions contain distributional derivatives, 
+  one has to control weak derivatives of the solutions, 
+  and the number of such derivatives depends on $N$. 
+  That situation also does not allow for such a 
+  straightforward generalization to $N$ particles as 
+  has been possible here.
 \end{Remark}
 
 
 %%%%%
-\subsubsection{On the possible origin of a cutoff in time}
+\subsubsection{On the possible origin of a cutoff in 
+time}
 \label{sec:curvedspacetime}
 
-So far, we have assumed a cutoff in time. In the way this has been treated so far, this cutoff breaks the manifest Poincar\'e invariance of our integral equation. In this section, we demonstrate at a particular (simple and tractable) example that such a cutoff can arise naturally if the considered spacetime has a Big Bang singularity. Then the Big Bang defines the initial time. To consider a simple example is necessary as otherwise the Green's functions may not be known in detail, and in that case it would not be possible to explicitly define the integral operator, let alone to carry out an analysis of that operator comparable to the one before.
+So far, we have assumed a cutoff in time. In the way 
+this has been treated so far, this cutoff breaks the 
+manifest Poincar\'e invariance of our integral 
+equation. In this section, we demonstrate at a 
+particular (simple and tractable) example that such a 
+cutoff can arise naturally if the considered spacetime 
+has a Big Bang singularity. Then the Big Bang defines 
+the initial time. To consider a simple example is 
+necessary as otherwise the Green's functions may not 
+be known in detail, and in that case it would not be 
+possible to explicitly define the integral operator, 
+let alone to carry out an analysis of that operator 
+comparable to the one before.
 
-Our example consists of two massless scalar particles which, in absence of interactions, obey the conformally invariant wave equation on a curved spacetime $\mathcal{M}$ with metric g,
+Our example consists of two massless scalar particles 
+which, in absence of interactions, obey the conformally 
+invariant wave equation on a curved spacetime 
+$\mathcal{M}$ with metric g,
 \begin{equation}
 	\left( \Box_g - \xi R \right) \chi = 0,
 	\label{eq:conformalwaveeq}
 \end{equation}
-where $R$ denotes the Ricci scalar and in 1+3 dimensions $\xi = \frac{1}{6}$.
+where $R$ denotes the Ricci scalar and in 1+3 
+dimensions $\xi = \frac{1}{6}$.
 
-We consider these particles on a flat Friedman-Lema\^itre-Robertson-Walker (FLRW) spacetime which is described by the metric
+We consider these particles on a flat 
+Friedman-Lema\^itre-Robertson-Walker (FLRW) spacetime 
+which is described by the metric
 \begin{equation}
 	ds^2 = a^2(\eta) \left( d\eta^2 - dr^2 - r^2 d \Omega^2 \right),
 \end{equation}
-where $\eta$ denotes conformal time, $d \Omega$ denotes the surface measure on $\mathbb{S}^2$ and $a(\eta)$ is the so-called \textit{scale function}, a continuous function with $a(0) = 0$ and $a(\eta) > 0$ for $\eta >0$. This form makes it obvious that the spacetime is conformally equivalent to a Minkowski half space $\tfrac{1}{2}\M$, with conformal factor $a(\eta)$.
+where $\eta$ denotes conformal time, $d \Omega$ 
+denotes the surface measure on $\mathbb{S}^2$ and 
+$a(\eta)$ is the so-called \textit{scale function}, a 
+continuous function with $a(0) = 0$ and $a(\eta) > 0$ 
+for $\eta >0$. This form makes it obvious that the 
+spacetime is conformally equivalent to a Minkowski 
+half space $\tfrac{1}{2}\M$, with conformal factor 
+$a(\eta)$.
 
-In this case, it is well-known that the Green's functions of \eqref{eq:conformalwaveeq} on the flat FLRW spacetime $\mathcal{M}$ can be obtained from those of the usual wave equation on $\tfrac{1}{2}\M$ as follows (using coordinates $x=(\eta,\vx)$ and $x'=(\eta',\vx')$ with $\eta,\eta' \in [0,\infty)$ and $\vx,\vx' \in \R^3$; see \cite{lienertcurved} for a more detailed explanation):
+In this case, it is well-known that the Green's 
+functions of \eqref{eq:conformalwaveeq} on the flat 
+FLRW spacetime $\mathcal{M}$ can be obtained from 
+those of the usual wave equation on $\tfrac{1}{2}\M$ 
+as follows (using coordinates $x=(\eta,\vx)$ and 
+$x'=(\eta',\vx')$ with $\eta,\eta' \in [0,\infty)$ 
+and $\vx,\vx' \in \R^3$; see \cite{lienertcurved} for 
+a more detailed explanation):
 \begin{equation}
 	G_{\mathcal{M}}(x,x') ~=~ \frac{1}{a(\eta)} \frac{1}{a(\eta')} G_{\frac{1}{2}\M}(x,x').
 \end{equation}
-Inserting the well-known expression for the retarded and symmetric Green's functions on $\tfrac{1}{2}\M$ (see \eqref{eq:gretkg}) yields:
+Inserting the well-known expression for the retarded 
+and symmetric Green's functions on $\tfrac{1}{2}\M$ 
+(see \eqref{eq:gretkg}) yields:
 \begin{align}
 	G_{\mathcal{M}}^\ret(x,x') ~&=~ \frac{1}{4\pi} \frac{1}{a(\eta) a(\eta')} \frac{\delta(\eta - \eta' -|\vx-\vx'|)}{|\vx-\vx'|}\nonumber\\
 G_{\mathcal{M}}^\sym(x,x') ~&=~ \frac{1}{4\pi} \frac{1}{a(\eta) a(\eta')} \delta((\eta-\eta')^2-|\vx-\vx'|^2).
 \end{align}
 
-With this information, we are ready to write down the integral equation on $\mathcal{M}$. The generalization of \eqref{eq:inteq} to curved spacetimes is straightforward: $\psi$ becomes a scalar function on $\mathcal{M}\times\mathcal{M}$, one exchanges the Minkowski spacetime volume elements with the invariant 4-volume elements on $\mathcal{M}$, and the Green's functions on $\tfrac{1}{2}\M$ get replaced with those on $\mathcal{M}$ as well. As in the Minkowski case, the interaction kernel is given by the symmetric Green's function. With this, the relevant integral equation becomes:
-\begin{equation}
-	\psi(x,y) = \psi^\free(x,y) + \lambda \int_{\mathcal{M}\times \mathcal{M}} dV(x) \, dV(y)~G_1^\ret(x,x')G_2^\ret(y,y') G^\sym(x',y') \psi(x',y'),
-	\label{eq:inteqcurved}
-\end{equation}
-For regular and only weakly singular interaction kernels $K(x,y)$ instead of $G^\sym(x',y')$, the problem of existence and uniqueness of solutions of this equation has been treated in \cite{lienertcurved} for flat, open and closed FLRW universes; the case of Dirac particles and smooth interaction kernels has been addressed in \cite{selfDirac}. For flat FLRW universes and scalar particles, we here extend \cite{lienertcurved} to the physically most interesting and mathematically challenging case $K(x,y)=G^\sym(x,y)$.
+With this information, we are ready to write down 
+the integral equation on $\mathcal{M}$. The 
+generalization of \eqref{eq:inteq} to curved 
+spacetimes is straightforward: $\psi$ becomes a 
+scalar function on $\mathcal{M}\times\mathcal{M}$, 
+one exchanges the Minkowski spacetime volume elements 
+with the invariant 4-volume elements on $\mathcal{M}$, 
+and the Green's functions on $\tfrac{1}{2}\M$ get 
+replaced with those on $\mathcal{M}$ as well. As in 
+the Minkowski case, the interaction kernel is given 
+by the symmetric Green's function. With this, the 
+relevant integral equation becomes:
+\begin{align}\notag
+\psi(x,y) = \psi^\free(x,y) 
++ \lambda \int_{\mathcal{M}\times \mathcal{M}} \!\!
+&dV(x) dV(y)~G_1^\ret(x,x')G_2^\ret(y,y')\\
+&\times  G^\sym(x',y') \psi(x',y'),
+\label{eq:inteqcurved}
+\end{align}
+For regular and only weakly singular interaction 
+kernels $K(x,y)$ instead of $G^\sym(x',y')$, the 
+problem of existence and uniqueness of solutions of 
+this equation has been treated in \cite{lienertcurved} 
+for flat, open and closed FLRW universes; the case of 
+Dirac particles and smooth interaction kernels has 
+been addressed in \cite{selfDirac}. For flat FLRW 
+universes and scalar particles, we here extend 
+\cite{lienertcurved} to the physically most interesting 
+and mathematically challenging case 
+$K(x,y)=G^\sym(x,y)$.
 
-We now formulate \eqref{eq:inteqcurved} explicitly. The spacetime volume element is given by:
+We now formulate \eqref{eq:inteqcurved} explicitly. 
+The spacetime volume element is given by:
 \begin{equation}
 	dV(x) = a^4(\eta) \, d\eta \, d^3 \vx.
 \end{equation}
 With this information, \eqref{eq:inteqcurved} becomes:
 \begin{align}
-	\psi(\eta_1,\vx_1,\eta_2,\vx_2) =~ &\psi^\free(\eta_1,\vx_1,\eta_2,\vx_2) + \frac{\lambda}{(4\pi)^3} \frac{1}{a(\eta_1) a(\eta_2)} \int_0^{\eta_1} d \eta_1' \int d^3 \vx_1' \int_0^{\eta_2} d \eta_2' \int d^3  \vx_2'\nonumber\\
-&\times ~ a^2(\eta_1') a^2(\eta_2') \frac{\delta(\eta_1-\eta_1' - |\vx_1-\vx_1'|)}{|\vx_1-\vx_1'|}\frac{\delta(\eta_2-\eta_2' - |\vx_2-\vx_2'|)}{|\vx_2-\vx_2'|}\nonumber\\
-&\times ~ \delta((\eta_1'-\eta_2')^2-|\vx_1'-\vx_2'|^2) \psi(\eta_1',\vx_1',\eta_2',\vx_2').
+  \psi(\eta_1,&\vx_1,\eta_2,\vx_2) = \psi^\free(\eta_1,\vx_1,\eta_2,\vx_2) + \frac{\lambda}{(4\pi)^3} \frac{1}{a(\eta_1) a(\eta_2)} \notag\\
+&\int_0^{\eta_1} d \eta_1' \int d^3 \vx_1' \int_0^{\eta_2} d \eta_2' \int d^3  \vx_2' a^2(\eta_1') a^2(\eta_2')\nonumber\\
+&\times ~\frac{\delta(\eta_1-\eta_1' - |\vx_1-\vx_1'|)}{|\vx_1-\vx_1'|}\frac{\delta(\eta_2-\eta_2' - |\vx_2-\vx_2'|)}{|\vx_2-\vx_2'|}\nonumber\\
+&\times ~\delta((\eta_1'-\eta_2')^2-|\vx_1'-\vx_2'|^2) \psi(\eta_1',\vx_1',\eta_2',\vx_2').
 \label{eq:inteqcurvedexplicit}
 \end{align}
 Now let
@@ -2372,55 +2542,109 @@ Now let
 \end{equation}
 and $\chi^\free(\eta_1,\vx_1,\eta_2) = a(\eta_1) a(\eta_2) \psi^\free(\eta_1,\vx_1,\eta_2)$.
 Then \eqref{eq:inteqcurvedexplicit} is equivalent to:
-\begin{align}
-	\chi(\eta_1,\vx_1,\eta_2,\vx_2) = ~&\chi^\free(\eta_1,\vx_1,\eta_2,\vx_2) + \frac{\lambda}{(4\pi)^3} \int_0^{\eta_1} d \eta_1' \int d^3 \vx_1' \int_0^{\eta_2} d \eta_2' \int d^3  \vx_2'\nonumber\\
-&\times ~ a(\eta_1') a(\eta_2') \frac{\delta(\eta_1-\eta_1' - |\vx_1-\vx_1'|)}{|\vx_1-\vx_1'|}\frac{\delta(\eta_2-\eta_2' - |\vx_2-\vx_2'|)}{|\vx_2-\vx_2'|}\nonumber\\
-&\times ~ \delta((\eta_1'-\eta_2')^2-|\vx_1'-\vx_2'|^2) \chi(\eta_1',\vx_1',\eta_2',\vx_2').
-\label{eq:inteqcurvedexplicitchi}
+\begin{align}\label{eq:inteqcurvedexplicitchi}
+	\chi(\eta_1,\vx_1&,\eta_2,\vx_2)\! =\! \chi^\free(\eta_1,\vx_1,\eta_2,\vx_2) + \frac{\lambda}{(4\pi)^3} \int_0^{\eta_1} d \eta_1' \int d^3 \vx_1' \\
+&\times \int_0^{\eta_2} \!\!d \eta_2' \int d^3\!  \vx_2' \frac{\delta(\eta_1\!-\!\eta_1'\! -\! |\vx_1\!-\!\vx_1'|)}{|\vx_1\!-\!\vx_1'|}\frac{\delta(\eta_2\!-\!\eta_2' \!-\! |\vx_2\!-\!\vx_2'|)}{|\vx_2\!-\!\vx_2'|}\nonumber\\
+&\times  a(\eta_1') a(\eta_2') \delta((\eta_1'\!-\!\eta_2')^2-|\vx_1'-\vx_2'|^2) \chi(\eta_1',\vx_1',\eta_2',\vx_2').\notag
 \end{align}
-We can see that this equation has almost exactly the same form as the massless version of \eqref{eq:inteq} on $\tfrac{1}{2}\M$ (see \eqref{eq:a0informal}). The only difference is the additional appearance of the factor $a(\eta_1') a(\eta_2')$ inside the integrals.
+We can see that this equation has almost exactly the 
+same form as the massless version of \eqref{eq:inteq} 
+on $\tfrac{1}{2}\M$ (see \eqref{eq:a0informal}). The 
+only difference is the additional appearance of the 
+factor $a(\eta_1') a(\eta_2')$ inside the integrals.
 
-Going through the same steps as for \eqref{eq:defa0} before, \eqref{eq:inteqcurvedexplicitchi} can be defined on test functions $\chi \in \mathcal{S}$ by
+Going through the same steps as for \eqref{eq:defa0} 
+before, \eqref{eq:inteqcurvedexplicitchi} can be 
+defined on test functions $\chi \in \mathcal{S}$ by
 \begin{equation}
 	\chi ~=~ \chi^\free + \widetilde{A}_0 \chi,
 \label{eq:inteqcurvedabstract}
 \end{equation}
-where $\widetilde{A}_0$ is defined by (using coordinates $x=(\eta_1,\vx)$, $y=(\eta_2,\vy)$):
+where $\widetilde{A}_0$ is defined by (using 
+coordinates $x=(\eta_1,\vx)$, $y=(\eta_2,\vy)$):
 \begin{align}\nonumber
-    &(\widetilde{A}_0\psi)(x,y)=\frac{\lambda}{(4\pi)^3}\int_{B_{y^0}(\vy)}d^3\vy'  \int_0^{2\pi}d\varphi \int_{-1}^{1} d\!\cos\vartheta ~\frac{|b^2|}{4(b^0+|\vb|\cos\vartheta)^2 |\vy'|} ~\times \\
-    &a(\eta_1+\eta_1') a(\eta_2+\eta_2') \psi(x+x',y+y') \left(1_{b^2>0}1_{b^0>0} 1_{\cos\vartheta > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}+1_{b^2<0}1_{\cos\vartheta<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}\right),
+    &(\widetilde{A}_0\psi)(x,y)\!=\!\frac{\lambda}{(4\pi)^3}\int_{B_{y^0}(\vy)}\!\!\!d^3\vy'  \!\int_0^{2\pi}\!\!d\varphi \int_{-1}^{1} \!\!d\!\cos\vartheta ~\frac{|b^2|}{4(b^0+|\vb|\cos\vartheta)^2 |\vy'|}  \\
+    &\times a(\eta_1+\eta_1') a(\eta_2+\eta_2') \psi(x+x',y+y')\notag\\ 
+    &\times \left(1_{b^2>0}1_{b^0>0} 1_{\cos\vartheta > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}+1_{b^2<0}1_{\cos\vartheta<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}\right),
 \label{eq:defa0tilde}
 \end{align}
-with \(\eta_1'=-r^*=-|\vx'| , \eta_2'=-|\vy'|\). (Here, $b$ and $r^*$ are defined as in \eqref{eq:b} and \eqref{eq:r}, respectively).
+with \(\eta_1'=-r^*=-|\vx'| , \eta_2'=-|\vy'|\). 
+(Here, $b$ and $r^*$ are defined as in \eqref{eq:b} 
+and \eqref{eq:r}, respectively).
 
-Knowing precisely how our integral equation on the flat FLRW spacetime is to be understood, we can formulate the respective existence and uniqueness theorem:
+Knowing precisely how our integral equation on the 
+flat FLRW spacetime is to be understood, we can 
+formulate the respective existence and uniqueness 
+theorem:
 
 %%%%%
-\begin{Thm}[Existence of dynamics for an open FLRW universe.]
+\begin{Thm}[Existence of dynamics for an open FLRW 
+  universe.]
 	\label{thm:existencecurved}~\\
-	Let $a: [0,\infty) \rightarrow [0,\infty)$ be a continuous function with $a(0)=0$ and $a(\eta)>0$ for $\eta>0$. Moreover, let
+  Let $a: [0,\infty) \rightarrow [0,\infty)$ be a 
+  continuous function with $a(0)=0$ and $a(\eta)>0$ 
+  for $\eta>0$. Moreover, let
 	\begin{equation}
 		g(t) = \exp \left( \gamma \int_0^t d\tau \, a(\tau) \right).
 	\end{equation}
-	Then, the operator $\widetilde{A}_0$ satisfies the following estimate:
+  Then, the operator $\widetilde{A}_0$ satisfies the 
+  following estimate:
 	\begin{equation}
 		\sup_{\chi \in \mathcal{S}\big( ([0,\infty)\times \R^3)^2\big)} \frac{\| \widetilde{A}_0 \chi \|_g}{\| \chi \|_g} ~\leq~ \frac{\lambda}{8\pi \gamma^2}.
 	\label{eq:a0tildebound}
 	\end{equation}
-	$\widetilde{A}_0$ can be extended to a linear operator on $\Banach_g$ which satisfies the same bound. Moreover, for $\gamma < \sqrt{\frac{\lambda}{8\pi}}$, the equation $\chi = \chi^\free + \widetilde{A}_0\chi$ has a unique solution $\chi \in \Banach_g$ for every $\psi^\free \in \Banach_g$.
+  $\widetilde{A}_0$ can be extended to a linear 
+  operator on $\Banach_g$ which satisfies the same 
+  bound. Moreover, for $\gamma < 
+  \sqrt{\frac{\lambda}{8\pi}}$, the equation 
+  $\chi = \chi^\free + \widetilde{A}_0\chi$ has a 
+  unique solution $\chi \in \Banach_g$ for every 
+  $\psi^\free \in \Banach_g$.
 \end{Thm}
 
-The proof can be found in Sec.\@ \ref{sec:proofexistencecurved}.
+The proof can be found in Sec.\@ 
+\ref{sec:proofexistencecurved}.
 
 \begin{Remarks}
 	\begin{enumerate}
-		\item \textit{Manifest covariance.} The theorem shows the existence and uniqueness of solutions of the manifestly covariant integral equation \eqref{eq:inteqcurved}. Our example of a particular FLRW spacetime thus achieves its goal of demonstrating that a cutoff in time can arise naturally in a cosmological context.
+    \item \textit{Manifest covariance.} The theorem 
+    shows the existence and uniqueness of solutions 
+    of the manifestly covariant integral equation 
+    \eqref{eq:inteqcurved}. Our example of a particular 
+    FLRW spacetime thus achieves its goal of 
+    demonstrating that a cutoff in time can arise 
+    naturally in a cosmological context.
 		%
-		\item \textit{Initial value problem.} As in the case of $\tfrac{1}{2}\M$, the solution $\chi$ satisfies $\chi(0,\vx,0,\vy) = \chi^\free(0,\vx,0,\vy)$ where $\chi^\free$ is determined by the solution $\psi^\free$ of the free conformal wave equation \eqref{eq:conformalwaveeq} in both spacetime variables. Since $\psi^\free$ is determined by initial data at $\eta_1 = 0 =\eta_2$, so are $\chi^\free$ and $\chi$.
+    \item \textit{Initial value problem.} As in the 
+    case of $\tfrac{1}{2}\M$, the solution $\chi$ 
+    satisfies $\chi(0,\vx,0,\vy) = 
+    \chi^\free(0,\vx,0,\vy)$ where $\chi^\free$ is 
+    determined by the solution $\psi^\free$ of the 
+    free conformal wave equation 
+    \eqref{eq:conformalwaveeq} in both spacetime 
+    variables. Since $\psi^\free$ is determined by 
+    initial data at $\eta_1 = 0 =\eta_2$, so are 
+    $\chi^\free$ and $\chi$.
 		%
-		\item \textit{Behavior of $\psi$ towards the Big Bang singularity}. While the transformed wave function $\chi$ remains bounded for $\eta_1, \eta_2 \rightarrow 0$, the physical wave function $\psi(\eta_1,\vx,\eta_2,\vy) = \frac{1}{a(\eta_1)a(\eta_2)} \chi(\eta_1,\vx,\eta_2,\vy)$ diverges like $\frac{1}{a(\eta_1)a(\eta_2)}$. This is to be expected, as the Klein-Gordon equation has a preserved "energy" (given by a certain spatial integral) and as the volume in $\vx, \vy$ contracts to zero towards the Big Bang.
+    \item \textit{Behavior of $\psi$ towards the Big 
+    Bang singularity}. While the transformed wave 
+    function $\chi$ remains bounded for $\eta_1, 
+    \eta_2 \rightarrow 0$, the physical wave function 
+    $\psi(\eta_1,\vx,\eta_2,\vy) = 
+    \frac{1}{a(\eta_1)a(\eta_2)} 
+    \chi(\eta_1,\vx,\eta_2,\vy)$ diverges like 
+    $\frac{1}{a(\eta_1)a(\eta_2)}$. This is to be 
+    expected, as the Klein-Gordon equation has a 
+    preserved "energy" (given by a certain spatial 
+    integral) and as the volume in $\vx, \vy$ 
+    contracts to zero towards the Big Bang.
 		%
-		\item \textit{$N$-particle generalization.} As shown in Sec.\@ \ref{sec:Npart} for the Minkowski half-space, it would also be easy to extend Thm.\@ \ref{thm:existencecurved} to $N$ particles. To avoid duplication, we do not carry this out explicitly for the curved spacetime example here.
+    \item \textit{$N$-particle generalization.} As 
+    shown in Sec.\@ \ref{sec:Npart} for the Minkowski 
+    half-space, it would also be easy to extend 
+    Thm.\@ \ref{thm:existencecurved} to $N$ particles. 
+    To avoid duplication, we do not carry this out 
+    explicitly for the curved spacetime example here.
 	\end{enumerate}
 \end{Remarks}
 
@@ -2430,361 +2654,531 @@ The proof can be found in Sec.\@ \ref{sec:proofexistencecurved}.
 \label{sec:proofs}
 
 %%%%%
-\subsubsection{Proof of Theorem \ref{thm:bounds}} \label{sec:proofbounds}
-The proof is divided into the proofs of the estimates \eqref{eq:estimatea0}, \eqref{eq:estimatea1}, \eqref{eq:estimatea2} and \eqref{eq:estimatea12}, respectively. Here, \eqref{eq:estimatea0} is the most singular and difficult term which deserves the greatest attention.
+\subsubsection{Proof of Theorem \ref{thm:bounds}} 
+\label{sec:proofbounds}
+The proof is divided into the proofs of the estimates 
+\eqref{eq:estimatea0}, \eqref{eq:estimatea1}, 
+\eqref{eq:estimatea2} and \eqref{eq:estimatea12}, 
+respectively. Here, \eqref{eq:estimatea0} is the most 
+singular and difficult term which deserves the greatest 
+attention.
 
-Throughout this subsection, let $\psi \in \mathcal{S}((\tfrac{1}{2}\M)^2)$.
+Throughout this subsection, let $\psi \in 
+\mathcal{S}((\tfrac{1}{2}\M)^2)$.
 
 %%%
-\paragraph{Estimate of the massless term \eqref{eq:estimatea0}.} \label{sec:estimatemassless}
+\paragraph{Estimate of the massless term 
+\eqref{eq:estimatea0}.} \label{sec:estimatemassless}
 
-We start with Eq.\@ \eqref{eq:defa0} and take the absolute value. Using, in addition, that
+We start with Eq.\@ \eqref{eq:defa0} and take the 
+absolute value. Using, in addition, that
 \begin{equation}
 	|\psi(x,y)| ~\leq~ \| \psi \|_g \, g(x^0) g(y^0)
 \end{equation}
 leads us to:
 \begin{align}
-    &|A_0\psi|(x,y) \le \frac{\lambda \|\psi\|_g}{4(4\pi)^3} \int_{B_{y^0}(\vy)}d^3 \vy' \int_0^{2\pi} d\varphi \int_{-1}^1 d\cos\vartheta \, \frac{|b^2|}{(b^0+|\vb|\cos\vartheta)^2 |\vy'|} g(y^0-|\vy'|)\nonumber\\
-    &\times g\left(x^0-\frac{1}{2}\frac{b^2}{b^2+|\vb|\cos\vartheta}\right)
-    \left(1_{b^2>0}1_{b^0>0} 1_{\cos\vartheta > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}+1_{b^2<0}1_{\cos\vartheta<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}\right).
+    &|A_0\psi|(x,y) \!\le\! \frac{\lambda \|\psi\|_g}{4(4\pi)^3} \!\int_{B_{y^0}(\vy)}\!\!\!d^3 \vy' \int_0^{2\pi} \!\!d\varphi \int_{-1}^1 \!\!\!d\cos\vartheta \, \frac{|b^2|}{(b^0\!+\!|\vb|\cos\vartheta)^2 |\vy'|} \nonumber\\
+    &\times g(y^0\!-\!|\vy'|) g\!\left(x^0-\frac{1}{2}\frac{b^2}{b^2+|\vb|\cos\vartheta}\right)\notag\\
+    &\times \left(1_{b^2>0}1_{b^0>0} 1_{\cos\vartheta > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}+1_{b^2<0}1_{\cos\vartheta<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}\right).
 \label{eq:a0calc01}
 \end{align}
-Next, we observe that the fraction $\frac{|b^2|}{(b^0+|\vb|\cos\vartheta)^2 |\vy'|}$ is the derivative of the fraction which occurs in the argument of the second $g$-function. Introducing $u = \cos \vartheta$ allows us to rewrite \eqref{eq:a0calc01} as
+Next, we observe that the fraction 
+$\frac{|b^2|}{(b^0+|\vb|\cos\vartheta)^2 |\vy'|}$ is 
+the derivative of the fraction which occurs in the 
+argument of the second $g$-function. Introducing 
+$u = \cos \vartheta$ allows us to rewrite 
+\eqref{eq:a0calc01} as
 \begin{align}
-     \eqref{eq:a0calc01} &=\frac{\lambda \|\psi\|_g}{8(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy' \int_{-1}^1 du ~ 2 \sgn(b^2)\, \partial_u g_1\left(x^0-\frac{1}{2}\frac{b^2}{b^0+|\vb|u}\right) g(y^0-|\vy'|)\\\nonumber
-    &~~~\times \left(1_{b^2>0}1_{b^0>0} 1_{u > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}+1_{b^2<0}1_{u<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}\right) \frac{1}{|\vb||\vy'|}\\\label{uIntegral}
-    &=\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy' \int_{-1}^1 du  ~ \partial_u g_1\left(x^0-\frac{1}{2}\frac{b^2}{b^0+|\vb|u}\right) g(y^0-|\vy'|)\\\nonumber
-    &~~~\times   \left(1_{b^2>0}1_{b^0>0} 1_{u > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}-1_{b^2<0}1_{u<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}\right) \frac{1}{|\vb||\vy'|}. 
+     &\eqref{eq:a0calc01} =\frac{\lambda \|\psi\|_g}{8(4\pi)^2} \int_{B_{y^0}(\vy)}\!\!\!d^3\vy' \int_{-1}^1\!du  2 \sgn(b^2)\,  \notag\\
+    &\quad \times \partial_u g_1\!\left(x^0-\frac{1}{2}\frac{b^2}{b^0+|\vb|u}\right) g(y^0-|\vy'|) \frac{1}{|\vb||\vy'|}\\\nonumber
+    &\quad \times \left(1_{b^2>0}1_{b^0>0} 1_{u > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}+1_{b^2<0}1_{u<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}\right) \\
+    &=\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy' \int_{-1}^1 du  ~ \partial_u g_1\left(x^0-\frac{1}{2}\frac{b^2}{b^0+|\vb|u}\right) g(y^0-|\vy'|)\nonumber\\
+    &\quad \times   \left(1_{b^2>0}1_{b^0>0} 1_{u > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}-1_{b^2<0}1_{u<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}\right) \frac{1}{|\vb||\vy'|}.
 \label{eq:a0calc02}
 \end{align}
-This form allows for a direct integration with respect to $u$.
-Before we integrate, we check whether the conditions implicit in the characteristic functions can always be satisfied. (Otherwise, the respective term would not contribute any further and we could drop it.) Recall that $	b = x-y-(-|\vy'|, \vy')$. First we check whether in the case \(b^2>0, b^0>0\) it is true that \( 1> \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}\) holds. (The comparison with 1 is due to the upper range for $u$.) We compute
+This form allows for a direct integration with respect 
+to $u$.
+Before we integrate, we check whether the conditions 
+implicit in the characteristic functions can always be 
+satisfied. (Otherwise, the respective term would not 
+contribute any further and we could drop it.) Recall 
+that $	b = x-y-(-|\vy'|, \vy')$. First we check 
+whether in the case \(b^2>0, b^0>0\) it is true that 
+\( 1> \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}\) 
+holds. (The comparison with 1 is due to the upper 
+range for $u$.) We compute
 \begin{align}
     1> \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|} &\iff  2 x^0 |\vb|+2 x^0 b^0 > b^2 \nonumber\\
     &\iff 2 x^0(b^0 + |\vb|) > (b^0+|\vb|)(b^0-|\vb|)\nonumber\\
    &\!\!\!\! \overset{b^2>0,b^0>0}{\iff} 2x^0>b^0-|\vb| \nonumber \\
    &\iff  x^0+y^0 - |\vy'| > -|\vb|.
 \end{align}
-Now because of \(|\vy'|<y^0\) we see that this inequality always holds true. Hence the respective term in \eqref{eq:a0calc02} contributes without further restrictions.
+Now because of \(|\vy'|<y^0\) we see that this 
+inequality always holds true. Hence the respective 
+term in \eqref{eq:a0calc02} contributes without 
+further restrictions.
 
-Next, we turn to the case \(b^2<0\). Here we check whether (or when) $-1<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}$ holds. (The comparison with $-1$ is due to the lower bound for $u$.) A similar calculation yields 
+Next, we turn to the case \(b^2<0\). Here we check 
+whether (or when) $-1<\frac{b^2}{2x^0|\vb|} - 
+\frac{b^0}{|\vb|}$ holds. (The comparison with $-1$ 
+is due to the lower bound for $u$.) A similar 
+calculation yields 
 \begin{align}
     -1<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|} &\iff -2x^0|\vb| + 2x^0 |\vb| < b^2\\
     &\iff 2x^0 (b^0-|\vb|) < (b^0-|\vb|)(b^0+|\vb|) \\
    & \overset{b^2<0}{\iff} 2x^0 > b^0 + |\vb|.
 \end{align}
-This inequality need not always hold, as we can increase \(|\vb|\) with respect to \(b^0\) as much as we like, e.g., by picking \(|\vx-\vy|\) large. Therefore, in this case, the respective term is only sometimes nonzero. We make this clear by including the characteristic function $1_{2x^0>b^0+|\vb|}$.
+This inequality need not always hold, as we can 
+increase \(|\vb|\) with respect to \(b^0\) as much as 
+we like, e.g., by picking \(|\vx-\vy|\) large. 
+Therefore, in this case, the respective term is only 
+sometimes nonzero. We make this clear by including 
+the characteristic function $1_{2x^0>b^0+|\vb|}$.
 
-Taking these considerations into account, we now carry out the $u$-integration in \eqref{eq:a0calc02}:
+Taking these considerations into account, we now carry 
+out the $u$-integration in \eqref{eq:a0calc02}:
 \begin{align}
-    &|A_0\psi|(x,y) ~\le~ \frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy'~ \frac{g(y^0-|\vy'|)}{|\vb||\vy'|} \\
-    &\times \left(1_{b^2>0,b^0>0} \left[g_1\left(x^0-\frac{1}{2} \frac{b^2}{b^0+|\vb|}\right) - g_1\left( x^0 - \frac{1}{2}\frac{b^2}{b^0+|\vb| \max (-1, \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|})}\right)\right]\right.\\
-    &\left. -1_{b^2<0}1_{2x^0>b^0+|\vb|}\left[
-    g_1\left(x^0-\frac{1}{2} \frac{b^2}{b^0+|\vb| \min(1, \frac{b^2}{2x^0|\vb|}-\frac{b^0}{|\vb|})}\right)- g_1\left(x^0-\frac{1}{2} \frac{b^2}{b^0-|\vb|} \right)\right]\right).
+    &|A_0\psi|(x,y) ~\le~ \frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy'~ \frac{g(y^0-|\vy'|)}{|\vb||\vy'|} \notag\\
+    &\times \Bigg(1_{b^2>0,b^0>0} \Bigg[g_1\left(x^0-\frac{1}{2} \frac{b^2}{b^0+|\vb|}\right) \notag\\
+    &\quad \quad - g_1\left( x^0 - \frac{1}{2}\frac{b^2}{b^0+|\vb| \max (-1, \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|})}\right)\Bigg]\notag\\
+    & -1_{b^2<0}1_{2x^0>b^0+|\vb|}\Bigg[
+    g_1\left(x^0-\frac{1}{2} \frac{b^2}{b^0+|\vb| \min(1, \frac{b^2}{2x^0|\vb|}-\frac{b^0}{|\vb|})}\right)\notag\\
+    &\quad \quad - g_1\left(x^0-\frac{1}{2} \frac{b^2}{b^0-|\vb|} \right)\Bigg]\Bigg).
 \label{eq:a0calc03}
 \end{align}
-The minima and maxima in this expression result from the indicator functions $1_{u > \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}$ and $1_{u<\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}}$, respectively.
+The minima and maxima in this expression result from 
+the indicator functions $1_{u > \frac{b^2}{2x^0|\vb|} 
+- \frac{b^0}{|\vb|}}$ and $1_{u<\frac{b^2}{2x^0|\vb|} 
+- \frac{b^0}{|\vb|}}$, respectively.
 
-Our next step is to simplify the complicated fractions in \eqref{eq:a0calc03} involving $\min$ and $\max$. For the first one we use that \(1/\max(a,b)=\min(1/a,1/b)\) whenever \(a,b>0\) or \(a,b<0\) holds. Therefore, we have:
+Our next step is to simplify the complicated fractions 
+in \eqref{eq:a0calc03} involving $\min$ and $\max$. 
+For the first one we use that 
+\(1/\max(a,b)=\min(1/a,1/b)\) whenever \(a,b>0\) or 
+\(a,b<0\) holds. Therefore, we have:
 \begin{align}
-    \frac{1}{2}\frac{b^2}{b^0+|\vb|\max\left( -1,\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}\right)}
-	&= \frac{1}{2} \frac{b^2}{\max\left(b^0-|\vb|,\frac{b^2}{2x^0}\right)}\nonumber\\
-    &= \frac{1}{2} \min \left(\frac{b^2}{b^0-|\vb|}, 2x^0 \right)\nonumber\\
-    &= \min \left( \frac{b^0+|\vb|}{2}, x^0 \right).
+    &\frac{1}{2}\frac{b^2}{b^0+|\vb|\max\left( -1,\frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|}\right)}
+	= \frac{1}{2} \frac{b^2}{\max\left(b^0-|\vb|,\frac{b^2}{2x^0}\right)}\nonumber\\
+    &= \frac{1}{2} \min \left(\frac{b^2}{b^0-|\vb|}, 2x^0 \right)\nonumber
+    = \min \left( \frac{b^0+|\vb|}{2}, x^0 \right).
 \end{align}
-The fraction in \eqref{eq:a0calc03} which contains a minimum can be simplified by observing that
+The fraction in \eqref{eq:a0calc03} which contains a 
+minimum can be simplified by observing that
 \begin{align}
     b^0+|\vb|\min\left(1,\frac{b^2}{2x^0|\vb|}-\frac{b^0}{|\vb|}\right) = \min \left( b^0+|\vb|, \frac{b^2}{2x^0} \right)= \frac{b^2}{2x^0}
 \end{align}
-as the term contributes only for \(b^2<0\) and $2x^0>b^0+|\vb|$ (note that then $\frac{b^2}{2x^0} < \frac{(b^0)^2-|\vb|^2}{b^0 + |\vb|} = b^0 - |\vb| < b^0 + |\vb|$). Thus,
+as the term contributes only for \(b^2<0\) and 
+$2x^0>b^0+|\vb|$ (note that then $\frac{b^2}{2x^0} 
+< \frac{(b^0)^2-|\vb|^2}{b^0 + |\vb|} = b^0 - |\vb| 
+< b^0 + |\vb|$). Thus,
 \begin{equation}
 	\frac{1}{2} \frac{b^2}{b^0+|\vb| \min(1, \frac{b^2}{2x^0|\vb|}-\frac{b^0}{|\vb|})} = x^0.
 \end{equation}
-With these simplifications, we obtain (using $g_1(0)=0$):
+With these simplifications, we obtain (using 
+$g_1(0)=0$):
 \begin{align}
-    &|A_0\psi|(x,y)~ \le ~ \frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy'~ \frac{g(y^0-|\vy'|)}{|\vb||\vy'|} \nonumber\\
-    &~~~\times \left(1_{b^2>0,b^0>0} \left[g_1\left(x^0-\frac{b^0-|\vb|}{2} \right) - g_1\left( x^0 - \min\left(\frac{b^0+|\vb|}{2},x^0\right)\right)\right]\right.\nonumber\\
-    &\left. ~~~-1_{b^2<0}~1_{2x^0>b^0+|\vb|}\left[
+    &|A_0\psi|(x,y) \le  \frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy'~ \frac{g(y^0-|\vy'|)}{|\vb||\vy'|} \nonumber\\
+    &\times \!\left(\!1_{b^2>0,b^0>0} \left[g_1\!\left(\!x^0\!-\frac{b^0-|\vb|}{2} \!\right)\! -\! g_1\!\left(\! x^0 \!- \!\min\!\left(\frac{b^0+|\vb|}{2},x^0\!\right)\!\right)\!\right]\right.\nonumber\\
+    &\left. -1_{b^2<0}~1_{2x^0>b^0+|\vb|}\left[
     g_1\left(x^0-x^0\right)- g_1\left(x^0-\frac{b^0+|\vb|}{2} \right)\right]\right)\nonumber\\\label{y'Integral1}
-    &=\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy' \frac{g(y^0-|\vy'|)}{|\vb||\vy'|}
-    1_{b^2>0,b^0>0} \, g_1\left(\frac{x^0+y^0-|\vy'|+|\vb|}{2} \right) \\\label{y'Integral2}
-    &~~~-\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy' \, \frac{g(y^0-|\vy'|)}{|\vb||\vy'|}
-    1_{b^2>0,b^0>0}\,  g_1\left( \max\left(\frac{x^0+y^0-|\vy'|-|\vb|}{2},0\right)\right)\\\label{y'Integral3}
-    &~~~ +\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy' \, \frac{g(y^0-|\vy'|)}{|\vb||\vy'|} 1_{b^2<0}~1_{x^0+y^0-|\vy'|>|\vb|}
-     ~g_1\left(\frac{x^0+y^0-|\vy'|-|\vb|}{2} \right).
+    &=\!\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \!\int_{B_{y^0}(\vy)}\!\!\!d^3\vy' \frac{g(y^0\!-\!|\vy'|)}{|\vb||\vy'|}
+    1_{b^2>0,b^0>0} \notag\\
+    &\hspace{3cm} \times g_1\!\left(\!\frac{x^0+y^0-|\vy'|+|\vb|}{2} \right) \\\label{y'Integral2}
+    &-\frac{\lambda \|\psi\|_g}{4(4\pi)^2}\! \int_{B_{y^0}(\vy)}\!\!\!d^3\vy' \, \frac{g(y^0-|\vy'|)}{|\vb||\vy'|}
+    1_{b^2>0,b^0>0}\notag\\
+    &\hspace{3cm} \times   g_1\left( \max\left(\frac{x^0+y^0-|\vy'|-|\vb|}{2},0\right)\right)\\\label{y'Integral3}
+    & +\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_{B_{y^0}(\vy)}d^3\vy' \, \frac{g(y^0-|\vy'|)}{|\vb||\vy'|} 1_{b^2<0}~1_{x^0+y^0-|\vy'|>|\vb|}\notag\\
+    &\hspace{3cm} \times g_1\left(\frac{x^0+y^0-|\vy'|-|\vb|}{2} \right).
 \end{align}
 
-We now want to carry out as many of the remaining $\vy'$-integrations as possible. In order to do so, we orient the coordinates such that \(\vx-\vy\) is parallel to the \((\vy')_3\) axis. Then the integrands in \eqref{y'Integral1}-\eqref{y'Integral3} are independent of the azimuthal angle $\varphi$ of the respective spherical coordinate system $(\rho,\theta,\varphi)$ with standard conventions.
+We now want to carry out as many of the remaining 
+$\vy'$-integrations as possible. In order to do so, 
+we orient the coordinates such that \(\vx-\vy\) is 
+parallel to the \((\vy')_3\) axis. Then the integrands 
+in \eqref{y'Integral1}-\eqref{y'Integral3} are 
+independent of the azimuthal angle $\varphi$ of the 
+respective spherical coordinate system 
+$(\rho,\theta,\varphi)$ with standard conventions.
 
-In order to perform the remaining angular and then the radial integral, we need to find out which boundaries for $\theta$ and $r$ result from the characteristic functions. First we analyze for which arguments the maximum in \eqref{y'Integral2} is greater than zero and therefore contributes to the integral (as $g_1(0) = 0$). We have:
-\begin{align}
-    \frac{x^0+y^0-|\vy'|-|\vb|}{2}~>~0 &\iff  (x^0+y^0-|\vy'|)^2>|\vx-\vy|^2+|\vy'|^2+2|\vy'||\vx-\vy|\cos\theta\nonumber\\
-   &\iff \cos\theta<\frac{(x^0+y^0)^2}{2|\vy'||\vx-\vy|} -\frac{|\vx-\vy|}{2|\vy'|} - \frac{x^0+y^0}{|\vx-\vy|}=:P_{x,y}(|\vy'|).
+In order to perform the remaining angular and then the 
+radial integral, we need to find out which boundaries 
+for $\theta$ and $r$ result from the characteristic 
+functions. First we analyze for which arguments the 
+maximum in \eqref{y'Integral2} is greater than zero 
+and therefore contributes to the integral (as 
+$g_1(0) = 0$). We have:
+\begin{align}\notag
+  &\frac{x^0+y^0-|\vy'|-|\vb|}{2}~>~0 \\
+  &\iff  (x^0\!+\!y^0\!-\!|\vy'|)^2>|\vx-\vy|^2\!+\!|\vy'|^2\!+\!2|\vy'||\vx\!-\!\vy|\!\cos\theta\nonumber\\
+  &\iff \cos\theta\!<\!\frac{(x^0\!+\!y^0)^2}{2|\vy'||\vx\!-\!\vy|} \!-\!\frac{|\vx\!-\!\vy|}{2|\vy'|} \!-\! \frac{x^0\!+\!y^0}{|\vx\!-\!\vy|}\!=:P_{x,y}(|\vy'|).
 \label{eq:costhetapxy}
 \end{align}
-This calculation also helps to reformulate the second indicator function $1_{b^2<0}~1_{x^0+y^0-|\vy'|>|\vb|}$ in \eqref{y'Integral3} (for which we have \(b^2<0\)).
-The condition \(b^0>0\) in \eqref{y'Integral1} and \eqref{y'Integral2} is readily seen to be equivalent to
+This calculation also helps to reformulate the second 
+indicator function $1_{b^2<0}~1_{x^0+y^0-|\vy'|>
+|\vb|}$ in \eqref{y'Integral3} (for which we have 
+\(b^2<0\)).
+The condition \(b^0>0\) in \eqref{y'Integral1} and 
+\eqref{y'Integral2} is readily seen to be equivalent 
+to
 \begin{equation}
 	|\vy'|>y^0-x^0.
 	\label{eq:b0cond}
 \end{equation}
-In order to perform the \(\theta\)-integral we have to translate \(b^2\gtrless 0\) into conditions on \(\theta\). We have:
+In order to perform the \(\theta\)-integral we have 
+to translate \(b^2\gtrless 0\) into conditions on 
+\(\theta\). We have:
 \begin{align}
     b^2>0 &\iff (x^0-y^0+|\vy'|)^2~>~ |\vx-\vy|^2+|\vy'|^2+2|\vy'||\vx-\vy|\cos\theta \nonumber\\
     &\iff \cos\theta~<~ \frac{(x-y)^2}{2|\vy'||\vx-\vy|} + \frac{x^0-y^0}{|\vx-\vy|}:=K_{x-y}(|\vy'|).
 \label{eq:costhetakxy}
 \end{align}
-With these considerations, we have extracted relatively simple conditions on the boundaries of the integrals in spherical coordinates. However, if different restrictions of the boundaries conflict with each other, it may happen that for some parameter values the domain of integration is the empty set. 
-We check whether this is so term by term, focusing on the \(\theta\)-integration first. For term \eqref{y'Integral1}, \(\theta\) needs to satisfy \(-1<\cos\theta<\min(1,K_{x-y}(|\vy'|))\), so we need to check whether \(-1<K_{x-y}(|\vy'|)\) holds. We have:
-\begin{align}\label{-1<K}
-    -1 < K_{x-y}(|\vy'|) &\iff -2|\vy'||\vx-\vy|<(x-y)^2+2|\vy'|(x^0-y^0)\nonumber\\
+With these considerations, we have extracted 
+relatively simple conditions on the boundaries of the 
+integrals in spherical coordinates. However, if 
+different restrictions of the boundaries conflict 
+with each other, it may happen that for some 
+parameter values the domain of integration is the 
+empty set. 
+We check whether this is so term by term, focusing 
+on the \(\theta\)-integration first. For term 
+\eqref{y'Integral1}, \(\theta\) needs to satisfy 
+\(-1<\cos\theta<\min(1,K_{x-y}(|\vy'|))\), so we 
+need to check whether \(-1<K_{x-y}(|\vy'|)\) holds. 
+We have:
+\begin{align}\notag
+    &-1 < K_{x-y}(|\vy'|) \\
+    &\iff -2|\vy'||\vx-\vy|<(x-y)^2+2|\vy'|(x^0-y^0)\nonumber\\
     &\iff 0~<~(x-y)^2+2|\vy'|(x^0-y^0+|\vx-\vy|)\nonumber\\
     &\iff \left\{\begin{matrix}
     \frac{y^0-x^0+|\vx-\vy|}{2}<|\vy'|  \quad \text{for } |\vx-\vy|>y^0-x^0\\
     \frac{y^0-x^0+|\vx-\vy|}{2}>|\vy'| \quad \, \text{for } |\vx-\vy|<y^0-x^0.
     \end{matrix}\right.
 \end{align}
-Together with \eqref{eq:b0cond}, we obtain the condition \(y^0-x^0<|\vy'|<\frac{y^0-x^0+|\vx-\vy|}{2}<y^0-x^0\) in the second case which means that there is no contribution to the integral. So we focus on the first case,
+Together with \eqref{eq:b0cond}, we obtain the 
+condition \(y^0-x^0<|\vy'|<
+\frac{y^0-x^0+|\vx-\vy|}{2}<y^0-x^0\) in the second 
+case which means that there is no contribution to 
+the integral. So we focus on the first case,
 \begin{equation}
 	\frac{y^0-x^0+|\vx-\vy|}{2}<|\vy'|  \quad \text{and } |\vx-\vy|>y^0-x^0,
 \label{eq:xycond1}
 \end{equation}
-by including the characteristic function $1_{|\vx-\vy|>y^0-x^0}$ in the integral. Next, we turn to the radial integral. By comparing its upper limit $|\vy'|<y^0$ and lower limit $(y^0-x^0+|\vx-\vy|)/2$, we find that the integral can only be nonzero for
+by including the characteristic function 
+$1_{|\vx-\vy|>y^0-x^0}$ in the integral. Next, we turn 
+to the radial integral. By comparing its upper 
+limit $|\vy'|<y^0$ and lower limit $(y^0-x^0+
+|\vx-\vy|)/2$, we find that the integral can only be 
+nonzero for
 \begin{equation}
 	y^0+x^0>|\vx-\vy|.
 	\label{eq:xycond2}
 \end{equation}
-We make this clear by including the respective characteristic function.
+We make this clear by including the respective 
+characteristic function.
 
 %%%
-\subparagraph{Simplification of term \eqref{y'Integral1}.}
-These considerations allow us to continue computing \eqref{y'Integral1}:
+\subparagraph{Simplification of term 
+\eqref{y'Integral1}.}
+These considerations allow us to continue computing 
+\eqref{y'Integral1}:
 \begin{align}\label{casesFirstTermBeginning}
-    \eqref{y'Integral1}
-    &=\frac{\lambda \|\psi\|_g}{4(4\pi)^2}1_{y^0+x^0>|\vx-\vy|}  \int_{\max(0,y^0-x^0)}^{y^0} d\rho \int_{0}^{2\pi}d\varphi~ 
-    1_{\frac{y^0-x^0+|\vx-\vy|}{2}<\rho}1_{|\vx-\vy|>y^0-x^0}\nonumber\\ 
-    &~~~\times\int_{-1}^{\min(1,K_{x-y}(\rho))} d\cos\theta  ~\frac{\rho \, g(y^0-\rho)}{\sqrt{|\vx-\vy|^2+\rho^2 + 2 |\vx-\vy|\rho \cos\theta}}\nonumber\\ 
-	&~~~\times g_1\left(\frac{x^0+y^0-\rho + \sqrt{|\vx-\vy|^2+\rho^2+2\rho|\vx-\vy|\cos\theta}}{2}\right).
+    &\eqref{y'Integral1}
+    =\frac{\lambda \|\psi\|_g}{4(4\pi)^2}1_{y^0+x^0>|\vx-\vy|}  \int_{\max(0,y^0-x^0)}^{y^0} d\rho \int_{0}^{2\pi}d\varphi~ 
+    1_{\frac{y^0-x^0+|\vx-\vy|}{2}<\rho}\nonumber\\ 
+  &\times 1_{|\vx-\vy|>y^0-x^0} \int_{-1}^{\min(1,K_{x-y}(\rho))} d\cos\theta  ~\frac{\rho \, g(y^0-\rho)}{\sqrt{|\vx-\vy|^2+\rho^2 + 2 |\vx-\vy|\rho \cos\theta}}\nonumber\\ 
+	&\times g_1\left(\frac{x^0+y^0-\rho + \sqrt{|\vx-\vy|^2+\rho^2+2\rho|\vx-\vy|\cos\theta}}{2}\right).
     \end{align}
-Now we carry out the $\varphi$-integration and use the same trick for the $\theta$-integral as for the $\vartheta$-integral in the \(\vx'\)-integration earlier.  Moreover, we absorb some of the restrictions of \(\rho\) into the limits of the integrals. This yields:
+Now we carry out the $\varphi$-integration and use the 
+same trick for the $\theta$-integral as for the 
+$\vartheta$-integral in the \(\vx'\)-integration 
+earlier.  Moreover, we absorb some of the restrictions 
+of \(\rho\) into the limits of the integrals. This 
+yields:
     \begin{align}
-    \eqref{y'Integral1} &=\frac{\lambda \|\psi\|_g}{8(4\pi)}  1_{y^0+x^0>|\vx-\vy|>y^0-x^0} \int_{\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}\right)}^{y^0} d\rho \int_{-1}^{\min(1,K_{x-y}(\rho))} \!\!\! dw \, \frac{2 g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
- &~~~\times \partial_w g_2\left(\frac{x^0+y^0-\rho + \sqrt{|\vx-\vy|^2+\rho^2+2\rho|\vx-\vy|w}}{2}\right)\nonumber\\
-    &= \frac{\lambda \|\psi\|_g}{4(4\pi)} 1_{x^0+y^0>|\vx-\vy|>y^0-x^0} \int_{\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}\right)}^{y^0} d\rho ~  \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\ 
-    &~~~\times \left[ g_2\left(\frac{x^0+y^0-\rho + \sqrt{|\vx-\vy|^2+\rho^2+2\rho|\vx-\vy|\min(1,K_{x-y}(\rho))}}{2}\right)\right.\nonumber\\
-    &~~~\left.-g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\right]
+    \eqref{y'Integral1} &=\frac{\lambda \|\psi\|_g}{8(4\pi)}  1_{y^0+x^0>|\vx-\vy|>y^0-x^0} \int_{\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}\right)}^{y^0} d\rho \notag\\
+    &\int_{-1}^{\min(1,K_{x-y}(\rho))} \!\!\! dw \, \frac{2 g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
+ &\times \partial_w g_2\left(\frac{x^0+y^0-\rho + \sqrt{|\vx-\vy|^2+\rho^2+2\rho|\vx-\vy|w}}{2}\right)\nonumber\\
+    &= \frac{\lambda \|\psi\|_g}{4(4\pi)} 1_{x^0+y^0>|\vx-\vy|>y^0-x^0} \int_{\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}\right)}^{y^0} \!\!\!\!d\rho~   \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\ 
+    &\hspace{-1cm}\times \left[ g_2\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho \!+\! \sqrt{|\vx\!-\!\vy|^2\!+\!\rho^2\!+\!2\rho|\vx\!-\!\vy|\min(1,K_{x-y}(\rho))}}{2}\right)\right.\nonumber\\
+    &\left.-g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\right]
 \end{align}
-The square root can be simplified using the following identity:
-\begin{align}\label{PlugKIn}
-   \sqrt{|\vx-\vy|^2+\rho^2+2\rho|\vx-\vy|K_{x-y}(\rho)}=
-   \sqrt{\rho^2 +(x^0-y^0)^2+2\rho (x^0-y^0)}
+The square root can be simplified using the following 
+identity:
+\begin{align}\notag
+   &\sqrt{|\vx-\vy|^2+\rho^2+2\rho|\vx-\vy|K_{x-y}(\rho)}\\\label{PlugKIn}
+   &=\sqrt{\rho^2 +(x^0-y^0)^2+2\rho (x^0-y^0)}
    =|x^0-y^0+\rho|.
 \end{align}
-Using this, we can effectively pull the minimum out of the square root. We obtain:
+Using this, we can effectively pull the minimum out of 
+the square root. We obtain:
 \begin{align}\nonumber
-    &\eqref{y'Integral1} =\frac{\lambda \|\psi\|_g}{16\pi} 1_{x^0+y^0>|\vx-\vy|>y^0-x^0} \int_{\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}\right)}^{y^0} d\rho ~ \frac{ g(y^0-\rho)}{|\vx-\vy|}\\ 
-    &\times\left[ g_2\left(\frac{x^0+y^0-\rho + \min(|\vx-\vy|+\rho,|x^0-y^0+\rho|)}{2}\right)-g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\right].
+    &\eqref{y'Integral1} \!=\!\frac{\lambda \|\psi\|_g}{16\pi} 1_{x^0+y^0>|\vx-\vy|>y^0-x^0}\! \int_{\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}\right)}^{y^0} \!\!\!d\rho ~ \frac{ g(y^0-\rho)}{|\vx-\vy|}\\ 
+    &\times\Bigg[ g_2\!\left(\frac{x^0+y^0-\rho + \min(|\vx-\vy|+\rho,|x^0-y^0+\rho|)}{2}\right)\notag\\
+    &\hspace{3cm}-g_2\!\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\Bigg].
 \label{CasesFirstTermEnd}
 \end{align}
-Next, we subdivide the conditions in the first indicator function into two cases, (a) $(x-y)^2>0$ and (b) $(x-y)^2<0$. In case (a), the condition $|\vx-\vy|>y^0-x^0$ implies $x^0>y^0$. This, in turn, yields $\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}\right) = 0$.  Moreover, the condition $x^0+y^0>|\vx-\vy|$ is automatically satisfied (note that $x^0,y^0>0$). In case (b), the condition $|\vx-\vy|>0$ is automatically satisfied. We find:
+Next, we subdivide the conditions in the first 
+indicator function into two cases, (a) $(x-y)^2>0$ and 
+(b) $(x-y)^2<0$. In case (a), the condition 
+$|\vx-\vy|>y^0-x^0$ implies $x^0>y^0$. This, in turn, 
+yields $\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}
+\right) = 0$.  Moreover, the condition 
+$x^0+y^0>|\vx-\vy|$ is automatically satisfied (note 
+that $x^0,y^0>0$). In case (b), the condition 
+$|\vx-\vy|>0$ is automatically satisfied. We find:
 \begin{align}
  \nonumber
      &\eqref{y'Integral1} = \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho  \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
-    &~~~\times\left[ g_2\left(\frac{x^0+y^0 + |\vx-\vy|}{2}\right)
+    &\times\left[ g_2\left(\frac{x^0+y^0 + |\vx-\vy|}{2}\right)
     -g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\right]\\\nonumber
-    &~~~+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
-    &~~~\times \left[ g_2\left(\frac{x^0+y^0-\rho + |x^0-y^0+\rho|}{2}\right)
-    -g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\right]\\\nonumber
+    &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
+    &\times \Bigg[ g_2\left(\frac{x^0+y^0-\rho + |x^0-y^0+\rho|}{2}\right)\\\notag
+    &\quad \quad -g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\Bigg]\\\nonumber
     &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
-    &~~~\times \left[ g_2\left(\frac{x^0+y^0 + |\vx-\vy|}{2}\right)
-    -g_2\max\left(\frac{x^0+y^0- |\vx-\vy|}{2},\frac{x^0+y^0+ |\vx-\vy|}{2}-\rho\right)\right]\\\nonumber
-    &~~~+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\
-    &~~~\times\left[ g_2\max\left(x^0,y^0-\rho\right)
-    -g_2\max\left(\frac{x^0+y^0-|\vx-\vy|}{2},\frac{x^0+y^0+|\vx-\vy|}{2}-\rho\right)\right].
+    &\times \Bigg[ g_2\left(\frac{x^0+y^0 + |\vx-\vy|}{2}\right)\\\notag
+    &\quad \quad -g_2\max\left(\frac{x^0+y^0- |\vx-\vy|}{2},\frac{x^0+y^0+ |\vx-\vy|}{2}-\rho\right)\Bigg]\\\nonumber
+    &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\
+    &\times\Bigg[ g_2\max\left(x^0,y^0-\rho\right)\notag\\
+    &\quad \quad -g_2\max\left(\frac{x^0+y^0-|\vx-\vy|}{2},\frac{x^0+y^0+|\vx-\vy|}{2}-\rho\right)\Bigg].
 \label{eq:resulty'Integral1}
 \end{align}
-Here and in the following we abbreviate $g_2(\max(\cdots))$ as $g_2 \max (\cdots)$, and similarly for the minimum. This ends the calculation of \eqref{y'Integral1}: we have arrived at an expression where no more exact calculations can be done and further estimates are needed.
+Here and in the following we abbreviate 
+$g_2(\max(\cdots))$ as $g_2 \max (\cdots)$, and 
+similarly for the minimum. This ends the calculation 
+of \eqref{y'Integral1}: we have arrived at an 
+expression where no more exact calculations can be 
+done and further estimates are needed.
 
 %%%
 \subparagraph{Simplification of term \eqref{y'Integral2}.}
 Next, we proceed with \eqref{y'Integral2} in a similar fashion. In case the reader is not interested in the details of the calculation, the result can be found in \eqref{eq:resulty'Integral2}.
 
-The restrictions of the integration variables for \eqref{y'Integral2} are the same as for \eqref{y'Integral1}, namely:
+The restrictions of the integration variables for 
+\eqref{y'Integral2} are the same as for 
+\eqref{y'Integral1}, namely:
 \begin{align}
 \cos\theta<K_{x-y}(|\vy'|)\quad\quad   &\text{from } \eqref{eq:costhetakxy},\\
 \frac{y^0-x^0+|\vx-\vy|}{2} < |\vy'| \quad\quad  &\text{from } \eqref{eq:xycond1}\label{eq:condfromkxy}\\
-y^0-x^0<|\vx-\vy|<y^0+x^0 \quad\quad  &\text{from \eqref{eq:xycond1} and from } \eqref{eq:xycond2}.
+y^0-x^0<|\vx-\vy|<y^0+x^0 \quad\quad  &\text{from \eqref{eq:xycond1} and } \eqref{eq:xycond2}.
 \end{align}
-The only difference is that from the maximum in \eqref{y'Integral2}, we obtain the additional restriction \eqref{eq:costhetapxy}, i.e.
+The only difference is that from the maximum in 
+\eqref{y'Integral2}, we obtain the additional 
+restriction \eqref{eq:costhetapxy}, i.e.
 \begin{equation}
 	\cos\theta< P_{x,y}(|\vy'|).
 \end{equation}
-We need to check if there are new restrictions imposed by \(P_{x,y}(|\vy'|)>-1\). We compute
+We need to check if there are new restrictions imposed 
+by \(P_{x,y}(|\vy'|)>-1\). We compute
 \begin{align}
     P_{x,y}(|\vy'|) ~&>~ -1~~ \iff\nonumber\\
      \frac{(x^0+y^0)^2}{2|\vy'||\vx-\vy|} - \frac{|\vx-\vy|}{2|\vy'|} - \frac{x^0+y^0}{|\vx-\vy|}~&>~-1    ~~\iff\nonumber \\
    |\vy'| ~&<~ \frac{x^0+y^0+|\vx-\vy|}{2};
 \end{align}
-however, the last inequality is already ensured by \eqref{eq:condfromkxy} and $x^0>0$. 
-In order to be able to evaluate \eqref{y'Integral2} further, we next plug the condition $\cos \theta < P_{x,y}(|\vy'|)$ into the expression for $|\vb|$. This yields (recall that we use spherical variables for $|\vy'|$):
+however, the last inequality is already ensured by 
+\eqref{eq:condfromkxy} and $x^0>0$. 
+In order to be able to evaluate \eqref{y'Integral2} 
+further, we next plug the condition 
+$\cos \theta < P_{x,y}(|\vy'|)$ into the expression 
+for $|\vb|$. This yields (recall that we use spherical 
+variables for $|\vy'|$):
 \begin{align}\label{PlugPIn}
-   |\vb| &= \sqrt{|\vx-\vy|^2+\rho^2 + 2 \rho |\vx-\vy| \cos \theta} < \sqrt{|\vx-\vy|^2+\rho^2 + 2 \rho |\vx-\vy| P_{x,y}(\rho)}\nonumber\\
+   |\vb| &= \sqrt{|\vx-\vy|^2+\rho^2 + 2 \rho |\vx-\vy| \cos \theta} \notag\\
+   &< \sqrt{|\vx-\vy|^2+\rho^2 + 2 \rho |\vx-\vy| P_{x,y}(\rho)}\nonumber\\
     &= \sqrt{\rho^2 - 2\rho(x^0+y^0) +(x^0+y^0)^2}=x^0+y^0-\rho.
 \end{align}
-With this, we perform for \eqref{y'Integral2} the analogous calculation to \eqref{casesFirstTermBeginning}--\eqref{CasesFirstTermEnd}. This yields:
+With this, we perform for \eqref{y'Integral2} the 
+analogous calculation to 
+\eqref{casesFirstTermBeginning}--
+\eqref{CasesFirstTermEnd}. This yields:
 \begin{align}
-    \eqref{y'Integral2}&=\frac{\lambda\|\psi\|_g}{16\pi} 1_{y^0-x^0<|\vx-\vy|<x^0+y^0} \int_{\max \left(0,y^0-x^0, \frac{y^0-x^0+|\vx-\vy|}{2} \right)}^{y^0} d\rho ~\frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &~~~\times \left[g_2\left(\frac{x^0+y^0-\rho-\min(|\vx-\vy|+\rho,|x^0-y^0+\rho|,x^0+y^0-\rho)}{2} \right)\right.\nonumber\\
-    &~~~\left.-g_2\left( \frac{x^0+y^0-\rho-||\vx-\vy|-\rho|}{2} \right) \right] \nonumber\\
+    &\eqref{y'Integral2}=\frac{\lambda\|\psi\|_g}{16\pi} 1_{y^0-x^0<|\vx-\vy|<x^0+y^0} \int_{\max \left(0,y^0-x^0, \frac{y^0-x^0+|\vx-\vy|}{2} \right)}^{y^0} \!\!\!d\rho \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
+    &\times \left[g_2\!\left(\frac{x^0\!+\!y^0\!-\!\rho\!-\!\min(|\vx\!-\!\vy|\!+\!\rho,|x^0\!-\!y^0\!+\!\rho|,x^0\!+\!y^0\!-\!\rho)}{2} \right)\right.\nonumber\\
+    &\left.\quad\quad  -g_2\!\left( \frac{x^0+y^0-\rho-||\vx-\vy|-\rho|}{2} \right) \right] \nonumber\\
     &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &~~~\times\left[ g_2\left(\frac{x^0+y^0 - |\vx-\vy|}{2}-\rho\right)
-    -g_2\left(\frac{x^0+y^0-\rho - ||\vx-\vy|-\rho|}{2}\right)\right]\nonumber\\
-    &~~~+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &~~~\times \left[ g_2\left(\frac{x^0+y^0-\rho - |x^0-y^0+\rho|}{2}\right)
-    -g_2\left(\frac{x^0+y^0-\rho - ||\vx-\vy|-\rho|}{2}\right)\right]\nonumber\\
+    &\times\left[ g_2\!\left(\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2}\!-\!\rho\right)
+    \!-\!g_2\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho \!-\! ||\vx\!-\!\vy|\!-\!\rho|}{2}\right)\right]\nonumber\\
+    &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
+    &\times \left[ g_2\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho \!-\! |x^0\!-\!y^0\!+\!\rho|}{2}\right)
+    \!-\!g_2\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho \!-\! ||\vx\!-\!\vy|\!-\!\rho|}{2}\right)\right]\nonumber\\
     &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &~~~\times \left[ g_2\left(\frac{x^0+y^0 - |\vx-\vy|}{2}-\rho\right)
-    -g_2\min\left(\frac{x^0+y^0 - |\vx-\vy|}{2},\frac{x^0+y^0 + |\vx-\vy|}{2}-\rho\right)\right]\nonumber\\
-    &~~~+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho ~ \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &~~~\times \left[ g_2\min\left(x^0,y^0-\rho\right)
-    -g_2\min\left(\frac{x^0+y^0- |\vx-\vy|}{2},\frac{x^0+y^0+ |\vx-\vy|}{2}-\rho\right)\right].
+    &\times \Bigg[ g_2\!\left(\!\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2}\!-\!\rho\right)\\
+    &\quad \quad \!-\!g_2\min\!\left(\!\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!+\!y^0 \!+\! |\vx\!-\!\vy|}{2}\!-\!\rho\!\right)\Bigg]\nonumber\\
+    &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho ~ \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
+    &\times \Bigg[ g_2\min\left(x^0,y^0-\rho\right)\notag\\
+    &\quad \quad -g_2\!\min\left(\!\frac{x^0\!+\!y^0\!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!+\!y^0\!+\! |\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg].
 \label{eq:resulty'Integral2}
 \end{align}
 This ends the calculation of \eqref{y'Integral2}. 
 
 %%%
-\subparagraph{Simplification of term \eqref{y'Integral3}.}
-We next turn to \eqref{y'Integral3}. In case the reader is not interested in the details of the computation, the result can be found in \eqref{eq:resulty'Integral3}.
-First we note that the restriction imposed by the first indicator function here is \(\cos\theta>K_{x-y}(|\vy'|)\) and the condition of the second indicator function is \(\cos\theta<P_{x,y}(|\vy'|)\). In order to to satisfy these conditions (and the restrictions of the regular range of integration) it is required that
+\subparagraph{Simplification of term 
+\eqref{y'Integral3}.}
+We next turn to \eqref{y'Integral3}. In case the reader 
+is not interested in the details of the computation, 
+the result can be found in \eqref{eq:resulty'Integral3}.
+First we note that the restriction imposed by the first 
+indicator function here is \(\cos\theta>K_{x-y}(|\vy'|)\) 
+and the condition of the second indicator function is 
+\(\cos\theta<P_{x,y}(|\vy'|)\). In order to to satisfy 
+these conditions (and the restrictions of the regular 
+range of integration) it is required that
 \begin{equation}
     \max(-1,K_{x-y}(|\vy'|)<\cos\theta<\min(1,P_{x,y}(|\vy'|)).
 \end{equation}
-This leads us to ask which restrictions on \(|\vy'|\) are imposed by the conditions
+This leads us to ask which restrictions on \(|\vy'|\) 
+are imposed by the conditions
 \begin{align}
     K_{x-y}(|\vy'|) ~&<~1,\\
     P_{x,y}(|\vy'|) ~&>~-1,\\
     K_{x-y}(|\vy'|) ~&<~ P_{x,y}(|\vy'|).
 \end{align}
-These restrictions shall be computed next. With \(|\vy'|=\rho\), we find:
-\begin{align}
-     K_{x-y}(|\vy'|)<1~~~
-    &\iff~~~ \frac{(x-y)^2}{2\rho|\vx-\vy|}+\frac{x^0-y^0}{|\vx-\vy|}~<~1\nonumber\\
- &\iff~~~    (x-y)^2~<~2\rho(y^0-x^0+|\vx-\vy|)\nonumber\\
-   &\iff~~~  \left\{\begin{matrix}\rho>\frac{y^0-x^0-|\vx-\vy|}{2}\quad \text{for } |\vx-\vy|>x^0-y^0,\\
+These restrictions shall be computed next. With 
+\(|\vy'|=\rho\), we find:
+\begin{align}\notag
+     &K_{x-y}(|\vy'|)<1\\
+    &\iff \frac{(x-y)^2}{2\rho|\vx-\vy|}+\frac{x^0-y^0}{|\vx-\vy|}~<~1\nonumber\\
+ &\iff    (x-y)^2~<~2\rho(y^0-x^0+|\vx-\vy|)\nonumber\\
+   &\iff  \left\{\begin{matrix}\rho>\frac{y^0-x^0-|\vx-\vy|}{2}\quad \text{for } |\vx-\vy|>x^0-y^0,\\
 \rho<\frac{y^0-x^0-|\vx-\vy|}{2}\quad \, \text{for } |\vx-\vy|<x^0-y^0.
      \end{matrix} \right.
 \end{align}
-The second case in the last line is in conflict with \(\rho>0\), so we have to impose the first condition on \eqref{y'Integral3}. We continue with \(P_{x,y}(\rho)>-1\).
+The second case in the last line is in conflict with 
+\(\rho>0\), so we have to impose the first condition on 
+\eqref{y'Integral3}. We continue with 
+\(P_{x,y}(\rho)>-1\).
 \begin{align}
-    P_{x,y}(\rho)>-1~&\iff~ \frac{(x^0+y^0)^2}{2\rho|\vx-\vy|} - \frac{|\vx-\vy|}{2\rho}-\frac{x^0+y^0}{|\vx-\vy|} ~>~-1 \nonumber \\
+    &P_{x,y}(\rho)>-1\\
+    &\iff~ \frac{(x^0+y^0)^2}{2\rho|\vx-\vy|} - \frac{|\vx-\vy|}{2\rho}-\frac{x^0+y^0}{|\vx-\vy|} ~>~-1 \nonumber \\
    &\iff~ (x^0+y^0)^2-|\vx-\vy|^2~>~2\rho(x^0+y^0-|\vx-\vy|)\nonumber \\
     &\iff~\left\{\begin{matrix}\rho< \frac{x^0+y^0+|\vx-\vy|}{2} \quad \text{for } x^0+y^0>|\vx-\vy|,\\
     \rho> \frac{x^0+y^0+|\vx-\vy|}{2} \quad \text{for } x^0+y^0<|\vx-\vy|.
     \end{matrix} \right.
 \end{align}
-The second case is in conflict with \(\rho<y^0\), so we implement indicator functions corresponding only to the first case in \eqref{y'Integral3}. The third condition \(K_{x-y}(\rho)<P_{x,y}(\rho)\) in fact does not impose any additional conditions. This can be seen as follows:
-\begin{align}
-    K_{x-y}(\rho)~<~P_{x,y}(\rho)~~~&\iff~~~ \frac{(x-y)^2}{2\rho|\vx-\vy|}+\frac{x^0-y^0}{|\vx-\vy|}~<~\frac{(x^0+y^0)^2}{2\rho|\vx-\vy|} - \frac{|\vx-\vy|}{2\rho}-\frac{x^0+y^0}{|\vx-\vy|}\nonumber\\
-   &\iff~~~ -2x^0y^0 + 4\rho x^0~<~2x^0y^0\nonumber\\
-   &\iff~~~   \rho<y^0,
+The second case is in conflict with \(\rho<y^0\), so 
+we implement indicator functions corresponding only to 
+the first case in \eqref{y'Integral3}. The third 
+condition \(K_{x-y}(\rho)<P_{x,y}(\rho)\) in fact does 
+not impose any additional conditions. This can be seen 
+as follows:
+\begin{align}\notag
+  &K_{x-y}(\rho)~<~P_{x,y}(\rho)\\
+  &\iff~~~ \frac{(x-y)^2}{2\rho|\vx-\vy|}+\frac{x^0-y^0}{|\vx-\vy|}~<~\frac{(x^0+y^0)^2}{2\rho|\vx-\vy|} - \frac{|\vx-\vy|}{2\rho}-\frac{x^0+y^0}{|\vx-\vy|}\nonumber\\
+  &\iff~~~ -2x^0y^0 + 4\rho x^0~<~2x^0y^0\nonumber\\
+  &\iff~~~   \rho<y^0,
 \end{align}
 which always holds true.
 
-Taking into account the computed restrictions, we arrive at:
+Taking into account the computed restrictions, we 
+arrive at:
 \begin{align}
-    &\eqref{y'Integral3} \stackrel{\cos\theta=w}{=}\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_0^{2\pi} d\varphi \int_0^{y^0} d\rho \int_{-1}^1 dw \,1_{K_{x-y}(\rho)<w<P_{x,y}(\rho)} 1_{\frac{y^0-x^0-|\vx-\vy|}{2}<\rho<\frac{x^0+y^0+|\vx-\vy|}{2}} \nonumber\\
-     &~~~\times 1_{x^0-y^0<|\vx-\vy|<x^0+y^0} \frac{g(y^0-\rho)\rho}{\sqrt{\rho^2+|\vx-\vy|^2+2\rho|\vx-\vy|w}}\nonumber\\
-     &~~~\times g_1\left( \frac{x^0+y^0-\sqrt{\rho^2+|\vx-\vy|^2+2\rho|\vx-\vy|w}}{2}\right)\nonumber\\
-     &= \frac{\lambda \|\psi\|_g 2\pi}{4(4\pi)^2}1_{x^0-y^0<|\vx-\vy|<x^0+y^0} \int_{\max\left(0,\frac{y^0-x^0-|\vx-\vy|}{2}\right)}^{\min\left(y^0,\frac{x^0+y^0+|\vx-\vy|}{2} \right)}d\rho
-     \int_{\max(-1,K_{x-y}(\rho))}^{\min(1,P_{x,y}(\rho))}dw \, \frac{-2 g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-     &~~~\times \partial_w 
-     g_2\left(\frac{x^0+y^0-\sqrt{\rho^2+|\vx-\vy|^2 +2\rho|\vx-\vy|w}}{2} \right)\nonumber\\
+    &\eqref{y'Integral3} \stackrel{\cos\theta=w}{=}\frac{\lambda \|\psi\|_g}{4(4\pi)^2} \int_0^{2\pi} d\varphi \int_0^{y^0} d\rho \int_{-1}^1 dw \,1_{K_{x-y}(\rho)<w<P_{x,y}(\rho)}  \nonumber\\
+     &\quad \times 1_{\frac{y^0-x^0-|\vx-\vy|}{2}<\rho<\frac{x^0+y^0+|\vx-\vy|}{2}}\frac{g(y^0-\rho)\rho}{\sqrt{\rho^2+|\vx-\vy|^2+2\rho|\vx-\vy|w}} \nonumber\\
+     &\quad \times 1_{x^0-y^0<|\vx-\vy|<x^0+y^0} g_1\!\!\left( \!\frac{x^0\!\!+\!y^0\!\!-\!\sqrt{\rho^2\!\!+\!|\vx\!-\!\vy|^2\!\!+\!2\rho|\vx\!-\!\vy|w}}{2}\right)\nonumber\\
+     &= \frac{\lambda \|\psi\|_g 2\pi}{4(4\pi)^2}1_{x^0-y^0<|\vx-\vy|<x^0+y^0} \int_{\max\big(0,\frac{y^0-x^0-|\vx-\vy|}{2}\big)}^{\min\big(y^0,\frac{x^0+y^0+|\vx-\vy|}{2} \big)}d\rho\notag\\
+     &\quad \times \int_{\max(-1,K_{x-y}(\rho))}^{\min(1,P_{x,y}(\rho))}dw \, \frac{-2 g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
+     &\times \partial_w 
+     g_2\!\left(\frac{x^0+y^0-\sqrt{\rho^2+|\vx-\vy|^2 +2\rho|\vx-\vy|w}}{2} \right)\nonumber\\
      &=\frac{\lambda \|\psi\|_g}{16\pi} 1_{x^0-y^0<|\vx-\vy|<x^0+y^0} 
-     \int_{\max\left(0,\frac{y^0-x^0-|\vx-\vy|}{2}\right)}^{\min\left(y^0,\frac{x^0+y^0+|\vx-\vy|}{2} \right)}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\ 
-     &~~~\times \left[g_2\left(\frac{x^0+y^0-\rho-\sqrt{\rho^2+|\vx-\vy|^2+2\rho|\vx-\vy|\max(-1,K_{x-y}(\rho))}}{2}\right)\right.\nonumber\\
-     &~~~~\left.-g_2\left(\frac{x^0+y^0-\rho-\sqrt{\rho^2+|\vx-\vy|^2+2\rho|\vx-\vy|\min(1,P_{x,y}(\rho))}}{2}\right)
-     \right].
+     \int_{\max\big(0,\frac{y^0-x^0-|\vx-\vy|}{2}\big)}^{\min\big(y^0,\frac{x^0+y^0+|\vx-\vy|}{2} \big)}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\ 
+     &\times \left[g_2\!\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho\!-\!\sqrt{\rho^2\!+\!|\vx\!-\!\vy|^2\!+\!2\rho|\vx\!-\!\vy|\max(-1,K_{x-y}(\rho))}}{2}\right)\right.\nonumber\\
+     &\left.-g_2\!\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\!\rho\!-\!\sqrt{\rho^2\!+\!|\vx\!-\!\vy|^2\!+\!2\rho|\vx\!-\!\vy|\min(1,P_{x,y}(\rho))}}{2}\right)
+     \!\right]\!.
 \end{align}
-At this point, the expressions look quite formidable. We can, however, achieve significant simplifications by inserting the functional form of $K_{x,y}(\rho)$ and $P_{x,y}(\rho)$ as in \eqref{PlugPIn} and \eqref{PlugKIn}. This yields:
+At this point, the expressions look quite formidable. 
+We can, however, achieve significant simplifications 
+by inserting the functional form of $K_{x,y}(\rho)$ 
+and $P_{x,y}(\rho)$ as in \eqref{PlugPIn} and 
+\eqref{PlugKIn}. This yields:
 \begin{align}
-    \eqref{y'Integral3} &=
-    \frac{\lambda\|\psi\|_g}{16\pi} 1_{x^0-y^0<|\vx-\vy|<x^0+y^0}
-    \int_{\max\left(0,\frac{y^0-x^0-|\vx-\vy|}{2}\right)}^{\min\left(y^0,\frac{x^0+y^0+|\vx-\vy|}{2} \right)}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\ 
-    &~~~\times\left[ g_2\left( \frac{x^0+y^0-\rho-\max(||\vx-\vy|-\rho|,|x^0-y^0+\rho|)}{2} \right)\right.\nonumber\\
-    &~~~\left.-g_2\left( \frac{x^0+y^0-\rho-\min(|\vx-\vy|+\rho,x^0+y^0-\rho)}{2} \right)\right]
+  &\eqref{y'Integral3} =\notag\\
+  &\frac{\lambda\|\psi\|_g}{16\pi} 1_{x^0-y^0<|\vx-\vy|<x^0+y^0}
+  \int_{\max\left(0,\frac{y^0-x^0-|\vx-\vy|}{2}\right)}^{\min\left(y^0,\frac{x^0+y^0+|\vx-\vy|}{2} \right)}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\ 
+  &~~~\times\left[ g_2\left( \frac{x^0+y^0-\rho-\max(||\vx-\vy|-\rho|,|x^0-y^0+\rho|)}{2} \right)\right.\nonumber\\
+  &~~~\left.-g_2\left( \frac{x^0+y^0-\rho-\min(|\vx-\vy|+\rho,x^0+y^0-\rho)}{2} \right)\right]
 	\label{eq:y'Integral3calc}
 \end{align}
-Now we simplify the arguments of the $g_2$-functions. For the first one, we have:
+Now we simplify the arguments of the $g_2$-functions. 
+For the first one, we have:
 \begin{align}
-	&x^0+y^0-\rho-\max(||\vx-\vy|-\rho|,|x^0-y^0+\rho|)\nonumber\\
-&~~~=~ x^0+y^0-\rho -\max ( |\vx-\vy|-\rho,\rho-|\vx-\vy|,x^0-y^0+\rho,y^0-\rho-x^0)\nonumber\\
-&~~~= \min\left(x^0+y^0-\rho-|\vx-\vy|,x^0+y^0+|\vx-\vy|-2\rho,2(y^0-\rho),2x^0 \right).
+&x^0\!\!+\!y^0\!\!-\!\rho\!-\!\max(||\vx\!-\!\vy|\!-\!\rho|,|x^0\!\!-\!y^0\!\!+\!\rho|)\nonumber\\
+&= x^0\!\!+\!y^0\!\!-\!\rho\! -\!\max ( |\vx\!-\!\vy|\!-\!\rho,\rho\!-\!|\vx\!-\!\vy|,x^0\!\!-\!y^0\!\!+\!\rho,y^0\!\!-\!\rho\!-\!x^0)\nonumber\\
+&= \min\!\left(x^0\!\!+\!y^0\!\!-\!\rho\!-\!|\vx\!-\!\vy|,x^0\!\!+\!y^0\!\!+\!|\vx\!-\!\vy|\!-\!2\rho,2(y^0\!\!-\!\rho),2x^0 \right).
 \end{align}
-And for the second one:
+For the second one we get
 \begin{equation}
-	x^0+y^0-\min(|\vx-\vy|+\rho,x^0+y^0-\rho) ~=~ \max(x^0+y^0-|\vx-\vy|-2\rho,0).
+	x^0\!\!+\!y^0\!\!-\!\min(|\vx\!-\!\vy|\!+\!\rho,x^0\!\!+\!y^0\!\!-\!\rho) = \max(x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|\!-\!2\rho,0).
 \end{equation}
 Using this in \eqref{eq:y'Integral3calc}, we find:
 \begin{align}
-    \eqref{y'Integral3} &=\frac{\lambda\|\psi\|_g}{16\pi} 
+    &\eqref{y'Integral3} =\frac{\lambda\|\psi\|_g}{16\pi} 
     1_{x^0-y^0<|\vx-\vy|<x^0+y^0}
-    \int_{\max\left(0,\frac{y^0-x^0-|\vx-\vy|}{2}\right)}^{\min\left(y^0,\frac{x^0+y^0+|\vx-\vy|}{2} \right)}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &~~~\times \left[g_2 \min\left(\frac{x^0+y^0-|\vx-\vy|}{2},\frac{x^0+y^0+|\vx-\vy|}{2}-\rho,y^0-\rho,x^0 \right) \right.\nonumber\\
-    &~~~\left. -g_2 \max\left( \frac{x^0+y^0-|\vx-\vy|}{2}-\rho,0\right) \right].
+    \int_{\max\big(0,\frac{y^0-x^0-|\vx-\vy|}{2}\big)}^{\min\big(y^0,\frac{x^0+y^0+|\vx-\vy|}{2} \big)}\!d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
+    &\quad\times \left[g_2 \min\!\left(\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+\!|\vx\!-\!\vy|}{2}\!-\!\rho,y^0\!\!-\!\rho,x^0 \!\right) \right.\nonumber\\
+    &\quad \quad \left. -g_2 \max\!\left( \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right) \right].
 \end{align}
-As in the consideration below \eqref{CasesFirstTermEnd}, we split the expression into separate terms with \((x-y)^2 \gtrless 0\). Using \(y^0\gtrless x^0+|\vx-\vy|\), we can simplify the expressions involving the minimum. This results in:
+As in the consideration below 
+\eqref{CasesFirstTermEnd}, we split the expression 
+into separate terms with \((x-y)^2 \gtrless 0\). 
+Using \(y^0\gtrless x^0+|\vx-\vy|\), we can simplify 
+the expressions involving the minimum. This results 
+in:
 \begin{align}
-    \eqref{y'Integral3} &=
+    &\eqref{y'Integral3} =
     \frac{\lambda\|\psi\|_g}{16\pi} 1_{(x-y)^2>0,y^0>x^0}
     \int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\frac{x^0+y^0+|\vx-\vy|}{2}}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[g_2 \min\left(\frac{x^0+y^0+|\vx-\vy|}{2}-\rho,x^0\right) -g_2\max\left( \frac{x^0+y^0-|\vx-\vy|}{2}-\rho,0\right) \right]\nonumber\\
+    &\times \left[g_2 \min\!\left(\!\frac{x^0\!\!+\!y^0\!\!+\!|\vx\!-\!\vy|}{2}\!-\!\rho,x^0\!\right) \!-\!g_2\max\!\left(\! \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right) \right]\nonumber\\
     &+\frac{\lambda\|\psi\|_g}{16\pi} 
     1_{(x-y)^2<0,|\vx-\vy|<x^0+y^0}
-    \int_{0}^{y^0}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[g_2\min\left(\frac{x^0+y^0-|\vx-\vy|}{2},y^0-\rho\right) -g_2\max\left( \frac{x^0+y^0-|\vx-\vy|}{2}-\rho,0\right) \right].
-\label{eq:resulty'Integral3}
+    \int_{0}^{y^0}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\label{eq:resulty'Integral3}\\
+    &\times \left[g_2\min\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},y^0\!\!-\!\rho\!\right) \!-\!g_2\max\!\left( \!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right) \right].\notag
 \end{align}
 This concludes the calculation of \eqref{y'Integral3}.
 
 %%%
-\subparagraph{Summary of the first estimate.} We have obtained the following bound for $| A_0 \psi |(x,y)$:
+\subparagraph{Summary of the first estimate.} We have 
+obtained the following bound for $| A_0 \psi |(x,y)$:
 \begin{align}
-    &\frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y) ~\le~ 
-    1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[ g_2\left(\frac{x^0+y^0 + |\vx-\vy|}{2}\right)
-    -g_2\max\left(\frac{x^0+y^0- |\vx-\vy|}{2},\frac{x^0+y^0+ |\vx-\vy|}{2}-\rho\right)\right]\nonumber\\
-    &+ 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[ g_2\max\left(x^0,y^0-\rho\right)
-    -g_2\max\left(\frac{x^0+y^0-|\vx-\vy|}{2},\frac{x^0+y^0+|\vx-\vy|}{2}-\rho\right)\right]\nonumber\\
-    &+ 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[ g_2\left(\frac{x^0+y^0 - |\vx-\vy|}{2}-\rho\right)
-    -g_2\min\left(\frac{x^0+y^0 - |\vx-\vy|}{2},\frac{x^0+y^0 + |\vx-\vy|}{2}-\rho\right)\right]\nonumber\\\nonumber
-    &+ 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[ g_2\min\left(x^0,y^0-\rho\right)
-    -g_2\min\left(\frac{x^0+y^0- |\vx-\vy|}{2},\frac{x^0+y^0+ |\vx-\vy|}{2}-\rho\right)\right]\nonumber\\
-    &+1_{(x-y)^2>0,y^0>x^0} \int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\frac{x^0+y^0+|\vx-\vy|}{2}}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[g_2 \min\left(\frac{x^0+y^0+|\vx-\vy|}{2}-\rho,x^0\right)-g_2\max\left( \frac{x^0+y^0-|\vx-\vy|}{2}-\rho,0 \right) \right]\nonumber\\
-    &+1_{(x-y)^2<0,|\vx-\vy|<x^0+y^0}
-    \int_{0}^{y^0}d\rho \,\frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[g_2 \min\left(\frac{x^0+y^0-|\vx-\vy|}{2},y^0-\rho\right)-g_2\max\left( \frac{x^0+y^0-|\vx-\vy|}{2}-\rho,0\right)  \right].
+    &\frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y) \le 
+    1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    &\times \Bigg[ g_2\!\left(\!\frac{x^0\!\!+\!y^0\!\! +\! |\vx\!-\!\vy|}{2}\right)\notag\\
+    &\quad\quad \!-\!g_2\max\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+ \!|\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg]\nonumber\\
+    &+ 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx\!-\!\vy|} \int_{\frac{y^0-x^0+|\vx\!-\!\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    &\times \Big[ g_2\max\!\left(x^0,y^0-\rho\right)\notag\\
+    &\quad\quad -g_2\max\!\left(\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}-\rho\right)\Bigg]\nonumber\\
+    &+ 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    &\times \Bigg[ g_2\left(\frac{x^0+y^0 - |\vx\!-\!\vy|}{2}-\rho\right)\notag\\
+    &\quad\quad -g_2\min\!\left(\frac{x^0+y^0 - |\vx\!-\!\vy|}{2},\frac{x^0+y^0 + |\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg]\nonumber\\\nonumber
+    &+ 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx\!-\!\vy|} \int_{\frac{y^0-x^0+|\vx\!-\!\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    &\times \Bigg[ g_2\min\!\left(x^0,y^0-\rho\right)\notag\\
+    &\quad\quad -g_2\min\!\left(\frac{x^0+y^0- |\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+ |\vx\!-\!\vy|}{2}-\rho\right)\Bigg]\nonumber\\
+    &+1_{(x-y)^2>0,y^0>x^0} \int_{\frac{y^0-x^0-|\vx\!-\!\vy|}{2}}^{\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}}d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    &\times \Bigg[g_2 \min\!\left(\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}\!-\!\rho,x^0\right)\notag\\
+    &\quad\quad \!-\!g_2\max\!\left( \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0 \right) \Bigg]\nonumber\\
+    &+1_{(x-y)^2<0,|\vx\!-\!\vy|<x^0+y^0}
+    \int_{0}^{y^0}d\rho \,\frac{g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    &\times \Bigg[g_2 \min\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},y^0\!\!-\!\rho\right)\notag\\
+    &\quad\quad \!-\!g_2\max\!\left( \!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right)  \Bigg].
 \end{align}
-In order to simplify the result, we introduce the variables
+In order to simplify the result, we introduce the 
+variables
 \begin{align}
     \xi^+:=\frac{x^0+y^0+|\vx-\vy|}{2},\\
     \xi^-:=\frac{x^0+y^0-|\vx-\vy|}{2}.
 \end{align}
-Moreover, we collect terms with the same indicator functions. This results in:
-\begin{align}\nonumber
-    &\frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y)~\le~
-    1_{(x-y)^2<0,\xi^->0} \int_0^{y^0}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}
-    \Big[g_2\min(\xi^-,y^0-\rho)-g_2\max(\xi^--\rho,0)
-    \\\label{A psi estimate 1}
-    &+ 1_{\frac{y^0-x^0+|\vx-\vy|}{2}<\rho} \big(g_2(x^0)+g_2(y^0-\rho)
-    -g_2(\xi^-)-g_2(\xi^+-\rho)\big)
+Moreover, we collect terms with the same indicator 
+functions. This results in:
+\begin{align}
+    &\frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y)\le\notag\\
+    &1_{(x-y)^2<0,\xi^->0} \int_0^{y^0}\!\!d\rho  \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}
+    \Big[g_2\min(\xi^-,y^0-\rho)\!-\!g_2\max(\xi^-\!\!-\!\rho,0)
+    \notag\\\label{A psi estimate 1}
+    &\quad + 1_{\frac{y^0\!\!-\!x^0+|\vx\!-\!\vy|}{2}<\rho} \big(g_2(x^0)+g_2(y^0\!\!-\!\rho)
+    \!-\!g_2(\xi^-)\!-\!g_2(\xi^+\!\!-\!\rho)\big)
     \Big]\\\label{A psi estimate 2}
-    &+1_{(x-y)^2>0,x^0>y^0}\int_0^{y^0} d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|} \big[g_2(\xi^+)+g_2(\xi^--\rho)- g_2(\xi^-)-g_2(\xi^+-\rho)\big]\\\label{A psi estimate 3}
-    &+1_{(x-y)^2>0,y^0>x^0}\int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\xi^+}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}
-    \big[g_2\min(\xi^+-\rho,x^0) - g_2\max(\xi^--\rho,0)\big].
+    &+1_{(x-y)^2>0,x^0>y^0}\int_0^{y^0} d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|} \big[g_2(\xi^+)+g_2(\xi^-\!\!-\!\rho)\notag\\
+    &\hspace{6cm} \!-\! g_2(\xi^-)\!-\!g_2(\xi^+\!\!-\!\rho)\big]\\\label{A psi estimate 3}
+    &+1_{(x-y)^2>0,y^0>x^0}\int_{\frac{y^0\!\!-\!x^0\!\!-\!|\vx\!-\!\vy|}{2}}^{\xi^+}\!\!d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\notag\\
+    &\hspace{3cm}\times \big[g_2\min(\xi^+\!\!-\!\rho,x^0) \!-\! g_2\max(\xi^-\!\!-\!\rho,0)\big].
 \end{align}
 This estimate is an important stepping stone in the proof. Except for special weight functions, the resulting expressions are too complicated to be computed explicitly. We therefore continue with further estimates. The main difficulty in these estimates is that the $1/|\vx-\vy|$ singularity in the expressions needs to be compensated by the integrand and that this cancellation needs to be preserved by the respective estimate. Fortunately, the mean value theorem turns out suitable to provide such estimates.
 

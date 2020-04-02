@@ -10,6 +10,9 @@ Warning--I didn't find a database entry for "Linertcurved"
 Warning--I didn't find a database entry for "int_eq_curved"
 Warning--I didn't find a database entry for "ruisnaar&ivp0"
 Warning--missing pages in haantjes
+Warning--missing journal name in bloch
+Warning--missing year in bloch
+Warning--missing pages in bloch
 Warning--can't use both volume and number if series info is missing
 in BibTeX entry type `inproceedings'
 Warning--missing pages in ibc_model
@@ -19,45 +22,46 @@ Warning--missing pages in selfKG
 Warning--can't use both volume and number if series info is missing
 in BibTeX entry type `inproceedings'
 Warning--missing pages in lienertcurved
-You've used 44 entries,
+Warning--missing pages in lnt_2020
+You've used 58 entries,
             2213 wiz_defined-function locations,
-            770 strings with 9969 characters,
-and the built_in function-call counts, 12521 in all, are:
-= -- 1128
-> -- 456
+            845 strings with 11521 characters,
+and the built_in function-call counts, 16470 in all, are:
+= -- 1491
+> -- 597
 < -- 3
-+ -- 194
-- -- 141
-* -- 1100
-:= -- 1991
-add.period$ -- 44
-call.type$ -- 44
-change.case$ -- 208
++ -- 256
+- -- 185
+* -- 1466
+:= -- 2630
+add.period$ -- 58
+call.type$ -- 58
+change.case$ -- 273
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 519
-empty$ -- 1148
-format.name$ -- 141
-if$ -- 2603
+cite$ -- 68
+duplicate$ -- 673
+empty$ -- 1505
+format.name$ -- 185
+if$ -- 3405
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 90
-newline$ -- 142
-num.names$ -- 81
-pop$ -- 251
+int.to.str$ -- 58
+missing$ -- 118
+newline$ -- 184
+num.names$ -- 108
+pop$ -- 324
 preamble$ -- 1
-purify$ -- 164
+purify$ -- 215
 quote$ -- 0
-skip$ -- 291
+skip$ -- 363
 stack$ -- 0
-substring$ -- 862
-swap$ -- 75
+substring$ -- 1163
+swap$ -- 93
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 2
-type$ -- 170
-warning$ -- 8
-while$ -- 130
-width$ -- 46
-write$ -- 391
-(There were 13 warnings)
+type$ -- 226
+warning$ -- 12
+while$ -- 177
+width$ -- 60
+write$ -- 510
+(There were 17 warnings)

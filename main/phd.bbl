@@ -11,6 +11,24 @@
 IM~Benn and Philip Charlton, \emph{Dirac symmetry operators from conformal
   killing-yano tensors}, arXiv preprint gr-qc/9612011 (1996).
 
+\bibitem{bloch}
+F~Bloch, \emph{Die physikalische bedeutung mehrerer zeiten in der
+  quantenelektrodynamik. phys. z. d. sowjetunion, 5: 301--315, 1934}.
+
+\bibitem{consenza65}
+G~Cosenza, L~Sertorio, and M~Toller, \emph{Singular integral equations in the
+  bound-state problem}, Il Nuovo Cimento (1955-1965) \textbf{35} (1965), no.~3,
+  913--932.
+
+\bibitem{nointeraction}
+DG~Currie, TF~Jordan, and ECG Sudarshan, \emph{Relativistic invariance and
+  hamiltonian theories of interacting particles}, Reviews of Modern Physics
+  \textbf{35} (1963), no.~2, 350.
+
+\bibitem{cutkosky54}
+RE~Cutkosky, \emph{Solutions of a bethe-salpeter equation}, Physical Review
+  \textbf{96} (1954), no.~4, 1135.
+
 \bibitem{ivp0}
 D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher, \emph{Time-evolution of
   the external field problem in quantum electrodynamics}, Journal of
@@ -31,10 +49,18 @@ Dirk-Andr{\'e} Deckert and Lukas Nickel, \emph{Consistency of multi-time dirac
   equations with general interaction potentials}, Journal of Mathematical
   Physics \textbf{57} (2016), no.~7, 072301.
 
+\bibitem{deckert_nickel_2019}
+\bysame, \emph{Multi-time dynamics of the dirac-fock-podolsky model of qed},
+  Journal of Mathematical Physics \textbf{60} (2019), no.~7, 072301.
+
 \bibitem{dirk_martin_2018}
 Dirk-Andr{\'e} Deckert and Martin Oelker, \emph{Distinguished self-adjoint
   extension of the two-body dirac operator with coulomb interaction}, Annales
   Henri Poincar{\'e}, vol.~20, Springer, 2019, pp.~2407--2445.
+
+\bibitem{dfp}
+PAM Dirac, VA~Fock, and B~Podolsky, \emph{Selected papers on quantum
+  electrodynamics}, Ed.: Schwinger J., Dover Publi. Inc. NY (1958), 29--40.
 
 \bibitem{dirac_32}
 Paul Adrien~Maurice Dirac, \emph{Relativistic quantum mechanics}, Proceedings
@@ -50,6 +76,11 @@ Ph~Droz-Vincent, \emph{Relativistic wave equations for a system of two
 Yu~A Dubinskii, \emph{Sobolev spaces of infinite order}, Russian Mathematical
   Surveys \textbf{46} (1991), no.~6, 107.
 
+\bibitem{eddington}
+Arthur~Stanley Eddington, \emph{The charge of an electron}, Proceedings of the
+  Royal Society of London. Series A, Containing Papers of a Mathematical and
+  Physical Character \textbf{122} (1929), no.~789, 358--369.
+
 \bibitem{glimm_jaffe}
 James Glimm and Arthur Jaffe, \emph{Quantum physics: a functional integral
   point of view}, Springer Science \& Business Media, 2012.
@@ -58,6 +89,10 @@ James Glimm and Arthur Jaffe, \emph{Quantum physics: a functional integral
 Ronald~L Graham, Donald~E Knuth, and Oren Patashnik, \emph{Concrete
   mathematics: a foundation for computer science}, Addison-Wesley, Reading,
   1994.
+
+\bibitem{green57}
+HS~Green, \emph{Separability of a covariant wave equation}, Il Nuovo Cimento
+  (1955-1965) \textbf{5} (1957), no.~4, 866--871.
 
 \bibitem{guenther_1952}
 Marian G{\"u}nther, \emph{The relativistic configuration space formulation of
@@ -80,6 +115,11 @@ Arthur Jaffe, \emph{Constructive quantum field theory}, Mathematical physics
 RW~John, \emph{The hadamard construction of green's functions on a curved
   space-time with symmetries}, Annalen der Physik \textbf{499} (1987), no.~7,
   531--544.
+
+\bibitem{nointeraction2}
+H~Leutwyler, \emph{A no-interaction theorem in classical relativistic
+  hamiltonian particle mechanics}, Il Nuovo Cimento (1955-1965) \textbf{37}
+  (1965), no.~2, 556--567.
 
 \bibitem{ibc_model}
 M~Lienert and L~Nickel, \emph{Multi-time formulation of creation and
@@ -138,12 +178,26 @@ Matthias Lienert, Roderich Tumulka, et~al., \emph{A new class of volterra-type
   integral equations from relativistic quantum physics}, Journal of Integral
   Equations and Applications \textbf{31} (2019), no.~4, 535--569.
 
+\bibitem{lnt_2020}
+Sascha Lill, Lukas Nickel, and Roderich Tumulka, \emph{Consistency proof for
+  multi-time schrodinger equations with particle creation and ultraviolet
+  cut-off}, arXiv preprint arXiv:2001.05920 (2020).
+
 \bibitem{marx_1974}
 Egon Marx, \emph{Many-times formalism and coulomb interaction}, International
   Journal of Theoretical Physics \textbf{9} (1974), no.~3, 195--217.
 
+\bibitem{nakanishi}
+Noboru Nakanishi, \emph{A general survey of the theory of the bethe-salpeter
+  equation}, Progress of Theoretical Physics Supplement \textbf{43} (1969),
+  1--81.
+
 \bibitem{phd_nickel}
 L.~Nickel, \emph{Phd thesis. on the dynamics of multi-time systems}, 2019.
+
+\bibitem{obrien75}
+DM~O'Brien, \emph{The wick rotation}, Australian Journal of Physics \textbf{28}
+  (1975), no.~1, 7--14.
 
 \bibitem{penrose_rindler}
 Roger Penrose and Wolfgang Rindler, \emph{Spinors and space-time: Volume 1,
@@ -188,6 +242,10 @@ Julian Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation},
 Walter~E Thirring, \emph{A soluble relativistic field theory}, Annals of
   Physics \textbf{3} (1958), no.~1, 91--112.
 
+\bibitem{tiktopoulos65}
+George Tiktopoulos, \emph{Note on positronium}, Journal of Mathematical Physics
+  \textbf{6} (1965), no.~4, 573--577.
+
 \bibitem{tomonaga}
 Sin-itiro Tomonaga, \emph{On a relativistically invariant formulation of the
   quantum theory of wave fields.}, Progress of Theoretical Physics \textbf{1}
@@ -206,5 +264,9 @@ John~Archibald Wheeler and Richard~Phillips Feynman, \emph{Interaction with the
 \bibitem{wf2}
 \bysame, \emph{Classical electrodynamics in terms of direct interparticle
   action}, Reviews of modern physics \textbf{21} (1949), no.~3, 425.
+
+\bibitem{wick_54}
+Gian~Carlo Wick, \emph{Properties of bethe-salpeter wave functions}, Physical
+  Review \textbf{96} (1954), no.~4, 1124.
 
 \end{thebibliography}

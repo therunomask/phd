@@ -179,15 +179,27 @@ in later chapter something similar but different}
 
 \chapter[Direct Interaction in Relativistic Quantum Mechanics][Direct Interaction]{Direct Interaction in Relativistic Quantum Mechanics}
 As we have seen in the last chapter, having interaction mediated by potentials 
-in a Dirac equation does not seem to be a viable option.
+in a set of Dirac equations does not seem to be a viable option.
 One alternative approach to this problem is to reformulate Diracs equation as 
-an integral equation and to introduce interaction
-afterwards. For the benefit of the unfamiliar reader, we will first follow the 
+an integral equation and to introduce interaction analogous 
+to how a potential would act in this formulation. 
+This chapter is based on  the preprints \cite{selfDirac,selfKG},
+the results presented in this chapter are a result of the joint
+research of Matthias Lienert and the author of this thesis. 
+While these results fall short of establishing the existence 
+of a physically accurate alternative approach to 
+a relativistic quantum mechanical theory, they do describe 
+self consistent relativistic interacting quantum mechanical 
+toy models living in three spacial and one temporal dimension.
+
+
+For the benefit of the unfamiliar reader, we will first follow the 
 heuristic derivation of this type of equation
- in \cite{direct_interaction_quantum}, then briefly review the mathematical results that 
- had been established in the past and finally 
-discuss new results for which the author is at least partially to blame.
-This chapter is based on  the preprints \cite{selfDirac,selfKG}
+in \cite{direct_interaction_quantum}, then briefly review 
+the mathematical results that 
+had been established in the past on this subject 
+and finally 
+discuss results appearing in \cite{selfDirac,selfKG}.
 
 
 \section{Overview}
@@ -196,9 +208,7 @@ This chapter is based on  the preprints \cite{selfDirac,selfKG}
 We now follow the heuristic derivation of \cite{direct_interaction_quantum} 
 of an equation for a multi-time wave function for two particles  
 that expresses direct interaction along light-like configurations. 
-This type of equation will then keep us occupied for the 
-rest of this chapter. 
-The derivatin is organised as follows: We start out 
+The derivation is organised as follows: We start out 
 reformulating Diracs equation
 for a single particle 
 as an integral equation. The reformulated version is then 
@@ -357,8 +367,8 @@ is refered to \cite{direct_interaction_quantum,lienertcurved}. The versions of
 equation \eqref{eq:KGtwopartint} in the theorems are 
 considerably modified:
 
-\begin{itemize}
-\item The spacetime of equation \eqref{eq:KGtwopartint} 
+\begin{enumerate}[label=\Alph*)]
+\item \label{matt simplifying assumption 1} The spacetime of equation \eqref{eq:KGtwopartint} 
 is \(\mathbb{R}^4\), i.e. Minkowski spacetime.
 All the rigorous results concerning vanishing curvature so far 
 are about
@@ -382,7 +392,7 @@ We introduce a beginning in time
 and try to justify this by cosmological arguments and hence 
 we treat a spacetime commonly used
 in cosmology.
-\item The interaction kernel \(K\) which we motivated to be 
+\item \label{matt simplifying assumption 2} The interaction kernel \(K\) which we motivated to be 
 proportional to \(\delta((x_1-x_2)^2)\)
 is replaced by various less singular objects. This modification is 
 purely technical and we do not 
@@ -394,7 +404,7 @@ we will also use a rather soft interaction kernel. The new result
 about Klein Gordon particles presented in 
 section \ref{sec:KG lightcones} employs the fully 
 singular \(\delta((x_1-x_2)^2)\) kernel. 
-\end{itemize}
+\end{enumerate}
 
 %\begin{Thm}[Thm 3.1 of \cite{lienertfirst}]
 %Let \(T>0\), \(M,N\in\mathbb{N}\), consider 
@@ -577,6 +587,17 @@ the integral equation \eqref{KG curved bounded} has a unique solution
 
 
 \section{Directly Interacting Dirac Particles}\label{sec:direct dirac}
+
+In this section we prove the existence and uniqueness 
+of solutions of a version of equation \eqref{eq:twopartint}
+subject to similar modifications \ref{matt simplifying assumption 1}
+and \ref{matt simplifying assumption 1}.
+As with the results of the last chapter an analogous 
+result is proven on FLRW spacetime to provide a justification 
+for the cutoff in time.
+We furthermore show that the solutions 
+are determined by Cauchy data at the initial time; however, 
+no Cauchy problem is admissible at other times. 
 \subsection{Introduction}
 
 
@@ -2037,7 +2058,7 @@ does not matter. This yields:
 \begin{align}
 	&(A_1 \psi)(x,y) =  -\frac{\lambda \, m_1}{2(4 \pi)^3} \int_0^\infty d{x'}^0 \int d^3 \vx' \int d^3 \vy'~H(x^0-{x'}^0-|\vx-\vx'|)  \nonumber\\
 & ~~~\times \frac{J_1(m_1\sqrt{(x-x')^2})}{\sqrt{(x-x')^2}} \frac{H(y^0-|\vy-\vy'|)}{|\vy-\vy'|} \frac{1}{|\vx'-\vy'|} \nonumber\\
-&~~~\left[\delta({x'}^0 - y^0 \!+ \!|\vy-\vy'| \!- |\vx'-\vy'|)+ \! \delta({x'}^0 \!- y^0\! +\!|\vy-\vy'| \!+\! |\vx'-\vy'|) \right] \notag\\
+&~~~\left[\delta({x'}^0 - y^0 \!+ \!|\vy-\vy'| \!-\! |\vx'\!-\!\vy'|)+ \! \delta({x'}^0 \!- y^0\! +\!|\vy-\vy'| \!+\! |\vx'-\vy'|) \right] \notag\\
 &\hspace{1cm}\times\psi(x',y^0-|\vy-\vy'|,\vy').\label{eq:a1informal2}
 \end{align}
 Finally, we use the remaining $\delta$-functions to eliminate 
@@ -2045,9 +2066,9 @@ ${x'}^0$. We obtain:
 \begin{align}
 	(A_1 \psi)(x,y) &=  -\frac{\lambda \, m_1}{2(4 \pi)^3} \int d^3 \vx' \int d^3 \vy'~\frac{H(y^0-|\vy-\vy'|)}{|\vy-\vy'|} \frac{1}{|\vx'-\vy'|} \nonumber\\
 &\Bigg[ H({x'}^0)H(x^0-{x'}^0-|\vx-\vx'|)  \notag\\
-& \quad \times\frac{J_1(m_1\sqrt{(x-x')^2})}{\sqrt{(x-x')^2}} \psi(x',y')\bigg|_{\substack{{y'}^0 = y^0-|\vy-\vy'|,\\{x'}^0 = y^0 - |\vy-\vy'| + |\vx'-\vy'| }}\nonumber\\
+& \quad \times\frac{J_1(m_1\sqrt{(x-x')^2})}{\sqrt{(x-x')^2}} \psi(x',y')\bigg|_{\substack{{y'}^0 = y^0-|\vy-\vy'|,\\{x'}^0 = y^0\!\!- |\vy-\vy'| \!+\! |\vx'\!-\!\vy'| }}\nonumber\\
 &+ \, H({x'}^0)H(x^0-{x'}^0-|\vx-\vx'|)  \notag\\
-&\times \frac{J_1(m_1\sqrt{(x-x')^2})}{\sqrt{(x-x')^2}} \psi(x',y')\bigg|_{\substack{{y'}^0 = y^0-|\vy-\vy'|,\\{x'}^0 = y^0 - |\vy-\vy'| - |\vx'-\vy'| }} \Bigg] .\label{eq:defa1}
+&\times \frac{J_1(m_1\sqrt{(x-x')^2})}{\sqrt{(x-x')^2}} \psi(x',y')\bigg|_{\substack{{y'}^0 = y^0-|\vy-\vy'|,\\{x'}^0 = y^0\!\!- |\vy-\vy'| \!-\! |\vx'\!-\!\vy'| }} \Bigg] .\label{eq:defa1}
 \end{align}
 This expression is free of distributions, so it will serve as our 
 definition of $A_1$ on test functions $\psi \in \mathcal{S}$. Note 
@@ -2060,9 +2081,9 @@ Heaviside functions.
 \begin{align}
 	(A_2 \psi&)(x,y) \!=\!  -\frac{\lambda  m_2}{2(4 \pi)^3}\! \int \!d^3 \vx' \!\!\int\! d^3 \vy'\frac{H(x^0-|\vx-\vx'|)}{|\vx-\vx'|} \frac{1}{|\vx'-\vy'|} \nonumber\\
 &\Bigg[ H({y'}^0)H(y^0-{y'}^0-|\vy-\vy'|)  \notag\\
-&\times \frac{J_1(m_2\sqrt{(y-y')^2})}{\sqrt{(y-y')^2}} \psi(x',y')\bigg|_{\substack{{x'}^0 = x^0-|\vx-\vx'|,\\{y'}^0 = x^0 - |\vx-\vx'| + |\vx'-\vy'| }}\nonumber\\
+&\times \frac{J_1(m_2\sqrt{(y-y')^2})}{\sqrt{(y-y')^2}} \psi(x',y')\bigg|_{\substack{{x'}^0 = x^0-|\vx-\vx'|,\\{y'}^0 = x^0 - |\vx-\vx'| \!+\! |\vx'\!-\!\vy'| }}\nonumber\\
 &+ \, H({y'}^0)H(y^0-{y'}^0-|\vy-\vy'|)   \notag\\
-&\times \frac{J_1(m_2\sqrt{(y-y')^2})}{\sqrt{(y-y')^2}} \psi(x',y')\bigg|_{\substack{{x'}^0 = x^0-|\vx-\vx'|,\\{y'}^0 = x^0 - |\vx-\vx'| - |\vx'-\vy'| }} \Bigg] .\label{eq:defa2}
+&\times \frac{J_1(m_2\sqrt{(y-y')^2})}{\sqrt{(y-y')^2}} \psi(x',y')\bigg|_{\substack{{x'}^0 = x^0-|\vx-\vx'|,\\{y'}^0 = x^0 - |\vx-\vx'| \!-\! |\vx'\!-\!\vy'| }} \Bigg] .\label{eq:defa2}
 \end{align}
 This serves as our definition of $A_2$ on test functions $\psi \in \mathcal{S}$.
 
@@ -2711,7 +2732,7 @@ range for $u$.) We compute
     1> \frac{b^2}{2x^0|\vb|} - \frac{b^0}{|\vb|} &\iff  2 x^0 |\vb|+2 x^0 b^0 > b^2 \nonumber\\
     &\iff 2 x^0(b^0 + |\vb|) > (b^0+|\vb|)(b^0-|\vb|)\nonumber\\
    &\!\!\!\! \overset{b^2>0,b^0>0}{\iff} 2x^0>b^0-|\vb| \nonumber \\
-   &\iff  x^0+y^0 - |\vy'| > -|\vb|.
+   &\iff  x^0+y^0\!\!- |\vy'| > -|\vb|.
 \end{align}
 Now because of \(|\vy'|<y^0\) we see that this 
 inequality always holds true. Hence the respective 
@@ -2936,10 +2957,10 @@ $|\vx-\vy|>0$ is automatically satisfied. We find:
     &\quad \quad -g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\Bigg]\\\nonumber
     &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
     &\times \Bigg[ g_2\left(\frac{x^0+y^0 + |\vx-\vy|}{2}\right)\\\notag
-    &\quad \quad -g_2\max\left(\frac{x^0+y^0- |\vx-\vy|}{2},\frac{x^0+y^0+ |\vx-\vy|}{2}-\rho\right)\Bigg]\\\nonumber
+    &\quad \quad -g_2\!\max\left(\frac{x^0+y^0- |\vx-\vy|}{2},\frac{x^0+y^0+ |\vx-\vy|}{2}-\rho\right)\Bigg]\\\nonumber
     &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\
-    &\times\Bigg[ g_2\max\left(x^0,y^0-\rho\right)\notag\\
-    &\quad \quad -g_2\max\left(\frac{x^0+y^0-|\vx-\vy|}{2},\frac{x^0+y^0+|\vx-\vy|}{2}-\rho\right)\Bigg].
+    &\times\Bigg[ g_2\!\max\left(x^0,y^0-\rho\right)\notag\\
+    &\quad \quad -g_2\!\max\left(\frac{x^0+y^0-|\vx-\vy|}{2},\frac{x^0+y^0+|\vx-\vy|}{2}-\rho\right)\Bigg].
 \label{eq:resulty'Integral1}
 \end{align}
 Here and in the following we abbreviate 
@@ -3002,9 +3023,9 @@ analogous calculation to
     \!-\!g_2\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho \!-\! ||\vx\!-\!\vy|\!-\!\rho|}{2}\right)\right]\nonumber\\
     &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
     &\times \Bigg[ g_2\!\left(\!\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2}\!-\!\rho\right)\\
-    &\quad \quad \!-\!g_2\min\!\left(\!\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!+\!y^0 \!+\! |\vx\!-\!\vy|}{2}\!-\!\rho\!\right)\Bigg]\nonumber\\
+    &\quad \quad \!-\!g_2\!\min\!\left(\!\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!+\!y^0 \!+\! |\vx\!-\!\vy|}{2}\!-\!\rho\!\right)\Bigg]\nonumber\\
     &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho ~ \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \Bigg[ g_2\min\left(x^0,y^0-\rho\right)\notag\\
+    &\times \Bigg[ g_2\!\min\left(x^0,y^0-\rho\right)\notag\\
     &\quad \quad -g_2\!\min\left(\!\frac{x^0\!+\!y^0\!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!+\!y^0\!+\! |\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg].
 \label{eq:resulty'Integral2}
 \end{align}
@@ -3046,7 +3067,7 @@ The second case in the last line is in conflict with
 \(\rho>0\), so we have to impose the first condition on 
 \eqref{y'Integral3}. We continue with 
 \(P_{x,y}(\rho)>-1\).
-\begin{align}
+\begin{align}\notag
     &P_{x,y}(\rho)>-1\\
     &\iff~ \frac{(x^0+y^0)^2}{2\rho|\vx-\vy|} - \frac{|\vx-\vy|}{2\rho}-\frac{x^0+y^0}{|\vx-\vy|} ~>~-1 \nonumber \\
    &\iff~ (x^0+y^0)^2-|\vx-\vy|^2~>~2\rho(x^0+y^0-|\vx-\vy|)\nonumber \\
@@ -3126,11 +3147,11 @@ in:
     &\eqref{y'Integral3} =
     \frac{\lambda\|\psi\|_g}{16\pi} 1_{(x-y)^2>0,y^0>x^0}
     \int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\frac{x^0+y^0+|\vx-\vy|}{2}}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
-    &\times \left[g_2 \min\!\left(\!\frac{x^0\!\!+\!y^0\!\!+\!|\vx\!-\!\vy|}{2}\!-\!\rho,x^0\!\right) \!-\!g_2\max\!\left(\! \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right) \right]\nonumber\\
+    &\times \left[g_2 \min\!\left(\!\frac{x^0\!\!+\!y^0\!\!+\!|\vx\!-\!\vy|}{2}\!-\!\rho,x^0\!\right) \!-\!g_2\!\max\!\left(\! \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right) \right]\nonumber\\
     &+\frac{\lambda\|\psi\|_g}{16\pi} 
     1_{(x-y)^2<0,|\vx-\vy|<x^0+y^0}
     \int_{0}^{y^0}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\label{eq:resulty'Integral3}\\
-    &\times \left[g_2\min\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},y^0\!\!-\!\rho\!\right) \!-\!g_2\max\!\left( \!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right) \right].\notag
+    &\times \left[g_2\!\min\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},y^0\!\!-\!\rho\!\right) \!-\!g_2\!\max\!\left( \!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right) \right].\notag
 \end{align}
 This concludes the calculation of \eqref{y'Integral3}.
 
@@ -3141,10 +3162,10 @@ obtained the following bound for $| A_0 \psi |(x,y)$:
     &\frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y) \le 
     1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Bigg[ g_2\!\left(\!\frac{x^0\!\!+\!y^0\!\! +\! |\vx\!-\!\vy|}{2}\right)\notag\\
-    &\quad\quad \!-\!g_2\max\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+ \!|\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg]\nonumber\\
+    &\quad\quad \!-\!g_2\!\max\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+ \!|\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg]\nonumber\\
     &+ 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx\!-\!\vy|} \int_{\frac{y^0-x^0+|\vx\!-\!\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
-    &\times \Big[ g_2\max\!\left(x^0,y^0-\rho\right)\notag\\
-    &\quad\quad -g_2\max\!\left(\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}-\rho\right)\Bigg]\nonumber\\
+    &\times \Big[ g_2\!\max\!\left(x^0,y^0-\rho\right)\notag\\
+    &\quad\quad -g_2\!\max\!\left(\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}-\rho\right)\Bigg]\nonumber\\
     &+ 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Bigg[ g_2\left(\frac{x^0+y^0 - |\vx\!-\!\vy|}{2}-\rho\right)\notag\\
     &\quad\quad -g_2\min\!\left(\frac{x^0+y^0 - |\vx\!-\!\vy|}{2},\frac{x^0+y^0 + |\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg]\nonumber\\\nonumber
@@ -3153,11 +3174,11 @@ obtained the following bound for $| A_0 \psi |(x,y)$:
     &\quad\quad -g_2\min\!\left(\frac{x^0+y^0- |\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+ |\vx\!-\!\vy|}{2}-\rho\right)\Bigg]\nonumber\\
     &+1_{(x-y)^2>0,y^0>x^0} \int_{\frac{y^0-x^0-|\vx\!-\!\vy|}{2}}^{\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}}d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Bigg[g_2 \min\!\left(\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}\!-\!\rho,x^0\right)\notag\\
-    &\quad\quad \!-\!g_2\max\!\left( \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0 \right) \Bigg]\nonumber\\
+    &\quad\quad \!-\!g_2\!\max\!\left( \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0 \right) \Bigg]\nonumber\\
     &+1_{(x-y)^2<0,|\vx\!-\!\vy|<x^0+y^0}
     \int_{0}^{y^0}d\rho \,\frac{g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Bigg[g_2 \min\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},y^0\!\!-\!\rho\right)\notag\\
-    &\quad\quad \!-\!g_2\max\!\left( \!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right)  \Bigg].
+    &\quad\quad \!-\!g_2\!\max\!\left( \!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right)  \Bigg].
 \end{align}
 In order to simplify the result, we introduce the 
 variables
@@ -3169,74 +3190,95 @@ Moreover, we collect terms with the same indicator
 functions. This results in:
 \begin{align}
     &\frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y)\le\notag\\
-    &1_{(x-y)^2<0,\xi^->0} \int_0^{y^0}\!\!d\rho  \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}
-    \Big[g_2\min(\xi^-,y^0-\rho)\!-\!g_2\max(\xi^-\!\!-\!\rho,0)
+    &1_{(x-y)^2<0,\xi^->0} \!\!\int_0^{y^0}\!\!\!d\rho  \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}
+    \Big[g_2\min(\xi^-,y^0\!\!-\!\rho)\!-\!g_2\!\max(\xi^-\!\!-\!\rho,0)
     \notag\\\label{A psi estimate 1}
     &\quad + 1_{\frac{y^0\!\!-\!x^0+|\vx\!-\!\vy|}{2}<\rho} \big(g_2(x^0)+g_2(y^0\!\!-\!\rho)
     \!-\!g_2(\xi^-)\!-\!g_2(\xi^+\!\!-\!\rho)\big)
     \Big]\\\label{A psi estimate 2}
     &+1_{(x-y)^2>0,x^0>y^0}\int_0^{y^0} d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|} \big[g_2(\xi^+)+g_2(\xi^-\!\!-\!\rho)\notag\\
     &\hspace{6cm} \!-\! g_2(\xi^-)\!-\!g_2(\xi^+\!\!-\!\rho)\big]\\\label{A psi estimate 3}
-    &+1_{(x-y)^2>0,y^0>x^0}\int_{\frac{y^0\!\!-\!x^0\!\!-\!|\vx\!-\!\vy|}{2}}^{\xi^+}\!\!d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\notag\\
-    &\hspace{3cm}\times \big[g_2\min(\xi^+\!\!-\!\rho,x^0) \!-\! g_2\max(\xi^-\!\!-\!\rho,0)\big].
+    &+1_{(x-y)^2>0,y^0>x^0}\int_{\frac{y^0\!\!-\!x^0\!\!-\!|\vx\!-\!\vy|}{2}}^{\xi^+}d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\notag\\
+    &\hspace{3cm}\times \big[g_2\min(\xi^+\!\!-\!\rho,x^0) \!-\! g_2\!\max(\xi^-\!\!-\!\rho,0)\big].
 \end{align}
 This estimate is an important stepping stone in the proof. Except for special weight functions, the resulting expressions are too complicated to be computed explicitly. We therefore continue with further estimates. The main difficulty in these estimates is that the $1/|\vx-\vy|$ singularity in the expressions needs to be compensated by the integrand and that this cancellation needs to be preserved by the respective estimate. Fortunately, the mean value theorem turns out suitable to provide such estimates.
 
 
 %%%
-\subparagraph{Simplification of \eqref{A psi estimate 1}-\eqref{A psi estimate 3}.}
-First, we note that since $g, g_1$ and $g_2$ are monotonously increasing and since $\xi^- \leq \xi^+$, we have in \eqref{A psi estimate 2}:
+\subparagraph{Simplification of 
+\eqref{A psi estimate 1}-\eqref{A psi estimate 3}.}
+First, we note that since $g, g_1$ and $g_2$ are monotonously increasing and 
+since $\xi^- \leq \xi^+$, we have in \eqref{A psi estimate 2}:
 \begin{equation}
 	g_2(\xi^- - \rho) - g_2(\xi^+ - \rho) \leq 0.
 \end{equation}
-As the remaining terms in \eqref{A psi estimate 2} still vanish in the limit $|\vx-\vy| \rightarrow 0$, we may replace this difference by zero to obtain a suitable estimate.
+As the remaining terms in \eqref{A psi estimate 2} still vanish in the limit 
+$|\vx-\vy| \rightarrow 0$, we may replace this difference by zero to obtain a 
+suitable estimate.
 
-Similarly, a brief calculations shows that we have $\xi^+ > y^0$ for $(x-y)^2<0$. It follows that:
+Similarly, a brief calculations shows that we have 
+$\xi^+ > y^0$ for $(x-y)^2<0$. It follows that:
 \begin{equation}
 	g_2(y^0-\rho) - g_2(\xi^+ - \rho) < 0.
 \end{equation}
 We shall use this in \eqref{A psi estimate 1}.
 
-Further simplifications can be obtained using the mean value theorem. We begin with the expression in the square brackets in \eqref{A psi estimate 3}. The mean value theorem then implies that there is a \(\chi\in[\max(\xi^--\rho,0),\min(\xi^+-\rho,x^0)]\) such that
-\begin{equation}
-    g_2\min(\xi^+-\rho,x^0)-g_2\max(\xi^--\rho,0)= \big[\min(\xi^+-\rho,x^0)-\max(\xi^--\rho,0)\big]g_1(\chi).
-\end{equation}
+Further simplifications can be obtained using the mean 
+value theorem. We begin with the expression in the 
+square brackets in \eqref{A psi estimate 3}. The mean 
+value theorem then implies that there is a 
+\(\chi\in[\max(\xi^-\!\!-\!\rho,0),\min(\xi^+\!\!-\!\rho,x^0)]\) 
+such that
+\begin{align}\notag
+    g_2\!\min(&\xi^+\!\!-\!\rho,x^0)-g_2\!\max(\xi^-\!\!-\!\rho,0)\\
+    &= \big[\min(\xi^+\!\!-\!\rho,x^0)-\max(\xi^-\!\!-\!\rho,0)\big]g_1(\chi).
+\end{align}
 Therefore, we have:
 \begin{align}
-   & g_2\min(\xi^+-\rho,x^0)-g_2\max(\xi^--\rho,0)\nonumber\\
-   &~~~\le~ \min(\xi^+-\xi^-,\xi^+-\rho,x^0-\xi^-+\rho,x^0)\, g_1\min(\xi^+-\rho,x^0)\nonumber\\
-   & ~~~\le~ |\vx-\vy|\, g_1\min(\xi^+-\rho,x^0) ~\le~ |\vx-\vy| \,g_1(x^0).
+   & g_2\!\min(\xi^+\!\!-\!\rho,x^0)-g_2\!\max(\xi^-\!\!-\!\rho,0)\nonumber\\
+   &~~~\le~ \min(\xi^+\!\!-\xi^-,\xi^+\!\!-\!\rho,x^0-\xi^-+\rho,x^0)\, g_1\!\min(\xi^+\!\!-\!\rho,x^0)\nonumber\\
+   & ~~~\le~ |\vx-\vy|\, g_1\!\min(\xi^+\!\!-\!\rho,x^0) ~\le~ |\vx-\vy| \,g_1(x^0).
 \end{align}
-Note that the factor $|\vx-\vy|$ exactly compensates the $1/|\vx-\vy|$ singularity. This is the main reason the mean value theorem is so useful here.
+Note that the factor $|\vx-\vy|$ exactly compensates the $1/|\vx-\vy|$ 
+singularity. 
+This is the main reason the mean value theorem is so useful here.
 
-Analogously we find for the expression in the square bracket in the first line of \eqref{A psi estimate 1}:
+Analogously we find for the expression in the square bracket in the first 
+line of \eqref{A psi estimate 1}:
 \begin{align}
-    &g_2\min(\xi^-,y^0-\rho)-g_2\max(\xi^--\rho,0)\nonumber\\
-&~~~\leq ~ \big[\min(\xi^-,y^0-\rho)-\max(\xi^--\rho,0)\big] g_1\min(\xi^-,y^0-\rho)\nonumber\\
-    &~~~=~\min(\rho,\xi^-,y^0-\xi^-,y^0-\rho) \, g_1\min(\xi^-,y^0-\rho)\nonumber\\
-    &~~~\le~ (y^0-\xi^-) \,g_1\min(\xi^-,y^0-\rho)\nonumber\\
-    &~~~\le~ |\vx-\vy| \,g_1\min(\xi^-,y^0-\rho),
+    &g_2\!\min(\xi^-,y^0-\!\rho)-g_2\!\max(\xi^-\!\!-\!\rho,0)\nonumber\\
+&~~~\leq ~ \big[\min(\xi^-,y^0-\!\rho)-\max(\xi^-\!\!-\!\rho,0)\big] g_1\!\min(\xi^-,y^0-\!\rho)\nonumber\\
+    &~~~=~\min(\rho,\xi^-,y^0-\xi^-,y^0-\!\rho) \, g_1\!\min(\xi^-,y^0-\!\rho)\nonumber\\
+    &~~~\le~ (y^0-\xi^-) \,g_1\!\min(\xi^-,y^0-\!\rho)\nonumber\\
+    &~~~\le~ |\vx-\vy| \,g_1\!\min(\xi^-,y^0-\!\rho),
 \end{align}
-where we have used that the further restriction of that term, $(x-y)^2<0$, implies $|\vx-\vy|>|x^0-y^0|\geq y^0-x^0$.
+where we have used that the further restriction of that term, $(x-y)^2<0$, 
+implies $|\vx-\vy|>|x^0-y^0|\geq y^0-x^0$.
 
-With these considerations, we obtain a rougher but simpler estimate than \eqref{A psi estimate 1}-\eqref{A psi estimate 3}:
-\begin{align}\label{massless_after estimate1}
-    \frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y) ~&\le~
-    1_{(x-y)^2<0,\xi^->0} \int_0^{y^0}d\rho~ g(y^0-\rho)\Big[ g_1\min(\xi^-,y^0-\rho) \\\label{massless_after estimate2}
+With these considerations, we obtain a rougher but simpler estimate than 
+\eqref{A psi estimate 1}-\eqref{A psi estimate 3}:
+\begin{align}\notag
+    &\frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y) \\
+    &\le~ \label{massless_after estimate1}
+    1_{(x-y)^2<0,\xi^->0} \int_0^{y^0}d\rho~ g(y^0-\!\rho)\Big[ g_1\!\min(\xi^-,y^0-\!\rho) \\\label{massless_after estimate2}
     &~~~+ 1_{\frac{y^0-x^0+|\vx-\vy|}{2}<\rho}\frac{g_2(x^0)-g_2(\xi^-)}{|\vx-\vy|}\Big]\\\label{massless_after estimate3}
-    &~~~+1_{(x-y)^2>0,x^0>y^0}\frac{g_2(\xi^+)-g_2(\xi^-)}{|\vx-\vy|} \int_{0}^{y^0}d\rho~ g(y^0-\rho)\\\label{massless_after estimate4}
-    &~~~+1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0)\int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\xi^+}d\rho~ g(y^0-\rho).
+    &~~~+1_{(x-y)^2>0,x^0>y^0}\frac{g_2(\xi^+)-g_2(\xi^-)}{|\vx-\vy|} \int_{0}^{y^0}d\rho~ g(y^0-\!\rho)\\\label{massless_after estimate4}
+    &~~~+1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0)\int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\xi^+}d\rho~ g(y^0-\!\rho).
 \end{align}
-Next, we continue estimating these terms separately so that only expressions without integrals remain.
+Next, we continue estimating these terms separately so that only expressions 
+without integrals remain.
 
 
 %%%
 \subparagraph{Further estimate of \eqref{massless_after estimate1}.}
-Using the monotonicity of $g_1$ as well as $\min(\xi^-,y^0-\rho) \leq \xi^-$, we find:
-\begin{equation}
-	\eqref{massless_after estimate1} ~\leq~1_{(x-y)^2<0,\xi^->0}\, g_1(\xi^-) \int_0^{y^0} ds~ g(s) ~=~  1_{(x-y)^2<0,\xi^->0} \, g_1(\xi^-) g_1(y^0).
-\end{equation}
-For the constraints given by the indicator function, we have $\xi^- < x^0$. Thus:
+Using the monotonicity of $g_1$ as well as $\min(\xi^-,y^0-\rho) \leq \xi^-$, 
+we find:
+\begin{align}
+  \eqref{massless_after estimate1} ~&\leq~  1_{(x-y)^2<0,\xi^->0}\, g_1(\xi^-) \int_0^{y^0} ds~ g(s) \notag\\
+  &~=~  1_{(x-y)^2<0,\xi^->0} \, g_1(\xi^-) g_1(y^0).
+\end{align}
+For the constraints given by the indicator function, we have $\xi^- < x^0$. 
+Thus:
 \begin{equation}
 	\eqref{massless_after estimate1} \leq 1_{(x-y)^2<0,\xi^->0} \, g_1(x^0) g_1(y^0).
 \label{eq:resultmasslessafterestimate1}
@@ -3252,7 +3294,8 @@ We have:
 &= 1_{(x-y)^2 < 0, \xi^- >0} \, \frac{g_2(x^0) - g_2(\xi^-)}{|\vx-\vy|} \big[ g_1(\xi^-) - \underbrace{g_1(0)}_{=0} \big].
 \label{eq:secondline159b}
 \end{align}
-Applying the mean value theorem to $g_2$ in the interval $[\xi^-,x^0]$ (note that here $\xi^-<x^0$), we obtain that:
+Applying the mean value theorem to $g_2$ in the interval $[\xi^-,x^0]$ 
+(note that here $\xi^-<x^0$), we obtain that:
 \begin{equation}
 	\eqref{massless_after estimate2} \leq 1_{(x-y)^2 < 0, \xi^- >0} \, \frac{x^0-\xi^-}{|\vx-\vy|}\, g_1(x^0) g_1(\xi^-).
 \end{equation}
@@ -3269,15 +3312,18 @@ Using also that for the given constrains $\xi^- < y^0$, we finally obtain:
 
 %%%
 \subparagraph{Further estimate of \eqref{massless_after estimate3}.}
-Here, we can directly carry out the remaining integral using the definition of $g_1$ as the integral of $g$:
+Here, we can directly carry out the remaining integral using the definition 
+of $g_1$ as the integral of $g$:
 \begin{equation}
 	\eqref{massless_after estimate3} = 1_{(x-y)^2>0,x^0>y^0}\, \frac{g_2(\xi^+)-g_2(\xi^-)}{|\vx-\vy|} g_1(y^0).
 \end{equation}
-Next, we apply the mean value theorem to $g_2$ in the interval $[\xi^-,\xi^+]$ noting that $\xi^+-\xi^- = |\vx-\vy|$. This implies:
+Next, we apply the mean value theorem to $g_2$ in the interval 
+$[\xi^-,\xi^+]$ noting that $\xi^+\!\!-\xi^- = |\vx-\vy|$. This implies:
 \begin{equation}
 	\eqref{massless_after estimate3} \leq 1_{(x-y)^2>0,x^0>y^0} \,g_1(\xi^+) g_1(y^0).
 \end{equation}
-Next, we note that $(x-y)^2 > 0 \Leftrightarrow |x^0-y^0| > |\vx-\vy|$. Together with $x^0>y^0$, we obtain $x^0>y^0 +|\vx-\vy|$ and therefore:
+Next, we note that $(x-y)^2 > 0 \Leftrightarrow |x^0-y^0| > |\vx-\vy|$. 
+Together with $x^0>y^0$, we obtain $x^0>y^0 +|\vx-\vy|$ and therefore:
 \begin{equation}
 	\xi^+ = \frac{x^0+y^0 +|\vx-\vy|}{2} \leq x^0.
 \end{equation}
@@ -3291,83 +3337,118 @@ Thus, we obtain:
 \subparagraph{Further estimate of \eqref{massless_after estimate4}.}
 Here, we carry out the remaining integral as well.
 \begin{align}
-	\eqref{A psi estimate 3} ~&\leq~ 1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0) [ g_1(\xi^+)-g_1( (y^0-x^0-|\vx-\vy|)/2)]\nonumber\\
-&\leq~ 1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0)g_1(y^0).
+	\eqref{A psi estimate 3} &\leq 1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0) [ g_1(\xi^+)\!-\!g_1( (y^0\!\!-\!x^0\!\!-\!|\vx\!-\!\vy|)/2)]\nonumber\\
+&\leq 1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0)g_1(y^0).
 \label{eq:resultmasslessafterestimate4}
 \end{align}
 as $\xi^+\leq y^0$.
 
 
 %%%
-\subparagraph{Summary of the result.} Gathering the terms \eqref{eq:resultmasslessafterestimate1}, \eqref{eq:resultmasslessafterestimate2}, \eqref{eq:resultmasslessafterestimate3} and \eqref{eq:resultmasslessafterestimate4} yields:
-\begin{equation}
-	  \frac{16\pi}{\lambda\|\psi\|_g}\, |A_0 \psi |(x,y) \leq g_1(x^0) g_1(y^0) \left( 2 \times 1_{(x-y)^2 < 0, \xi^- >0} + 1_{(x-y)^2>0,x^0>y^0} + 1_{(x-y)^2>0,y^0>x^0}\right).
-\end{equation}
-Considering that the conditions in different indicator functions are mutually exclusive, we finally obtain:
+\subparagraph{Summary of the result.} Gathering the terms 
+\eqref{eq:resultmasslessafterestimate1}, 
+\eqref{eq:resultmasslessafterestimate2}, 
+\eqref{eq:resultmasslessafterestimate3} and 
+\eqref{eq:resultmasslessafterestimate4} yields:
+\begin{align}
+    &\frac{16\pi}{\lambda\|\psi\|_g}\, |A_0 \psi |(x,y) \\
+    &\leq g_1(x^0) g_1(y^0) \left( 2 \!\times\! 1_{(x-y)^2 < 0, \xi^- >0} \!+\! 1_{(x-y)^2>0,x^0>y^0} \!+\! 1_{(x-y)^2>0,y^0>x^0}\right).\notag
+\end{align}
+Considering that the conditions in different indicator functions are mutually 
+exclusive, we finally obtain:
 \begin{equation}
 	  \frac{16\pi}{\lambda\|\psi\|_g}\, |A_0 \psi |(x,y) \leq 2 g_1(x^0) g_1(y^0).
 	\label{eq:resultmasslessestimate}
 \end{equation}
-Dividing by $g(x^0)g(y^0)$, taking the supremum over $x,y \in \tfrac{1}{2}\M$ and factorizing into one-dimensional suprema finally yields the claim \eqref{eq:estimatea0}.
+Dividing by $g(x^0)g(y^0)$, taking the supremum over 
+$x,y \in \tfrac{1}{2}\M$ and factorizing into one-dimensional suprema 
+finally yields the claim \eqref{eq:estimatea0}.
 
 
 %%%
-\paragraph{Estimate of the mixed terms \eqref{eq:estimatea1} and \eqref{eq:estimatea2}.} \label{sec:estimatemixed}
+\paragraph{Estimate of the mixed terms \eqref{eq:estimatea1} and 
+\eqref{eq:estimatea2}.} \label{sec:estimatemixed}
 
-We focus on $A_2$ first, starting from its definition \eqref{eq:defa2}. We take the absolute value and make use of $|\psi(x,y)| \leq g(x^0) g(y^0)\, \| \psi \|_g$. Moreover, we use:
+We focus on $A_2$ first, starting from its definition \eqref{eq:defa2}. 
+We take the absolute value and make use of 
+$|\psi(x,y)| \leq g(x^0) g(y^0)\, \| \psi \|_g$. Moreover, we use:
 \begin{equation}
 	\left| J_1(t)/t \right| \leq \frac{1}{2}.
 \end{equation}
 This yields:
 \begin{align}
-	|A_2 \psi|(x,y) &\leq  \frac{\lambda \, m_2^2 \, \|\psi\|_g}{4(4 \pi)^3} \int d^3 \vx' \int d^3 \vy'~\frac{H(x^0-|\vx-\vx'|)}{|\vx-\vx'|} \frac{g( x^0-|\vx-\vx'|)}{|\vx'-\vy'|} \nonumber\\
-&\times \left[ H(x^0 - |\vx-\vx'| + |\vx'-\vy'|)H(y^0-x^0 + |\vx-\vx'| - |\vx'-\vy'| -|\vy-\vy'|) \right. \nonumber\\
-&\times g(x^0 - |\vx-\vx'| + |\vx'-\vy'| )\nonumber\\
-&+ H(x^0 - |\vx-\vx'| - |\vx'-\vy'|)H(y^0-x^0 + |\vx-\vx'| + |\vx'-\vy'|-|\vy-\vy'|) \nonumber\\
- &\left. \times g(x^0 - |\vx-\vx'| - |\vx'-\vy'|)\right].
+	&|A_2 \psi|(x,y) \leq  \frac{\lambda \, m_2^2 \, \|\psi\|_g}{4(4 \pi)^3} \int d^3 \vx' \int d^3 \vy'~\frac{H(x^0\!\!-\!|\vx\!-\!\vx'|)}{|\vx\!-\!\vx'|} \frac{g( x^0\!\!-\!|\vx\!-\!\vx'|)}{|\vx'\!-\!\vy'|} \nonumber\\
+&\times \left[g(x^0\!\!-\! |\vx\!-\!\vx'| \!+\! |\vx'\!-\!\vy'| ) H(x^0\!\!-\! |\vx\!-\!\vx'| \!+\! |\vx'\!-\!\vy'|) \right. \nonumber\\
+&\quad \quad \times H(y^0\!\!-x^0\!\! +\! |\vx\!-\!\vx'| \!-\! |\vx'\!-\!\vy'| \!-\!|\vy\!-\!\vy'|)\notag\\
+&\quad + g(x^0\!\!-\! |\vx\!-\!\vx'| \!-\! |\vx'\!-\!\vy'|) H(x^0\!\!-\! |\vx\!-\!\vx'| \!-\! |\vx'\!-\!\vy'|) \nonumber\\
+&\quad \quad \left. \times H(y^0\!\!-x^0\!\! +\! |\vx\!-\!\vx'| \!+\! |\vx'\!-\!\vy'|\!-\!|\vy\!-\!\vy'|) \right].
 \end{align}
-As the remaining singularities are independent of each other for a suitable choice of integration variables (see below), we are left with an integrable function on a finite domain.
+As the remaining singularities are independent of each other for a suitable 
+choice of integration variables (see below), we are left with an integrable 
+function on a finite domain.
 
-The next task is to bring the expressions into a simpler form. One possibility to do this is to use
-\begin{equation}
-	H(y^0-x^0+|\vx-\vx'|+|\vx'-\vy'| - |\vy-\vy'|) \leq H(y^0-x^0+|\vx-\vx'|+|\vx'-\vy'|)
-\end{equation}
+The next task is to bring the expressions into a simpler form. One 
+possibility to do this is to use
+\begin{align}\notag
+  H(y^0-x^0+|\vx-\vx'|+|\vx'-\vy'| - |\vy-\vy'|) \\
+  \leq H(y^0-x^0+|\vx-\vx'|+|\vx'-\vy'|)
+\end{align}
 for the second Heaviside function in the second summand.
-The first Heaviside function in the first summand equals 1 anyway, as $|\vx-\vx'| < x^0$. We furthermore use
-\begin{equation}
-	H(y^0-x^0+|\vx-\vx'|-|\vx'-\vy'| - |\vy-\vy'|) \leq H(y^0-x^0+|\vx-\vx'|-|\vx'-\vy'|),
-\end{equation}
-as it simplifies the domain of integration. Overall, the domain of integration remains bounded. 
-Introducing $\vz_1 = \vx-\vx'$, $\vz_2 = \vx'-\vy'$ (with Jacobi determinant of modulus 1) and using spherical coordinates for $\vz_2$, this leads to:
+The first Heaviside function in the first summand equals 1 anyway, as 
+$|\vx-\vx'| < x^0$. We furthermore use
+\begin{align}\notag
+  H(y^0-x^0+|\vx-\vx'|-|\vx'-\vy'| - |\vy-\vy'|) \\
+  \leq H(y^0-x^0+|\vx-\vx'|-|\vx'-\vy'|),
+\end{align}
+as it simplifies the domain of integration. Overall, the domain of 
+integration remains bounded. 
+Introducing $\vz_1 = \vx-\vx'$, $\vz_2 = \vx'-\vy'$ (with Jacobi determinant 
+of modulus 1) and using spherical coordinates for $\vz_2$, this leads to:
 \begin{align}
-	&|A_2 \psi|(x,y) \, \frac{4(4\pi)^3}{\lambda \, m_2^2 \, \| \psi \|_g}\nonumber\\
-& \leq~ \int_{B_{x^0}(0)} d^3 \vz_1 4\pi \int_0^{\max(0,y^0-x^0+|\vz_1|)}\!\!\!\!\!\! d^3 \vz_2 ~|\vz_2|^2\, \frac{1}{|\vz_1|} \frac{1}{|\vz_2|} g(x^0-|\vz_1|) g(x^0-|\vz_1|+|\vz_2|) \nonumber\\
-&+~\int_{B_{x^0}(0)} d^3 \vz_1 ~4\pi \int_{\max( 0, x^0-y^0-|\vz_1|)}^{x^0-|\vz_1|} \!\!\!\!\!\! d|\vz_2|~|\vz_2|^2 ~\frac{1}{|\vz_1|} \frac{1}{ |\vz_2|} g(x^0-|\vz_1|) g(x^0-|\vz_1|-|\vz_2|).
+	&|A_2 \psi|(x,y) \frac{4(4\pi)^3}{\lambda \, m_2^2 \, \| \psi \|_g}\nonumber\\
+& \leq \int_{B_{x^0}(0)} \!\!\!d^3 \vz_1 4\pi \!\int_0^{\max(0,y^0-x^0+|\vz_1|)}\!\!\!\!\!\! d^3 \vz_2  \frac{g(x^0\!\!-\!|\vz_1|) g(x^0\!\!-\!|\vz_1|\!+\!|\vz_2|)}{|\vz_1||\vz_2|} |\vz_2|^2  \nonumber\\
+&+\!\int_{B_{x^0}(0)} \!\!\!d^3 \vz_1 4\pi\! \int_{\max( 0, x^0-y^0-|\vz_1|)}^{x^0-|\vz_1|} \!\!\!\!\!\! d|\vz_2| \frac{g(x^0-|\vz_1|) g(x^0-|\vz_1|-|\vz_2|)}{|\vz_1||\vz_2|}  |\vz_2|^2.
 \end{align}
 
-Using spherical coordinates also for $\vz_1$, this can be further simplified to:
+Using spherical coordinates also for $\vz_1$, this can be further simplified 
+to:
 \begin{align}
-	|A_2 \psi|(x,y) \, &\frac{16\pi}{\lambda \, m_2^2 \, \| \psi \|_g} \leq  \int_0^{x^0} d r_1 \int_0^{\max(0,y^0-x^0+r_1)} \!\!\! dr_2~r_1 r_2\,g(x^0-r_1) g(x^0-r_1+r_2)\label{eq:A2firstestimate}\\
-&+~\int_0^{x^0} d r_1 \int_{\max( 0,x^0-r_1-y^0)}^{t_1-r_1} \!\!\! dr_2~r_1 r_2 ~ g(x^0-r_1) g(x^0-r_1-r_2) \label{eq:A2secondestimate}.
+  &|A_2 \psi|(x,y)  \frac{16\pi}{\lambda  m_2^2 \, \| \psi \|_g} \notag\\
+  &\leq  \int_0^{x^0} d r_1 \int_0^{\max(0,y^0-x^0+r_1)} \!\!\! dr_2~r_1 r_2\,g(x^0\!\!-\!r_1) g(x^0\!\!-\!r_1\!+\!r_2)\label{eq:A2firstestimate}\\
+&+~\int_0^{x^0} d r_1 \int_{\max( 0,x^0-r_1-y^0)}^{t_1-r_1} \!\!\! dr_2~r_1 r_2 ~ g(x^0\!\!-\!r_1) g(x^0\!\!-\!r_1\!-\!r_2) \label{eq:A2secondestimate}.
 \end{align}
 
-Our next task is to simplify the remaining integrals. We begin with making the change of variables $\rho = x^0-r_1$:
+Our next task is to simplify the remaining integrals. We begin with making 
+the change of variables $\rho = x^0-r_1$:
 \begin{align}
-	|A_2 \psi|(x,y) \, \frac{16\pi}{\lambda \, m_2^2 \, \| \psi \|_g} ~\leq~  &\int_0^{x^0} d \rho~(x^0-\rho) g(\rho) \int_0^{\max(0,y^0-\rho)} \!\!\! dr_2~r_2\, g(\rho+r_2)\nonumber\\
-&+~\int_0^{x^0} d \rho~(x^0-\rho)g(\rho) \int_{\max( 0,\rho-y^0)}^{\rho} \!\!\! dr_2~r_2 \, g(\rho-r_2).
+  &|A_2 \psi|(x,y)  \frac{16\pi}{\lambda  m_2^2 \, \| \psi \|_g} \notag\\
+&\leq  \int_0^{x^0} d \rho~(x^0-\rho) g(\rho) \int_0^{\max(0,y^0-\rho)} \!\!\! dr_2~r_2\, g(\rho+r_2)\nonumber\\
+&+\int_0^{x^0} d \rho~(x^0-\rho)g(\rho) \int_{\max( 0,\rho-y^0)}^{\rho} \!\!\! dr_2~r_2 \, g(\rho-r_2).
 \label{eq:a2estimate1}
 \end{align}
-Now we consider the $r_2$-integral in both terms and integrate by parts. This yields:
+Now we consider the $r_2$-integral in both terms and integrate by parts. 
+This yields:
 \begin{align}
-	 \int_0^{\max(0,y^0-\rho)} \!\!\! dr_2~r_2\, g(\rho+r_2)&=\max(0,y^0-\rho) g_1(y^0) - g_2(\max(\rho,y^0)) + g_2(\rho),\\
-\int_{\max( 0,\rho-y^0)}^{\rho} \!\!\! dr_2~r_2 \, g(\rho-r_2) ~&=~ \max( 0,\rho-y^0) g_1(y^0) + g_2(\min(\rho,y^0)).
+   \int_0^{\max(0,y^0\!\!-\!\rho)} \!\!\! dr_2~r_2\, g(\rho\!+\!r_2)
+   &=\max(0,y^0\!\!-\!\rho) g_1(y^0) \notag\\
+   &\quad \quad \quad \!-\! g_2(\max(\rho,y^0)) \!+\! g_2(\rho),\\
+\int_{\max( 0,\rho\!-\!y^0)}^{\rho} \!\!\! dr_2~r_2 \, g(\rho\!-\!r_2) \notag
+&= \max( 0,\rho\!-\!y^0) g_1(y^0) \\
+&\quad\quad  \quad \!+\! g_2(\min(\rho,y^0)).
 \end{align}
-We now use $- g_2(\max(\rho,y^0)) + g_2(\rho) \leq 0$ in the first term and then re-insert the resulting estimate into \eqref{eq:a2estimate1}. Considering also $\max(0,y^0-\rho) + \max( 0,\rho-y^0) = |y^0-\rho|$, this yields:
-\begin{equation}
-	|A_2 \psi|(x,y) \, \frac{16\pi}{\lambda \, m_2^2 \, \| \psi \|_g} ~\leq~  \int_0^{x^0} d \rho~(x^0-\rho) g(\rho) \left[|y^0-\rho| g_1(y^0) + g_2(\min(\rho,y^0)) \right]
+We now use $- g_2(\max(\rho,y^0)) + g_2(\rho) \leq 0$ in the first term and 
+then re-insert the resulting estimate into \eqref{eq:a2estimate1}. 
+Considering also $\max(0,y^0-\rho) + \max( 0,\rho-y^0) = |y^0-\rho|$, this 
+yields:
+\begin{align}
+  &|A_2 \psi|(x,y) \, \frac{16\pi}{\lambda \, m_2^2 \, \| \psi \|_g}\notag\\
+  &\quad \leq  \int_0^{x^0} d \rho~(x^0-\rho) g(\rho) \left[|y^0-\rho| g_1(y^0) + g_2(\min(\rho,y^0)) \right]
 \label{eq:a2estimate2}
-\end{equation}
-The first summand of \eqref{eq:a2estimate2} can be treated as follows. First we focus on whether $x^0>y^0$ or $x^0\leq y^0$. In the first case, we then differentiate between the cases $\rho < y^0$ and $\rho \geq y^0$ and split up the integrals accordingly. This yields:
+\end{align}
+The first summand of \eqref{eq:a2estimate2} can be treated as follows. First 
+we focus on whether $x^0>y^0$ or $x^0\leq y^0$. In the first case, we then 
+differentiate between the cases $\rho < y^0$ and $\rho \geq y^0$ and split 
+up the integrals accordingly. This yields:
 \begin{align}
 	 &\int_0^{x^0} d \rho~(x^0-\rho) g(\rho) |y^0-\rho| g_1(y^0)\nonumber\\
 &=~ g_1(y^0)\, H(x^0-y^0) \int_0^{y^0} d \rho~(x^0-\rho)(y^0-\rho) g(\rho)\label{eq:a2estimate2a}\\
@@ -3375,14 +3456,16 @@ The first summand of \eqref{eq:a2estimate2} can be treated as follows. First we 
 & ~~~+ g_1(y^0)\, H(y^0-x^0) \int_0^{x^0} d \rho~(x^0-\rho)(y^0-\rho) g(\rho).
 \label{eq:a2estimate2c}
 \end{align}
-We now calculate these terms separately using integration by parts. The first term yields:
+We now calculate these terms separately using integration by parts. The first 
+term yields:
 \begin{align}
 	\eqref{eq:a2estimate2a} ~&=~ g_1(y^0) H(x^0-y^0) \left[ (x^0-y^0) g_2(y^0)+ 2g_3(y^0)\right].
 \label{eq:a2estimate2a2}
 \end{align}
 We turn to \eqref{eq:a2estimate2b}:
-\begin{align}
-	\eqref{eq:a2estimate2b} ~&=~ -g_1(y^0) H(x^0-y^0)\left[ (y^0-x^0)(g_2(x^0)+g_2(y^0))+2g_3(x^0) - 2g_3(y^0)\right].
+\begin{align}\notag
+  \eqref{eq:a2estimate2b} = -g_1(y^0) H(x^0\!\!-\!y^0)\!&\big[ (y^0\!\!-\!x^0)(g_2(x^0)\\
+  &\quad \!+\!g_2(y^0))\!+\!2g_3(x^0) \!-\! 2g_3(y^0)\big].
 \label{eq:a2estimate2b2}
 \end{align}
 The result of \eqref{eq:a2estimate2c} is:
@@ -3390,60 +3473,87 @@ The result of \eqref{eq:a2estimate2c} is:
 	\eqref{eq:a2estimate2c} ~&=~ g_1(y^0) H(y^0-x^0) \left[ (y^0-x^0) g_2(x^0)+ 2g_3(x^0)\right].
 	\label{eq:a2estimate2c2}
 \end{align}
-Gathering the terms \eqref{eq:a2estimate2a2}, \eqref{eq:a2estimate2b2} and \eqref{eq:a2estimate2c2} yields:
+Gathering the terms \eqref{eq:a2estimate2a2}, \eqref{eq:a2estimate2b2} and 
+\eqref{eq:a2estimate2c2} yields:
 \begin{align}
-	|A_2 \psi|(x,y) \, \frac{16\pi}{\lambda \, m_2^2 \, \| \psi \|_g} ~&\leq~ g_1(y^0) H(x^0-y^0) \left[ 2(x^0-y^0)g_2(y^0) + 4 g_3(y^0)-2g_3(x^0) \right]\nonumber\\
-&~~~+g_1(y^0) |x^0-y^0| g_2(x^0) + 2 g_1(y^0) H(y^0-x^0) g_3(x^0)\nonumber\\
-&\leq~ 2g_1(y^0)|x^0-y^0| g_2(x^0) + 2 g_1(y^0)g_3(x^0) H(x^0-y^0)\nonumber\\
-&~~~+g_1(y^0)|x^0-y^0|g_2(x^0) + 2 g_1(y^0) g_3(x^0) H(y^0-x^0)\nonumber\\
-&=~ 3g_1(y^0)|x^0-y^0| g_2(x^0) + 2 g_1(y^0)g_3(x^0)\nonumber\\
-&\leq~3(x^0+y^0)g_1(y^0) g_2(x^0) + 2 g_1(y^0)g_3(x^0).
+  |A_2 \psi|(x,y)& \frac{16\pi}{\lambda \, m_2^2 \, \| \psi \|_g} \notag\\
+  &\leq g_1(y^0) H(x^0\!\!-\!y^0) \left[ 2(x^0\!\!-\!y^0)g_2(y^0) \!+\! 4 g_3(y^0)\!-\!2g_3(x^0) \right]\nonumber\\
+&~~~+g_1(y^0) |x^0\!\!-\!y^0| g_2(x^0) + 2 g_1(y^0) H(y^0\!\!-\!x^0) g_3(x^0)\nonumber\\
+&\leq 2g_1(y^0)|x^0\!\!-\!y^0| g_2(x^0) + 2 g_1(y^0)g_3(x^0) H(x^0-y^0)\nonumber\\
+&~~~+g_1(y^0)|x^0\!\!-\!y^0|g_2(x^0) + 2 g_1(y^0) g_3(x^0) H(y^0\!\!-\!x^0)\nonumber\\
+&= 3g_1(y^0)|x^0\!\!-\!y^0| g_2(x^0) + 2 g_1(y^0)g_3(x^0)\nonumber\\
+&\leq 3(x^0+y^0)g_1(y^0) g_2(x^0) + 2 g_1(y^0)g_3(x^0).
 \end{align}
-In order to obtain $\| A_2 \psi \|_g$, we divide by $g(x^0)g(y^0)$ and take the supremum over $x,y \in \tfrac{1}{2}\M$. This results in:
+In order to obtain $\| A_2 \psi \|_g$, we divide by 
+$g(x^0)g(y^0)$ and take 
+the supremum over $x,y \in \tfrac{1}{2}\M$. This results in:
 \begin{align}
-	\sup_{\psi \in \mathcal{S}((\frac{1}{2}\M)^2)} \frac{\| A_2 \psi \|_g}{\| \psi \|_g} ~&\leq~ \frac{\lambda \, m_2^2}{16\pi} \left( 3\sup_{x^0,y^0 \geq 0} \frac{(x^0+y^0)g_2(x^0)\, g_1(y^0)}{g(x^0)g(y^0)}  + 2 \sup_{x^0,y^0\geq 0} \frac{g_3(x^0)g_1(y^0)}{g(x^0)g(y^0)}\right).
+  &\sup_{\psi \in \mathcal{S}((\frac{1}{2}\M)^2)} \frac{\| A_2 \psi \|_g}{\| \psi \|_g} \\
+  &\leq~ \frac{\lambda \, m_2^2}{16\pi} \left( \!3\!\!\!\sup_{x^0,y^0 \geq 0}\!\!\! \frac{(x^0\!\!+\!y^0)g_2(x^0)\, g_1(y^0)}{g(x^0)g(y^0)}  \!+\! 2\!\!\! \sup_{x^0,y^0\geq 0}\!\! \frac{g_3(x^0)g_1(y^0)}{g(x^0)g(y^0)}\!\right).\notag
 \end{align}
-After factorizing the two-dimensional suprema into one-dimensional ones, this exactly yields the claim, \eqref{eq:estimatea2}.
+After factorizing the two-dimensional suprema 
+into one-dimensional ones, 
+this exactly yields the claim, \eqref{eq:estimatea2}.
 
 For the operator $A_1$, we find analogously:
 \begin{align}
-	\sup_{\psi \in \mathcal{S}((\frac{1}{2}\M)^2)} \frac{\| A_1 \psi \|_g}{\| \psi \|_g} ~&\leq~ \frac{\lambda \, m_1^2}{16\pi} \left( 3\sup_{x^0,y^0 \geq 0} \frac{(x^0+y^0)g_1(x^0)\, g_2(y^0)}{g(x^0)g(y^0)}  + 2 \sup_{x^0,y^0\geq 0} \frac{g_1(x^0)g_3(y^0)}{g(x^0)g(y^0)}\right).
+  &\sup_{\psi \in \mathcal{S}((\frac{1}{2}\M)^2)} \frac{\| A_1 \psi \|_g}{\| \psi \|_g} \notag\\
+  &\leq\! \frac{\lambda m_1^2}{16\pi} \left(\!\! 3\!\!\sup_{x^0,y^0 \geq 0}\!\!\!\! \frac{(x^0\!\!+\!y^0)g_1(x^0) g_2(y^0)}{g(x^0)g(y^0)}  
+  \!+\! 2\!\!\! \sup_{x^0,y^0\geq 0}\!\! \frac{g_1(x^0)g_3(y^0)}{g(x^0)g(y^0)}\right).
 \end{align}
-which, after factorization into one-dimensional suprema, yields the claim \eqref{eq:estimatea1}.
+which, after factorization into one-dimensional suprema, yields 
+the claim 
+\eqref{eq:estimatea1}.
 
 
 %%%
-\paragraph{Estimate of the mass-mass term \eqref{eq:estimatea12}.} \label{sec:estimatemassmass}
+\paragraph{Estimate of the mass-mass term \eqref{eq:estimatea12}.} 
+\label{sec:estimatemassmass}
 
-We begin with \eqref{eq:defa12}. Taking the absolute value and using $|\psi(x,y)| \leq \| \psi \|_g \, g(x^0) g(y^0)$ as well as $|J_1(t)/t|\leq \frac{1}{2}$ yields:
+We begin with \eqref{eq:defa12}. Taking the absolute value and using 
+$|\psi(x,y)| \leq \| \psi \|_g \, g(x^0) g(y^0)$ as well as 
+$|J_1(t)/t|\leq \frac{1}{2}$ yields:
 \begin{align}
-&|A_{12} \psi|(x,y) \leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{4(4\pi)^3}  \int_0^\infty d{x'}^0 \int d^3 \vx' \int_0^\infty d{y'}^0 \int_0^{2\pi} d\varphi \int_{0}^{\pi} d \vartheta \, \cos(\vartheta) |{x'}^0-{y'}^0| \,  \nonumber\\
-&\times H(x^0-{x'}^0-|\vx-\vx'|)H(y^0-{y'}^0-|\vy-\vx'+\vz|)g({x'}^0)g({y'}^0)\Big|_{|\vz| = |{x^0}'-{y^0}'|},
+&|A_{12} \psi|(x,y) \notag\\
+&\leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{4(4\pi)^3}\!  \int_0^\infty\!\!\! d{x'}^0\!\! \int d^3 \!\vx' \!\int_0^\infty \!\!\!d{y'}^0 \!\int_0^{2\pi}\!\!\! d\varphi \!\int_{0}^{\pi} \!\!\!d \vartheta \, \cos(\vartheta) |{x'}^0\!\!-\!{y'}^0| \,  \nonumber\\
+&\hspace{1cm}\times\! H(x^0\!\!-{x'}^0\!\!-\!|\vx-\vx'|)H(y^0\!\!-{y'}^0\!\!-\!|\vy\!-\!\vx'\!+\!\vz|)\notag\\
+&\hspace{3cm} \times g({x'}^0)g({y'}^0)\Big|_{|\vz| = |{x^0}'-{y^0}'|},
 \end{align}
-where, we recall, $\vz$ is the variable for which the spherical coordinates are used.
+where, we recall, $\vz$ is the variable for which the spherical 
+coordinates are used.
 
-Next, we consider the ranges of integration which the Heaviside functions imply. $H(x^0-{x'}^0-|\vx-\vx'|)$ restricts the range of integration of $\vx'$ to the ball $B_{x^0-{x'}^0}(\vx)$ and the range of the ${x'}^0$-integration to $(0,x^0)$. The range implied by the second Heaviside function is more complicated. We therefore use the estimate
+Next, we consider the ranges of integration which the Heaviside 
+functions imply. $H(x^0-{x'}^0-|\vx-\vx'|)$ restricts the range 
+of integration of $\vx'$ to the ball $B_{x^0-{x'}^0}(\vx)$ and the 
+range of the ${x'}^0$-integration to $(0,x^0)$. The range implied 
+by the second Heaviside function is more complicated. We therefore 
+use the estimate
 \begin{equation}
 	H(y^0-{y'}^0-|\vy-\vx'+\vz|) \leq H(y^0-{y'}^0).
 \end{equation}
-Then ${y'}^0 \in (0,y^0)$ and there is no further restriction for the angular variables. We obtain:
+Then ${y'}^0 \in (0,y^0)$ and there is no further restriction for 
+the angular variables. We obtain:
 \begin{align}
 |A_{12} \psi|(x,y) &\leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{8(4\pi)^3}  \int_0^{x^0} d{'}^0 \int_{B_{x^0-{x'}^0}(\vx)} \!\!\!\!\!\!\!\!\!\! d^3 \vx' \int_0^{y^0} d{y'}^0 \int_0^{2\pi} d\varphi \int_{0}^{\pi} d \vartheta \nonumber\\
 &~~~\times \cos(\vartheta) |{x'}^0-{y'}^0| \, g({x'}^0)g({y'}^0).
 \end{align}
-Performing the $\vx'$-integration, as well as the angular integrals yields:
-\begin{equation}
-	|A_{12} \psi|(x,y) \leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{96\pi}  \int_0^{x^0} d{x'}^0 |x^0-{x'}^0|^3 g({x'}^0) \int_0^{y^0} d{y'}^0~ |{x'}^0-{y'}^0| \, g({y'}^0).
-\end{equation}
-Our next task is to estimate the term explicitly in terms of the functions $g_n$ only. To do so, we use
+Performing the $\vx'$-integration, as well as the angular integrals 
+yields:
+\begin{align}
+  &|A_{12} \psi|(x,y) \notag\\
+  &\leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{96\pi}\!  \int_0^{x^0}\!\! d{x'}^0 |x^0\!\!-\!{x'}^0|^3 g({x'}^0)\! \int_0^{y^0}\!\! d{y'}^0 |{x'}^0\!\!-\!{y'}^0| \, g({y'}^0).
+\end{align}
+Our next task is to estimate the term explicitly in terms of the 
+functions $g_n$ only. To do so, we use
 \begin{equation}
 	|{x'}^0-{y'}^0| \leq {x'}^0 + {y'}^0.
 \end{equation}
 This yields:
-\begin{equation}
-	|A_{12} \psi|(x,y) \leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{48\pi}  \int_0^{x^0} d{x'}^0 |x^0-{x'}^0|^3 g({x'}^0) \int_0^{y^0} d{y'}^0~ ({x'}^0 + {y'}^0) g({y'}^0).
+\begin{align}
+  &|A_{12} \psi|(x,y) \notag\\
+  &\leq \!\frac{\lambda  m_1 m_2  \| \psi \|_g}{48\pi}\!  \int_0^{x^0} \!\!\!d{x'}^0 |x^0\!\!-\!{x'}^0|^3 g({x'}^0) \!\!\int_0^{y^0} \!\!\!d{y'}^0 ({x'}^0 \!\!+\! {y'}^0) g({y'}^0).
 \label{eq:a12estimatecalc}
-\end{equation}
+\end{align}
 Let
 \begin{equation}
 	I(x^0,y^0) = \int_0^{x^0} d{x'}^0 |x^0-{x'}^0|^3 g({x'}^0) \int_0^{y^0} d{y'}^0~ ({x'}^0 + {y'}^0) g({y'}^0)
@@ -3453,9 +3563,10 @@ and
 	L({x'}^0,y^0) = \int_0^{y^0} d{y'}^0~ ({x'}^0 + {y'}^0) g({y'}^0).
 \end{equation}
 Integration by parts yields:
-\begin{equation}
-	L({x'}^0,y^0) = {x'}^0 g_1(y^0) + y^0 g_1(y^0) - g_2(y^0) \leq {x'}^0 g_1(y^0) + y^0 g_1(y^0).
-\end{equation}
+\begin{align}
+  L({x'}^0,y^0) =& {x'}^0 g_1(y^0) \!+\! y^0 g_1(y^0) \!-\! g_2(y^0) \notag\\
+  \leq& {x'}^0 g_1(y^0) \!+\! y^0 g_1(y^0).
+\end{align}
 Next, let
 \begin{align}
 	I_a(x^0) &= \int_0^{x^0} d {x'}^0~|x^0-{x'}^0|^3 g({x'}^0),\nonumber\\
@@ -3466,12 +3577,14 @@ Then:
 	I(x^0,y^0) \leq I_a(x^0) \, y^0 g_1(y^0) + I_b(x^0) \, g_1(y^0).
 \label{eq:massmassintparts}
 \end{equation}
-We consider $I_a$ first, using $(x^0-{x'}^0)^2 \leq (x^0)^2$ and integrating by parts:
+We consider $I_a$ first, using $(x^0-{x'}^0)^2 \leq (x^0)^2$ and 
+integrating by parts:
 \begin{align}
-	I_a(x^0) &\leq (x^0)^2 \int_0^{x^0} d {x'}^0~(x^0-{x'}^0)g({x'}^0)\nonumber\\
-&= (x^0)^2 \left( \underbrace{(x^0-{x'}^0)g_1({x'}^0)|_{{x'}^0 = 0}^{x^0}}_{=0} + g_2(x^0)\right) = (x^0)^2 g_2(x^0).
+	I_a(x^0) &\leq (x^0)^2 \int_0^{x^0} d {x'}^0~(x^0-{x'}^0)g({x'}^0)\\
+&= (x^0)^2 \left( \underbrace{(x^0-{x'}^0)g_1({x'}^0)|_{{x'}^0 = 0}^{x^0}}_{=0} + g_2(x^0)\right) = (x^0)^2 g_2(x^0).\nonumber
 \end{align}
-We turn to $I_b$, using ${x'}^0(x^0-{x'}^0)\leq \frac{1}{4}(x^0)^2$ and integrating by parts twice. This results in:
+We turn to $I_b$, using ${x'}^0(x^0-{x'}^0)\leq \frac{1}{4}(x^0)^2$ 
+and integrating by parts twice. This results in:
 \begin{align}
 	I_b(x^0) ~\leq~ \frac{(x^0)^2}{4} \int_0^{x^0} d{x'}^0~ (x^0-{x'}^0)^2 g({x'}^0) ~=~ \frac{(x^0)^2}{2}\, g_3(x^0).
 \end{align}
@@ -3480,54 +3593,76 @@ Considering \eqref{eq:massmassintparts}, we therefore obtain:
 	I(x^0,y^0) ~\leq~ (x^0)^2 g_2(x^0)\, y^0 g_1(y^0) + \frac{(x^0)^2}{2}\, g_3(x^0)\, g_1(y^0).
 \label{eq:resultmassmasstermgeneralg}
 \end{equation}
-Returning to \eqref{eq:a12estimatecalc}, we divide by $g(x^0)g(y^0)$ and take the supremum, with the result:
+Returning to \eqref{eq:a12estimatecalc}, we divide by $g(x^0)g(y^0)$ 
+and take the supremum, with the result:
 \begin{align}
 	\sup_{\psi \in \mathcal{S}((\frac{1}{2}\M)^2)} \frac{\| A_{12} \psi \|_g}{\| \psi \|_g} ~&\leq~\frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{96\pi} \left[ \sup_{x^0,y^0\geq 0} \frac{(x^0)^2 g_2(x^0)\, y^0 g_1(y^0)}{g(x^0)g(y^0)} \right.\nonumber\\
 &~~~\left.+ \frac{1}{2} \sup_{x^0,y^0\geq 0} \frac{(x^0)^2 g_3(x^0)\, g_1(y^0)}{g(x^0)g(y^0)} \right].
 \end{align}
-Factorizing the two-dimensional suprema into one-dimensional ones yields the claim, \eqref{eq:estimatea12}.
+Factorizing the two-dimensional suprema into one-dimensional ones 
+yields the claim, \eqref{eq:estimatea12}.
 
 %%%%%
-\subsubsection{Proof of Theorem \ref{thm:exponentialg}} \label{sec:proofexponentialg}
+\subsubsection{Proof of Theorem \ref{thm:exponentialg}} 
+\label{sec:proofexponentialg}
 
-Let $\psi \in \mathcal{S}$. It only remains to calculate the supremum in \eqref{eq:estimatea0} for $g(t)=e^{\gamma t}$. We have:
+Let $\psi \in \mathcal{S}$. It only remains to calculate the 
+supremum in \eqref{eq:estimatea0} for $g(t)=e^{\gamma t}$. We have:
 \begin{equation}
 	g_1(t) = \frac{1}{\gamma} \left( e^{\gamma t} - 1\right)
 \end{equation}
 and hence
-\begin{equation}
-	\sup_{\psi \in \mathcal{S}((\frac{1}{2}\M)^2)} \frac{\| A_0 \psi \|_g}{\| \psi \|_g} ~\leq~ \frac{\lambda}{8\pi} \left( \sup_{t \geq 0} \frac{g_1(t)}{g(t)} \right)^2 ~=~ \frac{\lambda}{4\pi} \left( \sup_{t \geq 0} \frac{1}{\gamma} (1 - e^{-\gamma t}) \right)^2~=~ \frac{\lambda}{8\pi \gamma^2}. 
-\end{equation}
-This shows that $A_0$ can be linearly extended to a bounded operator on $\Banach_g$ which satisfies the same estimate, \eqref{eq:norma0exponential}. Moreover, for $\gamma > \sqrt{\frac{\lambda}{4\pi}}$, $A_0$ is a contraction and Banach's fixed point theorem implies the existence of a unique solution $\psi \in \Banach_g$ of the equation $\psi = \psi^\free + A_0 \psi$ for every $\psi^\free \in \Banach_g$.
+\begin{align}
+  \sup_{\psi \in \mathcal{S}((\frac{1}{2}\M)^2)} &\frac{\| A_0 \psi \|_g}{\| \psi \|_g} \leq \frac{\lambda}{8\pi} \left( \sup_{t \geq 0} \frac{g_1(t)}{g(t)} \right)^2 \notag\\
+  &= \frac{\lambda}{4\pi} \left( \sup_{t \geq 0} \frac{1}{\gamma} (1 - e^{-\gamma t}) \right)^2 = \frac{\lambda}{8\pi \gamma^2}. 
+\end{align}
+This shows that $A_0$ can be linearly extended to a bounded operator 
+on $\Banach_g$ which satisfies the same estimate, 
+\eqref{eq:norma0exponential}. Moreover, for $\gamma > 
+\sqrt{\frac{\lambda}{4\pi}}$, $A_0$ is a contraction and Banach's 
+fixed point theorem implies the existence of a unique solution 
+$\psi \in \Banach_g$ of the equation $\psi = \psi^\free + A_0 \psi$ 
+for every $\psi^\free \in \Banach_g$.
 
 
 %%%%%
 \subsubsection{Proof of Theorem \ref{thm:existence}} \label{sec:proofexistence}
 
-Let again $\psi \in \mathcal{S}$. We need to calculate the suprema in \eqref{eq:estimatea0}-\eqref{eq:estimatea12} for $g(t)=(1+\alpha t^2)e^{\alpha t^2/2}$. We first note:
+Let again $\psi \in \mathcal{S}$. We need to calculate the suprema 
+in \eqref{eq:estimatea0}-\eqref{eq:estimatea12} for 
+$g(t)=(1+\alpha t^2)e^{\alpha t^2/2}$. We first note:
 \begin{align}
 	g_1(t) ~&=~ t e^{\alpha t^2/2},\nonumber\\
 	g_2(t) ~&=~\frac{1}{\alpha} \left( e^{\alpha t^2/2}-1 \right),\nonumber\\
 	g_3(t) ~&=~\frac{1}{\alpha} \left[ \sqrt{\frac{\pi}{2\alpha}} \erfi(\sqrt{\alpha/2} t)-t \right].
 \end{align}
-We can see that with each successive integration, the functions $g_n$ grow slower as $t\rightarrow \infty$. Furthermore, the leading terms in $g_n$ are inversely proportional to increasing powers of $\alpha$. These two properties (and of course the fact that $g_1, g_2,g_3$ can be written down in terms of elementary functions) make this particular function $g(t)$ a suitable choice for the proof.
+We can see that with each successive integration, the functions 
+$g_n$ grow slower as $t\rightarrow \infty$. Furthermore, the leading 
+terms in $g_n$ are inversely proportional to increasing powers of 
+$\alpha$. These two properties (and of course the fact that $g_1, 
+g_2,g_3$ can be written down in terms of elementary functions) make 
+this particular function $g(t)$ a suitable choice for the proof.
 
-As we need to estimate the behavior of quotients like $g_3(t)/g(t)$ for $t\rightarrow \infty$, we look for a simpler estimate of $g_3$ in terms of exponential functions. We note:
+As we need to estimate the behavior of quotients like $g_3(t)/g(t)$ 
+for $t\rightarrow \infty$, we look for a simpler estimate of $g_3$ 
+in terms of exponential functions. We note:
 \begin{align}
 	g_3(t) ~&=~ \int_0^t dt'\,  \frac{1}{\alpha} \left( e^{\alpha {t'}^2/2} -1\right)\nonumber\\
 	&\le~ \frac{e^{\alpha t^2/2}}{\alpha} e^{-\alpha t^2/2} \sqrt{2/\alpha} \int_0^{\sqrt{\alpha/2} t}  d\tau  \,e^{\tau^2}\nonumber\\
 	&=~\frac{\sqrt{2}}{\alpha^{3/2}} \, e^{\alpha t^2/2} \, D(\sqrt{\alpha/2}\,t),
 \end{align}
-where $D(t) = e^{-t^2}\int_0^{t}  d\tau \, e^{\tau^2}$ denotes the Dawson function.
+where $D(t) = e^{-t^2}\int_0^{t}  d\tau \, e^{\tau^2}$ denotes the 
+Dawson function.
 Using the property \(|tD(t)|<\frac{2}{3}\), we obtain:
 \begin{equation}
 	t g_3(t)~\leq~\frac{4}{3} \frac{e^{\alpha t^2/2}}{\alpha^{2}}.
 \label{eq:g3estimate}
 \end{equation}
-We are now well-equipped to calculate the suprema occurring in \eqref{eq:estimatea0}-\eqref{eq:estimatea12}. Using
- \begin{equation}
+We are now well-equipped to calculate the suprema occurring in 
+\eqref{eq:estimatea0}-\eqref{eq:estimatea12}. Using
+\begin{equation}
  \sup_{t\geq 0}\frac{t^\beta}{1+t^2} ~=~ \left\{ \begin{matrix} 1\quad \text{ for } \beta=0\\ \frac{1}{2} \quad \text{ for } \beta=1 \\ 1\quad \text{ for } \beta=2 \end{matrix}\right. 
- \end{equation}
+\end{equation}
 we obtain:
 \begin{align}
 	\sup_{t\geq 0} \frac{g_1(t)}{g(t)} ~&=~ \sup_{t\geq 0} \frac{t}{1+\alpha t^2} ~=~ \frac{1}{2}\frac{1}{\sqrt{\alpha}},\label{eq:sup1}\\
@@ -3550,49 +3685,72 @@ With these results, we find for $A_0$:
 This yields \eqref{eq:estimatea0final}.
 
 We continue with $A_1$.
-\begin{equation}
-	\eqref{eq:estimatea1} ~\leq~ \frac{\lambda \, m_1^2}{16\pi} \left[  3 \, \frac{1}{\alpha} \, \frac{1}{\alpha} + 3 \, \frac{1}{2} \frac{1}{\sqrt{\alpha}} \, \frac{1}{2} \frac{1}{\alpha^{3/2}} +2 \, \frac{1}{2} \frac{1}{\sqrt{\alpha}} \, \frac{1}{\alpha^{3/2}} \right] ~=~ \frac{\lambda \, m_1^2}{16\pi}\, \frac{19}{4} \frac{1}{\alpha^2} ~<~\frac{\lambda \, m_1^2}{16\pi} \frac{5}{\alpha^2}.
-\end{equation}
-This yields \eqref{eq:estimatea1final}. Analogously, we obtain the estimate \eqref{eq:estimatea2final} for $A_2$.
+\begin{align}\notag
+  \eqref{eq:estimatea1} \leq \frac{\lambda  m_1^2}{16\pi} \left[  3  \frac{1}{\alpha}  \frac{1}{\alpha} + 3  \frac{1}{2} \frac{1}{\sqrt{\alpha}}  \frac{1}{2} \frac{1}{\alpha^{3/2}} +2  \frac{1}{2} \frac{1}{\sqrt{\alpha}}  \frac{1}{\alpha^{3/2}} \right] \\
+  = \frac{\lambda  m_1^2}{16\pi} \frac{19}{4} \frac{1}{\alpha^2} ~<~\frac{\lambda  m_1^2}{16\pi} \frac{5}{\alpha^2}.
+\end{align}
+This yields \eqref{eq:estimatea1final}. Analogously, we obtain the 
+estimate \eqref{eq:estimatea2final} for $A_2$.
 
 Finally, for $A_{12}$, we have
-\begin{equation}
-	\eqref{eq:estimatea12} ~\leq~ \frac{\lambda \, m_1^2\, m_2^2}{96 \pi} \left[ \frac{1}{\alpha^2} \, \frac{1}{\alpha} + \frac{1}{2} \, \frac{2}{3} \frac{1}{\alpha^{5/2}} \, \frac{1}{2} \frac{1}{\sqrt{\alpha}} \right] ~=~ \frac{\lambda \, m_1^2\, m_2^2}{96\pi} \, \frac{7}{6} \frac{1}{\alpha^3} ~<~ \frac{\lambda \, m_1^2\, m_2^2}{80 \pi} \, \frac{1}{\alpha^3},
-\end{equation}
+\begin{align}
+  \eqref{eq:estimatea12} \leq \frac{\lambda  m_1^2 m_2^2}{96 \pi} \left[ \frac{1}{\alpha^2}  \frac{1}{\alpha} + \frac{1}{2}  \frac{2}{3} \frac{1}{\alpha^{5/2}}  \frac{1}{2} \frac{1}{\sqrt{\alpha}} \right] \notag\\
+  = \frac{\lambda  m_1^2 m_2^2}{96\pi}  \frac{7}{6} \frac{1}{\alpha^3} < \frac{\lambda  m_1^2 m_2^2}{80 \pi}  \frac{1}{\alpha^3},
+\end{align}
 which yields \eqref{eq:estimatea12final}.
 
-Now, the estimates \eqref{eq:estimatea0final}-\eqref{eq:estimatea12final} show that the operators $A_0$, $A_1$, $A_2$ and $A_{12}$ are bounded on test functions. Thus, they can be linearly extended to bounded operators on $\Banach_g$ with the same bounds.
+Now, the estimates \eqref{eq:estimatea0final}-
+\eqref{eq:estimatea12final} show that the operators 
+$A_0$, $A_1$, $A_2$ and $A_{12}$ are bounded on test functions. 
+Thus, they can be linearly extended to bounded operators on 
+$\Banach_g$ with the same bounds.
 
-The operator $A = A_0 + A_1 + A_2 + A_{12}$ then also defines a bounded linear operator on $\Banach_g$ with norm
+The operator $A = A_0 + A_1 + A_2 + A_{12}$ then also defines a 
+bounded linear operator on $\Banach_g$ with norm
 \begin{equation}
 	\| A \| ~\leq~ \| A_0 \| + \| A_1 \| + \| A_2 \| + \| A_{12} \|.
 \end{equation}
-Using the previous results \eqref{eq:estimatea0final}-\eqref{eq:estimatea12final}, we obtain:
+Using the previous results \eqref{eq:estimatea0final}-
+\eqref{eq:estimatea12final}, we obtain:
 \begin{equation}
 	\|A \| ~\leq~ \frac{\lambda}{8\pi \alpha} \left( \frac{1}{4} + \frac{5(m_1^2 + m_2^2)}{2} \frac{1}{\alpha} + \frac{m_1^2 \, m_2^2}{10} \frac{1}{\alpha^2} \right).
 \end{equation}
-If $\alpha$ is chosen such that this expression is strictly smaller than unity, $A$ becomes a contraction and the existence and uniqueness of solutions of the equation $\psi = \psi^\free + A\psi$ follows. This yields condition \eqref{eq:condexistencemassive} and ends the proof.
+If $\alpha$ is chosen such that this expression is strictly smaller 
+than unity, $A$ becomes a contraction and the existence and 
+uniqueness of solutions of the equation $\psi = \psi^\free + A\psi$ 
+follows. This yields condition \eqref{eq:condexistencemassive} and 
+ends the proof.
 
 %%%%%
-\subsubsection{Proof of Theorem \ref{thm:existencecurved}} \label{sec:proofexistencecurved}
+\subsubsection{Proof of Theorem \ref{thm:existencecurved}} 
+\label{sec:proofexistencecurved}
 
-The proof can be reduced to the one for $\tfrac{1}{2}\M$. To do so, we take the absolute value of \eqref{eq:defa0tilde} and use $|\psi|(\eta_1,\vx,\eta_2,\vy) \leq g(\eta_1) g(\eta_2) \|\psi\|_g$. With
+The proof can be reduced to the one for $\tfrac{1}{2}\M$. To do so, 
+we take the absolute value of \eqref{eq:defa0tilde} and use 
+$|\psi|(\eta_1,\vx,\eta_2,\vy) \leq g(\eta_1) g(\eta_2) \|\psi\|_g$. 
+With
 \begin{align}
 	G(\eta) ~&=~ a(\eta) \exp \left(\gamma \int_0^\eta d\eta'~a(\eta') \right)	\label{eq:defG}\\
 	G_1(\eta)~&=~ \int_0^\eta d\eta'~G(\eta)
 \end{align}
 we obtain the estimate
-\begin{align}
-    &|\widetilde{A}_0\psi|(x,y) \le \frac{\lambda \|\psi\|_g}{4(4\pi)^3} \int_{B_{\eta_2}(\vy)}d^3 \vy' \int_0^{2\pi} d\varphi \int_{-1}^1 d\cos\vartheta \, \frac{|b^2|}{(b^0+|\vb|\cos\vartheta)^2 |\vy'|} G(\eta_2-|\vy'|)\nonumber\\
-    &\times G\left(\eta_1-\frac{1}{2}\frac{b^2}{b^2+|\vb|\cos\vartheta}\right)
-    \left(1_{b^2>0}1_{b^0>0} 1_{\cos\vartheta > \frac{b^2}{2\eta_1^0|\vb|} - \frac{b^0}{|\vb|}}+1_{b^2<0}1_{\cos\vartheta<\frac{b^2}{2\eta_1|\vb|} - \frac{b^0}{|\vb|}}\right).
+\begin{align}\notag
+    &|\widetilde{A}_0\psi|(x,y) \\
+    &\le \frac{\lambda \|\psi\|_g}{4(4\pi)^3}\!\! \int_{B_{\eta_2}(\vy)}\!\!\!\!\!d^3 \vy' \!\!\int_0^{2\pi} \!\!\!d\varphi \int_{-1}^1 \!\!\!d\cos\vartheta \, \frac{|b^2|}{(b^0\!\!+\!|\vb|\cos\vartheta)^2 |\vy'|} G(\eta_2\!-\!|\vy'|)\nonumber\\
+    &\times G\left(\eta_1-\frac{1}{2}\frac{b^2}{b^2+|\vb|\cos\vartheta}\right)\notag\\
+    &\times \left(1_{b^2>0}1_{b^0>0} 1_{\cos\vartheta > \frac{b^2}{2\eta_1^0|\vb|} - \frac{b^0}{|\vb|}}+1_{b^2<0}1_{\cos\vartheta<\frac{b^2}{2\eta_1|\vb|} - \frac{b^0}{|\vb|}}\right).
 \label{eq:a0tildecalc01}
 \end{align}
-This estimate is identical to \eqref{eq:a0calc01} with the only difference that the function $g$ is exchanged with $G$ in the integral (but not in $\| \cdot\|_g$). Thus, going through the same steps as in Secs. \ref{sec:proofbounds}, \ref{sec:proofexistence}, we obtain:
+This estimate is identical to \eqref{eq:a0calc01} with the only 
+difference that the function $g$ is exchanged with $G$ in the 
+integral (but not in $\| \cdot\|_g$). Thus, going through the same 
+steps as in Secs. \ref{sec:proofbounds}, \ref{sec:proofexistence}, 
+we obtain:
 \begin{equation}
 	\sup_{\psi \in \mathcal{S}\left(([0,\infty)\times \R^3)^2\right)} \frac{\| \widetilde{A}_0 \psi \|_g}{\| \psi \|_g} ~\leq~ \frac{\lambda}{8\pi} \left(\sup_{t\geq 0} \frac{G_1(t)}{g(t)}\right)^2.\label{eq:estimatea0tilde}
 \end{equation}
-Now, recalling $g(t) = \exp\left(\gamma \int_0^t d\tau \, a(\tau)\right)$ we have
+Now, recalling $g(t) = \exp\left(\gamma \int_0^t d\tau \, 
+a(\tau)\right)$ we have
 \begin{equation}
 	G_1(t) = \frac{1}{\gamma} g(t)
 \end{equation}
@@ -3600,7 +3758,8 @@ and it follows that
 \begin{equation}
 	\sup_{\psi \in \mathcal{S}\left(([0,\infty)\times \R^3)^2\right)} \frac{\| \widetilde{A}_0 \psi \|_g}{\| \psi \|_g} ~\leq~ \frac{\lambda}{8\pi \gamma^2},
 \end{equation}
-which yields \eqref{eq:a0tildebound}. The rest of the claim follows as before.
+which yields \eqref{eq:a0tildebound}. The rest of the claim follows 
+as before.
 
 
 %%%%%

@@ -174,8 +174,20 @@
 \noch{Historische Einleitung durch Anfänge relativistischer Quantenphysik, Strahlungskatastrophe (unbounded below). No potentials resultat Lukas}
 \todo{general: replace \(S\) 
 in later chapter something similar but different}
-\lipsum[2-3]
+\lipsum[1-2]
 
+\todo{use these citations to introduce multi time equations}
+The key innovation is to make use of \textit{multi-time wave functions}. 
+This concept goes back to Dirac \cite{dirac_32}, played an important 
+role in the works of Tomonaga \cite{tomonaga} and Schwinger 
+\cite{schwinger}, has been studied by different authors over the 
+years \cite{guenther_1952,marx_1974,schweber,drozvincent_1981,sazdjian_2bd,2bdem} 
+and has recently undergone considerable developments 
+\cite{nogo_potentials,qftmultitime,multitime_pair_creation,1d_model,
+nt_model,2bd_current_cons,deckert_nickel_2016,lpt_2017b,generalized_born,
+ibc_model,phd_nickel}; an overview can be found in \cite{dice_paper}. 
+For two Dirac particles in Minkowski spacetime $\M$, a multi-time wave 
+function is a map
 
 \chapter[Direct Interaction in Relativistic Quantum Mechanics][Direct Interaction]{Direct Interaction in Relativistic Quantum Mechanics}
 As we have seen in the last chapter, having interaction mediated by potentials 
@@ -200,6 +212,29 @@ the mathematical results that
 had been established in the past on this subject 
 and finally 
 discuss results appearing in \cite{selfDirac,selfKG}.
+
+
+
+
+
+\todo{bring this to some apropriate place}
+It is quite challenging to set up an interacting dynamics 
+  for multi-time wave functions. The issue here is not only Lorentz 
+  invariance but rather the mere compatibility of the time 
+  evolutions in the various time coordinates. A no-go theorem 
+  \cite{nogo_potentials,deckert_nickel_2016} for example rules 
+  out interaction potentials (which could be Poincar\'{e} 
+  invariant functions in the multi-time approach). Thus, 
+  interaction is more difficult to achieve for multi-time than for 
+  single-time wave functions. So far, the only rigorous, 
+  interacting and Lorentz invariant multi-time models for Dirac 
+  particles have been constructed in 1+1 spacetime dimensions 
+  \cite{1d_model,nt_model} (see, however, \cite{drozvincent_1981,
+  sazdjian_2bd,2bdem} for non-rigorous Lorentz invariant models 
+  in 1+3 dimensions and \cite[chap.\ 3]{phd_nickel} for a not 
+  fully Lorentz invariant but rigorous model in 1+3 dimensions). 
+  Considering these difficulties, the multi-time aspect of our 
+  model is interesting in its own right.
 
 
 \section{Overview}
@@ -318,7 +353,7 @@ Wheeler-Feynman electrodynamics is
 In an equation incorporating \eqref{eq:twopartkernel} the interaction between the particles 
 happens along light-like distances. The constant in front of \eqref{eq:twopartkernel}
 is fixed by the non-relativistic limit, recovering an equation very much like the Breit equation,
-see \cite[section 3.6]{lienertfirst}.
+see \cite[section 3.6]{direct_interaction_quantum}.
 
 Summarising, we arrived at the equation
 \begin{align}\label{eq:twopartint}
@@ -332,7 +367,7 @@ it is also conceivable to replace \(\psi\), \(S^\ret\) and all the constant fact
 quantities related to the Klein Gordon equation and arrive at 
 
 \begin{align}\label{eq:KGtwopartint}
-  \psi&(x_1,x_2) = \psi^\free(x_1,x_2)+\lambda \int d^4 x_1' \, d^4 x_2' \\\nonumber
+  \psi&(x_1,x_2) = \psi^\free(x_1,x_2)+\frac{\lambda}{4\pi} \int d^4 x_1' \, d^4 x_2' \\\nonumber
   & \times G^\ret_1(x_1-x_1') G^\ret_2(x_2-x_2') \,\delta((x_1'-x_2')^2) \psi(x_1',x_2'),
 \end{align}
 where \(\psi\) and \(\psi^\free\) are no longer spinor valued, \(\psi^\free\) is a
@@ -348,13 +383,14 @@ type as the ones motivated in this chapter are about the Klein
 Gordon version \eqref{eq:KGtwopartint}.
 
 
-\subsection{Previous Results on Directly Interacting Particles}
+
+\subsection{Previous Results on Directly Interacting Particles}\label{sec: direct interation previous}
 In this section we summarise the most important existence results 
 on equations of the type of 
 \eqref{eq:twopartintgeneral}. Because this line of work is still 
 fairely young,
 it can still readily be summarised. The results are taken 
-from \cite{lienertfirst} and 
+from \cite{direct_interaction_quantum} and 
 \cite{lienertcurved}. The theorems are about the Klein-Gordon case, i.e.
 slightly different versions of equations
 of the type of \eqref{eq:KGtwopartint}. I tried to contain the 
@@ -406,7 +442,7 @@ section \ref{sec:KG lightcones} employs the fully
 singular \(\delta((x_1-x_2)^2)\) kernel. 
 \end{enumerate}
 
-%\begin{Thm}[Thm 3.1 of \cite{lienertfirst}]
+%\begin{Thm}[Thm 3.1 of \cite{direct_interaction_quantum}]
 %Let \(T>0\), \(M,N\in\mathbb{N}\), consider 
 %the Banach space \(\mathcal{B}=L^\infty ([0,T]^N,L^2(\mathbb{R}^M))\).
 %Let \(\mathcal{L}:[0,T]^{2N}\rightarrow L^2(\mathbb{R}^{2M})\) such that 
@@ -420,7 +456,7 @@ singular \(\delta((x_1-x_2)^2)\) kernel.
 %has a unique solution \(f\in\mathcal{B}\).
 %\end{Thm}
 
-%\begin{Thm}[Thm 3.2 \((d=1)\) of \cite{lienertfirst}]
+%\begin{Thm}[Thm 3.2 \((d=1)\) of \cite{direct_interaction_quantum}]
 %Let \(T>0, \lambda\in\mathbb{C}, m_1,m_2\ge 0\), every
 %\begin{equation*}
 %\psi^\free \in \mathcal{B}_1=L^\infty ([0,T]^2,L^2(\mathbb{R}^2)),
@@ -435,7 +471,7 @@ singular \(\delta((x_1-x_2)^2)\) kernel.
 %has a unique solution \(\psi \in \mathcal{B}_1\).
 %\end{Thm}
 
-%\begin{Thm}[Thm 3.3 \((d=2)\) of \cite{lienertfirst}]
+%\begin{Thm}[Thm 3.3 \((d=2)\) of \cite{direct_interaction_quantum}]
 %Let \(T>0, \lambda\in\mathbb{C}, m_1,m_2\ge 0\), for every essentially bounded \(K:\mathbb{R}^6\rightarrow\mathbb{C}\)
 %and every \(\psi^\free \in \mathcal{B}_2=L^\infty([0,T]^2,L^2(\mathbb{R}^4))\) the equation
 %\begin{align*}
@@ -515,7 +551,7 @@ $\eta,\eta' \in [0,\infty)$ and $\vx,\vx' \in \R^3$; see
 	G_{\mathcal{M}}(x,x') ~=~ \frac{1}{a(\eta)} \frac{1}{a(\eta')} G_{\frac{1}{2}\M}(x,x').
 \end{equation}
 Inserting the well-known expression for the retarded and symmetric 
-Green's functions on $\tfrac{1}{2}\M$ (see \eqref{later...} below) 
+Green's functions on $\tfrac{1}{2}\M$ (see \eqref{eq:gretkg} below) 
 yields:
 \begin{align}
 	G_{\mathcal{M}}^\ret(x,x') ~&=~ \frac{1}{4\pi} \frac{1}{a(\eta) a(\eta')} \frac{\delta(\eta - \eta' -|\vx-\vx'|)}{|\vx-\vx'|}\nonumber\\
@@ -589,139 +625,74 @@ the integral equation \eqref{KG curved bounded} has a unique solution
 \section{Directly Interacting Dirac Particles}\label{sec:direct dirac}
 
 In this section we prove the existence and uniqueness 
-of solutions of a version of equation \eqref{eq:twopartint}
+of solutions of equation \eqref{eq:twopartintgeneral}
+for a class of kernels \(K\)
 subject to similar modifications \ref{matt simplifying assumption 1}
-and \ref{matt simplifying assumption 1}.
-As with the results of the last chapter an analogous 
+and \ref{matt simplifying assumption 2}.
+Similar to the results of the last chapter an analogous 
 result is proven on FLRW spacetime to provide a justification 
 for the cutoff in time.
-We furthermore show that the solutions 
+Furthermore, we show that the solutions 
 are determined by Cauchy data at the initial time; however, 
 no Cauchy problem is admissible at other times. 
 \subsection{Introduction}
 
+In order to take a closer look at equation \eqref{eq:twopartintgeneral},
+we start with its constituents.
 
-The Dirac equation is perhaps the most important equation in relativistic quantum theory, thus it may seem surprising that no completely satisfactory mathematical mechanism of interaction has been found for it. Usually, interactions between many particles are implemented in one of the following ways: (a) adding a potential to the free Hamiltonian, (b) using a second quantized electromagnetic field which mediates the interaction. Both approaches face difficulties. Approach (a) corresponds to postulating the equation
+The Greens function of Diracs equation is given by 
 \begin{equation}
-	i \partial_t \varphi(t,\vx_1,\vx_2) = \left(H_1^\Dirac + H_2^\Dirac + V(t,\vx_1,\vx_2) \right) \varphi(t,\vx_1,\vx_2),
-\label{eq:singletimedirac}
+	S(x)= \overline{D}G(x),
 \end{equation}
-where $V$ is a potential and $H_k^\Dirac$ the Dirac Hamiltonian acting on the variables of the $k$-th particle. Under appropriate circumstances, it is clear that \eqref{eq:singletimedirac} defines an interacting dynamics  (see e.g.\ \cite{dirk_martin_2018} and references therein). 
-However, \eqref{eq:singletimedirac} is not Lorentz invariant.
-
-Approach (b), on the other hand, easily leads to a Lorentz invariant 
-dynamics. However, one encounters difficulties with ultraviolet 
-divergences. These difficulties have led to the situation that, 
-great efforts notwithstanding, it has so far only been possible to 
-rigorously define a Lorentz invariant dynamics for toy models in 
-1+1 and 1+2 spacetime dimensions (see e.g.\ \cite{thirring_model,
-glimm_jaffe,jaffe_cft}). In 1+3 dimensions, it has been an open 
-problem to prove the existence of the dynamics for any interacting 
-and completely relativistic model.
-
-In this paper, we pursue a new approach to defining interacting dynamics, neither via potentials nor via second quantized fields, but rather through \textit{direct interactions with time delay}, and prove the existence of dynamics for the simple case of two Dirac particles in 1+3 dimensions. The key innovation is to make use of \textit{multi-time wave functions}. This concept goes back to Dirac \cite{dirac_32}, played an important role in the works of Tomonaga \cite{tomonaga} and Schwinger \cite{schwinger}, has been studied by different authors over the years \cite{guenther_1952,marx_1974,schweber,drozvincent_1981,sazdjian_2bd,2bdem} and has recently undergone considerable developments \cite{nogo_potentials,qftmultitime,multitime_pair_creation,1d_model,nt_model,2bd_current_cons,deckert_nickel_2016,lpt_2017b,generalized_born,ibc_model,phd_nickel}; an overview can be found in \cite{dice_paper}. For two Dirac particles in Minkowski spacetime $\M$, a multi-time wave function is a map
-\begin{equation}
-	\psi : \M \times \M \rightarrow \CC^4 \otimes \CC^4\cong \CC^{16},~~~(x_1,x_2) \mapsto \psi(x_1,x_2).
-\label{eq:multitimewavefn}
-\end{equation}	
-$\psi$ can be considered a generalization of the single-time wave function $\varphi$ in the Schr\"odinger picture, as in Eq.\ \eqref{eq:singletimedirac}. The relation of $\psi$ to $\varphi$ is straightforwardly given by
-\begin{equation}
-	\varphi(t,\vx_1,\vx_2) = \psi((t,\vx_1),(t,\vx_2)).
-	\label{eq:singlemulti}
-\end{equation}
-Contrary to the single-time wave function $\varphi$ (which refers to a frame), $\psi$ is a manifestly covariant object. Under a Poincar\'{e} transformation $(a,\Lambda)$, $\psi$ transforms as
-\begin{equation}
-	\psi'(x_1,x_2) = S[\Lambda]\otimes S[\Lambda] \psi(\Lambda^{-1}(x_1-a), \Lambda^{-1}(x_2-a)),
-\end{equation}
-where $S[\Lambda]$ are the matrices appearing in the spinor representation of the Lorentz group.
-
-For the present purposes, it is crucial that $\psi$ is defined on general space-time configurations $(x_1,x_2)\in \M\times \M$, not only on equal-time configurations as $\varphi$. By relating configurations $(x_1,x_2)$ with different time coordinates $x_1^0 \neq x_2^0$ one can express \textit{interactions with a time delay}. It has been pointed out in \cite{direct_interaction_quantum} that in this way, \textit{direct relativistic interactions} (unmediated by fields) can be expressed at the quantum level. 
-In particular, it becomes possible to formulate a quantum analog of direct interactions along light cones, such as in the Wheeler-Feynman formulation of classical electrodynamics \cite{wf1,wf2}, using values of $\psi(x_1,x_2)$ with $(x_1-x_2)_\mu (x_1-x_2)^\mu = 0$. This is not directly feasible using just $\varphi$. We thus note that \textit{new kinds of interacting quantum dynamics can be defined using a multi-time wave function}.
-
-An interesting class of such dynamics has recently been suggested 
-in \cite{direct_interaction_quantum} and has been subsequently 
-analyzed rigorously in \cite{mtve,lienertcurved}: 
-\textit{multi-time integral equations}. 
-But why study integral equations instead of PDEs?  To answer this question, note that the initial value problem $\varphi(0,\vx_1,\vx_2) = \psi_0(\vx_1,\vx_2)$ of the single-time Schr\"odinger equation \eqref{eq:singletimedirac} can equivalently be formulated as the following integral equation:
-\begin{align}\notag
-  \varphi(t,\vx_1,\vx_2) =& \varphi^\free(t,\vx_1,\vx_2) + \int_0^\infty \!\! dt' \int d^3 \vx_1' \, d^3 \vx_2' \,\\
-   &\times\gamma_1^0 S_1^\ret(t-t',\vx_1-\vx_1') \gamma_2^0 S_2^\ret(t-t',\vx_2-\vx_2') \nonumber\\
-&\times V(t',\vx_1',\vx_2')\varphi(t',\vx_1',\vx_2'),
-	\label{eq:singletimediracint}
-\end{align}
-where $\varphi^\free$ is the solution of the same initial value problem of the free equation (\eqref{eq:singletimedirac} with $V=0$) and $S_k^\ret$ is the retarded Green's function of the $k$-th Dirac operator.
-
-Now, contrary to the PDE \eqref{eq:singletimedirac}, the integral equation \eqref{eq:singletimediracint} possesses a straightforward manifestly covariant generalization in terms of a multi-time wave function, namely:
-\begin{align}\notag
-  \psi(x_1,x_2) = \psi^\free(x_1,x_2) &+ \int d^4 x_1' \, d^4 x_2' \, S_1(x_1-x_2') S_2(x_2-x_2')\\
-  &\times  K(x_1',x_2') \psi(x_1',x_2'),
-	\label{eq:inteq}
-\end{align}
-where $\psi^\free$ is a solution of the equations $D_1 \psi^\free = 0$, $D_2\psi^\free = 0$, $D_k = (i \gamma^\mu_k \partial_{k,\mu} - m_k)$ and $S_1, S_2$ are (retarded or other) Green's functions of $D_1, D_2$, respectively. $K(x_1,x_2)$ denotes the so-called \textit{interaction kernel}, a Poincar\'{e} invariant function (or distribution) which generalizes the potential in Eq.\ \eqref{eq:singletimediracint}. The crucial point is that \eqref{eq:inteq} incorporates interactions with time delay which cannot be expressed through a PDE. It has been demonstrated in \cite{direct_interaction_quantum} that for $K(x_1,x_2) \propto \delta((x_1-x_2)_\mu (x_1-x_2)^\mu)$, the Dirac delta distribution along the light cone, one re-obtains \eqref{eq:singletimedirac} with $V(t,\vx_1,\vx_2) \propto \frac{1}{|\vx_1-\vx_2|}$ if one neglects the time delay of the interaction. Thus, \eqref{eq:inteq} constitutes a natural generalization of \eqref{eq:singletimediracint}.
-
-Further support for considering the integral equation \eqref{eq:inteq} comes from the fact that the Bethe-Salpeter (BS) equation of QFT \cite{bs_equation}, which is usually considered an effective equation for a bound state, has a similar form as \eqref{eq:inteq}. That being said, there are also significant physical and mathematical differences between the two equations (see \cite[sec. 3.3]{direct_interaction_quantum}).
-
-%%%
-\subsubsection{Previous results.} To the best of our knowledge, the first results about the existence and uniqueness of dynamics for Eq.\ \eqref{eq:inteq} have been obtained in \cite{mtve}, for the case of a Minkowski half-space and Klein-Gordon (KG) particles. A "Minkowski half-space" means to use $\frac{1}{2} \M \times \frac{1}{2}\M$ with $\frac{1}{2} \M = [0,\infty) \times \R^3$, i.e.\, Minkowski spacetime cut off before $t=0$, as the domain of integration in \eqref{eq:inteq}. The KG case refers to replacing $S_1, S_2$ with (retarded) Green's functions of the KG equation and $\psi^\free$ with a solution of $(\Box_k +m^2_k)\psi^\free = 0,~k=1,2$. The main result in \cite{mtve} was to show that for every $\psi^\free$ which is $L^2$ in the spatial directions and $L^\infty$ in the time directions there is a unique solution $\psi$ with the same properties. In addition, at $t_1=t_2=0$, $\psi^\free$ and $\psi$ agree so that one actually has a Cauchy problem at the initial time. In order to obtain that result, the interaction kernel was assumed to be either bounded or to just have a $1/|\vx_1-\vx_2|$ singularity. In 1+3 dimensions, only the massless case was treated. The proof was based on exploiting a Volterra property which appears for retarded Green's functions and $\frac{1}{2}\M$, i.e.\, the time integrations in \eqref{eq:inteq} reach only from 0 to $x_1^0 $ or $x_2^0$ (given by the time arguments of $\psi$ on the left hand side). This allowed an effective iteration scheme for Eq.\ \eqref{eq:inteq}, leading to a global existence and uniqueness result for a formidable-looking non-Markovian (history dependent) type of dynamics.
-
-The cutoff of spacetime at $t=0$ was introduced in \cite{mtve} 
-to obtain the Volterra property. While such a cutoff destroys 
-Lorentz invariance, there could be physical justification for a 
-beginning in time which is compatible with relativity. Such a 
-justification has been provided in \cite{Linertcurved}. There, 
-the integral equation was extended to curved spacetimes and 
-analyzed in more detail for certain spacetimes which feature a 
-Big Bang singularity, Friedman-Lema\^itre-Robertson-Walker (FLRW) 
-spacetimes. The Big Bang then provides a natural cutoff in the 
-cosmological time. In this way, the existence of certain classes 
-of fully covariant dynamics for massless KG particles was 
-demonstrated.
-
-%%%
-\subsubsection{Goal of the paper.} Here we would like to extend the previous results to the case of Dirac instead of KG particles. This is desirable as the Dirac equation describes actual elementary particles (fermions) while the KG equation is usually considered only a toy equation as its currents do not have the right properties to play the role of a probability current. Mathematically, the Dirac case is more challenging than the KG case as contrary to the latter, the Dirac Green's functions contain distributional derivatives. A Green's function of the Dirac equation is given by acting with the adjoint Dirac operator $\overline{D} = (-i \gamma^\mu \partial_\mu - m)$ on a Green's function $G(x)$ of the KG equation, i.e.\:
-\begin{equation}
-	S(x)= \overline{D}G(x).
-\end{equation}
-Consequently, one has to define the integral operator in \eqref{eq:inteq} on a function space where one can take certain weak derivatives. In contrast to most of non-relativistic physics, this also concerns the time derivatives here. The choice of function space can be a tricky issue, as the convergence of an iteration scheme (and of the Neumann series, our strategy of proof) requires the integral operator to preserve the regularity, so that the regularity needs to be in harmony with the structure of the integral equation (see Sec.\ \ref{sec:choiceofB}).
+where \(\overline{D} = (-i \gamma^\mu \partial_\mu - m)\).
+This can be verified directly by computing 
+\(D\overline{D}=\Box +m^2\).
+The operator \(\overline{D}\)
+will be refered to as the adjoint Dirac operator.
+Consequently, one has to define the integral operator in 
+\eqref{eq:twopartintgeneral} on a function space where one can take 
+certain weak derivatives. In contrast to most of non-relativistic 
+physics, this also concerns the time derivatives here. The choice 
+of function space can be a tricky issue, as the convergence of an 
+iteration scheme (and of the Neumann series, our strategy of proof) 
+requires the integral operator to preserve the regularity, so 
+that the regularity needs to be in harmony with the structure 
+of the integral equation (see Sec. \ref{sec:choiceofB}).
 
 
-%%%
-\subsubsection{Further motivation.}
-\begin{enumerate}
-	\item It is quite challenging to set up an interacting dynamics for multi-time wave functions. The issue here is not only Lorentz invariance but rather the mere compatibility of the time evolutions in the various time coordinates. A no-go theorem \cite{nogo_potentials,deckert_nickel_2016} for example rules out interaction potentials (which could be Poincar\'{e} invariant functions in the multi-time approach). Thus, interaction is more difficult to achieve for multi-time than for single-time wave functions. So far, the only rigorous, interacting and Lorentz invariant multi-time models for Dirac particles have been constructed in 1+1 spacetime dimensions \cite{1d_model,nt_model} (see, however, \cite{drozvincent_1981,sazdjian_2bd,2bdem} for non-rigorous Lorentz invariant models in 1+3 dimensions and \cite[chap.\ 3]{phd_nickel} for a not fully Lorentz invariant but rigorous model in 1+3 dimensions). Considering these difficulties, the multi-time aspect of our model is interesting in its own right.
-%
-	\item Eq.\ \eqref{eq:inteq} defines, in the case of retarded Green's functions, a new class of Volterra-type equations which may be interesting also for researchers specializing in integral equations. It provides a reason why a multi-dimensional Volterra-type equation would be relevant for physics, and shows which properties to expect for applications.
-\end{enumerate}
-
-%%%
-\subsubsection{Overview.} The paper is structured as follows. 
-In Sec.\ \ref{sec:setting}, we specify the integral equation 
-\eqref{eq:inteq} in detail. The difficulties with understanding 
+This section is structured as follows. 
+In subsec. \ref{sec:setting}, we specify the integral equation 
+\eqref{eq:twopartint} in detail. The difficulties 
+with understanding 
 the distributional derivatives are discussed and a suitable 
-function space is identified. Sec.\ \ref{sec:results} contains 
-our main results. In Sec.\ \ref{sec:minkhalfspace}, we formulate 
-an existence and uniqueness theorem (Thm.\ \ref{thm:minkhalfspace}) 
-for Eq.\ \eqref{eq:inteq} on $\frac{1}{2}\M$. It is shown that 
+function space is identified. Subsec. \ref{sec:results} contains 
+the main results of this section. 
+In subsec. \ref{sec:minkhalfspace}, we formulate 
+an existence and uniqueness theorem (Thm. \ref{thm:minkhalfspace}) 
+for eq. \eqref{eq:twopartint} on $\frac{1}{2}\M$. 
+It is shown that 
 the relevant initial data are equivalent to Cauchy data at $t=0$. 
-In Sec.\ \ref{sec:flrw}, we provide a physical justification for 
+In subsec. \ref{sec:flrw}, we provide a physical justification for 
 the cutoff at $t=0$ by extending the results to a FLRW spacetime. 
 In the massless case, we show that an existence and uniqueness 
 theorem can be obtained from the one for $\frac{1}{2}\M$ via 
-conformal invariance. The result, Thm.\ \ref{thm:flrw}, covers a 
+conformal invariance. The result, thm. \ref{thm:flrw}, covers a 
 fully relativistic interacting dynamics in 1+3 spacetime 
-dimensions. The proofs are carried out in Sec.\ \ref{sec:proofs}. 
-Sec.\ \ref{sec:discussion} contains a discussion and an outlook on 
+dimensions. The proofs are carried out in subsec. \ref{sec:proofs}. 
+Subsec.\ \ref{sec:discussion} contains a discussion and an outlook on 
 future research.
 
-%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \subsection{Setting of the problem} \label{sec:setting}
 
 %%%
 \subsubsection{Definition of the integral operator on test functions} \label{sec:aontestfunctions}
 
-In this section, we show how the integral operator in \eqref{eq:inteq} can be defined rigorously on test functions.
-We consider the integral equation \eqref{eq:inteq} on the Minkowski half space $\frac{1}{2}\M := [0,\infty) \times \R^3$ equipped with the metric $g = \text{diag}(1,-1,-1,-1)$. We focus on retarded Green's functions of the Dirac equation, $S^\ret(x) = \overline{D} G^\ret(x)$ where $G^\ret(x)$ is the retarded Green's function of the KG equation. Explicitly,
+In this section, we show how the integral operator in \eqref{eq:twopartintgeneral} can be defined rigorously on test functions.
+We consider the integral equation \eqref{eq:twopartintgeneral} on the Minkowski half space $\frac{1}{2}\M := [0,\infty) \times \R^3$ equipped with the metric $g = \text{diag}(1,-1,-1,-1)$. We focus on retarded Green's functions of the Dirac equation, $S^\ret(x) = \overline{D} G^\ret(x)$ where $G^\ret(x)$ is the retarded Green's function of the KG equation. Explicitly,
 \begin{equation}
 	G^\ret(x) = \frac{1}{4\pi} \frac{\delta(x^0-|\vx|)}{|\vx|} - \frac{m}{4\pi} H(x^0-|\vx|) \frac{J_1(m \sqrt{x^2})}{\sqrt{x^2}}
 \end{equation}
@@ -732,7 +703,7 @@ In order to define the meaning of the Green's functions as distributions, we int
 	\mathscr{D} = \mathscr{S}\big( (\tfrac{1}{2}\M)^2,\CC^{16} \big),
 \end{equation}
 the space of 16-component Schwarz functions on $(\tfrac{1}{2}\M)^2$.
-For a smooth interaction kernel $K$ and a test function $\psi \in \mathscr{D}$, we then understand \eqref{eq:inteq} by formally integrating by parts so that all partial derivatives act on $K \psi$:
+For a smooth interaction kernel $K$ and a test function $\psi \in \mathscr{D}$, we then understand \eqref{eq:twopartintgeneral} by formally integrating by parts so that all partial derivatives act on $K \psi$:
 \begin{align}
   \psi(x_1,x_2) =\, &\psi^\free(x_1,x_2) +\int_{\frac{1}{2}\M} d^4 x_1' \int_{\frac{1}{2}\M} d^4 x_2' \, G_1^\ret(x_1-x_1')\\
   & \times G_2^\ret(x_2-x_2') [D_1 D_2(K \psi)](x_1',x_2')\nonumber\\
@@ -809,23 +780,44 @@ with norm
 \begin{equation}
 	\| \psi \|_{\Banach_0} = \esssup_{x_1^0,x_2^0 > 0} \, \| \psi(x_1^0,\cdot,x_2^0,\cdot)\|_{L^2}.
 \end{equation}
-The reason for choosing $\Banach_0$ is that the spatial norm $\| \psi^\free(x_1^0,\cdot,x_2^0,\cdot)\|_{L^2}$ of a solution of the free Dirac equations is constant in the two time variables $x_1^0,x_2^0$. A very similar space as $\Banach_0$ has been used for analyzing \eqref{eq:inteq} in the KG case \cite{mtve}.
+The reason for choosing $\Banach_0$ is that the 
+spatial norm $\| \psi^\free(x_1^0,\cdot,x_2^0,\cdot)\|_{L^2}$ of 
+a solution of the free Dirac equations is constant in the two 
+time variables $x_1^0,x_2^0$. A very similar space as 
+$\Banach_0$ has been used for analyzing smoother versions of
+the KG case i.e. equation 
+\eqref{eq:KGtwopartint} in \cite{mtve}.
 
-However, as \eqref{eq:defa} involves the Dirac operators $D_1, D_2$, $\Banach_0$ is not sufficient for our problem. An appropriate Banach space $\Banach$ must allow us to take at least weak derivatives of $\psi$.  The choice of $\Banach$ is a delicate matter. One can easily go wrong with demanding too much regularity, as we shall illustrate now.
+However, as \eqref{eq:defa} involves the Dirac operators 
+\(D_1\) and  \(D_2\), $\Banach_0$ is not sufficient for our 
+problem. An appropriate Banach space $\Banach$ must allow 
+us to take at least weak derivatives of $\psi$.  The choice 
+of $\Banach$ is a delicate matter. One can easily go wrong 
+with demanding too much regularity, as we shall see 
+next.
 
 %%%
 \paragraph{Possible problems with the choice of space.}
 
 
-The problem can best be illustrated with an example which is structurally related to \eqref{eq:inteq} but otherwise simpler. Consider the equation
+The problem can best be illustrated with an example which is structurally related to \eqref{eq:twopartintgeneral} but otherwise simpler. Consider the equation
 \begin{equation}
 	f(t,x) = f^\free(t,z) + \int_0^t dz' \, K(z,z') \partial_t f(t,z'),
 	\label{eq:modelinteq}
 \end{equation}
-where $f^\free, f, K : \R^2 \rightarrow \CC$ and $f^\free$ is given. \eqref{eq:modelinteq} is inspired by the term $A_1 D_1$ in \eqref{eq:defa}.
+where $f^\free, f, K : \R^2 \rightarrow \CC$ and $f^\free$ 
+is given. Equation \eqref{eq:modelinteq} is inspired 
+by the term 
+$A_1 D_1$ in \eqref{eq:defa}.
 
-We would like to set up an iteration scheme for \eqref{eq:modelinteq}. As we cannot integrate by parts to shift the $t$-derivative to $K$, we must demand at least weak differentiability of $f$ with respect to $t$. This suggests using a Banach space such as $\Banach = H^1(\R^2)$.
-To prove that the integral operator in \eqref{eq:modelinteq} maps $\Banach$ to $\Banach$ (the first step in every iteration scheme), we then have to estimate the $L^2$-norm of
+We would like to set up an iteration scheme for 
+\eqref{eq:modelinteq}. As we cannot integrate by parts to 
+shift the $t$-derivative to $K$, we must demand at least 
+weak differentiability of $f$ with respect to $t$. This 
+suggests using a Banach space such as $\Banach = H^1(\R^2)$.
+To prove that the integral operator in \eqref{eq:modelinteq} 
+maps $\Banach$ to $\Banach$ (the first step in every 
+iteration scheme), we then have to estimate the $L^2$-norm of
 \begin{equation}
 	\partial_t \int_0^t dz' \, K(z,z') \partial_t f(t,z') = K(t,t) (\partial_t f)(t,t) + \int_0^t dz' \, K(z,z') \partial_t^2 f(t,z').
 \end{equation}
@@ -861,7 +853,7 @@ with
 
 %%%
 \begin{Remark} 
-  One can see the purpose of integral equation \eqref{eq:inteq} in 
+  One can see the purpose of integral equation \eqref{eq:twopartintgeneral} in 
   determining an interacting correction to a solution $\psi^\free$ 
   of the free multi-time Dirac equations $D_i \psi^\free = 0,~i=1,2$. 
   Therefore, it is important to check that sufficiently many 
@@ -875,7 +867,7 @@ with
   Let $\psi^\free$ be a solution of the free multi-time Dirac 
   equations $D_i \psi^\free = 0,~i=1,2$ with initial data 
   $\psi^\free(0,\cdot,0,\cdot) = \psi_0 \in C_c^\infty(\R^6,\CC^{16})$. 
-  Furthermore, let $g : [0,\infty) \rightarrow (0,\infty)$ be a 
+  Furthermore, let $g : [0,\infty) \rightarrow [1,\infty)$ be a 
   monotonically increasing function with $g(t) \rightarrow \infty$ 
   for $t \rightarrow \infty$ and \(g(0)=1\). Then $\psi^\free$ lies 
   in $\Banach_g$.
@@ -945,7 +937,7 @@ The proof is given in Sec.\ \ref{sec:proofminkhalfspace}.
 strategy for setting up the Banach space for granted, we therefore think that one cannot avoid a condition on the interaction strength. Note that conditions on the interaction strength also occur at other places in quantum theory (albeit in a different sense). For example, the Dirac Hamiltonian plus a Coulomb potential is only self-adjoint if the prefactor of the latter is smaller than a certain value.
 %
 	\item \textit{Cauchy problem.} Thm.\ \ref{thm:minkhalfspace} shows that $\psi^\free$ uniquely determines the solution $\psi$. However, specifying a whole function in $\Banach_g$ amounts to a lot of data. In case $\psi^\free$ is a solution of the free multi-time Dirac equations $D_1 \psi^\free = 0 = D_2 \psi^\free$ much less data are needed. $\psi^\free$ is then determined uniquely by Cauchy data, and hence $\psi$ is as well. 
-Furthermore, if $\psi^\free$ is differentiable, \eqref{eq:inteq} yields
+Furthermore, if $\psi^\free$ is differentiable, \eqref{eq:twopartintgeneral} yields
 \begin{equation}
 		\psi(0,\vx_1,0,\vx_2) ~=~ \psi^\free(0,\vx_1,0,\vx_2).
 	\label{eq:cauchyproblem}
@@ -968,11 +960,11 @@ conformally equivalent to $\frac{1}{2} \M$ \cite{ibison}. Together
 with the conformal invariance of the massless Dirac operator this 
 allows for an efficient method of calculating the Green's functions 
 which occur in the curved spacetime analog of the integral equation 
-\eqref{eq:inteq}. By doing this, we show that the existence and 
+\eqref{eq:twopartintgeneral}. By doing this, we show that the existence and 
 uniqueness result on these spacetimes can be reduced to Thm.\ 
 \ref{thm:minkhalfspace}.
 
-As shown in \cite{lienertcurved}, Eq.\ \eqref{eq:inteq} possesses 
+As shown in \cite{lienertcurved}, Eq.\ \eqref{eq:twopartintgeneral} possesses 
 a natural generalization to curved spacetimes $\mathcal{M}$,
 \begin{align}\nonumber
   \psi(x_1,x_2) = \psi^\free(x_1,x_2) &+ \int dV(x_1') \int dV(x_2') \, G_1(x_1,x_1') G_2(x_2,x_2')\\
@@ -1067,10 +1059,9 @@ kernel, i.e.\
 	\label{eq:ksingularity}
 \end{equation}
 Here, $\alpha \geq 0$. The singular behavior is motivated by that of 
-the Green's functions of the conformal wave equation
-\footnote{The conformal wave equation reads $(\Box- R/6)\phi = 0$ 
-where $\Box$ is the d'Alembertian and $R$ the Ricci scalar of the 
-respective spacetime.}. Recall from the introduction that the most 
+the Green's functions of the conformal wave equation, 
+see section \ref{sec:KGcurvedspacetime}. 
+Recall from the introduction that the most 
 natural interaction kernel on $\frac{1}{2}\M$ would be 
 $K(x_1,x_2)\propto \delta((x_1-x_2)_\mu(x_1-x_2)^\mu)$ which is a 
 Green's function of the wave equation -- a concept that can be 
@@ -1092,7 +1083,7 @@ Considering \eqref{eq:ksingularity}, our integral equation becomes:
 \end{align}
 Apart from the scale factors which produce a certain singularity of 
 $\psi$ for $\eta_1,\eta_2 \rightarrow 0$, this integral equation has 
-the form of \eqref{eq:inteq} on $\frac{1}{2}\M$. Indeed, we can use 
+the form of \eqref{eq:twopartintgeneral} on $\frac{1}{2}\M$. Indeed, we can use 
 the transformation
 \begin{equation}
 	\chi(\eta_1,\vx_1,\eta_2,\vx_2) = a^{3/2}(\eta_1) a^{3/2}(\eta_2)\, \psi(\eta_1,\vx_1,\eta_2,\vx_2)
@@ -1125,7 +1116,13 @@ following result.
   &\times (\widetilde{K} \chi)(\eta_1',\vx_1',\eta_2',\vx_2').
 \label{eq:inteqcurvedexplicit2}
 \end{align}
-This equation has the form of \eqref{eq:inteq} on $\frac{1}{2}\M$ with $K$ replaced by $a^{1-\alpha}(\eta_1') a^{1-\alpha}(\eta_2') \widetilde{K}$. Thus, using the same distributional understanding of the Green's functions as before, Thm.\ \ref{thm:minkhalfspace} yields the claim. \qed 
+This equation has the form of 
+\eqref{eq:twopartintgeneral} on $\frac{1}{2}\M$ with $K$ 
+replaced by\linebreak
+ $a^{1-\alpha}(\eta_1') a^{1-\alpha}(\eta_2') 
+\widetilde{K}$. Thus, using the same distributional 
+understanding of the Green's functions as before, thm. 
+\ref{thm:minkhalfspace} yields the claim. 
 \end{proof}
 
 %%%
@@ -1164,8 +1161,7 @@ which leads to $\| \widetilde{K} \| < 1$.
 \subsection{Proofs} \label{sec:proofs}
 
 %%%%%
-\subsubsection{Proof of lemma \ref{thm:freesolutionsinbanach}}
-
+\begin{proof}[Proof of lemma \ref{thm:freesolutionsinbanach}]
 \label{sec:freesolutionsinbanach}
 
 Consider a solution $\psi$ of $D_i \psi^\free = 0,~i=1,2$ for 
@@ -1177,9 +1173,10 @@ generality we may assume
 all times \(t_1,t_2\), so it follows that also 
 \([\psi^\free](t_1,t_2)=1\). In the following we will construct a 
 sequence of test functions \((\psi_m)_{m\in\mathbb{N}}\) 
-satisfying \(\psi_m \xrightarrow{\|\cdot\|_g ,~m\rightarrow \infty} 
+satisfying \(\psi_m \xrightarrow[\|\cdot\|_g ]{m\rightarrow \infty} 
 \psi^\free\). Let \(\eta : \mathbb{R}\rightarrow \mathbb{R}\) be 
-zero for arguments less than \(0\) and greater than \(1\) and in 
+zero for arguments less than \(0\), be \(1\) for 
+arugments greater than \(1\) and in 
 between given by (see also Fig. \ref{fig:eta})
 \begin{equation}
 	\eta(t)=  \exp\left(-\frac{1}{t} \exp\left({\frac{1}{t-1}}\right)\right).
@@ -1219,14 +1216,14 @@ between given by (see also Fig. \ref{fig:eta})
  Note that $\eta$ is smooth and monotonically increasing. Next, we 
  define for every \(m\in\mathbb{N}\)
  \begin{equation}
- \psi^\free_m(t_1,\vx_1, t_1, \vx_2) ~:=~ e^{-\eta(t_1-m) (t_1-m)} e^{-\eta(t_2-1)(t_2-m)} \psi^\free(t_1,\vx_1, t_2, \vx_2).
+ \psi^\free_m(t_1,\vx_1, t_1, \vx_2)\! :=\! e^{-(t_1-m) \eta(t_1-m) } e^{-(t_2-m) \eta(t_2-m)} \psi^\free(t_1,\vx_1, t_2, \vx_2).
  \end{equation}
  This function is smooth and decreases rapidly in all variables and 
  thus lies in \(\mathscr{D}\). Now we estimate
   \(\|\psi^\free-\psi_m\|_g\). Pick \(m\in\mathbb{N}\). First 
   consider \(\|\psi^\free -\psi_m\|_{L^2(\mathbb{R}^6)}(t_1,t_2)\). 
-  This function is identically zero for all \(t_1<n\) and 
-  \(t_2<n\), so we obtain the estimate
+  This function is identically zero for all \(t_1<m\) and 
+  \(t_2<m\), so we obtain the estimate
  \begin{align}
     & \sup_{t_1,t_2>0} \frac{1}{g(t_1)^2g(t_2)^2} \|\psi^\free- \psi_n\|^2_{L^2(\mathbb{R}^6)}\nonumber\\
      =&\sup_{t_1,t_2>0} \frac{1}{g(t_1)^2g(t_2)^2} \left|1-e^{-\eta(t_1-n)(t_1-n)}e^{-\eta(t_2-n)(t_2-n)}\right|\\
@@ -1237,18 +1234,18 @@ equation in each variable and that
 \(\sup_{t>0}\partial_{t} e^{-\eta(t)t}=:\alpha<\infty\) is realized 
 for some positive value of \(t\). So we find for \(i\in \{0,1\}\):
  \begin{align}
-& \sup_{t_1,t_2>0}\frac{1}{g(t_1)^2g(t_2)^2}\|D_i (\psi^\free-\psi_n)\|^2_{L^2(\mathbb{R}^6)}(t_1,t_2)\nonumber\\
+& \sup_{t_1,t_2>0}\frac{1}{g(t_1)^2g(t_2)^2}\|D_i (\psi^\free-\psi_m)\|^2_{L^2(\mathbb{R}^6)}(t_1,t_2)\nonumber\\
 = &\sup_{t_1,t_2>0}\frac{1}{g(t_1)^2g(t_2)^2}
  \\
- &\times\|\gamma_{i}^0 \psi^\free(t_1,\cdot,t_2,\cdot) e^{-\eta(t_{3-i}-n)(t_{3-i}-n)}\partial_{t_i}e^{-\eta(t_i-n)(t_i-n)} \|^2_{L^2(\mathbb{R}^6)}\\
- &\le~ \frac{\alpha}{g(n)^2}.
+ &\times\|\gamma_{i}^0 \psi^\free(t_1,\cdot,t_2,\cdot) e^{-\eta(t_{3-i}-n)(t_{3-i}-n)}\partial_{t_i}e^{-\eta(t_i-n)(t_i-m)} \|^2_{L^2(\mathbb{R}^6)}\\
+ &\le~ \frac{\alpha}{g(m)^2}.
  \end{align}
 For the first inequality it has been used that the factor with a 
-derivative vanishes for \(t_i<n\). 
+derivative vanishes for \(t_i<m\). 
 
 An analogous estimate repeated for the \(D_1D_2\)-term yields
 \begin{equation*}
-     \sup_{t_1,t_2>0} \frac{1}{g(t_1)^2g(t_2)^2}\|D_1D_2(\psi^\free - \psi_n)\|^2_{L^2(\mathbb{R}^6)}(t_1,t_2)~\le~ \frac{\alpha^2}{g(n)^4} ~\le~ \frac{\alpha^2}{g(n)^2}.
+     \sup_{t_1,t_2>0} \frac{1}{g(t_1)^2g(t_2)^2}\|D_1D_2(\psi^\free \!\!-\! \psi_m)\|^2_{L^2(\mathbb{R}^6)}(t_1,t_2)\!\le\! \frac{\alpha^2}{g(m)^4} \!\le\! \frac{\alpha^2}{g(m)^2}.
  \end{equation*}
 All in all, adding the estimates and taking the square root we 
 find \(\|\psi^\free - \psi_n\|_g \le \frac{1+\alpha}{g(n)}\), which 
@@ -1256,7 +1253,8 @@ together with the asymptotic behavior of \(g\) implies convergence.
 It follows that the free solution \(\psi^\free\) can be approximated 
 by Cauchy sequences in \(\mathscr{D}\) and hence is contained in 
 \(\mathscr{B}_g\) which, we recall, has been defined as the 
-completion of $\mathscr{D}$ with respect to $\| \cdot \|_g$. \qed
+completion of $\mathscr{D}$ with respect to $\| \cdot \|_g$. 
+\end{proof}
 
 
 %%%%%
@@ -1402,7 +1400,7 @@ Recalling the definition of $[\psi]^2(x_1^0,x_2^0)$, Eq.\
 \eqref{eq:spatialnorm} yields \eqref{eq:apsiestimate}.
 
 Next, we turn to \eqref{eq:d1apsiestimate}. We start from the initial 
-form of the integral equation \eqref{eq:inteq} and use that as a 
+form of the integral equation \eqref{eq:twopartintgeneral} and use that as a 
 distributional identity on test functions $\psi \in \mathscr{D}_T$, 
 we have $D_1 S^\ret(x_1-x_1') = \delta^{(4)}(x_1-x_1')$. Thus, we 
 obtain:
@@ -1432,7 +1430,7 @@ $[\psi]^2(x_1^0,x_2^0)$ gives us \eqref{eq:d1apsiestimate}.
 The estimate \eqref{eq:d2apsiestimate} follows in an analogous way.
 
 Finally, for \eqref{eq:d1d2apsiestimate} we also start from the 
-initial integral equation \eqref{eq:inteq} and use 
+initial integral equation \eqref{eq:twopartintgeneral} and use 
 $D_i S_i^\ret(x_i-x_i') = \delta^{(4)}(x_i-x_i')$. This results in:
 \begin{equation}
 	D_1 D_2 (A \psi) = K \psi.
@@ -1673,254 +1671,59 @@ delta function along the light cone.
 
 
 \section{Singular light cone interactions of scalar particles in 1+3 dimensions}\label{sec:KG lightcones}
-Here we consider an integral equation describing a fixed number of scalar particles which interact not through boson exchange but directly along light cones, similarly as in bound state equations such as the Bethe-Salpeter equation. The equation involves a multi-time wave function $\psi(x_1,...,x_N)$ with $x_i=(t_i,\vx_i) \in \R^4$ as a crucial concept. Assuming a cutoff in time, we prove that it has a unique solution for all data at the initial time. The cutoff is justified by considering the integral equation for a particular curved spacetime with a Big Bang singularity where an initial time occurs naturally without violating any spacetime symmetries. The main feature of our work is that we treat the highly singular case that interactions occur exactly at zero Minkowski distance, reflected by a delta distribution along the light cone. We also extend the existence and uniqueness result to an arbitrary number $N \geq 2$ of particles. Overall, we provide a rigorous example for a certain type of interacting relativistic quantum dynamics in 1+3 spacetime dimensions.
+In this section we prove existence and uniqueness
+of an equation of type \eqref{eq:KGtwopartint},
+subject to the simplifying assumption 
+\eqref{matt simplifying assumption 1}. In contrast to 
+the previous results of section \ref{sec: direct interation previous} 
+the equation will not be subject to the assumption
+\eqref{matt simplifying assumption 2}. Additionally, we will extend the 
+result to an arbitrary number of particles. This extension 
+is not the only possible one; however, we choose the 
+extension called most promising in \cite{direct_interaction_quantum}.
+In order to justify the cutoff in time, we extend the one-particle 
+result to the FLRW spacetime, where the cutoff appears naturally.
 
-\subsection{Introduction}
-\label{sec:intro}
+\todo{include changes that Mattias added to the latest version}
 
-%%%%%
-\subsubsection{Motivation}
-The goal of this paper is to prove the existence and uniqueness of solutions of the equation
-\begin{equation}
-	\psi(x,y) = \psi^\free(x,y) + \int d^4 x' \,d^4 y'~G_1^\ret(x-x') G_2^\ret(y-y') K(x',y')\psi(x',y')
-\label{eq:inteq} 
-\end{equation}
-and its $N$-particle generalization for the singular case of light cone interactions, i.e., for
-\begin{equation}
-	K(x,y) ~=~ \frac{\lambda}{4\pi} \delta((x-y)^2).
-\end{equation}
-Here, $\lambda > 0$ is a coupling constant and $(x-y)^2 = (x^0-y^0)^2 - |\vx-\vy|^2$ stands for the Minkowski distance of the spacetime points $x=(x^0,\vx)$ and $y=(y^0,\vy)$. Moreover, $\psi^\free$ is a solution of the free Klein-Gordon equation in each variable, i.e., $(\Box_k+m_k^2)\psi^\free(x_1,x_2) = 0$, $k=1,2$. We shall later see that $\psi^\free$ plays the role of initial data for Eq.\@ \eqref{eq:inteq}. $G_k^\ret$ stands for the retarded Green's function of the respective Klein-Gordon equation. $\psi$ is a \textit{multi-time wave function}, i.e., for $N=2$ particle, a map
-\begin{equation}
-	\psi : \text{spacetime} \times \text{spacetime} \rightarrow \CC,~~~(x,y) \mapsto \psi(x,y).
-\label{eq:multitimewf}
-\end{equation}
-The crucial point about Eq.\@ \eqref{eq:inteq} is that it describes a fixed number of (here $N=2$) interacting particles in a manifestly Lorentz invariant way. Interactions happen directly along the light cones instead of through particle exchange as in quantum field theory. Such a relativistically invariant interacting dynamics for a fixed number of particles in 1+3 spacetime dimensions is difficult to achieve; in fact, for Hamiltonian theories this is generally believed to be impossible, and there have long been no-go theorems in that direction (see e.g. \cite{nointeraction,nointeraction2}). It is therefore not surprising that Eq.\@ \eqref{eq:inteq} has a distinctly non-Hamiltonian character. This is evident from the fact that the interaction term involves values of $\psi$ in the past, not only on a Cauchy surface which defines the present. In fact, the time delay of the interaction is an important resource of the kind of dynamics defined by Eq.\@ \eqref{eq:inteq}, and it is only made possible by the more general notion of wave function, the multi-time wave function $\psi$. 
-
-The concept of multi-time wave functions enjoys a long history, going back to 
-well-known physicists such as Eddington \cite{eddington}; Dirac \cite{dirac_32}; 
-Dirac, Fock, Podolsky \cite{dfp}; Bloch \cite{bloch}; Tomonaga \cite{tomonaga} 
-and Schwinger \cite{schwinger}. While it was intermittently picked up during 
-the years (see e.g. 
-\cite{guenther_1952,marx_1974,schweber,drozvincent_1981,sazdjian_2bd,2bdem}, it 
-has recently received renewed attention and undergone significant developments 
-\cite{nogo_potentials,qftmultitime,multitime_pair_creation,1d_model,nt_model,2bd_current_cons,deckert_nickel_2016,lpt_2017b,generalized_born,ibc_model,phd_nickel,deckert_nickel_2019,lnt_2020}; 
-an overview from 2016 can be found in \cite{dice_paper}. The idea is 
-straightforward: to seek a Lorentz covariant generalization of the usual 
-Schr\"odinger picture wave function (here for $N=2$)
-\begin{equation}
-	\varphi : \R \times \R^3 \times \R^3 \rightarrow \CC,~~~~~ (t,\vx,\vy)\mapsto \varphi(t,\vx,\vy).
-\end{equation}
-In fact, the relation of $\psi$ to $\varphi$ is just given 
-by evaluation of $\psi$ at equal times in a given Lorentz 
-frame:
-\begin{equation}
-	\varphi(t,\vx,\vy)~=~\psi(t,\vx,t,\vy).
-\end{equation}
-For the present purposes, the point of interest is that the 
-concept of a multi-time wave function allows us to see the 
-integral equation \eqref{eq:inteq} as the natural 
-generalization of the Schr\"odinger equation 
-$(i \partial_t - H_1^\free - H_2^\free - 
-V(t,\vx,\vy))\varphi(t,\vx,\vy) = 0$ when formulated as an 
-integral equation (see \cite{direct_interaction_quantum} 
-for a more detailed discussion). The latter can namely be 
-written as
-\begin{align}
-  \varphi(t,\vx,\vy) =& \varphi^\free(t,\vx_1,\vx_2) + \int_0^\infty \!\! dt' \int d^3 \vx' \, d^3 \vy' G_1^\ret(t-t',\vx-\vx')\nonumber\\
-&\times  G_2^\ret(t-t',\vy-\vy') V(t',\vx',\vy')\varphi(t',\vx',\vy'),
-	\label{eq:schroedint}
-\end{align}
-where $\varphi^\free$ is a solution of 
-$(i \partial_t - H_1^\free - H_2^\free)\varphi(t,\vx,\vy) 
-= 0$ and $G_k^\ret$ stands for the retarded Green's 
-function of the operator $(i\partial_t - H_k^\free)$.
-
-Now, our previous integral equation \eqref{eq:inteq} 
-reduces to a very similar equation when we neglect the 
-time delay $|\vx-\vy|$ (we here work with units where 
-$\hbar = 1 = c$) by replacing
-\begin{equation}
-	\delta((x'-y')^2) = \frac{\delta({x'}^0-{y'}^0-|\vx'-\vy'|) + \delta({x'}^0-{y'}^0+|\vx'-\vy'|)}{2|\vx'-\vy'|}
-\label{eq:lcdeltasplit}
-\end{equation}
-with $\delta({x'}^0-{y'}^0)/|\vx'-\vy'|$. After performing 
-the time integration over ${y'}^0$, renaming the remaining 
-time variable ${x'}^0$ as $t'$ and considering on the left 
-hand side of \eqref{eq:inteq} at equal times $x^0= t = y^0$ 
-in the given Lorentz frame, we arrive at 
-\eqref{eq:schroedint} with Klein-Gordon Green's functions 
-and $V(t,\vx,\vy) \propto 1/|\vx-\vy|$, the Coulomb 
-potential.
-
-This train of thought suggests that Eq.\@ \eqref{eq:inteq} 
-constitutes a natural generalization of the Schr\"odinger 
-equation \eqref{eq:schroedint} for relativistic quantum 
-phenomena (here for two scalar particles with 
-electromagnetic interactions) -- at least for processes 
-where particle creation and annihilation are not relevant, 
-such as relativistic bound states. Interestingly, this is 
-also the domain where the well-known Bethe-Salpeter 
-equation \cite{bs_equation,nakanishi} of quantum field 
-theory is usually applied. The equation also involves a 
-multi-time wave function \eqref{eq:multitimewf} and has a 
-similar form as \eqref{eq:inteq}. The main differences, 
-however, are that for the Bethe-Salpeter equation (a) the 
-interaction kernel $K$ is not given by a clear-cut 
-expression such as $\delta((x-y)^2)$ but by a (potentially 
-divergent) infinite series of Feynman diagrams, and (b) 
-that it involves Feynman Green's functions instead of 
-retarded Green's functions. Contrary to retarded Green's 
-functions, Feynman Green's functions have support not only 
-along and inside backward light cones. Nevertheless, the 
-similarity of \eqref{eq:inteq} with the Bethe-Salpeter 
-equation constitutes further motivation for its study.
-
-In this context, it is interesting to note that previous 
-works about the existence and solutions of simplified 
-models for the Bethe-Salpeter equation (as in the 
-so-called Wick-Cutkosky model, see 
-\cite{wick_54,cutkosky54,green57,consenza65,tiktopoulos65,obrien75}) 
-have (to the best of our knowledge) not answered the 
-question of the existence and uniqueness of solutions. 
-Rather, they omit the free solution $\psi^\free$ from 
-the equation (which, as we will see, leads only to the 
-trivial solution in our case), perform a Fourier 
-transform in all eight variables, assume a plane wave in 
-the center-of-momentum coordinate, use a Wick rotation 
-and then study the eigenvalue problem of a resulting 
-equation of the qualitative form $\widetilde{\psi} = 
-\lambda \widehat{K}(E) \widetilde{\psi}$ in $\lambda$ 
-(instead of the energy $E$ in the center-of-momentum 
-frame). A transformation back to the original problem is 
-not attempted (and may not always be possible). While 
-these results are nevertheless interesting as they reveal 
-features of possible stationary states of the actual 
-problem (i.e., for the physical value of $\lambda$), they 
-are far-removed from the physical problem of time 
-evolution of the quantum-mechanical wave function which we 
-attempt to address here.
 
 
 %%%%%
-\subsubsection{Previous Works}
+\subsubsection{Overview}
 
-The physical ideas underlying the multi-time integral equation 
-\eqref{eq:inteq} were first introduced in 
-\cite{direct_interaction_quantum}. That paper includes a 
-more detailed derivation of \eqref{eq:inteq} as a relativistic 
-generalization of the integral version of the Schr\"odinger 
-equation, the treatment of the non-retarded limit as well as a 
-comparison with differential multi-time equations. Furthermore, 
-it discusses the parallels of \eqref{eq:inteq} with classical 
-action-at-a-distance electrodynamics (where interactions also 
-occur directly along the light cone). In addition, different 
-$N$-particle generalizations of \eqref{eq:inteq} are compared 
-and analyzed.
-
-The first rigorous results about the existence and uniqueness of 
-solutions of multi-time integral equations of the form 
-\eqref{eq:inteq} were obtained in \cite{mtve}. This article 
-also focuses on the (simpler) case of scalar particles; in 
-addition, it makes two important assumptions: (i) Only bounded 
-or weakly singular interactions kernels $K$ instead of 
-$\delta((x-y)^2)$ are considered which makes the problem much 
-easier to treat. (ii) A cutoff in time is assumed, meaning that 
-the domain of integration is only $(\frac{1}{2}\M)\times 
-(\frac{1}{2}\M)$ where $\tfrac{1}{2}\M = [0,\infty)\times \R^3$ 
-denotes a Minkowski half-space. This assumption together with 
-the fact that the retarded Green's functions are only supported 
-on and inside of the backward light cone has the important effect 
-of rendering the domain of integration in \eqref{eq:inteq} finite. 
-In addition, one obtains a Volterra-structure in the time 
-variables, meaning that the time integrations in ${x'}^0$ and 
-${y'}^0$ only run from 0 to $x^0$ and from 0 to $y^0$, 
-respectively. This, in turn, made it possible to utilize an 
-efficient iteration scheme for the proof of existence and 
-uniqueness of solutions. The result was that for every free 
-solution $\psi^\free$ in a suitable Banach space, the integral 
-equation posseses a unique solution $\psi$ in that space which, 
-furthermore, agrees with $\psi^\free$ at the initial time, i.e., 
-for $x^0 = 0 = y^0$.
-
-The assumption of a cutoff in time was made in \cite{mtve} with 
-reference to a potential Big Bang singularity without, however, 
-considering \eqref{eq:inteq} on curved spacetimes. To carry out 
-this task for a class of spacetimes where the Green's functions 
-of the (conformal) wave equation are explicitly known was the 
-topic of \cite{lienertcurved}. There, it was shown that Eq.\@ 
-\eqref{eq:inteq} has a straightforward generalization to curved 
-spacetimes. A number of explicit examples (flat, open and closed 
-Friedman-Lema\^itre-Robertson-Walker (FLRW) spacetimes) was 
-formulated, and it was shown that for most of these cases, 
-conformal transformations could be used to reduce the proof of 
-existence and uniqueness of solutions to the one on 
-$(\frac{1}{2}\M)^2$. Thereby, the point was made that a cutoff 
-in time can arise naturally in a cosmological context, without 
-violating any spacetime symmetries.
-
-The most recent work about multi-time integral equation is 
-\cite{selfDirac}. It is concerned with extending the previous 
-results to the case of Dirac particles. This has been achieved 
-for a class of sufficiently regular interaction kernels $K(x,y)$. 
-The main difficulty in the Dirac case compared to the Klein-Gordon 
-case is that the Green's functions involve distributional 
-derivatives which complicates the analysis. In particular, it 
-becomes necessary to achieve a delicate balance of the regularity 
-of solutions with the form of the integral equation. Apart from 
-this, the work \cite{selfDirac} also led to some technical 
-developments where the method of proof was refined by directly 
-using a contraction argument on a weighted Sobolev space instead 
-of the Volterra iteration scheme of \cite{mtve,lienertcurved}.
-
-
-%%%%%
-\subsubsection{Overview of the paper}
-
-The goal of the present paper is to extend the previous results for 
-scalar particles to the physically most interesting case $K(x,y) 
-\propto \delta((x-y)^2)$. This is, at the same time, a highly 
-singular and therefore challenging case. It becomes necessary 
-to define the particular combination of the three distributions 
-$G^\ret_1(x-x')$, $G_2^\ret(y-y')$ and $\delta((x-y)^2)$ which 
-occurs in \eqref{eq:inteq} and then prove the existence and 
-uniqueness of the resulting singular integral equation. This 
-equation significantly differs from that considered in 
-\cite{mtve} where through admitting only less singular interaction 
-kernels $K$ only two singular distributions acting on different 
-variables needed to be considered.
-
-The paper is structured as follows. In Sec.\@ \ref{sec:formulation} 
+This section is structured as follows. In subsec. \ref{sec:formulation} 
 it is shown how to define the integral equation in a rigorous way 
 (by using the delta distributions to eliminate certain integration 
 variables). To this end, we again consider the equation on the 
-Minkowski half-space (assuming a cutoff in time). Section 
-\ref{sec:results} contains our main results: Thm.\@ \ref{thm:bounds} 
+Minkowski half-space (assuming a cutoff in time). Subsection 
+\ref{sec:results} contains our main results: Thm. \ref{thm:boundsKG} 
 contains explicit bounds for the integral operator in terms of a 
-general weight function of a weighted $L^\infty$ space. Thm.\@ 
+general weight function of a weighted $L^\infty$ space. Thm. 
 \ref{thm:exponentialg} shows that in the case of massless particles 
 already an exponential weight function leads to the existence and 
 uniqueness of solutions of the integral equation. Our main result 
-is Thm.\@ \ref{thm:existence}, an existence and uniqueness theorem 
+is Thm. \ref{thm:existence}, an existence and uniqueness theorem 
 for the full (massive) case. In that case, a different weight 
 function growing like the exponential of a polynomial is used. 
 
-Section \ref{sec:Npart} deals with generalizing this existence and 
+Subsection \ref{sec:Npart} deals with generalizing this existence and 
 uniqueness theorem to $N$ scalar particles; the corresponding 
-theorem, Thm.\@ \ref{thm:Npart}, is a direct consequence of Thm.\@ 
-\ref{thm:existence}. To the best of our knowledge, this is the 
+theorem, Thm. \ref{thm:Npart}, is a direct consequence of Thm.
+\ref{thm:existence}. To the best of the knowledge of 
+the Matthias Lienert and the author, this is the 
 first rigorous result about a multi-time integral equation for 
 $N$-particles. 
 
-In Section \ref{sec:curvedspacetime} we show by considering a 
+In Subsection \ref{sec:KGcurvedspacetime} we show by considering a 
 specific example (an open FLRW spacetime) that the cutoff in time 
 can be achieved naturally for a cosmological spacetime with a Big 
 Bang singularity, without breaking any spacetime symmetries. That 
 is, we show the equivalent result of \cite{lienertcurved} for 
 singular light cone interactions. The respective existence and 
-uniqueness theorem is Thm.\@ \ref{thm:existencecurved}.
+uniqueness theorem is Thm. \ref{thm:existencecurved}.
 
-Section \ref{sec:proofs} contains the proofs. In Sec.\@ 
-\ref{sec:conclusions}, we conclude.
+Subsection \ref{sec:proofs} contains the proofs.
+\todo{move conclusion section to end of chapter}
 
 
 %%%%%
@@ -1928,12 +1731,12 @@ Section \ref{sec:proofs} contains the proofs. In Sec.\@
 \label{sec:formulation}
 
 In the following, we show how to precisely define the integral 
-equation \eqref{eq:inteq} for the case of two scalar particles with 
+equation \eqref{eq:KGtwopartint} for the case of two scalar particles with 
 masses $m_1$ and $m_2$ on the Minkowski half space $\frac{1}{2}\M = 
 [0,\infty) \times \R^3$. Strictly speaking, to introduce a cutoff 
 in time in this way breaks the Poincar\'e invariance of 
-\eqref{eq:inteq}; however, we will give an argument for its use 
-in Sec.\@ \ref{sec:curvedspacetime}.
+\eqref{eq:KGtwopartint}; however, we will give an argument for its use 
+in Sec. \ref{sec:KGcurvedspacetime}.
 
 It is necessary to take special care of the definition of the 
 integral equation as it contains certain combinations (convolutions 
@@ -1951,10 +1754,10 @@ by:
 	G^\ret(x) ~=~ \frac{1}{4\pi|\vx|}\delta(x^0-|\vx|) - \frac{m}{4\pi \sqrt{x^2}} H(x^0-|\vx|) \frac{J_1(m\sqrt{x^2})}{\sqrt{x^2}} 
 	\label{eq:gretkg}
 \end{equation}
-where $H$ denotes the Heaviside function and $J_1$ stands for a 
+where $H$ denotes the Heaviside function and $J_1$ is a
 Bessel function of the first kind.
 Then, with $K(x,y) = \frac{\lambda}{4\pi} \delta((x-y)^2)$, our 
-integral equation \eqref{eq:inteq} on $(\tfrac{1}{2}\M)^2$ becomes:
+integral equation \eqref{eq:KGtwopartint} on $(\tfrac{1}{2}\M)^2$ becomes:
 \begin{equation}
 	\psi ~=~ \psi^\free + A \psi
 \label{eq:abstractinteq}
@@ -2030,7 +1833,7 @@ In case of $b^2<0$, the new restriction on \(\cos\vartheta\) is
 stricter than \(\cos\vartheta<-\frac{b^0}{|\vb|}\); we thus use it 
 to replace the latter. We evaluate the $\delta$-function using 
 spherical coordinates in $\vy'$ and the usual rule
-\begin{equation}
+\begin{equation}\label{split delta}
     \delta(f(z))=\sum_{z^* : f(z^*)=0} \frac{\delta(z-z^*)}{|f'(z^*)|},
 \end{equation}
 where \(f(r)=(b^0-r)^2-(\vb+x')^2= -(r-r^*)2(b^0+|\vb|\cos\vartheta) \). 
@@ -2051,7 +1854,7 @@ indicator functions. Eq.\@ \eqref{eq:defa0} will serve as our
 Next, we turn to the definition of $A_1$, starting from the informal 
 expression \eqref{eq:a1informal}. We first split up the 
 $\delta$-function of the interaction kernel according to 
-\eqref{eq:lcdeltasplit}.
+\eqref{split delta}.
 Then we use $\delta(y^0-{y'}^0-|\vy-\vy'|)$ to eliminate 
 ${y'}^0~(=y^0-|\vy-\vy'|)$. Note that the order of these two steps 
 does not matter. This yields:
@@ -2173,7 +1976,7 @@ is about the two-particle case) contains the main results: the
 estimates of the integral operators as well as the theorems about 
 existence and uniqueness of solutions. Sec.\@ \ref{sec:Npart} we 
 extend these results to the $N$-particle case and in Sec.\@ 
-\ref{sec:curvedspacetime} we show that a curved spacetime with a 
+\ref{sec:KGcurvedspacetime} we show that a curved spacetime with a 
 Big Bang singularity can provide a natural reason for a cutoff in 
 time.
 
@@ -2197,7 +2000,7 @@ can be found in Sec.\@ \ref{sec:proofbounds}.
 
 %%%%%
 \begin{Thm}[Bounds of the integral operators on $\mathcal{S}$.]
-	\label{thm:bounds}
+	\label{thm:boundsKG}
 	For all $\psi \in \mathcal{S}((\tfrac{1}{2}\M)^2)$, the integral operators $A_0, A_1, A_2, A_{12}$ satisfy the following bounds:
 	\begin{align}
 		\sup_{\psi \in \mathcal{S}((\frac{1}{2}\M)^2)} \frac{\| A_0 \psi \|_g}{\| \psi \|_g} ~\leq~& \frac{\lambda}{8\pi} \left(\sup_{t\geq 0} \frac{g_1(t)}{g(t)}\right)^2\label{eq:estimatea0},\\
@@ -2298,7 +2101,7 @@ The proof can be found in Sec.\@ \ref{sec:proofexistence}.
     satisfied.
 	%
     \item \textit{Initial value problem.} By the 
-    integral equation \eqref{eq:inteq}, we obtain that 
+    integral equation \eqref{eq:KGtwopartint}, we obtain that 
     the solution $\psi$ satisfies $\psi(0,\vx,0,\vy) = 
     \psi^\free(0,\vx,0,\vy)$. If $\psi^\free$ is a 
     solution of the free multi-time Klein-Gordon 
@@ -2352,7 +2155,7 @@ The proof can be found in Sec.\@ \ref{sec:proofexistence}.
 Here we extend Thm.\@ \ref{thm:existence} from two to 
 $N\geq 3$ scalar particles. While there are different 
 possibilities to generalize the two-particle integral 
-equation \eqref{eq:inteq}, we focus on the one 
+equation \eqref{eq:KGtwopartint}, we focus on the one 
 advocated in \cite{direct_interaction_quantum} as the 
 most promising. For
 \begin{equation}
@@ -2452,7 +2255,7 @@ $k \notin \{i,j\}$.
 %%%%%
 \subsubsection{On the possible origin of a cutoff in 
 time}
-\label{sec:curvedspacetime}
+\label{sec:KGcurvedspacetime}
 
 So far, we have assumed a cutoff in time. In the way 
 this has been treated so far, this cutoff breaks the 
@@ -2515,7 +2318,7 @@ G_{\mathcal{M}}^\sym(x,x') ~&=~ \frac{1}{4\pi} \frac{1}{a(\eta) a(\eta')} \delta
 
 With this information, we are ready to write down 
 the integral equation on $\mathcal{M}$. The 
-generalization of \eqref{eq:inteq} to curved 
+generalization of \eqref{eq:KGtwopartint} to curved 
 spacetimes is straightforward: $\psi$ becomes a 
 scalar function on $\mathcal{M}\times\mathcal{M}$, 
 one exchanges the Minkowski spacetime volume elements 
@@ -2569,7 +2372,7 @@ Then \eqref{eq:inteqcurvedexplicit} is equivalent to:
 &\times  a(\eta_1') a(\eta_2') \delta((\eta_1'\!-\!\eta_2')^2-|\vx_1'-\vx_2'|^2) \chi(\eta_1',\vx_1',\eta_2',\vx_2').\notag
 \end{align}
 We can see that this equation has almost exactly the 
-same form as the massless version of \eqref{eq:inteq} 
+same form as the massless version of \eqref{eq:KGtwopartint} 
 on $\tfrac{1}{2}\M$ (see \eqref{eq:a0informal}). The 
 only difference is the additional appearance of the 
 factor $a(\eta_1') a(\eta_2')$ inside the integrals.
@@ -2661,7 +2464,8 @@ The proof can be found in Sec.\@
     contracts to zero towards the Big Bang.
 		%
     \item \textit{$N$-particle generalization.} As 
-    shown in Sec.\@ \ref{sec:Npart} for the Minkowski 
+    shown in Sec.\@ \ref{sec:Npart} for the \linebreak 
+    Minkowski 
     half-space, it would also be easy to extend 
     Thm.\@ \ref{thm:existencecurved} to $N$ particles. 
     To avoid duplication, we do not carry this out 
@@ -2675,7 +2479,7 @@ The proof can be found in Sec.\@
 \label{sec:proofs}
 
 %%%%%
-\subsubsection{Proof of Theorem \ref{thm:bounds}} 
+\subsubsection{Proof of Theorem \ref{thm:boundsKG}} 
 \label{sec:proofbounds}
 The proof is divided into the proofs of the estimates 
 \eqref{eq:estimatea0}, \eqref{eq:estimatea1}, 
@@ -3763,13 +3567,25 @@ as before.
 
 
 %%%%%
-\subsection{Conclusions}
-\label{sec:conclusions}
+
+
+
+
+
+
+
+
+
+
+
+\section{Summary and Conclusions}
+\todo{merge with Dirac
+ conclusion and possibly further global points}
 
 In this paper we have given what we think of as a satisfactory 
 answer to the problem posed: to prove the existence and 
 uniqueness of solution of the integral equation 
-\eqref{eq:inteq} and its $N$-particle generalization 
+\eqref{eq:KGtwopartint} and its $N$-particle generalization 
 \eqref{eq:npartint}. Following previous works, we have 
 assumed a cutoff in time. By considering an example for our 
 integral equation on a cosmological spacetime with a Big Bang 
@@ -3792,13 +3608,13 @@ quantum field theory.
 
 In the more immediate future, it would first of all be 
 desirable to extend our results to Dirac particles (meaning 
-that the Green's functions in \eqref{eq:inteq} are replaced 
+that the Green's functions in \eqref{eq:KGtwopartint} are replaced 
 with Green's functions of the Dirac equation). As the Dirac 
 Green's functions involve distributional derivatives, it 
 would then be more difficult than in the Klein-Gordon case to 
 define the combination of the three distributions 
 $G_1^\ret$, $G_2^\ret$ and $\delta((x-y)^2)$ which occur 
-in \eqref{eq:inteq}. Moreover, as the previous work 
+in \eqref{eq:KGtwopartint}. Moreover, as the previous work 
 \cite{selfDirac} on Dirac particles but regular interaction 
 kernels $K$ suggests, the occurrence of the distributional 
 derivatives in the Green's functions alone leads to 
@@ -3811,7 +3627,7 @@ for the $N$-particle integral operator anymore. There would
 be further terms to consider.
 
 This is the set of questions which a work on the Dirac case 
-of Eq.\@ \eqref{eq:inteq} would have to answer.
+of Eq.\@ \eqref{eq:KGtwopartint} would have to answer.
 
 Besides the Dirac case, there is also a range of more detailed 
 technical questions for the Klein-Gordon case which would be 
@@ -3825,20 +3641,9 @@ did. Moreover, one could also try to prove higher regularity
 not only in the sense of integrability but also 
 differentiability. An interesting question, for example, 
 is whether one can apply the Klein-Gordon operators 
-$(\Box_k + m_k^2)$ to the solutions of \eqref{eq:inteq} in 
+$(\Box_k + m_k^2)$ to the solutions of \eqref{eq:KGtwopartint} in 
 a weak sense. For the Dirac case, an analogous property was, 
 in fact, established in \cite{selfDirac}. 
-
-
-
-
-
-
-
-
-
-
-
 
 
 

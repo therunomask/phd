@@ -5,16 +5,9 @@ The style file: amsplain.bst
 Database file #1: ref.bib
 Warning--entry type for "phd_nickel" isn't style-file defined
 --line 410 of file ref.bib
-Warning--I didn't find a database entry for "lienertfirst"
-Warning--I didn't find a database entry for "Linertcurved"
 Warning--I didn't find a database entry for "int_eq_curved"
 Warning--I didn't find a database entry for "ruisnaar&ivp0"
 Warning--missing pages in haantjes
-Warning--missing journal name in bloch
-Warning--missing year in bloch
-Warning--missing pages in bloch
-Warning--can't use both volume and number if series info is missing
-in BibTeX entry type `inproceedings'
 Warning--missing pages in ibc_model
 Warning--missing pages in selfDirac
 Warning--missing journal name in selfKG
@@ -22,46 +15,45 @@ Warning--missing pages in selfKG
 Warning--can't use both volume and number if series info is missing
 in BibTeX entry type `inproceedings'
 Warning--missing pages in lienertcurved
-Warning--missing pages in lnt_2020
-You've used 58 entries,
+You've used 37 entries,
             2213 wiz_defined-function locations,
-            845 strings with 11521 characters,
-and the built_in function-call counts, 16470 in all, are:
-= -- 1491
-> -- 597
-< -- 3
-+ -- 256
-- -- 185
-* -- 1466
-:= -- 2630
-add.period$ -- 58
-call.type$ -- 58
-change.case$ -- 273
+            726 strings with 9109 characters,
+and the built_in function-call counts, 10409 in all, are:
+= -- 932
+> -- 384
+< -- 2
++ -- 163
+- -- 119
+* -- 927
+:= -- 1664
+add.period$ -- 37
+call.type$ -- 37
+change.case$ -- 175
 chr.to.int$ -- 0
-cite$ -- 68
-duplicate$ -- 673
-empty$ -- 1505
-format.name$ -- 185
-if$ -- 3405
+cite$ -- 43
+duplicate$ -- 427
+empty$ -- 953
+format.name$ -- 119
+if$ -- 2152
 int.to.chr$ -- 0
-int.to.str$ -- 58
-missing$ -- 118
-newline$ -- 184
-num.names$ -- 108
-pop$ -- 324
+int.to.str$ -- 37
+missing$ -- 75
+newline$ -- 121
+num.names$ -- 68
+pop$ -- 212
 preamble$ -- 1
-purify$ -- 215
+purify$ -- 138
 quote$ -- 0
-skip$ -- 363
+skip$ -- 231
 stack$ -- 0
-substring$ -- 1163
-swap$ -- 93
-text.length$ -- 3
+substring$ -- 708
+swap$ -- 57
+text.length$ -- 2
 text.prefix$ -- 0
-top$ -- 2
-type$ -- 226
-warning$ -- 12
-while$ -- 177
-width$ -- 60
-write$ -- 510
-(There were 17 warnings)
+top$ -- 1
+type$ -- 143
+warning$ -- 7
+while$ -- 107
+width$ -- 39
+write$ -- 328
+(There were 10 warnings)

@@ -7,6 +7,16 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{10}
 
+\bibitem{abramowitz1965handbook}
+Milton Abramowitz and Irene~A Stegun, \emph{Handbook of mathematical functions:
+  with formulas, graphs, and mathematical tables}, vol.~55, Courier
+  Corporation, 1965.
+
+\bibitem{bar2007wave}
+Christian B{\"a}r, Nicolas Ginoux, and Frank Pf{\"a}ffle, \emph{Wave equations
+  on lorentzian manifolds and quantization}, vol.~3, European Mathematical
+  Society, 2007.
+
 \bibitem{haantjes}
 IM~Benn and Philip Charlton, \emph{Dirac symmetry operators from conformal
   killing-yano tensors}, arXiv preprint gr-qc/9612011 (1996).
@@ -31,10 +41,20 @@ Dirk-Andr{\'e} Deckert and Lukas Nickel, \emph{Consistency of multi-time dirac
   equations with general interaction potentials}, Journal of Mathematical
   Physics \textbf{57} (2016), no.~7, 072301.
 
+\bibitem{derezinski2013mathematics}
+Jan Derezi{\'n}ski and Christian G{\'e}rard, \emph{Mathematics of quantization
+  and quantum fields}, Cambridge University Press, 2013.
+
 \bibitem{dirac_32}
 Paul Adrien~Maurice Dirac, \emph{Relativistic quantum mechanics}, Proceedings
   of the Royal Society of London. Series A, Containing Papers of a Mathematical
   and Physical Character \textbf{136} (1932), no.~829, 453--464.
+
+\bibitem{Dirac34}
+Paul~AM Dirac, \emph{Discussion of the infinite distribution of electrons in
+  the theory of the positron}, Mathematical Proceedings of the Cambridge
+  Philosophical Society, vol.~30, Cambridge University Press, 1934,
+  pp.~150--163.
 
 \bibitem{drozvincent_1981}
 Ph~Droz-Vincent, \emph{Relativistic wave equations for a system of two
@@ -44,6 +64,11 @@ Ph~Droz-Vincent, \emph{Relativistic wave equations for a system of two
 \bibitem{dubinskii_1991}
 Yu~A Dubinskii, \emph{Sobolev spaces of infinite order}, Russian Mathematical
   Surveys \textbf{46} (1991), no.~6, 107.
+
+\bibitem{fulling1978singularity}
+Stephen~A Fulling, Mark Sweeny, and Robert~M Wald, \emph{Singularity structure
+  of the two-point function in quantum field theory in curved spacetime},
+  Communications in Mathematical Physics \textbf{63} (1978), no.~3, 257--264.
 
 \bibitem{graham1994concrete}
 Ronald~L Graham, Donald~E Knuth, and Oren Patashnik, \emph{Concrete
@@ -58,6 +83,11 @@ Marian G{\"u}nther, \emph{The relativistic configuration space formulation of
 Abdolhossein Hoorfar and Mehdi Hassani, \emph{Inequalities on the lambert w
   function and hyperpower function}, J. Inequal. Pure and Appl. Math \textbf{9}
   (2008), no.~2, 5--9.
+
+\bibitem{hormander2003analysis}
+Lars H{\"o}rmander, \emph{The analysis of linear partial differential
+  operators. i. distribution theory and fourier analysis. reprint of the second
+  (1990) edition}, 2003.
 
 \bibitem{ibison}
 Michael Ibison, \emph{On the conformal forms of the robertson-walker metric},
@@ -159,6 +189,11 @@ Michael Reed and Barry Simon, \emph{Methods of modern mathematical physics,
 Hagop Sazdjian, \emph{Relativistic wave equations for the dynamics of two
   interacting particles}, Physical Review D \textbf{33} (1986), no.~11, 3401.
 
+\bibitem{schlemmer2015current}
+Jan Schlemmer and Jochen Zahn, \emph{The current density in quantum
+  electrodynamics in external potentials}, Annals of Physics \textbf{359}
+  (2015), 31--45.
+
 \bibitem{schweber}
 Silvan~S Schweber, \emph{An introduction to relativistic quantum field theory},
   Courier Corporation, 2011.
@@ -166,6 +201,11 @@ Silvan~S Schweber, \emph{An introduction to relativistic quantum field theory},
 \bibitem{schwinger}
 Julian Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation},
   Physical Review \textbf{74} (1948), no.~10, 1439.
+
+\bibitem{shale1965spinor}
+David Shale and W~Forrest Stinespring, \emph{Spinor representations of infinite
+  orthogonal groups}, Journal of Mathematics and Mechanics \textbf{14} (1965),
+  no.~2, 315--322.
 
 \bibitem{tomonaga}
 Sin-itiro Tomonaga, \emph{On a relativistically invariant formulation of the
@@ -176,5 +216,9 @@ Sin-itiro Tomonaga, \emph{On a relativistically invariant formulation of the
 Peter Van~Alstine and Horace~W Crater, \emph{A tale of three equations: Breit,
   eddington—gaunt, and two-body dirac}, Foundations of Physics \textbf{27}
   (1997), no.~1, 67--79.
+
+\bibitem{zahn2014renormalized}
+Jochen Zahn, \emph{The renormalized locally covariant dirac field}, Reviews in
+  Mathematical Physics \textbf{26} (2014), no.~01, 1330012.
 
 \end{thebibliography}

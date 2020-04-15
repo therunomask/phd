@@ -5,7 +5,6 @@ The style file: amsplain.bst
 Database file #1: ref.bib
 Warning--entry type for "phd_nickel" isn't style-file defined
 --line 410 of file ref.bib
-Warning--I didn't find a database entry for "int_eq_curved"
 Warning--I didn't find a database entry for "ruisnaar&ivp0"
 Warning--missing pages in haantjes
 Warning--missing pages in ibc_model
@@ -15,45 +14,45 @@ Warning--missing pages in selfKG
 Warning--can't use both volume and number if series info is missing
 in BibTeX entry type `inproceedings'
 Warning--missing pages in lienertcurved
-You've used 37 entries,
+You've used 46 entries,
             2213 wiz_defined-function locations,
-            726 strings with 9109 characters,
-and the built_in function-call counts, 10409 in all, are:
-= -- 932
-> -- 384
-< -- 2
-+ -- 163
-- -- 119
-* -- 927
-:= -- 1664
-add.period$ -- 37
-call.type$ -- 37
-change.case$ -- 175
+            775 strings with 10502 characters,
+and the built_in function-call counts, 13089 in all, are:
+= -- 1169
+> -- 493
+< -- 5
++ -- 209
+- -- 153
+* -- 1137
+:= -- 2089
+add.period$ -- 46
+call.type$ -- 46
+change.case$ -- 219
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 427
-empty$ -- 953
-format.name$ -- 119
-if$ -- 2152
+cite$ -- 52
+duplicate$ -- 543
+empty$ -- 1199
+format.name$ -- 153
+if$ -- 2719
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 75
-newline$ -- 121
-num.names$ -- 68
-pop$ -- 212
+int.to.str$ -- 46
+missing$ -- 95
+newline$ -- 148
+num.names$ -- 86
+pop$ -- 275
 preamble$ -- 1
-purify$ -- 138
+purify$ -- 173
 quote$ -- 0
-skip$ -- 231
+skip$ -- 302
 stack$ -- 0
-substring$ -- 708
-swap$ -- 57
-text.length$ -- 2
+substring$ -- 878
+swap$ -- 77
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 143
+type$ -- 173
 warning$ -- 7
-while$ -- 107
-width$ -- 39
-write$ -- 328
-(There were 10 warnings)
+while$ -- 135
+width$ -- 48
+write$ -- 407
+(There were 9 warnings)

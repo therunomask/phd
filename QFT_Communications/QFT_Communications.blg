@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: QFT_Communications.aux
+White space in argument---line 59 of file QFT_Communications.aux
+ : \citation{Shale
+ :                 Stinespring 1965}
+I'm skipping whatever remains of this command
+The style file: plain.bst
+Database file #1: ref.bib
+You've used 10 entries,
+            2118 wiz_defined-function locations,
+            567 strings with 5708 characters,
+and the built_in function-call counts, 3204 in all, are:
+= -- 313
+> -- 132
+< -- 4
++ -- 55
+- -- 42
+* -- 224
+:= -- 534
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 49
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 120
+empty$ -- 266
+format.name$ -- 42
+if$ -- 668
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 11
+newline$ -- 52
+num.names$ -- 20
+pop$ -- 52
+preamble$ -- 1
+purify$ -- 41
+quote$ -- 0
+skip$ -- 86
+stack$ -- 0
+substring$ -- 214
+swap$ -- 23
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 36
+warning$ -- 0
+while$ -- 32
+width$ -- 12
+write$ -- 111
+(There was 1 error message)

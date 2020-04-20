@@ -36,6 +36,10 @@ D-A Deckert and Franz Merkl, \emph{Dirac equation with external potential and
   initial data on cauchy surfaces}, Journal of Mathematical Physics \textbf{55}
   (2014), no.~12, 122305.
 
+\bibitem{deckert2016perspective}
+Dirk-Andr{\'e} Deckert and Franz Merkl, \emph{A perspective on external field
+  qed}, Quantum Mathematical Physics, Springer, 2016, pp.~381--399.
+
 \bibitem{deckert_nickel_2016}
 Dirk-Andr{\'e} Deckert and Lukas Nickel, \emph{Consistency of multi-time dirac
   equations with general interaction potentials}, Journal of Mathematical
@@ -44,6 +48,10 @@ Dirk-Andr{\'e} Deckert and Lukas Nickel, \emph{Consistency of multi-time dirac
 \bibitem{derezinski2013mathematics}
 Jan Derezi{\'n}ski and Christian G{\'e}rard, \emph{Mathematics of quantization
   and quantum fields}, Cambridge University Press, 2013.
+
+\bibitem{dirac1934theorie}
+PAM Dirac, \emph{Th{\'e}orie du positron}, Solvay report \textbf{25} (1934),
+  203--212.
 
 \bibitem{dirac_32}
 Paul Adrien~Maurice Dirac, \emph{Relativistic quantum mechanics}, Proceedings
@@ -64,6 +72,16 @@ Ph~Droz-Vincent, \emph{Relativistic wave equations for a system of two
 \bibitem{dubinskii_1991}
 Yu~A Dubinskii, \emph{Sobolev spaces of infinite order}, Russian Mathematical
   Surveys \textbf{46} (1991), no.~6, 107.
+
+\bibitem{feynman1949theory}
+Richard~P Feynman, \emph{The theory of positrons}, Physical Review \textbf{76}
+  (1949), no.~6, 749.
+
+\bibitem{finster2016fermionic}
+Felix Finster, Simone Murro, and Christian R{\"o}ken, \emph{The fermionic
+  projector in a time-dependent external potential: Mass oscillation property
+  and hadamard states}, Journal of Mathematical Physics \textbf{57} (2016),
+  no.~7, 072303.
 
 \bibitem{fulling1978singularity}
 Stephen~A Fulling, Mark Sweeny, and Robert~M Wald, \emph{Singularity structure
@@ -159,6 +177,11 @@ Matthias Lienert, Roderich Tumulka, et~al., \emph{A new class of volterra-type
 Egon Marx, \emph{Many-times formalism and coulomb interaction}, International
   Journal of Theoretical Physics \textbf{9} (1974), no.~3, 195--217.
 
+\bibitem{mickelsson2014phase}
+Jouko Mickelsson, \emph{The phase of the scattering operator from the geometry
+  of certain infinite-dimensional groups}, Letters in Mathematical Physics
+  \textbf{104} (2014), no.~10, 1189--1199.
+
 \bibitem{phd_nickel}
 L.~Nickel, \emph{Phd thesis. on the dynamics of multi-time systems}, 2019.
 
@@ -201,6 +224,10 @@ Silvan~S Schweber, \emph{An introduction to relativistic quantum field theory},
 \bibitem{schwinger}
 Julian Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation},
   Physical Review \textbf{74} (1948), no.~10, 1439.
+
+\bibitem{schwinger1951gauge}
+\bysame, \emph{On gauge invariance and vacuum polarization}, Physical Review
+  \textbf{82} (1951), no.~5, 664.
 
 \bibitem{shale1965spinor}
 David Shale and W~Forrest Stinespring, \emph{Spinor representations of infinite

@@ -135,26 +135,95 @@
 
 
 \frontmatter
-%
-%\noindent
-%\begin{center}
-%    \textsc{ \small{Description of the dissertation project of Markus Nöth,
-%        Ludwig-Maximilians University of Munich} \\
-%        \smallskip
-%\large{ Electron-Positron Pair Creation in External Fields} \\
-%\small{Rigorous Control of the Scattering-Matrix Expansion}}
-%    \vskip.3cm
-%    \small
-% supervisor:    D.-A.\ Deckert (LMU)
-% \vskip0.4cm
-\title{Electron-Positron Pair Creation in External~Fields}
+
+\title{On Interaction and External Fields in Relativistic Quantum Physics}
 %\subtitle{\footnotesize{Rigorous Control of the Scattering-Matrix Expansion}}
 \author{M. Nöth}
 \maketitle
 
-\begin{abstract}
-\lipsum[1] 
- \end{abstract}
+
+
+\newpage 
+{\large \textbf{Abstract}}\\
+The main subject of this thesis is the problem 
+of introducing interactions 
+into relativistic quantum mechanics. Two very different 
+alternatives of 
+approaching this issue are discussed.\\ 
+
+The first approach considers a very recent relativistically invariant 
+integral equation for multi-time wavefunctions 
+by Matthias Lienert. This is an 
+equation for fermions interacting directly along light-like 
+configurations. Previous 
+results on existence and uniqueness of solutions of a variant of 
+this equation for scalar particles  
+are extended to include more realistic types of interaction. 
+Furthermore,
+a first result on existence and uniqueness of solutions of a 
+variant of said equation for spin 1/2 particles is proven. \\
+
+The second approach, as a first step to approach interactions, 
+introduces external electrodynamic fields into otherwise free 
+quantum field theory. In previous results candidates for 
+the time evolution operator in this setting have been constructed;
+however, a phase that depends on the external field was left 
+unidentified. This problem is partially addressed by a geometric 
+construction of the missing phase in the scattering 
+regime from an object fulfilling 
+desirable properties, such as a certain causality condition. 
+Secondly the particular approach to quantum field theory employed
+in this thesis is compared to the algebraic approach common in 
+the setting of quantum field theory on curved spacetimes. The 
+central objects of the two approaches and their natural 
+equivalence classes are juxtaposed and theorems are proven 
+how construct the central object of one approach from the
+central object of the other. 
+Finally, a simple formula for the  
+scattering operator in terms of the one particle 
+scattering operator is given and proven to be well-defined.  
+
+\newpage
+
+{\large \textbf{Zusammenfassung}}
+Das Hauptthema dieser Arbeit sind die Schwierigkeiten die 
+dabei auftreten Wechselwirkungen in die relativistische 
+Quantenmechanik einzuführen. Dabei werden zwei sehr unterschiedliche
+Herangehensweisen verfolgt.
+
+In der Ersten wird eine kürzlich von Matthias Lienert vorgestellten 
+relativistisch invariante Integralgleichung für Wellenfunktionen 
+für mehrere Zeiten thematisiert. Dies ist eine Gleichung für 
+Fermionen welche direkt entlang lichtartiger Konfigurationen 
+wechselwirken. Dabei werden bereits bestehende Resultate über 
+Existenz und Eindeutigkeit von Lösungen von einer Variante dieser 
+Gleichung für skalare Teilchen für realistischere Wechselwirkungen
+erweitert. Weiterhin wird ein erstes Resultat über Existenz und 
+Eindeutigkeit von Lösungen für eine Variante der Gleichung 
+für Teilchen mit Spin 1/2 bewiesen.
+
+In der zweiten Herangehensweise wird, als ersten Schritt in 
+Richtung einer wechselwirkenden Theorie, ein externes 
+elektromagnetisches Feld in eine ansonsten freie Quantenfeldtheorie
+eingeführt. Frühere Resultate haben Kandidaten für den 
+Zeitentwicklungsoperator in dieser Situation konstruiert, 
+allerdings blieb dabei eine vom Feld abhängige Phase unbestimmt.
+Dieses Problem wird teilweise behoben, indem eine geometrische 
+Konstruktion dieser Phase im Streuregime aus einem 
+Objekt mit einigen wünschenswerten Eigenschaften, 
+etwa eine Kausalitätsbedingung, angegeben wird. 
+Anschließend wird die hier verwendete Formulierung der 
+Quantenfeldtheorie mit dem in der Quantenfeldtheorie auf 
+gekrümmter Raumzeit üblichen algebraischen Formulierung 
+verglichen. Dabei werden die jeweils zentralen Objekte
+ und deren 
+natürlich auftretende Äquivalenzklassen betrachtet.
+Zusätzlich wird bewiesen wie das zentrale Objekt einer 
+Formulierung aus dem der jeweils anderen hervorgeht. 
+Schließlich wird eine einfache Formel für den Streuoperator 
+als Funktion des Einteilchenstreuoperators angegeben und
+dessen Wohldefiniertheit gezeigt.
+
 
 
 %\vskip.5cm
@@ -3600,29 +3669,151 @@ a weak sense.
 
 \chapter[Quantum Field Theoretic Approach to Interactions][Interaction in QFT]{Quantum Field Theoretic Approach to Interactions} \label{sec:QFT}
 
-\section{Introduction}
+\section{Motivation}
 \todo{complete random assortment}
 \todo{arrange random assortment into something coherent}
 
-In this chapter we will turn our attention to the more widely accepted way of 
-introducing interaction into relativistic quantum mechanics, Quantum Field Theory.
-While the rigoros theory of free relativistic fermions is textbook material
+In this chapter we will turn our attention to the 
+more widely accepted way of 
+introducing interaction into relativistic quantum 
+mechanics, Quantum Field Theory. For the motivation and 
+introduction we follow \cite{deckert2016perspective}.
+While the rigoros quantum field theoretic formulation of free 
+relativistic fermions is textbook material
 \cite{derezinski2013mathematics} the introduction of interaction faces 
-difficulties. In fact, introducing an external electrodynamic fields 
+difficulties. In fact, introducing an external electromagnetic field
 acting on the fermions, 
-while neglecting all interactions between the fermions already is a nontrivial 
+while neglecting all interactions between the 
+fermions already is a nontrivial 
 matter. The completely satisfactory formulation of such an 
-\emph{external field quantum electrodynamics} (QED) is, to the best of the authors 
-knowledge, still to be formulated, despite the combined effort of such bright 
-minds as those of Dirac?, Dyson?, Feynman? and Schwinger?. 
+\emph{external field quantum electrodynamics} (QED) is, 
+to the best of the authors 
+knowledge, still to be formulated, despite the combined 
+effort of such bright 
+minds as those of Dirac\cite{dirac1934theorie}, 
+ Feynman\cite{feynman1949theory} 
+and Schwinger\cite{schwinger1951gauge}. 
+In more recent years there have been several independend attempts 
+to remedy the remaining difficulties such as the construction 
+of the fermionic projector \cite{finster2016fermionic} 
+and the construction of the geometric phase \cite{mickelsson2014phase}.
+We will seek to extend the construction along the lines of 
+\cite{ivp0,ivp1,ivp2}, which will be motivated and summarised
+now. 
 
-However, as we will already encounter difficulties finding a unique description 
-of quantum electromagnetics (QED) in external fields while neglecting 
+When Dirac found the equation now bearing his name he 
+recognised that the accessible range of kinetic energies 
+to the particles described by it is 
+\(]-\infty, -m]\cup[m, \infty[\). So he was worried that 
+particles coupled to an electromagnetic field might radiate 
+and lower their kinetic energy without bound. Since particles 
+capable of such behavior would not form stable matter he 
+devised a way to introduce a stable ground state into the 
+system. Instead of applying equation \eqref{dirac free}
+\begin{equation}\tag{\ref{dirac free}}
+  0= (i\slashed{\partial}-m \id) \psi,
+\end{equation}
+to a fixed finite number of particles, he sought to apply 
+it's evolution to an antisymmetric product 
+\begin{equation}\label{infinite wedge}
+  \Omega= \varphi_1\wedge \varphi_2\wedge \dots,
+\end{equation}
+where \((\varphi_k)_{k\in\mathbb{N}}\) forms an ONB of the negative spectral 
+subspace \(\mathcal{H}^-\). Thus making use of 
+Pauli's exclusion principle for 
+fermions no particle is any longer able to lower it's kindetic 
+energy.  This \emph{Dirac sea} \(\Omega\) might be evolved 
+by a one-particle evolution \(U:\mathcal{H}\righttoleftarrow\)
+according to 
+\begin{equation}
+  \mathcal{L}_U \Omega= U\varphi_1\wedge U \varphi_2\wedge \dots.
+\end{equation}
 
+The vacuum \(\Omega\) does most likely not coincide with the 
+ground state of a full theory of QED. As we do not have 
+such a theory at hand; 
+however, one might hope that due to the homogeneity and isotropy 
+of such a ground state the choice \(\Omega\) is close enough as a
+first approximation in situations where the external field is large 
+and the homogeneity and isotropy of the true state 
+effectively cancels the direct 
+interactions between the electrons.  Furthermore, 
+the structure of \(\Omega\) is implicitly used also in the standard 
+calculations of QED showing agreement to experiments to a remarkable 
+degree giving us all the more reason to use it as a starting point. 
+
+The first step towards a theory including interactions is to allow 
+for an external field \(A\) to act upon the particles, changing 
+\eqref{dirac free} to
 
 \begin{equation}\label{dirac}
-  0= (i\slashed{\partial}-e\slashed{A}-m \id) \phi,
+  0= (i\slashed{\partial}-e\slashed{A}-m \id) \psi.
 \end{equation}
+
+We might now imagine a field \(A\) that acts only during a 
+brief period of time. Such a field could pull a particle 
+of the Dirac Sea \(\Omega\), say 
+\(\varphi_1\), out of \(\mathcal{H}^-\) and  
+onto the surface \(U^A \varphi_1=\xi \in \mathcal{H}^+\).
+Such a field might not disturb the other wavefunctions to much 
+and the Dirac Sea after the action of the field might be 
+represented by 
+
+\begin{equation}\label{toy example dirac sea}
+  \Psi= \xi\wedge \varphi_2\wedge \varphi_3 \wedge \dots.
+\end{equation}
+
+Now, since \(\xi \in \mathcal{H}^+\) the corresponding particle 
+behaves qualitatively differently compared to the remaining 
+part of the 
+Dirac sea which consists of wavefunctions taken from 
+\(\mathcal{H}^-\). This particle appears above the Dirac sea
+where it leaves behind a hole, the missing wavefunction 
+\(\varphi_1\in\mathcal{H}^-\). Whenever the wavefunctions 
+at greater depth are left relatively unperturbed by the action 
+of the process, according to Dirac, we can switch to a leaner  
+description. If \(\Omega\) remains completely unchanged below a 
+certain level, such as in our example,  it
+suffices to follow the particles that generated 
+e.g. \(\xi\), the holes created e.g. \(\varphi_1\). If on the 
+other hand all wavefunctions are affected one has to keep track
+of a net evolution of \(\Omega\) as well. As in this description
+the particle number is not a constant, creation operators 
+are introduced. These act as 
+\begin{equation}
+a^*(\xi)\varphi_2\wedge \varphi_3\wedge\dots = \xi\wedge \varphi_2\wedge \varphi_3\wedge\dots.
+\end{equation}
+The adjoint of the creation operator, called 
+annihilation operator, is of equal importance.  
+Using these equation \eqref{toy example dirac sea}
+can be condensed to 
+\begin{equation}
+\Psi= a^*(\xi)a(\varphi_1)\Omega.
+\end{equation}
+Given a one-particle time evolution operator \(U^A\), its 
+\emph{lift} \(\tilde{U}^A\) to objects like the 
+wedge product \eqref{infinite wedge}
+needs to fulfil
+\begin{equation}
+\tilde{U}^A a^*(\psi)=a^*(U^A\psi )\tilde{U}^A.
+\end{equation}
+
+
+
+\section{Introduction}
+
+
+Throughout this chapter the class of four potentials we shall be 
+interested in is 
+
+\begin{equation}
+  \mathcal{V}:= C_c^\infty(\mathbb{R}^4,\mathbb{R}^4).
+\end{equation}
+
+
+
+
+
 
 \begin{equation}
   \slashed{A}:= A_\alpha \gamma^\alpha,
@@ -4056,7 +4247,7 @@ In this sense, the relevant singularity structure of a Hadamard state to become 
 \end{Remark}
 
 \todo{think about moving to appendix}
-\section{\!Appendix: Proof of theorem \ref{thm:hadamard=>Pol} and \ref{thm:Pol=>hadamard}}
+\subsection{\!Appendix: Proof of theorem \ref{thm:hadamard=>Pol} and \ref{thm:Pol=>hadamard}}
 
 We first break down the problem of the proof of theorem \ref{thm:hadamard=>Pol} to a problem on a bounded domain. Then we go on 
 to show that the relevant functions are locally bounded so that an application of Lebesgue dominated convergence yields our result.
@@ -4613,10 +4804,6 @@ chapter \ref{chapter geometery}.
 Since this section is heavily inspired from \cite{ivp0}, we need
 to introduce some notation from this paper. 
 \begin{Def}
-We define the set \(\mathcal{V}\) of four potentials
-\begin{equation}
-\mathcal{V}:= C_c^\infty(\mathbb{R}^4,\mathbb{R}^4).
-\end{equation}
 Let \(A\in\mathcal{V}\), we define the the integral operator
 \(Q^A:\mathcal{H}\righttoleftarrow\) by giving its integral kernel, which 
 is also denoted by \(Q^A\):

@@ -14,45 +14,45 @@ Warning--missing pages in selfKG
 Warning--can't use both volume and number if series info is missing
 in BibTeX entry type `inproceedings'
 Warning--missing pages in lienertcurved
-You've used 52 entries,
+You've used 53 entries,
             2213 wiz_defined-function locations,
-            807 strings with 11179 characters,
-and the built_in function-call counts, 14934 in all, are:
-= -- 1343
-> -- 549
+            813 strings with 11288 characters,
+and the built_in function-call counts, 15225 in all, are:
+= -- 1372
+> -- 556
 < -- 5
-+ -- 236
-- -- 170
-* -- 1295
-:= -- 2373
-add.period$ -- 52
-call.type$ -- 52
-change.case$ -- 246
++ -- 239
+- -- 172
+* -- 1322
+:= -- 2419
+add.period$ -- 53
+call.type$ -- 53
+change.case$ -- 250
 chr.to.int$ -- 0
-cite$ -- 58
-duplicate$ -- 621
-empty$ -- 1373
-format.name$ -- 170
-if$ -- 3112
+cite$ -- 59
+duplicate$ -- 632
+empty$ -- 1401
+format.name$ -- 172
+if$ -- 3172
 int.to.chr$ -- 0
-int.to.str$ -- 52
-missing$ -- 107
-newline$ -- 166
-num.names$ -- 97
-pop$ -- 306
+int.to.str$ -- 53
+missing$ -- 109
+newline$ -- 169
+num.names$ -- 99
+pop$ -- 310
 preamble$ -- 1
-purify$ -- 194
+purify$ -- 197
 quote$ -- 0
-skip$ -- 348
+skip$ -- 353
 stack$ -- 0
-substring$ -- 1036
-swap$ -- 91
+substring$ -- 1066
+swap$ -- 92
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 197
+type$ -- 201
 warning$ -- 7
-while$ -- 156
-width$ -- 54
-write$ -- 461
+while$ -- 160
+width$ -- 55
+write$ -- 470
 (There were 9 warnings)

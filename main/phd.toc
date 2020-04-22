@@ -50,26 +50,26 @@
 \contentsline {section}{\numberline {2.4}Summary and Conclusions}{95}{section.2.4}% 
 \contentsline {chapter}{\chapternumberline {3}Quantum Field Theoretic Approach to Interactions}{99}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Motivation}{99}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Introduction}{102}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}The Relationship Between Hadamard States and Admissible Polarisation Classes}{104}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Introduction}{105}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Hadamard States}{106}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Projectors for Polarisation Classes}{110}{subsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.3.4}Comparison Between Hadamard States and \(P^\lambda _\Sigma \)}{113}{subsection.3.3.4}% 
-\contentsline {subsection}{\numberline {3.3.5}\tmspace -\thinmuskip {.1667em}Appendix: Proof of theorem \ref {thm:hadamard=>Pol} and \ref {thm:Pol=>hadamard}}{115}{subsection.3.3.5}% 
-\contentsline {section}{\numberline {3.4}Regularity of the One Particle Scattering Operator}{132}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}Geometric Construction of the Phase}{146}{section.3.5}% 
-\contentsline {subsection}{\numberline {3.5.1}Main Result of Construction}{149}{subsection.3.5.1}% 
-\contentsline {subsection}{\numberline {3.5.2}Proofs}{150}{subsection.3.5.2}% 
-\contentsline {section}{\numberline {3.6}Simple Formula for the Scattering Operator}{185}{section.3.6}% 
-\contentsline {subsection}{\numberline {3.6.1}Defining One-Particle Scattering-Matrix}{185}{subsection.3.6.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Construction of the Second Quantised Scattering-Matrix}{186}{subsection.3.6.2}% 
-\contentsline {subsection}{\numberline {3.6.3}Differential second quantisation}{189}{subsection.3.6.3}% 
-\contentsline {subsection}{\numberline {3.6.4}Presentation and Proof of the Formula}{205}{subsection.3.6.4}% 
-\contentsline {subsection}{\numberline {3.6.5}Quantitative Estimates}{217}{subsection.3.6.5}% 
-\contentsline {chapter}{Appendix}{237}{appendix*.46}% 
-\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{237}{section*.47}% 
-\contentsline {subsection}{Guessing Equations}{237}{section*.48}% 
-\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{240}{section*.50}% 
-\contentsline {subsection}{Solution to Recursive Equation}{248}{section*.52}% 
-\contentsline {chapter}{Bibliography}{261}{appendix*.54}% 
+\contentsline {section}{\numberline {3.2}Introduction}{105}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}The Relationship Between Hadamard States and Admissible Polarisation Classes}{107}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Introduction}{108}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Hadamard States}{109}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Projectors for Polarisation Classes}{113}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}Comparison Between Hadamard States and \(P^\lambda _\Sigma \)}{116}{subsection.3.3.4}% 
+\contentsline {subsection}{\numberline {3.3.5}\tmspace -\thinmuskip {.1667em}Appendix: Proof of theorem \ref {thm:hadamard=>Pol} and \ref {thm:Pol=>hadamard}}{118}{subsection.3.3.5}% 
+\contentsline {section}{\numberline {3.4}Regularity of the One Particle Scattering Operator}{135}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Geometric Construction of the Phase}{150}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}Main Result of Construction}{153}{subsection.3.5.1}% 
+\contentsline {subsection}{\numberline {3.5.2}Proofs}{154}{subsection.3.5.2}% 
+\contentsline {section}{\numberline {3.6}Simple Formula for the Scattering Operator}{189}{section.3.6}% 
+\contentsline {subsection}{\numberline {3.6.1}Defining One-Particle Scattering-Matrix}{189}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.2}Construction of the Second Quantised Scattering-Matrix}{190}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.3}Differential second quantisation}{193}{subsection.3.6.3}% 
+\contentsline {subsection}{\numberline {3.6.4}Presentation and Proof of the Formula}{209}{subsection.3.6.4}% 
+\contentsline {subsection}{\numberline {3.6.5}Quantitative Estimates}{221}{subsection.3.6.5}% 
+\contentsline {chapter}{Appendix}{241}{appendix*.46}% 
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{241}{section*.47}% 
+\contentsline {subsection}{Guessing Equations}{241}{section*.48}% 
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{244}{section*.50}% 
+\contentsline {subsection}{Solution to Recursive Equation}{252}{section*.52}% 
+\contentsline {chapter}{Bibliography}{265}{appendix*.54}% 

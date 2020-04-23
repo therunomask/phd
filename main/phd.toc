@@ -1,75 +1,75 @@
 \contentsline {chapter}{Contents}{iv}{section*.1}% 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}% 
-\contentsline {chapter}{\chapternumberline {2}Direct Interaction in Relativistic Quantum Mechanics}{3}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Overview}{4}{section.2.1}% 
-\contentsline {subsection}{\numberline {2.1.1}Derivation}{4}{subsection.2.1.1}% 
-\contentsline {subsection}{\numberline {2.1.2}Previous Results on Directly Interacting Particles}{8}{subsection.2.1.2}% 
-\contentsline {section}{\numberline {2.2}Singular light cone interactions of scalar particles in 1+3 dimensions}{12}{section.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.0.1}Overview}{12}{subsubsection.2.2.0.1}% 
-\contentsline {subsection}{\numberline {2.2.1}Precise formulation of the problem}{13}{subsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.1.1}Definition of \(A_0\).}{15}{subsubsection.2.2.1.1}% 
-\contentsline {subsubsection}{\numberline {2.2.1.2}Definition of $A_1$.}{17}{subsubsection.2.2.1.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1.3}Definition of $A_2$.}{18}{subsubsection.2.2.1.3}% 
-\contentsline {subsubsection}{\numberline {2.2.1.4}Definition of $A_{12}$.}{19}{subsubsection.2.2.1.4}% 
-\contentsline {subsubsection}{\numberline {2.2.1.5}Lifting of the integral operator from test functions to a suitable Banach space.}{20}{subsubsection.2.2.1.5}% 
-\contentsline {subsection}{\numberline {2.2.2}Results}{21}{subsection.2.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.2.1}The two-particle case}{22}{subsubsection.2.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2.2}The $N$-particle case}{26}{subsubsection.2.2.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.2.3}On the possible origin of a cutoff in time}{28}{subsubsection.2.2.2.3}% 
-\contentsline {subsection}{\numberline {2.2.3}Proofs}{33}{subsection.2.2.3}% 
-\contentsline {subsubsection}{\numberline {2.2.3.1}Proof of Theorem \ref {thm:boundsKG}}{33}{subsubsection.2.2.3.1}% 
-\contentsline {paragraph}{\numberline {2.2.3.1.1}Estimate of the massless term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:estimatea0}\unskip \@@italiccorr )}}.}{33}{paragraph.2.2.3.1.1}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.1}Simplification of term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {y'Integral1}\unskip \@@italiccorr )}}.}{39}{subparagraph.2.2.3.1.1.1}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.2}Simplification of term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {y'Integral2}\unskip \@@italiccorr )}}.}{41}{subparagraph.2.2.3.1.1.2}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.3}Simplification of term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {y'Integral3}\unskip \@@italiccorr )}}.}{44}{subparagraph.2.2.3.1.1.3}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.4}Summary of the first estimate.}{48}{subparagraph.2.2.3.1.1.4}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.5}Simplification of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {A psi estimate 1}\unskip \@@italiccorr )}}-\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {A psi estimate 3}\unskip \@@italiccorr )}}.}{50}{subparagraph.2.2.3.1.1.5}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.6}Further estimate of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {massless_after estimate1}\unskip \@@italiccorr )}}.}{52}{subparagraph.2.2.3.1.1.6}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.7}Further estimate of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {massless_after estimate2}\unskip \@@italiccorr )}}.}{53}{subparagraph.2.2.3.1.1.7}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.8}Further estimate of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {massless_after estimate3}\unskip \@@italiccorr )}}.}{53}{subparagraph.2.2.3.1.1.8}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.9}Further estimate of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {massless_after estimate4}\unskip \@@italiccorr )}}.}{54}{subparagraph.2.2.3.1.1.9}% 
-\contentsline {subparagraph}{\numberline {2.2.3.1.1.10}Summary of the result.}{54}{subparagraph.2.2.3.1.1.10}% 
-\contentsline {paragraph}{\numberline {2.2.3.1.2}Estimate of the mixed terms \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:estimatea1}\unskip \@@italiccorr )}} and \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:estimatea2}\unskip \@@italiccorr )}}.}{55}{paragraph.2.2.3.1.2}% 
-\contentsline {paragraph}{\numberline {2.2.3.1.3}Estimate of the mass-mass term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:estimatea12}\unskip \@@italiccorr )}}.}{59}{paragraph.2.2.3.1.3}% 
-\contentsline {subsubsection}{\numberline {2.2.3.2}Proof of Theorem \ref {thm:exponentialg}}{62}{subsubsection.2.2.3.2}% 
-\contentsline {subsubsection}{\numberline {2.2.3.3}Proof of Theorem \ref {thm:existence}}{63}{subsubsection.2.2.3.3}% 
-\contentsline {subsubsection}{\numberline {2.2.3.4}Proof of Theorem \ref {thm:existencecurved}}{66}{subsubsection.2.2.3.4}% 
-\contentsline {section}{\numberline {2.3}Directly Interacting Dirac Particles}{67}{section.2.3}% 
-\contentsline {subsection}{\numberline {2.3.1}Introduction}{67}{subsection.2.3.1}% 
-\contentsline {subsection}{\numberline {2.3.2}Setting of the problem}{68}{subsection.2.3.2}% 
-\contentsline {subsubsection}{\numberline {2.3.2.1}Definition of the integral operator on test functions}{68}{subsubsection.2.3.2.1}% 
-\contentsline {subsubsection}{\numberline {2.3.2.2}Choice of Banach space}{72}{subsubsection.2.3.2.2}% 
-\contentsline {paragraph}{\numberline {2.3.2.2.1}Possible problems with the choice of space.}{72}{paragraph.2.3.2.2.1}% 
-\contentsline {paragraph}{\numberline {2.3.2.2.2}A Banach space adapted to our integral equation.}{73}{paragraph.2.3.2.2.2}% 
-\contentsline {subsection}{\numberline {2.3.3}Results}{75}{subsection.2.3.3}% 
-\contentsline {subsubsection}{\numberline {2.3.3.1}Results for a Minkowski half space}{75}{subsubsection.2.3.3.1}% 
-\contentsline {subsubsection}{\numberline {2.3.3.2}Results for a FLRW universe with a Big Bang singularity}{77}{subsubsection.2.3.3.2}% 
-\contentsline {subsection}{\numberline {2.3.4}Proofs}{83}{subsection.2.3.4}% 
-\contentsline {subsubsection}{\numberline {2.3.4.1}Proof of Lemma \ref {thm:boundsa}}{85}{subsubsection.2.3.4.1}% 
-\contentsline {subsubsection}{\numberline {2.3.4.2}Proof of Theorem \ref {thm:minkhalfspace}}{92}{subsubsection.2.3.4.2}% 
-\contentsline {section}{\numberline {2.4}Summary and Conclusions}{95}{section.2.4}% 
-\contentsline {chapter}{\chapternumberline {3}Quantum Field Theoretic Approach to Interactions}{99}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Motivation}{99}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Introduction}{105}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}The Relationship Between Hadamard States and Admissible Polarisation Classes}{107}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Introduction}{108}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Hadamard States}{109}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Projectors for Polarisation Classes}{113}{subsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.3.4}Comparison Between Hadamard States and \(P^\lambda _\Sigma \)}{116}{subsection.3.3.4}% 
-\contentsline {subsection}{\numberline {3.3.5}\tmspace -\thinmuskip {.1667em}Appendix: Proof of theorem \ref {thm:hadamard=>Pol} and \ref {thm:Pol=>hadamard}}{118}{subsection.3.3.5}% 
-\contentsline {section}{\numberline {3.4}Regularity of the One Particle Scattering Operator}{135}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}Geometric Construction of the Phase}{150}{section.3.5}% 
-\contentsline {subsection}{\numberline {3.5.1}Main Result of Construction}{153}{subsection.3.5.1}% 
-\contentsline {subsection}{\numberline {3.5.2}Proofs}{154}{subsection.3.5.2}% 
-\contentsline {section}{\numberline {3.6}Simple Formula for the Scattering Operator}{189}{section.3.6}% 
-\contentsline {subsection}{\numberline {3.6.1}Defining One-Particle Scattering-Matrix}{189}{subsection.3.6.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Construction of the Second Quantised Scattering-Matrix}{190}{subsection.3.6.2}% 
-\contentsline {subsection}{\numberline {3.6.3}Differential second quantisation}{193}{subsection.3.6.3}% 
-\contentsline {subsection}{\numberline {3.6.4}Presentation and Proof of the Formula}{209}{subsection.3.6.4}% 
-\contentsline {subsection}{\numberline {3.6.5}Quantitative Estimates}{221}{subsection.3.6.5}% 
-\contentsline {chapter}{Appendix}{241}{appendix*.46}% 
-\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{241}{section*.47}% 
-\contentsline {subsection}{Guessing Equations}{241}{section*.48}% 
-\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{244}{section*.50}% 
-\contentsline {subsection}{Solution to Recursive Equation}{252}{section*.52}% 
-\contentsline {chapter}{Bibliography}{265}{appendix*.54}% 
+\contentsline {chapter}{\chapternumberline {2}Direct Interaction in Relativistic Quantum Mechanics}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Overview}{6}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Derivation}{6}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.2}Previous Results on Directly Interacting Particles}{10}{subsection.2.1.2}% 
+\contentsline {section}{\numberline {2.2}Singular light cone interactions of scalar particles in 1+3 dimensions}{14}{section.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.0.1}Overview}{14}{subsubsection.2.2.0.1}% 
+\contentsline {subsection}{\numberline {2.2.1}Precise formulation of the problem}{15}{subsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.1.1}Definition of \(A_0\).}{17}{subsubsection.2.2.1.1}% 
+\contentsline {subsubsection}{\numberline {2.2.1.2}Definition of $A_1$.}{19}{subsubsection.2.2.1.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1.3}Definition of $A_2$.}{20}{subsubsection.2.2.1.3}% 
+\contentsline {subsubsection}{\numberline {2.2.1.4}Definition of $A_{12}$.}{21}{subsubsection.2.2.1.4}% 
+\contentsline {subsubsection}{\numberline {2.2.1.5}Lifting of the integral operator from test functions to a suitable Banach space.}{22}{subsubsection.2.2.1.5}% 
+\contentsline {subsection}{\numberline {2.2.2}Results}{23}{subsection.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.2.1}The two-particle case}{24}{subsubsection.2.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2.2}The $N$-particle case}{28}{subsubsection.2.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.2.3}On the possible origin of a cutoff in time}{30}{subsubsection.2.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.3}Proofs}{35}{subsection.2.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.1}Proof of Theorem \ref {thm:boundsKG}}{35}{subsubsection.2.2.3.1}% 
+\contentsline {paragraph}{\numberline {2.2.3.1.1}Estimate of the massless term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:estimatea0}\unskip \@@italiccorr )}}.}{35}{paragraph.2.2.3.1.1}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.1}Simplification of term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {y'Integral1}\unskip \@@italiccorr )}}.}{41}{subparagraph.2.2.3.1.1.1}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.2}Simplification of term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {y'Integral2}\unskip \@@italiccorr )}}.}{43}{subparagraph.2.2.3.1.1.2}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.3}Simplification of term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {y'Integral3}\unskip \@@italiccorr )}}.}{46}{subparagraph.2.2.3.1.1.3}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.4}Summary of the first estimate.}{50}{subparagraph.2.2.3.1.1.4}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.5}Simplification of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {A psi estimate 1}\unskip \@@italiccorr )}}-\textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {A psi estimate 3}\unskip \@@italiccorr )}}.}{52}{subparagraph.2.2.3.1.1.5}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.6}Further estimate of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {massless_after estimate1}\unskip \@@italiccorr )}}.}{54}{subparagraph.2.2.3.1.1.6}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.7}Further estimate of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {massless_after estimate2}\unskip \@@italiccorr )}}.}{55}{subparagraph.2.2.3.1.1.7}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.8}Further estimate of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {massless_after estimate3}\unskip \@@italiccorr )}}.}{55}{subparagraph.2.2.3.1.1.8}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.9}Further estimate of \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {massless_after estimate4}\unskip \@@italiccorr )}}.}{56}{subparagraph.2.2.3.1.1.9}% 
+\contentsline {subparagraph}{\numberline {2.2.3.1.1.10}Summary of the result.}{56}{subparagraph.2.2.3.1.1.10}% 
+\contentsline {paragraph}{\numberline {2.2.3.1.2}Estimate of the mixed terms \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:estimatea1}\unskip \@@italiccorr )}} and \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:estimatea2}\unskip \@@italiccorr )}}.}{57}{paragraph.2.2.3.1.2}% 
+\contentsline {paragraph}{\numberline {2.2.3.1.3}Estimate of the mass-mass term \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {eq:estimatea12}\unskip \@@italiccorr )}}.}{61}{paragraph.2.2.3.1.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.2}Proof of Theorem \ref {thm:exponentialg}}{64}{subsubsection.2.2.3.2}% 
+\contentsline {subsubsection}{\numberline {2.2.3.3}Proof of Theorem \ref {thm:existence}}{65}{subsubsection.2.2.3.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3.4}Proof of Theorem \ref {thm:existencecurved}}{68}{subsubsection.2.2.3.4}% 
+\contentsline {section}{\numberline {2.3}Directly Interacting Dirac Particles}{69}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Introduction}{69}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Setting of the problem}{70}{subsection.2.3.2}% 
+\contentsline {subsubsection}{\numberline {2.3.2.1}Definition of the integral operator on test functions}{70}{subsubsection.2.3.2.1}% 
+\contentsline {subsubsection}{\numberline {2.3.2.2}Choice of Banach space}{74}{subsubsection.2.3.2.2}% 
+\contentsline {paragraph}{\numberline {2.3.2.2.1}Possible problems with the choice of space.}{74}{paragraph.2.3.2.2.1}% 
+\contentsline {paragraph}{\numberline {2.3.2.2.2}A Banach space adapted to our integral equation.}{75}{paragraph.2.3.2.2.2}% 
+\contentsline {subsection}{\numberline {2.3.3}Results}{77}{subsection.2.3.3}% 
+\contentsline {subsubsection}{\numberline {2.3.3.1}Results for a Minkowski half space}{77}{subsubsection.2.3.3.1}% 
+\contentsline {subsubsection}{\numberline {2.3.3.2}Results for a FLRW universe with a Big Bang singularity}{79}{subsubsection.2.3.3.2}% 
+\contentsline {subsection}{\numberline {2.3.4}Proofs}{85}{subsection.2.3.4}% 
+\contentsline {subsubsection}{\numberline {2.3.4.1}Proof of Lemma \ref {thm:boundsa}}{87}{subsubsection.2.3.4.1}% 
+\contentsline {subsubsection}{\numberline {2.3.4.2}Proof of Theorem \ref {thm:minkhalfspace}}{94}{subsubsection.2.3.4.2}% 
+\contentsline {section}{\numberline {2.4}Summary and Conclusions}{97}{section.2.4}% 
+\contentsline {chapter}{\chapternumberline {3}Quantum Field Theoretic Approach to Interactions}{101}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Motivation}{101}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Introduction}{107}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}The Relationship Between Hadamard States and Admissible Polarisation Classes}{109}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Introduction}{109}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Hadamard States}{110}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Projectors for Polarisation Classes}{114}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}Comparison Between Hadamard States and \(P^\lambda _\Sigma \)}{118}{subsection.3.3.4}% 
+\contentsline {subsection}{\numberline {3.3.5}\tmspace -\thinmuskip {.1667em}Appendix: Proof of theorem \ref {thm:hadamard=>Pol} and \ref {thm:Pol=>hadamard}}{119}{subsection.3.3.5}% 
+\contentsline {section}{\numberline {3.4}Regularity of the One Particle Scattering Operator}{136}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Geometric Construction of the Phase}{151}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}Main Result of Construction}{154}{subsection.3.5.1}% 
+\contentsline {subsection}{\numberline {3.5.2}Proofs}{155}{subsection.3.5.2}% 
+\contentsline {section}{\numberline {3.6}Simple Formula for the Scattering Operator}{190}{section.3.6}% 
+\contentsline {subsection}{\numberline {3.6.1}Defining One-Particle Scattering-Matrix}{190}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.2}Construction of the Second Quantised Scattering-Matrix}{191}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.3}Differential second quantisation}{194}{subsection.3.6.3}% 
+\contentsline {subsection}{\numberline {3.6.4}Presentation and Proof of the Formula}{210}{subsection.3.6.4}% 
+\contentsline {subsection}{\numberline {3.6.5}Quantitative Estimates}{222}{subsection.3.6.5}% 
+\contentsline {chapter}{Appendix}{241}{appendix*.47}% 
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{241}{section*.48}% 
+\contentsline {subsection}{Guessing Equations}{241}{section*.49}% 
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{244}{section*.51}% 
+\contentsline {subsection}{Solution to Recursive Equation}{252}{section*.53}% 
+\contentsline {chapter}{Bibliography}{265}{appendix*.55}% 

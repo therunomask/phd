@@ -239,6 +239,19 @@ dessen Wohldefiniertheit gezeigt.
 \mainmatter
 
 \chapter{Introduction}
+\lipsum[1]
+
+
+\begin{equation}
+  \slashed{A}:= A_\alpha \gamma^\alpha,
+\end{equation}
+where Einstein's summation convention is used. These matrices fulfil the anti-commutation relation
+\begin{equation}
+\forall \alpha, \beta \in \{0,1,2,3\}:\{\gamma^\alpha, \gamma^\beta\}:= \gamma^\alpha \gamma^\beta+ \gamma^\beta \gamma^\alpha= g^{\alpha \beta},
+\end{equation}
+where \(g\) is the Minkowski metric. I work with the \(+---\) metric signature and the Dirac representation of this algebra. Squared four dimensional objects always refer to the Minkowski square, meaning for all \(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
+
+
 
 \begin{equation}\label{dirac free}
   0= (i\slashed{\partial}-m) \phi,
@@ -3747,7 +3760,7 @@ The first step towards a theory including interactions is to allow
 for an external field \(A\) to act upon the particles, changing 
 \eqref{dirac free} to
 
-\begin{equation}\label{dirac}
+\begin{equation}\label{dirac ext field}
   0= (i\slashed{\partial}-e\slashed{A}-m ) \psi.
 \end{equation}
 
@@ -3902,7 +3915,15 @@ Since there are infinitely many particles in the wedge
 product of \(\Omega\) and there is no mechanism of suppression 
 for states of large momentum, there is no reason why the sum in 
 \eqref{pair creation prob} should converge for \(\vec{A}\neq 0\)
-and it does not, as the theorem states. 
+and it does not, as the theorem states. However, as it turns out
+there is a \(\tilde{U}^A(t_1,t_-):\mathcal{F}\righttoleftarrow\)
+whenever \(\vec{A}(t_1)=0=\vec{A}(t_0)\). This implies 
+that all those 
+infinitely many pairs created by the spacial parts of the 
+vector potential \(A\) vanish again together with those parts of 
+\(A\), which is a justification for the term ``virtual pairs''
+employed by physicists. 
+
 As we can read off of our construction of Fock space, this space 
 consists of infinite wedge products that are sufficiently close 
 to the initial state \(\Omega\). We just found out that, 
@@ -3913,71 +3934,53 @@ to the later ones. It would be enough to adapt the choice of
 space at later times to the external field present at that time. 
 These spaces will in general not give a physically meaningful 
 distinction between electrons and parts of the Dirac sea. 
-Such distinction may have to wait 
+Such a distinction may have to wait 
 for a full interacting theory of QED, where it may be given 
 in terms of ground states or states homogeneous and isotropic 
 enough such that excitations above it behave effectively free. 
 However, such a distinction is not necessary to answer 
 physical questions such as which currents are 
 induced by strong external fields or how Maxwell's 
-equations are modified.  
+equations are modified by those currents.  
 
 In the last decade progress has been made to construct 
-the evolution operator formulate external 
+the evolution operator of external 
 field QED mapping states of one Fock space to another and 
 to identify the remaining freedom of picking Fock spaces 
 at each hypersurface or point in time. The results generalise 
 theorems \ref{thm ruisnaar} and \ref{thm shale stinepsirng}
 in a way that exposes the gauge and relativistic invariance 
-inherent to the problem under consideration, which was no 
-longer obvious in the original versions. 
-
-%also path independence!
-
-
-
-
-%
-%connect 
-%
-%
-%
-%
-%
-%
-%
-%
-%
-
+inherent to the problem, which is not apparent 
+in the original versions. In order to state those theorems 
+we need some mathematical notation which we introduce first.
 
 
 \section{Introduction}
 
-
-Throughout this chapter the class of four potentials we shall be 
+This section will first introduce some notation of 
+\cite{ivp0,ivp1,ivp2,deckert2016perspective} in order to 
+state the results of \cite{ivp2} and prepare for the sections 
+to come. While doing so we will closely follow 
+\cite{deckert2016perspective}.
+Throughout this chapter the class of four potentials we 
+shall be 
 interested in is 
-
 \begin{equation}
   \mathcal{V}:= C_c^\infty(\mathbb{R}^4,\mathbb{R}^4).
 \end{equation}
+All of the results could be extended with a reasonable 
+amount of additional work to slightly more general 
+four-potentials, but not to physically realistic ones such as 
+the Coulomb potential.  
 
-
-
-
-
-
-\begin{equation}
-  \slashed{A}:= A_\alpha \gamma^\alpha,
-\end{equation}
-where Einstein's summation convention is used. These matrices fulfil the anti-commutation relation
-\begin{equation}
-\forall \alpha, \beta \in \{0,1,2,3\}:\{\gamma^\alpha, \gamma^\beta\}:= \gamma^\alpha \gamma^\beta+ \gamma^\beta \gamma^\alpha= g^{\alpha \beta},
-\end{equation}
-where \(g\) is the Minkowski metric. I work with the \(+---\) metric signature and the Dirac representation of this algebra. Squared four dimensional objects always refer to the Minkowski square, meaning for all \(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
+Any notion of time evolution in a relativistic setting needs to 
+generalise the notion of simultaneity. For this reason we 
+introduce Cauchy surfaces as follows.
 
 
 \begin{Def}
-  We define a Cauchy surface \(\Sigma\) in \(\mathbb{R}^4\) to be a smooth, 3-dimensional submanifold of \(\mathbb{R}^4\) that fulfills
+  A Cauchy surface \(\Sigma\subset \mathbb{R}^4\) is a smooth, 
+  3-dimensional submanifold of \(\mathbb{R}^4\) that fulfills
   the following three conditions:
   \begin{enumerate}[label=\alph*)]
   \item Every inextensible, two-sided, time- or light-like, continuous path in \(\mathbb{R}^4\) intersects \(\Sigma\) in a unique point.
@@ -3987,41 +3990,39 @@ where \(g\) is the Minkowski metric. I work with the \(+---\) metric signature a
   \end{enumerate}
 \end{Def}
 
-  In coordinates, every Cauchy surface \(\Sigma\) can be parametrised as
+For every Cauchy surface \(\Sigma\) there is a parametrisation
 \begin{equation}
-\Sigma= \{ \pi_\Sigma(\vec{x}):=(t_\Sigma(\vec{x}),\vec{x})\mid \vec{x}\in\mathbb{R}^3\}
+\Sigma= \{ \pi_\Sigma(\vec{x}):=(t_\Sigma(\vec{x}),\vec{x})\mid \vec{x}\in\mathbb{R}^3\},
 \end{equation}
-with a smooth function \(t_\Sigma: \mathbb{R}^3\rightarrow \mathbb{R}\). For convenience and without restricting generality of our results we keep a global constant 
-\begin{equation}
-0<V_{\max}<1
-\end{equation}
-fixed and work only with Cauchy surfaces \(\Sigma\) such that 
-\begin{equation}\label{gamma max}
-\sup_{\vec{x}\in\mathbb{R}^3} |\mathrm{grad}~ t_\Sigma( \vec{x})|<V_{\max}.
-\end{equation}
-
-The standard volume form over \(\mathbb{R}^4\) is denoted by \(d^4x=dx^0dx^1dx^2dx^3\); the product of forms is understood as wedge product. The symbol \(d^3x\) 
-mean the 3-form \(d^3x=dx^1dx^2dx^3\) on \(\mathbb{R}^4\) and on \(\mathbb{R}^3\) respectively. Contraction of a form \(\omega\) with a vector \(v\) is
-denoted by \(i_v(\omega)\). The notation \(i_v(\omega)\) is also used for the spinor matrix valued 
-vector \(\gamma= (\gamma^0,\gamma^1,\gamma^2,\gamma^3)=\gamma^\mu e_\mu\):
+with a smooth function 
+\(t_\Sigma: \mathbb{R}^3\rightarrow \mathbb{R}\). 
+Agreeing with standard notation, 
+\(d^4x=dx^0dx^1dx^2dx^3\) denotes the standard volume form over 
+\(\mathbb{R}^4\),
+where the product of forms is 
+the wedge product. By \(d^3x\) we denote 
+the form \(d^3x=dx^1dx^2dx^3\) both on \(\mathbb{R}^4\) and 
+on \(\mathbb{R}^3\). When contracting a form 
+\(\omega\) with a vector \(v\) we 
+will be denoting this by \(i_v(\omega)\). 
+We will keep writing \(i_v(\omega)\) 
+also for the spinor matrix valued 
+vector \(\gamma= (\gamma^0,\gamma^1,\gamma^2,\gamma^3)
+=\gamma^\mu e_\mu\):
 
 \begin{equation}
 i_\gamma(d^4x)=\gamma^\mu i_{e_\mu}(d^4x).
 \end{equation}
 
-For \(x\in \Sigma\) the restriction of the spinor matrix valued 3-form \(i_\gamma(d^4x)\) to the tangential space \(T_x\Sigma\) is given by
+For any \(x\in \Sigma\) restricting the 
+3-form \(i_\gamma(d^4x)\) to the tangent space 
+\(T_x\Sigma\) results in 
 \begin{equation}
-i_\gamma(d^4x)=\slashed{n}(x)i_n(d^4x)= \left(\gamma^0-\sum_{\mu=1}^3 \gamma^\mu \frac{\partial t_\Sigma (\vec{x})}{\partial x^\mu}\right) d^3x=:\Gamma(\vec{x})d^3x
+i_\gamma(d^4x)=\slashed{n}(x)i_n(d^4x)= \left(\gamma^0-\sum_{\mu=1}^3 \gamma^\mu \frac{\partial t_\Sigma (\vec{x})}{\partial x^\mu}\right) d^3x=:\Gamma(\vec{x})d^3x.
 \end{equation}
 
-As a consequence of \eqref{gamma max}, there is a positive constant \(\Gamma_{\max}=\Gamma_{\max}(V_{\max})\) such that
-\begin{equation}
-\|\Gamma(\vec{x})\| \le \Gamma_{\max}, \quad \forall \vec{x}\in\mathbb{R}^3.
-\end{equation}
-
-
-As is well known equation \eqref{dirac} gives us a 
-one-particle time evolution operator for each pair of Cauchy surfaces \(\Sigma, \Sigma'\)
+As is well known equation \eqref{dirac ext field} gives us a 
+one-particle evolution operator for each pair of Cauchy surfaces \(\Sigma, \Sigma'\)
 \begin{equation}
 U_{\Sigma',\Sigma}:\mathcal{H}_\Sigma \rightarrow \mathcal{H}_{\Sigma'},
 \end{equation}
@@ -6539,7 +6540,8 @@ from lemma \ref{lem: phi global}.
 \end{proof}
 
 
-%\begin{Remark}
+\todo{move this to after the simple formula to say something about analyticity}
+\begin{Remark}
 %The lift \(\hat{S}_{0,A}\) can also be calculated differently: pick \(N\in\mathbb{N}\) and a series \((\delta_k)_{k\in\mathbb{N}}\subset \mathbb{R}^+\)
 % such that \(\|\mathds{1}-S_{\sum_{k=1}^{n-1}\delta_k A,\sum_{k=1}^{n}\delta_k A}\|<1\)  holds true for all \(k\) and \(\sum_{k=1}^{N}\delta_k=1\). 
 %Then 
@@ -6549,9 +6551,10 @@ from lemma \ref{lem: phi global}.
 %P^-S_{\sum_{k=1}^{n-1}\delta_k A,\sum_{k=1}^{n}\delta_k A}P^-
 %\end{equation}
 %is invertible. Now, 
-%\begin{equation}\label{hat finite spacing}
-%\hat{S}_{0,A}=\prod_{n=0}^{N} \overline{S}_{\sum_{k=1}^{n-1}\delta_k A,\sum_{k=1}^{n}\delta_kA}.
-%\end{equation}
+\begin{equation}\label{hat finite spacing}
+\hat{S}_{0,A}=e^{i\alpha}\prod_{n=0}^{N} \overline{S}_{\sum_{k=1}^{n-1}\delta_k A,\sum_{k=1}^{n}\delta_kA}.
+\end{equation}
+\end{Remark}
 %Before proving this claim, we notice the following property of \(\overline{S}\): For any  \(A\in\mathcal{V}\) and \(\alpha, \beta, \gamma>0\)
 % such that all factors exist the following identity holds
 %\begin{align}

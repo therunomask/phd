@@ -3682,7 +3682,7 @@ a weak sense.
 
 \chapter[Quantum Field Theoretic Approach to Interactions][Interaction in QFT]{Quantum Field Theoretic Approach to Interactions} \label{sec:QFT}
 
-\section{Motivation}
+\section{Motivation}\label{sec: mot QED}
 \todo{complete random assortment}
 \todo{arrange random assortment into something coherent}
 
@@ -3978,7 +3978,7 @@ generalise the notion of simultaneity. For this reason we
 introduce Cauchy surfaces as follows.
 
 
-\begin{Def}
+\begin{Def}[Cauchy surface, def 2.1 of \cite{deckert2016perspective}]
   A Cauchy surface \(\Sigma\subset \mathbb{R}^4\) is a smooth, 
   3-dimensional submanifold of \(\mathbb{R}^4\) that fulfills
   the following three conditions:
@@ -3990,6 +3990,7 @@ introduce Cauchy surfaces as follows.
   \end{enumerate}
 \end{Def}
 
+\begin{Def}[\(\mathcal{H}_\Sigma\), def 2.2 of \cite{deckert2016perspective}]
 For every Cauchy surface \(\Sigma\) there is a parametrisation
 \begin{equation}
 \Sigma= \{ \pi_\Sigma(\vec{x}):=(t_\Sigma(\vec{x}),\vec{x})\mid \vec{x}\in\mathbb{R}^3\},
@@ -4018,19 +4019,180 @@ For any \(x\in \Sigma\) restricting the
 3-form \(i_\gamma(d^4x)\) to the tangent space 
 \(T_x\Sigma\) results in 
 \begin{equation}
-i_\gamma(d^4x)=\slashed{n}(x)i_n(d^4x)= \left(\gamma^0-\sum_{\mu=1}^3 \gamma^\mu \frac{\partial t_\Sigma (\vec{x})}{\partial x^\mu}\right) d^3x=:\Gamma(\vec{x})d^3x.
+i_\gamma(d^4x)=\slashed{n}(x)i_n(d^4x)
+= \left(\gamma^0-\sum_{\mu=1}^3 \gamma^\mu 
+\frac{\partial t_\Sigma (\vec{x})}{\partial x^\mu}\right) d^3x
+=:\Gamma(\vec{x})d^3x.
 \end{equation}
+Being able to write a Poincaré covariant measure on Cauchy sufaces we 
+may introduce the scalar product 
+\begin{equation}
+  \phi,\psi \mapsto \int_{\Sigma} \overline{\phi}(x) i_{\gamma}(d^4\gamma) \psi(x)
+  =:\langle \phi,\psi\rangle.
+\end{equation}
+which is used to define 
+\(\mathcal{H}_{\Sigma}=L^2(\Sigma, \mathbb{C}^4)\).
+\end{Def}
 
-As is well known equation \eqref{dirac ext field} gives us a 
+As is well known equation \eqref{dirac ext field} has a 
 one-particle evolution operator for each pair of Cauchy surfaces \(\Sigma, \Sigma'\)
 \begin{equation}
 U_{\Sigma',\Sigma}:\mathcal{H}_\Sigma \rightarrow \mathcal{H}_{\Sigma'},
 \end{equation}
-where \(\mathcal{H}_\Sigma\) is the space of square integrable functions on the Cauchy surface \(\Sigma\). The scalar product on \(\mathcal{H}_\Sigma\)
-is given by
-\begin{equation}
-\phi,\psi \mapsto \int_{\Sigma} \overline{\phi}(x) i_{\gamma}(d^4\gamma) \psi(x).
+\todo{check afterwards whether  it's nicer to include the theorem 
+about existence of U}
+
+Using this covariant replacement of the standard Hilbert-space we 
+repeat the Fock space construction of section \ref{sec: mot QED} 
+in a slightly more general fashion.
+
+\begin{Def}[Fock space of generalised polarisation, def 2.4 of \cite{deckert2016perspective}]
+  Let \(\text{Pol} (\mathcal{H}_\Sigma)\) denote the set of all 
+  closed, linear subspaces \(V\subset \mathcal{H}\)
+  such that both \(V\) and \(V^\perp\) are infinite dimensional. 
+  Any \(V\in \text{Pol}(\mathcal{H}_\Sigma)\) is called 
+  \emph{polarisation} of \(\mathcal{H}_\Sigma\). For 
+  \(V\in \text{Pol}(\mathcal{H}_\Sigma)\), let 
+  \(P_\Sigma^V:\mathcal{H}_{\Sigma}\rightarrow V\) 
+  denote the orthogonal projection of \(\mathcal{H}_\Sigma\) onto 
+  \(V\).
+  The Fock space corresponding to \(V\) on the Cauchy surface 
+  \(\Sigma\) is defined to be
+  \begin{equation}
+  \mathcal{F}(V,\mathcal{H}_\Sigma) := \bigoplus_{c\in\mathbb{Z}} \mathcal{F}_c (V,\mathcal{H}_\Sigma), \quad 
+  \mathcal{F}_c(V,\mathcal{H}_\Sigma):= \bigoplus_{\overset{n,m\in\mathbb{N}_0}{c=m-n}}(V^\perp)^{\wedge n} \otimes \overline{V}^{\wedge m},
+  \end{equation}
+  
+  where \(\bigoplus\) is the Hilbert space direct sum, \(\wedge\) 
+  the antisymmetric tensor product of Hilbert spaces and 
+  \(\overline{V}\) is the conjugate complex vector space of 
+  \(V\), introduced in section \ref{sec: mot QED}.
+\end{Def}
+
+Pick Cauchy surfaces \(\Sigma, \Sigma'\) and polarisations 
+\(V\in \text{Pol}(\mathcal{H}_\Sigma) \),
+\(V'\in \text{Pol}(\mathcal{H}_{\Sigma'}) \)
+then we can 
+give the analogue of \eqref{intro lift condition} in 
+this setting: for all \(\psi \in \mathcal{H}_{\Sigma}\)
+
+\begin{equation}\label{lift condition creation}
+  \tilde{U}^A_{V',\Sigma'; V,\Sigma} a_\Sigma^*(\psi)
+  =a^*_{\Sigma'}(U^A_{\Sigma',\Sigma}\psi )\tilde{U}^A_{V',\Sigma';V,\Sigma}.
 \end{equation}
+holds, where \(a^*_{\Sigma'}\) and \(a^*_{\Sigma}\) are the 
+creation operator associated to 
+\(\mathcal{F}(V,\mathcal{H}_{\Sigma})\) and 
+\(\mathcal{F}(V',\mathcal{H}_{\Sigma'})\) respectively. 
+
+The rephrasing of theorem \ref{thm shale stinepsirng} 
+adapted to the more general notation we have adapted now is
+\begin{Thm}[\cite{ivp2}, also Cor 2.5 of \cite{deckert2016perspective})]
+Let \(\Sigma, \Sigma'\) be Cauchy surfaces, 
+\(V\in \text{Pol}(\mathcal{H}_\Sigma)\), and 
+\(V'\in \text{Pol}(\mathcal{H}_{\Sigma'})\) be polarisations. 
+Then the following two statements are equivalent:
+\begin{enumerate}[label=\alph*)]
+\item There is a unitary operator 
+\(\tilde{U}^A_{V',\Sigma';V, \Sigma}:
+\mathcal{F}(V,\Sigma)\rightarrow \mathcal{F}(V',\Sigma')\)
+that satisfies \eqref{lift condition creation}
+\item The operators 
+\(P^{{V'}\perp}_{\Sigma'}U^A_{\Sigma'.\Sigma}P^{{V}}_{\Sigma}\) and
+\(P^{{V'}}_{\Sigma'}U^A_{\Sigma'.\Sigma}P^{{V}^\perp}_{\Sigma}\) are 
+Hilbert-Schmidt operators.
+\end{enumerate}
+\end{Thm}
+
+So the question given an initial state in an initial Fock space 
+\(\mathcal{F}(V,\Sigma)\),
+which Fock space we may pick at a final Cauchy surface \(\Sigma'\)
+such that there is a lift fulfilling \eqref{lift condition creation}
+now becomes a question of polarisations. We know a priori 
+that \(U^A_{\Sigma',\Sigma}\) has a lift from 
+\(\mathcal{F}(V,\Sigma)\) to 
+\(\mathcal{F}(U^A_{\Sigma',\Sigma}V,\Sigma')\). Furhtermore, we have a 
+distinguished polarisation for very early times. Thus, we may 
+characterize all relevant polarisation classes into the following
+equivalence classes 
+
+\begin{Def}[polarisation classes, def 2.6 of \cite{deckert2016perspective}]\label{def pol class}
+For a Cauchy surface \(\Sigma\) and a potential \(A\in\mathcal{V}\) 
+we define 
+\begin{equation}
+C_{\Sigma}(A):=\big\{W\in\text{Pol}(\mathcal{H}_\Sigma)\mid 
+W \approx U^A_{\Sigma,\Sigma_{\mathrm{in}}}\mathcal{H}^-_{\Sigma_{\mathrm{in}}}\big\},
+\end{equation}
+where \(\Sigma_{\mathrm{in}}\) is a Cauchy surface earlier than \(\supp A\)
+and for \(V,V'\in\text{Pol}(\mathcal{H}_{\Sigma})\) we may write \(V\approx V'\)
+whenever \(P^V_{\Sigma}-P^{V'}_{\Sigma}\) is a Hilbert-Schmidt operator. 
+\end{Def}
+
+Using this we immediately find 
+\begin{Corollary}[polarisation classes and lifts, cor 2.7 of \cite{deckert2016perspective}]
+Let \(\Sigma, \Sigma'\) be Cauchy surfaces and 
+\(V\in C_\Sigma(A), V'\in \text{Pol}(\mathcal{H}_{\Sigma'})\) be 
+polarisations. Then there is a unitary operator 
+\(\tilde{U}^A_{V',\Sigma'; V,\Sigma}:\mathcal{F}(V,\Sigma)
+\rightarrow \mathcal{F}(V',\Sigma')\) satisfying 
+\eqref{lift condition creation} if and only if 
+\(V'\in C_{\Sigma'}(A)\).
+\end{Corollary}
+
+The definition \eqref{def pol class} suggests a dependence of 
+\(C_{\Sigma}(A)\) on all of \(A\) as a function of time. 
+As indicated in the last section,
+this is not the case.
+
+\begin{Thm}[\(C_{\Sigma}(A)\) depends on \(A|_{T\Sigma}\), thm. 1.5 of \cite{ivp2}]
+Pick a Cauchy surface \(Sigma\) and \(A,A'\in \mathcal{V}\). 
+Then we have 
+\begin{equation}
+  C_{\Sigma}(A)=C_{\Sigma}(A') \iff A|_{T\Sigma}=A'|_{T\Sigma},
+\end{equation}
+where \(A|_{T\Sigma}=A'|_{T\Sigma}\) means that for all \(x\in \Sigma\)
+and \(y\in T_x\Sigma\) the relation 
+\(A_\mu(x) y^\mu=A_\mu'(x) y^\mu\) holds. 
+\end{Thm}
+
+This is aversion of theorem \ref{thm ruisnaar} for general 
+Cauchy surfaces.
+The next theorem will show how the polarisation classes change 
+with the gauge and Lorentz transforms.
+
+\begin{Thm}[transformation of polarisation classes, thm. 1.6 of \cite{ivp2}]
+Let \(A\in\mathcal{V}\) be a four-potential and and \(\Sigma\) 
+a Cauhcy surface.
+
+\begin{enumerate}[label=\alph*)]
+\item Pick \((S,\Lambda)\in \mathbb{C}^{4\times 4}\times \mathrm{SO}^{\uparrow}(1,3)\)
+be an orthochronous Lorentz transform, i.e. the tuple fulfills
+\(\Lambda^{\mu}_{\, \sigma}g_{\mu \nu}\Lambda^\nu_{\, \tau}=g_{\sigma, \tau}\) 
+and \(\quad \Lambda^\mu_{\, \nu}\gamma^\nu = S^{-1} \gamma^\mu S\) 
+and has anatural action on wavefunctions (see sec. 2.3 of \cite{ivp1}). 
+Then we have
+\begin{equation}
+V\in C_{\Sigma}(A) \iff (S,\Lambda)V \in C_{\lambda \Sigma}(\Lambda A (\lambda^{-1}\cdot)).
+\end{equation}
+\item Let \(A'=A+d\Gamma\) be the gauge transformed potential, 
+for some \(\Gamma \in C_c^\infty(\mathbb{R}^4,\mathbb{R})\). Then
+the gauge transformation acts on wavefunctions as 
+\(e^{-i\Gamma}:\mathcal{H}_{\Sigma}\righttoleftarrow,\psi\mapsto e^{-i\Gamma}\psi\)
+and one obtains 
+\begin{equation}
+V\in C_{\Sigma}(A) \iff e^{-i\Gamma}V \in C_{\Sigma}(A+d\Gamma).
+\end{equation}
+\end{enumerate}
+\end{Thm}
+
+A key ingredient in the proofs of the last few theorems was 
+a particular operator \(P^A_\Sigma\) which is Hilbert-Schmidt
+close to a projector. This operator is also examined in 
+this thesis in section \ref{sec: hadamard}, 
+see definition \ref{def:lambda}.
+
+
+
 
 
 \todo{thorough introduction to Franz and Dirk stuff for handling the geometry part as independent chapter, 
@@ -4038,7 +4200,7 @@ orientiere dich an perspective of external field qed paper}
 
 
 
-\section{The Relationship Between Hadamard States and Admissible Polarisation Classes}
+\section{The Relationship Between Hadamard States and Admissible Polarisation Classes}\label{sec: hadamard}
 
 
 
@@ -4268,46 +4430,7 @@ agree with the Minkowski vacuum up to smooth terms.
 
 
 
-\begin{Def}
-Let \(\text{Pol} (\mathcal{H}_\Sigma)\) denote the set of all closed, linear subspaces \(V\subset \mathcal{H}\)
-such that both \(V\) and \(V^\perp\) are infinite dimensional. Any \(V\in \text{Pol}(\mathcal{H}_\Sigma)\) is called 
-\emph{polarisation} of \(\mathcal{H}_\Sigma\). For \(V\in \text{Pol}(\mathcal{H}_\Sigma)\), let \(P_\Sigma^V:\mathcal{H}_{\Sigma}\rightarrow V\) 
-denote the orthogonal projection of \(\mathcal{H}_\Sigma\) onto \(V\).
-The Fock space corresponding to \(V\) on the Cauchy surface \(\Sigma\) is defined to be
-\begin{equation}
-\mathcal{F}(V,\mathcal{H}_\Sigma) := \bigoplus_{c\in\mathbb{Z}} \mathcal{F}_c (V,\mathcal{H}_\Sigma), \quad 
-\mathcal{F}_c(V,\mathcal{H}_\Sigma):= \bigoplus_{\overset{n,m\in\mathbb{N}_0}{c=m-n}}(V^\perp)^{\wedge n} \otimes \overline{V}^{\wedge m},
-\end{equation}
-
-where \(\bigoplus\) is the Hilbert space direct sum, \(\wedge\) the antisymmetric tensor product of Hilbert spaces and 
-\(\overline{V}\) is the conjugate complex vector space of \(V\), which coincides with \(V\) as a set, has the same vector 
-space operations as \(V\) except for scalar multiplication, which is defined by \((z,\psi)\mapsto z^* \psi\) for 
-\(z\in\mathbb{C},\psi\in V\).
-\end{Def}
-
-\begin{Remark}\label{WhyUseApprox}
-Given two polarisations \(V,W\in \text{Pol}(\mathcal{H}_\Sigma)\), for two Fock spaces \(\mathcal{F}(V,\mathcal{H}_\Sigma)\) and 
-\(\mathcal{F}(W,\mathcal{H}_\Sigma)\) there is a unitary operator \(U: \mathcal{F}(V,\mathcal{H}_\Sigma) \rightarrow \mathcal{F}(W,\mathcal{H}_\Sigma\)
-if and only if \(P^V_\Sigma - P^W_\Sigma \in I_2(\mathcal{H}_\Sigma)\) by the theorem of Shale and Stinespring 
-\cite{shale1965spinor}.
-\end{Remark}
-Remark \ref{WhyUseApprox} gives us a natural limit with 
-respect to which it is useful
-to analyse the regularity of Projectors \(P_\Sigma^A\). We will therefore be content with the following equivalence class.
-\begin{Def}
-For \(V,W\in \text{Pol}(\mathcal{H}_\Sigma)\) we write
-\begin{equation}
-V\approx W \iff P^V_\Sigma - P^W_\Sigma \in I_2(\mathcal{H}_\Sigma),
-\end{equation}
-\begin{equation}
-C_\Sigma (A):= [ U_{\Sigma \Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_{\text{in}}}^-]_\approx.
-\end{equation}
-\end{Def}
-
-
-The equivalence class \(C_\Sigma(A)\) transforms naturally with respect to gauge and Lorentz transforms\cite{ivp2}. 
-Now for hyperplanes \(\Sigma\cap \text{supp}(A)\neq \emptyset\) the operator \(P^{\mathcal{H}^-}_{\Sigma} \) does not represent
-\(C_\Sigma(A)\). Because all we are interested in is representations of equivalence classes, we are content with finding
+Because all we are interested in is representations of equivalence classes, we are content with finding
 objects that differ from a Projector onto \(U_{\Sigma,\Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_in}^-\) by a Hilbert-Schmidt operator.
 Therefore we need not keep track of the exact evolution of the projection operators, but define a whole class of admissible ones.
 

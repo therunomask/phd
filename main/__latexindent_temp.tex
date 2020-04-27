@@ -3962,7 +3962,7 @@ This section will first introduce some notation of
 state the results of \cite{ivp2} and prepare for the sections 
 to come. While doing so we will closely follow 
 \cite{deckert2016perspective}.
-Throughout this chapter the class of four potentials we 
+Throughout the whole chapter the class of four potentials we 
 shall be 
 interested in is 
 \begin{equation}
@@ -4073,12 +4073,13 @@ Pick Cauchy surfaces \(\Sigma, \Sigma'\) and polarisations
 \(V\in \text{Pol}(\mathcal{H}_\Sigma) \),
 \(V'\in \text{Pol}(\mathcal{H}_{\Sigma'}) \)
 then we can 
-give the analogue of \eqref{intro lift condition} in 
+give the analogue of the lift condition  
+\eqref{intro lift condition} in 
 this setting: for all \(\psi \in \mathcal{H}_{\Sigma}\)
 
 \begin{equation}\label{lift condition creation}
   \tilde{U}^A_{V',\Sigma'; V,\Sigma} a_\Sigma^*(\psi)
-  =a^*_{\Sigma'}(U^A_{\Sigma',\Sigma}\psi )\tilde{U}^A_{V',\Sigma';V,\Sigma}.
+  =a^*_{\Sigma'}(U^A_{\Sigma',\Sigma}\psi )\tilde{U}^A_{V',\Sigma';V,\Sigma},
 \end{equation}
 holds, where \(a^*_{\Sigma'}\) and \(a^*_{\Sigma}\) are the 
 creation operator associated to 
@@ -4086,7 +4087,7 @@ creation operator associated to
 \(\mathcal{F}(V',\mathcal{H}_{\Sigma'})\) respectively. 
 
 The rephrasing of theorem \ref{thm shale stinepsirng} 
-adapted to the more general notation we have adapted now is
+adapted to the more general notation we have developed now is
 \begin{Thm}[\cite{ivp2}, also Cor 2.5 of \cite{deckert2016perspective})]
 Let \(\Sigma, \Sigma'\) be Cauchy surfaces, 
 \(V\in \text{Pol}(\mathcal{H}_\Sigma)\), and 
@@ -4111,8 +4112,9 @@ such that there is a lift fulfilling \eqref{lift condition creation}
 now becomes a question of polarisations. We know a priori 
 that \(U^A_{\Sigma',\Sigma}\) has a lift from 
 \(\mathcal{F}(V,\Sigma)\) to 
-\(\mathcal{F}(U^A_{\Sigma',\Sigma}V,\Sigma')\). Furhtermore, we have a 
-distinguished polarisation for very early times. Thus, we may 
+\(\mathcal{F}(U^A_{\Sigma',\Sigma}V,\Sigma')\). Furthermore, we have a 
+distinguished polarisation for very early times, namely the negative 
+energy states with respect to the free Hamiltonian. Thus, we may 
 characterize all relevant polarisation classes into the following
 equivalence classes 
 
@@ -4129,7 +4131,7 @@ whenever \(P^V_{\Sigma}-P^{V'}_{\Sigma}\) is a Hilbert-Schmidt operator.
 \end{Def}
 
 Using this we immediately find 
-\begin{Corollary}[polarisation classes and lifts, cor 2.7 of \cite{deckert2016perspective}]
+\begin{Corollary}[polarisation classes and lifts, cor 2.7 of \cite{deckert2016perspective}]\label{cor: pol class lift}
 Let \(\Sigma, \Sigma'\) be Cauchy surfaces and 
 \(V\in C_\Sigma(A), V'\in \text{Pol}(\mathcal{H}_{\Sigma'})\) be 
 polarisations. Then there is a unitary operator 
@@ -4144,8 +4146,8 @@ The definition \eqref{def pol class} suggests a dependence of
 As indicated in the last section,
 this is not the case.
 
-\begin{Thm}[\(C_{\Sigma}(A)\) depends on \(A|_{T\Sigma}\), thm. 1.5 of \cite{ivp2}]
-Pick a Cauchy surface \(Sigma\) and \(A,A'\in \mathcal{V}\). 
+\begin{Thm}[\(C_{\Sigma}(A)\) depends on \(A|_{T\Sigma}\), thm. 1.5 of \cite{ivp2}]\label{thm: pol class history}
+Pick a Cauchy surface \(\Sigma\) and \(A,A'\in \mathcal{V}\). 
 Then we have 
 \begin{equation}
   C_{\Sigma}(A)=C_{\Sigma}(A') \iff A|_{T\Sigma}=A'|_{T\Sigma},
@@ -4155,24 +4157,24 @@ and \(y\in T_x\Sigma\) the relation
 \(A_\mu(x) y^\mu=A_\mu'(x) y^\mu\) holds. 
 \end{Thm}
 
-This is aversion of theorem \ref{thm ruisnaar} for general 
+This is a version of theorem \ref{thm ruisnaar} for general 
 Cauchy surfaces.
 The next theorem will show how the polarisation classes change 
 with the gauge and Lorentz transforms.
 
-\begin{Thm}[transformation of polarisation classes, thm. 1.6 of \cite{ivp2}]
+\begin{Thm}[transformation of polarisation classes, thm. 1.6 of \cite{ivp2}]\label{thm: pol class transform}
 Let \(A\in\mathcal{V}\) be a four-potential and and \(\Sigma\) 
-a Cauhcy surface.
+a Cauchy surface.
 
 \begin{enumerate}[label=\alph*)]
-\item Pick \((S,\Lambda)\in \mathbb{C}^{4\times 4}\times \mathrm{SO}^{\uparrow}(1,3)\)
+\item Let \((S,\Lambda)\in \mathbb{C}^{4\times 4}\times \mathrm{SO}^{\uparrow}(1,3)\)
 be an orthochronous Lorentz transform, i.e. the tuple fulfills
 \(\Lambda^{\mu}_{\, \sigma}g_{\mu \nu}\Lambda^\nu_{\, \tau}=g_{\sigma, \tau}\) 
 and \(\quad \Lambda^\mu_{\, \nu}\gamma^\nu = S^{-1} \gamma^\mu S\) 
-and has anatural action on wavefunctions (see sec. 2.3 of \cite{ivp1}). 
+and acts on wavefunctions as \(\psi\mapsto S\psi(\Lambda^{-1}\cdot)\) (see sec. 2.3 of \cite{ivp1}). 
 Then we have
 \begin{equation}
-V\in C_{\Sigma}(A) \iff (S,\Lambda)V \in C_{\lambda \Sigma}(\Lambda A (\lambda^{-1}\cdot)).
+V\in C_{\Sigma}(A) \iff (S,\Lambda)V \in C_{\Lambda \Sigma}(\Lambda A (\Lambda^{-1}\cdot)).
 \end{equation}
 \item Let \(A'=A+d\Gamma\) be the gauge transformed potential, 
 for some \(\Gamma \in C_c^\infty(\mathbb{R}^4,\mathbb{R})\). Then
@@ -4185,13 +4187,45 @@ V\in C_{\Sigma}(A) \iff e^{-i\Gamma}V \in C_{\Sigma}(A+d\Gamma).
 \end{enumerate}
 \end{Thm}
 
+Theorems \ref{thm: pol class transform}, \ref{thm: pol class history}
+and corollary \ref{cor: pol class lift} makes clear in which way
+the original plan to work in a single Fock space was misguided and 
+how it may be adapted to make it work.
+
+When trying to construct an evolution from a Cauchy surface \(\Sigma\)
+to a second one \(\Sigma'\) subject to an external field \(A\),
+one has to choose an initial polarisation \(V\in C_{\Sigma}(A)\)
+and a final polarisation \(V'\in C_{\Sigma'}(A)\). 
+Then there is an evolution operator 
+\(\tilde{U}^A_{V',\Sigma';V,\Sigma}\), unique up to a phase. 
+Picking polarisations is akin to picking a patch 
+of coordinates on a 
+nontrivial manifold, in the sense that there may not be a 
+canonical choice and the choice is going to influence the 
+representation of all the relevant objects. Nevertheless,
+one can obtain valuable information from calculations done 
+with respect to one such choice and always transform the 
+results to the representation induced by any other choice. 
+Carrying out such a procedure will  for every 
+\(\Phi\in \mathcal{F}(V,\Sigma)\) and 
+\(\Psi\in \mathcal{F}(V',\Sigma')\) result in finite 
+transition probabilities
+\(|\langle \Psi, \tilde{U}^A_{V',\Sigma',V,\Sigma} \Phi\rangle |^2\)
+without the need for renormalisation. 
+
 A key ingredient in the proofs of the last few theorems was 
 a particular operator \(P^A_\Sigma\) which is Hilbert-Schmidt
 close to a projector. This operator is also examined in 
 this thesis in section \ref{sec: hadamard}, 
 see definition \ref{def:lambda}.
 
-
+To make the discussion more concrete, we are going to 
+introduce a particular representation of the Fock spaces 
+and evolution operators discussed so far. This representation 
+is heavily inspired by Diracs orignal idea discussed in section 
+\ref{sec: mot QED} and is usually referred to as inifinite
+spaces. For furhter details please have a look at section 2 of 
+\cite{ivp0}.  
 
 
 

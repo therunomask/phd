@@ -29,6 +29,7 @@
 \usepackage{lipsum}
 
 
+
 %commutative diagram
 \usepackage{amsmath,amscd}
 %picture
@@ -4225,7 +4226,166 @@ and evolution operators discussed so far. This representation
 is heavily inspired by Diracs orignal idea discussed in section 
 \ref{sec: mot QED} and is usually referred to as inifinite
 spaces. For furhter details please have a look at section 2 of 
-\cite{ivp0}.  
+\cite{ivp0}. 
+
+The basic idea behind this representation is a generalisation of 
+the following point of view of the scalar product of finitely many 
+fermions but works for any Hilbert space \(\mathcal{H}\). 
+Pick \(N\in\mathbb{N}\) and two states 
+\(\mathsf{\Lambda}\Psi,\mathsf{\Lambda}\Phi\in \mathcal{H}^{\wedge N}\) that can be written 
+as the wedge product of \(N\) wavefunctions
+
+\begin{align}
+  \mathsf{\Lambda}\Psi= \psi_1\wedge \dots \psi_N\\
+  \mathsf{\Lambda}\Phi=\phi_1\wedge \dots \phi_N,
+\end{align}
+then the standard scalar product \(\langle \Psi,\Phi\rangle\)
+in \(\mathcal{H}^{\wedge N}\) can be written as a determinant
+\begin{equation}\label{wedge space scalar product}
+  \det_{\mathbb{R}^N} (\Psi^* \Phi),
+\end{equation}
+where \(\Phi\) and \(\Psi\) are interpreted to be linear maps
+of type \(\mathbb{R}^N\rightarrow \mathcal{H}\) 
+\begin{align}
+  \forall k: \Psi: e_k \mapsto \psi_k\\
+  \forall k: \Phi: e_k \mapsto \phi_k
+\end{align}
+where \((e_k)_{k\in\{1,\dots, N\}}\) is an ONB 
+of \(\mathbb{R}^N\) and the star denotes the adjoint. Non 
+product states first have to be decomposed into a sum of 
+product states, then the determinant is continued to be 
+linear in the left and right factor. Replacing 
+\(\mathbb{R}^N\) by an index space \(\ell\), e.g. \(l^2(\mathbb{N})\)
+the space of square summable sequences,  and
+using the Fredholm 
+determinant this particular 
+representation of the scalar product of \(\mathcal{H}^N\)
+can be directly generalized to an infinite number of particles. 
+Where now product states \(\Phi\) can be thought of as maps
+\begin{equation}
+  \Phi: \ell \rightarrow \mathcal{H}, e_k\mapsto \varphi_k.
+\end{equation}
+Such maps will be called \emph{Dirac seas}.
+The corresponding wedge product can be thought of as 
+\begin{equation}
+  \mathsf{\Lambda}\Phi=\varphi_1\wedge \varphi_2\dots .
+\end{equation}
+However, as only operators on an infinite dimensional 
+Vector space \(\mathcal{\ell}\) in the set \(1+I_1(\mathcal{\ell})\) 
+have a Fredholm determinant only Dirac seas 
+\(\Phi,\Psi: \ell \rightarrow \mathcal{H}\) satisfying
+\begin{equation}\label{wedge space condition}
+\Psi^*\Phi,\Psi^*\Psi,\Phi^*\Phi\in 1+I_1(\ell)
+\end{equation}
+have a scalar product. 
+Starting with one particular 
+infinite wedge product \(\mathsf{\Lambda}\Phi\) and collecting all infinite 
+wedge products \(\mathsf{\Lambda}\Psi\) such that \eqref{wedge space condition}
+if fulfilled and taking the completion with respect to 
+the pairing \eqref{wedge space scalar product} results in 
+what referred to as infinite wedge space 
+\(\mathcal{F}_{\mathsf{\Lambda} \Phi}\). For a rigorous construction 
+please have a look at \cite[section 2.1]{ivp0}. 
+
+It is worth noticing here, that if one starts from some other
+inifinite wedge product \(\mathsf{\Lambda}\Psi\) such that 
+\(\Phi^*\Psi \in 1+I_1(\ell)\) to construct 
+\(\mathcal{F}_{\mathsf{\Lambda} \Psi}\) one finds 
+\(\mathcal{F}_{\mathsf{\Lambda} \Psi}=\mathcal{F}_{\mathsf{\Lambda} \Phi}\),
+so there is no unique vacuum state in the infinite wedge space.
+Pick a second Hilbert space \(\mathcal{H}'\) and some unitary 
+operator \(U:\mathcal{H}\rightarrow \mathcal{H}'\), which 
+can be thought of as \(U^A_{\Sigma',\Sigma}\). Next we define 
+the operation form the left of \(U\) by 
+\begin{align}
+  \mathcal{L}_{U}:\mathcal{F}_{\mathsf{\Lambda}\Phi}&\rightarrow \mathcal{F}_{\mathsf{\Lambda}U\Phi}, \\
+  \mathcal{L}_U \mathsf{\Lambda}\Psi= \mathsf{\Lambda}U\Psi&= (U\psi_1)\wedge (U\psi_2)\wedge\dots, 
+\end{align}
+where \(\Psi:\ell\rightarrow \mathcal{H}\) satisfies 
+\(\Psi^*\Phi\in 1+I_1(\ell)\). The operator \(\mathcal{L}_U\)
+is a lift of \(U\) in the sense of equation 
+\eqref{lift condition creation} and maps one Fock space 
+to another. 
+The resulting target space 
+\(\mathcal{F}_{\mathsf{\Lambda}U\Phi}\) is quite implicit 
+and for \(\mathcal{H}=\mathcal{H}_{\Sigma}\),
+\(\mathcal{H}'=\mathcal{H}_{\Sigma'}\) and 
+\(U=U^A_{\Sigma',\Sigma}\) in general not identical to 
+\(\mathcal{F}_{\mathsf{\Lambda}\Phi'}\) for some 
+\(\Phi':\ell \rightarrow \mathcal{H}'\) even if 
+\(\mathrm{range}(\Phi)\in C_\Sigma(A) \) and 
+\(\mathrm{range}(\Phi')\in C_{\Sigma'}(A)\) hold. 
+This shortcoming of the construction can be overcome 
+by adding an additional operation from the right.
+Let \(\Psi:\ell' \rightarrow \mathcal{H}_{\Sigma'}\) such 
+that \(\mathrm{range}(\Psi)=\mathrm{range}(\Phi')\)
+holds, then there is a unitary 
+\(R:\ell'\rightarrow \ell\) such that 
+\(\Phi'=\Psi R\). Analogously to the action from the left
+we define one from the right:
+\begin{align}
+  \mathcal{R}_{R}:\mathcal{F}_{\mathsf{\Lambda}\Psi}&\rightarrow \mathcal{F}_{\mathsf{\Lambda}\Phi'}, \\
+  \mathcal{R}_R \mathsf{\Lambda}\Phi'&= \mathsf{\Lambda}(\Phi' R),
+\end{align}
+also here the \(Phi'\) generate the infinite wedge space 
+\(\mathcal{F}_{\mathsf{\Lambda}\Psi}\). The spaces 
+\(\mathcal{F}_{\mathsf{\Lambda}\Psi}\) and 
+\(\mathcal{F}_{\mathsf{\Lambda}\Psi R}\) only coincides if 
+\(\ell'=\ell\) and
+\(R\) has a determinant, i.e. \(R\in 1+I_1(\ell)\). The next
+theorem helps us to decide when there is a unitary 
+\(R:\ell'\rightarrow \ell\) such that 
+\(\mathcal{F}_{\mathsf{\Lambda}U\Phi R}
+=\mathcal{F}_{\mathsf{\Lambda}\Phi' }\) holds. 
+\begin{Thm}[{thm. \ref{thm shale stinepsirng} for \(\mathcal{L}\) and \(\mathcal{R}\), \cite[thm. 2.26]{ivp0}, \cite[thm 3.1]{deckert2016perspective} }]\label{thm: L R shale Stinespring}
+Let \(\mathcal{H}, \ell, \mathcal{H}',\ell'\) be Hilbert spaces, 
+\(V\in\mathrm{Pol}(\mathcal{H})\) and \(V'\in\mathrm{Pol}(\mathcal{H}')\) 
+polarisations, \(\Phi:\ell\rightarrow  \mathcal{H}\) and 
+\(\Phi':\ell'\rightarrow \mathcal{H}'\) be Dirac seas 
+such that \(\mathrm{ragne}(\Phi)=V\) and \(\mathrm{ragne}(\Phi')=V'\)
+Then the following two statements are equivalent
+\begin{enumerate}[label=\alph*)]
+  \item The off diagonal operators \(P^{{V'}^\perp}U P^V\) and 
+  \(P^{V'}UP^{V^\perp}\) are Hilbert-Schmidt operators.
+  \item There is a unitary \(R:\ell\rightarrow \ell'\) such 
+  that \(\mathcal{F}_{\mathsf{\Lambda}\Phi'}=
+  \mathcal{F}_{\mathsf{\Lambda}U\Phi R}\).
+\end{enumerate}
+\end{Thm}
+
+So returning to \(\Phi:\ell\rightarrow \mathcal{H}_\Sigma\), 
+\(\Phi':\ell\rightarrow \mathcal{H}_{\Sigma'}\), 
+\(\mathrm{range}(\Phi)\in C_{\Sigma}(A),
+\mathrm{range}(\Phi')\in C_{\Sigma'}(A)\) for some 
+Cauchy surfaces \(\Sigma, \Sigma'\) and some \(A\in\mathcal{V}\),
+condition a) of the last theorem is satisfied so 
+the existence of \(R:\ell \rightarrow \ell\) 
+such that the evolution operator 
+\begin{equation}
+  \tilde{U}^A_{V',\Sigma',V,\Sigma}:\mathcal{F}_{\mathsf{\Lambda}\Phi}\rightarrow \mathcal{F}_{\mathsf{\Lambda}\Phi'},
+  \quad \tilde{U}^A_{V',\Sigma',V,\Sigma}= \mathcal{L}_{U^A_{\Sigma',\Sigma}} \circ \mathcal{R}_R
+\end{equation}
+is well-defined and unitary is ensured. 
+The operators 
+\(\mathcal{R}_R\) are unique up to a phase, see 
+\cite[Cor. 2.28]{ivp0}, as might have been expected since 
+condition \eqref{lift condition creation} allows for 
+exactly this much freedom. A simple choice of 
+\(\ell, \ell'\) that makes it possible to guess a 
+choice for \(R\) is \(\ell=\mathrm{range}(\Phi)\subseteq \mathcal{H}_\Sigma\),
+\(\ell'=\mathrm{range}(\Phi')\subseteq \mathcal{H}_{\Sigma'}\).
+As discussed in section \ref{sec: mot QED} one might hope 
+that the motion of the electrons of very negative energy
+is irrelevant for understanding excitations at the surface. 
+However, as we saw the motion of the electrons at great depth
+made it impossible to directly compare the time evolved 
+states with the original ones.
+We can use the \(R\) to revert this motion. By if the chosen 
+polarisations \(V,V'\) belong to the apropriate polarisation 
+classes \(V\in C_\Sigma(A), V'\in C_{\Sigma'}(A)\) 
+condition a) of 
+theorem \ref{thm: L R shale Stinespring} is fulfilled 
+
 
 
 

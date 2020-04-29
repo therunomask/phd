@@ -4380,17 +4380,62 @@ is irrelevant for understanding excitations at the surface.
 However, as we saw the motion of the electrons at great depth
 made it impossible to directly compare the time evolved 
 states with the original ones.
-We can use the \(R\) to revert this motion. By if the chosen 
-polarisations \(V,V'\) belong to the apropriate polarisation 
-classes \(V\in C_\Sigma(A), V'\in C_{\Sigma'}(A)\) 
+We can use the \(R\) to revert this motion.  
+So the idea is to pick \(R'= (P^{V'}U P^V)^{-1}\), but 
+this choice is not unitary. By virtue of the scalar product 
+of two infinite wedge products being a determinant and 
+the equation 
+\begin{align}\label{right op calculation}
+  \det((A R)^* B R)= \det(R^* A^* B R)
+  = \det (R R^* A^* B)\\
+  = \det (R R^*) \det (A^* B)
+  =\det ( R^* R) \det (A^* B),
+\end{align}
+is also true for bounded operators \(A,B,R\) 
+of apropriate type whenever 
+\(R\) is invertible and \(R^* R\), \(A^*B\) each have 
+a determinant. So the operation from the 
+right \(\mathcal{R}_{R'}\) may still be defined and
+a posteriori be corrected by a factor of 
+\(\sqrt{\det ( {R'}^* R')^{-1}}\) to turn 
+it into a unitary operator.
+Using
+\begin{equation}
+1= {U^A}^* U^A =(P^V+P^{V^\perp}) {U^A}^* (P^{V'}+P^{{V'}^\perp}) U^A (P^V+P^{V^\perp}),
+\end{equation}
+and splitting 
+the equation up according to the different initial and 
+target spaces,this implies 
+\begin{equation}
+  P^V {U^A}^* P^{V'}U^A P^V = 1- P^{V}{U^A}^* P^{{V'}^\perp} U^A P^{V}.
+\end{equation}
+Polarisations \(V,V'\) belonging to the apropriate polarisation 
+classes \(V\in C_\Sigma(A), V'\in C_{\Sigma'}(A)\) satisfy
 condition a) of 
-theorem \ref{thm: L R shale Stinespring} is fulfilled 
+theorem \ref{thm: L R shale Stinespring} and because 
+the product of Hilbert-Schmidt operators is traceclass
+ \({R'}^*R'\in 1 +I_1(V)\), i.e.
+has a determinant. Hence we may define 
+\begin{align}
+  &\tilde{U}^A_{V',\Sigma',V,\Sigma}:\mathcal{F}_{\mathsf{\Lambda}\Phi}\rightarrow \mathcal{F}_{\mathsf{\Lambda}\Phi'},\\
+  &\tilde{U}^A_{V',\Sigma',V,\Sigma}=\det|(P^{V'} U^A_{\Sigma',\Sigma} P^V)| \mathcal{R}_{(P^{V'} U^A_{\Sigma',\Sigma} P^V)} \circ \mathcal{L}_{U^A_{\Sigma',\Sigma}}.
+\end{align}
+Well-definedness can be checked directly, the operator
+\begin{equation}
+  {\Phi'}^* U^A_{\Sigma',\Sigma} \Phi R' 
+  =P^{V'} U{\Sigma',\Sigma} P^{V}R' 
+  = 1_{V'}
+\end{equation}
+clearly has a determinant on \(V'\). By similar 
+calculations as \eqref{right op calculation} 
+it follows that also all operators 
+\(\tilde{\Phi}'U^A_{\Sigma',\Sigma} \tilde{\Phi}R'\)
+with \(\mathsf{\Lambda}\tilde{\Phi}'\in \mathcal{F}_{\mathsf{\Lambda}\Phi'}\)
+,\(\mathsf{\Lambda}\tilde{\Phi}\in \mathcal{F}_{\mathsf{\Lambda}\Phi}\)
+have a determinant.
 
-
-
-
-\todo{thorough introduction to Franz and Dirk stuff for handling the geometry part as independent chapter, 
-orientiere dich an perspective of external field qed paper}
+So the construction of a evolution operator in external field 
+QED was successful.
 
 
 

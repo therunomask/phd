@@ -51,25 +51,26 @@
 \contentsline {chapter}{\chapternumberline {3}Quantum Field Theoretic Approach to Interactions}{101}{chapter.3}% 
 \contentsline {section}{\numberline {3.1}Motivation}{101}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Introduction}{107}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}The Relationship Between Hadamard States and Admissible Polarisation Classes}{117}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Introduction}{117}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Hadamard States}{118}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Projectors for Polarisation Classes}{122}{subsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.3.4}Comparison Between Hadamard States and \(P^\lambda _\Sigma \)}{125}{subsection.3.3.4}% 
-\contentsline {subsection}{\numberline {3.3.5}\tmspace -\thinmuskip {.1667em}Appendix: Proof of theorem \ref {thm:hadamard=>Pol} and \ref {thm:Pol=>hadamard}}{126}{subsection.3.3.5}% 
-\contentsline {section}{\numberline {3.4}Regularity of the One Particle Scattering Operator}{143}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}Geometric Construction of the Phase}{158}{section.3.5}% 
-\contentsline {subsection}{\numberline {3.5.1}Main Result of Construction}{161}{subsection.3.5.1}% 
-\contentsline {subsection}{\numberline {3.5.2}Proofs}{162}{subsection.3.5.2}% 
-\contentsline {section}{\numberline {3.6}Simple Formula for the Scattering Operator}{197}{section.3.6}% 
-\contentsline {subsection}{\numberline {3.6.1}Defining One-Particle Scattering-Matrix}{197}{subsection.3.6.1}% 
-\contentsline {subsection}{\numberline {3.6.2}Construction of the Second Quantised Scattering-Matrix}{198}{subsection.3.6.2}% 
-\contentsline {subsection}{\numberline {3.6.3}Differential second quantisation}{201}{subsection.3.6.3}% 
-\contentsline {subsection}{\numberline {3.6.4}Presentation and Proof of the Formula}{217}{subsection.3.6.4}% 
-\contentsline {subsection}{\numberline {3.6.5}Quantitative Estimates}{229}{subsection.3.6.5}% 
-\contentsline {chapter}{Appendix}{249}{appendix*.47}% 
-\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{249}{section*.48}% 
-\contentsline {subsection}{Guessing Equations}{249}{section*.49}% 
-\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{252}{section*.51}% 
-\contentsline {subsection}{Solution to Recursive Equation}{260}{section*.53}% 
-\contentsline {chapter}{Bibliography}{273}{appendix*.55}% 
+\contentsline {section}{\numberline {3.3}Geometric Construction of the Phase}{116}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Main Result of Construction}{120}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Proofs}{121}{subsection.3.3.2}% 
+\contentsline {section}{\numberline {3.4}Simple Formula for the Scattering Operator}{153}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Construction of the Second Quantised Scattering-Matrix}{153}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Differential second quantisation}{156}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.3}Presentation and Proof of the Formula}{171}{subsection.3.4.3}% 
+\contentsline {section}{\numberline {3.5}The Relationship Between Hadamard States and Admissible Polarisation Classes}{174}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}Introduction}{174}{subsection.3.5.1}% 
+\contentsline {subsection}{\numberline {3.5.2}Hadamard States}{175}{subsection.3.5.2}% 
+\contentsline {subsection}{\numberline {3.5.3}Projectors for Polarisation Classes}{179}{subsection.3.5.3}% 
+\contentsline {subsection}{\numberline {3.5.4}Comparison Between Hadamard States and \(P^\lambda _\Sigma \)}{182}{subsection.3.5.4}% 
+\contentsline {subsection}{\numberline {3.5.5}\tmspace -\thinmuskip {.1667em}Appendix: Proof of theorem \ref {thm:hadamard=>Pol} and \ref {thm:Pol=>hadamard}}{183}{subsection.3.5.5}% 
+\contentsline {section}{\numberline {3.6}Niemandsland}{200}{section.3.6}% 
+\contentsline {subsection}{\numberline {3.6.1}Quantitative Estimates}{210}{subsection.3.6.1}% 
+\contentsline {chapter}{Appendix}{229}{appendix*.42}% 
+\contentsline {section}{Regularity of the One Particle Scattering Operator}{229}{section*.43}% 
+\contentsline {section}{Lemma of Poincar\IeC {\'e} in infinite dimensions}{244}{section*.45}% 
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{248}{section*.47}% 
+\contentsline {subsection}{Guessing Equations}{248}{section*.48}% 
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{251}{section*.50}% 
+\contentsline {subsection}{Solution to Recursive Equation}{259}{section*.52}% 
+\contentsline {chapter}{Bibliography}{271}{appendix*.54}% 

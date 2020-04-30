@@ -55,9 +55,8 @@
 \contentsline {subsection}{\numberline {3.3.1}Main Result of Construction}{120}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Proofs}{121}{subsection.3.3.2}% 
 \contentsline {section}{\numberline {3.4}Simple Formula for the Scattering Operator}{153}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Construction of the Second Quantised Scattering-Matrix}{153}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Differential second quantisation}{156}{subsection.3.4.2}% 
-\contentsline {subsection}{\numberline {3.4.3}Presentation and Proof of the Formula}{171}{subsection.3.4.3}% 
+\contentsline {subsection}{\numberline {3.4.1}Differential second quantisation}{155}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Presentation and Proof of the Formula}{171}{subsection.3.4.2}% 
 \contentsline {section}{\numberline {3.5}The Relationship Between Hadamard States and Admissible Polarisation Classes}{174}{section.3.5}% 
 \contentsline {subsection}{\numberline {3.5.1}Introduction}{174}{subsection.3.5.1}% 
 \contentsline {subsection}{\numberline {3.5.2}Hadamard States}{175}{subsection.3.5.2}% 
@@ -66,11 +65,11 @@
 \contentsline {subsection}{\numberline {3.5.5}\tmspace -\thinmuskip {.1667em}Appendix: Proof of theorem \ref {thm:hadamard=>Pol} and \ref {thm:Pol=>hadamard}}{183}{subsection.3.5.5}% 
 \contentsline {section}{\numberline {3.6}Niemandsland}{200}{section.3.6}% 
 \contentsline {subsection}{\numberline {3.6.1}Quantitative Estimates}{210}{subsection.3.6.1}% 
-\contentsline {chapter}{Appendix}{229}{appendix*.42}% 
-\contentsline {section}{Regularity of the One Particle Scattering Operator}{229}{section*.43}% 
-\contentsline {section}{Lemma of Poincar\IeC {\'e} in infinite dimensions}{244}{section*.45}% 
-\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{248}{section*.47}% 
-\contentsline {subsection}{Guessing Equations}{248}{section*.48}% 
-\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{251}{section*.50}% 
-\contentsline {subsection}{Solution to Recursive Equation}{259}{section*.52}% 
-\contentsline {chapter}{Bibliography}{271}{appendix*.54}% 
+\contentsline {chapter}{Appendix}{229}{appendix*.41}% 
+\contentsline {section}{Regularity of the One Particle Scattering Operator}{229}{section*.42}% 
+\contentsline {section}{Lemma of Poincar\IeC {\'e} in infinite dimensions}{244}{section*.44}% 
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{248}{section*.46}% 
+\contentsline {subsection}{Guessing Equations}{248}{section*.47}% 
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{251}{section*.49}% 
+\contentsline {subsection}{Solution to Recursive Equation}{259}{section*.51}% 
+\contentsline {chapter}{Bibliography}{271}{appendix*.53}% 

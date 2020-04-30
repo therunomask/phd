@@ -4078,9 +4078,9 @@ give the analogue of the lift condition
 \eqref{intro lift condition} in 
 this setting: for all \(\psi \in \mathcal{H}_{\Sigma}\)
 
-\begin{equation}\label{lift condition creation}
+\begin{equation}\label{lift condition}
   \tilde{U}^A_{V',\Sigma'; V,\Sigma} a_\Sigma^*(\psi)
-  =a^*_{\Sigma'}(U^A_{\Sigma',\Sigma}\psi )\tilde{U}^A_{V',\Sigma';V,\Sigma},
+  =a^*_{\Sigma'}(U^A_{\Sigma',\Sigma}\psi )\tilde{U}^A_{V',\Sigma';V,\Sigma},\tag{lift condition}
 \end{equation}
 holds, where \(a^*_{\Sigma'}\) and \(a^*_{\Sigma}\) are the 
 creation operator associated to 
@@ -4098,7 +4098,7 @@ Then the following two statements are equivalent:
 \item There is a unitary operator 
 \(\tilde{U}^A_{V',\Sigma';V, \Sigma}:
 \mathcal{F}(V,\Sigma)\rightarrow \mathcal{F}(V',\Sigma')\)
-that satisfies \eqref{lift condition creation}
+that satisfies the \eqref{lift condition}
 \item The operators 
 \(P^{{V'}\perp}_{\Sigma'}U^A_{\Sigma'.\Sigma}P^{{V}}_{\Sigma}\) and
 \(P^{{V'}}_{\Sigma'}U^A_{\Sigma'.\Sigma}P^{{V}^\perp}_{\Sigma}\) are 
@@ -4109,7 +4109,7 @@ Hilbert-Schmidt operators.
 So the question given an initial state in an initial Fock space 
 \(\mathcal{F}(V,\Sigma)\),
 which Fock space we may pick at a final Cauchy surface \(\Sigma'\)
-such that there is a lift fulfilling \eqref{lift condition creation}
+such that there is a lift fulfilling the \eqref{lift condition}
 now becomes a question of polarisations. We know a priori 
 that \(U^A_{\Sigma',\Sigma}\) has a lift from 
 \(\mathcal{F}(V,\Sigma)\) to 
@@ -4137,8 +4137,8 @@ Let \(\Sigma, \Sigma'\) be Cauchy surfaces and
 \(V\in C_\Sigma(A), V'\in \text{Pol}(\mathcal{H}_{\Sigma'})\) be 
 polarisations. Then there is a unitary operator 
 \(\tilde{U}^A_{V',\Sigma'; V,\Sigma}:\mathcal{F}(V,\Sigma)
-\rightarrow \mathcal{F}(V',\Sigma')\) satisfying 
-\eqref{lift condition creation} if and only if 
+\rightarrow \mathcal{F}(V',\Sigma')\) satisfying the
+\eqref{lift condition} if and only if 
 \(V'\in C_{\Sigma'}(A)\).
 \end{Corollary}
 
@@ -4303,8 +4303,8 @@ the operation form the left of \(U\) by
 \end{align}
 where \(\Psi:\ell\rightarrow \mathcal{H}\) satisfies 
 \(\Psi^*\Phi\in 1+I_1(\ell)\). The operator \(\mathcal{L}_U\)
-is a lift of \(U\) in the sense of equation 
-\eqref{lift condition creation} and maps one Fock space 
+is a lift of \(U\) in the sense of the
+\eqref{lift condition} and maps one Fock space 
 to another. 
 The resulting target space 
 \(\mathcal{F}_{\mathsf{\Lambda}U\Phi}\) is quite implicit 
@@ -4369,7 +4369,7 @@ is well-defined and unitary is ensured.
 The operators 
 \(\mathcal{R}_R\) are unique up to a phase, see 
 \cite[Cor. 2.28]{ivp0}, as might have been expected since 
-condition \eqref{lift condition creation} allows for 
+the \eqref{lift condition} allows for 
 exactly this much freedom. A simple choice of 
 \(\ell, \ell'\) that makes it possible to guess a 
 choice for \(R\) is \(\ell=\mathrm{range}(\Phi)\subseteq \mathcal{H}_\Sigma\),
@@ -4476,9 +4476,9 @@ Furthermore the orthogonal projcetors onto the negative and
 positive energy
 subspaces of \(\mathcal{H}\) shall be denoted by 
 
-\begin{align}
+\begin{align}\label{def: Ppm}
 P^-:\mathcal{H}\rightarrow \mathcal{H}^-\\
-P^+:=1_P^-,
+P^+:=1-P^-,
 \end{align}
 respectively.
 
@@ -5853,103 +5853,121 @@ This formula is valid for small external fields, where
 ``small'' will be made precise later. The formula has 
 implications for the analyticity of the second quantised 
 scattering operator for general external fields, which 
-we will also present.
-
-\subsection{Construction of the Second Quantised Scattering-Matrix}\label{sec:second quant}
-
-%_+- notation!
+we will also present. Also this chapter is concerned 
+with the scattering regime, hence we will be working 
+with a Hilbert space \(\mathcal{H}\) which can be 
+thought \(\mathcal{H}_{\Sigma}\), where \(\Sigma\)
+is a Cauchy surface prior to any external field 
+we are going to consider in this section, and 
+the standard polarisation and its projectors 
+\(P^\pm\). The shorthand defined next will turn out 
+to be useful. Let \(B:\mathcal{H}\rightarrow \mathcal{H}\)
+be linear and bounded, then we introduce 
 
 \begin{equation}
-\mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\wedge m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\wedge p}.
+  B_{\mathsf{\Phi},\mathsf{\Gamma}}=P^{\mathsf{\Phi}}B P^{\mathsf{\Gamma}},
 \end{equation}
+where \(\mathsf{\Phi},\mathsf{\Gamma}\in \{+,-\}\) holds.
+Recall the definition of Fock space in this setting 
 
-I will denote the sectors of Fock space of fixed particle
+\begin{equation}
+  \mathcal{F}:=\bigoplus_{m,p=0}^\infty \left(\mathcal{H}^+ \right)^{\wedge m} \otimes \left(\overline{\mathcal{H}^- }\right)^{\wedge p},
+\end{equation}
+where \(\bigoplus\) is the Hilbert space direct sum. 
+We denote the sectors of Fock space of fixed particle
 numbers by \(\mathcal{F}_{m,p}\). The element of
-\(\mathcal{F}_{0,0}\) of norm \(1\) will be denoted by \(\Omega\).
-The simplest and yet interesting example of this construction is
-the Fock space constructed on a hyperplane prior to the support of an external field,
-in this case \(\mathcal{H}=L^2(\mathbb{R}^3,\mathbb{C}^4)\) and \(\mathcal{H}^+\)
-consists of the wavefunctions that can be constructed from the generalised eigenfunctions
-of positive energy with respect to the free Dirac Hamiltonian.
+\(\mathcal{F}_{0,0}\) of norm \(1\) will be 
+denoted by \(\Omega\).
 
 The
 annihilation operator \(a\) acts on an arbitrary sector of Fock space
-\(\mathcal{F}_{m,p}\), for any \(m,p\in\mathbb{N}_0\) with either of the operator types
-
+\(\mathcal{F}_{m,p}\), for any \(m,p\in\mathbb{N}_0\) with the operator type
 
 \begin{align}
-a: &\overline{\mathcal{H}}\otimes \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p+1}\\
-a: &\overline{\mathcal{H}}\times \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p+1}
+a: &\overline{\mathcal{H}}\times \mathcal{F}_{m,p} \rightarrow \mathcal{F}_{m-1,p}\oplus \mathcal{F}_{m,p+1},
 \end{align}
-regardless of the exact type of the annihilation operator I will denote it by \(a\). Also here the tensor product is 
-understood in the algebraic sense.
-I start out by defining \(a\) on elements of 
+where the second argument is usually not included in the parenthesis, as is 
+common practice for bounded operators on a Hilbert space.
+We start out by defining \(a\) on elements of 
 \(\{\bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c  \mid \forall c:  \varphi_c \in \mathcal{H}^+, \phi_c \in \mathcal{H}^-   \}\)
 which spans a dense subset of \(\mathcal{F}_{m,p}\), then one continues this operator uniquely by 
 linearity and finally by the bounded linear extension theorem to all of \(\mathcal{F}_{m,p}\) and then 
 again by linearity to all of \(\overline{\mathcal{H}}\otimes \mathcal{F}_{m,p}\).
 \begin{align}
-&a\left(\phi \otimes \bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c\right)=a\left(\phi,\bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c\right)\\
+&a(\phi)  \bigwedge_{l=1}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c\\
 &= \sum_{k=1}^m (-1)^{1+k} \langle P^+ \phi, \varphi_k\rangle \bigwedge_{\overset{l=1}{l\neq k}}^m \varphi_l \otimes \bigwedge_{c=1}^p \phi_c + \bigwedge_{l=1}^m \varphi_l \otimes P^- \phi \wedge \bigwedge_{c=1}^p \phi_c
 \end{align}
 
+where \(\langle, \rangle\) denotes that the scalar product of 
+\(\mathcal{H}\). The first summand on the right hand side is 
+taken to vanish for \(m=0\). 
 
-where \(\langle, \rangle\) denotes that the scalar product of \(\mathcal{H}\). The first summand on the right hand side is taken to vanish for \(m=0\). 
-For \(\varphi\in \mathcal{H}\) I will also use the abbreviation \(a(\varphi):=a(\varphi,\cdot)\).
+Now for the construction of the second quantised 
+\(S\)-matrix please 
+recall the lift condition 
 
-Now we turn to the construction of the \(S\)-matrix, the second quantised analogue of \(U^A\). This construction is carried out axiomatically. The first axiom makes sure that the following diagram, and the analogue for the adjoint of the annihilation operator commute.
-\begin{equation}
-\begin{CD}								%heuristics with infinite wedge space?
-\mathcal{F}     @>S^A>>  \mathcal{F}\\
-@AAaA        @AAaA\\
-\overline{\mathcal{H}}\otimes \mathcal{F}     @>U^A\otimes S^A>>  \overline{\mathcal{H}}\otimes \mathcal{F} 
-\end{CD}
-\end{equation}
-\begin{axiom}
-The \(S\) operator fulfils the ``lift condition''.
-\begin{align}\label{lift_condition1}
-\forall \phi\in \mathcal{H}:& \hspace{0.5cm} S^A \circ a(\phi)=a\left( U^A \phi \right)  \circ S^A,\tag{lift condition}\\
-\label{lift_condition2}
-\forall \phi\in \mathcal{H}:& \hspace{0.5cm} S^A \circ a^*(\phi)=a^*\left( U^A \phi \right)  \circ S^A,\tag{adjoint lift condition}
+\begin{align}
+\forall \phi\in \mathcal{H}:& \hspace{0.5cm} \tilde{S}^A \circ a(\phi)=a\left( S^A \phi \right)  \circ \tilde{S}^A\tag{\ref{lift condition}},
 \end{align}
-where \(a^*\) is the adjoint of the annihilation operator, the creation operator. 
-\end{axiom}
+which is to be satisfied by any lift \(\tilde{S}^A\)  
+of the one-particle scattering matrix \(S^A\).
 
-There is a convergent power series of the one-particle scattering operator \(U^A\):
+There is a convergent power series of the one-particle 
+scattering operator \(S^A\):
 \begin{equation}\label{U_expansion}
-U^A = \sum_{k=0}^\infty \frac{1}{k!} Z_k(A),
+S^A = \sum_{k=0}^\infty \frac{1}{k!} Z_k(A),
 \end{equation}
 where \(Z_k(A)\) are bounded operators on \(\mathcal{H}\), which are homogeneous of degree \(k\) in \(A\).
-We try an analogous formal power series ansatz for the second quantised scattering operator \(S^A\)
+Our strategy in this chapter is to try an analogous formal 
+power series ansatz for the second quantised scattering 
+operator \(\tilde{S}^A\)
 
 \begin{equation}\label{S_expansion}
-S^A=\sum_{k=0}^\infty \frac{1}{k!} T_k(A).
+\tilde{S}^A=\sum_{k=0}^\infty \frac{1}{k!} T_k(A).
 \end{equation}
-Here \(T_k\) are assumed to be homogeneous of degree \(k\) in \(A\); however, they will only turn out to be bounded on
-fixed particle number subspaces \(\mathcal{F}_{m,p}\) of Fock space. It is the goal of the following  sections to
-show that this ansatz indeed works. That is, we can identify operators \(T_k\) such that \eqref{S_expansion}
-holds up to a global phase and furthermore the question of convergence can be settled if one assumes that 
-the phase is analytic in the external field \(A\). %In constructing a guess for the scattering operator \(S^A\) we will assume \eqref{S_expansion} to converge absolutely when applied to an element of Fock space with finitely many particles.
-In order to fully characterise \(S^A\) it is enough to characterise all of the \(T_k\) operators. 
-Using the \eqref{lift_condition1} one can derive commutation relations for the operators 
-\(T_k\) by plugging in \eqref{U_expansion} and \eqref{S_expansion} into \eqref{lift_condition1} and \eqref{lift_condition2}
-and collecting all terms with the same degree of homogeneity. They are given by
+Here \(T_k\) are assumed to be homogeneous of degree 
+\(k\) in \(A\); however, they will only turn out to be 
+bounded on
+fixed particle number subspaces \(\mathcal{F}_{m,p}\) of 
+Fock space. We will identify operators \(T_k\) such that 
+\eqref{S_expansion}
+holds up to a global phase. 
+In order to fully characterise \(\tilde{S}^A\) it is enough 
+to characterise all of the \(T_k\) operators. 
+Using the \eqref{lift condition} one can derive commutation 
+relations for the operators 
+\(T_k\) by plugging in \eqref{U_expansion} and 
+\eqref{S_expansion} into the \eqref{lift condition} nad its 
+adjoint
+and collecting all terms with the same degree of homogeneity. 
+They are given by
 
 \begin{equation}\label{logarithmic lift condition}
 \left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right) T_{m-j}(A), 
 \end{equation}
-where \(a^\#\) is either \(a\) or \(a^*\). Together \(T_k\) and \(\langle T_k\rangle\) characterise the operator \(T_k\) on the whole algebraic
-direct sum, it can then be further extended to all of Fock space.
+where \(a^\#\) is either \(a\) or \(a^*\). The 
+explicit, albeit heuristic, construction 
+of operators fulfilling \eqref{logarithmic lift condition}
+is carried out in the appendix in chapter 
+\ref{sec:heuristic construction} that culminates in 
+the formula which will be directly verified in 
+this chapter.
 
-Before we go on to construct a concrete form of the scattering operator, we will first define a certain kind of unitary operator on Fock space.
+In order to state this formula, we have to introduce 
+some more notation.
 
 \subsection{Differential second quantisation}
 
 Let \(B:\mathcal{H}\rightarrow\mathcal{H}\) be a bounded
-operator on \(\mathcal{H}\), such that \(i B\) is self adjoint and \(B_{+-}\) is a Hilbert-Schmidt operator. 
-We would like to construct a version \(\mathrm{d}\Gamma(B)\) of \(B\) that acts on Fock space and also is skew adjoint.
-The strategy of this section is to construct an operator in two steps that is essentially self adjoint of the Fock space of 
-finitely many particles, a dense subset of Fock space. It is denoted by
+operator on \(\mathcal{H}\), such that \(i B\) is self 
+adjoint and \(B_{+-}\) is a Hilbert-Schmidt operator. 
+We would like to construct a version \(\mathrm{d}\Gamma(B)\) 
+of \(B\) that acts on Fock space and also is skew adjoint.
+The strategy of this section is to construct an operator in 
+two steps that is essentially self adjoint of the Fock space 
+of 
+finitely many particles, a dense subset of Fock space. It is 
+denoted by
 
 \begin{Def}
 \begin{equation}
@@ -6413,7 +6431,7 @@ for some phase \(\varphi^A\in\mathbb{R}\), that may depend on the external field
 \begin{proof}
 In order to establish this theorem we need to verify that the expression given in \eqref{eq:sleek_scattering} for the scattering operator
  is a well defined object
-and fulfils \eqref{lift_condition1} and \eqref{lift_condition2}. Because these conditions uniquely fix the Operator \(S^A\)  up to a phase this suffices as a proof.
+and fulfils the \eqref{lift condition}. Because these conditions uniquely fix the Operator \(S^A\)  up to a phase this suffices as a proof.
 
 Well definedness is established, by theorem \ref{Gamma essential selfadjointness}, because for unitary \(U^A\)
 with \(\|1-U^A\|<1\) the power series of the logarithm converges and fulfils

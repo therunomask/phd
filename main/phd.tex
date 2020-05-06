@@ -5845,7 +5845,7 @@ Finally by taking the derivative with respect to \(G\in\mathcal{V}\) and using t
 
 
 
-\section{Simple Formula for the Scattering Operator}
+\section[Simple Formula for the Scattering Operator][Simple Formula]{Simple Formula for the Scattering Operator}
 In this chapter we will present a relatively simple 
 formula for the second quantised scattering operator 
 in terms of the one-particle scattering operator. 
@@ -6008,14 +6008,19 @@ We define the following operators of type \(\mathcal{F}^0\rightarrow \mathcal{F}
 \mathrm{d}\Gamma(B_{--})&:= -\sum_{n\in\mathbb{N}}   a(\varphi_{-n})a^*(B_{--} \varphi_{-n}) \\
 \mathrm{d}\Gamma(B_{-+})&:= \sum_{n\in\mathbb{N}}  a^*(B_{-+}\varphi_{n}) a(\varphi_n)
 \end{align}
-where the sum converges in the strong operator topology and \((\varphi_n)_n , (\varphi_{-n})_n\) are arbitrary ONBs of \(\mathcal{H}^+\) and \(\mathcal{H}^-\).
+where the sum converges in the strong operator topology and 
+\((\varphi_n)_n \), \((\varphi_{-n})_n\) are arbitrary 
+ONBs of \(\mathcal{H}^+\) and \(\mathcal{H}^-\).
 \end{Def}
 
 
 
 \begin{Lemma}
-The operators \(\mathrm{d}\Gamma(B_{++}),\mathrm{d}\Gamma(B_{--})\) and \(\mathrm{d}\Gamma(B_{-+})\) 
-restricted to \(|_{\mathcal{F}^0_{m,p}}\) they have the following type
+The operators 
+\(\mathrm{d}\Gamma(B_{++}),\mathrm{d}\Gamma(B_{--})\) and 
+\(\mathrm{d}\Gamma(B_{-+})\) 
+restricted to \(|_{\mathcal{F}^0_{m,p}}\) have the following 
+type
 \begin{align}
 \mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}&: \quad \mathcal{F}^0_{m,p} \rightarrow \mathcal{F}_{m,p}\\
 \mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}&: \quad \mathcal{F}^0_{m,p} \rightarrow \mathcal{F}_{m,p}\\
@@ -6038,11 +6043,11 @@ Pick \(\alpha\in\mathcal{F}^0_{m,p}\) for \(m,p\in\mathbb{N}_0\), \(\alpha\) can
 In this expansion only finitely many coefficients \(\alpha_{\cdot, \cdot}\) are nonzero. Our operators all map the vacuum onto the zero vector, so commuting them 
 through the products of of creation and annihilation operators in the expansion of \(\alpha\) we can make the action of them more explicit:
 \begin{align}\nonumber
-\mathrm{d}\Gamma(B_{++}) \alpha =\hspace{-0.5cm} \sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\!\!\!\!\!\!\alpha_{L,C} \sum_{b=1}^m 
+\mathrm{d}\Gamma(B_{++}) \alpha =\hspace{-0.5cm} &\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\!\!\!\!\!\!\alpha_{L,C} \sum_{b=1}^m 
 \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  \sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_n) \langle \varphi_n, \tilde{\varphi}_{L_b}\rangle \\
-\prod_{l=b+1}^m a^*(\tilde{\varphi}_{l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega\\
-=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\!\!\!\!\!\!\alpha_{L,C} \sum_{b=1}^m 
-\prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B_{++} \tilde{\varphi}_{L_b})  \!\!\!
+&\times \prod_{l=b+1}^m a^*(\tilde{\varphi}_{l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega\\
+=\!\!\!\!\!\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\!\!\!\!\!\!\alpha_{L,C} \sum_{b=1}^m 
+&\prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  a^*(B_{++} \tilde{\varphi}_{L_b})  \!\!\!
 \prod_{l=b+1}^m a^*(\tilde{\varphi}_{l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega.
 \end{align}
 We notice, that \(\mathrm{d}\Gamma(B_{++})\alpha \in \mathcal{F}_{m,p}\) holds. What is left to show for the first operator is therefore
@@ -6059,40 +6064,160 @@ due to the antisymmetry of fermions. Expanding
 \prod_{l=1}^{b'-1} a^*(\tilde{\varphi}_{L'_l})  ~~ a^*(B_{L'_{b'}}^{L'} \tilde{\varphi}_{L'_b})  \\
 &\left.\prod_{l=b'+1}^m a^*(\tilde{\varphi}_{L'_l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C'_c}) \Omega\right\rangle
 \end{align}
-we see that in fact \(C\) and \(C'\) need to agree, because we can just commute the corresponding annihilation operators from one end of the 
-scalar product to the other. Furthermore only a single wavefunction on each side of the scalar product is modified, this implies that in order for the
-scalar product not to vanish \(|L\cap L'|\ge m-2\) has to hold. If \(L\neq L'\) the double sum over \(n,n'\) has only the contribution where 
-\(b=L_l \not\in L'\) and \(b'=L'_{l'}\not\in L\) are selected. Otherwise the full sum contributes, yielding
+we see that in fact \(C\) and \(C'\) need to agree, because 
+we can just commute the corresponding annihilation operators 
+from one end of the 
+scalar product to the other. Furthermore only a single 
+wavefunction on each side of the scalar product is modified, 
+this implies that in order for the
+scalar product not to vanish \(|L\cap L'|\ge m-2\) has to 
+hold. For the case  \(L\neq L'\) we split up the sum over sets 
+into the sum over a new \(|L|=m-2\) and an additional sum 
+over four indices \(n_1<n_2, p_1<p_2\). 
+The double sum over \(b,b'\) only has  
+contribution where 
+\(b=n_1\) or \(b=2_2\) and \(b'=p_1\) or \(b'=p_2\) 
+are selected. Because each factor in the first half is
+orthogonal to each other factor in this half and analogously 
+for the second half, this will result in a sum of eight terms. 
+In the case 
+\(L'=L\) the full sum contributes, yielding 
 \begin{align}\nonumber
 &\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 = \\\nonumber
-&= \hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-1}}}\hspace{-0.2cm}\sum_{n\neq n'\in\mathbb{N}\backslash L }
-\hspace{-0.4cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{n'\},C}
- \langle B^{L\cup\{n\}}_n \tilde{\varphi}_{n}, B^{L\cup\{n'\}}_{n'}\tilde{\varphi}_{n'}\rangle (-1)^{g(L,n)+g(L,n')}\\\label{B++estimate}
+&= \hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\sum_{\overset{n_1<n_2,p_1<p_2\in\mathbb{N}\backslash L }{\{n_1,n_2\}\neq \{p_1,p_2\}}}
+\hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\\\label{B++estimate}
+  &\times \bigg(\langle \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2}\rangle\\
+  &\hspace{1cm}-\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle \\
+  &+\langle B^{L\cup\{n_1,n_2\}}_{n_1}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2}\rangle\\
+  &\hspace{1cm}-\langle B^{L\cup\{n_1,n_2\}}_{n_1} \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2} \rangle \langle  \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle \\
+  & +\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_1}\tilde{\varphi}_{p_1} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_2}\rangle\\
+  &\hspace{1cm}-\langle \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle \\
+  & +\langle B^{L\cup\{n_1,n_2\}}_{n_1} \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_1}\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_2}\rangle\\
+  &\hspace{1cm}-\langle B^{L\cup\{n_1,n_1\}}_{n_2} \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle  \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle \bigg)\\
 &+\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.4cm} |\alpha_{L,C}|^2
  \sum_{b,b'=1}^m 
 \left\langle \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B^{L}_{L_b} \tilde{\varphi}_{L_b})\right.  \\\nonumber
 &\prod_{l=b+1}^m a^*(\tilde{\varphi}_{L_l}) \Omega, 
 \prod_{l=1}^{b'-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B_{L_{b'}}^{L} \tilde{\varphi}_{L_b})  \left.\prod_{l=b'+1}^m a^*(\tilde{\varphi}_{L_l}) ) \Omega\right\rangle,
 \end{align}
-where \(g(L,n):=|\{l\in L \mid l<n\}|\) keeps track of the number of anti commutations. In the first sum we add and subtract the terms 
-where \(n=n'\). The enlarged sum can then be reformulated
+where 
+\begin{equation}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]:=(-1)^{|\{l\in L \mid l<n_1\}|+|\{l\in L \mid l<n_2\}|}
+\end{equation} 
+keeps track of the number of anti commutations. This is 
+non standard notation but it is meant to keep the notation
+as compact as possible and its use is 
+contained to this section.
+
+Due to the antisymmetry each summand containing 
+a factor without an occurrence of the \(B\) operator are only 
+nonzero if \(n_1=p_1\) or \(n_2=p_2\). Each factor containing 
+exactly one occurrence of \(B\) will only be nonzero 
+if \(n_1\neq p_1\) and \(n_2\neq p_2\) holds true. 
+So we can split the block of terms into one corresponding 
+to the two cases just mentioned. 
+
+\begin{align}\nonumber
+  &\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 = \\\nonumber
+  &= \hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2,p_1<p_2\in\mathbb{N}\backslash L }{\{n_1,n_2\}\cap \{p_1,p_2\}= \emptyset}}
+  \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]
+\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\\label{B++ long estimate}
+    &\times \bigg(
+    -\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle \\
+    &+\langle B^{L\cup\{n_1,n_2\}}_{n_1}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2}\rangle\notag\\
+    &+\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_1}\tilde{\varphi}_{p_1} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_2}\rangle\notag\\
+    &-\langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle  \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle \bigg)\notag\\
+  &+\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-1}}}\hspace{-0.2cm}\sum_{n\neq p\in\mathbb{N}\backslash L }
+  \hspace{-0.4cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{p\},C}
+\left[\begin{matrix}n\\p\end{matrix}\right]\\\label{B++ short estimate}
+    &\times \langle B^{L\cup\{n\}}_{n} \tilde{\varphi}_{n}, B^{L\cup\{p\}}_{p}\tilde{\varphi}_{p}\rangle\\
+  &+\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.4cm} |\alpha_{L,C}|^2
+   \sum_{b,b'=1}^m 
+  \left\langle \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B^{L}_{L_b} \tilde{\varphi}_{L_b})\right.  \\\nonumber
+  &\prod_{l=b+1}^m a^*(\tilde{\varphi}_{L_l}) \Omega, 
+  \prod_{l=1}^{b'-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B_{L_{b'}}^{L} \tilde{\varphi}_{L_b})  \left.\prod_{l=b'+1}^m a^*(\tilde{\varphi}_{L_l}) ) \Omega\right\rangle,
+\end{align}
+where we also summarised the terms of the second block. the restrictions \(n_1<n_2\)
+and \(p_1<p_2\) have the effect that the negative terms sum up to just one term
+without restrictions, while the positive terms add up to two such terms. 
+
+
+
+For the term \eqref{B++ short estimate} we add and subtract the 
+term where \(n=p\). The enlarged sum can then be reformulated
 
 \begin{align}\nonumber
 &\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|L|=m-1}{|C|=p}}}\hspace{-0.1cm}\sum_{n,n'\in\mathbb{N}\backslash L} \hspace{-0.3cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{n'\},C} 
- \langle B^{L\cup\{n\}}_n \tilde{\varphi}_{n}, B^{L\cup\{n'\}}_{n'}\tilde{\varphi}_{n'}\rangle (-1)^{g(L,n)+g(L,n')}\\\nonumber
- &=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\left\|\sum_{n\in\mathbb{N}\backslash L}\alpha_{L\cup\{n\},C}  B^{L\cup\{n\}}_n \tilde{\varphi}_{n} (-1)^{g(L,n)} \right\|^2\\\label{B++ first term}
-  &=\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|L|=m-1}{|C|=p}}}\left\|\left(1-\sum_{l\in L}|\tilde{\varphi}_l\rangle\langle \tilde{\varphi}_l | \right)B_{++}\hspace{-0.2cm}\sum_{n\in\mathbb{N}\backslash L}\hspace{-0.2cm}\alpha_{L\cup\{n\},C}  \tilde{\varphi}_{n} (-1)^{g(L,n)} \right\|^2
+ \langle B^{L\cup\{n\}}_n \tilde{\varphi}_{n}, B^{L\cup\{n'\}}_{n'}\tilde{\varphi}_{n'}\rangle \left[\begin{matrix}n\\n'\end{matrix}\right]\\\nonumber
+ &=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m-1,|C|=p}}\left\|\sum_{n\in\mathbb{N}\backslash L}\alpha_{L\cup\{n\},C}  B^{L\cup\{n\}}_n \tilde{\varphi}_{n} \left[\begin{matrix}n\\0\end{matrix}\right] \right\|^2\\\label{B++ first term}
+&=\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|L|=m-1}{|C|=p}}}\left\|\left(1-\sum_{l\in L}|\tilde{\varphi}_l\rangle\langle \tilde{\varphi}_l | \right)B_{++}\hspace{-0.2cm}\sum_{n\in\mathbb{N}\backslash L}\hspace{-0.2cm}\alpha_{L\cup\{n\},C}  \tilde{\varphi}_{n} \left[\begin{matrix}n\\0\end{matrix}\right]\right\|^2
 \end{align}
 Now the operator product inside the norm has operator norm \(\|B_{++}\|\) and so we can estimate the whole object by
 \begin{equation}\label{B++estimatefinal1}
 \eqref{B++ first term}\le \|\alpha\|^2 \|B_{++}\|^2.
 \end{equation}
-Now for the first term in \eqref{B++estimate} we need to estimate the term we added to complete the norm square, this is done as follows
+Now for the first term in \eqref{B++ short estimate} we need to estimate the term we added to complete the norm square, this is done as follows
 \begin{align}\nonumber
 &\sum_{\overset{L,C\subset\mathbb{N}}{|L|=m-1,|C|=p}} \hspace{-0.4cm}\sum_{n\in\mathbb{N}\backslash L} |\alpha_{L\cup\{n\},C}|^2 \|B_n^{L\cup\{n\}} \tilde{\varphi}_{n}\|^2\\\label{B++estimatefinal2}
 &\le \hspace{-0.6cm}\sum_{\overset{L,C\subset\mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.5cm} \|B_{++}\|^2|\alpha_{L,C}|^2 =\|\alpha\|^2 \|B_{++}\|^2.
 \end{align}
-What remains is the second sum in \eqref{B++estimate}, for this term there are two cases.  If \(b=b'\) then the scalar product is 
+For \eqref{B++ long estimate} and the following 3 lines we notice that 
+we may replace all one particle operators with \(B_{++}\), since 
+the projector acts as the identity in these cases. Subsequently, the 
+two terms of equal sign are identical, resulting in 
+
+\begin{align}
+  &\eqref{B++ long estimate} =\notag\\
+  &2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2,p_1<p_2\in\mathbb{N}\backslash L }{\{n_1,n_2\}\cap \{p_1,p_2\}= \emptyset}}
+  \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\
+    &\times \bigg(
+    \langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
+    -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg).
+\end{align}
+
+Next, we are going to repeatedly add and subtract terms, such that we may
+factorise the \(n\) and the \(p\) sums. So in a first step we add and subtact the 
+terms where \(\{n_1,n_2\}\cap \{p_1,p_2\}\neq \emptyset\):
+
+\begin{align}
+  &\eqref{B++ long estimate} =\notag\\
+  &2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+  \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\
+    &\times \bigg(
+    \langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
+    -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
+    &\times (1- \delta_{n_1,p_1}-\delta_{n_1,p_2}-\delta_{n_2,p_1}-\delta_{n_2,p_2}+\delta_{n_1,p_1}\delta_{n_2,p_2}).
+\end{align}
+These five terms will be estimated separately. 
+
+\textbf{\(1\):} The first term 
+is estimated after rewriting the scalar products as a 
+single sum of two scalar products in \(\mathcal{H}^+\otimes \mathcal{H}^+\):
+
+\begin{align}
+  &2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+  \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\
+    &\times \bigg(
+    \langle  B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
+    -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
+    &\hspace{-0.9cm}= 2 \!\!\!\!\!\!\!\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\!\!\!\!\!\bigg\langle \sum_{n_1<n_2\in\mathbb{N}\backslash L}
+    \!\!\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\alpha_{L\cup\{n_1,n_2\},C} B_{++}\tilde{\varphi}_{n_1}\otimes \tilde{\varphi}_{n_2}, \\
+    &\hspace{3cm}\sum_{p_1<p_2\in\mathbb{N}\backslash L}\!\!\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\alpha_{L\cup\{p_1,p_2\},C} \tilde{\varphi}_{p_1}\otimes B_{++}\tilde{\varphi}_{p_2}\bigg\rangle\\
+    &\hspace{-0.9cm}-2 \!\!\!\!\!\!\!\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\!\!\!\!\!\bigg\langle \sum_{n_1<n_2\in\mathbb{N}\backslash L}
+    \!\!\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\alpha_{L\cup\{n_1,n_2\},C} \tilde{\varphi}_{n_1}\otimes B_{++}\tilde{\varphi}_{n_2}, \\
+    &\hspace{3cm}\sum_{p_1<p_2\in\mathbb{N}\backslash L}\!\!\!\!\!\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\alpha_{L\cup\{p_1,p_2\},C} B_{++}\tilde{\varphi}_{p_2}\otimes \tilde{\varphi}_{p_1}\bigg\rangle\\
+    &\le 4 \|B_{++}\|^2 \|\alpha\|^2
+\end{align}
+
+\textbf{\(\delta_{n_1,p_1}\):} 
+
+
+What remains is the second sum in \eqref{B++ short estimate}, for this term there are two cases.  If \(b=b'\) then the scalar product is 
 equal to \(\langle B_{L_b}^L \tilde{\varphi}_b, B_{L_{b}}^L \tilde{\varphi}_{b}\rangle\). If \(b\neq b'\) the scalar product is, up to a sign,
 equal to \(\langle B_{L_b}^L \tilde{\varphi}_b,\tilde{\varphi}_{b}\rangle \langle \tilde{\varphi}_{b'}, B_{L_{b'}}^L \tilde{\varphi}_{b'}\rangle\).
 However both of these terms can be estimated by \(\|B_{++}\|^2\). So all \(m^2\) summands of this sum contribute \(\|B_{++}\|^2\). Overall 

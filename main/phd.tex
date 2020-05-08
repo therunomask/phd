@@ -27,6 +27,7 @@
 \usepackage[mathscr]{eucal}
 \usepackage{cancel}
 \usepackage{lipsum}
+\usepackage{bm}
 
 
 
@@ -5963,6 +5964,12 @@ operator on \(\mathcal{H}\), such that \(i B\) is self
 adjoint and \(B_{+-}\) is a Hilbert-Schmidt operator. 
 We would like to construct a version \(\mathrm{d}\Gamma(B)\) 
 of \(B\) that acts on Fock space and also is skew adjoint.
+The proof of the skew adjointness of 
+\(\mathrm{d}\Gamma(B)\) is a bit lengthy, as is typical 
+of such proofs. Even though one might speed it 
+up a little by using the tools available e.g. in 
+\cite{derezinski2013mathematics} the author is of the 
+opinion that it is instructive to give a direct proof.
 The strategy of this section is to construct an operator in 
 two steps that is essentially self adjoint of the Fock space 
 of 
@@ -6015,7 +6022,7 @@ ONBs of \(\mathcal{H}^+\) and \(\mathcal{H}^-\).
 
 
 
-\begin{Lemma}
+\begin{Lemma}\label{d Gamma norms}
 The operators 
 \(\mathrm{d}\Gamma(B_{++}),\mathrm{d}\Gamma(B_{--})\) and 
 \(\mathrm{d}\Gamma(B_{-+})\) 
@@ -6029,8 +6036,8 @@ type
  and fulfil
 the following bounds for all \(m,p\)
 \begin{align}
-\|\mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}\|&\le (m+1)\|B_{++}\|\\
-\|\mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}\|&\le (p+1)\|B_{--}\|\\
+\|\mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}\|&\le (m+5)\|B_{++}\|\\
+\|\mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}\|&\le (p+5)\|B_{--}\|\\
 \|\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}\|&\le \|B_{-+}\|_{\text{HS}}.
 \end{align}
 \end{Lemma}
@@ -6131,11 +6138,10 @@ to the two cases just mentioned.
     &-\langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle  \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle \bigg)\notag\\
   &+\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-1}}}\hspace{-0.2cm}\sum_{n\neq p\in\mathbb{N}\backslash L }
   \hspace{-0.4cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{p\},C}
-\left[\begin{matrix}n\\p\end{matrix}\right]\\\label{B++ short estimate}
-    &\times \langle B^{L\cup\{n\}}_{n} \tilde{\varphi}_{n}, B^{L\cup\{p\}}_{p}\tilde{\varphi}_{p}\rangle\\
+\left[\begin{matrix}n\\p\end{matrix}\right] \langle B^{L\cup\{n\}}_{n} \tilde{\varphi}_{n}, B^{L\cup\{p\}}_{p}\tilde{\varphi}_{p}\rangle\label{B++ short estimate}\\
   &+\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.4cm} |\alpha_{L,C}|^2
    \sum_{b,b'=1}^m 
-  \left\langle \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B^{L}_{L_b} \tilde{\varphi}_{L_b})\right.  \\\nonumber
+  \left\langle \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B^{L}_{L_b} \tilde{\varphi}_{L_b})\right.  \label{B++ m squared term}\\\nonumber
   &\prod_{l=b+1}^m a^*(\tilde{\varphi}_{L_l}) \Omega, 
   \prod_{l=1}^{b'-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B_{L_{b'}}^{L} \tilde{\varphi}_{L_b})  \left.\prod_{l=b'+1}^m a^*(\tilde{\varphi}_{L_l}) ) \Omega\right\rangle,
 \end{align}
@@ -6192,11 +6198,11 @@ terms where \(\{n_1,n_2\}\cap \{p_1,p_2\}\neq \emptyset\):
     -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
     &\times (1- \delta_{n_1,p_1}-\delta_{n_1,p_2}-\delta_{n_2,p_1}-\delta_{n_2,p_2}+\delta_{n_1,p_1}\delta_{n_2,p_2}).
 \end{align}
-These five terms will be estimated separately. 
+These five terms will be estimated separately. The terms 
+are all estimated after rewriting the scalar products as a 
+single sum of two scalar products in \(\mathcal{H}^+\otimes \mathcal{H}^+\).
 
-\textbf{\(1\):} The first term 
-is estimated after rewriting the scalar products as a 
-single sum of two scalar products in \(\mathcal{H}^+\otimes \mathcal{H}^+\):
+\(\boldsymbol{1:}\) 
 
 \begin{align}
   &2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
@@ -6214,28 +6220,102 @@ single sum of two scalar products in \(\mathcal{H}^+\otimes \mathcal{H}^+\):
     &\le 4 \|B_{++}\|^2 \|\alpha\|^2
 \end{align}
 
-\textbf{\(\delta_{n_1,p_1}\):} 
+\(\boldsymbol{\delta_{n_1,p_1}:}\) 
+\begin{align}
+  &-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+  \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\delta_{n_1,p_1}\\
+    &\times \bigg(
+    \langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
+    -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
+  &=-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n,p,l \in\mathbb{N}\backslash L }
+  \hspace{-0.4cm}\overline{\alpha_{L\cup\{l,n\},C}}\alpha_{L\cup\{l,p\},C}
+\left[\begin{matrix}0\\n\end{matrix}\right]\left[\begin{matrix}0\\p\end{matrix}\right]\\
+    &\times \bigg(
+    \langle B_{++}\tilde{\varphi}_{l},\tilde{\varphi}_{l} \rangle \langle  \tilde{\varphi}_{n}, B_{++}\tilde{\varphi}_{p}\rangle
+    -\langle \tilde{\varphi}_{l},B_{++}\tilde{\varphi}_{p} \rangle \langle B_{++} \tilde{\varphi}_{n}, \tilde{\varphi}_{l}\rangle\bigg)\\
+    &=-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{l \in\mathbb{N}\backslash L }
+\!\!\!\left\langle\sum_{n\in\mathbb{N}\backslash L}\!\!\!\!\alpha_{L\cup \{l,n\},C}\left[\begin{matrix}0\\n\end{matrix}\right] \!\!\tilde{\varphi}_{n} ,B_{++}\!\!\!\!\!\sum_{p\in\mathbb{N}\backslash L}\alpha_{L\cup \{l,p\},C}\!\!\left[\begin{matrix}0\\p\end{matrix}\right]\!\! \tilde{\varphi}_{p}  \!\!\!\right\rangle\\
+  &\hspace{3cm}\times \langle B_{++} \tilde{\varphi}_l,\tilde{\varphi}_l \rangle\\
+  &+2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{l \in\mathbb{N}\backslash L }
+\!\!\!\left\langle \tilde{\varphi}_{l} ,B_{++}\!\!\!\!\!\sum_{p\in\mathbb{N}\backslash L}\alpha_{L\cup \{l,p\},C}\!\!\left[\begin{matrix}0\\p\end{matrix}\right]\!\! \tilde{\varphi}_{p}  \!\!\!\right\rangle\\
+&\hspace{2cm}\times \left\langle B_{++}\sum_{n\in\mathbb{N}\backslash L}\!\!\!\!\alpha_{L\cup \{l,n\},C}\left[\begin{matrix}0\\n\end{matrix}\right] \!\!\tilde{\varphi}_{n} , \tilde{\varphi}_{l}  \!\!\!\right\rangle\\
+  &\le 4 \|B_{++}\|^2 \|\alpha\|^2
+\end{align}
+\(\boldsymbol{-\delta_{n_1,p_2}-\delta_{n_2,p_1}:}\)
+\begin{align}
+&-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+\hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right](\delta_{n_1,p_2}+\delta_{n_2,p_1})\\
+&\times \bigg(
+\langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
+-\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
+&=-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n\neq p,l\in\mathbb{N}\backslash L }
+\hspace{-0.4cm}\overline{\alpha_{L\cup\{l,n\},C}}\alpha_{L\cup\{l,p\},C}
+\left[\begin{matrix}0\\n\end{matrix}\right]\left[\begin{matrix}0\\p\end{matrix}\right]\\
+&\times \bigg( 1_{p<n}[
+\langle B_{++}\tilde{\varphi}_{l},\tilde{\varphi}_{p} \rangle \langle  \tilde{\varphi}_{n}, B_{++}\tilde{\varphi}_{l}\rangle
+-\langle \tilde{\varphi}_{l},B_{++}\tilde{\varphi}_{l} \rangle \langle B_{++} \tilde{\varphi}_{n}, \tilde{\varphi}_{p}\rangle]\\
+&+1_{n<p}[\langle B_{++}\tilde{\varphi}_{n},\tilde{\varphi}_{l} \rangle \langle  \tilde{\varphi}_{l}, B_{++}\tilde{\varphi}_{p}\rangle
+-\langle \tilde{\varphi}_{n},B_{++}\tilde{\varphi}_{p} \rangle \langle B_{++} \tilde{\varphi}_{l}, \tilde{\varphi}_{l}\rangle]\bigg)\\
+&\overset{B^*=-B}{=}-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n\neq p, l\in\mathbb{N}\backslash L }
+\hspace{-0.4cm}\overline{\alpha_{L\cup\{l,n\},C}}\alpha_{L\cup\{l,p\},C}
+\left[\begin{matrix}0\\n\end{matrix}\right]\left[\begin{matrix}0\\p\end{matrix}\right]\\
+&\times \bigg( 
+\langle B_{++}\tilde{\varphi}_{l},\tilde{\varphi}_{p} \rangle \langle  \tilde{\varphi}_{n}, B_{++}\tilde{\varphi}_{l}\rangle
+-\langle \tilde{\varphi}_{l},B_{++}\tilde{\varphi}_{l} \rangle \langle B_{++} \tilde{\varphi}_{n}, \tilde{\varphi}_{p}\rangle\bigg)\\
+&\hspace{-0.4cm}=-2\hspace{-0.4cm}\!\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\!\!\sum_{l\in\mathbb{N}\backslash L}\!\!\!
+\left\langle\!\!\! B_{++} \tilde{\varphi}_{l}, \!\!\!\!\sum_{p\in\mathbb{N}\backslash L}\!\!\left[\begin{matrix}0\\p\end{matrix}\right] \!\alpha_{L\cup\{l,p\},C}\tilde{\varphi}_p \!\!\!\right\rangle \left\langle \sum_{n\in\mathbb{N}\backslash L} \!\!\left[\begin{matrix}0\\n\end{matrix}\right]\!\!\alpha_{L\cup \{l,n\},C} \tilde{\varphi}_n,  B_{++} \tilde{\varphi}_l \!\!\!\right\rangle\\
+&\hspace{-0.4cm}+2\!\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\!\!\sum_{l\in\mathbb{N}\backslash L}\!\!\!
+\left\langle \!\!\! \tilde{\varphi}_{l}, B_{++} \tilde{\varphi}_l \right\rangle \left\langle\!\!\! B_{++}\!\!\!\sum_{n\in\mathbb{N}\backslash L}\!\!\left[\begin{matrix}0\\n\end{matrix}\right] \alpha_{L\cup \{l,n\},C} \tilde{\varphi}_n,\!\!\!\sum_{p\in\mathbb{N}\backslash L} \!\!\left[\begin{matrix}0\\p\end{matrix}\right]\alpha_{L\cup\{l,p\},C}\!\!\! \right\rangle\\
+&\le 4 \|B_{++}\|^2 \|\alpha\|^2
+\end{align}
 
+\(\boldsymbol{\delta_{n_2,p_2}:}\) completely analogous to \(\delta_{n_1,p_1}\) one arrives at 
+\begin{equation}
+  \le 4\|B_{++}\|^2\|\alpha\|^2.
+\end{equation}
 
-What remains is the second sum in \eqref{B++ short estimate}, for this term there are two cases.  If \(b=b'\) then the scalar product is 
+\(\boldsymbol{\delta_{n_1,p_1}\delta_{n_2,p_2}:}\)
+\begin{align}
+&2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+\hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\delta_{n_1,p_1}\delta_{n_2,p_2}\\
+&\times \bigg(
+\langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
+-\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
+&=2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n\neq p\in\mathbb{N}\backslash L }
+\hspace{-0.4cm}|\alpha_{L\cup\{n,p\},C}|^2\\
+&\times \bigg(
+\langle B_{++}\tilde{\varphi}_{n},\tilde{\varphi}_{n} \rangle \langle  \tilde{\varphi}_{p}, B_{++}\tilde{\varphi}_{p}\rangle
+-\langle \tilde{\varphi}_{n},B_{++}\tilde{\varphi}_{p} \rangle \langle B_{++} \tilde{\varphi}_{p}, \tilde{\varphi}_{n}\rangle\bigg)\\
+&\le 4 \|B_{++}\|^2 \|\alpha\|^2
+\end{align}
+So all together we have 
+\begin{equation}\label{B++ long estimate final}
+  \eqref{B++ long estimate}\le 20 \|B_{++}\|^2 \|\alpha\|^2
+\end{equation}
+
+What remains is term \eqref{B++ m squared term}, for this term there are two cases.  If \(b=b'\) then the scalar product is 
 equal to \(\langle B_{L_b}^L \tilde{\varphi}_b, B_{L_{b}}^L \tilde{\varphi}_{b}\rangle\). If \(b\neq b'\) the scalar product is, up to a sign,
 equal to \(\langle B_{L_b}^L \tilde{\varphi}_b,\tilde{\varphi}_{b}\rangle \langle \tilde{\varphi}_{b'}, B_{L_{b'}}^L \tilde{\varphi}_{b'}\rangle\).
 However both of these terms can be estimated by \(\|B_{++}\|^2\). So all \(m^2\) summands of this sum contribute \(\|B_{++}\|^2\). Overall 
 this estimate yields
 \begin{align}\nonumber
-&\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 \le \eqref{B++estimatefinal1}+\eqref{B++estimatefinal2} + \|\alpha\|^2 m^2 \|B_{++}\|^2 \\\nonumber
-&= \|\alpha\|^2 (2+m^2) \|B_{++}\|^2.
+&\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 \le \eqref{B++estimatefinal1}+\eqref{B++estimatefinal2}+\eqref{B++ long estimate final} + \|\alpha\|^2 m^2 \|B_{++}\|^2 \\\nonumber
+&= \|\alpha\|^2 (22+m^2) \|B_{++}\|^2.
 \end{align}
 For convenience of notation the estimate can be weakened to 
 \begin{equation}
-\|\mathrm{d}\Gamma(B_{++})\alpha\| \le (m+1) \|B_{++}\|,
+\|\mathrm{d}\Gamma(B_{++})\alpha\| \le (m+5) \|B_{++}\|\|\alpha\|.
 \end{equation}
-because for all \(m\neq0\) 
-this estimate is and upper bound on what we found, but for \(m=0\) the operator \(\mathrm{d}\Gamma(B_{++})\) is actually the zero operator.
-A completely analogous argument works for \(\mathrm{d}\Gamma(B_{--})\). 
-
-So lets move on to \(\mathrm{d}\Gamma(B_{-+})\). Applying it to the same \(\alpha\in \mathcal{F}^0_{m,p}\) again we permute all the operators
-to the right, where they annihilate the vacuum. The remaining terms are
+A completely analogous argument works for 
+\(\mathrm{d}\Gamma(B_{--})\). 
+So lets move on to \(\mathrm{d}\Gamma(B_{-+})\). Applying it 
+to the same \(\alpha\in \mathcal{F}^0_{m,p}\) again we 
+permute all the operators
+to the right, where they annihilate the vacuum. The remaining 
+terms are
 
 \begin{align}\nonumber
 \sum_{n\in\mathbb{N}} a^*(B_{-+}\varphi_n)a(\varphi_{n})\hspace{-0.5cm}\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}  \hspace{-0.5cm}\alpha_{L,C} 
@@ -6244,16 +6324,22 @@ to the right, where they annihilate the vacuum. The remaining terms are
 \prod_{\overset{l=1}{l\neq b}}^m a^*(\tilde{\varphi}_{L_l})
 \prod_{\overset{c=1}{c\neq d}}^p a(\tilde{\varphi}_{-C_c})\Omega.
 \end{align}
-By counting the remaining creation and annihilation operators we immediately see that \(\mathrm{d}\Gamma(B_{-+})\alpha\in \mathcal{F}_{m-1,p-1}\). 
-For estimating the norm of this vector, we switch basis from \((\tilde{\varphi}_{\pm n})_n\) to \((\varphi_{\pm n}')_n\), the basis where 
-\(B_{-+}\) takes its canonical form. Then the scalar product involving \(B_{-+}\) reduces to \(\lambda_{L_b}\delta_{L_b,C_d}\). We estimate
+By counting the remaining creation and annihilation operators 
+we immediately see that \(\mathrm{d}\Gamma(B_{-+})\alpha\in 
+\mathcal{F}_{m-1,p-1}\). 
+For estimating the norm of this vector, we switch basis from 
+\((\tilde{\varphi}_{\pm n})_n\) to \((\varphi_{\pm n})_n\), 
+the basis where 
+\(B_{-+}\) takes its canonical form. Then the scalar product 
+involving \(B_{-+}\) reduces to 
+\(\lambda_{L_b}\delta_{L_b,C_d}\). We estimate
 
 \begin{align}\nonumber
 &\|\mathrm{d}\Gamma(B_{-+})\alpha\|^2= \hspace{-0.5cm}\sum_{\overset{L,L',C,C'\subset\mathbb{N}}{\overset{|L|=|L'|=m}{|C|=|C'|=p}}} ~\sum_{a,a'=1}^m \sum_{b,b'=1}^p
 \overline{\alpha}_{L,C} \alpha_{L',C'}(-1)^{b+d+b'+d'}\lambda_{L_b} \lambda_{L_{b'}'} \\
-&\delta_{L_b,C_d} \delta_{L_{b'}',C_{d'}'} \left\langle \prod_{\overset{l=1}{l\neq b}}^m a^*(\varphi_{L_l}')\prod_{\overset{c=1}{c\neq d}}^p 
-a(\varphi_{-C_c}')\Omega, \prod_{\overset{l=1}{l\neq b'}}^m a^*(\varphi_{L_l'}')
-\prod_{\overset{c=1}{c\neq d'}}^p a(\varphi_{-C_c'}')\Omega\right\rangle.
+&\delta_{L_b,C_d} \delta_{L_{b'}',C_{d'}'} \left\langle \prod_{\overset{l=1}{l\neq b}}^m a^*(\varphi_{L_l})\prod_{\overset{c=1}{c\neq d}}^p 
+a(\varphi_{-C_c})\Omega, \prod_{\overset{l=1}{l\neq b'}}^m a^*(\varphi_{L_l'})
+\prod_{\overset{c=1}{c\neq d'}}^p a(\varphi_{-C_c'})\Omega\right\rangle.
 \end{align}
 
 The scalar product in the second line tells us that \(L\backslash \{L_b\}=L'\backslash \{L_{b'}'\}\) and \(C\backslash \{C_{d}\}=C'\backslash \{C_{d'}'\}\) have
@@ -6266,7 +6352,7 @@ which then has to be in the intersection \(L\cap C\). Because this sum is really
 \overline{\alpha}_{L\cup\{b\},C\cup \{b\}} \alpha_{L\cup\{b'\},C\cup\{b'\}}\\
 &(-1)^{g(L,b)+g(C,b)+g(L,b')+g(C,b')},
 \end{align}
-where \(g(L,b)=|\{l\in L \mid l<b\}|\) as before. This expression can be rewritten in terms of a scalar product in \(\ell^2(\mathbb{N})\)
+where \(g(L,b)=|\{l\in L \mid l<b\}|\). This expression can be rewritten in terms of a scalar product in \(\ell^2(\mathbb{N})\)
 
 \begin{align}\nonumber
 \|\mathrm{d}\Gamma(B_{-+})\alpha\|^2
@@ -6292,7 +6378,9 @@ So also \(\mathrm{d}\Gamma(B_{+-}):\mathcal{F}^0\rightarrow \mathcal{F}\) can be
 Moreover \(\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{+-})\) is skew-adjoint.
 \end{Lemma}
 \begin{proof}
-Pick \(\beta,\alpha \in \mathcal{F}^0\). We expand those states with respect to the basis \((\varphi_k')_{k\in\mathbb{Z}\backslash \{0\}}\). Consider
+Pick \(\beta,\alpha \in \mathcal{F}^0\). We expand those 
+states with respect to the basis 
+\((\varphi_k)_{k\in\mathbb{Z}\backslash \{0\}}\). Consider
 
 \begin{align}\nonumber
 &\langle \beta, \mathrm{d}\Gamma(B_{-+}) \alpha \rangle=\left\langle \beta, \sum_{n\in\mathbb{N}} a^*(B_{-+}\varphi_n)a(\varphi_{n}) \alpha \right\rangle\\\nonumber
@@ -6301,7 +6389,7 @@ Pick \(\beta,\alpha \in \mathcal{F}^0\). We expand those states with respect to 
 &=\left\langle \sum_{n\in\mathbb{N}}a^*(\varphi_{n})  a(B_{-+}\varphi_n) \beta, \alpha \right\rangle
 =\left\langle \sum_{n\in\mathbb{N}} \lambda_n a^*(\varphi_{n})  a(\varphi_{-n}) \beta, \alpha \right\rangle\\
 &=\left\langle \sum_{n\in\mathbb{N}}  a^*(- B_{+-}\varphi_{-n})  a(\varphi_{-n}) \beta, \alpha \right\rangle
-=-\langle \mathrm{d}\Gamma(B_{+-})  \beta, \alpha \rangle,
+=\langle -\mathrm{d}\Gamma(B_{+-})  \beta, \alpha \rangle,
 \end{align}
  So we see that \(\mathrm{d}\Gamma(B_{+-})\)
 and \(\mathrm{d}\Gamma(B_{-+})^*\) agree on \(\mathcal{F}^0\) which is dense. So they are the same bounded and continuous operator on all of
@@ -6320,7 +6408,7 @@ Since the sum of skew symmetric operators is skew symmetric, it suffices to show
 Moreover since both of these operators are extended versions of operators of the same name of type \(\mathcal{F}^0\rightarrow \mathcal{F}\) it suffices to show skew symmetry
 on this domain. We will only do the calculation for \(\mathrm{d}\Gamma(B_{++})\), the other calculation is analogous. 
 First we notice that
-\begin{equation}
+\begin{equation}\label{d Gamma ++ double sum}
 \mathrm{d}\Gamma(B_{++})=\sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_{n})a(\varphi_n)
 =\sum_{n\in\mathbb{N}} \sum_{m\in\mathbb{N}}  \langle \varphi_m, B_{++}\varphi_n\rangle a^*(\varphi_m) a(\varphi_n)
 \end{equation}
@@ -6340,11 +6428,17 @@ holds.  Pick \(\alpha,\beta \in \mathcal{F}^0\). Consider
 \left\langle \sum_{n\in\mathbb{N}} \sum_{m\in\mathbb{N}} \langle B_{++}\varphi_n,\varphi_m\rangle a^*(\varphi_n) a(\varphi_{m})\right. \\ \nonumber
 \left. \prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega, \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle.
 \end{align}
-Now because \(B_{++}^*=-B_{++}\) we see that 
+Now the sum over \(m\mathbb{N}\) may be reduced to a finite sum over 
+\(m\in L'\), because for \(m\in {L'}^c\) the annihilation 
+operator \(a(\varphi_m)\) may directly be commuted to \(\Omega\) which 
+is then mapped to \(0\). Analogously the sum \(n\in\mathbb{N}\)
+may be replaced by \(n\in L\), hence we may commute the sums. 
+Furthermore, because \(B_{++}^*=-B_{++}\) we 
+add the vanishing terms and use \eqref{d Gamma ++ double sum}
+to obtain
 \begin{equation}
-\left\langle \beta, \mathrm{d}\Gamma(B_{++})\alpha\right\rangle =- \left\langle \mathrm{d}\Gamma(B_{++})\beta, \alpha\right\rangle 
+\left\langle \beta, \mathrm{d}\Gamma(B_{++})\alpha\right\rangle =- \left\langle \mathrm{d}\Gamma(B_{++})\beta, \alpha\right\rangle.
 \end{equation}
-holds.
 \end{proof}
 
 
@@ -6385,14 +6479,25 @@ we estimate
 \le  \sum_{x\in \{-1,0,+1\}^k} \prod_{b=1}^k \left\| \Gamma_{x_b}|_{\mathcal{F}_{l+\sum_{d=1}^{b-1} x_d,c+\sum_{d=1}^{b-1} x_d}}\right\| \|\alpha_{l,c}\|\\
 \le 3^k \|\alpha\| \max_{x\in \{-1,0,+1\}^k} \prod_{b=1}^k\left\| \Gamma_{x_b}|_{\mathcal{F}_{l+\sum_{d=1}^{b-1} x_d,c+\sum_{d=1}^{b-1} x_d}}\right\|  .
 \end{align}
-At this point the factors only depend on the number of particles the Fock space vector attains as we act on it with the operators \(\Gamma_{\cdot}\). 
-As these bounds increase with the particle number we can restrict the set \(\{-1,0,+1\}\) in the last line to \(\{0,+1\}\).
-We notice that the bound in \eqref{essentialSelfadjointnessOperatorProduct} will only increase if  we exchange each pair 
-\(x_{i}=1, x_{h}=0\) by the pair \(x_{\max\{i,h\}}=1, x_{\min\{i,h\}}=0\) so that the norm of the operator that acts like
-a particle number operator is taken after the particle number is increased. The maximum therefore has the form \((c+l+2+2d)^{k-d}\), which we bound by
-\(2^k (c/2+d/2+1+d)^{k-d}\).
-For maximising this object we treat \(d\) as a continuous variable take the derivative and set it to zero. From the form of the function to be maximised
-it is clear that it is equal to \(1\) for \(d=k\) and at \(d=-c/2-l/2\), but for \(k\) large it will be bigger in between. We abbreviate \(y=c/2+l/2+1\).
+At this point the factors only depend on the number of particles the Fock space 
+vector attains as we act on it with the operators \(\Gamma_{\cdot}\). 
+As these bounds increase with the particle number we can restrict the set 
+\(\{-1,0,+1\}\) in the last line to \(\{0,+1\}\).
+We notice that the bound in \eqref{essentialSelfadjointnessOperatorProduct} 
+will only increase if  we exchange each pair 
+\(x_{i}=1, x_{h}=0\) by the pair \(x_{\max\{i,h\}}=1, x_{\min\{i,h\}}=0\) so 
+that the norm of the operator that acts like
+a particle number operator is taken after the particle number is increased. 
+By the esimates of lemma \ref{d Gamma norms} the maximum 
+therefore has the form \((c+l+10+2d)^{k-d}\), which we bound 
+by
+\(2^k (c/2+l/2+5+d)^{k-d}\).
+For maximising 
+\begin{equation}
+  c/2+l/2+5+d)^{k-d}
+\end{equation}
+we treat \(d\) as a continuous variable take the derivative and set it to zero. From the form of the function to be maximised
+it is clear that it is equal to \(1\) for \(d=k\) and at \(d=-c/2-l/2-4\), but for \(k\) large it will be bigger in between. We abbreviate \(y=c/2+l/2+1\).
 \begin{align}
 0= (y+d)^{k-d} (-\ln(y+d) + \frac{k-d}{y+d})\\
 \iff \frac{k-d}{y+d}= \ln (y+d)\\
@@ -6439,8 +6544,10 @@ holds true. Plugging this into our sum the exponent is bounded from above by
 &\le y \ln (k+y) -\frac{1}{2}\ln(k) + (k+y)W_0((k+y)e)^{-1} +\\\nonumber
 &(k+y) \ln (1+\ln(k+y))\frac{1-(e-1)\ln(k+y)}{(e-1)(1+\ln(k+y))} .
 \end{align}
-Now it is important to notice that the only remaining term that grows faster than linearly in magnitude is the last summand.
-This term; however, is negative for large \(k\), as the fraction converges to \(-(e-1)\) for large \(k\), while the double logarithm
+Now it is important to notice that the only remaining term that grows 
+faster than linearly in magnitude is the last summand.
+This term; however, is negative for large \(k\), as the fraction converges 
+to \(-1\) for large \(k\), while the double logarithm
 in front grows without bounds. So there is a \(k^*\) big enough such that  for all \(k>k^*\) \eqref{essentialSelfadjointnessExponent} 
 is smaller than \(- k (\ln(6\beta t) + 1)\), proving that \eqref{essentialSelfadjointnessSimplifiedSum} in fact holds.
 
@@ -6449,12 +6556,17 @@ is smaller than \(- k (\ln(6\beta t) + 1)\), proving that \eqref{essentialSelfad
 
 
 \begin{Thm}\label{Gamma essential selfadjointness}
-The operator \(\mathrm{d}\Gamma(B):\mathcal{F}'\rightarrow \mathcal{F}\) is essentially skew adjoint and hence by Stones theorem
- generates a strongly continuous unitary group \(\left( e^{t ~\widehat{\mathrm{d}\Gamma(B)}}\right)_t\), where \(\widehat{\mathrm{d}\Gamma(B)}\) is the closure of 
+The operator \(\mathrm{d}\Gamma(B):\mathcal{F}'\rightarrow \mathcal{F}\) is 
+essentially skew adjoint and hence by Stones theorem
+ generates a strongly continuous unitary group 
+ \(\left( e^{t ~\widehat{\mathrm{d}\Gamma(B)}}\right)_t\), where 
+ \(\widehat{\mathrm{d}\Gamma(B)}\) is the closure of 
  \(\mathrm{d}\Gamma(B)\).
 \end{Thm}
 \begin{proof}
-In order to apply Nelson's analytic vector theorem we pick \(C=\mathcal{F}'\). Pick \(\alpha \in\mathcal{F}'\). We need to show that there is \(t>0\) such that
+In order to apply Nelson's analytic vector theorem we pick \(S=\mathcal{F}'\). 
+Pick \(\alpha \in\mathcal{F}'\). We need to show that there is \(t>0\) such 
+that
 \begin{equation}
 \sum_{k=0}^\infty \frac{\|\mathrm{d}\Gamma(B)^k \alpha\|}{k!} t^k <\infty
 \end{equation}
@@ -6467,9 +6579,10 @@ These properties are the reason we are interested in this operator, they will pr
 \begin{Thm}\label{Commutation Gamma}
 For \(\psi \in \mathcal{H}\) we have
 \begin{equation}
-[\mathrm{d}\Gamma(B),a^\# (\psi)]=a^\#(B\psi),
+[\mathrm{d}\Gamma(B),a^\# (\psi)]\alpha=a^\#(B\psi)\alpha,
 \end{equation}
-where \(a^\#\) can be either \(a\) or \(a^*\).
+where \(a^\#\) can be either \(a\) or \(a^*\) 
+or all \(\alpha\in\mathcal{F}'\).
 \end{Thm}
 \begin{proof}
 Because \(\mathrm{d}\Gamma(B)\) is defined as the extension of an operator on \(\mathcal{F}^0\) it suffices to show the desired identity on this space. In order to do so
@@ -6538,56 +6651,66 @@ on all of \(\mathcal{F}'\).
 \subsection{Presentation and Proof of the Formula}\label{sec:proof simple formula}
 
 In this chapter we verify the formula for the \(S\)-matrix directly.
-For a heuristic derivation in the appendix in section\ref{sec:heuristic construction}
+For a heuristic derivation in the appendix in 
+section \ref{sec:heuristic construction}
 
 
-\begin{Thm}\label{sleek_second_quantised_scattering_operator}
-For \(A\) such that 
+\begin{Thm}[Analyticity for small \(A\)]\label{sleek_second_quantised_scattering_operator}
+Let \(A\in\mathcal{V}\) be such that the one 
+particle scattering operator \(S^A\) fulfills
 \begin{equation}
-\|\id-U^A\|<1.
+\|\id-S^A\|<1.
 \end{equation}\label{eq:sleek_scattering}
-The second quantized scattering operator fulfils
+Then the operator 
 \begin{equation}\label{eq:sleek_second_quantised_scattering_operator}
-S^A= e^{i \varphi^A} e^{\mathrm{d}\Gamma(\ln (U^A))}
+\tilde{S}^A=  e^{\mathrm{d}\Gamma(\ln (S^A))}
 \end{equation}
-for some phase \(\varphi^A\in\mathbb{R}\), that may depend on the external field \(A\).
-
+is a lift of \(S^A\), where the logarithm is defined by its 
+taylor series around the identity.
 \end{Thm}
 \begin{proof}
-In order to establish this theorem we need to verify that the expression given in \eqref{eq:sleek_scattering} for the scattering operator
+In order to establish this theorem we need to verify that the 
+expression given in \eqref{eq:sleek_scattering} for the scattering 
+operator
  is a well defined object
-and fulfils the \eqref{lift condition}. Because these conditions uniquely fix the Operator \(S^A\)  up to a phase this suffices as a proof.
+and fulfils the \eqref{lift condition}. Because these conditions 
+uniquely fix the Operator \(S^A\)  up to a phase this suffices as 
+a proof.
 
-Well definedness is established, by theorem \ref{Gamma essential selfadjointness}, because for unitary \(U^A\)
-with \(\|1-U^A\|<1\) the power series of the logarithm converges and fulfils
+Well definedness is established, by theorem 
+\ref{Gamma essential selfadjointness}, because for unitary \(S^A\)
+with \(\|1-S^A\|<1\) the power series of the logarithm converges 
+and fulfils
 \begin{align}
-\|\ln(U^A)\|=\|\ln (1-(1-U^A))\|= \left\| -\sum_{k=1}^\infty \frac{(1-U^A)^k}{k} \right\|\\
- \le   \sum_{k=1}^\infty \frac{\|1-U^A\|^k}{k}=-\ln(1-\|1-U^A\|)
+\|\ln(S^A)\|=\|\ln (1-(1-S^A))\|= \left\| -\sum_{k=1}^\infty \frac{(1-S^A)^k}{k} \right\|\\
+ \le  \sum_{k=1}^\infty \frac{\|1-S^A\|^k}{k}=-\ln(1-\|1-S^A\|)
 \end{align}
 implying that the power series of the logarithm around the 
 identity is a well defined map from the one particle 
 operators of norm less than
 one to the bounded one particle operators. Moreover this 
-operator fulfils \([\ln (U^A)]^*=\ln (U^A)^*= \ln 
-(U^A)^{-1}=-\ln (U^A)\), so 
-\(\mathrm{d}\Gamma(\ln U^A)\) is a well defined unbounded 
+operator fulfils \([\ln (S^A)]^*=\ln (S^A)^*= \ln 
+(S^A)^{-1}=-\ln (S^A)\), so 
+\(\mathrm{d}\Gamma(\ln S^A)\) is a well defined unbounded 
 operator that is essentially skew adjoint on the finite 
 particle sector of Fock space \(\mathcal{F}'\).
 
 
-Let \(\varphi\in \mathcal{H}\), for any \(k\in \mathbb{N}_0\) we see applying the commutation relation of \(\mathrm{d}\Gamma\):
+Let \(\varphi\in \mathcal{H}\) and \(\alpha\in \mathcal{F}'\), 
+for any \(k\in \mathbb{N}_0\) we see applying the commutation 
+relation of \(\mathrm{d}\Gamma\):
 \begin{multline*}
-\mathrm{d}\Gamma(\ln U) \sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l} = \\
-\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^{l+1} \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l}\\
-+\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l+1}\\
-= \sum_{b=0}^{k+1} \left( \binom{k}{b-1} + \binom{k}{b}\right) a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b}\\
-=\sum_{b=0}^{k+1}  \binom{k+1}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b},
+\mathrm{d}\Gamma(\ln U) \sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l} \alpha\\
+=\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^{l+1} \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l}\alpha\\
++\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l+1}\alpha\\
+= \sum_{b=0}^{k+1} \left( \binom{k}{b-1} + \binom{k}{b}\right) a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b}\alpha\\
+=\sum_{b=0}^{k+1}  \binom{k+1}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b}\alpha,
 \end{multline*}
 so we see that for \(k\in\mathbb{N}_0\)
 \begin{equation}
-\left(\mathrm{d}\Gamma(\ln U)\right)^k a^\# (\varphi) = \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}
+\left(\mathrm{d}\Gamma(\ln U)\right)^k a^\# (\varphi) \alpha= \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}\alpha
 \end{equation}
-holds. Let \(\alpha \in \mathcal{F}'\). Using what we just obtained, we conclude
+holds. Using what we just obtained, we conclude
 \begin{multline*}
 e^{\mathrm{d}\Gamma(\ln U)}a^\#(\varphi) \alpha = \sum_{k=0}^\infty \frac{1}{k!} \left(\mathrm{d}\Gamma(\ln U)\right)^k a^\# (\varphi)\alpha\\
 =\sum_{k=0}^\infty \frac{1}{k!}  \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi \right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}\alpha\\
@@ -6602,8 +6725,52 @@ Clearly multiplying the second quantised operator by an additional phase as in
 \eqref{sleek_second_quantised_scattering_operator} does not influence this calculation.
 \end{proof}
 
+The last theorem can be restated as for \(A\) small enough 
+there is a power series of operators on \(\mathcal{F}\)
+that converges against a lift of \(S^A\). Power series in \(A\) 
+is used here in the sense that it is of the form 
+\(\sum_{k\in\mathbb{N}_0} T_k(A)\), where \(T_K(A)\) is 
+homogeneous in \(A\) of degree \(k\). The next Theorem 
+establishes such a power series for all \(A\in\mathcal{V}\).
 
+\begin{Thm}[Analyticity for all \(A\)]
+  Let \(A\in\mathcal{V}\) and \(S^A\) the corresponding one-particle 
+  scattering operator. There is a lift \(\tilde{S}^A\) of \(S^A\)
+  that fulfills 
+\begin{equation}
+  \tilde{S}^A=\sum_{\in\mathbb{N}_0} T_k(A),
+\end{equation}
+  where \(T_k(A)\) are unbounded operators defined on 
+  \(\mathcal{F}'\) that are homogeneous of degree \(k\) in \(A\).
+  This series is strongly convergent on \(\mathcal{F}'\).
+\end{Thm}
 
+\begin{proof}
+Pick \(A\in\mathcal{V}\). Recall the definition 
+\ref{def: S bar, gamma, cA} of 
+the one-particle scattering operator 
+\(S^A\) 
+\begin{equation}
+  S^A= U^0_{\Sigma_{\text{in}},\Sigma_{\text{out}}}U^A_{\Sigma_{\text{out}},\Sigma_{\text{in}}}.
+\end{equation}
+Pick \(N\in\mathbb{N}\) such that 
+\begin{equation}
+  S^A_k=U^{(k-1)A/N}_{\Sigma_{\text{in}},\Sigma_{\text{out}}}U^{k/N A}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}
+\end{equation}
+fulfills 
+\begin{equation}
+\|1-S^A_k\|<1
+\end{equation}
+for all \(0<k<N\). Then by the theorem \ref{sleek_second_quantised_scattering_operator}
+\begin{equation}
+  \tilde{S}^A_k=e^{\mathrm{d}\Gamma(\ln(S^A_k))}
+\end{equation}
+is a lift of \(S^A_k\) for each \(k\), so the product
+\begin{equation}
+  \tilde{S}^A = \prod_{k=1}^N \tilde{S}^A_k
+\end{equation}
+is a lift of \(S^A\). Pick \(\alpha \in \mathcal{F}\). 
+\end{proof}
 
 
 \section{The Relationship Between Hadamard States and Admissible Polarisation Classes}\label{sec: hadamard}

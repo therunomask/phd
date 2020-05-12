@@ -258,6 +258,12 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/bm.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/scalerel/scalerel.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/scalerel/scalerel.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amscd.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amscd.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
@@ -304,8 +310,6 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libr
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
 OUTPUT /Users/noeth/Documents/uni/qed/tex-files/main/phd.pdf
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
-INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
 INPUT /Users/noeth/Documents/uni/qed/tex-files/main/phd.aux
 INPUT /Users/noeth/Documents/uni/qed/tex-files/main/phd.aux
 OUTPUT /Users/noeth/Documents/uni/qed/tex-files/main/phd.aux

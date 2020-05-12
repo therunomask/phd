@@ -28,7 +28,7 @@
 \usepackage{cancel}
 \usepackage{lipsum}
 \usepackage{bm}
-
+\usepackage{scalerel}
 
 
 %commutative diagram
@@ -6326,7 +6326,79 @@ terms are
 \end{align}
 By counting the remaining creation and annihilation operators 
 we immediately see that \(\mathrm{d}\Gamma(B_{-+})\alpha\in 
-\mathcal{F}_{m-1,p-1}\). 
+\mathcal{F}_{m-1,p-1}\). We take the norm squared of the 
+expression and notice that the scalar product is only 
+not zero in cases where \(|L\backslash L'|\le 1\) and 
+\(|C\backslash C'|\le 1\). Furthermore, whenever 
+\(L = L'\) holds, the two sums of \(1\le b,b'\le m\)
+collapses to a single sum over this range and analogously
+for \(C = C'\) and \(d,d'\). In case \(L \neq L'\)
+no sum over \(b\) or \(b'\) remains for the same reason.
+Hence we arrive at
+
+
+\begin{align}
+&\|\mathrm{d}\Gamma(B_{-+})\alpha \|^2
+\le \sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p-1\end{matrix}}{20pt}}
+\sum_{\scaleto{\begin{matrix}n_1,n_2\in\mathbb{N}\backslash L \\l_1,l_2\in\mathbb{N}\backslash C\end{matrix}}{15pt}}
+  |\alpha_{L\cup \{n_2\},C\cup\{l_2\}}| |\alpha_{L\cup \{n_1\},C\cup\{l_1\}}|\\
+&\Bigg[
+    \delta_{n_1,n_2}\delta_{l_1,l_2} \sum_{b=1}^m \sum_{c=1}^p |\langle B_{+-}\tilde{\varphi}_{-C_c},\tilde{\varphi}_{L_b} \rangle|^2\\
+    &+(1-\delta_{n_1,n_2})\delta_{l_1,l_2}\sum_{c=1}^p |\langle B_{+-} \tilde{\varphi}_{-C_c},\tilde{\varphi}_{n_1}\rangle||\langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-C_c}\rangle |\\
+    &+\delta_{n_1,n_2}(1-\delta_{l_1,l_2})\sum_{b=1}^m |\langle B_{+-}\tilde{\varphi}_{-C_{l_1}},\tilde{\varphi}_{L_b}\rangle| |\langle \tilde{\varphi}_{L_b},B_{+-}\tilde{\varphi}_{-C_{L_2}}\rangle |\\
+    &+(1-\delta_{n_1,n_2})(1-\delta_{l_1,l_2})|\langle B_{+-}\tilde{\varphi}_{-C_{l_1}},\tilde{\varphi}_{n_1}\rangle| | \langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-C_{l_2}}\rangle |
+  \Bigg].
+\end{align}
+
+In the next step we split the sum into the four already indicated,
+estimate the terms \((1-\delta)\le 1\) and eliminate sums with
+the remaining Kronecker deltas. For the first term, we subsequently 
+enlarge the sum over part of the Basis 
+\(\tilde{\varphi}\) in the scalar product to the sum 
+over all basis elements, yielding
+\begin{align}
+  &\|\mathrm{d}\Gamma(B_{-+})\alpha \|^2
+  \le 
+  \|\alpha\|^2 \sum_{b\in\mathbb{N}} \sum_{c\in\mathbb{N}} |\langle B_{+-}\tilde{\varphi}_{-c},\tilde{\varphi}_{b} \rangle|^2\\
+      &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p\end{matrix}}{20pt}}
+      \sum_{n_1,n_2\in\mathbb{N}\backslash L }
+      |\alpha_{L\cup \{n_2\},C}| |\alpha_{L\cup \{n_1\},C}|\\
+      &\hspace{1.5cm}\times \sum_{c=1}^p |\langle B_{+-} \tilde{\varphi}_{-C_c},\tilde{\varphi}_{n_1}\rangle||\langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-C_c}\rangle |\\
+      &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m\\|C|=p-1\end{matrix}}{20pt}}
+      \sum_{l_1,l_2\in\mathbb{N}\backslash C }
+      |\alpha_{L,C\cup\{l_2\}}| |\alpha_{L,C\cup\{l_1\}}|\\
+      &\hspace{1.5cm}\times \sum_{b=1}^m |\langle B_{+-}\tilde{\varphi}_{-C_{l_1}},\tilde{\varphi}_{L_b}\rangle| |\langle \tilde{\varphi}_{L_b},B_{+-}\tilde{\varphi}_{-C_{L_2}}\rangle |\\
+      &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p-1\end{matrix}}{20pt}}
+      \sum_{\scaleto{\begin{matrix}n_1,n_2\in\mathbb{N}\backslash L \\l_1,l_2\in\mathbb{N}\backslash C\end{matrix}}{15pt}}
+      |\alpha_{L\cup \{n_2\},C\cup\{l_2\}}| |\alpha_{L\cup \{n_1\},C\cup\{l_1\}}|\\
+      &\hspace{1.5cm}|\times \langle B_{+-}\tilde{\varphi}_{-l_1},\tilde{\varphi}_{n_1}\rangle| | \langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-l_2}\rangle |.
+\end{align}
+Now we identity the sums over \(l_1,l_2\) and \(n_1,n_2\) as 
+scalar products in tensor products of \(l^2(\mathbb{N})\) 
+and apply the Cauchy-Schwarz inequality. Additionally, 
+we identify 
+\(\sum_{b\in\mathbb{N}}\sum_{c\in\mathbb{N}}|\langle B_{+-} 
+\tilde{\varphi}_{-c},\tilde{\varphi}_{b}\rangle|^2
+=\|B_{+-}\|^2_{I_2}\). This results in 
+\begin{align}
+  &\|\mathrm{d}\Gamma(B_{-+})\alpha \|^2
+  \le 
+  \|\alpha\|^2 \|B_{-+}\|^2_{I_2}\\
+      &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p\end{matrix}}{20pt}}
+      \sum_{n\in\mathbb{N}\backslash L }
+      |\alpha_{L\cup \{n\},C}|^2 \sum_{c=1}^p \sum_{u\in\mathbb{N}\backslash L}|\langle B_{+-} \tilde{\varphi}_{-C_c},\tilde{\varphi}_{u}\rangle|^2 \\
+      &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m\\|C|=p-1\end{matrix}}{20pt}}
+      \sum_{l\in\mathbb{N}\backslash C }
+      |\alpha_{L,C\cup\{l\}}|^2 \sum_{b=1}^m \sum_{u\in\mathbb{N}\backslash C }|\langle B_{+-}\tilde{\varphi}_{-u},\tilde{\varphi}_{L_b}\rangle|^2 \\
+      &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p-1\end{matrix}}{20pt}}
+      \sum_{\scaleto{\begin{matrix}n \in\mathbb{N}\backslash L \\l \in\mathbb{N}\backslash C\end{matrix}}{15pt}}
+       |\alpha_{L\cup \{n\},C\cup\{l\}}|^2
+      \sum_{\scaleto{\begin{matrix}u \in\mathbb{N}\backslash L \\d \in\mathbb{N}\backslash C\end{matrix}}{15pt}} |\langle B_{+-}\tilde{\varphi}_{-d},\tilde{\varphi}_{u}\rangle|^2\\
+        \le 4 \|\alpha\|^2 \|B_{-+}\|^2_{I_2}.
+\end{align}
+
+
+\todo{clean up after estimate works out}
 For estimating the norm of this vector, we switch basis from 
 \((\tilde{\varphi}_{\pm n})_n\) to \((\varphi_{\pm n})_n\), 
 the basis where 
@@ -6762,7 +6834,14 @@ fulfills
 \|1-S^A_k\|<1
 \end{equation}
 for all \(0<k<N\). Then by the theorem \ref{sleek_second_quantised_scattering_operator}
-we 
+\begin{equation}
+  \tilde{S}^A_k=e^{\mathrm{d}\Gamma(\ln(S^A_k))}
+\end{equation}
+is a lift of \(S^A_k\) for each \(k\), so the product
+\begin{equation}
+  \tilde{S}^A = \prod_{k=1}^N \tilde{S}^A_k
+\end{equation}
+is a lift of \(S^A\). Pick \(\alpha \in \mathcal{F}\). 
 \end{proof}
 
 

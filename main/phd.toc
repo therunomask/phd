@@ -1,4 +1,4 @@
-\contentsline {chapter}{Contents}{iv}{section*.1}% 
+\contentsline {chapter}{Contents}{vi}{section*.1}% 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}% 
 \contentsline {chapter}{\chapternumberline {2}Direct Interaction in Relativistic Quantum Mechanics}{5}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Overview}{6}{section.2.1}% 
@@ -54,22 +54,20 @@
 \contentsline {section}{\numberline {3.3}Geometric Construction of the Phase}{116}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Main Result of Construction}{120}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Proofs}{121}{subsection.3.3.2}% 
-\contentsline {section}{\numberline {3.4}Simple Formula for the Scattering Operator}{153}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Differential second quantisation}{155}{subsection.3.4.1}% 
-\contentsline {subsection}{\numberline {3.4.2}Presentation and Proof of the Formula}{179}{subsection.3.4.2}% 
-\contentsline {section}{\numberline {3.5}The Relationship Between Hadamard States and Admissible Polarisation Classes}{183}{section.3.5}% 
-\contentsline {subsection}{\numberline {3.5.1}Introduction}{183}{subsection.3.5.1}% 
-\contentsline {subsection}{\numberline {3.5.2}Hadamard States}{185}{subsection.3.5.2}% 
-\contentsline {subsection}{\numberline {3.5.3}Projectors for Polarisation Classes}{188}{subsection.3.5.3}% 
-\contentsline {subsection}{\numberline {3.5.4}Comparison Between Hadamard States and \(P^\lambda _\Sigma \)}{191}{subsection.3.5.4}% 
-\contentsline {subsection}{\numberline {3.5.5}\tmspace -\thinmuskip {.1667em}Appendix: Proof of theorem \ref {thm:hadamard=>Pol} and \ref {thm:Pol=>hadamard}}{192}{subsection.3.5.5}% 
-\contentsline {section}{\numberline {3.6}Niemandsland}{209}{section.3.6}% 
-\contentsline {subsection}{\numberline {3.6.1}Quantitative Estimates}{219}{subsection.3.6.1}% 
-\contentsline {chapter}{Appendix}{239}{appendix*.42}% 
-\contentsline {section}{Regularity of the One Particle Scattering Operator}{239}{section*.43}% 
-\contentsline {section}{Lemma of Poincar\IeC {\'e} in infinite dimensions}{254}{section*.45}% 
-\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{258}{section*.47}% 
-\contentsline {subsection}{Guessing Equations}{258}{section*.48}% 
-\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{261}{section*.50}% 
-\contentsline {subsection}{Solution to Recursive Equation}{269}{section*.52}% 
-\contentsline {chapter}{Bibliography}{281}{appendix*.54}% 
+\contentsline {section}{\numberline {3.4}Analyticity of the Scattering Operator}{153}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Differential second quantisation}{154}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Presentation and Proof of the Formula}{177}{subsection.3.4.2}% 
+\contentsline {section}{\numberline {3.5}The Relationship Between Hadamard States and Admissible Polarisation Classes}{182}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}Hadamard States}{183}{subsection.3.5.1}% 
+\contentsline {subsection}{\numberline {3.5.2}Projectors for Polarisation Classes}{188}{subsection.3.5.2}% 
+\contentsline {subsection}{\numberline {3.5.3}Comparing Hadamard States and \(P^\lambda _\Sigma \)}{190}{subsection.3.5.3}% 
+\contentsline {subsection}{\numberline {3.5.4}Summary and Conclusions}{192}{subsection.3.5.4}% 
+\contentsline {chapter}{Appendix}{195}{appendix*.31}% 
+\contentsline {section}{Regularity of the One Particle Scattering Operator}{195}{section*.32}% 
+\contentsline {section}{Lemma of Poincar\IeC {\'e} in infinite dimensions}{210}{section*.34}% 
+\contentsline {section}{Heuristic Construction of \(S\)-Matrix expression}{214}{section*.36}% 
+\contentsline {subsection}{Guessing Equations}{215}{section*.37}% 
+\contentsline {subsection}{Recursive equation for Coefficients of the second quantised scattering operator}{218}{section*.38}% 
+\contentsline {subsection}{Solution to Recursive Equation}{226}{section*.40}% 
+\contentsline {subsection}{Proofs of Section \ref {sec: hadamard}}{237}{section*.42}% 
+\contentsline {chapter}{Bibliography}{255}{appendix*.43}% 

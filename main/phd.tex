@@ -79,12 +79,8 @@
 \newcommand{\sym}{{\textup sym}}
 \newcommand{\adv}{{\textup adv}}
 \newcommand{\free}{{\textup free}}
-\newcommand{\Dirac}{{\textup Dirac}}
-\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
-    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
 \newcommand{\Banach}{\mathscr{B}}
 
-\DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator*{\supp}{supp}
 \DeclareMathOperator*{\esssup}{ess \, sup}
 \DeclareMathOperator{\past}{past}
@@ -93,8 +89,6 @@
 \DeclareMathOperator{\erf}{erf}
 \DeclareMathOperator{\erfi}{erfi}
 \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\dotCup}{\mathop{\dot{\bigcup}}}
-\DeclareMathOperator{\dotcup}{\mathop{\dot{\cup}}}
 \DeclareMathOperator{\ag}{ag}
 \DeclareMathOperator{\AG}{AG}
 \DeclareMathOperator{\dom}{dom}
@@ -102,10 +96,6 @@
 \DeclareMathOperator{\odd}{odd}
 \DeclareMathOperator{\term}{Term}
 
-\newcommand{\equaltext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
-\newcommand{\letext}[1]{\ensuremath{\stackrel{\text{#1}}{\le}}}
-\newcommand{\Conv}{\mathop{\scalebox{1.7}{\raisebox{-0.2ex}{\(\ast\)}}}}
-\newcommand{\CONV}{\mathop{\scalebox{3.0}{\raisebox{-0.2ex}{\(\ast\)}}}}
 
 % Annotations
 \usepackage[colorinlistoftodos,shadow,textsize=scriptsize,textwidth=2.5cm]{todonotes}
@@ -187,15 +177,16 @@ scattering operator is given and proven to be well-defined.
 
 \newpage
 
-{\large \textbf{Zusammenfassung}}
+{\large \textbf{Zusammenfassung}}\\
+
 Das Hauptthema dieser Arbeit sind die Schwierigkeiten die 
-dabei auftreten Wechselwirkungen in die relativistische 
+dabei \linebreak auftreten Wechselwirkungen in die relativistische 
 Quantenmechanik einzuführen. Dabei werden zwei sehr unterschiedliche
-Herangehensweisen verfolgt.
+Herangehens-weisen verfolgt.
 
 In der Ersten wird eine kürzlich von Matthias Lienert vorgestellten 
 relativistisch invariante Integralgleichung für Wellenfunktionen 
-für mehrere Zeiten thematisiert. Dies ist eine Gleichung für 
+für \linebreak mehrere Zeitkoordinaten thematisiert. Dies ist eine Gleichung für 
 Fermionen welche direkt entlang lichtartiger Konfigurationen 
 wechselwirken. Dabei werden bereits bestehende Resultate über 
 Existenz und Eindeutigkeit von Lösungen von einer Variante dieser 
@@ -226,12 +217,41 @@ Schließlich wird eine einfache Formel für den Streuoperator
 als Funktion des Einteilchenstreuoperators angegeben und
 dessen Wohldefiniertheit gezeigt.
 
-
+\newpage
 
 %\vskip.5cm
 %\thispagestyle{empty}
 
+\begin{center}
+  \textbf{Notes on Style}
+\end{center}
+In the following I will mostly be using personal 
+pronouns denoting the plural such as
+``we''. This does not solely refer to my, the authors, 
+person, nor does it refer to the author and his 
+supervisors or other coauther of the preprints that 
+led to this thesis. Instead it refers to you the reader 
+and myself, as I want to follow 
+the example of the textbooks I enjoyed reading as an 
+undergraduate student which invited the reader to 
+perform all of the announced tasks 
+together with the text. 
 
+\vspace{0.5cm}
+Furthermore, there will be many occasions to speak of 
+individual terms that appear in previous equations or 
+estimates. Often, such terms will reappear only once or 
+twice and are not important enough to receive a name of 
+their own. On such occations we will denote them 
+by the number they were given initially enclosed 
+in round brackets. If we want to emphasise 
+the dependence of some of the variables appearing in 
+the term we will be using standard notation for 
+functions where the function name is the number 
+of the term enclosed in round brackets.
+
+
+\newpage 
 \tableofcontents
 
 \newpage
@@ -260,6 +280,7 @@ where \(g\) is the Minkowski metric. I work with the \(+---\) metric signature a
 \end{equation}
 
 
+\todo{introduce \(\overline{\psi}\)}
 
 
 %\show\afterchaptertitle
@@ -281,7 +302,7 @@ ibc_model,phd_nickel}; an overview can be found in \cite{dice_paper}.
 For two Dirac particles in Minkowski spacetime $\M$, a multi-time wave 
 function is a map
 
-\chapter[Direct Interaction in Relativistic Quantum Mechanics][Direct Interaction]{Direct Interaction in Relativistic Quantum Mechanics}
+\chapter[Direct Interaction in Relativistic Quantum Mechanics][Direct Interaction]{Direct Interaction in Relativistic Quantum Mechanics}\label{chap: direct interaction}
 As we have seen in the last chapter, having interaction mediated by potentials 
 in a set of Dirac equations does not seem to be a viable option.
 One alternative approach to this problem is to reformulate Diracs equation as 
@@ -1186,7 +1207,7 @@ The proof can be found in Sec.\@ \ref{sec:proofexistence}.
   $R \subset \left( \{ 0\} \times \R^3\right)^2$, 
   then for all Cauchy surfaces $\Sigma \subset 
   \frac{1}{2}\M$, $\psi|_{\Sigma \times \Sigma}$ is 
-  supported in the causally grown set  
+  supported in the causally grown set \linebreak 
   $\text{Gr}(R,\Sigma) = \left(\bigcup_{(x,y)\in R} 
   \future(x) \times \future(y) \right) \cap 
   (\Sigma \times \Sigma)$ where $\future(x)$ stands 
@@ -3693,7 +3714,7 @@ more widely accepted way of
 introducing interaction into relativistic quantum 
 mechanics, Quantum Field Theory. For the motivation and 
 introduction we follow \cite{deckert2016perspective}.
-While the rigoros quantum field theoretic formulation of free 
+While the rigorous quantum field theoretic formulation of free 
 relativistic fermions is textbook material
 \cite{derezinski2013mathematics} the introduction of interaction faces 
 difficulties. In fact, introducing an external electromagnetic field
@@ -3957,7 +3978,7 @@ in the original versions. In order to state those theorems
 we need some mathematical notation which we introduce first.
 
 
-\section{Introduction}
+\section{Introduction}\label{sec: qft intro}
 
 This section will first introduce some notation of 
 \cite{ivp0,ivp1,ivp2,deckert2016perspective} in order to 
@@ -5846,7 +5867,7 @@ Finally by taking the derivative with respect to \(G\in\mathcal{V}\) and using t
 
 
 
-\section[Simple Formula for the Scattering Operator][Simple Formula]{Simple Formula for the Scattering Operator}
+\section[Analyticity of the Scattering Operator][Analyticity]{Analyticity of the Scattering Operator}
 In this chapter we will present a relatively simple 
 formula for the second quantised scattering operator 
 in terms of the one-particle scattering operator. 
@@ -5866,9 +5887,9 @@ to be useful. Let \(B:\mathcal{H}\rightarrow \mathcal{H}\)
 be linear and bounded, then we introduce 
 
 \begin{equation}
-  B_{\mathsf{\Phi},\mathsf{\Gamma}}=P^{\mathsf{\Phi}}B P^{\mathsf{\Gamma}},
+  B_{\mathsf{\Phi},\mathsf{\Xi}}=P^{\mathsf{\Phi}}B P^{\mathsf{\Xi}},
 \end{equation}
-where \(\mathsf{\Phi},\mathsf{\Gamma}\in \{+,-\}\) holds.
+where \(\mathsf{\Phi},\mathsf{\Xi}\in \{+,-\}\) holds.
 Recall the definition of Fock space in this setting 
 
 \begin{equation}
@@ -5913,40 +5934,7 @@ recall the lift condition
 which is to be satisfied by any lift \(\tilde{S}^A\)  
 of the one-particle scattering matrix \(S^A\).
 
-There is a convergent power series of the one-particle 
-scattering operator \(S^A\):
-\begin{equation}\label{U_expansion}
-S^A = \sum_{k=0}^\infty \frac{1}{k!} Z_k(A),
-\end{equation}
-where \(Z_k(A)\) are bounded operators on \(\mathcal{H}\), which are homogeneous of degree \(k\) in \(A\).
-Our strategy in this chapter is to try an analogous formal 
-power series ansatz for the second quantised scattering 
-operator \(\tilde{S}^A\)
-
-\begin{equation}\label{S_expansion}
-\tilde{S}^A=\sum_{k=0}^\infty \frac{1}{k!} T_k(A).
-\end{equation}
-Here \(T_k\) are assumed to be homogeneous of degree 
-\(k\) in \(A\); however, they will only turn out to be 
-bounded on
-fixed particle number subspaces \(\mathcal{F}_{m,p}\) of 
-Fock space. We will identify operators \(T_k\) such that 
-\eqref{S_expansion}
-holds up to a global phase. 
-In order to fully characterise \(\tilde{S}^A\) it is enough 
-to characterise all of the \(T_k\) operators. 
-Using the \eqref{lift condition} one can derive commutation 
-relations for the operators 
-\(T_k\) by plugging in \eqref{U_expansion} and 
-\eqref{S_expansion} into the \eqref{lift condition} nad its 
-adjoint
-and collecting all terms with the same degree of homogeneity. 
-They are given by
-
-\begin{equation}\label{logarithmic lift condition}
-\left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right) T_{m-j}(A), 
-\end{equation}
-where \(a^\#\) is either \(a\) or \(a^*\). The 
+The 
 explicit, albeit heuristic, construction 
 of operators fulfilling \eqref{logarithmic lift condition}
 is carried out in the appendix in chapter 
@@ -5981,28 +5969,20 @@ denoted by
 \mathcal{F}':=\bigobot_{m,p=0}^\infty \mathcal{F}_{m,p},
 \end{equation}
 where \(\bigobot\) refers to the algebraic direct sum.
-\end{Def}
-Because \(B_{-+}:\mathcal{H}^+\rightarrow \mathcal{H}^-\) is compact, there is an ONB \((\varphi_n)_{n\in\mathbb{N}}\) 
-of \(\mathcal{H}^+\) and likewise an ONB \((\varphi_{-n})_{n\in\mathbb{N}}\) of \(\mathcal{H}^-\) such that it takes the canonical form 
-of compact operators
-
+Furthermore, we define
 \begin{equation}
-B_{-+} = \sum_{n\in\mathbb{N}} \lambda_n |\varphi_{-n}\rangle \langle \varphi_{n}|, \quad \lambda_n \ge 0.
+\mathcal{F}^0\subset \mathcal{F}'
 \end{equation}
-Here the numbers \(\lambda_n\) fulfil \(\sum_{k=1}^\infty \lambda_k^2 = \|B_{-+}\|_{\text{HS}}<\infty\). As a consequence we have
-
-\begin{equation}
-B_{+-} = -\sum_{n\in\mathbb{N}} \lambda_n |\varphi_{n}\rangle \langle \varphi_{-n}|.
-\end{equation}
-
-With respect to this basis we define the set of finite linear combinations of product states of finitely many particles
-
-\begin{Def}
-We define
-\begin{equation}
-\mathcal{F}^0\!\!:=\! \mathrm{span}\!\! \left\{\prod_{k=1}^m \!a^*\!(\varphi_{L_k}\!)\!\prod_{c=1}^p\!\! a(\varphi_{-C_c})\Omega\mid m,p\!\in\!\!\mathbb{N}, (L_k)_k,\!(C_c)_c\!\subset\!\mathbb{N} \!\right\}\!,
-\end{equation}
-we will refer to a subset of this set for fixed values of \(m\) and \(p\) by \(\mathcal{F}^0_{m,p}\).
+such that for each element \(\alpha\in\mathcal{F}^0\) there is 
+a basis an ONB \((\tilde{\varphi}_{k})_{k\in\mathbb{N}}\)
+of \(\mathcal{H}^+\) and an ONB 
+\((\tilde{\varphi}_{-k})_{k\in\mathbb{N}}\)
+of \(\mathcal{H}^-\) such that 
+\begin{align}
+  &\alpha\in \mathrm{span}\Bigg\{\prod_{k=1}^m \!a^*\!(\tilde{\varphi}_{L_k}\!)\!\prod_{c=1}^p\!\! a(\tilde{\varphi}_{-C_c})\Omega \\
+  &\hspace{0.5cm}\mid m,p \in \mathbb{N}, (L_k)_k, (C_c)_c \subset \mathbb{N}, |L|\!=\!m,|C|\!=\!p\! \Bigg\}
+\end{align}
+for some \( \)holds.
 \end{Def}
 
 In order to do so, the following splitting turns out to be advantageous. 
@@ -6038,11 +6018,11 @@ the following bounds for all \(m,p\)
 \begin{align}
 \|\mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}\|&\le (m+5)\|B_{++}\|\\
 \|\mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}\|&\le (p+5)\|B_{--}\|\\
-\|\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}\|&\le \|B_{-+}\|_{\text{HS}}.
+\|\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}\|&\le 2 \|B_{-+}\|_{I_2}.
 \end{align}
 \end{Lemma}
 \begin{proof}
-Pick \(\alpha\in\mathcal{F}^0_{m,p}\) for \(m,p\in\mathbb{N}_0\), \(\alpha\) can be expressed in terms of a general ONB 
+Pick \(\alpha\in\mathcal{F}^0_{m,p}\) for \(m,p\in\mathbb{N}_0\), \(\alpha\) can be expressed in terms of some ONB 
 \((\tilde{\varphi}_k)_{k\in\mathbb{N}}\) of \(\mathcal{H}^+\) and \((\tilde{\varphi}_{-k})_{k\in\mathbb{N}}\) of \(\mathcal{H}^-\)
 \begin{equation}
 \alpha=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\!\!\!\!\!\!\alpha_{L,C} \prod_{l=1}^m a^*(\tilde{\varphi}_{L_l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega.
@@ -6371,7 +6351,7 @@ over all basis elements, yielding
       &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p-1\end{matrix}}{20pt}}
       \sum_{\scaleto{\begin{matrix}n_1,n_2\in\mathbb{N}\backslash L \\l_1,l_2\in\mathbb{N}\backslash C\end{matrix}}{15pt}}
       |\alpha_{L\cup \{n_2\},C\cup\{l_2\}}| |\alpha_{L\cup \{n_1\},C\cup\{l_1\}}|\\
-      &\hspace{1.5cm}|\times \langle B_{+-}\tilde{\varphi}_{-l_1},\tilde{\varphi}_{n_1}\rangle| | \langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-l_2}\rangle |.
+      &\hspace{1.5cm}\times| \langle B_{+-}\tilde{\varphi}_{-l_1},\tilde{\varphi}_{n_1}\rangle| | \langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-l_2}\rangle |.
 \end{align}
 Now we identity the sums over \(l_1,l_2\) and \(n_1,n_2\) as 
 scalar products in tensor products of \(l^2(\mathbb{N})\) 
@@ -6397,41 +6377,6 @@ we identify
   &\le 4 \|\alpha\|^2 \|B_{-+}\|^2_{I_2}.
 \end{align}
 
-
-\todo{clean up after estimate works out}
-For estimating the norm of this vector, we switch basis from 
-\((\tilde{\varphi}_{\pm n})_n\) to \((\varphi_{\pm n})_n\), 
-the basis where 
-\(B_{-+}\) takes its canonical form. Then the scalar product 
-involving \(B_{-+}\) reduces to 
-\(\lambda_{L_b}\delta_{L_b,C_d}\). We estimate
-
-\begin{align}\nonumber
-&\|\mathrm{d}\Gamma(B_{-+})\alpha\|^2= \hspace{-0.5cm}\sum_{\overset{L,L',C,C'\subset\mathbb{N}}{\overset{|L|=|L'|=m}{|C|=|C'|=p}}} ~\sum_{a,a'=1}^m \sum_{b,b'=1}^p
-\overline{\alpha}_{L,C} \alpha_{L',C'}(-1)^{b+d+b'+d'}\lambda_{L_b} \lambda_{L_{b'}'} \\
-&\delta_{L_b,C_d} \delta_{L_{b'}',C_{d'}'} \left\langle \prod_{\overset{l=1}{l\neq b}}^m a^*(\varphi_{L_l})\prod_{\overset{c=1}{c\neq d}}^p 
-a(\varphi_{-C_c})\Omega, \prod_{\overset{l=1}{l\neq b'}}^m a^*(\varphi_{L_l'})
-\prod_{\overset{c=1}{c\neq d'}}^p a(\varphi_{-C_c'})\Omega\right\rangle.
-\end{align}
-
-The scalar product in the second line tells us that \(L\backslash \{L_b\}=L'\backslash \{L_{b'}'\}\) and \(C\backslash \{C_{d}\}=C'\backslash \{C_{d'}'\}\) have
-to hold in order for the term not to vanish. So this means that \(L\) and \(L'\) as well as \(C\) and \(C'\) can respectively differ at most by one element
-which then has to be in the intersection \(L\cap C\). Because this sum is really just a finite sum, we can reorder it in the following way
-
-\begin{align}\nonumber
-\|\mathrm{d}\Gamma(B_{-+})\alpha\|^2
-&=\hspace{-0.4cm}\sum_{\overset{L,C\subset\mathbb{N}}{\overset{|L|=m-1}{|C|=p-1}}} \sum_{b,b'\in \mathbb{N}\backslash (L\cup C)}\hspace{-0.3cm} \lambda_{b} \lambda_{b'} 
-\overline{\alpha}_{L\cup\{b\},C\cup \{b\}} \alpha_{L\cup\{b'\},C\cup\{b'\}}\\
-&(-1)^{g(L,b)+g(C,b)+g(L,b')+g(C,b')},
-\end{align}
-where \(g(L,b)=|\{l\in L \mid l<b\}|\). This expression can be rewritten in terms of a scalar product in \(\ell^2(\mathbb{N})\)
-
-\begin{align}\nonumber
-\|\mathrm{d}\Gamma(B_{-+})\alpha\|^2
-&=\hspace{-0.4cm}\sum_{\overset{L,C\subset\mathbb{N}}{\overset{|L|=m-1}{|C|=p-1}}} \left|\left\langle 1_{(L\cup C)^c} \alpha_{L\cup \{\cdot \}, C\cup \{\cdot\}} (-1)^{g(L,\cdot)+g(C,\cdot)},\lambda_\cdot \right\rangle_{\ell^2}  \right|^2 \\
-&\le \hspace{-0.4cm}\sum_{\overset{L,C\subset\mathbb{N}}{\overset{|L|=m-1}{|C|=p-1}}} \sum_{b\in \mathbb{N}} 1_{(L\cup C)^c}(b) |\alpha_{L\cup\{b\},C\cup\{b\}}|^2 \sum_{d\in\mathbb{N}}\lambda_d^2\\
-&\le \|\alpha\|^2 \|B_{-+}\|^2_{\text{HS}}.
-\end{align}
 
 \end{proof}
 
@@ -6468,12 +6413,28 @@ and \(\mathrm{d}\Gamma(B_{-+})^*\) agree on \(\mathcal{F}^0\) which is dense. So
 Fock space. 
 \end{proof}
 
-\begin{Lemma}
-The operator \(\mathrm{d}\Gamma(B):\mathcal{F}'\rightarrow \mathcal{F}\),
+\begin{Def}
+We define the set 
 \begin{equation}
-\mathrm{d}\Gamma(B):=\mathrm{d}\Gamma(B_{++})+\mathrm{d}\Gamma(B_{+-})+\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{--})
+  \mathfrak{B}:=\{B':\mathcal{H}\righttoleftarrow|\mathrm{linear},\|B'\|\in\mathbb{R}, {B'}^*=-B'\}
 \end{equation}
-is skew symmetric.
+and the operator
+\begin{equation}
+  \mathrm{d}\Gamma(B):=\mathrm{d}\Gamma(B_{++})+\mathrm{d}\Gamma(B_{+-})+\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{--}).
+\end{equation}
+Furhtermore, we endoe \(\mathfrak{B}\) with the topology induced by 
+the norm \(\|\cdot\|+\|P^+\cdot P^-\|+\|P^-\cdot P^+\|\).
+\end{Def}
+
+\begin{Lemma}
+The operator \(\mathrm{d}\Gamma(B)\)
+is skew symmetric and real linear in its argument 
+\(B\in\mathfrak{B}\).
+Moreover, for each \(m,p\in\mathbb{N}\) the functional 
+\(\mathrm{d}\Gamma(\cdot)|_{\mathcal{F}_{m,p}'}\)
+is bounded and hence continuous as a map from \(\mathfrak{B}\)
+to the set of bounded linear operators of type 
+\(\mathcal{F}_{m,p}'\rightarrow \mathcal{F}_{m-1,p-1}'\oplus \mathcal{F}_{m,p}'\oplus\mathcal{F}_{m+1,p+1}'\).
 \end{Lemma}
 \begin{proof}
 Since the sum of skew symmetric operators is skew symmetric, it suffices to show skew symmetry of \(\mathrm{d}\Gamma(B_{++})\) and \(\mathrm{d}\Gamma(B_{--})\).
@@ -6511,6 +6472,12 @@ to obtain
 \begin{equation}
 \left\langle \beta, \mathrm{d}\Gamma(B_{++})\alpha\right\rangle =- \left\langle \mathrm{d}\Gamma(B_{++})\beta, \alpha\right\rangle.
 \end{equation}
+Real linearity follows directly from the definition of 
+\(\mathrm{d}\Gamma\) on \(\mathcal{F}^0\) and hence 
+by extention on all of \(\mathcal{F}'\). Continuity 
+of the restriction to any \(\mathcal{F}_{m,p}'\) follows 
+directly from the forms of the bounds of lemma 
+\ref{d Gamma norms}.
 \end{proof}
 
 
@@ -6657,8 +6624,13 @@ where \(a^\#\) can be either \(a\) or \(a^*\)
 or all \(\alpha\in\mathcal{F}'\).
 \end{Thm}
 \begin{proof}
-Because \(\mathrm{d}\Gamma(B)\) is defined as the extension of an operator on \(\mathcal{F}^0\) it suffices to show the desired identity on this space. In order to do so
-we first restrict \(\psi\in \text{span}\{\varphi_{n}| n \in \mathbb{Z}\backslash\{0\}\}\). We will first cover the case \(a(\psi)\).  
+Because \(\mathrm{d}\Gamma(B)\) is defined as 
+the extension of an operator on \(\mathcal{F}^0\) it 
+suffices to show the desired identity on this space. In 
+order to do so
+we first restrict \(\psi\in \text{span}\{\varphi_{n}| n 
+\in \mathbb{Z}\backslash\{0\}\}\). We will do the 
+case \(a(\psi)\), the other case is completely analogous.  
 As a first step we decompose \(\mathrm{d}\Gamma(B)\) into its four parts
 
 \begin{align}
@@ -6772,26 +6744,26 @@ Let \(\varphi\in \mathcal{H}\) and \(\alpha\in \mathcal{F}'\),
 for any \(k\in \mathbb{N}_0\) we see applying the commutation 
 relation of \(\mathrm{d}\Gamma\):
 \begin{multline*}
-\mathrm{d}\Gamma(\ln U) \sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l} \alpha\\
-=\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^{l+1} \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l}\alpha\\
-+\sum_{l=0}^k \binom{k}{l} a^\# \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l+1}\alpha\\
-= \sum_{b=0}^{k+1} \left( \binom{k}{b-1} + \binom{k}{b}\right) a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b}\alpha\\
-=\sum_{b=0}^{k+1}  \binom{k+1}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b}\alpha,
+\mathrm{d}\Gamma(\ln U) \sum_{l=0}^k \binom{k}{l} a \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l} \alpha\\
+=\sum_{l=0}^k \binom{k}{l} a \left(\left(\ln U\right)^{l+1} \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l}\alpha\\
++\sum_{l=0}^k \binom{k}{l} a \left(\left(\ln U\right)^l \varphi \right) \left(\mathrm{d}\Gamma(\ln U)\right)^{k-l+1}\alpha\\
+= \sum_{b=0}^{k+1} \left( \binom{k}{b-1} + \binom{k}{b}\right) a\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b}\alpha\\
+=\sum_{b=0}^{k+1}  \binom{k+1}{b}  a\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k+1-b}\alpha,
 \end{multline*}
 so we see that for \(k\in\mathbb{N}_0\)
 \begin{equation}
-\left(\mathrm{d}\Gamma(\ln U)\right)^k a^\# (\varphi) \alpha= \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}\alpha
+\left(\mathrm{d}\Gamma(\ln U)\right)^k a (\varphi) \alpha= \sum_{b=0}^{k}  \binom{k}{b}  a\left( (\ln U)^b \varphi\right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}\alpha
 \end{equation}
 holds. Using what we just obtained, we conclude
 \begin{multline*}
-e^{\mathrm{d}\Gamma(\ln U)}a^\#(\varphi) \alpha = \sum_{k=0}^\infty \frac{1}{k!} \left(\mathrm{d}\Gamma(\ln U)\right)^k a^\# (\varphi)\alpha\\
-=\sum_{k=0}^\infty \frac{1}{k!}  \sum_{b=0}^{k}  \binom{k}{b}  a^\#\left( (\ln U)^b \varphi \right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}\alpha\\
-\overset{*}{=}\sum_{c=0}^\infty \sum_{l=0}^\infty \frac{1}{c! l!} a^\#\left( (\ln U)^c \varphi \right) \left( \mathrm{d}\Gamma(\ln U)\right)^{l}\alpha\\
-=a^\#\left( e^{\ln U} \varphi \right) e^{\mathrm{d}\Gamma( \ln U)}\alpha
-=a^\#\left( U \varphi \right) e^{\mathrm{d}\Gamma( \ln U)}\alpha.
+e^{\mathrm{d}\Gamma(\ln U)}a(\varphi) \alpha = \sum_{k=0}^\infty \frac{1}{k!} \left(\mathrm{d}\Gamma(\ln U)\right)^k a (\varphi)\alpha\\
+=\sum_{k=0}^\infty \frac{1}{k!}  \sum_{b=0}^{k}  \binom{k}{b}  a\left( (\ln U)^b \varphi \right) \left( \mathrm{d}\Gamma(\ln U)\right)^{k-b}\alpha\\
+\overset{*}{=}\sum_{c=0}^\infty \sum_{l=0}^\infty \frac{1}{c! l!} a\left( (\ln U)^c \varphi \right) \left( \mathrm{d}\Gamma(\ln U)\right)^{l}\alpha\\
+=a\left( e^{\ln U} \varphi \right) e^{\mathrm{d}\Gamma( \ln U)}\alpha
+=a\left( U \varphi \right) e^{\mathrm{d}\Gamma( \ln U)}\alpha.
 \end{multline*}
 For the marked equality changing oder of summation is justified, because by the bounds
- \(\|a^\#((\ln U)^c \varphi)\|\le \|\ln U\|^c\) and  lemma \ref{Gamma exponential bound} the sum obtained by changing the order
+ \(\|a((\ln U)^c \varphi)\|\le \|\ln U\|^c\) and  lemma \ref{Gamma exponential bound} the sum obtained by changing the order
  of summands converges absolutely.
 Clearly multiplying the second quantised operator by an additional phase as in 
 \eqref{sleek_second_quantised_scattering_operator} does not influence this calculation.
@@ -6810,7 +6782,7 @@ establishes such a power series for all \(A\in\mathcal{V}\).
   scattering operator. There is a lift \(\tilde{S}^A\) of \(S^A\)
   that fulfills 
 \begin{equation}
-  \tilde{S}^A=\sum_{\in\mathbb{N}_0} T_k(A),
+  \tilde{S}^A=\sum_{k\in\mathbb{N}_0} T_k(A),
 \end{equation}
   where \(T_k(A)\) are unbounded operators defined on 
   \(\mathcal{F}'\) that are homogeneous of degree \(k\) in \(A\).
@@ -6841,7 +6813,62 @@ is a lift of \(S^A_k\) for each \(k\), so the product
 \begin{equation}
   \tilde{S}^A = \prod_{k=1}^N \tilde{S}^A_k
 \end{equation}
-is a lift of \(S^A\). Pick \(\alpha \in \mathcal{F}\). 
+is a lift of \(S^A\). Pick \(\alpha \in \mathcal{F}^0\), 
+next we show that \(\tilde{S}^A\alpha\) is given by 
+a convergent power series and hence by linear 
+extension it is also convergent on \(\mathcal{F}'\), 
+which finishes the proof.
+Pick the basis \((\varphi_{k})_{k\in\mathbb{N}}\) and 
+\((\varphi_{-k})_{k\in\mathbb{N}}\) of 
+\(\mathcal{H}^+\) and \(\mathcal{H}^-\) respectively 
+such that \(\alpha\) is a finite linear combination of 
+the form \todo{is \(\mathcal{F}^0\) really necessary?}
+\begin{equation}
+\alpha=\sum_{\scaleto{\begin{matrix}L,C\subset \mathbb{N}\\|L|=m,|C|=p\end{matrix}}{15pt}}  
+  \hspace{-0.5cm}\alpha_{L,C} \prod_{l=1}^m a^*(\varphi_{L_l})\prod_{k=1}^p a(\varphi_{-C_k})\Omega.
+\end{equation}
+We calculate
+\begin{align}
+  \tilde{S}^A\alpha = \prod_{k=1}^N \tilde{S}^A_k\alpha 
+  =  \prod_{k=1}^{N-1}\tilde{S}^A_k \quad  \sum_{k_N\in\mathbb{N}_0}\frac{1}{k_N!}\bigg(\mathrm{d}\Gamma(\ln S^A_N)\bigg)^{k_N}\alpha\\
+  =  \prod_{k=1}^{N-2}\tilde{S}^A_k \quad  \sum_{k_N\in\mathbb{N}_0}\tilde{S}_{N-1}^A \frac{1}{k_N!}\bigg(\mathrm{d}\Gamma(\ln S^A_N)\bigg)^{k_N}\alpha,
+\end{align}
+where by continuity of the unitary \(\tilde{S}_{l}^A\) we may pull them into the sum,
+and expand the exponential, since inside the sum its argument is again in \(\mathcal{F}'\).
+We may continue this process by induction. Since all of these sums are norm convergent, we 
+may forget about the order in which they are to be carried out in our notation:
+\begin{align}
+  \tilde{S}^A\alpha = \sum_{k_1,\dots, k_N\in\mathbb{N}_0}\prod_{l=1}^N \frac{1}{k_l!}\bigg(\mathrm{d}\Gamma(\ln S^A_l)\bigg)^{k_l} \quad \alpha. 
+\end{align}
+Since \(\alpha\in\mathcal{F}'\), there is a maximal number 
+of particles of each summand. This implies that \(d\Gamma\) is 
+continuous as a function of \(\ln S^A_l\).
+The logarithm of \(S^A_l\) is given by a norm convergent 
+series in \(A\),
+\begin{align}
+  \ln S^A_l=-\sum_{k=1}^\infty \frac{1}{k} (1-S^A_l)^k
+  =\sum_{k=1}^\infty \frac{(-1)^{k+1}}{k} \bigg(\sum_{c\in\mathbb{N}_0}\frac{1}{c!} Z_{l,c}^A\bigg)^k\\
+=\sum_{\scaleto{\begin{matrix}k\in\mathbb{N}\\c\in\mathbb{N}_0^k\end{matrix}}{15pt}}
+  \frac{(-1)^{k+1}}{k ~c!}  \prod_{v=1}^k Z_{l,c_v}^A.
+\end{align}
+This may be plugged into the expression for \(\tilde{S}^A\)
+and the sum may be pulled out of \(\mathrm{d}\Gamma\) due to 
+linearity and continuity 
+\begin{align}
+  \tilde{S}^A\alpha=
+  \sum_{k\in\mathbb{N}_0^N}\frac{1}{k!} \prod_{l=1}^N
+  \Bigg(\sum_{\scaleto{\begin{matrix}b\in\mathbb{N}\\c\in\mathbb{N}_0^b\end{matrix}}{15pt}}
+    \frac{(-1)^{b+1}}{b ~c!}  \mathrm{d}\Gamma\bigg(\prod_{v=1}^b Z_{l,c_v}^A\bigg) \Bigg)^{k_l}\alpha.
+\end{align}
+Since all of these sums are absolutely convergent, 
+we may pull out the innermost sums 
+as well and finally change the order of summation according 
+to the degree of 
+homogeneity in \(A\) of the summands. The result is a 
+strongly convergent power series 
+on \(\mathcal{F}'\) as claimed in the theorem. 
+
+
 \end{proof}
 
 
@@ -6849,70 +6876,81 @@ is a lift of \(S^A\). Pick \(\alpha \in \mathcal{F}\).
 
 
 
-This section compares central objects of three different types of approaches to quantum field theory (QFT): The study of Hadamard states, the
-Fermionic Projector, and admissible polarisation classes.
-These approaches have different scopes and pursue different motivations, which makes a direct comparison difficult.
-Nevertheless, the basic protagonists in all three approaches share much more similarity than is apparent at first glance.
-It is the purpose of this work to highlight these common features. 
-Since they all study different aspects of QFT; however, one can make out objects in each of these theories which closely resemble
-one another. 
+This section compares central objects of two different 
+types of approaches to quantum field theory (QFT): 
+The study of Hadamard states and admissible polarisation classes 
+related to the rest of this chapter.
+These approaches have different scopes and pursue different 
+motivations, which makes a direct comparison difficult.
+Nevertheless, the basic protagonists in all three approaches 
+share much more similarity than is apparent at first glance.
+It is the purpose of this section to highlight these common features. 
 
-\subsection{Introduction}
+The first class of objects of interest are Hadamard states 
+which appear in the algebraic approach to 
+QFT for a historyic reference see \cite{fulling1978singularity}. 
 
+The second class of objects are the (\(I_2\)-almost) 
+projectors \(P^\lambda_{\Sigma}\) which are 
+operators that are Hilbert-Schmidt 
+close to projectors onto polarisation classes 
+discussed in section \ref{sec: qft intro}.
 
-The first class of objects of interest are Hadamard states which appear in the algebraic approach to 
-QFT \cite{fulling1978singularity}. 
+In subsection \ref{sec:hadamard} we give the definition of a Hadamard 
+state, briefly motivate it's usage 
+and give its explicit form in the case of flat spacetime subject 
+to an external field as computed in the physics literature 
+\cite{schlemmer2015current}.
 
-%The third class of objects are the continuum limit of the Fermionic Projectors \cite{finster2006principle}. 
-
-The second class of objects are the (\(I_2\)-almost) projectors \(P^\lambda_{\Sigma}\) which are 
-closely linked to polarisation classes of the vacuum of external field quantum electrodynamics (QED) \cite{ivp0, ivp1, ivp2}. 
-
-
-In section \ref{sec:hadamard} we give the definition of a Hadamard state, briefly motivate it's usage 
-and give its explicit form in the case of flat spacetime subject to an external field as computed in the physics literature \cite{schlemmer2015current}.
-
-In section \ref{sec:ferm proj} ...
-
-In section \ref{sec:pol classes} we briefly describe why in the approach of admissible polarisation classes one only keeps track of the time
-evolution of the projector up to an error that is a Hilbert-Schmidt operator. Furthermore we will find a class of candidate \(I_2\)-almost projectors
+In subsection \ref{sec:pol classes} we briefly describe why 
+in the approach of admissible polarisation classes one only keeps 
+track of the time
+evolution of the projector up to an error that is a 
+Hilbert-Schmidt operator. Furthermore, we will give a class 
+of candidate \(I_2\)-almost projectors
 that have a simple time evolution.
 
-In section \ref{sec:comparison hadamard fermion}...\textcolor{green}{comparison fermionic projector and hadamard state}
+In section \ref{sec:comparison hadamard pol} we find that each 
+Hadamard state corresponds to an \(I_2\)-almost projector in a 
+natural way.
 
-In section \ref{sec:comparison hadamard pol} we find that each Hadamard state corresponds to an \(I_2\)-almost projector in a natural way.\todo{is that specific enough?}
+Throughout this setion
+\(\Sigma, \Sigma'\) denote arbitrary Cauchy surfaces. 
+We choose 
+a fixed four-potential \(A\in \mathcal{V}\) 
+and \(\Sigma_{\text{in}}\) denotes a 
+Cauchy surface earlier than the support of \((A)\).
 
-Throughout the paper
-\(\Sigma, \Sigma', \Sigma''\) denote arbitrary Cauchy surfaces, while for the sake of simplicity we choose \(A\in C_c^\infty(\mathbb{R}^4,\mathbb{R}^4)\) 
-to be a four-potential and \(\Sigma_{\text{in}}\) denotes a Cauchy surface earlier than the support of \((A)\).
 
-%some introductory math needs to be written also we should mention that we are concerned with the Dirac field
-In this paper we will focus on a system of Dirac fields subject to an external electromagnetic four-potential \(A\) in flat Minkowski spacetime.
-We choose the sign convention \(\eta=\text{diag}(+1,-1,-1,-1)\). We denote the minimally coupled differential by \(\nabla_{\alpha} = \partial_{\alpha} + i A_{\alpha}\)
-and make use of the Feynman slash notation \(\slashed{\nabla}=:\nabla_{\alpha}\gamma^\alpha\) with \(\gamma^\alpha\) fulfilling 
-\(\{\gamma^\alpha , \gamma^\beta\}:=\gamma^\alpha  \gamma^\beta+\gamma^\beta  \gamma^\alpha  = 2 \eta^{\alpha,\beta}\)  each field solving 
-Dirac's equation
-\begin{equation}\label{dirac}
-(i\slashed{\nabla}-m)\psi =: D\psi= 0
-\end{equation}
-and collectively constituting the free vacuum prior to the support of said external field.\todo{macht das überhaupt Sinn so wenn ich von Dirac Felder spreche? Bei operatoren ist ja der Zustand nicht der Zustand des Feldes, sondern der Zustand ist extra.}
-For a 4-spinor \(\psi\in\mathbb{C}^4\) (viewed as a column vector), \(\overline{\psi}\) stands for the row vector \(\psi^*\gamma^0\), where \({}^*\) denotes hermitian conjugation.
-
+For brevity of notation we denote the minimally coupled 
+differential by \(\nabla_{\alpha} = \partial_{\alpha} + 
+i A_{\alpha}\).
 
 
 \subsection{Hadamard States}\label{sec:hadamard}
-In the algebraic approach to QFT one puts less emphasise on the Hilbert space than is commonly done in non relativistic physics because 
+In the algebraic approach to QFT one puts less emphasise on the 
+Hilbert space than is commonly done in non relativistic physics 
+because 
 it is not a relativistically invariant object.
-Instead one focuses on the algebra of operators that are chosen to do the bookkeeping of statistical outcomes of measurements. 
+Instead of introducing a sequence of Fock spaces as was motivated 
+in sections \ref{sec: mot QED} and 
+\ref{sec: qft intro}, one focuses on the algebra of operators that 
+are chosen to do the bookkeeping of statistical 
+outcomes of measurements. 
 
-To infer predictions, some part of the necessary computation can be conducted on the level of this algebra. However,
-eventually, expectation values are to be computed in a certain representation, usually found by the GNS construction
+To infer predictions, some part of the necessary computation 
+can be conducted on the level of this algebra. However,
+eventually, expectation values are to be computed in a certain 
+representation, usually found by the GNS construction
 with respect to a certain state.
 This choice has to be made on physical grounds. 
-Hadamard states are often thought to be physically sensible states because they have positive energy in a certain sense.
+Hadamard states are often thought to be physically sensible 
+states because they have positive energy in a certain sense.
 
-In order to introduce Hadamard states we have to first define the notion of wavefront set, which itself needs some preliminaries. 
-For the introduction of these concepts we follow Hömander \cite[Chapter 8]{hormander2003analysis}.
+In order to introduce Hadamard states first we have to define 
+the notion of wavefront set, which itself needs some preliminaries. 
+For the introduction of these concepts we follow 
+Hömander \cite[Chapter 8]{hormander2003analysis}.
 
 We begin by introducing the singular support of a distribution
 
@@ -6925,13 +6963,21 @@ v(\varphi)=\int \phi^\dagger_{x,v} (x) \varphi(x) dx.
 \end{align}
 \end{Def}
 
-The singular support contains all the points of a distribution such that the distribution does not act like a smooth function at that point. The wavefront set which we are
-about to introduce gives an additional directional information of where these singularities propagate. We incorporate this information by the Fourier transform 
+The singular support contains all the points of a 
+distribution such that the distribution does not act like 
+a smooth function at that point. The wavefront set which we are
+about to introduce gives additional directional information 
+of where these singularities propagate. We incorporate this 
+information by the Fourier transform 
 in the following definition.
 
 \begin{Def}
-Let for \(n,m\in\mathbb{N}\),  \(v\in (C^\infty(\mathbb{R}^n,\mathbb{C}^m))'\), we denote by \(\Xi(v)\subset \mathbb{R}^n\backslash\{0\}\) the set of all \(\eta\) such that there is no
-cone \(V\subset \mathbb{R}^n\), neighbourhood of \(\eta\), such that for all \(a\in\mathbb{N}\) there are \(C_a>0\) such that for all \(\xi\in V\) we have
+Let for \(n,m\in\mathbb{N}\),  \(v\in (C^\infty(\mathbb{R}^n,
+\mathbb{C}^m))'\), we denote by \(\Xi(v)\subset \mathbb{R}^n
+\backslash\{0\}\) the set of all \(\eta\) such that there is no
+cone \(V_\eta\subset \mathbb{R}^n\), neighbourhood of \(\eta\), 
+such that for all \(a\in\mathbb{N}\) there are \(C_a>0\) such that for 
+all \(\xi\in V_\eta\) we have
 \begin{equation}
 |\hat{v}(\xi)|\le \frac{C_a}{1+|\xi|^a}.
 \end{equation}
@@ -6940,22 +6986,38 @@ Furthermore for each \(x\in \mathbb{R}^n\) we define
 \begin{equation}
 \Xi_x (v) := \bigcap_{\overset{\phi \in C^\infty_c (\mathbb{R}^n)}{x\in \mathrm{supp}(\phi)}} \Xi(v \phi),
 \end{equation}
-Where \(v\phi\) is the pointwise multiplication of a distribution and a scalar test function, which acts as \(v\phi: C^\infty(\mathbb{R}^n,\mathbb{C}^m)\ni \psi\mapsto v(\psi \phi)\). 
+Where \(v\phi\) is the pointwise multiplication of a distribution and a scalar test function, which acts as 
+\(v\phi: C^\infty(\mathbb{R}^n,\mathbb{C}^m)\ni \psi\mapsto v(\psi \phi)\). 
+
+Analogously for a tempered distribution that takes two arguments 
+\(v:\mathcal{S}(\mathbb{R}^4)\times \mathcal{S}(\mathbb{R}^4)\rightarrow \mathbb{C}\)
+we define 
+\begin{equation}
+  \Xi_{x,y} (v) := \bigcap_{\overset{\phi}{(x,y)\in \mathrm{supp}(\phi)}} \Xi(v \phi), 
+\end{equation}
+where now \(\phi_{x,y}=\psi_{x} \chi_y\in C_c^\infty(\mathbb{R}^8)\)
+with \(\psi_{x} ,\chi_y\in C_c^\infty(\mathbb{R}^4)\)  and \(x\in\supp(\psi_x), y\in\supp(\chi_y)\).
 \end{Def}
 
 We have collected the tools to introduce the wavefront set and the notion of Hadamard states.
 
 \begin{Def}
 Let for \(n,m\in\mathbb{N}\), \(v\in (\mathcal{S}(\mathbb{R}^n,\mathbb{C}^m))'\) be a tempered distribution. The wavefront set \(\mathrm{WF}(v)\) of 
-the distribution \(v\) is defined as \todo{soll ich das schon alles direkt für Distributionen die zwei Funktionen schlucken hinschreiben?}
+the distribution \(v\) is defined as 
 \begin{equation}
 \mathrm{WF}(v):= \left\{(x,\xi)\in \mathbb{R}^n\times \mathbb{R}^n\mid \xi \in \Xi_x(v) \right\}.
+\end{equation}
+Analogously for a tempered distribution 
+\(v:\mathcal{S}(\mathbb{R}^4)\times \mathcal{S}(\mathbb{R}^4)\rightarrow \mathbb{C}\)
+we define the wavefront set as
+\begin{equation}
+  \mathrm{WF}(v):= \left\{(x,\xi;y,\xi')\in \mathbb{R}^n\times \mathbb{R}^n\mid (\xi,\xi') \in \Xi_{x,y}(v) \right\}.
 \end{equation}
 \end{Def}
 
 \begin{Def}\label{def: hadamard}
-A map \(H: C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\times C_c^\infty(\mathbb{R}^4,\mathbb{C}^4) \rightarrow \mathbb{C}\), is called Hadamard state if it fulfils
-for all \( f,g\in C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\):
+A map \(H: \mathcal{S}(\mathbb{R}^4,\mathbb{C}^4)\times \mathcal{S}(\mathbb{R}^4,\mathbb{C}^4) \rightarrow \mathbb{C}\), is called Hadamard state if it fulfils
+for all \( f,g\in \mathcal{S}(\mathbb{R}^4,\mathbb{C}^4)\):
 
 \begin{align}
 H(Df,g)=0\\
@@ -6970,18 +7032,19 @@ and \((x;k_1)\approx(y;k_2)\) holds whenever \((x-y)^2=0\) and \((y-x)\parallel 
 It is in the sense of the fourth condition that Hadamard states are of positive energy.
 
 In the scenario of Minkowski spacetime in an external field Dirac \cite{Dirac34} already studied the Hadamard states, although that name was not established at the time.
-More recently the subject has attracted considerable attention \cite{zahn2014renormalized, schlemmer2015current}, which computed the Hadamard states. 
+More recently the subject has attracted considerable attention. 
+The Hadamard states were computed in \cite{zahn2014renormalized, schlemmer2015current}. 
 They are given in terms of the Klein-Gordon operator corresponding to Dirac's equation:
 
 
 \begin{Def}
-The Klein-Gordon operator corresponding to the Dirac equation \eqref{dirac} reads
+The Klein-Gordon operator corresponding to the Dirac equation \eqref{dirac ext field} reads
 \begin{align}
 &P: C^\infty(\mathbb{R}^4,\mathbb{C}^4)\rightarrow C^\infty(\mathbb{R}^4,\mathbb{C}^4)\\
 &P=(i\slashed{\nabla}-m)(-i\slashed{\nabla}-m)=\nabla_\alpha \nabla^\alpha + \frac{i}{2} \gamma^\alpha \gamma^\beta F_{\alpha,\beta} +m^2,
 \end{align}
 where \(F_{\alpha,\beta}=\partial_\alpha A_\beta - \partial_\beta A_\alpha\) is the field strength tensor of the electromagnetic field. Furthermore we 
-define for \(f\in \mathcal{C}_c^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{16})\) the differential operator
+define for \(f\in \mathcal{C}^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{16})\) the differential operator
 \begin{equation}
 \slashed{\nabla}^* f(x,x')=\left(\frac{\partial}{\partial y^\alpha} - i A_\alpha(y)\right)f(x,y)\gamma^\alpha.
 \end{equation}
@@ -6989,7 +7052,7 @@ define for \(f\in \mathcal{C}_c^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C
 
 
 For the special case of a Dirac field in Minkowski space-time Zahn \cite{schlemmer2015current} gave a more explicit form of
-the Hadamard states \(H \in (C_c^\infty(\mathcal{M})\times C_c^\infty(\mathcal{M}))'\)  on which we base our analysis below.
+the Hadamard states \(H \in (\mathcal{S}(\mathcal{M})\times \mathcal{S}(\mathcal{M}))'\)  on which we base our analysis below.
 According to this, \(H\) 
 acts for \(f_1,f_2\in C_c^\infty(\mathcal{M})\otimes \mathbb{C}^4\) as 
 \begin{equation}\label{eq:hadamard1}
@@ -7009,12 +7072,15 @@ h_\varepsilon (x,y)&=\\\label{eq:hadamardexp1}
 where \(V,B:\mathbb{R}^4\rightarrow \mathbb{C}^4\) are smooth functions, \(B\) is completely arbitrary, 
 whereas \(V\) is fixed by the external potential. The expansion
 \begin{equation}
-V^N(x,y):=\sum_{k=1}^N \frac{1}{ 4^{k} k!(k-1)!} V_k(x,y) (x-y)^{2(k-1)},
+V^N(x,y):=\sum_{k=1}^N \frac{1}{ 4^{k} k!(k-1)!} V_k(x,y) \big((x-y)^2\big)^{k-1},
 \end{equation}
-is an asymptotic expansion for \(V\) for \(k\rightarrow \infty\), in the sense that
-\((V-V^N)(x,y)\ln(-(x-y)^2)\) as a function of \(x\) and \(y\) is in \(C^{N-2}(\mathbb{R}^{4+4})\)
+is an asymptotic expansion for \(V\) for 
+\(N\rightarrow \infty\), in the sense that
+\((V-V^N)(x,y)\ln(-(x-y)^2)\) as a function of \(x\) and 
+\(y\) is in \(C^{N-2}(\mathbb{R}^{4+4})\)
 and \(V-V^N=\mathcal{O}\left(\left((x-y)^{2}\right)^{N-2}\right)\).
-The functions \(V_k\) fulfil a recursive set of partial differential differential equations
+The functions \(V_k\) fulfil a recursive set of partial 
+differential differential equations
 \begin{align}\label{Hadamard recursive equ.}
 (x-y)^\alpha (\partial_{x,\alpha}+i A_\alpha(x)) V_{n}(x,y) + n V_{n}(x,y)=-n P V_{n-1}(x,y),
 \end{align}
@@ -7035,13 +7101,18 @@ fulfilling all of the conditions described in this paragraph.
 
 \subsection{Projectors for Polarisation Classes}\label{sec:pol classes}
 
-The concept of polarisation classes arises naturally in the study of QED in external electromagnetic fields. It does need some
-machinery to be introduced and related to more familiar objects which we are going to introduce first. In doing so we follow \cite{ivp2}
+The concept of polarisation classes introduced in 
+definition \ref{def pol class} can be represented by 
+a projector onto a polarisation of that class. 
+Alternatively it can also be represented by 
+an operator that is Hilbert-Schmidt close to 
+such a projector, these will be called 
+\(I_2\)-almost projectors. 
 
-
-
+We follow \cite{ivp2} in introducing the necessary 
+notation to do so.
 We start out by characterising the polarisation classes for free motion.
-\begin{Def}
+\begin{Def}[kernel fo \(P^-\)]
 The projector \(P^{\mathcal{H}^-}_{\Sigma} \) has the well known representation 
 as the weak limit of the integral operator 
 with the kernel\cite{ivp2}
@@ -7079,7 +7150,7 @@ Because all we are interested in is representations of equivalence classes, we a
 objects that differ from a Projector onto \(U_{\Sigma,\Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_in}^-\) by a Hilbert-Schmidt operator.
 Therefore we need not keep track of the exact evolution of the projection operators, but define a whole class of admissible ones.
 
-\begin{Def}\label{def:lambda}
+\begin{Def}[kernel of \(P^\lambda\), \(I_2\)-almost projectors]\label{def:lambda}
 The set \(\mathcal{G}^A\) denotes the set of all functions \(\lambda^A \in C^\infty (\mathbb{R}^4\times \mathbb{R}^4, \mathbb{R})\) that satisfy
 \begin{enumerate}[label= \roman*) ]
 \item There is a compact set \(K\subset \mathbb{R}^4\) such that \(\supp \lambda \subseteq K\times \mathbb{R}^4 \cup \mathbb{R}^4 \times K\).
@@ -7099,14 +7170,19 @@ We futhermore define a corresponding (quasi) projector \(P^\lambda\):
 for general \(\phi, \psi \in \mathcal{H}_\Sigma\).
 \end{Def}
 
-\begin{Remark}\label{main results of ivp2}
-\(P_{\Sigma}^\lambda\) and \( P_{\Sigma'}^\lambda\) are equivalent if transported appropriately by time evolution operators\cite[theorem 2.8]{ivp2}:
+\begin{Remark}[theorem 2.8 and  1.5 of \cite{ivp2}]\label{main results of ivp2}
+\(P_{\Sigma}^\lambda\) and \( P_{\Sigma'}^\lambda\) are 
+equivalent if transported appropriately by time evolution 
+operators:
 
 \begin{equation}
 P_{\Sigma}^\lambda-U_{\Sigma,\Sigma'}^A P_{\Sigma'}^\lambda U_{\Sigma',\Sigma}\in I_2(\mathcal{H}_\Sigma).
 \end{equation}
-Also for four-potentials \(A,B\in C_c^\infty(\mathbb{R}^4)\) 
-the corresponding projectors are equivalent if and only if the four potentials projected onto the hypersurface agree\cite[theorem 1.5]{ivp2}:
+Also for four-potentials 
+\(A,B\in \mathcal{V}\) 
+the corresponding projectors are equivalent if and only 
+if the four-potentials projected onto the hypersurface 
+agree:
 
 \begin{equation}\label{equiv:pLambda}
 P_{\Sigma}^{\lambda^A} - P_{\Sigma}^{\lambda^B} \in I_2(\mathcal{H}_\Sigma) \iff \forall x\in \Sigma~ \forall z\in T_x \Sigma: z^\alpha(A_\alpha(x)-B_\alpha(x))=0.
@@ -7119,37 +7195,52 @@ Taking into account the freedom within each classification the notions Hadamard 
 This is the topic of the next section.
 
 
-\subsection{Comparison Between Hadamard States and \(P^\lambda_\Sigma\)}\label{sec:comparison hadamard pol}
+\subsection{Comparing Hadamard States and \(P^\lambda_\Sigma\)}\label{sec:comparison hadamard pol}
 
-The following theorem is the basis of our comparison between Hadamard states and \(I_2-\) almost Projectors. We first
-discuss its consequences and postpone the proof until the appendix 
+The following theorem is the basis of our comparison 
+between\linebreak Hadamard states and \(I_2-\) almost Projectors. 
+We first
+discuss its consequences and postpone the proof until 
+the appendix in section \ref{sec: proof hadamard}.
 
 
 \begin{Thm}\label{thm:hadamard=>Pol}
-Given as four-potential \(A\in C_c^\infty (\mathbb{R}^4)\), and a Hadamard state \(H\) of the form 
-\eqref{eq:hadamard1}-\eqref{eq:hadamardexp3}, there is a family of smooth functions 
+Given as four-potential \(A\in \mathcal{V}\), and a Hadamard state \(H\) of the form 
+\eqref{eq:hadamard1} to \eqref{eq:hadamardexp3}, there is a family of smooth functions 
 \((w_\varepsilon)_{\varepsilon>0}\) in \( C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times 4})\), such that for any Cauchy surface 
-\(\Sigma\) and \(\tilde{P}\) acting as
+\(\Sigma\)and an operator  acting as
 \begin{equation}
-\mathcal{H}_{\Sigma} \ni \psi \mapsto \tilde{P}\psi= \lim_{\varepsilon \rightarrow 0} \int_{\Sigma} (h_\varepsilon - w_\varepsilon)(\cdot,y)i_{\gamma}(d^4y) \psi(y),
+\mathcal{H}_{\Sigma} \ni \psi \mapsto \tilde{P}\psi= \lim_{\varepsilon \rightarrow 0} \int_{\Sigma} (h_\varepsilon - w_\varepsilon)(\cdot,y)i_{\gamma}(d^4y) \psi(y).
 \end{equation}
-is a bounded operator on \(\mathcal{H}_\Sigma\) that fulfils \(P^{\lambda^A}-\tilde{P}\in I_2(\mathcal{H}_\Sigma)\) for any \(\lambda^A\in \mathcal{G}^A\) . 
-Additionally, the pointwise limit of \((w_\varepsilon)_{\varepsilon}\) for \(\varepsilon \rightarrow 0\) is smooth.
+This operator \(\tilde{P}\) is a bounded operator on 
+\(\mathcal{H}_\Sigma\) that fulfils 
+\(P^{\lambda^A}-\tilde{P}\in I_2(\mathcal{H}_\Sigma)\) 
+for any \(\lambda^A\in \mathcal{G}^A\) . 
+Additionally, the pointwise limit of 
+\((w_\varepsilon)_{\varepsilon}\) for 
+\(\varepsilon \rightarrow 0\) is smooth.
 \end{Thm}
 
 \begin{Thm}\label{thm:Pol=>hadamard}
-Given a four-potential \(A\in C_c^\infty (\mathbb{R}^4)\) and a \(\lambda^A\in\mathcal{G}^A\), there is a family of functions
+Given a four-potential \(A\in \mathcal{V}\) and a \(\lambda^A\in\mathcal{G}^A\), there is a family of functions
 \((w_\varepsilon)_\varepsilon\) in \( C^\infty(\mathbb{R}^4 \times \mathbb{R}^4 ,\mathbb{C}^{4\times 4})\) such that for all Cauchy surfaces \(\Sigma\)
-the \(L^2(\Sigma\times\Sigma)+C^\infty(\mathbb{R}^{4+4})\)\todo{is being in \(L^2(A)+C^\infty(B)\) even a sensible statement?} %\(L^2_{\text{loc}}(\Sigma\times \Sigma)\) 
-limit for \(\varepsilon \rightarrow0\) exists. 
-Furthermore, the \(\tilde{H}\) acting on test functions \(f_1,f_2\in C^\infty(\mathbb{R}^{4}, \mathbb{C}^4)\) as
+the restriction \(w_\varepsilon|_{\Sigma\times\Sigma}\) can be 
+split up 
+\begin{equation}
+  w_\varepsilon|_{\Sigma\times\Sigma}=w_{1,\varepsilon}+w_{2,\varepsilon},
+\end{equation}
+such that \(w_{1,\varepsilon}\) has a \(L^2(\Sigma\times\Sigma,\mathbb{C}^{4\times4})\) 
+limit for \(\varepsilon\rightarrow 0\) and 
+\(w_{2,\varepsilon}\) has a smooth pointwise limit and  is continuous 
+as a function of type \(\Sigma\times\Sigma\times[0,1]\rightarrow \mathbb{C}^{4\times 4}\). 
+Furthermore, \(\tilde{H}\) acting on test functions \(f_1,f_2\in C^\infty(\mathbb{R}^{4}, \mathbb{C}^4)\) as
 
 \begin{equation}
 \tilde{H}(f_1,f_2)=\lim_{\varepsilon \rightarrow 0} \int_{\mathbb{R}^{4}\times\mathbb{R}^4} \overline{f_1}(x)
 \left(p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)\right)f_2(y) d^4x d^4y
 \end{equation}
 
-is a Hadamard state of the form \eqref{eq:hadamard1}-\eqref{eq:hadamardexp3}.
+is a Hadamard state of the form \eqref{eq:hadamard1} to \eqref{eq:hadamardexp3}.
 \end{Thm}
 
 \begin{Remark}
@@ -7158,1249 +7249,71 @@ Because of this fact, it is enough to keep track of the time evolution of a proj
 to find the time evolution of an \(I_2\)-almost projector representing the correct polarisation class. 
 
 Keeping this in mind,
-theorem \ref{thm:hadamard=>Pol} states that, up to a \(C^\infty\) correction, the integral kernel of the Hadamard state is the integral kernel of a \(I_2\)-almost projector.
-Theorem \ref{thm:Pol=>hadamard} states that, up to \(L^2+C^\infty\) corrections, the integral kernel of a \(I_2\)-almost projector is a Hadamard state.
+theorem \ref{thm:hadamard=>Pol} states that, up to a \(C^\infty\) 
+correction, the integral kernel of the Hadamard state is the integral 
+kernel of a \(I_2\)-almost projector.
+Theorem \ref{thm:Pol=>hadamard} states that, up to \(L^2+C^\infty\) 
+corrections, the integral kernel of a \(I_2\)-almost projector is a 
+Hadamard state.
 
-The \(C^\infty\) freedom is due to the definition of a Hadamard state. The \(L^2\) freedom originates from the definition of \(I_2\)-almost projector.
+The \(C^\infty\) freedom is due to the definition of a 
+Hadamard state. The \(L^2\) freedom originates from the definition 
+of \(I_2\)-almost projector.
 
-In this sense, the relevant singularity structure of a Hadamard state to become a \(I_2\)-almost projector is given by terms \eqref{wurm A} - \eqref{wurm E} only
+In this sense, the relevant difference in  singularity structure 
+between a Hadamard state and an 
+\(I_2\)-almost projector is given by terms 
+\eqref{wurm A} to  \eqref{wurm E} of the appendix.
 \end{Remark}
 
-\todo{think about moving to appendix}
-\subsection{\!Appendix: Proof of theorem \ref{thm:hadamard=>Pol} and \ref{thm:Pol=>hadamard}}
+\subsection{Summary and Conclusions}
+
+In the third chapter of this thesis we worked on a quantum 
+field theoretic formulation of electromagnetic interactions.
+While this is more conventional than what was 
+presented in chapter \ref{chap: direct interaction} 
+that does not at all imply that the general theory has been worked 
+out on a mathematically rigorous level. So much so that 
+our work on external field QED, i.e. neglecting all 
+interaction between particles, can be regarded as 
+at the frontier of our present understanding. 
+The chapter started with a short summary of the 
+approach to construct a lift of the one-particle 
+time evolution operator where we mentioned 
+the shortcoming of the present method, not
+uniquely identifying the phase of this operator.
+Subsequently, we gave a geometric construciton of 
+said phase in the scattering regime 
+from an object \(c^+\) very closely related to the 
+current induced by an external field. If such an 
+object were identified the residual freedom might be 
+reduced to an irrelevant constant phase and a single 
+number related to the charge of the electron.  
+Furthermore we showed that there is a lift of the 
+one-particle scattering operator that is analytic in the 
+external field and gave a compact explicit fomula for 
+weak fields. Finally we gave theorems on how 
+\(I_2-\)almost projectors representing the state 
+of the fermion field and related to the approach we 
+are following here compares to the concept of Hadamard 
+state popular in the algebraic formulation of QFT.
+
+I hope that in the near future the construction of 
+\(c^+\) will succed, so that one can further analyse 
+a self consisten model. In such a model one 
+feeds the current generated by the 
+fermion field induced by the action of an electrodynamic 
+field into Maxwells equations and acts with the 
+resulting fields again on the fermion field. Such a 
+model would incorporate a mean field interaction between 
+the fermions and thus be a further step in the direction 
+of a fully interacting theory.
 
-We first break down the problem of the proof of theorem \ref{thm:hadamard=>Pol} to a problem on a bounded domain. Then we go on 
-to show that the relevant functions are locally bounded so that an application of Lebesgue dominated convergence yields our result.
-The same estimates we need for theorem \ref{thm:hadamard=>Pol} will be used again for the proof of theorem \ref{thm:Pol=>hadamard}.
 
-\begin{Def} Let \(A\in C_c^\infty(\mathbb{R}^4)\) and \(\Sigma\) be a Cauchy surface, we introduce the sets
-\begin{align}
-J_1&:=\{(x,y)\in\mathbb{R}^{4+4}\mid (x-y)^2\ge -\delta^2/4 \wedge \overline{x~y} \cap \mathrm{supp}(A)\neq \emptyset\}\\
-J_2&:=\{(x,y)\in\mathbb{R}^{4+4}\mid (x-y)^2\ge -\delta^2 \wedge \overline{x~y} \cap \left(B_{\delta/2}(0)+\mathrm{supp}(A)\right)\neq \emptyset\}\\
-J_3&:=\{(x,y)\in \Sigma \times \Sigma \mid (x-y)^2 \ge-\delta^2\wedge \overline{x ~ y} \cap \left(B_{\delta/2}(0)+\mathrm{supp}(A) \right)\neq \emptyset \},
-\end{align}
-where the sum of two sets is defined as \(S_1+S_2:=\{s_1+s_2\mid s_1\in S_1, s_2\in S_2\}\) and we denote the line segment between \(x\) and \(y\) by \(\overline{x~y}\). 
-\end{Def}
 
-\begin{Def}
-For ease of comparison, we define for a four-potential \(A\in C_c^\infty(\mathbb{R}^4)\)
-\(\tilde{\lambda}:\mathbb{R}^{4+4}\rightarrow \mathbb{C}\):
-\begin{equation}
-\tilde{\lambda}(x,y)= (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y),
-\end{equation}
-and furthermore introduce the abbreviation \(G(x,y):=e^{-i \tilde{\lambda}(x,y)} \).
-\end{Def}
 
-\begin{Remark}
-The function \(\tilde{\lambda}\not\in \mathcal{G}^A\), because it does not satisfy one of the technical conditions in definition
-\ref{def:lambda}, there is not compact \(K\subset\mathbb{R}^4\) such that 
-\(\mathrm{supp}(\tilde{\lambda})\subset K\times \mathbb{R}^4 \cup \mathbb{R}^4\times K\) holds. However, the other conditions are all fulfilled. 
-We need to introduce it nonetheless, because it is present in the representation for the Hadamard states.
-\end{Remark}
 
 
-\begin{Lemma}\label{lem:pointwise}
-For any \(A\in C_c^\infty(\mathbb{R}^4)\) and any Hadamard state \(H\) of the form \eqref{eq:hadamard1} and \eqref{eq:hadamardexp1}-\eqref{eq:hadamardexp3}
-and any \(\lambda^A \in \mathcal{G}^A\),  there is a smooth family of
-functions \(w_\varepsilon\in C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times4})\) with \(\varepsilon \in [0,1]\) and a smooth function 
-  \(w\in C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times 4})\)  obeying
-  
-\begin{align}
-&\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) w_\varepsilon(x,y) f_2(y)dxdy =
-\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) (h_\varepsilon - p_\varepsilon^\lambda)(x,y) f_2(y)dxdy\\
-&\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) w(x,y)f_2(y)dxdy =
-\lim_{\epsilon\rightarrow 0}\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x)(h_\epsilon (x,y)-p^\lambda_\epsilon(x,y)) f_2(y)dxdy,
-\end{align}
-
-for all test functions \(f_1,f_2\) such that \(\mathrm{supp}(f_1)\times\mathrm{supp}(f_2)\subset J_2^c\)
-  
-Additionally \(\lim_{\varepsilon \rightarrow 0}w_\varepsilon=w\) pointwise and in addition 
-is continuous as a function of type \(\mathbb{R}^{4+4} \times[0,1]\rightarrow \mathbb{C}^{4\times 4}\).
-\end{Lemma}
-\begin{proof}
-Let \(A\in C_c^\infty(\mathbb{R}^4), \varepsilon>0\).
-  Let \(H\) be a Hadamard state acting as 
-\begin{equation}
-H(f_1,f_2)=\lim_{\varepsilon\searrow 0} \int_{\mathbb{R}^4}d^4 x \overline{f_1}(x) \int_{\mathbb{R}^4} d^4y ~h_\varepsilon(x,y) f_2(y).
-\end{equation}
-
-be of the form of equation \eqref{eq:hadamardexp1}-\eqref{eq:hadamardexp3}. 
-Pick a function \(\lambda\in \mathcal{G}^A\). 
-
-We may choose \(w'\in C^\infty(\mathbb{R}^4\times\mathbb{R}^4,\mathbb{C}^{4\times 4})\)
-such that the following conditions is fulfilled:
-
-For all test functions \(f_1,f_2\in C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\) such that \( \mathrm{supp}(f_1)\times \mathrm{supp}(f_2) \subset J_1^c \)
-we have
-
-\begin{equation}\label{eq:conditionfull}
-\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) w'(x,y)f_2(y)dxdy =
-\lim_{\epsilon\rightarrow 0}\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x)(h_\epsilon (x,y)-p^\lambda_\epsilon(x,y)) f_2(y)dxdy.
-\end{equation}
-
-To understand why, we consider two cases regarding the support of the testfunctions \(f_1,f_2\), 
-\begin{enumerate}
-\item \((x,y)\in\mathrm{supp}(f_1)\times\mathrm{supp}(f_2)\)
-implies \((x-y)^2<-\delta^2/4\).
-\item \((x,y)\in\mathrm{supp}(f_1)\times\mathrm{supp}(f_2)\)
-implies \(\overline{x_y}\cup \mathrm{supp}(A)=\emptyset\).
-\end{enumerate}
-
-Regarding 1: In the representation of the Hadamard state \(H\), equation \eqref{Hadamard recursive equ.}, can be explicitly 
-solved recursively (See \cite{bar2007wave}[lemma 2.2.2]. The factor \(V_0\) was already given, for \(k\ge 1\) the recursion is given by
-
-\begin{equation}\label{eq:line integral}
-V_k(x,y)=-k G(x,y) \int_0^1 ds s^{k-1} G(x+ s(y-x),x) P V_{k-1}(x,x+s(y-x)).
-\end{equation}
-
-Recall that \(P\) depends on the four potential in a local manner.
-Here we observe  that, if the support of the external field \(A\) does not intersect the straight line connecting \(x\) and \(y\), the function
-\(V(x,y)\) in the expression for \(h_\varepsilon(x,y)\) can be calculated to be
-
-\begin{equation}
-V(x,y)=\sum_{k=0}^\infty \frac{( (y-x)^2m^2/4)^k}{k! (k+1)!},
-\end{equation}
-
-which equals the logarithmic part of \(p^-_\varepsilon\), corresponding to \(Q_1(\xi)\) in \eqref{K1series}. 
-
-This shows that in this case
-\(p_\varepsilon^-(x,y)\) agrees with \(h_\varepsilon(x,y)\) up to smooth terms in case 1.
-  
-Regarding 2: we notice that the only points \((x,y)\) in the singular support  of both \(h_\varepsilon\) and \(p_\varepsilon^{\lambda}\) need to fulfil
-\((y-x)^2=0\), if we further demand that both \(x\) and \(y\) belong to the same spacelike hypersurface \(x=y\) follows. 
-Now pick some \(\delta>0\).
-This implies that for functions \(f_1,f_2\in C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\) such that \((x,y)\in \mathrm{supp}(f_1)\times\mathrm{supp}(f_2)\) 
-implies \((x-y)^2\ge -\delta^2\) these operators act as integral operators with smooth kernel.
-
-
-In fact, as \(w'\) is smooth, condition \eqref{eq:conditionfull} specifies the values of \(w'\)
-uniquely for arguments \((x,y)\in\mathbb{R}^{4+4}\) in the complement of \(J_1\).
-Analogously, we define a smooth function \(w_\varepsilon' \in C^\infty(\mathbb{R}^4\times\mathbb{R}^4,\mathbb{C}^{4\times 4})\) for
-every \(\varepsilon>0\) fulfilling 
-
-\begin{align}\label{eq:wepsilon_condition}
-\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) w'_\varepsilon(x,y) f_2(y)dxdy =
-\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) (h_\varepsilon - p_\varepsilon^\lambda)(x,y) f_2(y)dxdy
-\end{align}
-
-for test functions \(f_1,f_2\in C^\infty_c(\mathbb{R}^4,\mathbb{C}^4)\) such that \(\mathrm{supp}(f_1)\times \mathrm{supp}(f_2)\subset J_1\).
-Next, we pick a function \(\chi\in C^\infty(\mathbb{R}^{4+4})\) such that 
-\begin{align}
-\left.\chi \right|_{J_2^c}=1, \quad \left. \chi \right|_{J_1}=0
-\end{align}
-hold. Now, we define
-
-\begin{align}
-w:=\chi w',\quad w_\varepsilon:= \chi w_\varepsilon',
-\end{align}
-
-where \(w',w_{\varepsilon}'\) are extended by the zero function inside \(J_1\).
-
-The functions \(w, w_\varepsilon\) are now uniquely fixed in all of \(\mathbb{R}^{4+4}\) and fulfil  \eqref{eq:conditionfull} and \eqref{eq:wepsilon_condition}, respectively
-for test functions \(f_1,f_2\) such that \(\mathrm{supp}(f_1)\times \mathrm{supp}(f_2) \subset J_2^c\) holds. Observing the exact form of 
-\(h_\varepsilon\), \eqref{eq:hadamardexp1}-\eqref{eq:hadamardexp3} and \(p_\varepsilon^{\lambda}\), \eqref{def:p lambda}, we notice that in fact 
-\(w_{\varepsilon}(x,y) \xrightarrow{\varepsilon\rightarrow 0} w(x,y)\) for all \(x,y\in J_1^c\), because of the cutoff function \(\chi\) this also holds for \((x,y)\in J_1\). 
-Moreover, we notice from the explicit form of \(h_\varepsilon\) and \(p_\varepsilon^{\lambda}\) that,
-\(w_{\cdot_3}(\cdot_1,\cdot2)\) is even continuous as a function of type \(\mathbb{R}^4\times\mathbb{R}^4\times[0,1]\rightarrow \mathbb{C}^{4\cdot 4}\).
-\end{proof}
-
-
-\begin{Lemma}\label{lem:bound,worstterm}
-we define
-\begin{align}
-&g_1: J_3\times ]0,1[\rightarrow \mathbb{C}^{4\times 4}\\
-&(x,y,\varepsilon)\mapsto e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2} - \term_\eqref{eq:hadamardexp1}(x,y).
-\end{align}
-There is a constant \(M_1\in\mathbb{R}\), such that
-\begin{equation}
-\forall \varepsilon, x,y |g_1(x,y,\varepsilon)|\le M_1.
-\end{equation}
-Also define
-\begin{align}
-&g_1:\mathbb{R}^{4+4}\times [0,1]\ni (x,y)\mapsto \frac{1}{(y-x-i\varepsilon e_0)^2} \left(\slashed{A}(x) + \slashed{A}(y)
--  2 \int_0^1 \mathrm{d}s \slashed{A}(s x + (1-s)y)  \right.\\
-&\left.+(y-x)^\alpha \int_0^1 \mathrm{d}s (1-2s) (\slashed{\partial}A_\alpha)(sx+(1-s)y)   \right).
-\end{align}
-There is a function \(g_3 \in C(\mathbb{R}^{4+4},\mathbb{R}^+)\) such that
-\begin{equation}
-\forall \varepsilon \in [0,1]: |g_2(x,y,\varepsilon)|\le g_3(x,y)
-\end{equation}
-holds.
-\end{Lemma}
-\begin{proof}
-Pick a Cauchy surface \(\Sigma\), a four-potential \(A \in C_c^\infty(\mathbb{R}^4\).
-A direct calculation yields
-\begin{align}
-&e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2} -\term_\eqref{eq:hadamardexp1}(x,y)\\\nonumber
-=&\frac{G(x,y)}{4\pi^2} \left( (i \slashed{\partial}_x +m) \frac{1}{(y-x-i \varepsilon e_0)^2} -\frac{1}{G(x,y)}(i \slashed{\nabla}/2 - i \slashed{\nabla}^*/2 +m) \frac{G(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
-=&\frac{iG(x,y)}{4\pi^2}  \left( \slashed{\partial}_x \frac{1}{(y-x-i \varepsilon e_0)^2} -\frac{1}{2G(x,y)}(\slashed{\partial}_x + i \slashed{A}(x) - \slashed{\partial}_y + i \slashed{A}(y) ) \frac{G(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
-=&\frac{iG(x,y)}{4\pi^2} \left(-i\frac{\slashed{A}(x) + \slashed{A}(y)}{2 (y-x-i\varepsilon e_0)^2} + \slashed{\partial}_x \frac{1}{(y-x-i \varepsilon e_0)^2} -\frac{1}{2}(\slashed{\partial}_x- \slashed{\partial}_y ) \frac{1}{(y-x-i\varepsilon e_0)^2}\right.\\\nonumber
-&\left.-\frac{1}{2G(x,y)} \frac{(\slashed{\partial}_x- \slashed{\partial}_y )G(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
-=&\frac{iG(x,y)}{4\pi^2}  \left(-i\frac{\slashed{A}(x) + \slashed{A}(y)}{2 (y-x-i\varepsilon e_0)^2} +\frac{1}{2}(\slashed{\partial}_x+ \slashed{\partial}_y ) \frac{1}{(y-x-i\varepsilon e_0)^2}
-+\frac{1}{2G(x,y)} \frac{(-\slashed{\partial}_x+ \slashed{\partial}_y )G(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
-=&\frac{-iG(x,y)}{8\pi^2}  \frac{1}{(y-x-i\varepsilon e_0)^2} \left(i\slashed{A}(x) + i\slashed{A}(y)
-+G(x,y)^{-1} \left( \slashed{\partial}_x- \slashed{\partial}_y\right) G(x,y) \right)\\\nonumber
-=&\frac{G(x,y)}{8\pi^2} \frac{1}{(y-x-i\varepsilon e_0)^2} \left(\slashed{A}(x) + \slashed{A}(y)
--  2 \int_0^1 \mathrm{d}s \slashed{A}(s x + (1-s)y)  \right.\\
-&\left.+(y-x)^\alpha \int_0^1 \mathrm{d}s (1-2s) (\slashed{\partial}A_\alpha)(sx+(1-s)y)   \right).
-\end{align}
-
-Now using Taylor's series for \(A\) around \(x,y\) as well as \((x+y)/2\) reveals 
-
-\begin{align}\nonumber
-\slashed{A}(x)& + \slashed{A}(y)- 2 \int_0^1 \mathrm{d}s \slashed{A}(s x + (1-s)y) =  \\\label{estimate1}
-&\frac{(x-y)^\alpha}{12} (x-y)^\beta (\partial_\alpha \partial_\beta \slashed{A})((x+y)/2)+ \mathcal{O}(\|x-y\|^3)\\\label{estimate2}
-(x-y)^\alpha &\int_0^1 \mathrm{d}s (1-2s) (\slashed{\partial}A_\alpha)(sx+(1-s)y)=
-  \\\notag
-& -\frac{(x-y)^\alpha}{2}(x-y)^\beta  (\slashed{\partial}\partial_\beta A_\alpha)((x+y)/2) + \mathcal{O}(\|x-y\|^3).
-\end{align}
-
-Because \(A\) is smooth and \(J_3\) is a compact region the terms \eqref{estimate1} and \eqref{estimate2} are 
-bounded in this region. Because of their behaviour close to \(y=x\)
-the function
-is a bounded and point-wise an upper bound of the absolute value of 
-\begin{align}
-\left|e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2} -\term_\eqref{eq:hadamardexp1}(x,y)\right|\\
-\label{upper bound h first term}
-\le\frac{\|\term_\eqref{estimate1}\|(x,y)+\|\term_\eqref{estimate2}\|(x,y)}{8\pi^2}\frac{1}{|(y-x)^2|}.
-\end{align}
-
-Also from the Taylor's expansion \eqref{estimate1} and \eqref{estimate2} directly follows that the right hand side of \eqref{upper bound h first term} is continuous.
-\end{proof}
-
-
-\begin{Lemma}\label{lem:bound,ivp2}
-For any Cauchy surface \(\Sigma\), four-potential \(A\in C_c^\infty(\mathbb{R}^4)\) and \(\lambda^A\in \mathcal{G}^A\),  the function 
-\begin{align}
-&\Sigma\times \Sigma \times ]0,1[\rightarrow \mathbb{C}^{4\times 4}\\\label{midterm}
-&(x,y,\varepsilon)\mapsto \left(e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda^A(x,y)}\right) \frac{1}{4\pi^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2}
-\end{align}
-is bounded by
-\begin{align}
-&\left|\left(e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda^A(x,y)}\right) \frac{1}{4\pi^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2}\right|  \\
-&\le \frac{\left| e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda^A(x,y)} \right|}{4\pi^2}\left(\eta(y-x)+\frac{\|y-x\|}{((y-x)^2)^2} + \frac{m}{|(y-x)^2|}\right)\\
-&:=M_2(x,y),
-\end{align}
-where \(\eta\) is given by
-\begin{equation}
-\eta(y-x):=\frac{1}{(-(y-x)^2 {\varepsilon^*}^{-0.5}+{\varepsilon^*}^{1.5})^2+\varepsilon^*(y^0-x^0)^2}
-\end{equation}
-and \(\varepsilon^*\) is given by
-\begin{equation}
-\varepsilon^* :=\frac{1}{\sqrt{6}} \sqrt{-\beta-2\alpha + \sqrt{(2\alpha + \beta)^2+12 \alpha^2}}.
-\end{equation}
-Furthermore \(M_2\in L^2_{\mathrm{loc}}(\Sigma\times\Sigma)\).
-\end{Lemma}
-
-\begin{proof}
-Pick \(A\in C_c^\infty(\mathbb{R}^4)\), Cauchy surface \(\Sigma\) and \(\lambda^A\in \mathcal{G}^A\).
-By expanding \(\tilde{\lambda}(x,y)-\lambda^A(x,y)\) in a Taylor series around \(\frac{y+x}{2}\) we see directly that
-\begin{equation}
-e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda^A(x,y)}=\mathcal{O}(\|x-y\|^2).
-\end{equation}
-
-In order to show that \eqref{midterm} has a square integrable upper bound, we consider each term separately.  First, we look at the mass term. 
-It obeys
-
-\begin{align}
-\left\|\frac{m}{(y-x-i\varepsilon e_0)^2}\right\|= \frac{m}{\sqrt{((y-x)^2-\varepsilon^2)^2+\varepsilon^2(y^0-x^0)^2}}<\frac{m}{|(y-x)^2|},
-\end{align}
-since \((y-x)^2<0\) for \(x,y\in \Sigma\). The term with the derivative will be split into two:
-
-\begin{align}
-\left\| i\slashed{\partial}_x \frac{1}{(y-x-i\varepsilon e_0)^2} \right\|\\
-\le \frac{\| \slashed{y}-\slashed{x}-i\varepsilon \slashed{e_0}\|}{| (y-x-i\varepsilon e_0)^2|^2}
-\le \frac{\varepsilon + \|x-y\|}{((y-x)^2-\varepsilon^2)^2+\varepsilon^2 (y^0-x^0)^2}\\\label{eq:uglyterm}
-<\frac{1}{(-(y-x)^2 \varepsilon^{-0.5}+\varepsilon^{1.5})^2+\varepsilon(y^0-x^0)^2} +\frac{\|y-x\|}{((y-x)^2)^2},
-\end{align}
-we notice at this point, that the second term becomes locally square integrable in \(\Sigma\times\Sigma\) 
-once multiplied with a function of type \(\mathcal{O}(\|x-y\|^2)\) close to \(x=y\). Indeed, the first term also has this property, in order to
-deduce this more readily, we will maximise this term now.  Considering the limits \(\varepsilon \rightarrow 0\) and \(\varepsilon \rightarrow \infty\)
-we see that this term has for arbitrary \((x,y\in\Sigma)\) a maximum in the interval \(]0,\infty[\). 
-Abbreviating \(-(y-x)^2:=\alpha, (y^0-x^0)^2:=\beta\), this value of \(\varepsilon\) fulfills
-
-\begin{align}
-\partial_\varepsilon ( \varepsilon^{-0.5}\alpha + \varepsilon^{1.5})^2+\beta=0\\
-\iff 3 \varepsilon^4 + \varepsilon^2(2 \alpha+\beta)-\alpha^2=0\\
-\iff \varepsilon^2= \frac{-\beta-2\alpha + \sqrt{(2\alpha + \beta)^2+12 \alpha^2}}{6}\\
-\iff \varepsilon=\varepsilon^* :=\frac{1}{\sqrt{6}} \sqrt{-\beta-2\alpha + \sqrt{(2\alpha + \beta)^2+12 \alpha^2}}.
-\end{align}
-
-So we can find an upper bound on the first summand of \eqref{eq:uglyterm} by replacing \(\varepsilon\) by what we just found. 
-Now because all the terms in the resulting expression
-
-\begin{equation}
-\frac{1}{(-(y-x)^2 {\varepsilon^*}^{-0.5}+{\varepsilon^*}^{1.5})^2+\varepsilon^*(y^0-x^0)^2}=:\eta(y-x)
-\end{equation}
-
-are positive, we did not introduce any new singularities. Also the expression is homogenous of degree \(-3\):
-\begin{align}
-\eta(\delta(y-x))=\delta^{-3} \eta(y-x),
-\end{align}
-so we can conclude that also this term as well as the second term in \eqref{eq:uglyterm}, are of type \(\mathcal{O}(\|x-y\|^{-3})\) and therefore
-locally square integrable once multiplied by the difference of exponentials in \eqref{midterm}. So summarising
-\eqref{eq:uglyterm} can be bounded by 
-
-\begin{align}\nonumber
-&\| \term_\eqref{eq:uglyterm}(x,y)\|\le\\ \label{bound ivp2}
-& \frac{\left| e^{-i\lambda^A(x,y)}-e^{-i\tilde{\lambda}(x,y)} \right|}{4\pi^2}\left(\eta(y-x)+\frac{\|y-x\|}{((y-x)^2)^2} + \frac{m}{|(y-x)^2|}\right),
-\end{align}
-which is locally square integrable in on \(\Sigma\times \Sigma\).
-\end{proof}
-
-\begin{Lemma}\label{lem:log term}
-For any Cauchy surface \(\Sigma\), four-potential \(A\in C_c^\infty(\mathbb{R}^4)\), the function 
-\begin{align}
-&\Sigma\times \Sigma \times ]0,1[\rightarrow \mathbb{C}^{4\times 4}\\\label{midterm}
-&(x,y,\varepsilon)\mapsto (i\slashed{\partial}_x+m) \ln(-m^2(y-x-i\varepsilon e_0)^2)
-\end{align}
-has the locally in \(\Sigma\times\Sigma\) square integrable bound
-\begin{align}
-&\left| (i\slashed{\partial}_x+m)\ln(-(y-x-i\varepsilon e_0)^2)\right|\le\\
-& ~~~~~~~~~~~~\frac{2\|y-x\|}{|(y-x)^2|} + \frac{2}{\sqrt{4|(y-x)^2| + (y^0-x^0)^2}}:=M_3(x,y),
-\end{align}
-while the function
-\begin{align}
-&\Sigma\times \Sigma \times ]0,1[\rightarrow \mathbb{C}^{4\times 4}\\\label{midterm}
-&(x,y,\varepsilon)\mapsto \ln(-m^2(y-x-i\varepsilon e_0)^2)
-\end{align}
-has the \(L^2_{\mathrm{loc}}\) bound
-\begin{align}
-& \| \ln(-m^2(y-x-i\varepsilon e_0)^2)\| \le  |\ln(-(y-x)^2)| +\pi/2:=M_4(x,y).
-\end{align}
-\end{Lemma}
-
-
-\begin{proof}
-Pick \(A\in C_c^\infty(\mathbb{R}^4)\), a Cauchy surface \(\Sigma\) and \(f\in C(\Sigma\times\Sigma,\mathbb{C}^{4\times 4})\).
-The terms containing \(\slashed{\partial}\ln(-(y-x-i\varepsilon e_0)^2)\) are bounded as follows
-
-\begin{align}
-\|i\partial_\alpha\ln(-(y-x-i\varepsilon e_0)^2)\|=2\left\| \frac{y^\alpha-x^\alpha-i\varepsilon e_0^\alpha}{-(y-x-i\varepsilon e_0)^2}\right|\\
-\le \frac{2\|y-x\|}{|(y-x)^2|} + \frac{2\varepsilon}{|(y-x-i\varepsilon e_0)^2|}\\
-=\frac{2\|y-x\|}{|(y-x)^2|} + \frac{2}{\sqrt{(-(y-x)^2/\varepsilon + \varepsilon)^2 +(y^0-x^0)^2}}\\\label{bound d log}
-\le \frac{2\|y-x\|}{|(y-x)^2|} + \frac{2}{\sqrt{4|(y-x)^2| + (y^0-x^0)^2}}, 
-\end{align}
-where inequality  in \eqref{bound d log} we maximised the expression with respect to \(\varepsilon \in ]0,\infty[\). 
-The terms containing the logarithm without
-any derivative are directly bounded by
-
-\begin{align}\nonumber
-|\ln(-(y-x-i\varepsilon e_0)^2)|&\\\label{bound log}\le |\ln(-(y-x)^2)| +\pi/2:=\term_{\eqref{bound log}}.
-\end{align}
-\end{proof}
-
-
-
-\begin{Lemma}\label{lem:Hadamard=>Pol}
-For every four-potential \(A\in C_c^\infty (\mathbb{R}^4)\) and every Hadamard
-state \(H\) of the form \eqref{eq:hadamard1}-\eqref{eq:hadamardexp3} the  
-smooth function \(w\in C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times 4})\) and family 
-\((w_\varepsilon)_{\varepsilon \in ]0,1[ }\subset C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times4})\) of lemma \ref{lem:pointwise} also satisfy for any
-  Cauchy surface \(\Sigma\) and any \(\lambda^A\in\mathcal{G}^A\):
-
-\begin{equation}
-\left.h_\varepsilon^A-w_\varepsilon-p^{\lambda^A}_\varepsilon \right|_{\Sigma\times\Sigma} \in L^2(\Sigma\times\Sigma)
-\end{equation}
-
-and the \(L^2(\Sigma\times\Sigma)\) limit \(\lim_{\varepsilon\rightarrow 0} \left.h_\varepsilon^A-w_\varepsilon-p^{\lambda^A}_\varepsilon \right|_{\Sigma\times\Sigma}\) exists.
-\end{Lemma}
-
-  
-
-\begin{proof}[Proof of lemma \ref{lem:Hadamard=>Pol}:]
-
-
-Pick a Cauchy surface \(\Sigma\), a four-potential \(A \in C_c^\infty(\mathbb{R}^4)\), a Hadamard state of the form 
-  \eqref{eq:hadamard1} -\eqref{eq:hadamardexp3}, \(\lambda^A\in\mathcal{G}^A\)
-  and for \(\varepsilon \in]0,1[\) smooth functions \(w_\varepsilon \in C^\infty(\mathbb{R}^{4+4},\mathbb{C}^{4\times 4})\)
-  according to lemma \ref{lem:pointwise}. 
-Our aim is to show that 
-\(\left.h_\varepsilon - w_\varepsilon -p_\varepsilon^{\lambda^A} \right|_{\Sigma\times\Sigma}\) converges in the 
-sense of \(L^2(\Sigma\times\Sigma)\) in the limit \(\varepsilon\rightarrow 0\).
-According to lemma \ref{lem:pointwise} we have that
-  \(h_\varepsilon-w_\varepsilon-p^{\lambda^A}_{\varepsilon}|_{\Sigma\times \Sigma}\) vanishes 
-  outside the set \(J_3\) which is bounded, independent of \(\varepsilon\) and of finite measure. 
-  Taking the exact form of \(h_\varepsilon\) and \(p^{\lambda^A}_\varepsilon\) into account,
-  one notices that the function \(h_\varepsilon-w_\varepsilon-p^{\lambda^A}_{\varepsilon}|_{\Sigma\times \Sigma} (x,y)\) converges point-wise to a function defined
-  on \(\Sigma\times\Sigma \backslash \{(x,x)\mid x\in \Sigma\}\). In order to show that the convergence also holds in the sense of \(L^2(\Sigma\times\Sigma)\) we
-  would like to use dominated convergence. Hence we should find a function \(M\in L^2(\Sigma\times\Sigma)\) such that 
-  
-
-\begin{equation}\label{eq: def bound}
-\left|  (h_\varepsilon-w_\varepsilon-p^{\lambda^A}_{\varepsilon})(x,y)\right|\le |M|(x,y)
-\end{equation}
-  
-  holds almost for almost all \(x,y\in\Sigma\) and all \(\varepsilon\) small enough. We may pick \(\left. M\right|_{J_3^c}=0\), of course. 
-So we only have to pick \(M\) for arguments inside \(J_3\). Now because \(w_\varepsilon\) is continuous as a function from 
-\(\mathbb{R}^{4+4}\times [0,1]\rightarrow \mathbb{C}^{4\times 4}\) and hence also when restricted to \(J_3\times[0,1]\). The 
-set \(J_3\times[0,1]\) is compact which implies that there is a constant \(M_5\) such that
-
-\begin{equation}
-\forall (x,y,\varepsilon)\in J_3\times[0,1]: |w_\varepsilon(x,y)|\le M_5
-\end{equation}
-holds. So by the triangular inequality we only need to bound \(h_\varepsilon-p_\varepsilon^{\lambda^A}\)
-
-We now dissect \(h_\varepsilon\) as well as \(p_\varepsilon^{\lambda^A}\) each into three pieces
-
-\begin{align}\label{eq:h1}
-h_\varepsilon(x,y)= \frac{-1}{2(2\pi)^2} (-i\slashed{\nabla} + i \slashed{\nabla}^*-2m) \frac{G(x,y)}{(y-x-i\varepsilon e_0)^2}\\\label{eq:h2}
-+ \frac{-1}{2(2\pi)^2} (-i\slashed{\nabla} + i \slashed{\nabla}^*-2m)  V(x,y) \ln (-(y-x-i\varepsilon e_0)^2)\\\label{eq:h3}
-+ B(x,y),
-\end{align}
-
-
-\begin{align}\label{eq:p1}
-p_\varepsilon^{\lambda^A}(x,y)=e^{-i\lambda^A(x,y)}\frac{m^2}{4\pi^2}(i\slashed{\partial}+m) \frac{1}{m^2(y-x-i\varepsilon e_0)^2}\\\label{eq:p2}
--\frac{m^2}{4\pi^2}(i\slashed{\partial}+m) Q_1(-m^2(y-x-i\varepsilon e_0)^2) \ln (-m^2(y-x-i\varepsilon e_0)^2)\\\label{eq:p3}
--\frac{m^2}{4\pi^2}(i\slashed{\partial}+m) Q_2(-m^2(y-x-i\varepsilon e_0)^2).
-\end{align}
-
-Let us first consider the most singular terms of  \(h_\varepsilon-w_\varepsilon-p^{\lambda^A}_{\varepsilon}|_{\Sigma\times \Sigma}\), 
-namely \(\term_\eqref{eq:h1}-\term_\eqref{eq:p1}\). In order to better compare these terms, we will add \(0\) in the form of \(\term_\eqref{eq:p1}-\term_\eqref{eq:p1}\) where we
-replace \(\lambda^A\) by \(\tilde{\lambda}\).
-By lemma \ref{lem:bound,worstterm} the term 
-\begin{equation}
-\term_\eqref{eq:h1}- G(x,y)\frac{m^2}{4\pi^2}(i\slashed{\partial}+m) \frac{1}{m^2(y-x-i\varepsilon e_0)^2}
-\end{equation}
-is uniformly bounded in \(J_3\).
-
-Next we find a square integrable upper bound on 
-\begin{equation}
-e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2}-\term_\eqref{eq:p1}(x,y).
-\end{equation}
-We rewrite this term as
-
-\begin{align}
-e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2}-\term_\eqref{eq:p1}(x,y)=\\\label{eq:ivp2estimate}
-\left(e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda(x,y)}\right) \frac{1}{4\pi^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2},
-\end{align}
-
-according to lemma \ref{lem:bound,ivp2} this has the upper bound \(M_2\in L^2_{\mathrm{loc}}(\Sigma\times\Sigma\), which is independend of \(\varepsilon\). 
-The term \(\term_\eqref{eq:p2} -\term_\eqref{eq:h2}\) are bounded by lemma \ref{lem:log term}.
-Thus we obtain for \(M\) for \((x,y)\in J_3\):
-
-\begin{align*}
-&M(x,y):=M_5+M_1
-+M_2(x,y)\\
-&+\frac{1}{4\pi^2}\left(4 | V(x,y)| + m^2 \sup_{\varepsilon \in [0,1]}|Q_1(-m^2(y-x-i\varepsilon e_0)^2)|\right)M_3(x,y)\\
-&+ \frac{1}{4\pi^2}\left(\!|(i\slashed{\nabla}\!-i\slashed{\nabla}^*\!-2m)V(x,y)|/2+m^2\!\! \sup_{\varepsilon \in [0,1]}
-  \!|(i\slashed{\partial}+m)Q_1(-m^2(y-x-i\varepsilon e_0))| \right)M_4(x,y)\\
-&+|B(x,y)|+\frac{m^2}{4\pi^2}\sup_{\varepsilon\in[0,1]} |(i\slashed{\partial}_x+m)Q_2(-m^2(y-x-i\varepsilon e_0)^2)| + \sup_{\varepsilon \in ]0,1]}|w_\varepsilon|(x,y)
-\end{align*}
-
-The argument of \(h_\varepsilon-w_\varepsilon-p^\lambda_{\varepsilon}|_{\Sigma\times \Sigma}(x,y)\) 
-converging to \(h_0-w-p^\lambda_{0}|_{\Sigma\times \Sigma}(x,y)\) in the sense of \(L^2(\Sigma\times\Sigma)\)
-is completed by applying dominated convergence theorem. 
-
-As a final point: the construction seems to depend on the function \(\lambda^A\) we chose, however for any different \({\lambda'}^A\in \mathcal{G}^A\) 
-we have due to remark \ref{main results of ivp2}
-
-\begin{equation}
-P^{\lambda}-P^{\lambda'}\in I_2(\mathcal{H}_\Sigma ),
-\end{equation}
-
-therefore also the limit \(\lim_{\varepsilon\rightarrow 0} h_\varepsilon^A - w_\varepsilon - p_\varepsilon^{{\lambda'}^A}\) exists in the sense of \(L^2\).
-
-
-\end{proof}
-
-
-\begin{proof}[Proof of theorem \ref{thm:hadamard=>Pol}:]
-We pick for a four-potential \(A\in C_c^\infty(\mathbb{R}^4)\) a Hadamard state \(H\) of the form \eqref{eq:hadamard1} -\eqref{eq:hadamardexp3} 
-and a \(\lambda^A\in\mathcal{G}^A\). Then we pick 
-\(w_\varepsilon,w \in C_c^\infty(\mathbb{R}^{4+4},\mathbb{C}^{4\times 4})\) for all \(\varepsilon\in [0,1]\) according to lemma \ref{lem:pointwise}.
-Because of lemma \ref{lem:Hadamard=>Pol}, we have that
-
-\begin{equation}
-h_\varepsilon^A-w_\varepsilon-p^{\lambda^A}_\varepsilon \in L^2(\Sigma\times\Sigma)
-\end{equation}
-
-holds. We can define the operator \(Z \in I_2(\mathcal{H}_\Sigma)\) for any Cauchy surface \(\Sigma\) as
-
-\begin{equation}
-\mathcal{H}_\Sigma\ni \psi\mapsto Z \psi := \lim_{\varepsilon \rightarrow 0} 
-\int_{\Sigma} (h_\varepsilon^A-w_\varepsilon-p^{\lambda^A}_\varepsilon)(\cdot,y) i_\gamma(d^4y) \psi(y) 
-\end{equation}
-
-and
-
-\begin{equation}
-\tilde{P}_\Sigma:=Z + P^{\lambda^A}_\Sigma.
-\end{equation}
-
-Because of \eqref{equiv:pLambda} we have for any other \(\lambda' \in\mathcal{G}^A\) that \(\tilde{P}_\Sigma-P^{\lambda'}\in I_2(\mathcal{H}_\Sigma)\).
-
-
-\end{proof}
-
-\begin{proof}[Proof of theorem \ref{thm:Pol=>hadamard}]
-Pick a four-potential \(A\in C_c^\infty(\mathbb{R}^4)\)
-and a \(\lambda^A\in\mathcal{G}^A\).
-Also pick some Hadamard state of the form \eqref{eq:hadamard1}-\eqref{eq:hadamardexp3}.
-Next, we pick \(w_\varepsilon\) according to lemma \ref{lem:pointwise}; however, due to notational reasons we will denote it by \(R_\varepsilon\).
-
-Define for each \(\varepsilon \in ]0,1]\) the function \(w_\varepsilon\) as
-\begin{align}\label{wurm A}
-w_\varepsilon &(x,y):= -\frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}-e^{-i\lambda^A(x,y)}}{(2\pi)^2}(i\slashed{\partial}_x +m) \frac{1}{(y-x-i\varepsilon e_0)^2}\\
-&+\frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}}{2(2\pi)^2 (y-x-i\varepsilon e_0)^2}\left( \slashed{A}(x)+\slashed{A}(y) -2 \int_0^1 ds \slashed{A}(sx +(1-s)y) \right.\\
-&\left.+ (x-y)^\alpha \int_0^1 ds (1-2s)(\slashed{\partial}A_\alpha)(sx + (1-s)y) \right)\\
-&+ \frac{1}{2(2\pi)^2} (-i\slashed{\nabla}+i\slashed{\nabla}^* -2m) V(x,y)\ln (-(y-x-i\varepsilon e_0)^2)\\\label{wurm E}
-&-\frac{m^2 e^{-i \lambda^A(x,y)}}{4\pi^2} (i\slashed{\partial}_x+m)\left(Q_1(m\sqrt{-(y-x-i\varepsilon e_0)^2}\ln(-m^2(y-x-i\varepsilon e_0)^2)\right.\\
-&\left.+Q_2(m\sqrt{-(y-x-i\varepsilon e_0)^2}\right) + R_\varepsilon(x,y).
-\end{align}
-
-We further define the distribution \(H^{\lambda^A}\) by its action on test functions 
-\(f_1,f_2\in C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\)
-
-\begin{equation}
-\tilde{H}(f_1,f_2):=\lim_{\varepsilon \rightarrow 0} \int_{\mathbb{R}^4}\int_{\mathbb{R}^4} \overline{f}_1(x) (p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)) f_2(y) d^4x d^4y,
-\end{equation}
-
-with \(w_\varepsilon\) given by the terms from \eqref{wurm A} until \eqref{wurm E}. First, we verify that \(H^{\lambda^A}\) is indeed a Hadamard state. Pick \(\varepsilon>0\), we find
-
-\begin{align*}
-&p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)=-e^{-i\lambda^A(x,y)}\frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)
-\frac{K_1(m\sqrt{-(y-x-i\varepsilon e_0)^2})}{m\sqrt{-(y-x-i\varepsilon e_0)^2}} - w_\varepsilon(x,y)\\
-&=-e^{-i\lambda^A(x,y)}\frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m) \left( \frac{-1}{m^2(y-x-i\varepsilon e_0)^2} \right.\\
-&\left.+ Q_1(-m^2 (y-x-i\varepsilon e_0)^2) \ln (m\sqrt{-(y-x-i\varepsilon e_0)^2})
-+ Q_2(-m^2 (y-x-i\varepsilon e_0)^2)\right) -w_\varepsilon(x,y).
-\end{align*}
-
-Inserting \(w_\varepsilon(x,y)\) we find that the most divergent terms proportional to \(e^{-i\lambda^A}\), as well as the terms involving \(Q_1\) and \(Q_2\) cancel.
-This results in 
-
-\begin{align*}
-&p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)\\
-&=\frac{e^{-i(x-y)^\alpha \int_0^1 ds A_\alpha (xs + (1-s)y)}}{(2\pi)^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2}\\
-&+\frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}}{2(2\pi)^2 (y-x-i\varepsilon e_0)^2}\left( \slashed{A}(x)+\slashed{A}(y) -2 \int_0^1 ds \slashed{A}(sx +(1-s)y) \right.\\
-&\left.+ (x-y)^\alpha \int_0^1 ds (1-2s)(\slashed{\partial}A)(sx + (1-s)y) \right)\\
-&- \frac{1}{2(2\pi)^2} (-i\slashed{\nabla}+i\slashed{\nabla}^* -2m) V(x,y)\ln (-(y-x-i\varepsilon e_0)^2)\\
-&-R_\varepsilon(x,y).
-\end{align*}
-
-Now the terms involving \(e^{-i(x-y)^2\int_0^1ds A_\alpha(xs+(1-s)y)}\) can be summarised
-
-\begin{align*}
-&\frac{e^{-i(x-y)^\alpha \int_0^1 ds A_\alpha (xs + (1-s)y)}}{(2\pi)^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2}\\
-&+\frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}}{2(2\pi)^2 (y-x-i\varepsilon e_0)^2}\left( \slashed{A}(x)+\slashed{A}(y) -2 \int_0^1 ds \slashed{A}(sx +(1-s)y) \right.\\
-&\left.+ (x-y)^\alpha \int_0^1 ds (1-2s)(\slashed{\partial}A)(sx + (1-s)y) \right)\\
-&=\frac{1}{2(2\pi)^2 }(i\slashed{\nabla}-i\slashed{\nabla}^*+2m) \frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}}{(y-x-i\varepsilon e_0)^2},
-\end{align*}
-
-so overall we find
-
-\begin{align*}
-&p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)=\\
-&\frac{-1}{2(2\pi)^2 }(-i\slashed{\nabla}+i\slashed{\nabla}^*-2m) \frac{e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}}{(y-x-i\varepsilon e_0)^2}\\
-&- \frac{1}{2(2\pi)^2} (-i\slashed{\nabla}+i\slashed{\nabla}^* -2m) V(x,y)\ln (-(y-x-i\varepsilon e_0)^2)\\
-&-R_\varepsilon(x,y).
-\end{align*}
-
-Because the term in the last line is smooth, this means that indeed \(p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)\) is the integration kernel of a Hadamard state.
-Furthermore, for a given Cauchy surface \(\Sigma\) the function \(w_\varepsilon-R_\varepsilon\) has a limit in the sense of \(L^2_{\text{loc}}(\Sigma\times\Sigma)\),
-because of
-Lebesgue dominated convergence and
-lemmata \ref{lem:bound,worstterm}, \ref{lem:bound,ivp2} and  \ref{lem:log term}. That the term \(R_\varepsilon\) 
-converges in \(C^\infty(\mathbb{R}^{4+4},\mathbb{C}^{4\cdot 4})\) follows from lemma \ref{lem:pointwise}.
-
-\end{proof}
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Niemandsland}
-\noch{decide whether to use or delete this part.}
-As a preparation for calculating the vacuum polarisation current we proof the following 
-\begin{Lemma}\label{G_kommutator}
-Let \(P_k,P_l\in Q\) then the following holds
-\begin{equation}
-\left[G(P_k),G(P_l)\right]= 
-\tr\left(P_{\stackrel{k}{-+}}P_{\stackrel{l}{+-}}\right)
--\tr\left(P_{\stackrel{l}{-+}}P_{\stackrel{k}{+-}}\right) 
-+G\left(\left[P_k,P_l\right]\right)
-.\end{equation}
-\end{Lemma}
-For a proof of this lemma let \(P_k,P_l \in Q\), we compute
-\begin{align*}
-&\left[G(P_k),G(P_l)\right]\stackrel{\eqref{G commutator}}{=}\\
-&=\sum_{n,b\in\mathbb{N}} \left[ a^*\left(P_k\varphi_n\right) a(\varphi_n), a^*\left(P_l\varphi_b\right)a(\varphi_n)\right]\\
-&-\sum_{-b,n\in\mathbb{N}}\left[a^*\left(P_k\varphi_n\right)a(\varphi_n), a(\varphi_b) a^*\left(P_l\varphi_b\right)\right]\\
-&-\sum_{-n,b\in\mathbb{N}}\left[a(\varphi_n)a^*\left(P_k\varphi_n\right),a^*\left(P_l\varphi_b\right)a(\varphi_b)\right]\\
-&+\sum_{n,b\in\mathbb{N}}\left[ a(\varphi_n)a^*\left(P_k\varphi_n\right), a(\varphi_b)a^*\left(P_l\varphi_b\right)\right]\\
-&=\sum_{n,b\in\mathbb{N}} \left(a^*\left(P_k\varphi_n\right)\left<\varphi_n,P_l\varphi_b\right>a(\varphi_b)-a^*\left(P_l\varphi_b\right) \left<\varphi_b,P_k\varphi_n\right>a(\varphi_n) \right)\\
-&-\sum_{-b,n\in\mathbb{N}}\left( - \left<\varphi_b,P_k \varphi_n\right>a(\varphi_n)a^*\left(P_l\varphi_b\right) + a(\varphi_b) a^*\left(P_k\varphi_n\right)\left<\varphi_n,P_l\varphi_b\right>\right)\\
-&-\sum_{-n,b\in\mathbb{N}} \left( - \left< \varphi_n,P_l\varphi_b\right> a^*\left(P_k\varphi_n\right) a(\varphi_b) + a^*\left(P_l\varphi_b\right)a(\varphi_n)\left<\varphi_b,P_k\varphi_n\right>\right)\\
-&+\sum_{n,b\in -\mathbb{N}} \left(a(\varphi_n) \left< \varphi_b,P_k\varphi_n\right>a^*\left(P_l\varphi_b\right)-a(\varphi_b)\left<\varphi_n,P_l\varphi_b\right> a^*\left(P_k\varphi_n\right)\right)\\
-&=\sum_{b\in\mathbb{N}} a^*\left(P_k P_{\stackrel{l}{++}}\varphi_b\right)a(\varphi_b) - \sum_{n\in\mathbb{N}}a^*\left(P_l P_{\stackrel{k}{++}}\varphi_n\right)a(\varphi_n)\\
-&+\sum_{n\in\mathbb{N}}a(\varphi_n)a^*\left(P_l P_{\stackrel{k}{-+}}\varphi_n\right) - \sum_{-b\in\mathbb{N}} a(\varphi_b)a^*\left(P_k P_{\stackrel{l}{+-}}\varphi_b\right)\\
-&+\sum_{b\in\mathbb{N}}a^*\left(P_k P_{\stackrel{l}{-+}}\varphi_b\right)a(\varphi_b)-\sum_{-n\in\mathbb{N}}a^*\left(P_l P_{\stackrel{k}{+-}}\varphi_n\right) a(\varphi_n)\\
-&+\sum_{-n\in\mathbb{N}}a(\varphi_n)a^*\left(P_l P_{\stackrel{k}{--}}\varphi_n\right) - \sum_{-b \in \mathbb{N}} a(\varphi_b)a^*\left(P_k P_{\stackrel{l}{--}}\varphi_b\right)\\
-=&\sum_{n\in\mathbb{N}} a^*\left(P_k P_l \varphi_n \right) a(\varphi_n) - \sum_{n\in\mathbb{N}} a^*\left(P_l P_{\stackrel{k}{++}} \varphi_n \right) a(\varphi_n)\\
-&+\tr \left( P_{\stackrel{l}{+-}} P_{\stackrel{k}{-+}}\right) - \sum_{n\in\mathbb{N}} a^*\left( P_l P_{\stackrel{k}{-+}} \varphi_n\right)a(\varphi_n)\\
-&-\tr \left( P_{\stackrel{l}{-+}} P_{\stackrel{k}{+-}}\right) + \sum_{-b\in\mathbb{N}} a(\varphi_b) a^*\left(P_l P_{\stackrel{k}{+-}} \varphi_b\right)\\
-&+\sum_{-b\in\mathbb{N}} a(\varphi_b) a^*\left( P_l P_{\stackrel{k}{--}}\varphi_b\right) - \sum_{-b\in\mathbb{N}} a(\varphi_b) a^*\left( P_k P_l \varphi_b\right)\\
-&=\tr \left( P_{\stackrel{l}{+-}} P_{\stackrel{k}{-+}}\right)
--\tr \left( P_{\stackrel{l}{-+}} P_{\stackrel{k}{+-}}\right)\\
-&+\sum_{n\in\mathbb{N}} a^*\left(\left[P_k ,P_l\right] \varphi_n \right) a(\varphi_n)
-+\sum_{-b\in\mathbb{N}} a(\varphi_b)a^*\left(\left[P_l ,P_k\right] \varphi_b \right) \\
-&=\tr \left( P_{\stackrel{l}{+-}} P_{\stackrel{k}{-+}}\right)
--\tr \left( P_{\stackrel{l}{-+}} P_{\stackrel{k}{+-}}\right)
-+G\left(\left[P_k,P_l\right]\right)
-\end{align*}
-\qed
-
-\begin{Def}
-For \(k\in\mathbb{N}_0\), \(X,Y\in \mathcal{B}(\mathcal{H})\) the nested commutator \([X,Y]_k\) is defined inductively as
-\begin{align*}
-[X,Y]_0&:= Y\\
-[X,Y]_{k+1}&:=[X,[X,Y]_{k}] \quad \forall k\in\mathbb{N}_0.
-\end{align*}
-\end{Def}
-
-\begin{Lemma}\label{nested_kommuted_G}
-For \(m\in\mathbb{N}\) and \(B,C \in Q\) the following holds
-\begin{multline}
-\left[ G(B),G(C)\right]_m=  \tr\left(P_-BP_+[B,C]_{m-1}\right) - \tr\left(P_+BP_-[B,C]_{m-1}\right)\\
-+G\left([B,C]_m\right) .
-\end{multline}
-\end{Lemma}
-\textbf{Proof:} Proof by Induction is the first thing that comes to mind, looking at the claim. Indeed, \(m=1\) is the consequence
-of the lemma \ref{G_kommutator}. For \(m\) general we have
-
-\begin{multline}
-\left[ G(B),G(C)\right]_{m+1}
-=\left[ G(B),\left[ G(B),G(C)\right]_{m}\right]\\
-\stackrel{\text{ind.hyp.}}{=}\left[ G(B), \tr\left(P_-BP_+[B,C]_{m-1}\right) - \tr\left(P_+BP_-[B,C]_{m-1}\right)
-+G\left([B,C]_m\right) \right]\\
-=\left[ G(B),G\left([B,C]_m\right) \right]\\
-\stackrel{\text{lemma } \ref{G_kommutator}}{=} 
-\tr\left(P_- B P_+ [B,C]_m\right)
--\tr\left(P_+BP_- [B,C]_m \right) 
-+G\left(\left[B,[B,C]_m\right]\right)\\
-=
-\tr\left(P_- B P_+ [B,C]_m\right)
--\tr\left(P_+BP_- [B,C]_m \right) 
-+G\left([B,C]_{m+1}\right)
-\end{multline}
-\qed 
-
-\begin{Lemma}\label{lemma:derivativeJ}
-For external potentials \(A, X\) small enough the derivatives of the scattering operator can be computed to fulfil
-\begin{align}\label{eq:derivativeS1}
-\partial_\varepsilon |_{\varepsilon=0} e^{G \ln U^{A+\varepsilon X}} &= e^{G \ln U^A} j_A^0(X) + e^{G \ln U^A} G( (U^A)^{-1} \partial_{\varepsilon} U^{A+\varepsilon X})\\
-\partial_\varepsilon |_{\varepsilon=0} e^{-G \ln U^{A+\varepsilon X}} &=- e^{-G \ln U^A} j_A^0(X) + G( \partial_{\varepsilon} \left(U^{A+\varepsilon X}\right)^{-1} U^A ) e^{-G \ln U^A},
-\end{align}
-with 
-\begin{multline}\label{def:vacuumExpectationCurrent}
-j^0_A(X):= \sum_{l\in\mathbb{N}_0} \frac{(-1)^{l+1}}{(l+2)!} \left(\tr P_- \ln U^A P_+ \left[ \ln U^A, \partial_\varepsilon \ln U^{A+\varepsilon X}\right]_{l}\right.\\
-\left. - \tr P_+ \ln U^A P_- \left[ \ln U^A, \partial_\varepsilon \ln U^{A+\varepsilon X}\right]_{l} \right).
-\end{multline}
-\end{Lemma}
-\textbf{Proof:} We start out by employing Duhamel's and Hadamard's formulas. \todo{ref!! + restrictions, something better than 
- \href{https://s3.amazonaws.com/academia.edu.documents/46627661/CBH.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1517999839&Signature=m\%2FGNTMS\%2FNAH7ioWII76ZlULcCRY\%3D&response-content-disposition=inline\%3B\%20filename\%3DCrib_Notes_on_Campbell-Baker-Hausdorff_e.pdf}{this}}
-These are
-
-\begin{equation}\label{Duhamel}
-\partial_{\alpha}\left. e^{Y+\alpha X}\right|_{\alpha=0} = \int_0^1 d t e^{(1-t) Y} X e^{t Y}\tag{Duhamel's formula}
-\end{equation}
-
-and
-\begin{equation}\tag{Hadamard's formula}\label{Hadamard}
-e^{X}Ye^{-X}=\sum_{k=0}^\infty \frac{1}{k!} [X,Y]_k.
-\end{equation}
-
-So one gets
-
-\begin{align}\label{proof:duhamelApplied}
-\partial_\varepsilon |_{\varepsilon=0} e^{G \ln U^{A+\varepsilon X}} &= \int_0^1 d z e^{(1-z) G \ln U^A} \partial_\varepsilon |_{\varepsilon=0} G \ln U^{A+\varepsilon X} e^{z G \ln U^A}\\\notag
-&=e^{G \ln U^A} \int_0^1 d z \sum_{l\in\mathbb{N}_0} \frac{1}{l!} \left[ - z G \ln U^A, \partial_\varepsilon |_{\varepsilon=0} G \ln U^{A+\varepsilon X} \right]_l\\\notag
-&=e^{G \ln U^A} \int_0^1 d z \sum_{l\in\mathbb{N}_0} \frac{(-z)^l}{l!} \partial_\varepsilon |_{\varepsilon=0} \left[  G \ln U^A,  G \ln U^{A+\varepsilon X} \right]_l.
-\end{align}
-At this point we see that for \(l=0\) the summand vanishes. For all other values of \(l\) we use lemma \ref{nested_kommuted_G}, yielding
-\begin{multline}
-\partial_\varepsilon |_{\varepsilon=0} e^{G \ln U^{A+\varepsilon X}}= 
-e^{G \ln U^A} \int_0^1 d z \sum_{l\in\mathbb{N}} \frac{(-z)^l}{l!} \partial_\varepsilon |_{\varepsilon=0} \left( G\left(\left[ \ln U^A, \ln U^{A+\varepsilon X}\right]\right) \right.\\
-+\tr P_- \ln U^A P_+ \left[ \ln U^A, \partial_\varepsilon |_{\varepsilon=0} \ln U^{A+\varepsilon X}\right]_{l-1}\\
-\left. - \tr P_+ \ln U^A P_- \left[ \ln U^A, \partial_\varepsilon |_{\varepsilon=0} \ln U^{A+\varepsilon X}\right]_{l-1}\right).
-\end{multline}
-
-The last two terms together result in the first term of \eqref{eq:derivativeS1} after performing the integration and shifting the summation
-index. For the first term we will use linearity and continuity of \(G\)\todo{contiuity of G!!}   ~and use the same identities backwards to give
-
-\begin{multline}
-e^{G \ln U^A} \int_0^1 d z \sum_{l\in\mathbb{N}} \frac{(-z)^l}{l!} \partial_\varepsilon |_{\varepsilon=0} G\left(\left[ \ln U^A, \ln U^{A+\varepsilon X}\right]\right) \\
-=e^{G \ln U^A}  G\left( \int_0^1 d z \sum_{l\in\mathbb{N}} \frac{1}{l!}  \left[ -z \ln U^A,\partial_\varepsilon|_{\varepsilon=0} \ln U^{A+\varepsilon X}\right]\right) \\
-=e^{G \ln U^A}  G\left(e^{- \ln U^A} \int_0^1 d z e^{ \ln U^A} e^{-z \ln U^A}\partial_\varepsilon|_{\varepsilon=0} \ln U^{A+\varepsilon X} e^{z \ln U^A}\right) \\
-=e^{G \ln U^A}  G\left(e^{ \ln \left(U^A\right)^{-1}} \partial_\varepsilon|_{\varepsilon=0} e^{ \ln U^{A+\varepsilon X}} \right) \\
-=e^{G \ln U^A}  G\left(\left(U^A\right)^{-1} \partial_\varepsilon|_{\varepsilon=0}U^{A+\varepsilon X} \right).
-\end{multline}
-Putting things together results in the first equality we wanted to prove. For the second one the computation is completely analogous, except for after applying Duhamel's formula as in \eqref{proof:duhamelApplied} we substitute \(u=1-z\). The minus sign in front of the first term then arises by the chain rule, where as the second term does not share the sign change with the first, since we have to revert the use of the chain rule in the second half of the calculation when we apply  \eqref{Duhamel} backwards. \qed
-
-\begin{Def}
-We use Bogoliubov's formula to define the vacuum expectation value of the current \todo{ref!!}
-\begin{equation}
-j_A(F) = i \partial_{\varepsilon}\left. \langle \Omega, {S^{A} }^* S^{A+\varepsilon F}\Omega \rangle \right|_{\varepsilon=0}.
-\end{equation}
-\end{Def}
-
-
-
-\begin{Thm}\label{thm:CurrentExact}
-The vacuum expectation value of the current of the scattering operator takes the form
-\begin{align*}
-j_A(F)&=- \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varepsilon=0}\\
--2\int_0^1 &d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right)\\
-&=- \partial_{\varepsilon} \left.\varphi(A+\varepsilon F) \right|_{\varepsilon=0}\\
-  - 2\Im \sum_{k=0}^\infty&\frac{(-1)^k}{(k+2)!}  \tr \left( P_+ \ln U^A P_-\left[\ln U^A,\left.\partial_{\varepsilon}\ln U^{A+\varepsilon F} \right|_{\varepsilon=0}\right]_{k}\right) 
-\end{align*}
-\end{Thm}
-\textbf{Proof:} By theorem \ref{sleek_second_quantised_scattering_operator} and abbreviating
-\(\varphi(A)= \sum_{n\in\mathbb{N}} \frac{C_n(A)}{n!} \)we see that the current can be written in the form
-
-\begin{multline}\label{sleek_current_calc1}
-j_A(F) = i \partial_{\varepsilon}\left. \langle \Omega, {S^{A} }^* S^{A+\varepsilon F}\Omega \rangle \right|_{\varepsilon=0}\\
-=i \partial_{\varepsilon}\left. \langle \Omega, e^{-i\varphi(A)} e^{-G(\ln (U^A))} 
-e^{i\varphi(A+\varepsilon F)}  e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
-=- \partial_{\varepsilon} \left. \varphi(A+\varepsilon F) \right|_{\varepsilon=0}
-+i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
-e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0},
-\end{multline}
-so the first summand works out just as claimed. For the second summand we employ lemma \ref{lemma:derivativeJ} and note that the vacuum expectation value of \(G\) vanishes no matter its argument.
-
-\begin{multline}\label{sleek_current_calc3}
-i\langle \Omega,\partial_{\varepsilon}\left.  e^{-G(\ln (U^A))} 
-e^{G(\ln (U^{A+\varepsilon F}))} \Omega\rangle \right|_{\varepsilon=0}\\
-=-i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!} 
- \tr\left(P_- \ln U^A P_+[\ln U^A ,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
- +i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!}  \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\ 
-\end{multline}
-
-In order to apply Hadamard's formula once again in the opposite direction, we introduce two auxiliary integrals.
-The second term then becomes
-
-\begin{multline}\label{sleek_current_calc4}
- i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{(k+2)!}  \tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
-= i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{(-1)^k}{k!} \int_0^1 d t \int_0^1 s^k t^{k+1}
-\tr\left(P_+ \ln U^A P_-[\ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
-= i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{1}{k!} \int_0^1 d t \int_0^1 ds\ t
-\tr\left(P_+ \ln U^A P_-[ -t s \ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
-= i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{1}{k!} \int_0^1 d z \int_z^1 ds\ 
-\tr\left(P_+ \ln U^A P_-[ -z \ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
-= i  \partial_{\varepsilon} \left.\sum_{k=0}^\infty \frac{1}{k!} \int_0^1 d z (1-z)
-\tr\left(P_+ \ln U^A P_-[ -z \ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
-= i  \partial_{\varepsilon} \left. \int_0^1 d z (1-z) 
-\tr\left(P_+ \ln U^A P_- \sum_{k=0}^\infty \frac{1}{k!} [ -z \ln U^A,\ln U^{A+\varepsilon F} ]_{k}\right) \right|_{\varepsilon=0}\\
-\stackrel{\eqref{Hadamard}}{=} i  \partial_{\varepsilon} \left. \int_0^1 d z (1-z) 
-\tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A}\ln U^{A+\varepsilon F} e^{ z \ln U^A}\right) \right|_{\varepsilon=0}\\
-=i  \int_0^1 d z (1-z) 
-\tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right) .
-\end{multline}
-
-The calculation for the first term of \eqref{sleek_current_calc3} is identical.
-At this point we notice that \eqref{sleek_current_calc4} and the term where the 
-projectors are exchanged are complex conjugates of one another. So summarising we find
-\begin{multline*}
-j_A(F)=- \partial_{\varepsilon} \left. \varphi (A+\varepsilon F) \right|_{\varepsilon=0}\\
--2\int_0^1 d z (1-z)  \Im \tr\left(P_+ \ln U^A P_- e^{ -z \ln U^A} \partial_{\varepsilon} \left. \ln U^{A+\varepsilon F}\right|_{\varepsilon=0} e^{ z \ln U^A}\right).
-\end{multline*}
-\qed
-
-\begin{Thm}
-Independent of the phase that is used to correct the scattering operator the following formula holds true for any 
- four potentials \(A,F,H\), with \(A\) small enough so that the relevant series converge.
-\begin{multline}
-\partial_\varepsilon |_{\varepsilon=0} ( j_{A+\varepsilon H} (F)-j_{A+\varepsilon F}(H)) = \\
-2 \Im \tr \left(P_+ \left(U^A\right)^{-1} \partial_{\varepsilon}|_{\varepsilon=0} U^{A+\varepsilon F} P_-\left(U^A\right)^{-1} \partial_{\delta}|_{\delta=0} U^{A+\delta H}\right)
-\end{multline}
-\end{Thm}
-\textbf{Proof:} We compute \(\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon F}(H) \). 
-
-\begin{align*}
-&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=\\
-&\partial_\varepsilon |_{\varepsilon=0} \partial_\delta |_{\delta=0} \langle \Omega, e^{i\varphi(A+\varepsilon H + \delta F)-i\varphi(A+\varepsilon H)} e^{-G \ln U^{A+\varepsilon H}} e^{G \ln U^{A+\varepsilon H + \delta F}}\Omega \rangle\\
-\end{align*}
-
-We first act with the derivative with respect to \(H\), fixing \(F\).
-
-\begin{align*}
-&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=\\
-&\partial_\delta |_{\delta=0}   i(\partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H + \delta F)-\partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H ))e^{i\varphi(A + \delta F)-i\varphi(A)} \\
-&\langle \Omega, e^{-G \ln U^{A}} e^{G \ln U^{A + \delta F}}\Omega \rangle\\
-&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} \langle \Omega
-\partial_\varepsilon |_{\varepsilon=0} e^{-G \ln U^{A+\varepsilon H}} e^{G \ln U^{A + \delta F}}\Omega \rangle\\
-&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} 
- \langle \Omega e^{-G \ln U^{A}} \partial_\varepsilon |_{\varepsilon=0}e^{G \ln U^{A+\varepsilon H + \delta F}}\Omega \rangle
-\end{align*}
-
-In computing further one can notice a few cancellations. For the first summand the first factor vanishes if \(\delta\) is set to zero, so the only 
-the first summand in the product rule will not vanish. For the second and third summand we will use lemma \ref{lemma:derivativeJ},
-giving
-
-\begin{align*}
-&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=\\
-&\partial_\delta |_{\delta=0}   i\partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H + \delta F)\\
-&-\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)}  j^0_{A}(H) 
-\langle \Omega, e^{-G \ln U^{A}} e^{G \ln U^{A + \delta F}}\Omega \rangle \\
-&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} \langle \Omega,
- G \left(\partial_\varepsilon |_{\varepsilon=0} \left(U^{A+\varepsilon H}\right)^{-1} U^A\right) e^{-G \ln U^{A}} e^{G \ln U^{A + \delta F}}  \Omega \rangle\\
-&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} j^0_{A+\delta F}(H)
-\langle \Omega, e^{-G \ln U^{A}} e^{G \ln U^{A+ \delta F}}\Omega \rangle\\
-&+\partial_\delta |_{\delta=0} e^{i\varphi(A + \delta F)-i\varphi(A)} 
-\langle \Omega, e^{-G \ln U^{A}} e^{G \ln U^{A+ \delta F}}G\left( \left(U^{A+\delta F}\right)^{-1}\partial_\varepsilon |_{\varepsilon=0} U^{A+\varepsilon H + \delta F} \right) \Omega \rangle.
-\end{align*}
-
-Now there are a few further simplifications to appreciate: since \(\langle \Omega, G \Omega \rangle=0\), in the third and last summand only the derivatives with respect to \(\delta\) which produce by lemma \ref{lemma:derivativeJ} another factor of \(G\)  will contribute to the sum.
- For the other summands except for the first we can spot the appearance of \(j^0\). Respecting all this results in
-
-\begin{align*}
-&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=
-i\partial_\delta |_{\delta=0}   \partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H + \delta F)\\
-&-i\partial_\delta |_{\delta=0}\varphi(A + \delta F)j^0_{A}(H) -  j^0_{A}(H) j^0_A(F)\\
-&+\langle \Omega,
- G \left(\partial_\varepsilon |_{\varepsilon=0} \left(U^{A+\varepsilon H}\right)^{-1} U^A\right) G\left( \left(U^{A}\right)^{-1}\partial_\delta |_{\delta=0} U^{A +\delta F} \right)  \Omega \rangle\\
-&+i\partial_\delta |_{\delta=0} \varphi(A + \delta F) j^0_{A}(H)
-+\partial_\delta |_{\delta=0}  j^0_{A+\delta F}(H)
-+ j^0_{A}(H)j^0_A(F)\\
-&+\langle \Omega, G\left( \left(U^{A}\right)^{-1}\partial_\delta |_{\delta=0} U^{A + \delta F} \right) G\left( \left(U^{A}\right)^{-1}\partial_\varepsilon |_{\varepsilon=0} U^{A+\varepsilon H} \right) \Omega \rangle.
-\end{align*}
-
-A few more terms cancel in the second and fourth line, also since \(\partial_\varepsilon |_{\varepsilon=0} \left(U^{A+\varepsilon H}\right)^{-1} U^{A+\varepsilon H}=0\) we can combine the two products of \(G\) into a commutator:
-
-\begin{align*}
-&-i\partial_\varepsilon |_{\varepsilon=0} j_{A+\varepsilon H}(F)=
-i\partial_\delta |_{\delta=0}   \partial_\varepsilon |_{\varepsilon=0}\varphi(A+\varepsilon H + \delta F)\\
-&+\partial_\delta |_{\delta=0}  j^0_{A+\delta F}(H)\\
-&+\langle \Omega, \left[G\left( \left(U^{A}\right)^{-1}\partial_\delta |_{\delta=0} U^{A + \delta F} \right), G\left( \left(U^{A}\right)^{-1}\partial_\varepsilon |_{\varepsilon=0} U^{A+\varepsilon H} \right)\right] \Omega \rangle.
-\end{align*}
-
-So we can once again apply lemma \ref{G_kommutator}, which results in exactly right hand side of the equation
-we claimed to produce in the statement of this theorem. So all that is left is to recognise that one can combine
-the first two summands into \(-i \partial_{\varepsilon} j_{A+\varepsilon H} (F)\), which is a direct consequence
-of theorem \ref{thm:CurrentExact}.\qed
-
-\subsection{Quantitative Estimates}
-\noch{probably this part cannot be made rigorous. Decide whether to keep it as heuristics}
-Since we do not only want to give an expression for the time evolution operator, but also give bounds on the numerical errors
-which are due to truncate the occurring series we need to look at these series a little closer. The series involve powers of the 
-second quantisation operator \(G\), so we start by examining these in greater depth. In order to do so we define an object 
-closely related to \(G\).
-
-\begin{Def}
-\begin{multline}\label{def:L}
-L: \{M\subset B(\mathcal{H})\mid |M|<\infty\} \times \{M\subset B(\mathcal{H})\mid |M|<\infty\} \rightarrow B(\mathcal{F})\\
-L(\{A_1,\dots, A_c\},\{ B_1,\dots ,B_m\}):= \prod_{l=1}^m a(\varphi_{-k_l}) \\
-\prod_{l=1}^c a^*(A_l \varphi_{n_l}) \prod_{l=1}^m a^*(B_l \varphi_{-k_l}) \prod_{l=1}^c a(\varphi_{n_l}),
-\end{multline}
-where for notational reasons we chose to list the occurring one-particle operators in a specific order; however, 
-the order does not matter, since commutation of the relevant creation and annihilation operators always results an 
-overall factor of one.
-\end{Def}
-
-Since this operator \(L\) occurs when computing powers of \(G\) we compute is product with some \(G\) with 
-the following 
-
-\begin{Lemma}\label{lem:Ntimes1} For any \(a,b,\in\mathbb{N}_0\) and apropriate one particle operators \(A_k, B_l, C\) for \(1\le k\le a\), \(1\le l\le b\) we have the following equality
-\begin{align}
-&L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\Big)G(C) =\\\label{Ntimes1:simplyAdd1}
- &(-1)^{a+b} L\Big(\bigcup_{l=1}^a \{A_l\}\cup \{C\}; \bigcup_{l=1}^b \{B_l\}\Big) \\\label{Ntimes1:simplyAdd2}
- &+(-1)^{a+b+1} L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{C\} \Big) \\\label{Ntimes1:n+1atEnd1}
-&+ \sum_{f=1}^a  L\Big(\bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}\cup \{A_fP_+C \}; \bigcup_{l=1}^b \{B_l\}\Big) \\\label{Ntimes1:n+1atBeginning1}
-&+\sum_{f=1}^a
- L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}\cup \{- CP_- A_f\}; \bigcup_{l=1}^b \{B_l\}\Big)\\\label{Ntimes1:n+1atEnd2}
-& -\sum_{f=1}^a L\Big(\bigcup_{\stackrel{l=1}{f\neq l}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\Big)\\\label{Ntimes1:n+1atBeginning2}
-&+ \sum_{f=1}^b L\Big(\bigcup_{l=1}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{-CP_- B_f\}\Big)\\\label{Ntimes1:TrTerm}
-&+ (-1)^{a+b+1} \sum_{f=1}^a \tr \Big(P_+ C P_- A_f\Big) L\Big(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\Big)\\\label{Ntimes1:middle1}
-&+ (-1)^{a+b+1} \sum_{\stackrel{f_1,f_2=1}{f_1\neq f_2}}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq f_1,f_2}}^a \{A_l\}\cup \{-A_{f_2} P_+ C P_- A_{f_1}\}; \bigcup_{l=1}^b \{B_l\}\Big)\\\label{Ntimes1:middle2}
-&+(-1)^{a+b+1} \sum_{f=1}^b \sum_{g=1}^a L\Big(\bigcup_{\stackrel{l=1}{l\neq g}}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup \{-A_g P_+ C P_- B_f\}\Big).
-\end{align}
-\end{Lemma}
-{\bfseries Proof:}  The proof of this equality is a rather long calculation, where \eqref{def:L} is used repeatedly. We break up the calculation into 
-several parts. Let us start with
-
-\begin{multline}
-L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(C;)=\\
-\prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l}) a^*(C \varphi_m) a(\varphi_m).
-\end{multline}
-
-We (anti)commute the creation operator involving \(C\) to its place at the end of the second product, after that the term
-will be normally ordered and can be rephrased in terms of \(L\)s. During the commutation the creation operator
-in question can be picked up by any of the annihilation operators in the rightmost product. For each term where that happens
-we can perform the sum over the basis of \(\mathcal{H}^-\) related to the annihilation operator whose anticommutator triggered.
-After this sum the corresponding term is also normally ordered and can be rephrased in terms of an \(L\) after some 
-reshuffling which may only produce signs. So performing these steps we get
-
-\begin{multline}
-L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(C;)=\\
-\sum_{f=a}^1 (-1)^{a-f} \prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^{f-1} a^*(A_l \varphi_{n_l}) a^*(A_fP_+C\varphi_m)\\
- \prod_{l=f+1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{\stackrel{l=1}{l\neq f}}^a a(\varphi_{n_l}) a(\varphi_m)\\
-+ L\left(\bigcup_{l=1}^a \{A_l\} \cup \{C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
-=\sum_{f=1}^a  L\left(\bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\} \cup \{A_f P_+ C\}; \bigcup_{l=1}^b \{B_l\}\right)\\
-+ L\left(\bigcup_{l=1}^a \{A_l\} \cup \{C\}; \bigcup_{l=1}^b \{B_l\}\right).
-\end{multline}
-
-Now the remaining case is more laborious, that is why we will split off and treat some of the appearing terms separately. 
-We start off analogous to before 
-
-\begin{multline}
-L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(;C)=\\
-\prod_{l=1}^b a(\varphi_{-k_l}) \prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l})a(\varphi_{-m}) a^*(C \varphi_{-m}).
-\end{multline}
-
-This time we need to (anti)commute the rightmost annihilation operator all the way to the end of the first product and the creation operator to the end of the second but last product. So there will be several qualitatively different terms. From the first step alone we get
-\begin{align}\notag
-L\left(\bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right) L(;C)&=\\\notag
-(-1)^{a}\sum_{f=b}^1 (-1)^{b-f} \prod_{l=1}^b a(\varphi_{-k_l}) &\prod_{l=1}^a a^*(A_l \varphi_{n_l}) \prod_{\stackrel{l=1}{l\neq f}}^b a^*(B_l \varphi_{-k_l})\\ \label{Ntimes1 term 1}
-& \prod_{l=1}^a a(\varphi_{n_l}) a^*(C P_- B_f \varphi_{-k_f})\\\notag
-+(-1)^{a+b}\sum_{f=a}^1 (-1)^{b-f} \prod_{l=1}^b a(\varphi_{-k_l}) &\prod_{\stackrel{l=1}{l\neq f}}^a a^*(A_l \varphi_{n_l})\\\label{Ntimes1 term 2}
-& \prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l}) a^*(CP_- \varphi_{n_f})\\\notag
-+(-1)^b\prod_{l=1}^b a(\varphi_{-k_l}) a(\varphi_{-m}) &\prod_{l=1}^a a^*(A_l \varphi_{n_l}) \\ \label{Ntimes1 term 3}
-&\prod_{l=1}^b a^*(B_l \varphi_{-k_l}) \prod_{l=1}^a a(\varphi_{n_l})a^*(C \varphi_{-m}).
-\end{align}
-
-We will discuss terms \eqref{Ntimes1 term 1}, \eqref{Ntimes1 term 2} and \eqref{Ntimes1 term 3} separately. 
-In Term \eqref{Ntimes1 term 1} we need to commute the last creation operator into its place in the third product,
-it can be picked up by one of the annihilation operators of the last product, but after performing the sum over
-the corresponding basis the resulting term can be rephrased in terms of an \(L\) operator by commuting
-only creation operators of the second and third product. Performing these steps yields the identity
-
-\begin{multline}
-\eqref{Ntimes1 term 1}=\sum_{f=1}^b L\left( \bigcup_{l=1}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\}\cup  \{CP_- B_f \}\right)\\
-+(-1)^{a+b+1}\sum_{f=1}^b \sum_{g=1}^a L\left( \bigcup_{\stackrel{l=1}{l\neq g}}^a \{A_l\}; \bigcup_{\stackrel{l=1}{l\neq f}}^b \{B_l\} \{A_gP_+CP_- B_f \}\right).
-\end{multline}
-
-For \eqref{Ntimes1 term 2} the last creation operator needs to be commuted to the end of the second product. It can be picked up by 
-one of the annihilation operators of the last product, but here we have to distinguish between two cases. If the index of this
-annihilation operator equals \(f\) the resulting commutator will be \(\tr P_+ C P_- A_f \) otherwise one can again perform the sum
-over the corresponding index and express the whole Product in terms of an \(L\) operator. All this results in 
-
-\begin{multline}
-\eqref{Ntimes1 term 2}=\sum_{f=1}^a L\left( \bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}\cup \{C P_- A_f\}; \bigcup_{l=1}^b \{B_l\}\right)\\
-+(-1)^{a+b}\sum_{f=1}^a  L\left( \bigcup_{\stackrel{l=1}{l\neq f}}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\} \right) \tr (P_+ C P_- A_f )\\
-+(-1)^{a+b+1}\sum_{\stackrel{f_1,f_2=1}{f_1\neq f_2}}^a L\left( \bigcup_{\stackrel{l=1}{l\neq f_1,f_2}}^a \{A_l\} \cup \{A_{f_2} P_+CP_- A_{f_1} \}; \bigcup_{l=1}^b \{B_l\} \right).
-\end{multline}
-
-For \eqref{Ntimes1 term 3} the procedure is basically the same as for \eqref{Ntimes1 term 1}, it results in
-
-\begin{multline}
-\eqref{Ntimes1 term 3}= (-1)^{a+b} L\left( \bigcup_{l=1}^a \{A_l\}; \bigcup_{l=1}^b \{B_l\}\right)\\
-+ \sum_{f=1}^a L\left( \bigcup_{\stackrel{l=1}{l \neq f}}^a \{A_l\}\cup \{C P_- A_f\}; \bigcup_{l=1}^b \{B_l\}\cup \{A_f P_+ C\}\right).
-\end{multline}
-
-Putting the results of the calculation together results in the claimed equation, after pulling in some factors of \(-1\) into \(L\). \qed
-
-We carry on with defining the important quantities for powers of \(G\). First we introduce for each \(k \in \mathbb{N}\) a linear
-bounded operator on \(\mathcal{H}\), \(X_k\) which fulfils \(\tr P_+ X_k P_- X_k<\infty\wedge \tr P_- X_k P_+ X_k<\infty\). 
-
-\begin{Def}
-Let 
-\begin{equation*}
-Y:=\{X_k\mid k\in\mathbb{N}\}.
-\end{equation*}
-Let for \(n\in\mathbb{N}\)
-\begin{equation*}
-\langle n\rangle := \{X_l\mid l\in\mathbb{N}, l\le n\}.
-\end{equation*}
-\end{Def}
-
-\begin{Def}
-Let for  \(b\subset Y\), such that \(|b|<\infty\)
-\begin{align}\notag
-f_b:\{l\in\mathbb{N}\mid l\le |b|\}\rightarrow b\\
-\forall k<|b| : f_b(k)=X_l\wedge f_b(k+1)=X_m\rightarrow l<m
-\end{align}
-\end{Def}
-
-\begin{Def}
-For any set \(b\), we denote by \(S(b)\) the symmetric group (group of permutations) over \(b\).
-\end{Def}
-
-\begin{Def}
-Let for  \(b\subset Y\), such that \(|b|<\infty\) and \(\sigma_b \in S(b)\)
-\begin{align*}
-\text{VZ}^b_{\sigma_b}: \{k\in\mathbb{N}\mid k<|b|\} \rightarrow \{-1,1\}\\
-\text{VZ}^b_{\sigma_b}(k):=\text{sgn}\big[f_b^{-1}(\sigma_b(f_b(k+1))) - f_b^{-1}(\sigma_b(f_b(k)))  \big]
-\end{align*}
-\end{Def}
-
-In what is to follow the order of one particle operators will be changed in all possible ways, to keep track of this by
-use of a compact notation we introduce
-\begin{Def}
-\begin{align*}
-W: \{(b,\sigma_b) \mid b\subseteq Y \wedge |b|<\infty \wedge \sigma_b \in S(b) \} \rightarrow B(\mathcal{H})\\
-W(b,\sigma_b):= \left( \prod_{k=1}^{|b|-1} \sigma_{b}(f_b(k)) P_{\text{VZ}_{\sigma_b}^b(k)} \text{VZ}_{\sigma_b}^b(k) \right) \sigma_b (f_b(|b|))
-\end{align*}
-\end{Def}
-
-\begin{Def} Let \(l\) be any finite subset of \(Y\). Denote by \(X^l_{\text{max}}\) the operator \(X_k\in l \)
-such that for any \(X_c\in l \) the relation \(k\ge c\) is fulfilled. Furthermore define
-\begin{align*}
-&\text{PT}: \{T\subset \mathcal{P}(Y)\mid |T|<\infty, \forall b\in T: |b|<\infty\}\rightarrow \mathbb{C}\\
-&\text{for: } T=\emptyset: \text{PT}(T)=1, \text{ otherwise: }\\
-&\text{PT}(T)=\sum_{\stackrel{\forall l \in T:}{\sigma_l \in S(l \backslash \{X_{\text{max}}^l\})}} \prod_{l\in T} 
-\tr [P_+ X^l_{\text{max}} P_- W(l, \sigma_l)]
-\end{align*}
-\end{Def}
-
-There is one more function left to define
-\begin{Def}
-\begin{align*}
-\text{Op}:  \{R\in \mathcal{P}(Y)\mid |R|<\infty\} \times \{D\subset \mathcal{P}(Y)\mid |T|<\infty\}\rightarrow \mathcal{B}(\mathcal{F})\\
-\text{Op}(R,D)=\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \sum_{a \subseteq R \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}} L(a,a^c)(-1)^{|a|+  \frac{(|R| + |D|)(|R|+|D|+1)}{2}}
-\end{align*}
-\end{Def}
-
-Now we are able to state the main theorem which will help us do quantitative estimates.
-
-\begin{Thm}
-Let \(n\in\mathbb{N}\), \(X_1,\dots, X_n \in Y\) then the following equation holds
-
-\begin{equation}\label{eq:ProductG}
-\prod_{k=1}^n G(X_k)= 
-\sum_{\stackrel{\langle n \rangle = \dot{\Cup}_{l\in T} l \dot{\cup} \dot{\Cup}_{l\in D} l \dot{\cup} R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T) \text{Op}(R,D),
-\end{equation}
-where the abbreviation \(\langle n\rangle:= \{X_k\mid k\le n\}\) was used.
-\end{Thm}
-{\bfseries Proof:} The proof will be by induction on \(n\). Since the formula in the claim reduces to 1 for \(n=0\) we will
-not spend any more time on the start of the induction. The general strategy of the proof is to break up the right 
-hand side of \eqref{eq:ProductG} for \(n+1\) into small pieces and show for each piece that it corresponds to one of
-the contributions of lemma \ref{lem:Ntimes1}, while also each term in this lemma is represented by one of the terms
-obtained by breaking up \eqref{eq:ProductG}.
-
-As a first step we break the right hand side of \eqref{eq:ProductG} into three pieces separated by in which set \(X_{n+1}\) 
-ends up in :
-\begin{align}\notag
-\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T) \text{Op}(R,D)=\\\label{ProductGI}
-\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{\exists l \in T: X_{n+1}\in l}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D)\\\label{ProductGII}
-+\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{\exists l\in D: X_{n+1}\in l}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D)\\\label{ProductGIII}
-+\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{X_{n+1}\in R}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D),
-\end{align}
-
-We will discuss each term separately. For term \eqref{ProductGI} the term containing \(X_{n+1}\) is in one of the elements \(l'\) of \(T\), 
-but each such element has to have more than one element. So if we were to sum over the partitions of \(\langle n\rangle \) instead,
-the rest of \(l'\backslash \{X_{n+1}\}\) is either an element of \(D\) or, if it contains only one element, of \(R\). Picking \(D\) instead of \(T\)
-is at this stage an arbitrary choice, but this choice leads to the terms of lemma \ref{lem:Ntimes1}. Alls this means that one
-correct rewriting of term \eqref{ProductGI} is
-
-\begin{multline}\label{eq:ProductGI2}
-\eqref{ProductGI}= \sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} } \sum_{b \in D \cup \{ \{r\} \mid r\in R \}}  \\
-\text{PT}(T\cup \{\{X_{n+1} \cup f\}) \text{Op}(R \backslash b, D\backslash \{b\}).
-\end{multline}
-
-Next we pull one factor and the corresponding sum out of PT and write out Op. Then we see that the sums over permutations 
-can be merged into one. There we take the convention that for any set \(f\) such that \(|f|=1\) holds, we define \(\sigma_f\) to be
-the identity on that set.
-
-This results in
-
-\begin{align}\notag
-\eqref{eq:ProductGI2}= \sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\sum_{b \in D \cup \{ \{r\} \mid r\in R \}}  \sum_{\sigma_b \in S(b)}\\\notag
- \tr[P_+ X_{n+1} P_- W(b,\sigma_b)] \text{PT}(T) \sum_{\stackrel{\forall l \in D\backslash \{b\}}{\sigma_l \in S(l)}} \\\notag
- \sum_{a\subseteq R\backslash b \cup \bigcup_{l\in D\backslash \{b\}}\{W(l,\sigma_l)\}}  L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|-1)(|R|+|D|)}{2}}\\\notag
- =\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{b \in D \cup \{ \{r\} \mid r\in R \}} \text{PT}(T)\\\notag
- \sum_{a\subseteq R\backslash b \cup \bigcup_{l\in D\backslash \{b\}}\{W(l,\sigma_l)\}}  L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|-1)(|R|+|D|)}{2}}\\\notag
-\tr[P_+ X_{n+1} P_- W(b,\sigma_b)]   \\\notag
-=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}   \text{PT}(T)  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}}\\\notag
-\sum_{b \in D \cup \{ \{r\} \mid r\in R \}} \id_{W(b,\sigma_b)\in a}  L(a\backslash\{b\},a^c) (-1)^{|a|+1}\\\notag
-(-1)^\frac{(|R|+|D|-1)(|R|+|D|)}{2} \tr[P_+ X_{n+1} P_- W(b,\sigma_b)]\\\notag
-=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}} \\\notag
- \sum_{b \in a  }   L(a\backslash\{b\},a^c) (-1)^{|a|+\frac{(|R|+|D|+1)(|R|+|D|)}{2}}\\\notag
- (-1)^{1+|R|+|D|} \tr[P_+ X_{n+1} P_- W(b,\sigma_b)]\\\notag
- =\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}} \\
-   (-1)^{|a|+\frac{(|R|+|D|+1)(|R|+|D|)}{2}}  \eqref{Ntimes1:TrTerm}_{L(a,a^c) G(X_{n+1})},
-\end{align}
-
-where the notation in the last line is to be taken as ``apply Lemma \ref{lem:Ntimes1} apply it to \(L(a,a^c) G(X_{n+1})\) and
-pick only term \eqref{Ntimes1:TrTerm}''. We will use this abbreviating notation also for the next terms.
-
-The next term is \eqref{ProductGII}. Here we need a few more notational conventions. For any  set 
-\(b\subseteq \langle n \rangle\) and corresponding
-permutation \(\sigma_b\in S(b)\), we denote by the same symbol \(\sigma_b\) the continuation of \(\sigma_b\) to \(b\cup \{X_{n+1}\}\),
-where for this continuation \(X_{n+1}\) is a fixed point. Furthermore we define for any set 
-\(b\subseteq \langle n \rangle\), \(\sigma_c^b\) by
-
-\begin{align}\notag
-&\sigma_c^b \in  S(b\cup\{X_{n+1}\}), \\\notag
-\forall k\le |b|: &\sigma_c^b(f_{b\cup \{X_{n+1}\}}(k))=f_{b\cup \{X_{n+1}\}}(k+1)\\
- &\sigma^b_c (X_{n+1})=f_b(1).
-\end{align}
-
-Finally we define for sets \(b_1,b_2 \subseteq \langle n \rangle, b_1\cap b_2=\emptyset\) and corresponding
-permutations \(\sigma_{b_1}\in S(b_1), \sigma_{b_2} \in S(b_2)\) the permutation 
-\(\sigma_{b_1,b_2}^{n+1}\) by
-
-\begin{align}\notag
-M_{b_1,b_2}^{n+1} :=b_1\cup b_2 \cup \{X_{n+1}\}\\\notag
-\sigma_{b_1,b_2}^{n+1}\in S(M_{b_1,b_2}^{n+1} )\\\notag
-\forall 1\le k \le |b_1|: \sigma_{b_1,b_2}^{n+1}(f_{M_{b_1,b_2}^{n+1}}(k))=\sigma_{b_1}(f_{b_1}(k))\\\notag
-\sigma_{b_1,b_2}^{n+1}(f_{M_{b_1,b_2}^{n+1}}(|b_1|+1))=X_{n+1}\\\notag
-\forall |b_1|+2\le k \le |b_1|+|b_2|+1:\\
- \sigma_{b_1,b_2}^{n+1}(f_{M_{b_1,b_2}^{n+1}}(k))
-= \sigma_{b_2} ( f_{b_2}(k-|b_1|-1))
-\end{align}
-
-The beginning of the treatment of term \eqref{ProductGII} is analogous to \eqref{ProductGI}, we rewrite the
-partition of \(\langle n+1\rangle \) into one of \(\langle n \rangle \) with an additional sum over where the
-other operators packed to together with \(X_{n+1}\) come from. This splits into three parts, either \(X_{n+1}\)
-is put at the beginning of the compound operator, or its put at the end of the compound object, or 
-to the left as well as to the right are operators with smaller index. Since the overall sign is decided by 
-how often the operator index rises or falls, this separation into cases is helpful. The last case we then
-rewrite as picking two sets of operators, one of which will be in front of \(X_{n+1}\) and the other one
-behind this operator. 
-
-The calculation is as follows
-
-\begin{align}\notag
-&\eqref{ProductGII}= \sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{\exists l\in D: X_{n+1}\in l}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D)\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \text{Op} (R\backslash b , D\cup \{ b \cup \{X_{n+1}\}\backslash \{b\}\})\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D \cup \{b \cup \{X_{n+1}\}\}}{\sigma_l \in S(l)}}\\\notag
- &\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D \cup \{b \cup \{X_{n+1}\} \}\backslash \{b\}}\{W(l,\sigma_l)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}\Big[\\\label{ProductGII.1}
- &\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D\backslash \{b\}}\{W(l,\sigma_l)\} \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\\\label{ProductGII.2}
-&+\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D\backslash \{b\}}\{W(l,\sigma_l)\}\cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ\sigma_b)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\Big]\\\notag
-&+\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in \overline{D}}l \dotcup \overline{R}}{\forall l \in \overline{D}\cup T: |l|\ge 2}} \text{PT}(T) \sum_{\stackrel{b_1,b_2\in \overline{D} \cup \{\{r\}\mid r \in \overline{R}\}}{b_1 \neq b_2}} \sum_{\stackrel{\forall l \in \overline{D} }{\sigma_l \in S(l)}}\\\label{ProductGII.3}
-&\sum_{a \subseteq \tilde{R}\cup \bigcup_{l \in \tilde{D}}\{W(l,\sigma_l)\} \cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\}} L(a,a^c) (-1)^{|a|+ \frac{(|\overline{R}|+|\overline{D}|-1)(|\overline{R}|+|\overline{D}|)}{2}}
-\end{align}
-
-where \(\tilde{R}=\overline{R} \backslash (b_1\cup b_2)\) and
-\(\tilde{D}:=\overline{D} \cup \{b_1 \cup \{X_{n+1}\} \cup b_2 \}\backslash \{b_1,b_2\}\). For the term 
-\eqref{ProductGII.3} we had to reshuffle the outermost
-sum a bit. For each term in the original sum where \(X_{n+1}\) is neither the first nor the last factor in its product (we will call the set of factors in front of \(X_{n+1}\)  \( \alpha\) and the factors behind it \(\beta\)) there is a different splitting of \(\langle n \rangle \) into \(\overline{R}\) and \(\overline{D}\) such that \(\alpha\) and \(\beta\) are separate elements of \(\overline{D}\cup \{\{r\}\mid r \in \overline R\}\).
-So we replace the original sum over \(D\) and \(R\) into one of \(\overline{D}\) and \(\overline{R}\). Since this is a one to one
-correspondence and the sum is finite this is always possible. The exponent of the sign also changes for this reason, since
-\(|R|+|D|=|\overline{R}|+|\overline{D}|-1\) holds. Continuing with \eqref{ProductGII.1} the next steps are similar to the last steps
-in treating \eqref{ProductGI}. They are
-
-\begin{align}\notag
-&\eqref{ProductGII.1}=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}\\\notag
- &\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D\backslash \{b\}}\{W(l,\sigma_l)\} \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\\\notag
- &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \\\notag
- &\sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\id_{W(b,\sigma_b)\in a} \\\notag
-& \big[L(a\backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\},a^c) \\\notag
-& -L(a\backslash \{W(b,\sigma_b)\},a^c \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\}) \big]\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T)  \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \\\notag
- &\sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}
- \sum_{W(b,\sigma_b) \in a }  \\\notag
-& \big[L(a\backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\},a^c) \\\notag
-& -L(a\backslash \{W(b,\sigma_b)\},a^c \cup \{W(b\cup \{X_{n+1}\},\sigma_b)\}) \big]\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T)  \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\
- & (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}
- (\eqref{Ntimes1:n+1atEnd1}+\eqref{Ntimes1:n+1atEnd2})_{L(a,a^c)G(X_{n+1})}.
-\end{align}
-
-Almost the same procedure applies to \eqref{ProductGII.2}. It yields %\label{Ntimes1:n+1atBeginnign1}
-
-\begin{align}\notag
-&\eqref{ProductGII.2}=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}\\\notag
- &\sum_{a \subseteq R\backslash b \cup \bigcup_{l \in D\backslash \{b\}}\{W(l,\sigma_l)\} \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c\circ \sigma_b)\}} L(a,a^c) (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}\\\notag
- &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T) \sum_{b\in D \cup \{\{r\}\mid r \in R\}} \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \\\notag
- &\sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}} \\\notag
-& \big[ \id_{W(b,\sigma^b_c\circ\sigma_b)\in a} L(a\backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ\sigma_b)\},a^c) \\\notag
-& +\id_{W(b,\sigma^b_c\circ \sigma_b)\in a^c} L(a\backslash \{W(b,\sigma_b)\},a^c \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ \sigma_b)\}) \big]\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T)  \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \\\notag
- &\sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}
-  \\\notag
-& \big[ \sum_{W(b,\sigma_b) \in a }L(a\backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ\sigma_b)\},a^c) \\\notag
-&+  \sum_{W(b,\sigma_b) \in a^c } L(a,a^c \backslash \{W(b,\sigma_b)\} \cup \{W(b\cup \{X_{n+1}\},\sigma^b_c \circ \sigma_b)\}) \big]\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} \text{PT}(T)  \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}} \sum_{a \subseteq R \cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\
- & (-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}}
- (\eqref{Ntimes1:n+1atBeginning1}+\eqref{Ntimes1:n+1atBeginning2})_{L(a,a^c)G(X_{n+1})}.
-\end{align}
-
-
-Also for \eqref{ProductGII.3} the procedure is almost the same. We bring the sums into a form such that one can read off the
-terms generated by the induction. We begin be renaming the sets which we had to change by resumming back to the names 
-of the original sets. 
-
-
-\begin{align}\notag
-&\eqref{ProductGII.3}=
-\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in \overline{D}}l \dotcup \overline{R}}{\forall l \in \overline{D}\cup T: |l|\ge 2}} 
-\text{PT}(T) 
-\sum_{\stackrel{b_1,b_2\in \overline{D} \cup \{\{r\}\mid r \in \overline{R}\}}{b_1 \neq b_2}} 
-\sum_{\stackrel{\forall l \in \overline{D} }{\sigma_l \in S(l)}}\\\notag
-&\sum_{a \subseteq \tilde{R}\cup \bigcup_{l \in \tilde{D}}\{W(l,\sigma_l)\} \cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\}} L(a,a^c) (-1)^{|a|+ \frac{(|\overline{R}|+|\overline{D}|-1)(|\overline{R}|+|\overline{D}|)}{2}}\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} 
-\text{PT}(T) 
-\sum_{\stackrel{b_1,b_2\in D \cup \{\{r\}\mid r \in R\}}{b_1 \neq b_2}} 
-\sum_{\stackrel{\forall l \in D }{\sigma_l \in S(l)}}\\\notag
-&\sum_{a \subseteq R\cup \bigcup_{l \in D}\{W(l,\sigma_l)\} \cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\}} L(a,a^c) (-1)^{|a|+ \frac{(| R|+|D|-1)(|R|+|D|)}{2}}\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} 
-\text{PT}(T) 
-\sum_{\stackrel{b_1,b_2\in D \cup \{\{r\}\mid r \in R\}}{b_1 \neq b_2}} 
-\sum_{\stackrel{\forall l \in D }{\sigma_l \in S(l)}} \sum_{a \subseteq R\cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\\notag
-&(-1)^{|R|+|D|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}} \id_{W(b_1,\sigma_1)\in a}\\\notag
-&\left[+(-1)^{|a|+1}\id_{W(b_2,\sigma_2)\in a} L\Big(a\backslash\{W(b_1,\sigma_1),W(b_2,\sigma_2)\}\cup\right.\\\notag
-&\cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\} ,a^c\Big) \\\notag
-&+(-1)^{|a|+1}\id_{W(b_2,\sigma_2)\in a^c}L\Big(a\backslash\{W(b_1,\sigma_1)\} ,a^c \backslash\{W(b_2,\sigma_2)\}\cup\\\notag
-&\left. \cup \{W(b_1\cup \{X_{n+1}\}\cup f_2,\sigma^{n+1}_{b_1,b_2})\}\Big) \right]\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} 
-\text{PT}(T) 
-\sum_{\stackrel{\forall l \in D }{\sigma_l \in S(l)}} \sum_{a \subseteq R\cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\\notag
-&(-1)^{|R|+|D|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}} \\\notag
-&\Big[(-1)^{|a|+1}\sum_{\stackrel{b_1,b_2 \in a}{b_1 \neq b_2}}  L\Big(a\backslash\{W(b_1,\sigma_1),W(b_2,\sigma_2)\}\cup\\\notag
-&\cup \{W(b_1\cup \{X_{n+1}\}\cup b_2,\sigma^{n+1}_{b_1,b_2})\} ,a^c\Big) \\\notag
-&+(-1)^{|a|+1}\sum_{b_1\in a,b_2\in a^c}  L\Big(a\backslash\{W(b_1,\sigma_1)\} ,a^c \backslash\{W(b_2,\sigma_2)\}\cup\\\notag
-&\left. \cup \{W(b_1\cup \{X_{n+1}\}\cup f_2,\sigma^{n+1}_{b_1,b_2})\}\Big) \right]\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D}l \dotcup R}{\forall l \in D\cup T: |l|\ge 2}} 
-\text{PT}(T) 
-\sum_{\stackrel{\forall l \in D }{\sigma_l \in S(l)}} \sum_{a \subseteq R\cup \bigcup_{l \in D}\{W(l,\sigma_l)\}} \\\notag
-&(-1)^{|a|+ \frac{(|R|+|D|)(|R|+|D|+1)}{2}} (\eqref{Ntimes1:middle1}+\eqref{Ntimes1:middle2})_{L(a,a^c)G(X_{n+1})}
-\end{align}
-
-Lastly we will discuss term \eqref{ProductGIII}; luckily, this term is less involved than the other two. The general procedure;
-however, stays the same. First we reformulate the partition of \(\langle n+1\rangle\) into one of \(\langle n \rangle \), where
-the terms acquire modifications. Secondly we massage these terms until the involved sums look exactly like the one 
-in our induction hypothesis \eqref{eq:ProductG} and realise that the terms are produced by lemma \ref{lem:Ntimes1}.
-For term \eqref{ProductGIII}  this results in
-
-\begin{align}\notag
-&\eqref{ProductGIII}
-=\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{\stackrel{X_{n+1}\in R}{ \forall l \in T \cup D: |l|\ge 2}}} \text{PT}(T) \text{Op}(R,D)\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
-\text{Op}(R\cup \{X_{n+1}\},D)\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
-\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \quad \sum_{a\subseteq R \cup \{X_{n+1}\} \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}}\\\notag
-&L(a,a^c)(-1)^{|a| + \frac{(|R|+1+|D|)(|R|+|D|+2)}{2}}\\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
-\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \quad \sum_{a\subseteq R \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}}
-(-1)^{|a| + \frac{(|R|+1+|D|)(|R|+|D|)}{2}}\\\notag
-&\big(-L(a\cup\{X_{n+1}\},a^c)+L(a,a^c\cup \{X_{n+1}\}) \big)(-1)^{|R|+|D|+1} \\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
-\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \quad \sum_{a\subseteq R \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}}
-(-1)^{|a| + \frac{(|R|+1+|D|)(|R|+|D|)}{2}}\\\notag
-&\big(L(a\cup\{X_{n+1}\},a^c)(-1)^{|R|+|D|}+L(a,a^c\cup \{X_{n+1}\})(-1)^{|R|+|D|+1} \big) \\\notag
-&=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T)
-\sum_{\stackrel{\forall l \in D:}{\sigma_l \in S(l)}} \quad \sum_{a\subseteq R \cup \bigcup_{l\in D} \{W(l,\sigma_l)\}}
-(-1)^{|a| + \frac{(|R|+1+|D|)(|R|+|D|)}{2}}\\\notag
-&\big(\eqref{Ntimes1:simplyAdd1}+\eqref{Ntimes1:simplyAdd2} \big)_{L(a,a^c)G(X_{n+1})}.
-\end{align}
-
-Summarising we showed 
-\begin{align*}
-&\sum_{\stackrel{\langle n +1 \rangle = \dotCup_{l\in T} l \dotcup \dotCup_{l\in D} l \dotcup R}{ \forall l \in T \cup D: |l|\ge 2}} \text{PT}(T) \text{Op}(R,D)\\
- &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}} \\
-  & (-1)^{|a|+\frac{(|R|+|D|+1)(|R|+|D|)}{2}}  \\
-  &\big( \eqref{Ntimes1:TrTerm}+\eqref{Ntimes1:n+1atEnd1}+\eqref{Ntimes1:n+1atEnd2} 
-  +\eqref{Ntimes1:n+1atBeginning1}+\eqref{Ntimes1:n+1atBeginning2}\\
- &+\eqref{Ntimes1:middle1}+\eqref{Ntimes1:middle2}
-  +\eqref{Ntimes1:simplyAdd1}+\eqref{Ntimes1:simplyAdd2}\big)_{L(a,a^c) G(X_{n+1})}\\
- &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \sum_{\stackrel{\forall l \in D}{\sigma_l \in S(l)}}  \sum_{a\subseteq R \cup \bigcup_{l\in D}\{W(l,\sigma_l)\}} \\
-  & (-1)^{|a|+\frac{(|R|+|D|+1)(|R|+|D|)}{2}} L(a,a^c)G(X_{n+1})\\
-  &=\sum_{\stackrel{\langle n \rangle = \dotCup_{l\in T}l \dotcup \dotCup_{l\in D} l \dotcup R}{\forall l \in D \cup T: |l|>2} }\text{PT}(T) \text{Op}(R,D)G(X_{n+1})\\
-  &=\prod_{l=1}^n G(X_{l}) \quad G(X_{n+1}),
-\end{align*}
-
-which ends our proof by induction.\qed
 
 
 
@@ -9213,14 +8126,52 @@ First recall the lemma itself.
 
 \section{Heuristic Construction of \(S\)-Matrix expression}\label{sec:heuristic construction}
 
+This section is dedicated to the heuristic construction of 
+the expression for the scattering operator stated in theorem 
+\ref{sleek_second_quantised_scattering_operator}.
+
+We start from the power series of the one-particle 
+scattering operator \(S^A\):
+\begin{equation}\label{U_expansion}
+S^A = \sum_{k=0}^\infty \frac{1}{k!} Z_k(A),
+\end{equation}
+where \(Z_k(A)\) are bounded operators on \(\mathcal{H}\), 
+which are homogeneous of degree \(k\) in \(A\).
+Our strategy in this chapter is to try an analogous formal 
+power series ansatz for the second quantised scattering 
+operator \(\tilde{S}^A\)
+
+\begin{equation}\label{S_expansion}
+\tilde{S}^A=\sum_{k=0}^\infty \frac{1}{k!} T_k(A).
+\end{equation}
+Here \(T_k\) are assumed to be homogeneous of degree 
+\(k\) in \(A\); however, they will only turn out to be 
+bounded on
+fixed particle number subspaces \(\mathcal{F}_{m,p}\) of 
+Fock space. We will identify operators \(T_k\) such that 
+\eqref{S_expansion}
+holds up to a global phase. 
+In order to fully characterise \(\tilde{S}^A\) it is enough 
+to characterise all of the \(T_k\) operators. 
+Using the \eqref{lift condition} one can derive commutation 
+relations for the operators 
+\(T_k\) by plugging in \eqref{U_expansion} and 
+\eqref{S_expansion} into the \eqref{lift condition} nad its 
+adjoint
+and collecting all terms with the same degree of homogeneity. 
+They are given by
+
+\begin{equation}\label{logarithmic lift condition}
+\left[T_m(A) , a^\# (\phi)\right]= \sum_{j=1}^{m} \begin{pmatrix} m \\ j \end{pmatrix} a^\# \left(Z_j (A) \phi \right) T_{m-j}(A), 
+\end{equation}
+where \(a^\#\) is either \(a\) or \(a^*\).
 In the following I derive a recursive equation for the coefficients of the expansion 
 of the second quantized scattering operator. The starting point of this derivation is 
 the commutator of \(T_m\), equation \eqref{logarithmic lift condition}.
 
 \subsection{Guessing Equations}
 
-Why at this point one might suspect that such a representation exists is, because
-looking at equation \eqref{logarithmic lift condition} for a while, one
+Looking at equation \eqref{logarithmic lift condition} for a while, one
 comes to the conclusion that if one replaces \(T_m\) by 
 \begin{equation}
 T_m - \frac{1}{2} \sum_{k=1}^{m-1} \begin{pmatrix} m \\ k\end{pmatrix} T_k T_{m-k},
@@ -9228,9 +8179,7 @@ T_m - \frac{1}{2} \sum_{k=1}^{m-1} \begin{pmatrix} m \\ k\end{pmatrix} T_k T_{m-
 no \(T_k\) with \(k>m-2\) will occur on the right hand side of the resulting equation.
 So if one subtracts the right polynomial in \(T_k\) for suitable \(k\) one might achieve
 a commutator which contains only the creation respectively annihilation operator 
-concatenated with some one particle operator. From our treatment of \(T_1\)
-\noch{place proper reference to definition of G operator} we know which
-operators have such commutation relations. 
+concatenated with some one particle operator.
 
 So having this in Mind we start with the ansatz
 
@@ -9239,7 +8188,7 @@ So having this in Mind we start with the ansatz
 \end{equation}
 
 Now in order to show that \(T_m\) and \(\Gamma_m\) agree up to operators which have a commutation 
-relation of the form \eqref{G commutator}, we calculate \(\left[ T_m-\Gamma_m, a^\#(\varphi_n) \right]\)
+relation of the form \eqref{Commutation Gamma}, we calculate \(\left[ T_m-\Gamma_m, a^\#(\varphi_n) \right]\)
 for arbitrary \(n\in\mathbb{Z}\) and try to choose the coefficients \(c_b\) of \eqref{Def Gamma_m}
 such that all contributions vanish which do not have the form \(a^\# \left( \prod_k Z_{\alpha_k}\right)\)
 for any suitable \((\alpha_k)_k\subset \mathbb{N} \). If one does so, one is led to a system of equations
@@ -9313,7 +8262,7 @@ Solving the first few equations and plugging the solution into the consecutive
 \begin{equation}
 c_{\alpha_1,\dots, \alpha_k} = \frac{(-1)^k}{k} \begin{pmatrix}\sum_{l=1}^k \alpha_l\\ \alpha_1\ \alpha_2 \ \cdots \alpha_k\end{pmatrix},
 \end{equation}
-where the last factor is the multinomial coefficient of the indices \(\alpha_1,\dots, \alpha_k\in\mathbb{N}\).
+where the last factor is the multinomial coefficient of the indices\linebreak \(\alpha_1,\dots, \alpha_k\in\mathbb{N}\).
 
 \subsection{Recursive equation for Coefficients of the second quantised scattering operator}
 
@@ -9905,6 +8854,628 @@ we can step by step simplify
 
 The last conjecture is proven directly in section \ref{sec:proof simple formula}
 
+
+
+\subsection{Proofs of Section \ref{sec: hadamard}}\label{sec: proof hadamard}
+
+We first break down the problem of the proof of theorem \ref{thm:hadamard=>Pol} to a problem on a bounded domain. Then we go on 
+to show that the relevant functions are locally bounded so that an application of Lebesgue dominated convergence yields our result.
+The same estimates we need for theorem \ref{thm:hadamard=>Pol} will be used again for the proof of theorem \ref{thm:Pol=>hadamard}.
+
+\begin{Def} Let \(A\in \mathcal{V}\), \(\Sigma\) be a Cauchy surface 
+  and \(\delta>0\), we introduce the sets
+\begin{align}
+J_1&:=\!\{(x,y)\in\mathbb{R}^{4+4}\mid (x-y)^2\ge -\delta^2/4 \wedge \overline{x~y} \cap \mathrm{supp}(A)\neq \emptyset\}\\
+J_2&:=\!\{(x,y)\!\in\mathbb{R}^{4+4}\mid\!\! (x-y)^2\ge -\delta^2\!\! \wedge \overline{x~y} \!\cap\!\! \left(B_{\delta/2}(0)\!+\!\mathrm{supp}(A)\right)\!\neq\! \emptyset\}\\
+J_3&:=\!\{(x,y)\!\in\! \Sigma \!\times\! \Sigma \mid\!\! (x-y)^2 \ge-\delta^2\!\!\wedge\! \overline{x ~ y} \!\cap\!\! \left(B_{\delta/2}(0)\!\!+\!\mathrm{supp}(A) \right)\!\neq\! \emptyset \},
+\end{align}
+where the sum of two sets is defined as 
+\(S_1+S_2:=\{s_1+s_2\mid s_1\in S_1, s_2\in S_2\}\). 
+Please recall that the line segment between \(x\) and \(y\) 
+by is denoted by \(\overline{x~y}\). 
+\end{Def}
+
+\begin{Def}
+For ease of comparison, we define 
+for a four-potential \(A\in \mathcal{V}\),
+\(\tilde{\lambda}:\mathbb{R}^{4+4}\rightarrow \mathbb{C}\):
+\begin{equation}
+\tilde{\lambda}(x,y)= (x-y)^\alpha\int_0^1 ds ~A_\alpha (x s + (1-s)y),
+\end{equation}
+and furthermore introduce the abbreviation \(G(x,y):=e^{-i \tilde{\lambda}(x,y)} \).
+\end{Def}
+
+\begin{Remark}
+The function \(\tilde{\lambda}\not\in \mathcal{G}^A\), because it does not satisfy one of the technical conditions in definition
+\ref{def:lambda}, there is not compact \(K\subset\mathbb{R}^4\) such that 
+\(\mathrm{supp}(\tilde{\lambda})\subset K\times \mathbb{R}^4 \cup \mathbb{R}^4\times K\) holds. However, the other conditions are all fulfilled. 
+We need to introduce it nonetheless, because it is present in the representation for the Hadamard states.
+\end{Remark}
+
+
+\begin{Lemma}\label{lem:pointwise}
+For any \(A\in \mathcal{V}\) and any Hadamard state \(H\) 
+of the form \eqref{eq:hadamard1} to \eqref{eq:hadamardexp3}
+and any \(\lambda^A \in \mathcal{G}^A\), \(\delta>0\),  
+there is a smooth family of
+functions \(w_\varepsilon\in C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times4})\) with \(\varepsilon \in [0,1]\) and a smooth function 
+  \(w\in C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times 4})\)  obeying
+  
+\begin{align}
+&\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) w_\varepsilon(x,y) f_2(y)dxdy =
+\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) (h_\varepsilon - p_\varepsilon^\lambda)(x,y) f_2(y)dxdy\\
+&\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) w(x,y)f_2(y)dxdy \notag\\
+&\hspace{2cm}=\lim_{\epsilon\rightarrow 0}\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x)(h_\epsilon (x,y)-p^\lambda_\epsilon(x,y)) f_2(y)dxdy,
+\end{align}
+
+for all test functions \(f_1,f_2\) such that \(\mathrm{supp}(f_1)\times\mathrm{supp}(f_2)\subset J_2^c\)
+  
+Additionally \(\lim_{\varepsilon \rightarrow 0}w_\varepsilon=w\) pointwise and in addition 
+is continuous as a function of type \(\mathbb{R}^{4+4} \times[0,1]\rightarrow \mathbb{C}^{4\times 4}\).
+\end{Lemma}
+\begin{proof}
+Let \(A\in \mathcal{V}, \varepsilon, \delta>0\).
+  Let \(H\) be a Hadamard state acting as 
+\begin{equation}
+H(f_1,f_2)=\lim_{\varepsilon\searrow 0} \int_{\mathbb{R}^4}d^4 x \overline{f_1}(x) \int_{\mathbb{R}^4} d^4y ~h_\varepsilon(x,y) f_2(y).
+\end{equation}
+
+be of the form of equation \eqref{eq:hadamardexp1} to \eqref{eq:hadamardexp3}. 
+Pick a function \(\lambda\in \mathcal{G}^A\). 
+
+We may choose \(w'\in C^\infty(\mathbb{R}^4\times\mathbb{R}^4,\mathbb{C}^{4\times 4})\)
+such that the following conditions is fulfilled:
+
+For all test functions \(f_1,f_2\in C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\) such that \( \mathrm{supp}(f_1)\times \mathrm{supp}(f_2) \subset J_1^c \)
+we have
+
+\begin{align}\label{eq:conditionfull}
+\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x)& w'(x,y)f_2(y)dxdy \\
+&=\lim_{\epsilon\rightarrow 0}\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x)(h_\epsilon (x,y)-p^\lambda_\epsilon(x,y)) f_2(y)dxdy.
+\end{align}
+
+To understand why, we consider two cases regarding the support of the testfunctions \(f_1,f_2\), 
+\begin{enumerate}
+\item \((x,y)\in\mathrm{supp}(f_1)\times\mathrm{supp}(f_2)\)
+implies \(\overline{x~y}\cap \mathrm{supp}(A)=\emptyset\).
+\item \((x,y)\in\mathrm{supp}(f_1)\times\mathrm{supp}(f_2)\)
+implies \((x-y)^2<-\delta^2/4\).
+\end{enumerate}
+
+Regarding 1: In the representation of the Hadamard state \(H\), equation \eqref{Hadamard recursive equ.}, can be explicitly 
+solved recursively (See \cite{bar2007wave}[lemma 2.2.2]. The factor \(V_0\) was already given, for \(k\ge 1\) the recursion is given by
+
+\begin{equation}\label{eq:line integral}
+V_k(x,y)=-k G(x,y) \int_0^1 ds s^{k-1} G(x+ s(y-x),x) P V_{k-1}(x,x+s(y-x)).
+\end{equation}
+
+Recall that \(P\) depends on the four potential in a local manner.
+Here we observe  that, if the support of the external field \(A\) does not intersect the straight line connecting \(x\) and \(y\), the function
+\(V(x,y)\) in the expression for \(h_\varepsilon(x,y)\) can be calculated to be
+
+\begin{equation}
+V(x,y)=\sum_{k=0}^\infty \frac{( (y-x)^2m^2/4)^k}{k! (k+1)!},
+\end{equation}
+
+which equals the logarithmic part of \(p^-_\varepsilon\), corresponding to \(Q_1(\xi)\) in \eqref{K1series}. 
+
+This shows that in this case
+\(p_\varepsilon^-(x,y)\) agrees with \(h_\varepsilon(x,y)\) up to smooth terms in case 1.
+  
+Regarding 2: we notice that the only points \((x,y)\) in 
+the singular support of \(h_\varepsilon\) and 
+\(p_\varepsilon^{\lambda}\) need to fulfil
+\((y-x)^2=0\), if we further demand that both \(x\) and 
+\(y\) belong to the same spacelike hypersurface \(x=y\) 
+follows. This implies that for functions 
+\(f_1,f_2\in C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\) 
+of case 2 these operators act as 
+integral operators with smooth kernel.
+
+
+In fact, as \(w'\) is smooth, condition \eqref{eq:conditionfull} specifies the values of \(w'\)
+uniquely for arguments \((x,y)\in\mathbb{R}^{4+4}\) in the complement of \(J_1\).
+Analogously, we define a smooth function \(w_\varepsilon' \in C^\infty(\mathbb{R}^4\times\mathbb{R}^4,\mathbb{C}^{4\times 4})\) for
+every \(\varepsilon>0\) fulfilling 
+
+\begin{align}\label{eq:wepsilon_condition}
+\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) w'_\varepsilon(x,y) f_2(y)dxdy =
+\int_{\mathbb{R}^4\times\mathbb{R}^4} \overline{f_1}(x) (h_\varepsilon - p_\varepsilon^\lambda)(x,y) f_2(y)dxdy
+\end{align}
+
+for test functions 
+\(f_1,f_2\in C^\infty_c(\mathbb{R}^4,\mathbb{C}^4)\) such 
+that \(\mathrm{supp}(f_1)\times \mathrm{supp}(f_2)\subset J_1^c\).
+Next, we pick a function \(\chi\in C^\infty(\mathbb{R}^{4+4})\) such that 
+\begin{align}
+\left.\chi \right|_{J_2^c}=1, \quad \left. \chi \right|_{J_1}=0
+\end{align}
+hold. Now, we define
+
+\begin{align}
+w:=\chi w',\quad w_\varepsilon:= \chi w_\varepsilon',
+\end{align}
+
+where \(w',w_{\varepsilon}'\) are extended by the zero function inside \(J_1\).
+
+The functions \(w, w_\varepsilon\) are now uniquely fixed 
+in all of \(\mathbb{R}^{4+4}\) and fulfil 
+\eqref{eq:conditionfull} and \eqref{eq:wepsilon_condition}, 
+respectively
+for test functions \(f_1,f_2\) such that 
+\(\mathrm{supp}(f_1)\times \mathrm{supp}(f_2) 
+\subset J_2^c\) holds. Observing the exact form of 
+\(h_\varepsilon\), \eqref{eq:hadamardexp1} to 
+\eqref{eq:hadamardexp3} and \(p_\varepsilon^{\lambda}\), 
+\eqref{def:p lambda}, we notice that in fact 
+\(w_{\varepsilon}(x,y) \xrightarrow{\varepsilon\rightarrow 0} 
+w(x,y)\) for all \(x,y\in J_1^c\), because of the cutoff 
+function \(\chi\) this also holds for \((x,y)\in J_1\). 
+Moreover, we notice from the explicit form of 
+\(h_\varepsilon\) and \(p_\varepsilon^{\lambda}\) that,
+\(w_{\cdot_3}(\cdot_1,\cdot_2)\) is even continuous as a 
+function of type \(\mathbb{R}^4\times\mathbb{R}^4\times
+[0,1]\rightarrow \mathbb{C}^{4\times 4}\).
+\end{proof}
+
+\begin{Def}
+Let \(\Sigma\) be a Cauchy surface and \(\delta>0\).
+We define
+\begin{align}
+&g_1: \Sigma\times\Sigma\times ]0,1[\rightarrow \mathbb{C}^{4\times 4}\\
+&(x,y,\varepsilon)\mapsto e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2} - \eqref{eq:hadamardexp1}(x,y)
+\end{align}
+and denoting \(\dom(g_2):=\Sigma\times\Sigma\times [0,1]\backslash \{(x,x,0)\mid x\in\Sigma\}\).
+\begin{align}
+&g_2:\dom(g_2)\ni (x,y,\varepsilon)\mapsto \frac{1}{(y-x-i\varepsilon e_0)^2} \\
+&\times \left(\slashed{A}(x) + \slashed{A}(y)
+-  2 \int_0^1 \mathrm{d}s \slashed{A}(s x + (1-s)y)  \right.\\
+&\quad \left.+(y-x)^\alpha \int_0^1 \mathrm{d}s (1-2s) (\slashed{\partial}A_\alpha)(sx+(1-s)y)   \right).
+\end{align}
+\end{Def}
+
+\begin{Lemma}\label{lem:bound,worstterm}
+Let \(\Sigma\) be a Cauchy surface and \(\delta>0\). 
+We have \(|g_1|=|g_2|\).
+There is a constant \(M_1\in\mathbb{R}\), such that
+\begin{equation}
+ \forall (x,y,\varepsilon)\in J_3\times]0,1[ :|g_1(x,y,\varepsilon)|\le M_1.
+\end{equation}
+Furthermore, there is a function 
+\(g_3 \in C(\Sigma\times\Sigma,\mathbb{R}^+)\) such that
+\begin{equation}
+\forall (x,y,\varepsilon)\in \dom(g_2): |g_2(x,y,\varepsilon)|\le g_3(x,y)
+\end{equation}
+holds.
+\end{Lemma}
+\begin{proof}
+Pick a Cauchy surface \(\Sigma\), a four-potential 
+\(A \in \mathcal{V}\) and \((x,y,\varepsilon)\in \dom(g_2)\).
+A direct calculation yields
+\begin{align}
+&e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2} -\eqref{eq:hadamardexp1}(x,y)\\\nonumber
+=&\frac{G(x,y)}{4\pi^2} \Bigg( (i \slashed{\partial}_x +m) \frac{1}{(y-x-i \varepsilon e_0)^2}\\
+&\hspace{1.5cm} -\frac{1}{G(x,y)}(i \slashed{\nabla}/2 - i \slashed{\nabla}^*/2 +m) \frac{G(x,y)}{(y-x-i\varepsilon e_0)^2}\Bigg)\\\nonumber
+=&\frac{iG(x,y)}{4\pi^2}  \Bigg( \slashed{\partial}_x \frac{1}{(y-x-i \varepsilon e_0)^2} \\
+&\hspace{1cm}-\frac{1}{2G(x,y)}(\slashed{\partial}_x + i \slashed{A}(x) - \slashed{\partial}_y + i \slashed{A}(y) ) \frac{G(x,y)}{(y-x-i\varepsilon e_0)^2}\Bigg)\\\nonumber
+=&\frac{iG(x,y)}{4\pi^2} \left(-i\frac{\slashed{A}(x) + \slashed{A}(y)}{2 (y-x-i\varepsilon e_0)^2} + \slashed{\partial}_x \frac{1}{(y-x-i \varepsilon e_0)^2}\right. \\
+&-\frac{1}{2}(\slashed{\partial}_x\left.- \slashed{\partial}_y ) \frac{1}{(y-x-i\varepsilon e_0)^2}-\frac{1}{2G(x,y)} \frac{(\slashed{\partial}_x- \slashed{\partial}_y )G(x,y)}{(y-x-i\varepsilon e_0)^2}\right)\\\nonumber
+=&\frac{iG(x,y)}{4\pi^2}  \Bigg(-i\frac{\slashed{A}(x) + \slashed{A}(y)}{2 (y-x-i\varepsilon e_0)^2} +\frac{1}{2}(\slashed{\partial}_x+ \slashed{\partial}_y ) \frac{1}{(y-x-i\varepsilon e_0)^2}\\
+&\hspace{1.5cm}+\frac{1}{2G(x,y)} \frac{(-\slashed{\partial}_x+ \slashed{\partial}_y )G(x,y)}{(y-x-i\varepsilon e_0)^2}\Bigg)\\\nonumber
+=&\frac{-iG(x,y)}{8\pi^2}  \frac{1}{(y-x-i\varepsilon e_0)^2} \left(i\slashed{A}(x) + i\slashed{A}(y)
++G(x,y)^{-1} \left( \slashed{\partial}_x- \slashed{\partial}_y\right) G(x,y) \right)\\\nonumber
+=&\frac{G(x,y)}{8\pi^2} \frac{1}{(y-x-i\varepsilon e_0)^2} \left(\slashed{A}(x) + \slashed{A}(y)
+-  2 \int_0^1 \mathrm{d}s \slashed{A}(s x + (1-s)y)  \right.\\
+&\left.+(y-x)^\alpha \int_0^1 \mathrm{d}s (1-2s) (\slashed{\partial}A_\alpha)(sx+(1-s)y)   \right).
+\end{align}
+
+Now using Taylor's series for \(A\) around \((x+y)/2\) reveals 
+
+\begin{align}\nonumber
+\slashed{A}(x)& + \slashed{A}(y)- 2 \int_0^1 \mathrm{d}s \slashed{A}(s x + (1-s)y) =  \\\label{estimate1}
+&\frac{(x-y)^\alpha}{6} (x-y)^\beta (\partial_\alpha \partial_\beta \slashed{A})((x+y)/2)+ \mathcal{O}(\|x-y\|^3)\\\label{estimate2}
+(x-y)^\alpha &\int_0^1 \mathrm{d}s (1-2s) (\slashed{\partial}A_\alpha)(sx+(1-s)y)=
+  \\\notag
+& -\frac{(x-y)^\alpha}{6}(x-y)^\beta  (\slashed{\partial}\partial_\beta A_\alpha)((x+y)/2) + \mathcal{O}(\|x-y\|^3).
+\end{align}
+
+Because \(A\) is smooth and \(J_3\) is a compact region the terms \eqref{estimate1} and \eqref{estimate2} are 
+bounded in this region. Because of their behaviour close to \(y=x\)
+the function
+is a bounded and point-wise an upper bound of the absolute value of 
+\begin{align}
+\left|e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2} -\eqref{eq:hadamardexp1}(x,y)\right|\\
+\label{upper bound h first term}
+\le\frac{\|\eqref{estimate1}\|(x,y)+\|\eqref{estimate2}\|(x,y)}{8\pi^2}\frac{1}{|(y-x)^2|}.
+\end{align}
+
+Also from the Taylor's expansion \eqref{estimate1} and \eqref{estimate2} directly follows that the right hand side of \eqref{upper bound h first term} is continuous.
+\end{proof}
+
+
+\begin{Lemma}\label{lem:bound,ivp2}
+For any Cauchy surface \(\Sigma\), four-potential 
+\(A\in \mathcal{V}\) and \(\lambda^A\in \mathcal{G}^A\),  
+the function 
+\begin{align}
+&\Sigma\times \Sigma \times ]0,1[\rightarrow \mathbb{C}^{4\times 4}\\
+&(x,y,\varepsilon)\mapsto \left(e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda^A(x,y)}\right) \frac{1}{4\pi^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2}
+\end{align}
+is bounded by
+\begin{align}\label{exp exp raw}
+&\left|\left(e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda^A(x,y)}\right) \frac{1}{4\pi^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2}\right|  \\
+&\le \frac{\left| e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda^A(x,y)} \right|}{4\pi^2}\left(\eta(y-x)+\frac{\|y-x\|}{((y-x)^2)^2} + \frac{m}{|(y-x)^2|}\right)\label{exp exp term}\\
+&:=M_2(x,y),
+\end{align}
+where \(\eta\) is given by
+\begin{equation}
+\eta(y-x):=\frac{1}{(-(y-x)^2 {\varepsilon^*}^{-0.5}+{\varepsilon^*}^{1.5})^2+\varepsilon^*(y^0-x^0)^2}
+\end{equation}
+and \(\varepsilon^*\) is given by
+\begin{equation}
+\varepsilon^* :=\frac{1}{\sqrt{6}} \sqrt{-\beta-2\alpha + \sqrt{(2\alpha + \beta)^2+12 \alpha^2}}.
+\end{equation}
+Furthermore \(M_2\in L^2_{\mathrm{loc}}(\Sigma\times\Sigma)\).
+\end{Lemma}
+
+\begin{proof}
+Pick \(A\in \mathcal{V}\), Cauchy surface \(\Sigma\) and \(\lambda^A\in \mathcal{G}^A\).
+By expanding \(\tilde{\lambda}(x,y)-\lambda^A(x,y)\) in a Taylor series around \(\frac{y+x}{2}\) we see directly that
+\begin{equation}\label{exp exp diff}
+e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda^A(x,y)}=\mathcal{O}(\|x-y\|^2).
+\end{equation}
+
+In order to show that \eqref{exp exp term} has a square integrable upper bound, we consider each term separately.  First, we look at the mass term. 
+It obeys
+
+\begin{align}
+\left\|\frac{m}{(y-x-i\varepsilon e_0)^2}\right\|= \frac{m}{\sqrt{((y-x)^2-\varepsilon^2)^2+\varepsilon^2(y^0-x^0)^2}}<\frac{m}{|(y-x)^2|},
+\end{align}
+since \((y-x)^2<0\) for \(x,y\in \Sigma\), hence this 
+term is bounded once multiplied with the difference of 
+exponentials.
+The term with the derivative will be split into two:
+
+\begin{align}
+\left\| i\slashed{\partial}_x \frac{1}{(y-x-i\varepsilon e_0)^2} \right\|\\
+\le \frac{\| \slashed{y}-\slashed{x}-i\varepsilon \slashed{e_0}\|}{| (y-x-i\varepsilon e_0)^2|^2}
+\le \frac{\varepsilon + \|x-y\|}{((y-x)^2-\varepsilon^2)^2+\varepsilon^2 (y^0-x^0)^2}\\\label{eq:uglyterm}
+<\frac{1}{(-(y-x)^2 \varepsilon^{-0.5}+\varepsilon^{1.5})^2+\varepsilon(y^0-x^0)^2} +\frac{\|y-x\|}{((y-x)^2)^2},
+\end{align}
+we notice at this point, that the second term becomes locally square integrable in \(\Sigma\times\Sigma\) 
+once multiplied with a function of type \(\mathcal{O}(\|x-y\|^2)\) close to \(x=y\). Indeed, the first term also has this property, in order to
+deduce this more readily, we will maximise this term now.  Considering the limits \(\varepsilon \rightarrow 0\) and \(\varepsilon \rightarrow \infty\)
+we see that this term has for arbitrary \((x,y\in\Sigma)\) a maximum in the interval \(]0,\infty[\). 
+Abbreviating \(-(y-x)^2:=\alpha, (y^0-x^0)^2:=\beta\), this value of \(\varepsilon\) fulfills
+
+\begin{align}
+\partial_\varepsilon ( \varepsilon^{-0.5}\alpha + \varepsilon^{1.5})^2+\beta=0\\
+\iff 3 \varepsilon^4 + \varepsilon^2(2 \alpha+\beta)-\alpha^2=0\\
+\iff \varepsilon^2= \frac{-\beta-2\alpha + \sqrt{(2\alpha + \beta)^2+12 \alpha^2}}{6}\\
+\iff \varepsilon=\varepsilon^* :=\frac{1}{\sqrt{6}} \sqrt{-\beta-2\alpha + \sqrt{(2\alpha + \beta)^2+12 \alpha^2}}.
+\end{align}
+
+So we can find an upper bound on the first summand of \eqref{eq:uglyterm} by replacing \(\varepsilon\) by what we just found. 
+Now because all the terms in the resulting expression
+
+\begin{equation}
+\frac{1}{(-(y-x)^2 {\varepsilon^*}^{-0.5}+{\varepsilon^*}^{1.5})^2+\varepsilon^*(y^0-x^0)^2}=:\eta(y-x)
+\end{equation}
+
+are positive, we did not introduce any new singularities. Also the expression is homogenous of degree \(-3\):
+\begin{align}
+\eta(\delta(y-x))=\delta^{-3} \eta(y-x),
+\end{align}
+so we can conclude that also this term as well as the 
+second term in \eqref{eq:uglyterm}, are of type 
+\(\mathcal{O}(\|x-y\|^{-3})\) and therefore
+locally square integrable once multiplied by the 
+difference of exponentials in \eqref{exp exp diff}. So 
+summarising
+\eqref{exp exp raw} can be bounded by 
+
+\begin{align}\nonumber
+&\| \eqref{exp exp raw}(x,y)\|\le\\ \label{bound ivp2}
+& \frac{\left| e^{-i\lambda^A(x,y)}-e^{-i\tilde{\lambda}(x,y)} \right|}{4\pi^2}\left(\eta(y-x)+\frac{\|y-x\|}{((y-x)^2)^2} + \frac{m}{|(y-x)^2|}\right),
+\end{align}
+which is locally square integrable in on \(\Sigma\times \Sigma\).
+\end{proof}
+
+\begin{Lemma}\label{lem:log term}
+For any Cauchy surface \(\Sigma\), 
+four-potential \(A\in \mathcal{V}\), the function 
+\begin{align}
+&\Sigma\times \Sigma \times ]0,1[\rightarrow \mathbb{C}^{4\times 4}\\\label{midterm}
+&(x,y,\varepsilon)\mapsto (i\slashed{\partial}_x+m) \ln(-m^2(y-x-i\varepsilon e_0)^2)
+\end{align}
+has the locally in \(\Sigma\times\Sigma\) square integrable bound
+\(M_3+M_4\). More explicitly,
+\begin{align}
+&\left|\slashed{\partial}_x\ln(-(y-x-i\varepsilon e_0)^2)\right|\le\\
+& ~~~~~~~~~~~~\frac{2\|y-x\|}{|(y-x)^2|} + \frac{2}{\sqrt{4|(y-x)^2| + (y^0-x^0)^2}}:=M_3(x,y),
+\end{align}
+and
+\begin{align}
+& \| \ln(-m^2(y-x-i\varepsilon e_0)^2)\| \le  |\ln(-m^2(y-x)^2)| +\pi/2:=M_4(x,y).
+\end{align}
+\end{Lemma}
+
+
+\begin{proof}
+Pick \(A\in C_c^\infty(\mathbb{R}^4)\), a Cauchy surface \(\Sigma\) and \(f\in C(\Sigma\times\Sigma,\mathbb{C}^{4\times 4})\).
+The terms containing \(\slashed{\partial}\ln(-(y-x-i\varepsilon e_0)^2)\) are bounded as follows
+
+\begin{align}
+\|i\partial_\alpha\ln(-m^2(y-x-i\varepsilon e_0)^2)\|=2\left\| \frac{y^\alpha-x^\alpha-i\varepsilon e_0^\alpha}{-(y-x-i\varepsilon e_0)^2}\right|\\
+\le \frac{2\|y-x\|}{|(y-x)^2|} + \frac{2\varepsilon}{|(y-x-i\varepsilon e_0)^2|}\\
+=\frac{2\|y-x\|}{|(y-x)^2|} + \frac{2}{\sqrt{(-(y-x)^2/\varepsilon + \varepsilon)^2 +(y^0-x^0)^2}}\\\label{bound d log}
+\le \frac{2\|y-x\|}{|(y-x)^2|} + \frac{2}{\sqrt{4|(y-x)^2| + (y^0-x^0)^2}}, 
+\end{align}
+where inequality  in \eqref{bound d log} we maximised the expression with respect to \(\varepsilon \in ]0,\infty[\). 
+The terms containing the logarithm without
+any derivative are directly bounded by
+
+\begin{align}\nonumber
+|\ln(-m^2(y-x-i\varepsilon e_0)^2)|\le |\ln(-m^2(y-x)^2)| +\pi/2.
+\end{align}
+\end{proof}
+
+
+
+\begin{Lemma}\label{lem:Hadamard=>Pol}
+For every four-potential \(A\in \mathcal{V}\) and every Hadamard
+state \(H\) of the form \eqref{eq:hadamard1} to \eqref{eq:hadamardexp3} the  
+smooth function \(w\in C^\infty(\mathbb{R}^4\times 
+\mathbb{R}^4,\mathbb{C}^{4\times 4})\) and family 
+\((w_\varepsilon)_{\varepsilon \in ]0,1[ }
+\subset C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times4})\) 
+provided by lemma \ref{lem:pointwise} also satisfy for any
+Cauchy surface \(\Sigma\) and any \(\lambda^A\in\mathcal{G}^A\):
+
+\begin{equation}
+\left.h_\varepsilon^A-w_\varepsilon-p^{\lambda^A}_\varepsilon \right|_{\Sigma\times\Sigma} \in L^2(\Sigma\times\Sigma)
+\end{equation}
+
+and the \(L^2(\Sigma\times\Sigma)\) limit \(\lim_{\varepsilon\rightarrow 0} \left.h_\varepsilon^A-w_\varepsilon-p^{\lambda^A}_\varepsilon \right|_{\Sigma\times\Sigma}\) exists.
+\end{Lemma}
+
+  
+
+\begin{proof}[Proof of lemma \ref{lem:Hadamard=>Pol}:]
+
+
+Pick a Cauchy surface \(\Sigma\), a four-potential \(A \in C_c^\infty(\mathbb{R}^4)\), a Hadamard state of the form 
+  \eqref{eq:hadamard1} to \eqref{eq:hadamardexp3}, \(\lambda^A\in\mathcal{G}^A\)
+  and for \(\varepsilon \in]0,1[\) smooth functions \(w_\varepsilon \in C^\infty(\mathbb{R}^{4+4},\mathbb{C}^{4\times 4})\)
+  according to lemma \ref{lem:pointwise}. 
+Our aim is to show that 
+\(\left.h_\varepsilon - w_\varepsilon -p_\varepsilon^{\lambda^A} \right|_{\Sigma\times\Sigma}\) converges in the 
+sense of \(L^2(\Sigma\times\Sigma)\) in the limit \(\varepsilon\rightarrow 0\).
+According to lemma \ref{lem:pointwise} we have that
+  \(h_\varepsilon-w_\varepsilon-p^{\lambda^A}_{\varepsilon}|_{\Sigma\times \Sigma}\) vanishes 
+  outside the set \(J_3\) which is bounded, independent of \(\varepsilon\) and of finite measure. 
+  Taking the exact form of \(h_\varepsilon\) and \(p^{\lambda^A}_\varepsilon\) into account,
+  one notices that the function \(h_\varepsilon-w_\varepsilon-p^{\lambda^A}_{\varepsilon}|_{\Sigma\times \Sigma} (x,y)\) converges point-wise to a function defined
+  on \(\Sigma\times\Sigma \backslash \{(x,x)\mid x\in \Sigma\}\). In order to show that the convergence also holds in the sense of \(L^2(\Sigma\times\Sigma)\) we
+  would like to use dominated convergence. Hence we should find a function \(M\in L^2(\Sigma\times\Sigma)\) such that 
+  
+
+\begin{equation}\label{eq: def bound}
+\left|  (h_\varepsilon-w_\varepsilon-p^{\lambda^A}_{\varepsilon})(x,y)\right|\le |M|(x,y)
+\end{equation}
+  
+  holds almost for almost all \(x,y\in\Sigma\) and all \(\varepsilon\) small enough. We may pick \(\left. M\right|_{J_3^c}=0\), of course. 
+So we only have to pick \(M\) for arguments inside \(J_3\). Now because \(w_\varepsilon\) is continuous as a function from 
+\(\mathbb{R}^{4+4}\times [0,1]\rightarrow \mathbb{C}^{4\times 4}\) and hence also when restricted to \(J_3\times[0,1]\). The 
+set \(J_3\times[0,1]\) is compact which implies that there is a constant \(M_5\) such that
+
+\begin{equation}
+\forall (x,y,\varepsilon)\in J_3\times[0,1]: |w_\varepsilon(x,y)|\le M_5
+\end{equation}
+holds. So by the triangular inequality we only need to bound \(h_\varepsilon-p_\varepsilon^{\lambda^A}\)
+
+We now dissect \(h_\varepsilon\) as well as \(p_\varepsilon^{\lambda^A}\) each into three pieces
+
+\begin{align}\label{eq:h1}
+h_\varepsilon(x,y)= \frac{-1}{2(2\pi)^2} (-i\slashed{\nabla} + i \slashed{\nabla}^*-2m) \frac{G(x,y)}{(y-x-i\varepsilon e_0)^2}\\\label{eq:h2}
++ \frac{-1}{2(2\pi)^2} (-i\slashed{\nabla} + i \slashed{\nabla}^*-2m)  V(x,y) \ln (-(y-x-i\varepsilon e_0)^2)\\\label{eq:h3}
++ B(x,y),
+\end{align}
+
+
+\begin{align}\label{eq:p1}
+&p_\varepsilon^{\lambda^A}(x,y)=e^{-i\lambda^A(x,y)}\frac{m^2}{4\pi^2}(i\slashed{\partial}+m) \frac{1}{m^2(y-x-i\varepsilon e_0)^2}\\\label{eq:p2}
+&-\frac{m^2}{4\pi^2}(i\slashed{\partial}+m) Q_1(-m^2(y-x-i\varepsilon e_0)^2) \ln (-m^2(y-x-i\varepsilon e_0)^2)\\\label{eq:p3}
+&-\frac{m^2}{4\pi^2}(i\slashed{\partial}+m) Q_2(-m^2(y-x-i\varepsilon e_0)^2).
+\end{align}
+
+Let us first consider the most singular terms of  
+\(h_\varepsilon-w_\varepsilon-
+p^{\lambda^A}_{\varepsilon}|_{\Sigma\times \Sigma}\), 
+namely \(\eqref{eq:h1}-\eqref{eq:p1}\). In order to 
+better compare these terms, we will add \(0\) in the 
+form of \(\eqref{eq:p1}-\eqref{eq:p1}\) 
+where we
+replace \(\lambda^A\) by \(\tilde{\lambda}\).
+By lemma \ref{lem:bound,worstterm} the term 
+\begin{equation}
+\eqref{eq:h1}(x,y)- G(x,y)\frac{m^2}{4\pi^2}(i\slashed{\partial}+m) \frac{1}{m^2(y-x-i\varepsilon e_0)^2}
+\end{equation}
+is uniformly bounded in \(J_3\).
+
+Next we find a square integrable upper bound on 
+\begin{equation}
+e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2}-\eqref{eq:p1}(x,y).
+\end{equation}
+We rewrite this term as
+
+\begin{align}
+e^{-i\tilde{\lambda}(x,y)} \frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)\frac{1}{m^2(y-x-i\varepsilon e_0)^2}-\eqref{eq:p1}(x,y)=\\\label{eq:ivp2estimate}
+\left(e^{-i\tilde{\lambda}(x,y)}-e^{-i\lambda(x,y)}\right) \frac{1}{4\pi^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2},
+\end{align}
+
+according to lemma \ref{lem:bound,ivp2} this has the 
+upper bound 
+\(M_2\in L^2_{\mathrm{loc}}(\Sigma\times\Sigma)\), which 
+is independend of \(\varepsilon\). 
+The term \(\eqref{eq:p2} -\eqref{eq:h2}\) are 
+bounded by lemma \ref{lem:log term}.
+Thus we obtain for \(M\) for \((x,y)\in J_3\):
+
+\begin{align*}
+&M(x,y):=M_5+M_1
++M_2(x,y)\\
+&+\frac{1}{4\pi^2}\left(4 | V(x,y)| + m^2 \sup_{\varepsilon \in [0,1]}|Q_1(-m^2(y-x-i\varepsilon e_0)^2)|\right)M_3(x,y)\\
+&+ \frac{1}{4\pi^2}\bigg(\!|(i\slashed{\nabla}\!-i\slashed{\nabla}^*\!-2m)V(x,y)|/2\\
+&\hspace{1cm}+m^2\!\! \sup_{\varepsilon \in [0,1]}
+  \!|(i\slashed{\partial}+m)Q_1(-m^2(y-x-i\varepsilon e_0))| \bigg)M_4(x,y)\\
+&+|B(x,y)|+\frac{m^2}{4\pi^2}\sup_{\varepsilon\in[0,1]} |(i\slashed{\partial}_x+m)Q_2(-m^2(y-x-i\varepsilon e_0)^2)|\\
+& + \sup_{\varepsilon \in ]0,1]}|w_\varepsilon|(x,y)
+\end{align*}
+
+The argument of \(h_\varepsilon-w_\varepsilon-p^\lambda_{\varepsilon}|_{\Sigma\times \Sigma}(x,y)\) 
+converging to \(h_0-w-p^\lambda_{0}|_{\Sigma\times \Sigma}(x,y)\) in the sense of \(L^2(\Sigma\times\Sigma)\)
+is completed by applying dominated convergence theorem. 
+
+As a final point: the construction seems to depend on the function \(\lambda^A\) we chose, however for any different \({\lambda'}^A\in \mathcal{G}^A\) 
+we have due to remark \ref{main results of ivp2}
+
+\begin{equation}
+P^{\lambda}-P^{\lambda'}\in I_2(\mathcal{H}_\Sigma ),
+\end{equation}
+
+therefore also the limit \(\lim_{\varepsilon\rightarrow 0} h_\varepsilon^A - w_\varepsilon - p_\varepsilon^{{\lambda'}^A}\) exists in the sense of \(L^2\).
+
+
+\end{proof}
+
+
+\begin{proof}[Proof of theorem \ref{thm:hadamard=>Pol}:]
+
+We pick for a four-potential \(A\in \mathcal{V}\) a Hadamard state \(H\) of the form \eqref{eq:hadamard1} to \eqref{eq:hadamardexp3} 
+and a \(\lambda^A\in\mathcal{G}^A\). Then we pick 
+\(w_\varepsilon,w \in C_c^\infty(\mathbb{R}^{4+4},\mathbb{C}^{4\times 4})\) for all \(\varepsilon\in [0,1]\) according to lemma \ref{lem:pointwise}.
+Because of lemma \ref{lem:Hadamard=>Pol}, we have that
+
+\begin{equation}
+h_\varepsilon^A-w_\varepsilon-p^{\lambda^A}_\varepsilon \in L^2(\Sigma\times\Sigma)
+\end{equation}
+
+holds. We can define the operator \(Z \in I_2(\mathcal{H}_\Sigma)\) for any Cauchy surface \(\Sigma\) as
+
+\begin{equation}
+\mathcal{H}_\Sigma\ni \psi\mapsto Z \psi := \lim_{\varepsilon \rightarrow 0} 
+\int_{\Sigma} (h_\varepsilon^A-w_\varepsilon-p^{\lambda^A}_\varepsilon)(\cdot,y) i_\gamma(d^4y) \psi(y) 
+\end{equation}
+
+and
+
+\begin{equation}
+\tilde{P}_\Sigma:=Z + P^{\lambda^A}_\Sigma.
+\end{equation}
+
+Because of \eqref{equiv:pLambda} we have for any other \(\lambda' \in\mathcal{G}^A\) that \(\tilde{P}_\Sigma-P^{\lambda'}\in I_2(\mathcal{H}_\Sigma)\).
+
+
+\end{proof}
+
+\begin{proof}[Proof of theorem \ref{thm:Pol=>hadamard}]
+Pick a four-potential \(A\in \mathcal{V}\),
+ a \(\lambda^A\in\mathcal{G}^A\) and
+a Hadamard state of the form 
+\eqref{eq:hadamard1} to \eqref{eq:hadamardexp3}.
+Next, we pick \(w_\varepsilon\) according to lemma 
+\ref{lem:pointwise}; however,  
+we will denote it by \(R_\varepsilon\).
+
+Define for each \(\varepsilon \in ]0,1]\) the function 
+\(w_\varepsilon\) as
+\begin{align}
+&w_\varepsilon (x,y):=\\
+&-\frac{G(x,y)-e^{-i\lambda^A(x,y)}}{(2\pi)^2}(i\slashed{\partial}_x +m) \frac{1}{(y-x-i\varepsilon e_0)^2}\label{wurm A}\\
+&+\frac{G(x,y)}{2(2\pi)^2 (y-x-i\varepsilon e_0)^2}\Bigg( \slashed{A}(x)+\slashed{A}(y)
+-\!2\!\! \int_0^1 \!ds \slashed{A}(sx +(1\!-\!s)y) \\
+&\left. + (x\!-\!y)^\alpha \!\int_0^1\! ds (1\!-\!2s)(\slashed{\partial}A_\alpha)(sx \!+\! (1\!-\!s)y) \right)\\
+&+ \frac{1}{2(2\pi)^2} (-i\slashed{\nabla}+i\slashed{\nabla}^* -2m) V(x,y)\ln (-(y-x-i\varepsilon e_0)^2)\\
+&-\frac{m^2 e^{-i \lambda^A(x,y)}}{4\pi^2} (i\slashed{\partial}_x+m)\bigg(Q_2(m\sqrt{-(y-x-i\varepsilon e_0)^2}\\
+&+Q_1(m\sqrt{-(y-x-i\varepsilon e_0)^2}\ln(-m^2(y-x-i\varepsilon e_0)^2)\bigg)\label{wurm E}\\
+& + R_\varepsilon(x,y).
+\end{align}
+
+We further define the distribution \(H^{\lambda^A}\) by its action on test functions 
+\(f_1,f_2\in C_c^\infty(\mathbb{R}^4,\mathbb{C}^4)\)
+
+\begin{equation}
+\tilde{H}(f_1,f_2):=\lim_{\varepsilon \rightarrow 0} \int_{\mathbb{R}^4}\int_{\mathbb{R}^4} \overline{f}_1(x) (p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)) f_2(y) d^4x d^4y.
+\end{equation}
+
+First, we verify that \(H^{\lambda^A}\) is indeed a Hadamard state. Pick \(\varepsilon>0\), we find
+
+\begin{align*}
+&p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)\\
+&=-e^{-i\lambda^A(x,y)}\frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m)
+\frac{K_1(m\sqrt{-(y-x-i\varepsilon e_0)^2})}{m\sqrt{-(y-x-i\varepsilon e_0)^2}} - w_\varepsilon(x,y)\\
+&=-e^{-i\lambda^A(x,y)}\frac{m^2}{4\pi^2} (i\slashed{\partial}_x+m) \left( \frac{-1}{m^2(y-x-i\varepsilon e_0)^2} \right.\\
+&+ Q_1(-m^2 (y-x-i\varepsilon e_0)^2) \ln (m\sqrt{-(y-x-i\varepsilon e_0)^2})\\
+&+ Q_2(-m^2 (y-x-i\varepsilon e_0)^2)\bigg)\\
+& -w_\varepsilon(x,y).
+\end{align*}
+
+Inserting \(w_\varepsilon(x,y)\) we find that the most divergent 
+terms proportional to \(e^{-i\lambda^A}\), as well as the terms involving \(Q_1\) and \(Q_2\) cancel.
+This results in 
+
+\begin{align*}
+&p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)\\
+&=\frac{G(x,y)}{(2\pi)^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2}\\
+&+\frac{G(x,y)}{2(2\pi)^2 (y-x-i\varepsilon e_0)^2}\left( \slashed{A}(x)+\slashed{A}(y) -2 \int_0^1 ds \slashed{A}(sx +(1-s)y) \right.\\
+&\left.+ (x-y)^\alpha \int_0^1 ds (1-2s)(\slashed{\partial}A)(sx + (1-s)y) \right)\\
+&- \frac{1}{2(2\pi)^2} (-i\slashed{\nabla}+i\slashed{\nabla}^* -2m) V(x,y)\ln (-(y-x-i\varepsilon e_0)^2)\\
+&-R_\varepsilon(x,y).
+\end{align*}
+
+Now the terms involving 
+\(G(x,y)=e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}\) 
+can be summarised
+
+\begin{align*}
+&\frac{G(x,y)}{(2\pi)^2}(i\slashed{\partial}_x+m)\frac{1}{(y-x-i\varepsilon e_0)^2}\\
+&+\frac{G(x,y)}{2(2\pi)^2 (y-x-i\varepsilon e_0)^2}\left( \slashed{A}(x)+\slashed{A}(y) -2 \int_0^1 ds \slashed{A}(sx +(1-s)y) \right.\\
+&\left.+ (x-y)^\alpha \int_0^1 ds (1-2s)(\slashed{\partial}A)(sx + (1-s)y) \right)\\
+&=\frac{1}{2(2\pi)^2 }(i\slashed{\nabla}-i\slashed{\nabla}^*+2m) \frac{G(x,y)}{(y-x-i\varepsilon e_0)^2},
+\end{align*}
+
+so overall we find
+
+\begin{align*}
+&p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)=\\
+&\frac{-1}{2(2\pi)^2 }(-i\slashed{\nabla}+i\slashed{\nabla}^*-2m) \frac{G(x,y)}{(y-x-i\varepsilon e_0)^2}\\
+&- \frac{1}{2(2\pi)^2} (-i\slashed{\nabla}+i\slashed{\nabla}^* -2m) V(x,y)\ln (-(y-x-i\varepsilon e_0)^2)\\
+&-R_\varepsilon(x,y).
+\end{align*}
+
+Because the term in the last line is smooth, this means that indeed \(p_\varepsilon^{\lambda^A}(x,y)-w_\varepsilon(x,y)\) is the integration kernel of a Hadamard state.
+
+Furthermore, for a given Cauchy surface \(\Sigma\) the function \(w_\varepsilon-R_\varepsilon\) has a limit in the sense of \(L^2_{\text{loc}}(\Sigma\times\Sigma)\),
+because of
+Lebesgue dominated convergence and
+lemmata \ref{lem:bound,worstterm}, \ref{lem:bound,ivp2} and 
+\ref{lem:log term}. That the term \(R_\varepsilon|_{\Sigma\times\Sigma}\) 
+has a smooth pointwise limit follows from lemma \ref{lem:pointwise}.
+Finally outside of the diagonal \(\{(x,x)\mid x\in \Sigma\}\)
+ \(w_\varepsilon\) is smooth also in the limit
+\(\varepsilon\rightarrow 0\). Since the set \(J_3\) has 
+a positive distance form the diagonal we may pick a function 
+\(\mathfrak{R}_\varepsilon\in C^\infty(\Sigma\times\Sigma\rightarrow \mathbb{C}^{4\times 4})\)
+such that 
+\(\mathfrak{R}_\varepsilon|_{J_3^c}=w_{\varepsilon}-R_{\varepsilon}\). 
+Since \(J_3\) is of 
+finite measure we then have 
+\begin{equation}
+  w_\varepsilon = \overbrace{w_\varepsilon-R_{\varepsilon}-\mathfrak{R}_\varepsilon}^{\exists L^2-\lim } + \overbrace{R_{\varepsilon}+ \mathfrak{R}_\varepsilon}^{\exists \text{pointwise-}\lim \in C^\infty}.
+\end{equation}
+
+\end{proof}
 
 
 %\chapter{Bibliography concerning the state of the art, the research objectives, and the work program} 

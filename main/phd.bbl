@@ -1,255 +1,304 @@
-\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
-\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
-% \MRhref is called by the amsart/book/proc definition of \MR.
-\providecommand{\MRhref}[2]{%
-  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
-}
-\providecommand{\href}[2]{#2}
 \begin{thebibliography}{10}
 
 \bibitem{abramowitz1965handbook}
-Milton Abramowitz and Irene~A Stegun, \emph{Handbook of mathematical functions:
-  with formulas, graphs, and mathematical tables}, vol.~55, Courier
-  Corporation, 1965.
+Milton Abramowitz and Irene~A Stegun.
+\newblock {\em Handbook of mathematical functions: with formulas, graphs, and
+  mathematical tables}, volume~55.
+\newblock Courier Corporation, 1965.
 
 \bibitem{bar2007wave}
-Christian B{\"a}r, Nicolas Ginoux, and Frank Pf{\"a}ffle, \emph{Wave equations
-  on lorentzian manifolds and quantization}, vol.~3, European Mathematical
-  Society, 2007.
+Christian B{\"a}r, Nicolas Ginoux, and Frank Pf{\"a}ffle.
+\newblock {\em Wave equations on Lorentzian manifolds and quantization},
+  volume~3.
+\newblock European Mathematical Society, 2007.
 
 \bibitem{haantjes}
-IM~Benn and Philip Charlton, \emph{Dirac symmetry operators from conformal
-  killing-yano tensors}, arXiv preprint gr-qc/9612011 (1996).
+IM~Benn and Philip Charlton.
+\newblock Dirac symmetry operators from conformal killing-yano tensors.
+\newblock {\em arXiv preprint gr-qc/9612011}, 1996.
 
 \bibitem{ivp0}
-D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher, \emph{Time-evolution of
-  the external field problem in quantum electrodynamics}, Journal of
-  Mathematical Physics \textbf{51} (2010), no.~12, 122301.
+D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher.
+\newblock Time-evolution of the external field problem in quantum
+  electrodynamics.
+\newblock {\em Journal of Mathematical Physics}, 51(12):122301, 2010.
 
 \bibitem{ivp2}
-D-A Deckert and F~Merkl, \emph{External field qed on cauchy surfaces for
-  varying electromagnetic fields}, Communications in Mathematical Physics
-  \textbf{345} (2016), no.~3, 973--1017.
+D-A Deckert and F~Merkl.
+\newblock External field qed on cauchy surfaces for varying electromagnetic
+  fields.
+\newblock {\em Communications in Mathematical Physics}, 345(3):973--1017, 2016.
 
 \bibitem{ivp1}
-D-A Deckert and Franz Merkl, \emph{Dirac equation with external potential and
-  initial data on cauchy surfaces}, Journal of Mathematical Physics \textbf{55}
-  (2014), no.~12, 122305.
+D-A Deckert and Franz Merkl.
+\newblock Dirac equation with external potential and initial data on cauchy
+  surfaces.
+\newblock {\em Journal of Mathematical Physics}, 55(12):122305, 2014.
 
 \bibitem{deckert2016perspective}
-Dirk-Andr{\'e} Deckert and Franz Merkl, \emph{A perspective on external field
-  qed}, Quantum Mathematical Physics, Springer, 2016, pp.~381--399.
+Dirk-Andr{\'e} Deckert and Franz Merkl.
+\newblock A perspective on external field qed.
+\newblock In {\em Quantum Mathematical Physics}, pages 381--399. Springer,
+  2016.
 
 \bibitem{deckert_nickel_2016}
-Dirk-Andr{\'e} Deckert and Lukas Nickel, \emph{Consistency of multi-time dirac
-  equations with general interaction potentials}, Journal of Mathematical
-  Physics \textbf{57} (2016), no.~7, 072301.
+Dirk-Andr{\'e} Deckert and Lukas Nickel.
+\newblock Consistency of multi-time dirac equations with general interaction
+  potentials.
+\newblock {\em Journal of Mathematical Physics}, 57(7):072301, 2016.
 
 \bibitem{derezinski2013mathematics}
-Jan Derezi{\'n}ski and Christian G{\'e}rard, \emph{Mathematics of quantization
-  and quantum fields}, Cambridge University Press, 2013.
+Jan Derezi{\'n}ski and Christian G{\'e}rard.
+\newblock {\em Mathematics of quantization and quantum fields}.
+\newblock Cambridge University Press, 2013.
 
 \bibitem{dirac1934theorie}
-PAM Dirac, \emph{Th{\'e}orie du positron}, Solvay report \textbf{25} (1934),
-  203--212.
+PAM Dirac.
+\newblock Th{\'e}orie du positron.
+\newblock {\em Solvay report}, 25:203--212, 1934.
 
 \bibitem{dirac_32}
-Paul Adrien~Maurice Dirac, \emph{Relativistic quantum mechanics}, Proceedings
-  of the Royal Society of London. Series A, Containing Papers of a Mathematical
-  and Physical Character \textbf{136} (1932), no.~829, 453--464.
+Paul Adrien~Maurice Dirac.
+\newblock Relativistic quantum mechanics.
+\newblock {\em Proceedings of the Royal Society of London. Series A, Containing
+  Papers of a Mathematical and Physical Character}, 136(829):453--464, 1932.
 
 \bibitem{Dirac34}
-Paul~AM Dirac, \emph{Discussion of the infinite distribution of electrons in
-  the theory of the positron}, Mathematical Proceedings of the Cambridge
-  Philosophical Society, vol.~30, Cambridge University Press, 1934,
-  pp.~150--163.
+Paul~AM Dirac.
+\newblock Discussion of the infinite distribution of electrons in the theory of
+  the positron.
+\newblock In {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, volume~30, pages 150--163. Cambridge University Press, 1934.
 
 \bibitem{drozvincent_1981}
-Ph~Droz-Vincent, \emph{Relativistic wave equations for a system of two
-  particles with spin 1/2}, Lettere al Nuovo Cimento \textbf{30} (1981),
-  no.~12, 375--378.
+Ph~Droz-Vincent.
+\newblock Relativistic wave equations for a system of two particles with spin
+  1/2.
+\newblock {\em Lettere al Nuovo Cimento}, 30(12):375--378, 1981.
 
 \bibitem{dubinskii_1991}
-Yu~A Dubinskii, \emph{Sobolev spaces of infinite order}, Russian Mathematical
-  Surveys \textbf{46} (1991), no.~6, 107.
+Yu~A Dubinskii.
+\newblock Sobolev spaces of infinite order.
+\newblock {\em Russian Mathematical Surveys}, 46(6):107, 1991.
 
 \bibitem{feynman1949theory}
-Richard~P Feynman, \emph{The theory of positrons}, Physical Review \textbf{76}
-  (1949), no.~6, 749.
+Richard~P Feynman.
+\newblock The theory of positrons.
+\newblock {\em Physical Review}, 76(6):749, 1949.
 
 \bibitem{finster2016fermionic}
-Felix Finster, Simone Murro, and Christian R{\"o}ken, \emph{The fermionic
-  projector in a time-dependent external potential: Mass oscillation property
-  and hadamard states}, Journal of Mathematical Physics \textbf{57} (2016),
-  no.~7, 072303.
+Felix Finster, Simone Murro, and Christian R{\"o}ken.
+\newblock The fermionic projector in a time-dependent external potential: Mass
+  oscillation property and hadamard states.
+\newblock {\em Journal of Mathematical Physics}, 57(7):072303, 2016.
 
 \bibitem{fulling1978singularity}
-Stephen~A Fulling, Mark Sweeny, and Robert~M Wald, \emph{Singularity structure
-  of the two-point function in quantum field theory in curved spacetime},
-  Communications in Mathematical Physics \textbf{63} (1978), no.~3, 257--264.
+Stephen~A Fulling, Mark Sweeny, and Robert~M Wald.
+\newblock Singularity structure of the two-point function in quantum field
+  theory in curved spacetime.
+\newblock {\em Communications in Mathematical Physics}, 63(3):257--264, 1978.
 
 \bibitem{graham1994concrete}
-Ronald~L Graham, Donald~E Knuth, and Oren Patashnik, \emph{Concrete
-  mathematics: a foundation for computer science}, Addison-Wesley, Reading,
-  1994.
+Ronald~L Graham, Donald~E Knuth, and Oren Patashnik.
+\newblock {\em Concrete mathematics: a foundation for computer science}.
+\newblock Addison-Wesley, Reading, 1994.
 
 \bibitem{guenther_1952}
-Marian G{\"u}nther, \emph{The relativistic configuration space formulation of
-  the multi-electron problem}, Physical Review \textbf{88} (1952), no.~6, 1411.
+Marian G{\"u}nther.
+\newblock The relativistic configuration space formulation of the
+  multi-electron problem.
+\newblock {\em Physical Review}, 88(6):1411, 1952.
 
 \bibitem{hoorfar2008inequalities}
-Abdolhossein Hoorfar and Mehdi Hassani, \emph{Inequalities on the lambert w
-  function and hyperpower function}, J. Inequal. Pure and Appl. Math \textbf{9}
-  (2008), no.~2, 5--9.
+Abdolhossein Hoorfar and Mehdi Hassani.
+\newblock Inequalities on the lambert w function and hyperpower function.
+\newblock {\em J. Inequal. Pure and Appl. Math}, 9(2):5--9, 2008.
 
 \bibitem{hormander2003analysis}
-Lars H{\"o}rmander, \emph{The analysis of linear partial differential
-  operators. i. distribution theory and fourier analysis. reprint of the second
-  (1990) edition}, 2003.
+Lars H{\"o}rmander.
+\newblock The analysis of linear partial differential operators. i.
+  distribution theory and fourier analysis. reprint of the second (1990)
+  edition, 2003.
 
 \bibitem{ibison}
-Michael Ibison, \emph{On the conformal forms of the robertson-walker metric},
-  Journal of Mathematical Physics \textbf{48} (2007), no.~12, 122501.
+Michael Ibison.
+\newblock On the conformal forms of the robertson-walker metric.
+\newblock {\em Journal of Mathematical Physics}, 48(12):122501, 2007.
 
 \bibitem{john}
-RW~John, \emph{The hadamard construction of green's functions on a curved
-  space-time with symmetries}, Annalen der Physik \textbf{499} (1987), no.~7,
-  531--544.
+RW~John.
+\newblock The hadamard construction of green's functions on a curved space-time
+  with symmetries.
+\newblock {\em Annalen der Physik}, 499(7):531--544, 1987.
 
 \bibitem{ibc_model}
-M~Lienert and L~Nickel, \emph{Multi-time formulation of creation and
-  annihilation of particles via interior-boundary conditions}, Preprint:
-  \url{https://arxiv.org/abs/1808} \textbf{4192} (2018).
+M~Lienert and L~Nickel.
+\newblock Multi-time formulation of creation and annihilation of particles via
+  interior-boundary conditions.
+\newblock {\em Preprint: \url{https://arxiv.org/abs/1808}}, 4192, 2018.
 
 \bibitem{2bd_current_cons}
-Matthias Lienert, \emph{On the question of current conservation for the
-  two-body dirac equations of constraint theory}, Journal of Physics A:
-  Mathematical and Theoretical \textbf{48} (2015), no.~32, 325302.
+Matthias Lienert.
+\newblock On the question of current conservation for the two-body dirac
+  equations of constraint theory.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  48(32):325302, 2015.
 
 \bibitem{1d_model}
-\bysame, \emph{A relativistically interacting exactly solvable multi-time model
-  for two massless dirac particles in 1+ 1 dimensions}, Journal of Mathematical
-  Physics \textbf{56} (2015), no.~4, 042301.
+Matthias Lienert.
+\newblock A relativistically interacting exactly solvable multi-time model for
+  two massless dirac particles in 1+ 1 dimensions.
+\newblock {\em Journal of Mathematical Physics}, 56(4):042301, 2015.
 
 \bibitem{direct_interaction_quantum}
-\bysame, \emph{Direct interaction along light cones at the quantum level},
-  Journal of Physics A: Mathematical and Theoretical \textbf{51} (2018),
-  no.~43, 435302.
+Matthias Lienert.
+\newblock Direct interaction along light cones at the quantum level.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  51(43):435302, 2018.
 
 \bibitem{nt_model}
-Matthias Lienert and Lukas Nickel, \emph{A simple explicitly solvable
-  interacting relativistic n-particle model}, Journal of Physics A:
-  Mathematical and Theoretical \textbf{48} (2015), no.~32, 325301.
+Matthias Lienert and Lukas Nickel.
+\newblock A simple explicitly solvable interacting relativistic n-particle
+  model.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  48(32):325301, 2015.
 
 \bibitem{selfDirac}
-Matthias Lienert and Markus N{\"o}th, \emph{Existence of relativistic dynamics
-  for two directly interacting dirac particles in 1+ 3 dimensions}, arXiv
-  preprint arXiv:1903.06020 (2019).
+Matthias Lienert and Markus N{\"o}th.
+\newblock Existence of relativistic dynamics for two directly interacting dirac
+  particles in 1+ 3 dimensions.
+\newblock {\em arXiv preprint arXiv:1903.06020}, 2019.
 
 \bibitem{selfKG}
-Matthias Lienert and Markus N{\"o}th, \emph{Singular light cone interactions of
-  scalar particles in 1+3 dimensions},  (2020).
+Matthias Lienert and Markus N{\"o}th.
+\newblock Singular light cone interactions of scalar particles in 1+3
+  dimensions.
+\newblock 2020.
 
 \bibitem{dice_paper}
-Matthias Lienert, S{\"o}ren Petrat, and Roderich Tumulka, \emph{Multi-time wave
-  functions}, Journal of Physics: Conference Series, vol. 880, IOP Publishing,
-  2017, p.~012006.
+Matthias Lienert, S{\"o}ren Petrat, and Roderich Tumulka.
+\newblock Multi-time wave functions.
+\newblock In {\em Journal of Physics: Conference Series}, volume 880, page
+  012006. IOP Publishing, 2017.
 
 \bibitem{lpt_2017b}
-\bysame, \emph{Multi-time wave functions versus multiple timelike dimensions},
-  Foundations of Physics \textbf{47} (2017), no.~12, 1582--1590.
+Matthias Lienert, S{\"o}ren Petrat, and Roderich Tumulka.
+\newblock Multi-time wave functions versus multiple timelike dimensions.
+\newblock {\em Foundations of Physics}, 47(12):1582--1590, 2017.
 
 \bibitem{lienertcurved}
-Matthias Lienert and Roderich Tumulka, \emph{Interacting relativistic quantum
-  dynamics of two particles on spacetimes with a big bang singularity}, Journal
-  of Mathematical Physics \textbf{60} (2019), no.~4.
+Matthias Lienert and Roderich Tumulka.
+\newblock Interacting relativistic quantum dynamics of two particles on
+  spacetimes with a big bang singularity.
+\newblock {\em Journal of Mathematical Physics}, 60(4), 2019.
 
 \bibitem{generalized_born}
-\bysame, \emph{Born’s rule for arbitrary cauchy surfaces}, Letters in
-  Mathematical Physics \textbf{110} (2020), no.~4, 753--804.
+Matthias Lienert and Roderich Tumulka.
+\newblock Born’s rule for arbitrary cauchy surfaces.
+\newblock {\em Letters in Mathematical Physics}, 110(4):753--804, 2020.
 
 \bibitem{mtve}
-Matthias Lienert, Roderich Tumulka, et~al., \emph{A new class of volterra-type
-  integral equations from relativistic quantum physics}, Journal of Integral
-  Equations and Applications \textbf{31} (2019), no.~4, 535--569.
+Matthias Lienert, Roderich Tumulka, et~al.
+\newblock A new class of volterra-type integral equations from relativistic
+  quantum physics.
+\newblock {\em Journal of Integral Equations and Applications}, 31(4):535--569,
+  2019.
 
 \bibitem{marx_1974}
-Egon Marx, \emph{Many-times formalism and coulomb interaction}, International
-  Journal of Theoretical Physics \textbf{9} (1974), no.~3, 195--217.
+Egon Marx.
+\newblock Many-times formalism and coulomb interaction.
+\newblock {\em International Journal of Theoretical Physics}, 9(3):195--217,
+  1974.
 
 \bibitem{mickelsson2014phase}
-Jouko Mickelsson, \emph{The phase of the scattering operator from the geometry
-  of certain infinite-dimensional groups}, Letters in Mathematical Physics
-  \textbf{104} (2014), no.~10, 1189--1199.
+Jouko Mickelsson.
+\newblock The phase of the scattering operator from the geometry of certain
+  infinite-dimensional groups.
+\newblock {\em Letters in Mathematical Physics}, 104(10):1189--1199, 2014.
 
 \bibitem{phd_nickel}
-L.~Nickel, \emph{Phd thesis. on the dynamics of multi-time systems}, 2019.
+L.~Nickel.
+\newblock Phd thesis. on the dynamics of multi-time systems, 2019.
 
 \bibitem{penrose_rindler}
-Roger Penrose and Wolfgang Rindler, \emph{Spinors and space-time: Volume 1,
-  two-spinor calculus and relativistic fields}, vol.~1, Cambridge University
-  Press, 1984.
+Roger Penrose and Wolfgang Rindler.
+\newblock {\em Spinors and space-time: Volume 1, Two-spinor calculus and
+  relativistic fields}, volume~1.
+\newblock Cambridge University Press, 1984.
 
 \bibitem{multitime_pair_creation}
-S{\"o}ren Petrat and Roderich Tumulka, \emph{Multi-time formulation of pair
-  creation}, Journal of Physics A: Mathematical and Theoretical \textbf{47}
-  (2014), no.~11, 112001.
+S{\"o}ren Petrat and Roderich Tumulka.
+\newblock Multi-time formulation of pair creation.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  47(11):112001, 2014.
 
 \bibitem{nogo_potentials}
-\bysame, \emph{Multi-time schr{\"o}dinger equations cannot contain interaction
-  potentials}, Journal of Mathematical Physics \textbf{55} (2014), no.~3,
-  032302.
+S{\"o}ren Petrat and Roderich Tumulka.
+\newblock Multi-time schr{\"o}dinger equations cannot contain interaction
+  potentials.
+\newblock {\em Journal of Mathematical Physics}, 55(3):032302, 2014.
 
 \bibitem{qftmultitime}
-\bysame, \emph{Multi-time wave functions for quantum field theory}, Annals of
-  Physics \textbf{345} (2014), 17--54.
+S{\"o}ren Petrat and Roderich Tumulka.
+\newblock Multi-time wave functions for quantum field theory.
+\newblock {\em Annals of Physics}, 345:17--54, 2014.
 
 \bibitem{SimonReed2}
-Michael Reed and Barry Simon, \emph{Methods of modern mathematical physics,
-  vol. ii}, 1975.
+Michael Reed and Barry Simon.
+\newblock Methods of modern mathematical physics, vol. ii, 1975.
 
 \bibitem{ruijsenaars1977charged}
-SNM Ruijsenaars, \emph{Charged particles in external fields. i. classical
-  theory}, Journal of Mathematical Physics \textbf{18} (1977), no.~4, 720--737.
+SNM Ruijsenaars.
+\newblock Charged particles in external fields. i. classical theory.
+\newblock {\em Journal of Mathematical Physics}, 18(4):720--737, 1977.
 
 \bibitem{sazdjian_2bd}
-Hagop Sazdjian, \emph{Relativistic wave equations for the dynamics of two
-  interacting particles}, Physical Review D \textbf{33} (1986), no.~11, 3401.
+Hagop Sazdjian.
+\newblock Relativistic wave equations for the dynamics of two interacting
+  particles.
+\newblock {\em Physical Review D}, 33(11):3401, 1986.
 
 \bibitem{schlemmer2015current}
-Jan Schlemmer and Jochen Zahn, \emph{The current density in quantum
-  electrodynamics in external potentials}, Annals of Physics \textbf{359}
-  (2015), 31--45.
+Jan Schlemmer and Jochen Zahn.
+\newblock The current density in quantum electrodynamics in external
+  potentials.
+\newblock {\em Annals of Physics}, 359:31--45, 2015.
 
 \bibitem{schweber}
-Silvan~S Schweber, \emph{An introduction to relativistic quantum field theory},
-  Courier Corporation, 2011.
+Silvan~S Schweber.
+\newblock {\em An introduction to relativistic quantum field theory}.
+\newblock Courier Corporation, 2011.
 
 \bibitem{schwinger}
-Julian Schwinger, \emph{Quantum electrodynamics. i. a covariant formulation},
-  Physical Review \textbf{74} (1948), no.~10, 1439.
+Julian Schwinger.
+\newblock Quantum electrodynamics. i. a covariant formulation.
+\newblock {\em Physical Review}, 74(10):1439, 1948.
 
 \bibitem{schwinger1951gauge}
-\bysame, \emph{On gauge invariance and vacuum polarization}, Physical Review
-  \textbf{82} (1951), no.~5, 664.
+Julian Schwinger.
+\newblock On gauge invariance and vacuum polarization.
+\newblock {\em Physical Review}, 82(5):664, 1951.
 
 \bibitem{shale1965spinor}
-David Shale and W~Forrest Stinespring, \emph{Spinor representations of infinite
-  orthogonal groups}, Journal of Mathematics and Mechanics \textbf{14} (1965),
-  no.~2, 315--322.
+David Shale and W~Forrest Stinespring.
+\newblock Spinor representations of infinite orthogonal groups.
+\newblock {\em Journal of Mathematics and Mechanics}, 14(2):315--322, 1965.
 
 \bibitem{tomonaga}
-Sin-itiro Tomonaga, \emph{On a relativistically invariant formulation of the
-  quantum theory of wave fields.}, Progress of Theoretical Physics \textbf{1}
-  (1946), no.~2, 27--42.
+Sin-itiro Tomonaga.
+\newblock On a relativistically invariant formulation of the quantum theory of
+  wave fields.
+\newblock {\em Progress of Theoretical Physics}, 1(2):27--42, 1946.
 
 \bibitem{2bdem}
-Peter Van~Alstine and Horace~W Crater, \emph{A tale of three equations: Breit,
-  eddington—gaunt, and two-body dirac}, Foundations of Physics \textbf{27}
-  (1997), no.~1, 67--79.
+Peter Van~Alstine and Horace~W Crater.
+\newblock A tale of three equations: Breit, eddington—gaunt, and two-body
+  dirac.
+\newblock {\em Foundations of Physics}, 27(1):67--79, 1997.
 
 \bibitem{zahn2014renormalized}
-Jochen Zahn, \emph{The renormalized locally covariant dirac field}, Reviews in
-  Mathematical Physics \textbf{26} (2014), no.~01, 1330012.
+Jochen Zahn.
+\newblock The renormalized locally covariant dirac field.
+\newblock {\em Reviews in Mathematical Physics}, 26(01):1330012, 2014.
 
 \end{thebibliography}

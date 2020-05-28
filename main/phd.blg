@@ -1,58 +1,52 @@
 This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: phd.aux
-The style file: amsplain.bst
+The style file: plain.bst
 Database file #1: ref.bib
 Warning--entry type for "phd_nickel" isn't style-file defined
 --line 410 of file ref.bib
 Warning--I didn't find a database entry for "ruisnaar&ivp0"
-Warning--missing pages in haantjes
-Warning--missing pages in ibc_model
-Warning--missing pages in selfDirac
-Warning--missing journal name in selfKG
-Warning--missing pages in selfKG
-Warning--can't use both volume and number if series info is missing
-in BibTeX entry type `inproceedings'
-Warning--missing pages in lienertcurved
+Warning--empty journal in selfKG
+Warning--can't use both volume and number fields in dice_paper
 You've used 53 entries,
-            2213 wiz_defined-function locations,
-            813 strings with 11288 characters,
-and the built_in function-call counts, 15225 in all, are:
-= -- 1372
-> -- 556
-< -- 5
-+ -- 239
-- -- 172
-* -- 1322
-:= -- 2419
-add.period$ -- 53
+            2118 wiz_defined-function locations,
+            811 strings with 11370 characters,
+and the built_in function-call counts, 15720 in all, are:
+= -- 1562
+> -- 596
+< -- 8
++ -- 251
+- -- 184
+* -- 1075
+:= -- 2645
+add.period$ -- 159
 call.type$ -- 53
-change.case$ -- 250
+change.case$ -- 244
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 632
-empty$ -- 1401
-format.name$ -- 172
-if$ -- 3172
+cite$ -- 55
+duplicate$ -- 613
+empty$ -- 1332
+format.name$ -- 184
+if$ -- 3264
 int.to.chr$ -- 0
 int.to.str$ -- 53
-missing$ -- 109
-newline$ -- 169
-num.names$ -- 99
-pop$ -- 310
+missing$ -- 56
+newline$ -- 265
+num.names$ -- 106
+pop$ -- 219
 preamble$ -- 1
 purify$ -- 197
 quote$ -- 0
-skip$ -- 353
+skip$ -- 435
 stack$ -- 0
 substring$ -- 1066
-swap$ -- 92
-text.length$ -- 5
+swap$ -- 91
+text.length$ -- 8
 text.prefix$ -- 0
-top$ -- 1
-type$ -- 201
-warning$ -- 7
-while$ -- 160
+top$ -- 0
+type$ -- 200
+warning$ -- 2
+while$ -- 167
 width$ -- 55
-write$ -- 470
-(There were 9 warnings)
+write$ -- 574
+(There were 4 warnings)

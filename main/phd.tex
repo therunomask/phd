@@ -74,7 +74,6 @@
 \newcommand{\vy}{\mathbf{y}}
 \newcommand{\vz}{\mathbf{z}}
 \newcommand{\vb}{\mathbf{b}}
-
 \newcommand{\ret}{{\textup ret}}
 \newcommand{\sym}{{\textup sym}}
 \newcommand{\adv}{{\textup adv}}
@@ -5466,7 +5465,7 @@ ratio is well defined.
 \end{Def}
 
 \begin{Remark}
-The global function \(z\) defined here is an extension 
+The function \(z\) defined here is an extension 
 of the funtion \(z\) appearing locally 
 in the 
 the proof of lemma \ref{lem phi local},
@@ -5482,7 +5481,8 @@ The parameter \(\overline{S}\) appearing in the defining
 differential equation of \(\hat{S}\) is smooth 
 since it is directly constructed in terms of 
 the one particle scattering operator which is smooth 
-due to chapter \ref{chap:regularity of S}.
+due to chapter \ref{chap:regularity of S} in the a
+appendix.
 \end{Remark}
 
 
@@ -5767,14 +5767,17 @@ Taking the logarithmic derivative we find:
 \begin{equation}\label{shift to small G,F}
 \partial_{F_2}\partial_{G_2}\ln f(A,F_1+F_2,G_1+G_2)=\partial_{F_2}\partial_{G_2}\ln f(A+F_1+G_1,F_2,G_2).
 \end{equation}
-Next we pick \(F_2=\alpha_1 F_1\) and \(G_2=\alpha_2 G_1\) for \(\alpha_1,\alpha_2\in\mathbb{R}^+\) small enough so that
-
- \begin{align}
- \|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+G_1}\|<1\\
- \|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+G_1+G_2}\|<1\\
- \|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+F_2+G_1}\|<1
- \end{align} 
- hold. We abbreviate \(A'=A+G_1+F_1\), use \eqref{def z} and compute
+Next we pick \(F_2=\alpha_1 F_1\) and \(G_2=\alpha_2 G_1\) 
+for \(\alpha_1,\alpha_2\in\mathbb{R}^+\) small enough so that
+\((A+F_1+F_2+G_1+G_2,A+F_1+G_1),(A+F_1+F_2+G_1+G_2,A+F_1+G_1+G_2),
+ (A+F_1+F_2+G_1+G_2,A+F_1+F_2+G_1)\in\dom\overline{S}\) holds.
+ %\begin{align}
+ %\|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+G_1}\|<1\\
+ %\|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+G_1+G_2}\|<1\\
+ %\|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+F_2+G_1}\|<1
+ %\end{align} 
+ %hold. 
+ We abbreviate \(A'=A+G_1+F_1\), use \eqref{def z} and compute
  
  \begin{align}\notag
  &f(A',F_2,G_2)\\\notag
@@ -5789,7 +5792,9 @@ Next we pick \(F_2=\alpha_1 F_1\) and \(G_2=\alpha_2 G_1\) for \(\alpha_1,\alpha
  &\hspace{2cm}\times \frac{z(A'+G_2,A'+G_2+F_2) }{z(A',A'+F_2)}
  \end{align}
 
-Most of the factors do not depend on \(F_2\) and \(G_2\), so taking the mixed logarithmic derivative things simplify:
+Most of the factors do not depend on both \(F_2\) and 
+\(G_2\), so taking the mixed logarithmic derivative things 
+simplify:
 \begin{align}\notag
 &\partial_{G_2}\partial_{F_2} \ln f(A',F_2,G_2)= \\
 &\partial_{G_2}\partial_{F_2} ( -\alpha_{A'+F_2+G_2} + \ln z(A'+G_2,A'+G_2+F_2))\\
@@ -7318,11 +7323,11 @@ of a fully interacting theory.
 
 
 
-\appendix
 
-\backmatter
 
 \chapter{Appendix}
+
+
 
 
 \section{Regularity of the One Particle Scattering Operator}\label{chap:regularity of S}
@@ -9483,7 +9488,10 @@ finite measure we then have
 
 %\begingroup
 %\renewcommand{\section}[2]{}
-\bibliographystyle{amsplain}
+\backmatter
+\appendix
+
+\bibliographystyle{plain}
 \bibliography{ref}
 
 

@@ -1,0 +1,98 @@
+\documentclass[a4paper,11pt]{article}
+
+%\usepackage{german}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+\usepackage{mathabx}
+
+
+\usepackage[unicode=true, pdfusetitle, bookmarks=true,
+  bookmarksnumbered=false, bookmarksopen=false, breaklinks=true, 
+  pdfborder={0 0 0}, backref=false, colorlinks=true, linkcolor=blue,
+  citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage{slashed}
+\usepackage{authblk}
+%identity sign
+
+\usepackage{cancel}
+\usepackage{dsfont}
+\usepackage{todonotes}
+
+\setlength{\marginparwidth}{2.6cm}
+
+%commutative diagrams
+\usepackage{amsmath,amscd}
+\usepackage{enumitem}
+\usepackage{moreenum}
+
+\addtolength{\textwidth}{2.2cm} \addtolength{\hoffset}{-1.0cm}
+
+\addtolength{\textheight}{3.0cm} \addtolength{\voffset}{-2cm} 
+
+\parindent 0cm
+
+\pagestyle{empty}
+
+\begin{document}
+\title{Calculation for Generating Function}
+\author{ }
+\date{\today}
+\maketitle
+
+
+Yesterday we arrived at the following expression for 
+the generating function of 
+the relevant part of \(c^+\)
+\begin{align}
+G=\int_{\big(\mathbb{R}^+\big)^{2n}}dy ~i \bigg( \frac{\pi}{\sum_{j=1}^{2n}y_j}\bigg)^{d/2}
+\exp\Bigg(\sum_{j=1}^{2n}y_j(q_j^2-m^2)-\frac{\big(\sum_{j=1}^{2n}y_j q_j + i/2 \xi\big)^2}{\sum_{j=1}^{2n}y_j}\Bigg).
+\end{align}
+For this expression we can further treat \(\sum_{j=1}^{2n}y_j=t\) 
+as an independent variable and perform its integral. For this (and the next few steps) 
+we introduce the following abbreviations
+\begin{align}
+  t&:=\sum_{j=1}^{2n}y_j\\
+  z_j&:=y_j/t\\
+  \overline{q}&:=\sum_{j=1}^{2n} z_j q_j\\
+  \overline{q^2}&:=\sum_{j=1}^{2n} z_j q_j^2\\
+  \lambda&:=\sqrt{m^2-\overline{q^2}+\overline{q}^2}.
+\end{align}
+For the following calculations we need 
+\(\text{Re}(\lambda),-\text{Re}(\xi^2)>0\). 
+We then arrive at 
+\begin{align}
+  G=\frac{i}{\Gamma(2n)}E_z\Bigg[\int_{\mathbb{R}^+}dt ~t^{2n-1}\bigg(\frac{\pi}{t}\bigg)^{d/2} 
+  \exp\bigg(-t(m^2-\overline{q^2}+\overline{q}^2)-i\xi \overline{q}+\frac{\xi^2}{4 t}\bigg)\Bigg].
+\end{align}
+This can be brought into a  
+\href{https://dlmf.nist.gov/10.32#E10}{known integral expression}
+for the 
+ modified Bessel function.
+\begin{align}
+  G=\frac{i \pi^{d/2}}{\Gamma(2n)}E_z\Bigg[e^{-i \xi \overline{q}}\lambda^{d-4n}\int_{\mathbb{R}^+}\frac{d\tau}{\tau^{d/2-2n +1}}e^{-\tau - \frac{-\xi^2 \lambda^2}{4 \tau}} \Bigg]\\
+  =\frac{i \pi^{d/2}}{\Gamma(2n)}E_z\bigg[e^{-i\xi \overline{q}} \lambda^{d-4n}2 (\lambda \sqrt{-\xi^2}/2)^{2n-d/2}K_{d/2-2n}(\lambda \sqrt{-\xi^2}) \bigg]\\
+  \overset{K_\nu(z)=K_{-\nu}(z)}{=}\frac{i \pi^{d/2}}{\Gamma(2n)}2^{1-2n+d/2}E_z\Bigg[e^{-i\xi\overline{q}}\bigg(\frac{\sqrt{-\xi^2}}{\lambda}\bigg)^{2n-d/2}K_{2n-d/2}(\lambda\sqrt{-\xi^2}) \Bigg].
+\end{align}
+
+In the limit \(\xi^2\rightarrow 0\) one should 
+use the asymptotic behavior of \(K\) according to
+\begin{equation}
+K_\nu(z)\approx \frac{\Gamma(\nu)}{2} (z/2)^{-\nu} \quad \text{for Re}(\nu)>0, \text{ and }  
+\end{equation}
+to recover the case we discussed the last time.
+
+\end{document}
+
+
+
+
+

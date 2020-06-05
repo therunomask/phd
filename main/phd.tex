@@ -260,9 +260,23 @@ of the term enclosed in round brackets.
 \mainmatter
 
 \chapter{Introduction}
-\lipsum[1]
+  and Lukas...
 
-
+The difficulties in writing down a
+mathematically consistent relativistically 
+invariant interacting quantum mechanical theory in 
+four dimensional spacetime have had a big impact 
+on the development of theoretical physics of the 
+past century and the question of whether these 
+difficulties have been overcome today still remain 
+subject of controversy. This is the case, despite the 
+fact that the relativistic analog of Schrödingers 
+equation, the Dirac equation 
+\begin{equation}\label{dirac free}
+  0= (i\slashed{\partial}-m) \phi,
+\end{equation}
+has been found as early as 1928\cite{dirac1928quantum}.
+Here and in the following a slashed four vector denotes 
 \begin{equation}
   \slashed{A}:= A_\alpha \gamma^\alpha,
 \end{equation}
@@ -270,27 +284,38 @@ where Einstein's summation convention is used. These matrices fulfil the anti-co
 \begin{equation}
 \forall \alpha, \beta \in \{0,1,2,3\}:\{\gamma^\alpha, \gamma^\beta\}:= \gamma^\alpha \gamma^\beta+ \gamma^\beta \gamma^\alpha= 2g^{\alpha \beta},
 \end{equation}
-where \(g\) is the Minkowski metric. I work with the \(+---\) metric signature and the Dirac representation of this algebra. Squared four dimensional objects always refer to the Minkowski square, meaning for all \(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
+where \(g\) is the Minkowski metric. We will work with 
+the \(+---\) 
+metric signature and the Dirac representation of this 
+algebra. Squared four dimensional objects always refer to 
+the Minkowski square, meaning for all 
+\(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
 
+Two very important reasons for these difficulties
+are:
+\begin{enumerate}
+\item The spectrum of the Hamiltonian generating the 
+time evolution of equation \eqref{dirac free} is 
+\(\sigma(H^0)=~]-\infty,-m]\cup[m,\infty[\). 
+\item Poincaré invariance of the equations of motion 
+of a theory rules out mechanisms of interaction.
+\end{enumerate}
 
+The first of these items is problematic, because a particle 
+that couples to a radiation field but whose kinetic energy 
+has no lower bound may continuously lose energy while 
+radiating. That is, systems of such particles would not 
+have a stable ground state. We will discuss two possible 
+ways of omitting this problem. 
 
-\begin{equation}\label{dirac free}
-  0= (i\slashed{\partial}-m) \phi,
-\end{equation}
-
-
-\todo{introduce \(\overline{\psi}\)}
-
-
-%\show\afterchaptertitle
-\noch{Historische Einleitung durch Anfänge relativistischer Quantenphysik, Strahlungskatastrophe (unbounded below). No potentials resultat Lukas}
-\todo{general: replace \(S\) 
-in later chapter something similar but different}
-\lipsum[1-2]
-
-\todo{use these citations to introduce multi time equations}
-The key innovation is to make use of \textit{multi-time wave functions}. 
-This concept goes back to Dirac \cite{dirac_32}, played an important 
+1. In the first approach, we do not introduce a radiation 
+field. We will stick as closely as possible to 
+non-relativistic physics and introduce a wavefunction 
+for \(N\in\mathbb{N}\) particles. In order for this function  
+to transform relativistically we will consider at as a
+function of \(N\) spacetime points \(x_i\in\mathbb{R}^4\).
+This \emph{multi-time} approach 
+goes back to Dirac \cite{dirac_32}, played an important 
 role in the works of Tomonaga \cite{tomonaga} and Schwinger 
 \cite{schwinger}, has been studied by different authors over the 
 years \cite{guenther_1952,marx_1974,schweber,drozvincent_1981,sazdjian_2bd,2bdem} 
@@ -298,8 +323,49 @@ and has recently undergone considerable developments
 \cite{nogo_potentials,qftmultitime,multitime_pair_creation,1d_model,
 nt_model,2bd_current_cons,deckert_nickel_2016,lpt_2017b,generalized_born,
 ibc_model,phd_nickel}; an overview can be found in \cite{dice_paper}. 
-For two Dirac particles in Minkowski spacetime $\M$, a multi-time wave 
-function is a map
+A natural way of introducing interaction in this setting 
+would be to introduce interaction potentials by minimal 
+coupling; however, recent no-go theorems 
+\cite{nogo_potentials,deckert_nickel_2016} show that 
+no such potentials compatible with Poincaré 
+invariance result in an interacting system. 
+
+
+
+
+
+
+
+
+\todo{introduce \(\overline{\psi}\)}
+
+
+\todo{bring this to some apropriate place}
+It is quite challenging to set up an interacting dynamics 
+for multi-time wave functions. The issue here is not only Lorentz 
+invariance but rather the mere compatibility of the time 
+evolutions in the various time coordinates. A no-go theorem 
+\cite{nogo_potentials,deckert_nickel_2016} for example rules 
+out interaction potentials (which could be Poincar\'{e} 
+invariant functions in the multi-time approach). Thus, 
+interaction is more difficult to achieve for multi-time than for 
+single-time wave functions. So far, the only rigorous, 
+interacting and Lorentz invariant multi-time models for Dirac 
+particles have been constructed in 1+1 spacetime dimensions 
+\cite{1d_model,nt_model} (see, however, \cite{drozvincent_1981,
+sazdjian_2bd,2bdem} for non-rigorous Lorentz invariant models 
+in 1+3 dimensions and \cite[chap.\ 3]{phd_nickel} for a not 
+fully Lorentz invariant but rigorous model in 1+3 dimensions). 
+Considering these difficulties, the multi-time aspect of our 
+model is interesting in its own right.
+
+%\show\afterchaptertitle
+\noch{Historische Einleitung durch Anfänge relativistischer Quantenphysik, Strahlungskatastrophe (unbounded below). No potentials resultat Lukas}
+\todo{general: replace \(S\) 
+in later chapter something similar but different}
+
+
+\todo{use these citations to introduce multi time equations}
 
 \chapter[Direct Interaction in Relativistic Quantum Mechanics][Direct Interaction]{Direct Interaction in Relativistic Quantum Mechanics}\label{chap: direct interaction}
 As we have seen in the last chapter, having interaction mediated by potentials 
@@ -317,9 +383,9 @@ self consistent relativistic interacting quantum mechanical
 toy models living in three spacial and one temporal dimension.
 
 
-For the benefit of the unfamiliar reader, we will first follow the 
-heuristic derivation of this type of equation
-in \cite{direct_interaction_quantum}, then briefly review 
+For the benefit of the unfamiliar reader, we will first give
+a heuristic derivation of this type of equation, then 
+briefly review 
 the mathematical results that 
 had been established in the past on this subject 
 and finally 
@@ -329,30 +395,12 @@ discuss results appearing in \cite{selfDirac,selfKG}.
 
 
 
-\todo{bring this to some apropriate place}
-It is quite challenging to set up an interacting dynamics 
-  for multi-time wave functions. The issue here is not only Lorentz 
-  invariance but rather the mere compatibility of the time 
-  evolutions in the various time coordinates. A no-go theorem 
-  \cite{nogo_potentials,deckert_nickel_2016} for example rules 
-  out interaction potentials (which could be Poincar\'{e} 
-  invariant functions in the multi-time approach). Thus, 
-  interaction is more difficult to achieve for multi-time than for 
-  single-time wave functions. So far, the only rigorous, 
-  interacting and Lorentz invariant multi-time models for Dirac 
-  particles have been constructed in 1+1 spacetime dimensions 
-  \cite{1d_model,nt_model} (see, however, \cite{drozvincent_1981,
-  sazdjian_2bd,2bdem} for non-rigorous Lorentz invariant models 
-  in 1+3 dimensions and \cite[chap.\ 3]{phd_nickel} for a not 
-  fully Lorentz invariant but rigorous model in 1+3 dimensions). 
-  Considering these difficulties, the multi-time aspect of our 
-  model is interesting in its own right.
-
 
 \section{Overview}
 \subsection{Derivation}
 
-We now follow the heuristic derivation of \cite{direct_interaction_quantum} 
+We will now closely follow the  heuristic derivation of 
+\cite{direct_interaction_quantum} 
 of an equation for a multi-time wave function for two particles  
 that expresses direct interaction along light-like configurations. 
 The derivation is organised as follows: We start out 
@@ -4539,7 +4587,7 @@ Furthermore, we choose for all \(A,B\in \dom \overline{S}\) the lift
 For \((A,B),(B,C), (C,A)\in\dom\overline{S}\), we define 
  the complex numbers 
 \begin{align}\label{def: gamma}
-\gamma_{A,B,C}&:=\ag(\det_{\mathcal{H}^-} (P^- S_{A,B} P^- S_{B,C} P^- S_{C,A}P^-)),\\
+\gamma_{A,B,C}&:=\det_{\mathcal{H}^-} (P^- S_{A,B} P^- S_{B,C} P^- S_{C,A}P^-),\\
 \Gamma_{A,B,C}&:=\ag(\gamma_{A,B,C}).
 \end{align}
 We will see in lemma \ref{gamma attri} that 
@@ -4618,14 +4666,69 @@ j_A^{\hat{S}}(F):=i\partial_F \left\langle \Omega, \hat{S}_{A,A+F} \Omega\right\
 Given a causal splitting \(c^+\), there is a second quantised scattering operator \(\tilde{S}\), lift of the one-particle scattering operator \(S\)
 with the following properties
 \begin{align}
-&\forall A,B,C\in \mathcal{V}:\tilde{S}_{A,B}\tilde{S}_{B,C}=\tilde{S}_{A,C}\\
-&\forall F\prec G: \tilde{S}_{A,A+F}=\tilde{S}_{A+G,A+F+G}
+&\forall A,B,C\in \mathcal{V}:\tilde{S}_{A,B}\tilde{S}_{B,C}=\tilde{S}_{A,C}\label{prop S tilde 1}\\
+&\forall F\prec G: \tilde{S}_{A,A+F}=\tilde{S}_{A+G,A+F+G}\label{prop S tilde 2}
 \end{align}
 and the associated current satisfies
 \begin{equation}
-\partial_G j_{A+G}^{\tilde{S}}(F)=\left\{\begin{matrix} -2i c_A(F,G)  &\text{ for } G\prec F\\ 0 &\text{  otherwise.}  \end{matrix} \right.
+\partial_G j_{A+G}^{\tilde{S}}(F)=\left\{\begin{matrix} -2i c_A(F,G)  &\text{ for } G\prec F\\ 0 &\text{ for } F\prec G  \end{matrix} \right.
 \end{equation}
 \end{Thm}
+
+\begin{Remark}
+One may wonder why we construct a lift with the properties 
+\eqref{prop S tilde 1} and \eqref{prop S tilde 2}. 
+The project of finding a rigorous formulation of external 
+field QED can be considered a success once a lift 
+\(\tilde{U}^A_{\Sigma',\Sigma}\) of the evolution from 
+one cauchy surface to another \(U_{\Sigma',\Sigma}\) 
+has been constructed 
+from which a current can be calculated that agrees 
+with experiments to the degree that the approximations 
+inherent to the model are applicable. In the light of 
+this goal properties \eqref{prop S tilde 1} and 
+\eqref{prop S tilde 2} should be judged. Property 
+\eqref{prop S tilde 1} is a basic requirement,
+any phase that does not fulfil it will not be directly 
+generalisable to the the evolution between different 
+Cauchy surfaces. In the proof of theorem we will see 
+that in order to 
+satisfy it, it suffices to construct any global section, i.e.
+a lift of \(S_{0,A}\) for any \(A\in\mathcal{V}\). 
+In order to see why \eqref{prop S tilde 2} is a reasonable 
+second requirement we may quickly to through it's proof in 
+the one-particle situation. Let \(A,F,G\in\mathcal{V}\) 
+such that \(F\prec G\). We may then pick  a Cauchy 
+surface \(\Sigma'\) such that \(\supp F\) is causally prior to 
+\(\Sigma'\) and \(\Sigma'\) causally prior to \(\supp G\) 
+meaning that for \((x,y)\in \supp F \times \Sigma'\) we 
+have 
+\begin{equation}
+  \big((x-y)^2\ge 0\wedge x\neq y\big) \Rightarrow x^0<y^0
+\end{equation}
+and analogous for \((x,y)\in \Sigma' \times \supp G\).
+This implies 
+\begin{align}
+  S_{A+G,A+G+F}=U^{A+G}_{\Sigma_{\text{in}},\Sigma_{\text{out}}} U^{A+G+F}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}\\
+  = U^{A+G}_{\Sigma_{\text{in}},\Sigma'}U^{A+G}_{\Sigma',\Sigma_{\text{out}}}U^{A+G+F}_{\Sigma_{\text{out}},\Sigma'}U^{A+G+F}_{\Sigma',\Sigma_{\text{in}}}\\
+  \overset{*}{=}U^{A}_{\Sigma_{\text{in}},\Sigma'}U^{A+G}_{\Sigma',\Sigma_{\text{out}}}U^{A+G}_{\Sigma_{\text{out}},\Sigma'}U^{A+F}_{\Sigma',\Sigma_{\text{in}}}
+  =U^{A}_{\Sigma_{\text{in}},\Sigma'}U^{A+F}_{\Sigma',\Sigma_{\text{in}}}\\
+  =U^{A}_{\Sigma_{\text{in}},\Sigma'}U^{A}_{\Sigma',\Sigma_{\text{out}}}U^{A}_{\Sigma_{\text{out}},\Sigma'}U^{A+F}_{\Sigma',\Sigma_{\text{in}}}
+  =U^{A}_{\Sigma_{\text{in}},\Sigma_{\text{out}}} U^{A+F}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}
+  =S_{A,A+F},
+\end{align}
+where for the marked equality we used the support properties 
+of \(F\) and \(G\) relative to \(\Sigma'\) and that 
+\(S^A_{\Sigma',\Sigma}\) only depends on values of \(A\) in 
+the volume delimited by \(\Sigma'\) and \(\Sigma\). 
+For a lift 
+of \(U^A_{\Sigma',\Sigma}\) we would expect the last calculation 
+to hold in the second quantised language as well. So 
+property \eqref{prop S tilde 2} is a way of incorporating
+properties of the lift of the time evolution 
+between different hypersurfaces 
+without mentioning those hypersurfaces directly.
+\end{Remark}
 
 \subsection{Proofs}
 
@@ -4923,7 +5026,7 @@ holds.
   There is a unique map \(\hat{S}_{0,\cdot}:\mathcal{V}\to U(\mathcal{F})\) 
     which maps  \(A\in\mathcal{V}\) to a lift of \(S_{0,A}\) and solves the 
     parallel transport differential equation
-  \begin{equation}\label{diff s hat}
+\begin{equation}\label{diff s hat}
 A,B\in\mathcal{V}\text{ linearly dependent}\Rightarrow \partial_B \frac{\hat{S}_{0,A+B}}{\hat{S}_{0,A}\overline{S}_{A,A+B}}=0,
 \end{equation}
 subject to the initial condition \(\hat{S}_{0,0}=1\).
@@ -4973,7 +5076,7 @@ Pick \(A\in \mathcal{V}\) the expression
 solves \eqref{diff s hat} locally. Local here means that \(s\) is close enough to \(1\) such that \(( A, s A)\in\dom\overline{S}\).
 Calculating the argument of the derivative of \eqref{diff s hat} we find:
 \begin{align}
-0= \frac{\hat{S}_{0,(s+\varepsilon) A}}{\hat{S}_{0,s A}\overline{S}_{s A, (s+\varepsilon)A}}
+ \frac{\hat{S}_{0,(s+\varepsilon) A}}{\hat{S}_{0,s A}\overline{S}_{s A, (s+\varepsilon)A}}
 = \frac{\hat{S}_{0,A} \overline{S}_{A, (s+\varepsilon)A} z(A, (s+\varepsilon)A)}
 {\hat{S}_{0, A} \overline{S}_{ A, s A} \overline{S}_{s A,(s+\varepsilon)}z( A, s A)}\\
 \overset{\eqref{gamma attri6}}{=}
@@ -5813,7 +5916,7 @@ Using this then we can integrate and obtain
 &\hspace{3cm}+ \ln f(A,0,0)\\
 &\overset{\eqref{vanish at axis}}{=}\ln f(A,F_1,G_1).
 \end{align}
-remembering equation \eqref{f causal}, the definition of \(f\),  this ends our proof.
+Recalling equation \eqref{f causal}, the definition of \(f\),  this ends our proof.
 \end{proof}
 
 Using \(\tilde{S}\) we introduce the current associated to it.

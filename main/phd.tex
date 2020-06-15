@@ -194,12 +194,12 @@ erweitert. Weiterhin wird ein erstes Resultat über Existenz und
 Eindeutigkeit von Lösungen für eine Variante der Gleichung 
 für Teilchen mit Spin 1/2 bewiesen.
 
-In der zweiten Herangehensweise wird, als ersten Schritt in 
+In der zweiten Methode wird, als ersten Schritt in 
 Richtung einer wechselwirkenden Theorie, ein externes 
 elektromagnetisches Feld in eine ansonsten freie Quantenfeldtheorie
-eingeführt. Frühere Resultate haben Kandidaten für den 
-Zeitentwicklungsoperator in dieser Situation konstruiert, 
-allerdings blieb dabei eine vom Feld abhängige Phase unbestimmt.
+eingeführt. In früheren Resultaten konstruierte 
+Zeitentwicklungsoperatoren 
+ließen dabei eine vom Feld abhängige Phase unbestimmt.
 Dieses Problem wird teilweise behoben, indem eine geometrische 
 Konstruktion dieser Phase im Streuregime aus einem 
 Objekt mit einigen wünschenswerten Eigenschaften, 
@@ -260,7 +260,6 @@ of the term enclosed in round brackets.
 \mainmatter
 
 \chapter{Introduction}
-  and Lukas...
 
 The difficulties in writing down a
 mathematically consistent relativistically 
@@ -269,7 +268,16 @@ four dimensional spacetime have had a big impact
 on the development of theoretical physics of the 
 past century and the question of whether these 
 difficulties have been overcome today still remain 
-subject of controversy. This is the case, despite the 
+subject of controversy. As an illustration see for example 
+\cite{schwartz2014quantum} for a book that disputes 
+the existence of problems of the full theory and 
+see e.g. \cite{derezinski2013mathematics} for a 
+very modern book on the rigorous mathematical 
+results on quantum field theory that barely moves 
+past the free theory, which is not 
+because of a fear of scaring off readers by too 
+abstract or complicated mathematics. 
+This controversy remains, despite the 
 fact that the relativistic analog of Schrödingers 
 equation, the Dirac equation 
 \begin{equation}\label{dirac free}
@@ -280,7 +288,9 @@ Here and in the following a slashed four vector denotes
 \begin{equation}
   \slashed{A}:= A_\alpha \gamma^\alpha,
 \end{equation}
-where Einstein's summation convention is used. These matrices fulfil the anti-commutation relation
+where Einstein's summation convention is used. 
+The matrices \(\gamma^\alpha \in \mathbb{C}^{4\times 4}\) 
+fulfil the anti-commutation relation
 \begin{equation}
 \forall \alpha, \beta \in \{0,1,2,3\}:\{\gamma^\alpha, \gamma^\beta\}:= \gamma^\alpha \gamma^\beta+ \gamma^\beta \gamma^\alpha= 2g^{\alpha \beta},
 \end{equation}
@@ -294,7 +304,8 @@ the Minkowski square, meaning for all
 Two very important reasons for these difficulties
 are:
 \begin{enumerate}
-\item The spectrum of the Hamiltonian generating the 
+\item \label{item: instability}The spectrum of the Hamiltonian 
+generating the 
 time evolution of equation \eqref{dirac free} is 
 \(\sigma(H^0)=~]-\infty,-m]\cup[m,\infty[\). 
 \item Poincaré invariance of the equations of motion 
@@ -308,64 +319,93 @@ radiating. That is, systems of such particles would not
 have a stable ground state. We will discuss two possible 
 ways of omitting this problem. 
 
-1. In the first approach, we do not introduce a radiation 
+\textbf{1.} In the first approach, we do not introduce a radiation 
 field. We will stick as closely as possible to 
 non-relativistic physics and introduce a wavefunction 
 for \(N\in\mathbb{N}\) particles. In order for this function  
-to transform relativistically we will consider at as a
+to transform relativistically we will consider it a
 function of \(N\) spacetime points \(x_i\in\mathbb{R}^4\).
-This \emph{multi-time} approach 
-goes back to Dirac \cite{dirac_32}, played an important 
-role in the works of Tomonaga \cite{tomonaga} and Schwinger 
-\cite{schwinger}, has been studied by different authors over the 
-years \cite{guenther_1952,marx_1974,schweber,drozvincent_1981,sazdjian_2bd,2bdem} 
-and has recently undergone considerable developments 
-\cite{nogo_potentials,qftmultitime,multitime_pair_creation,1d_model,
-nt_model,2bd_current_cons,deckert_nickel_2016,lpt_2017b,generalized_born,
-ibc_model,phd_nickel}; an overview can be found in \cite{dice_paper}. 
+This \emph{multi-time} formulation 
+goes back to Dirac \cite{dirac_32}. 
+It heavily inspired works of Tomonaga \cite{tomonaga} and Schwinger 
+\cite{schwinger} and has inspired research since then
+\cite{marx_1974,schweber,drozvincent_1981,sazdjian_2bd,2bdem}. 
+See 
+\cite{qftmultitime,multitime_pair_creation,1d_model,
+nt_model,2bd_current_cons,lpt_2017b,
+ibc_model,phd_nickel} for mor recent work on the 
+subject and \cite{dice_paper} for an overview. 
 A natural way of introducing interaction in this setting 
-would be to introduce interaction potentials by minimal 
-coupling; however, recent no-go theorems 
+would be to let the wavefunction 
+solve \(N\) Dirac equations each minimally
+coupled to a potential; however, recent no-go theorems 
 \cite{nogo_potentials,deckert_nickel_2016} show that 
-no such potentials compatible with Poincaré 
-invariance result in an interacting system. 
+no such choice of potentials compatible with Poincaré 
+invariance results in an interacting system of particles.
+
+The approach we will follow in chapter \ref{chap: direct interaction}
+bypasses the main reason why the theorem in \cite{deckert_nickel_2016} 
+is so powerful by introducing only a single integral equation 
+for the wavefunction of the particles. The resulting equation 
+\begin{align}\label{eq:matt}
+  \psi&(x_1,x_2) = \psi^\free(x_1,x_2)+i\, \frac{e_1e_2}{4\pi} \int d^4 x_1' \, d^4 x_2' \\\nonumber
+  & \times \mathscr{S}^\ret_1(x_1-x_1') \mathscr{S}^\ret_2(x_2-x_2') \, \gamma_1^\mu \gamma_{2,\mu}\delta((x_1'-x_2')^2) \psi(x_1',x_2'),
+\end{align}
+for whose relatives we will investigate existence of solutions seem to 
+be hardly related to the theory of 
+quantum electrodynamics; however, before 
+coming to this conclusion one should compare this 
+equation with equation (4) of \cite{feynman1949space} and take 
+note of footnote 7 on the same page. 
+The main difference is that Feynman only uses positive Fourier
+modes in time for his interaction term.
+
+Despite this fact and the similarity between \eqref{eq:matt}
+and the Bethe-Salpeter equation, not much is known about the 
+mathematical properties of equation \eqref{eq:matt}, 
+the main results about related equations are summarised in section 
+\ref{sec: direct interation previous}.
+
+
+\textbf{2.} Another approach to circumvent the problems associated with 
+item \ref{item: instability} that results in quantum field theory 
+is to fill up all negative energy states and use an antisymmetric 
+description as called for by Paulis exclusion principle. This will 
+prevent the instability described earlier, but renders many 
+physically relevant quantities ill defined.
+The problems associated with finding a mathematically rigorous 
+description of quantum field theory are quite serious.
+The basic motivation of this approach was to introduce 
+otherwise missing ground states, yet proving existence of 
+ground states even in simplified models such as 
+quantum electrodynamics (QED) without photons has only 
+been achieved in the recent past\cite{hainzl2005existence}.
+We 
+will be content with working in external field QED,
+i.e. we will neglect all interaction between the fermions and 
+describe the electrodynamic field as a smooth
+function. 
+Even in this setting there are calssical theorems by 
+Ruijsenaars\cite{ruijsenaars1977charged} and 
+Shale and Stinespring\cite{shale1965spinor} that seem to 
+prevent a dynamical mathematical description of the processes in 
+question in the presence of magnetic fields. 
+Recently, by the timescales of progress in this 
+part of mathematical physics, this obstacle has been overcome 
+by abandoning the restriction to work in a static Fock space
+\cite{ivp0,ivp1,ivp2}.
+These results form the basis upon which we will 
+build our analysis in chapter \ref{chap:QFT}.
 
 
 
 
 
 
-
-
-\todo{introduce \(\overline{\psi}\)}
-
-
-\todo{bring this to some apropriate place}
-It is quite challenging to set up an interacting dynamics 
-for multi-time wave functions. The issue here is not only Lorentz 
-invariance but rather the mere compatibility of the time 
-evolutions in the various time coordinates. A no-go theorem 
-\cite{nogo_potentials,deckert_nickel_2016} for example rules 
-out interaction potentials (which could be Poincar\'{e} 
-invariant functions in the multi-time approach). Thus, 
-interaction is more difficult to achieve for multi-time than for 
-single-time wave functions. So far, the only rigorous, 
-interacting and Lorentz invariant multi-time models for Dirac 
-particles have been constructed in 1+1 spacetime dimensions 
-\cite{1d_model,nt_model} (see, however, \cite{drozvincent_1981,
-sazdjian_2bd,2bdem} for non-rigorous Lorentz invariant models 
-in 1+3 dimensions and \cite[chap.\ 3]{phd_nickel} for a not 
-fully Lorentz invariant but rigorous model in 1+3 dimensions). 
-Considering these difficulties, the multi-time aspect of our 
-model is interesting in its own right.
 
 %\show\afterchaptertitle
-\noch{Historische Einleitung durch Anfänge relativistischer Quantenphysik, Strahlungskatastrophe (unbounded below). No potentials resultat Lukas}
-\todo{general: replace \(S\) 
-in later chapter something similar but different}
 
 
-\todo{use these citations to introduce multi time equations}
 
 \chapter[Direct Interaction in Relativistic Quantum Mechanics][Direct Interaction]{Direct Interaction in Relativistic Quantum Mechanics}\label{chap: direct interaction}
 As we have seen in the last chapter, having interaction mediated by potentials 
@@ -421,16 +461,16 @@ external potential \(V\) takes the form
 \end{equation}
 here \(\phi\) denotes the wavefunction in question, \(\vx\in\mathbb{R}^3, t\in\mathbb{R}\)
 and \(H^\free\) is the Hamiltonian associated with a free Dirac particle.
-We denote by \(S^\ret\) the retarded Green's function of the non interacting Dirac equation,
+We denote by \(\mathscr{S}^\ret\) the retarded Green's function of the non interacting Dirac equation,
 that is \(S^\ret\) satisfies
 \begin{align}\label{eq:schroedgreensfn}
-  \big( i \partial_t - H^\free \big) S^\ret &= \delta^4,\\
-  S^\ret(t,\vx) &= 0 \quad \text{for }\, t<0.
+  \big( i \partial_t - H^\free \big) \mathscr{S}^\ret &= \delta^4,\\
+  \mathscr{S}^\ret(t,\vx) &= 0 \quad \text{for }\, t<0.
 \end{align}
 Then inverting the differential operator \(i\partial_t -H^\free\) in  \eqref{eq:singlepartschroed}
 results in 
 \begin{equation}
-	\phi(t,\vx) = \phi^\free(t,\vx) + \int_{t^0}^\infty \! dt' \int d^3 \vx' \, S^\ret(t-t',\vx-\vx') V(t',\vx') \phi(t',\vx'),
+	\phi(t,\vx) = \phi^\free(t,\vx) + \int_{t^0}^\infty \! dt' \int d^3 \vx' \, \mathscr{S}^\ret(t-t',\vx-\vx') V(t',\vx') \phi(t',\vx'),
 	\label{eq:singlepartint}
 \end{equation}
 where $\phi^\free$ 
@@ -453,18 +493,18 @@ Executing the analogous procedure for the two particle Dirac equation
 subject to the initial condition  \(\phi(t_0)=\phi_0\), 
 results in the integral equation
 \begin{align}
-	\phi(t,\vx_1,\vx_2) = \phi^\free&(t,\vx_1,\vx_2) + \int_{t_0}^\infty \! dt' \! \int d^3 \vx_1'\,  d^3 \vx_2'\, S_1^\ret(t-t',\vx_1-\vx_1') \nonumber\\
-	\times&S_2^\ret(t-t',\vx_2-\vx_2') V(t',\vx_1',\vx_2') \phi(t',\vx_1',\vx_2'),
+	\phi(t,\vx_1,\vx_2) = \phi^\free&(t,\vx_1,\vx_2) + \int_{t_0}^\infty \! dt' \! \int d^3 \vx_1'\,  d^3 \vx_2'\, \mathscr{S}_1^\ret(t-t',\vx_1-\vx_1') \nonumber\\
+	\times&\mathscr{S}_2^\ret(t-t',\vx_2-\vx_2') V(t',\vx_1',\vx_2') \phi(t',\vx_1',\vx_2'),
 	\label{eq:twopartschroedint}
 \end{align}
 where  now,
 $\phi^\free(t)$ is a solution to the free Dirac 
 equation for two particles subject
-to \(\phi^\free (t_0)=\phi_0\) and \(S_k^\ret\) is 
+to \(\phi^\free (t_0)=\phi_0\) and \(\mathscr{S}_k^\ret\) is 
 the retarded Green's function
 of the free Dirac equation of particle number \(k\). 
 Here it is crucial to notice that
-The Green's function of the free two particle Dirac equation 
+the Green's function of the free two particle Dirac equation 
 factorises into a product 
 of two Green's functions of the Dirac equation for one particle.
 
@@ -476,7 +516,7 @@ generalise to two particles, but before we do so
 let us first rewrite equation 
 \eqref{eq:singlepartint} in a more suggestive way:
 \begin{equation}
-	\psi(x) = \psi^\free(x) + \int d^4 x' \, S^\ret(x-x') V(x') \psi(x'),
+	\psi(x) = \psi^\free(x) + \int d^4 x' \, \mathscr{S}^\ret(x-x') V(x') \psi(x'),
 	\label{eq:singlepartintspacetime}
 \end{equation}
 where non bold letters denote elements of Minkowski 
@@ -492,19 +532,19 @@ suggests to write down the
 following generalisation
 \begin{align}\label{eq:twopartintgeneral}
   \psi(x_1,x_2) &= \psi^\free(x_1,x_2) \\\nonumber
-  &+ \int d^4 x_1'\, d^4 x_2' \, S^\ret_1(x_1-x_1') S^\ret_2(x_2-x_2') K(x_1',x_2') \psi(x_1',x_2').
+  &+ \int d^4 x_1'\, d^4 x_2' \, \mathscr{S}^\ret_1(x_1-x_1') \mathscr{S}^\ret_2(x_2-x_2') K(x_1',x_2') \psi(x_1',x_2'),
 \end{align}
-we integrate over all of \(\mathbb{R}^8\) and \(\psi^\free\) a solution of the free 
+where we integrate over all of \(\mathbb{R}^8\) and \(\psi^\free\) a solution of the free 
 Dirac equation both in \(x_1\) and \(x_2\) and their respective spinor indices:
 \begin{align}
   D_1  \psi^\free(x_1,x_2) = 0,\\
   D_2  \psi^\free(x_1,x_2) = 0.
 	\label{eq:freemultitime}
 \end{align}
-For the object \(K\), called the ''interaction kernel``, the optimal choice is not yet known.
+For the object \(K\), called the ``interaction kernel'', the optimal choice is not yet known.
 However, for \eqref{eq:twopartintgeneral} to be Poincaré invariant, it should be invariant
 itself. A simple way to ensure this is to let it only depend directly 
-the squared Minkowski distance \((x_1-x_2)^2\). A choice that shows some resemblence of 
+the squared Minkowski distance \((x_1-x_2)^2\). A choice that shows some reminiscence of 
 Wheeler-Feynman electrodynamics is
 \begin{equation}
 	K(x_1,x_2) = i\, \frac{e_1e_2}{4\pi} \gamma_1^\mu \gamma_{2,\mu} \; \delta((x_1-x_2)^2).
@@ -518,12 +558,12 @@ see \cite[section 3.6]{direct_interaction_quantum}.
 Summarising, we arrived at the equation
 \begin{align}\label{eq:twopartint}
   \psi&(x_1,x_2) = \psi^\free(x_1,x_2)+i\, \frac{e_1e_2}{4\pi} \int d^4 x_1' \, d^4 x_2' \\\nonumber
-  & \times S^\ret_1(x_1-x_1') S^\ret_2(x_2-x_2') \, \gamma_1^\mu \gamma_{2,\mu}\delta((x_1'-x_2')^2) \psi(x_1',x_2').
+  & \times \mathscr{S}^\ret_1(x_1-x_1') \mathscr{S}^\ret_2(x_2-x_2') \, \gamma_1^\mu \gamma_{2,\mu}\delta((x_1'-x_2')^2) \psi(x_1',x_2').
 \end{align}
 
 
 Despite the fact that the motivation for \eqref{eq:twopartint} holds for Dirac particles, 
-it is also conceivable to replace \(\psi\), \(S^\ret\) and all the constant factor by 
+it is also conceivable to replace \(\psi\), \(\mathscr{S}^\ret\) and all the constant factor by 
 quantities related to the Klein Gordon equation and arrive at 
 
 \begin{align}\label{eq:KGtwopartint}
@@ -539,7 +579,7 @@ solution to the free Klein Gordone equation in both \(x_1\) and \(x_2\),
 and \(G^\ret\) is the retarded Green's function of the Klein Gordon equation.
 
 In fact,  most of the rigorous results about equations of a similar 
-type as the ones motivated in this chapter are about the Klein 
+type as the ones motivated in this section are about the Klein 
 Gordon version \eqref{eq:KGtwopartint}.
 
 
@@ -553,8 +593,8 @@ it can still readily be summarised. The results are taken
 from \cite{direct_interaction_quantum} and 
 \cite{lienertcurved}. The theorems are about the Klein-Gordon case, i.e.
 slightly different versions of equations
-of the type of \eqref{eq:KGtwopartint}. I tried to contain the 
-necessary notation to within each
+of the type of \eqref{eq:KGtwopartint}. The 
+necessary new notation is contained to within each
 of the theorems. Mentioned below are only the theorems that are about a 
 four dimensional spacetime; however,  
 there are also results concerning lower dimensions, 
@@ -563,7 +603,7 @@ is refered to \cite{direct_interaction_quantum,lienertcurved}. The versions of
 equation \eqref{eq:KGtwopartint} in the theorems are 
 considerably modified:
 
-\begin{enumerate}[label=\Alph*)]
+\begin{enumerate}[label=(\Alph*)]
 \item \label{matt simplifying assumption 1} The spacetime of equation \eqref{eq:KGtwopartint} 
 is \(\mathbb{R}^4\), i.e. Minkowski spacetime.
 All the rigorous results concerning vanishing curvature so far 
@@ -575,7 +615,7 @@ cosmological models of our universe do have a beginning in
 time this modification does not necessarily
 mean that the equation can no longer describe 
 certain aspects of physics. As these cosmological models 
-have nonzero curature the authors of \cite{lienertcurved} 
+have nonzero curvature the authors of \cite{lienertcurved} 
 have shown existence of solutions of versions of 
 equation \eqref{eq:KGtwopartint}
 on Friedmann-Lemaître-Robertson-Walker (FLRW) spacetime. In 
@@ -645,7 +685,7 @@ singular \(\delta((x_1-x_2)^2)\) kernel.
 
 \begin{Thm}[Thm 3.4 \((d=3)\) of \cite{mtve}]
 Let \(T>0, \lambda\in\mathbb{C}\), for every bounded \(K:\mathbb{R}^8\rightarrow\mathbb{C}\) and every
-\(\psi^\free \in\mathcal{B}_3:=L^\infty([0,T]^2,L^2(\mathbb{R}^6))\)
+\(\psi^\free \in\mathcal{B}:=L^\infty([0,T]^2,L^2(\mathbb{R}^6))\)
 the equation 
 
 \begin{align*}
@@ -654,20 +694,20 @@ the equation
 &\times K(t_1-|\vx_1-\vx_1'|,\vx_1',t_2-|\vx_2-\vx_2'|,\vx_2')\\
 &\times \psi(t_1-|\vx_1-\vx_1'|,\vx_1',t_2-|\vx_2-\vx_2'|,\vx_2')
 \end{align*}
-has a unique solution \(\psi\in\mathcal{B}_3\).
+has a unique solution \(\psi\in\mathcal{B}\).
 \end{Thm}
 
 \begin{Thm}[Thm 3.5 of \cite{mtve}]
   Let \(T>0, \lambda\in\mathbb{C}\), for every 
   bounded \(f:\mathbb{R}^8\rightarrow \mathbb{C}\) 
-  and every \(\psi^\free \in \mathcal{B}_3:=L^\infty([0,T]^2,L^2(\mathbb{R}^6))\) the equation
+  and every \(\psi^\free \in \mathcal{B}:=L^\infty([0,T]^2,L^2(\mathbb{R}^6))\) the equation
 \begin{align*}
 \psi(t_1,\vx_1,t_2,\vx_2)&=\psi^\free(t_1,\vx_1,t_2,\vx_2) + \frac{\lambda}{(4\pi)^2}\int d^3\vx_1'd^3\vx_2'\\
 & \times \frac{H(t_1-|\vx_1-\vx_1'|)}{|\vx_1-\vx_1'|} \frac{H(t_2-|\vx_2-\vx_2'|)}{|\vx_2-\vx_2'|}\\
 &\times  \frac{f(t_1-|\vx_1-\vx_1'|,\vx_1',t_2-|\vx_2-\vx_2'|,\vx_2')}{|\vx_1'-\vx_1|}\\
 & \times \psi(t_1-|\vx_1-\vx_1'|,\vx_1',t_2-|\vx_2-\vx_2'|,\vx_2'),
 \end{align*}
-has a unique solution \(\psi\in\mathcal{B}_3\).
+has a unique solution \(\psi\in\mathcal{B}\).
 \end{Thm}
 
 
@@ -676,7 +716,8 @@ There are also results about the closed
 FLRW universe which we omit here, the reader is refered
 to \cite[Thm 4.3]{lienertcurved}.
 We have to introduce some notation before we can 
-present them, in order to do so we follow \cite[sec 3.3]{selfKG}. 
+present them, in order to do so we follow \cite[sec 3.3]{selfKG},
+also see section \ref{sec:KGcurvedspacetime}. 
 
 
 We consider particles on a flat (FLRW) spacetime which is 
@@ -685,42 +726,27 @@ described by the metric
 	ds^2 = a^2(\eta) \left( d\eta^2 - dr^2 - r^2 d \Omega^2 \right),
 \end{equation}
 where $\eta$ denotes conformal time, $d \Omega$ denotes the 
-surface measure on $\mathbb{S}^2$ and $a(\eta)$ is the so-called 
-\textit{scale function}, a continuous function with $a(0) = 0$ 
-and $a(\eta) > 0$ for $\eta >0$. This form makes it obvious that 
-the spacetime is conformally equivalent to a Minkowski half 
-space $\tfrac{1}{2}\M$, with conformal factor $a(\eta)$.
-
+surface measure on $\mathbb{S}^2$ and the scale function 
+$a(\eta)$ is 
+ continuous with $a(0) = 0$ 
+and $a(\eta) > 0$ for $\eta >0$.
 In this spacetime the free wave equation takes the form 
-
 \begin{equation}
-	\left( \Box_g - \xi R \right) \chi = 0,
-	\label{eq:conformalwaveeq}
+	\left( \Box_g - R/6 \right) \chi = 0,
+	\label{eq:conformalbox}
 \end{equation}
-where $R$ denotes the Ricci scalar and in 1+3 dimensions $\xi = \frac{1}{6}$.
+where $R$ denotes the Ricci scalar.
+The retarded and 
+symmetric Greens functions of equation \eqref{eq:conformalbox}
+are given by
 
-In this case, it is well-known that the Green's 
-functions of \eqref{eq:conformalwaveeq} on the flat 
-FLRW spacetime $\mathcal{M}$ can be obtained from those of the 
-usual wave equation on $\tfrac{1}{2}\M$ as follows (using 
-coordinates $x=(\eta,\vx)$ and $x'=(\eta',\vx')$ with 
-$\eta,\eta' \in [0,\infty)$ and $\vx,\vx' \in \R^3$; see 
-\cite{lienertcurved} for a more detailed explanation):
-
-\begin{equation}
-	G_{\mathcal{M}}(x,x') ~=~ \frac{1}{a(\eta)} \frac{1}{a(\eta')} G_{\frac{1}{2}\M}(x,x').
-\end{equation}
-Inserting the well-known expression for the retarded and symmetric 
-Green's functions on $\tfrac{1}{2}\M$ (see \eqref{eq:gretkg} below) 
-yields:
 \begin{align}
 	G_{\mathcal{M}}^\ret(x,x') ~&=~ \frac{1}{4\pi} \frac{1}{a(\eta) a(\eta')} \frac{\delta(\eta - \eta' -|\vx-\vx'|)}{|\vx-\vx'|}\nonumber\\
 G_{\mathcal{M}}^\sym(x,x') ~&=~ \frac{1}{4\pi} \frac{1}{a(\eta) a(\eta')} \delta((\eta-\eta')^2-|\vx-\vx'|^2).
 \end{align}
 
-With this information, we are ready to write down the integral 
-equation on $\mathcal{M}$. The generalization of \eqref{eq:KGtwopartint} 
-to curved spacetimes is straightforward: $\psi$ becomes a scalar 
+The generalization of \eqref{eq:KGtwopartint} 
+to FLRW spacetime is straightforward: $\psi$ becomes a scalar 
 function on $\mathcal{M}\times\mathcal{M}$, one exchanges the 
 Minkowski spacetime volume element with 
 
@@ -736,23 +762,22 @@ equation becomes:
 \begin{align}\notag
   \psi(x,y) = \psi^\free(x,y) +& \lambda \int_{\mathcal{M}\times \mathcal{M}} dV(x) \, dV(y)~G_1^\ret(x,x')G_2^\ret(y,y') \\
   & \times G^\sym(x',y') \psi(x',y').
-	\label{eq:inteqcurved}
 \end{align}
 
 For regular and only weakly singular interaction kernels $K(x,y)$ 
 instead of $G^\sym(x',y')$, the problem of existence and uniqueness 
 of solutions of this equation has been treated in 
 \cite{lienertcurved}:
-\todo{when copying KG results here omit this part here!}
+
 
 \begin{Thm}[Thm 4.1 of \cite{lienertcurved}]
 Let \(T>0\),\(\lambda\in\mathbb{C}\) and 
-\(\mathcal{B}_3:=L^\infty([0,T]^2,L^2(\mathbb{R}^6))\). Furthermore, let \(a:[0,\infty)\rightarrow [0,\infty)\)
+\(\mathcal{B}:=L^\infty([0,T]^2,L^2(\mathbb{R}^6))\). Furthermore, let \(a:[0,\infty)\rightarrow [0,\infty)\)
 be a continuous function with \(a(0)=0\) and 
 \(a(\eta)>0\) for \(\eta>0\), and 
 \(\tilde{K}:([0,\infty)\times \mathbb{R}^{3})^2\rightarrow \mathbb{C}\)
 be bounded. Then for every \(\psi^\free\) with 
-\(a(\eta_1)a(\eta_2)\psi^\free\in \mathcal{B}_3 \),
+\(a(\eta_1)a(\eta_2)\psi^\free\in \mathcal{B} \),
 the respective integral equation on the \(4-\)dimensional 
 flat FLRW universe sith scale function \(a(\eta)\): 
 \begin{align}\label{KG curved bounded}
@@ -766,7 +791,7 @@ flat FLRW universe sith scale function \(a(\eta)\):
   &\quad\times \psi(\eta_1-|\vx_1-\vx_1'|,\vx_1',\eta_2-|\vx_2-\vx_2'|,\vx_2')
 \end{align}
 has a unique solution \(\psi\) with 
-\(a(\eta_1)a(\eta_2)\psi\in \mathcal{B}_3\).
+\(a(\eta_1)a(\eta_2)\psi\in \mathcal{B}\).
 \end{Thm}
 
 \begin{Thm}[Thm 4.2 of \cite{lienertcurved}]
@@ -778,46 +803,34 @@ has a unique solution \(\psi\) with
   \end{equation}
 the integral equation \eqref{KG curved bounded} has a unique solution
 \(\psi\) with 
-\(a(\eta_1)a(\eta_2)\psi\in \mathcal{B}_3\). 
+\(a(\eta_1)a(\eta_2)\psi\in \mathcal{B}\). 
 \end{Thm}
 
 
-
-
-%%%%%%%%%%%%%%%%
-\todo{schreibe überleitung zu KG teil}
-
-
-
-
-
-\section{Singular light cone interactions of scalar particles in 1+3 dimensions}\label{sec:KG lightcones}
+\section{Singular light cone interactions of scalar particles}\label{sec:KG lightcones}
 In this section we prove existence and uniqueness
 of an equation of type \eqref{eq:KGtwopartint},
 subject to the simplifying assumption 
-\eqref{matt simplifying assumption 1}. In contrast to 
+\ref{matt simplifying assumption 1}. In contrast to 
 the previous results of section \ref{sec: direct interation previous} 
 the equation will not be subject to the assumption
-\eqref{matt simplifying assumption 2}. Additionally, we will extend the 
+\ref{matt simplifying assumption 2}. Additionally, we will extend the 
 result to an arbitrary number of particles. This extension 
 is not the only possible one; however, we choose the 
 extension called most promising in \cite{direct_interaction_quantum}.
 In order to justify the cutoff in time, we extend the one-particle 
 result to the FLRW spacetime, where the cutoff appears naturally.
 
-\todo{include changes that Mattias added to the latest version}
-
-
 
 %%%%%
-\subsubsection{Overview}
+\subsection{Overview}
 
 This section is structured as follows. In subsec. \ref{sec:formulation} 
 it is shown how to define the integral equation in a rigorous way 
 (by using the delta distributions to eliminate certain integration 
 variables). To this end, we again consider the equation on the 
 Minkowski half-space (assuming a cutoff in time). Subsection 
-\ref{sec:results} contains our main results: Thm. \ref{thm:boundsKG} 
+\ref{sec:KG results} contains our main results: Thm. \ref{thm:boundsKG} 
 contains explicit bounds for the integral operator in terms of a 
 general weight function of a weighted $L^\infty$ space. Thm. 
 \ref{thm:exponentialg} shows that in the case of massless particles 
@@ -843,8 +856,8 @@ is, we show the equivalent result of \cite{lienertcurved} for
 singular light cone interactions. The respective existence and 
 uniqueness theorem is Thm. \ref{thm:existencecurved}.
 
-Subsection \ref{sec:proofs} contains the proofs.
-\todo{move conclusion section to end of chapter}
+Subsection \ref{sec:KG proofs} contains the proofs.
+
 
 
 %%%%%
@@ -885,7 +898,7 @@ integral equation \eqref{eq:KGtwopartint} on $(\tfrac{1}{2}\M)^2$ becomes:
 \end{equation}
 where $A = A_0 + A_1 + A_2 + A_{12}$ and
 \begin{align}
-(A_0 \psi)(x,y) ~=& \frac{\lambda}{(4\pi)^3} \int_0^{x^0} d {x'}^0 \int_{\mathbb{R}^3} d^3 \vx' \int_0^{y^0} d{y'}^0 \int_{\mathbb{R}^3} \nonumber\\ 
+(A_0 \psi)(x,y) ~=& \frac{\lambda}{(4\pi)^3} \int_0^\infty d {x'}^0 \int_{\mathbb{R}^3} d^3 \vx' \int_0^\infty d{y'}^0 \int_{\mathbb{R}^3} \nonumber\\ 
   &\times \frac{\delta(x^0-{x'}^0-|\vx-\vx'|)}{|\vx-\vx'|}\frac{\delta(y^0-{y'}^0-|\vy-\vy'|)}{|\vy-\vy'|}\notag\\
   &\times\delta((x'-y')^2) \psi(x',y'),\label{eq:a0informal}\\
 (A_1 \psi)(x,y) ~=&  -\frac{\lambda \, m_1}{(4 \pi)^3} \int_0^\infty d{x'}^0 \int d^3 \vx' \int_0^\infty d{y'}^0 \int d^3 \vy'  \nonumber\\
@@ -1090,13 +1103,13 @@ as \eqref{eq:defa0} whose kernel is in $L^1$ but not in $L^2$.
 
 %%%%%
 \subsection{Results}
-\label{sec:results}
+\label{sec:KG results}
 
 This section is structured as follows. Sec.\@ \ref{sec:2part} (which 
 is about the two-particle case) contains the main results: the 
 estimates of the integral operators as well as the theorems about 
-existence and uniqueness of solutions. Sec.\@ \ref{sec:Npart} we 
-extend these results to the $N$-particle case and in Sec.\@ 
+existence and uniqueness of solutions. Sec.\@ \ref{sec:Npart} 
+extends these results to the $N$-particle case and in Sec.\@ 
 \ref{sec:KGcurvedspacetime} we show that a curved spacetime with a 
 Big Bang singularity can provide a natural reason for a cutoff in 
 time.
@@ -1143,7 +1156,7 @@ next task is to find suitable weight functions $g$ such that this
 is actually the case. We begin with the massless case where already 
 an exponential weight function leads to an estimate which remains 
 finite after taking the supremum. The massive case is treated 
-subsequently; it is a little more difficult as all the estimates 
+subsequently; it is a little more difficult since all the estimates 
 for the operators $A_0, A_1, A_2, A_{12}$ have to be finite at 
 the same time. This  requires a different choice of weight 
 function (see Thm.\@ \ref{thm:existence}).
@@ -1306,7 +1319,7 @@ and $y=x_2$. We define
 \end{equation}
 As will be shown below, $\! \,^{(N)}\! A$ can be 
 linearly extended to a bounded operator on the Banach 
-space $\! \,^{(N)}\!\Banach_g$. That space is defined 
+space $\! \,^{(N)}\Banach_g$. That space is defined 
 as the completion of $\mathcal{S}\big( 
   (\tfrac{1}{2}\M)^N\big)$ with respect to the norm
 \begin{equation}
@@ -1316,7 +1329,7 @@ where the function $g$ is defined as before.
 
 Then we take the equation
 \begin{equation}
-	\,^{(N)}\! A ~=~\psi^\free + \! \,^{(N)}\! A \psi.
+	\,^{(N)}\! A ~=~\psi^\free + \! \,^{(N)}\! A \psi,
 \label{eq:npartintabstract}
 \end{equation}
 to be the rigorous version of \eqref{eq:npartint} on 
@@ -1328,17 +1341,20 @@ the $N$-particle existence and uniqueness theorem.
 %%%%%
 \begin{Thm}[Existence of dynamics for $N$ particles.]
 	\label{thm:Npart}~\\
-		For any $\alpha > 0$, let $g(t) = (1+\alpha t^2)e^{\alpha t^2/2}$. Then the operator $\! \,^{(N)}\! A$ can be linearly extended to a bounded operator on $\! \,^{(N)}\!\Banach_g$ with norm
+    For any $\alpha > 0$, let $g(t) = (1+\alpha t^2)
+    e^{\alpha t^2/2}$. Then the operator $\! \,^{(N)}\! A$ 
+    can be linearly extended to a bounded operator on 
+    $\! \,^{(N)} \Banach_g$ with norm
 	\begin{equation}
     \|\! \,^{(N)}\! A\| \leq\frac{\lambda}{8\pi \alpha}\! \sum_{i,j =1,...,N; \, i<j} \! 
     \left( \frac{1}{4} \!+\! \frac{5(m_i^2 + m_j^2)}{2} \frac{1}{\alpha} 
     \!+ \!\frac{m_i^2 \, m_j^2}{10} \frac{1}{\alpha^2} \right).
 	\end{equation}
-  If $\alpha > 0$ is such that this expression is 
+  If $\alpha$ is such that this expression is 
   strictly smaller than one, the integral equation 
   \eqref{eq:npartintabstract} has a unique solution 
-  $\psi \in \! \,^{(N)}\!\Banach_g$ for every 
-  $\psi^\free \in \! \,^{(N)}\!\Banach_g$.
+  $\psi \in \!\!\! \,^{(N)}\Banach_g$ for every 
+  $\psi^\free \in \!\!\! \,^{(N)}\Banach_g$.
 \end{Thm}
 
 The proof follows straightforwardly from that of 
@@ -1362,8 +1378,8 @@ $k \notin \{i,j\}$.
   the case for other works. For example, the Volterra 
   iterations used in \cite{mtve} become increasingly 
   complicated with increasing particle number $N$. For 
-  Dirac particles,  a similar technique as ours was 
-  used in \cite{selfDirac}. However, as the Dirac 
+  Dirac particles,  a similar technique is 
+  used section \ref{sec:direct dirac}. However, as the Dirac 
   Green's functions contain distributional derivatives, 
   one has to control weak derivatives of the solutions, 
   and the number of such derivatives depends on $N$. 
@@ -1377,7 +1393,8 @@ $k \notin \{i,j\}$.
 \subsubsection{On the possible origin of a cutoff in 
 time}
 \label{sec:KGcurvedspacetime}
-
+\todo{read the references on how to find the Greens 
+functions and dirac and KG equations on curved spacetime}
 So far, we have assumed a cutoff in time. In the way 
 this has been treated so far, this cutoff breaks the 
 manifest Poincar\'e invariance of our integral 
@@ -1397,11 +1414,10 @@ which, in absence of interactions, obey the conformally
 invariant wave equation on a curved spacetime 
 $\mathcal{M}$ with metric g,
 \begin{equation}
-	\left( \Box_g - \xi R \right) \chi = 0,
+	\left( \Box_g - R/6 \right) \chi = 0,
 	\label{eq:conformalwaveeq}
 \end{equation}
-where $R$ denotes the Ricci scalar and in 1+3 
-dimensions $\xi = \frac{1}{6}$.
+where $R$ denotes the Ricci scalar.
 
 We consider these particles on a flat 
 Friedman-Lema\^itre-Robertson-Walker (FLRW) spacetime 
@@ -1424,11 +1440,19 @@ FLRW spacetime $\mathcal{M}$ can be obtained from
 those of the usual wave equation on $\tfrac{1}{2}\M$ 
 as follows (using coordinates $x=(\eta,\vx)$ and 
 $x'=(\eta',\vx')$ with $\eta,\eta' \in [0,\infty)$ 
-and $\vx,\vx' \in \R^3$; see \cite{lienertcurved} for 
-a more detailed explanation):
+and $\vx,\vx' \in \R^3$):
 \begin{equation}
-	G_{\mathcal{M}}(x,x') ~=~ \frac{1}{a(\eta)} \frac{1}{a(\eta')} G_{\frac{1}{2}\M}(x,x').
+	G_{\mathcal{M}}(x,x') ~=~ \frac{1}{a(\eta)} \frac{1}{a(\eta')} G_{\frac{1}{2}\M}(x,x'),
 \end{equation}
+which can be derived from the transformation behavior of 
+the Ricci scalar 
+\begin{equation}
+  R_{\mathcal{M}_2}=a^{-2}R_{\mathcal{M}_1}-6a^{-3}\Box_{\mathcal{M}_1} a
+\end{equation}
+for general spacetimes \(\mathcal{M}_2\) and \(\mathcal{M}_1\) connected by a 
+conformal transformation; 
+see \cite{lienertcurved,john1987hadamard} for 
+more detailed explanations.
 Inserting the well-known expression for the retarded 
 and symmetric Green's functions on $\tfrac{1}{2}\M$ 
 (see \eqref{eq:gretkg}) yields:
@@ -1454,40 +1478,34 @@ relevant integral equation becomes:
 + \lambda \int_{\mathcal{M}\times \mathcal{M}} \!\!
 &dV(x) dV(y)~G_1^\ret(x,x')G_2^\ret(y,y')\\
 &\times  G^\sym(x',y') \psi(x',y'),
-\label{eq:inteqcurved}
+\label{eq:KGinteqcurved}
 \end{align}
-For regular and only weakly singular interaction 
-kernels $K(x,y)$ instead of $G^\sym(x',y')$, the 
-problem of existence and uniqueness of solutions of 
-this equation has been treated in \cite{lienertcurved} 
-for flat, open and closed FLRW universes; the case of 
-Dirac particles and smooth interaction kernels has 
-been addressed in \cite{selfDirac}. For flat FLRW 
+For flat FLRW 
 universes and scalar particles, we here extend 
 \cite{lienertcurved} to the physically most interesting 
 and mathematically challenging case 
 $K(x,y)=G^\sym(x,y)$.
 
-We now formulate \eqref{eq:inteqcurved} explicitly. 
+We now formulate \eqref{eq:KGinteqcurved} explicitly. 
 The spacetime volume element is given by:
 \begin{equation}
 	dV(x) = a^4(\eta) \, d\eta \, d^3 \vx.
 \end{equation}
-With this information, \eqref{eq:inteqcurved} becomes:
+With this information, \eqref{eq:KGinteqcurved} becomes:
 \begin{align}
   \psi(\eta_1,&\vx_1,\eta_2,\vx_2) = \psi^\free(\eta_1,\vx_1,\eta_2,\vx_2) + \frac{\lambda}{(4\pi)^3} \frac{1}{a(\eta_1) a(\eta_2)} \notag\\
 &\int_0^{\eta_1} d \eta_1' \int d^3 \vx_1' \int_0^{\eta_2} d \eta_2' \int d^3  \vx_2' a^2(\eta_1') a^2(\eta_2')\nonumber\\
 &\times ~\frac{\delta(\eta_1-\eta_1' - |\vx_1-\vx_1'|)}{|\vx_1-\vx_1'|}\frac{\delta(\eta_2-\eta_2' - |\vx_2-\vx_2'|)}{|\vx_2-\vx_2'|}\nonumber\\
 &\times ~\delta((\eta_1'-\eta_2')^2-|\vx_1'-\vx_2'|^2) \psi(\eta_1',\vx_1',\eta_2',\vx_2').
-\label{eq:inteqcurvedexplicit}
+\label{eq:KGinteqcurvedexplicit}
 \end{align}
 Now let
 \begin{equation}
 	\chi(\eta_1,\vx_1,\eta_2) = a(\eta_1) a(\eta_2) \psi(\eta_1,\vx_1,\eta_2).
 \end{equation}
 and $\chi^\free(\eta_1,\vx_1,\eta_2) = a(\eta_1) a(\eta_2) \psi^\free(\eta_1,\vx_1,\eta_2)$.
-Then \eqref{eq:inteqcurvedexplicit} is equivalent to:
-\begin{align}\label{eq:inteqcurvedexplicitchi}
+Then \eqref{eq:KGinteqcurvedexplicit} is equivalent to:
+\begin{align}\label{eq:KGinteqcurvedexplicitchi}
 	\chi(\eta_1,\vx_1&,\eta_2,\vx_2)\! =\! \chi^\free(\eta_1,\vx_1,\eta_2,\vx_2) + \frac{\lambda}{(4\pi)^3} \int_0^{\eta_1} d \eta_1' \int d^3 \vx_1' \\
 &\times \int_0^{\eta_2} \!\!d \eta_2' \int d^3\!  \vx_2' \frac{\delta(\eta_1\!-\!\eta_1'\! -\! |\vx_1\!-\!\vx_1'|)}{|\vx_1\!-\!\vx_1'|}\frac{\delta(\eta_2\!-\!\eta_2' \!-\! |\vx_2\!-\!\vx_2'|)}{|\vx_2\!-\!\vx_2'|}\nonumber\\
 &\times  a(\eta_1') a(\eta_2') \delta((\eta_1'\!-\!\eta_2')^2-|\vx_1'-\vx_2'|^2) \chi(\eta_1',\vx_1',\eta_2',\vx_2').\notag
@@ -1499,7 +1517,7 @@ only difference is the additional appearance of the
 factor $a(\eta_1') a(\eta_2')$ inside the integrals.
 
 Going through the same steps as for \eqref{eq:defa0} 
-before, \eqref{eq:inteqcurvedexplicitchi} can be 
+before, \eqref{eq:KGinteqcurvedexplicitchi} can be 
 defined on test functions $\chi \in \mathcal{S}$ by
 \begin{equation}
 	\chi ~=~ \chi^\free + \widetilde{A}_0 \chi,
@@ -1597,7 +1615,7 @@ The proof can be found in Sec.\@
 
 %%%%%
 \subsection{Proofs}
-\label{sec:proofs}
+\label{sec:KG proofs}
 
 %%%%%
 \subsubsection{Proof of Theorem \ref{thm:boundsKG}} 
@@ -2687,8 +2705,6 @@ which yields \eqref{eq:a0tildebound}. The rest of the claim follows
 as before.
 
 
-\todo{überleitung zu Dirac}
-
 
 
 \section{Directly Interacting Dirac Particles}\label{sec:direct dirac}
@@ -2711,7 +2727,7 @@ we start with its constituents.
 
 The Greens function of Diracs equation is given by 
 \begin{equation}
-	S(x)= \overline{D}G(x),
+	\mathscr{S}(x)= \overline{D}G(x),
 \end{equation}
 where \(\overline{D} = (-i \gamma^\mu \partial_\mu - m)\).
 This can be verified directly by computing 
@@ -2759,16 +2775,25 @@ Subsec.
 %%%
 \subsubsection{Definition of the integral operator on test functions} \label{sec:aontestfunctions}
 
-In this section, we show how the integral operator in \eqref{eq:twopartintgeneral} can be defined rigorously on test functions.
-We consider the integral equation \eqref{eq:twopartintgeneral} on the Minkowski half space $\frac{1}{2}\M := [0,\infty) \times \R^3$ equipped with the metric $g = \text{diag}(1,-1,-1,-1)$. We focus on retarded Green's functions of the Dirac equation, $S^\ret(x) = \overline{D} G^\ret(x)$ where $G^\ret(x)$ is the retarded Green's function of the KG equation. Explicitly,
+In this section, we show how the integral operator in 
+\eqref{eq:twopartintgeneral} can be defined rigorously on 
+test functions.
+We consider the integral equation \eqref{eq:twopartintgeneral} 
+on the Minkowski half space $\frac{1}{2}\M := [0,\infty) \times 
+\R^3$ equipped with the same sign convention as for 
+all of Minkowski space.
+We focus on retarded Green's functions of the Dirac equation, 
+$\mathscr{S}^\ret(x) = \overline{D} G^\ret(x)$ where 
+$G^\ret(x)$ is the retarded Green's function of the KG equation. 
+Explicitly,
 \begin{equation}
 	G^\ret(x) = \frac{1}{4\pi} \frac{\delta(x^0-|\vx|)}{|\vx|} - \frac{m}{4\pi} H(x^0-|\vx|) \frac{J_1(m \sqrt{x^2})}{\sqrt{x^2}}
 \end{equation}
-where $H$ denotes the Heaviside function, $J_1$ a Bessel function and $x^2 = (x^0)^2 - |\vx|^2$.
+where $H$ denotes the Heaviside function, $J_1$ a Bessel function.
 
 In order to define the meaning of the Green's functions as distributions, we introduce a suitable space of test functions:
 \begin{equation}
-	\mathscr{D} = \mathscr{S}\big( (\tfrac{1}{2}\M)^2,\CC^{16} \big),
+	\mathscr{D} = \mathcal{S}\big( (\tfrac{1}{2}\M)^2,\CC^{16} \big),
 \end{equation}
 the space of 16-component Schwarz functions on $(\tfrac{1}{2}\M)^2$.
 For a smooth interaction kernel $K$ and a test function $\psi \in \mathscr{D}$, we then understand \eqref{eq:twopartintgeneral} by formally integrating by parts so that all partial derivatives act on $K \psi$:
@@ -2826,7 +2851,8 @@ is defined by letting the respective operator $A^{(k)}(m)$, given
 below, act on the $j$-th 4-variable and spin index of 
 $\psi(x_1,x_2),~ \psi \in \mathscr{D}$.
 \footnote{We deliberately avoid using tensor products here, as 
-the tensor product of Banach spaces is an ambiguous notion.}
+the completion of an algebraic tensor product of Banach spaces depends strongly 
+on which completion is taken.}
 \begin{align}
 	\left(A^{(1)}(m) \,\psi \right)(x) ~&=~ \frac{1}{4\pi} \int_{B_{x^0}(0)} \! \!d^3 \vy ~ \frac{1}{|\vy|} \psi(x+y)|_{y^0 = -|\vy|}, \label{eq:a1}\\
 	\left(A^{(2)}(m) \,\psi\right)(x) ~&=~ -\frac{m}{4\pi} \int_{-x^0}^0 dy^0 \int_{B_{|y^0|}(0)} d^3 \vy ~ \frac{J_1(m\sqrt{y^2})}{\sqrt{y^2}} \psi(x+y),\label{eq:a2}\\
@@ -2894,12 +2920,12 @@ This expression, however, contains $\partial_t^2 f$. For this to make sense, we 
 %%%
 \paragraph{A Banach space adapted to our integral equation.} Considering the form of the integral operator $A$ \eqref{eq:defa}, one can see that it is sufficient that the derivatives $D_1 \psi$, $D_2 \psi$ and $D_1 D_2 \psi$ exist in a weak sense. As we want to prove later that $A$ maps the Banach space to itself, we have to estimate, among other things, a suitable norm of $D_1 (A \psi)$. If $\psi \in \mathscr{D}$ is a test function and $K$ is smooth, we have
 \begin{align}\nonumber
-  D_1 (A \psi)(x_1,x_2) &= D_1 \int d^4 x_1' \, d^4 x_2' \, S_1(x_1-x_2') S_2(x_2-x_2')\\
+  D_1 (A \psi)(x_1,x_2) &= D_1 \int d^4 x_1' \, d^4 x_2' \, \mathscr{S}_1(x_1-x_2') \mathscr{S}_2(x_2-x_2')\\
   &\hspace{1cm}\times K(x_1',x_2') \psi(x_1',x_2')\nonumber\\
-	&= \int d^4 x_2' \, S_2(x_2-x_2') K(x_1,x_2') \psi(x_1,x_2')
+	&= \int d^4 x_2' \, \mathscr{S}_2(x_2-x_2') K(x_1,x_2') \psi(x_1,x_2')
 \label{eq:d1apsi}
 \end{align}
-where we have used $D_1 S_1(x_1-x_1') = \delta^{(4)}(x_1-x_1')$. The crucial point now is that \eqref{eq:d1apsi} does not contain higher-order derivatives such as $D_1^2 \psi$. The same holds true also for $D_2 (A \psi)$ and $D_1 D_2 (A\psi)$. Thus, the problem of the toy example \eqref{eq:modelinteq} is avoided.
+where we have used $D_1 \mathscr{S}_1(x_1-x_1') = \delta^{(4)}(x_1-x_1')$. The crucial point now is that \eqref{eq:d1apsi} does not contain higher-order derivatives such as $D_1^2 \psi$. The same holds true also for $D_2 (A \psi)$ and $D_1 D_2 (A\psi)$. Thus, the problem of the toy example \eqref{eq:modelinteq} is avoided.
 
 Together with the previous considerations about $\Banach_0$ \eqref{eq:banach0}, we are led to define the Banach space $\Banach_g$ as the completion of $\mathscr{D}$ with respect to the following Sobolev-type norm:
 \begin{equation}
@@ -3017,7 +3043,7 @@ Furthermore, if $\psi^\free$ is differentiable, \eqref{eq:twopartintgeneral} yie
 
 %%%%%%%%%
 \subsubsection{Results for a FLRW universe with a Big Bang singularity} \label{sec:flrw}
-
+\todo{read sources on how to get the greens function here and how the dirac equation looks like on curved spacetime}
 In this section we show that a Big Bang singularity provides a 
 natural and covariant justification for the cutoff at $t = 0$. As 
 this justification is our main goal, we make the point at the 
@@ -3105,7 +3131,7 @@ spacetime by $G(x,x')=S(x-x')$ and using coordinates $\eta, \vx$
 we thus obtain the Green's functions $\widetilde{G}$ on flat FLRW 
 spacetimes as:
 \begin{equation}
-	\widetilde{G}(\eta,\vx; \eta', \vx') = a^{-3/2}(\eta) a^{-3/2}(\eta')\, S(\eta-\eta', \vx-\vx').
+	\widetilde{G}(\eta,\vx; \eta', \vx') = a^{-3/2}(\eta) a^{-3/2}(\eta')\, \mathscr{S}(\eta-\eta', \vx-\vx').
 \end{equation}
 With this result, we can write out in detail the multi-time integral 
 equation \eqref{eq:inteqcurved} for massless Dirac particles on flat 
@@ -3113,8 +3139,8 @@ FLRW spacetimes (using retarded Green's functions):
 \begin{align}\nonumber
   \psi(\eta_1,\vx_1,\eta_2,\vx_2) =& \psi^\free(\eta_1,\vx_1,\eta_2,\vx_2) + a^{-3/2}(\eta_1) a^{-3/2}(\eta_2) \\
   &\times \int_0^\infty d \eta_1' \int d^3 \vx_1' \int_0^\infty d \eta_2' \int d^3 \vx_2' \nonumber\\
-  &\times a^{5/2}(\eta_1') a^{5/2}(\eta_2') \, S_1^\ret(\eta_1-\eta_1', \vx_1-\vx_1')\\
-  &\times S_2^\ret(\eta_2-\eta_2',\vx_2-\vx_2') \, (K \psi)(\eta_1',\vx_1',\eta_2',\vx_2').
+  &\times a^{5/2}(\eta_1') a^{5/2}(\eta_2') \, \mathscr{S}_1^\ret(\eta_1-\eta_1', \vx_1-\vx_1')\\
+  &\times \mathscr{S}_2^\ret(\eta_2-\eta_2',\vx_2-\vx_2') \, (K \psi)(\eta_1',\vx_1',\eta_2',\vx_2').
 \end{align}
 Note that we can regard $\psi$ as a map 
 $\psi : (\frac{1}{2}\M)^2 \rightarrow \CC^{16}$ as the coordinates 
@@ -3145,8 +3171,8 @@ Considering \eqref{eq:ksingularity}, our integral equation becomes:
 \begin{align}\nonumber
   \psi(\eta_1,\vx_1,\eta_2,\vx_2) &= \psi^\free(\eta_1,\vx_1,\eta_2,\vx_2) + a^{-3/2}(\eta_1) a^{-3/2}(\eta_2) \int_0^\infty d \eta_1' \\
   &\times \int d^3 \vx_1' \int_0^\infty d \eta_2' \int d^3 \vx_2'\nonumber\\\nonumber
-  &\times a^{5/2-\alpha}(\eta_1') a^{5/2-\alpha}(\eta_2') \, S_1^\ret(\eta_1-\eta_1', \vx_1-\vx_1')\\
-  &\times  S_2^\ret(\eta_2-\eta_2',\vx_2-\vx_2') \, (\widetilde{K} \psi)(\eta_1',\vx_1',\eta_2',\vx_2').
+  &\times a^{5/2-\alpha}(\eta_1') a^{5/2-\alpha}(\eta_2') \, \mathscr{S}_1^\ret(\eta_1-\eta_1', \vx_1-\vx_1')\\
+  &\times  \mathscr{S}_2^\ret(\eta_2-\eta_2',\vx_2-\vx_2') \, (\widetilde{K} \psi)(\eta_1',\vx_1',\eta_2',\vx_2').
 \label{eq:inteqcurvedexplicit}
 \end{align}
 Apart from the scale factors which produce a certain singularity of 
@@ -3180,7 +3206,7 @@ following result.
 	\begin{align}\nonumber
   \chi(\eta_1,\vx_1,\eta_2,\vx_2) =& \chi^\free(\eta_1,\vx_1,\eta_2,\vx_2) +\int_0^\infty d \eta_1' \int d^3 \vx_1 \int_0^\infty d \eta_2'\\
   &\times~a^{1-\alpha}(\eta_1') a^{1-\alpha}(\eta_2') \nonumber\\\nonumber
-  &\times  \, S_1^\ret(\eta_1-\eta_1', \vx_1-\vx_1') S_2^\ret(\eta_2-\eta_2',\vx_2-\vx_2') \\
+  &\times  \, \mathscr{S}_1^\ret(\eta_1-\eta_1', \vx_1-\vx_1') \mathscr{S}_2^\ret(\eta_2-\eta_2',\vx_2-\vx_2') \\
   &\times (\widetilde{K} \chi)(\eta_1',\vx_1',\eta_2',\vx_2').
 \label{eq:inteqcurvedexplicit2}
 \end{align}
@@ -3470,10 +3496,10 @@ Recalling the definition of $[\psi]^2(x_1^0,x_2^0)$, Eq.\
 Next, we turn to \eqref{eq:d1apsiestimate}. We start from the initial 
 form of the integral equation \eqref{eq:twopartintgeneral} and use that as a 
 distributional identity on test functions $\psi \in \mathscr{D}_T$, 
-we have $D_1 S^\ret(x_1-x_1') = \delta^{(4)}(x_1-x_1')$. Thus, we 
+we have $D_1 \mathscr{S}^\ret(x_1-x_1') = \delta^{(4)}(x_1-x_1')$. Thus, we 
 obtain:
 \begin{equation}
-	(D_1 A \psi)(x_1,x_2) = \int_{\tfrac{1}{2} \M} d^4 x_2' ~S_2^\ret(x_2-x_2') (K \psi)(x_1,x_2').
+	(D_1 A \psi)(x_1,x_2) = \int_{\tfrac{1}{2} \M} d^4 x_2' ~\mathscr{S}_2^\ret(x_2-x_2') (K \psi)(x_1,x_2').
 \end{equation}
 Proceeding similarly as for \eqref{eq:defa} we rewrite this as:
 \begin{equation}
@@ -3499,7 +3525,7 @@ The estimate \eqref{eq:d2apsiestimate} follows in an analogous way.
 
 Finally, for \eqref{eq:d1d2apsiestimate} we also start from the 
 initial integral equation \eqref{eq:twopartintgeneral} and use 
-$D_i S_i^\ret(x_i-x_i') = \delta^{(4)}(x_i-x_i')$. This results in:
+$D_i \mathscr{S}_i^\ret(x_i-x_i') = \delta^{(4)}(x_i-x_i')$. This results in:
 \begin{equation}
 	D_1 D_2 (A \psi) = K \psi.
 \end{equation}
@@ -3750,11 +3776,9 @@ a weak sense.
 
 
 
-\chapter[Quantum Field Theoretic Approach to Interactions][Interaction in QFT]{Quantum Field Theoretic Approach to Interactions} \label{sec:QFT}
+\chapter[Quantum Field Theoretic Approach to Interactions][Interaction in QFT]{Quantum Field Theoretic Approach to Interactions} \label{chap:QFT}
 
 \section{Motivation}\label{sec: mot QED}
-\todo{complete random assortment}
-\todo{arrange random assortment into something coherent}
 
 In this chapter we will turn our attention to the 
 more widely accepted way of 
@@ -4092,15 +4116,16 @@ For any \(x\in \Sigma\) restricting the
 i_\gamma(d^4x)=\slashed{n}(x)i_n(d^4x)
 = \left(\gamma^0-\sum_{\mu=1}^3 \gamma^\mu 
 \frac{\partial t_\Sigma (\vec{x})}{\partial x^\mu}\right) d^3x
-=:\Gamma(\vec{x})d^3x.
+%=:\Gamma(\vec{x})d^3x.
 \end{equation}
 Being able to write a Poincaré covariant measure on Cauchy sufaces we 
 may introduce the scalar product 
 \begin{equation}
   \phi,\psi \mapsto \int_{\Sigma} \overline{\phi}(x) i_{\gamma}(d^4\gamma) \psi(x)
-  =:\langle \phi,\psi\rangle.
+  =:\langle \phi,\psi\rangle
 \end{equation}
-which is used to define 
+and \(\overline{\phi}=\phi^\dagger\gamma^0\).
+with respect to this salar product we define 
 \(\mathcal{H}_{\Sigma}=L^2(\Sigma, \mathbb{C}^4)\).
 \end{Def}
 
@@ -4109,8 +4134,6 @@ one-particle evolution operator for each pair of Cauchy surfaces \(\Sigma, \Sigm
 \begin{equation}
 U_{\Sigma',\Sigma}:\mathcal{H}_\Sigma \rightarrow \mathcal{H}_{\Sigma'},
 \end{equation}
-\todo{check afterwards whether  it's nicer to include the theorem 
-about existence of U}
 
 Using this covariant replacement of the standard Hilbert-space we 
 repeat the Fock space construction of section \ref{sec: mot QED} 
@@ -4237,22 +4260,22 @@ Let \(A\in\mathcal{V}\) be a four-potential and and \(\Sigma\)
 a Cauchy surface.
 
 \begin{enumerate}[label=\alph*)]
-\item Let \((S,\Lambda)\in \mathbb{C}^{4\times 4}\times \mathrm{SO}^{\uparrow}(1,3)\)
+\item Let \((\mathfrak{s},\Lambda)\in \mathbb{C}^{4\times 4}\times \mathrm{SO}^{\uparrow}(1,3)\)
 be an orthochronous Lorentz transform, i.e. the tuple fulfills
 \(\Lambda^{\mu}_{\, \sigma}g_{\mu \nu}\Lambda^\nu_{\, \tau}=g_{\sigma, \tau}\) 
-and \(\quad \Lambda^\mu_{\, \nu}\gamma^\nu = S^{-1} \gamma^\mu S\) 
-and acts on wavefunctions as \(\psi\mapsto S\psi(\Lambda^{-1}\cdot)\) (see sec. 2.3 of \cite{ivp1}). 
+and \(\quad \Lambda^\mu_{\, \nu}\gamma^\nu = \mathfrak{s}^{-1} \gamma^\mu \mathfrak{s}\) 
+and acts on wavefunctions as \(\psi\mapsto \mathfrak{s}\psi(\Lambda^{-1}\cdot)\) (see sec. 2.3 of \cite{ivp1}). 
 Then we have
 \begin{equation}
-V\in C_{\Sigma}(A) \iff (S,\Lambda)V \in C_{\Lambda \Sigma}(\Lambda A (\Lambda^{-1}\cdot)).
+V\in C_{\Sigma}(A) \iff (\mathfrak{s},\Lambda)V \in C_{\Lambda \Sigma}(\Lambda A (\Lambda^{-1}\cdot)).
 \end{equation}
-\item Let \(A'=A+d\Gamma\) be the gauge transformed potential, 
-for some \(\Gamma \in C_c^\infty(\mathbb{R}^4,\mathbb{R})\). Then
+\item Let \(A'=A+d\zeta\) be the gauge transformed potential, 
+for some \(\zeta \in C_c^\infty(\mathbb{R}^4,\mathbb{R})\). Then
 the gauge transformation acts on wavefunctions as 
-\(e^{-i\Gamma}:\mathcal{H}_{\Sigma}\righttoleftarrow,\psi\mapsto e^{-i\Gamma}\psi\)
+\(e^{-i\zeta}:\mathcal{H}_{\Sigma}\righttoleftarrow,\psi\mapsto e^{-i\zeta}\psi\)
 and one obtains 
 \begin{equation}
-V\in C_{\Sigma}(A) \iff e^{-i\Gamma}V \in C_{\Sigma}(A+d\Gamma).
+V\in C_{\Sigma}(A) \iff e^{-i\zeta}V \in C_{\Sigma}(A+d\zeta).
 \end{equation}
 \end{enumerate}
 \end{Thm}
@@ -6930,7 +6953,7 @@ Pick the basis \((\varphi_{k})_{k\in\mathbb{N}}\) and
 \((\varphi_{-k})_{k\in\mathbb{N}}\) of 
 \(\mathcal{H}^+\) and \(\mathcal{H}^-\) respectively 
 such that \(\alpha\) is a finite linear combination of 
-the form \todo{is \(\mathcal{F}^0\) really necessary?}
+the form 
 \begin{equation}
 \alpha=\sum_{\scaleto{\begin{matrix}L,C\subset \mathbb{N}\\|L|=m,|C|=p\end{matrix}}{15pt}}  
   \hspace{-0.5cm}\alpha_{L,C} \prod_{l=1}^m a^*(\varphi_{L_l})\prod_{k=1}^p a(\varphi_{-C_k})\Omega.
@@ -7374,7 +7397,7 @@ between a Hadamard state and an
 \eqref{wurm A} to  \eqref{wurm E} of the appendix.
 \end{Remark}
 
-\subsection{Summary and Conclusions}
+\section{Summary and Conclusions}
 
 In the third chapter of this thesis we worked on a quantum 
 field theoretic formulation of electromagnetic interactions.
@@ -7402,8 +7425,8 @@ one-particle scattering operator that is analytic in the
 external field and gave a compact explicit fomula for 
 weak fields. Finally we gave theorems on how 
 \(I_2-\)almost projectors representing the state 
-of the fermion field and related to the approach we 
-are following here compares to the concept of Hadamard 
+of the fermion field related to the approach we 
+are following here compare to the concept of Hadamard 
 state popular in the algebraic formulation of QFT.
 
 I hope that in the near future the construction of 
@@ -7445,7 +7468,7 @@ are Hilbert-Schmidt operators. This is important
 for the geometric construction carried out in 
 chapter \ref{chapter geometery}. 
 
-Since this section is heavily inspired from \cite{ivp0}, we need
+Since this section is heavily inspired by \cite{ivp0}, we need
 to introduce some notation from this paper. 
 \begin{Def}
 Let \(A\in\mathcal{V}\), we define the the integral operator
@@ -7461,11 +7484,14 @@ Z^A=-i e\gamma^0 \gamma^\alpha \hat{A}_\alpha,\\
 \text{and } E(p):=\sqrt{m^2+|p|^2}.
 \end{align}
 
-We introduce the standard polarisation of \(\mathcal{H}\) for the free Dirac 
-equation\todo{think of some more intuitive notation for the projector.}
+We introduce the projectors of the standard polarisation 
+of \(\mathcal{H}\) in terms of the hamiltonian of 
+the free Dirac equation
 \begin{align}
-P^-:=1_{\mathrm{spec}(H^0)<0}, \quad P^+=1-P^-.
+P^-:=1_{\mathrm{spec}(H^0)<0}, \quad P^+=1-P^-,
 \end{align}
+as the projectors onto the negative, positive energy 
+subspace respectively.
 
 Lastly we introduce the partial derivative in 
 the direction of any four-potential \(F\) of an operator valued 
@@ -8144,7 +8170,7 @@ In this section we give prove of the Poincaré's lemma
 in infinite dimensions used in section \ref{chapter geometery}.
 First recall the lemma itself.
 
-\begin{Lemma}[Poincaré]\label{lem poincare}
+\begin{Lemma}[Poincaré]
   Let \(\omega\in \Omega^p(\mathcal{V})\) for 
   \(p\in\mathbb{N}\) be closed, i.e. \(d \omega =0\). 
   Then \(\omega\) is also exact, more precisely we have
@@ -8164,7 +8190,7 @@ First recall the lemma itself.
    \end{align}
   \end{Lemma}
   \begin{proof}
-    \todo{put proof into appendix}
+
   Pick some \(\omega \in \Omega^p(\mathcal{V})\).
   We will first show the more general formula 
   \begin{equation}\label{poincare more general}
@@ -8581,7 +8607,7 @@ exactly one choice of operator product \(\prod T\).
 So returning to our Operators, we found the number \(\#K(m_1,m_2)\) it is
 
 \begin{equation}\label{combinatorics binomial sum}
-\#K(m_1,m_2) =-\sum_{g=\max(m_1,m_2)}^{m_1+m_2} \frac{(-1)^g}{g} \binom{g}{(m_1+m_2-g) \ (g-m_1) \ (g - m_2)},
+\#K(m_1,m_2) =-\hspace{-0.9cm}\sum_{g=\max(m_1,m_2)}^{m_1+m_2} \frac{(-1)^g}{g} \binom{g}{(m_1+m_2-g) \ (g-m_1) \ (g - m_2)},
 \end{equation}
 where the total minus sign comes from the total minus sign in front of \eqref{combinatorics total commutator}
 with respect to \eqref{T_n recursive}. 
@@ -8880,7 +8906,7 @@ S= e^{\sum_{l\in\mathbb{N}} \frac{C_{l}}{l!}}
  e^{\sum_{l\in\mathbb{N}} \frac{\mathrm\Gamma_{l}}{l!}}.
 \end{equation}
 \end{Conj}
-\textbf{Proof:} We plug conjecture \ref{Corollary T_n by G's and C's} into the defining Series for the \(T_n\)s
+\textbf{Motivation:} We plug conjecture \ref{Corollary T_n by G's and C's} into the defining Series for the \(T_n\)s
 giving
 
 \begin{align}

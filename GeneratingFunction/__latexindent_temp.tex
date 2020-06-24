@@ -67,7 +67,7 @@ we introduce the following abbreviations
   \lambda&:=\sqrt{m^2-\overline{q^2}+\overline{q}^2}.
 \end{align}
 For the following calculations we need 
-\(\text{Re}(\lambda),-\text{Re}(\xi^2)>0\). 
+\(\text{Re}(\lambda),-\text{Re}(\xi^2)\ge 0\). 
 We then arrive at 
 \begin{align}
   G=\frac{i}{\Gamma(2n)}E_z\Bigg[\int_{\mathbb{R}^+}dt ~t^{2n-1}\bigg(\frac{\pi}{t}\bigg)^{d/2} 
@@ -86,9 +86,27 @@ for the
 In the limit \(\xi^2\rightarrow 0\) one should 
 use the asymptotic behavior of \(K\) according to
 \begin{equation}
-K_\nu(z)\approx \frac{\Gamma(\nu)}{2} (z/2)^{-\nu} \quad \text{for Re}(\nu)>0, \text{ and }  
+K_\nu(z)\approx \frac{\Gamma(\nu)}{2} (z/2)^{-\nu} \quad \text{for Re}(\nu)>0, \text{ and } z\rightarrow 0 
 \end{equation}
 to recover the case we discussed the last time.
+
+More precisly, we use the series expression for \(\nu\in\mathbb{N}_0\):
+\begin{align}
+  K_\nu(z)=\frac{1}{2}(z/2)^{-\nu}\sum_{k=0}^{\nu-1}\frac{(\nu-k-1)!}{k!}(-z^2/4)^k
+  +(-1)^{\nu+1}\ln(z/2)I_{\nu}(z)\\
+  +(-1)^\nu \frac{1}{2}(z/2)^\nu \sum_{k=0}^\infty (\psi(k+1)+\psi(\nu+k+1))\frac{(z^2/4)^k}{k!(\nu+k)!}\\
+  =\frac{1}{2}(z/2)^{-\nu}\sum_{k=0}^{\nu-1}\frac{(\nu-k-1)!}{k!}(-z^2/4)^k\\
+  +(-1)^\nu \frac{1}{2}(z/2)^\nu \sum_{k=0}^\infty (\psi(k+1)+\psi(\nu+k+1)-\ln(z^2/4))\frac{(z^2/4)^k}{k!(\nu+k)!}.
+\end{align}
+Plugging this into the expression for \(G\)
+we find
+\begin{align}
+  G=\frac{i \pi^{d/2}}{\Gamma(2n)} E_z\Bigg[e^{-i\xi \overline{q}}2^{d-4n}\lambda^{d-4n}\sum_{k=0}^{2n-d/2-1}\frac{(2n-d/2-k-1)!}{k!}(\lambda^2\xi^2/4)^k\\
+   +e^{-i\xi\overline{q}}(\xi^2)^{2n-d/2} \sum_{k=0}^\infty (\psi(k+1)+\psi(2n-d/2+k+1)-\ln(-\lambda^2 \xi^2/4))\frac{(-\lambda^2\xi^2/4)^k}{k!(2n-d/2+k)!} \Bigg].
+\end{align}
+After taking at most \(2n\) derivatives with
+resp
+
 
 \end{document}
 

@@ -5,49 +5,48 @@ The style file: plain.bst
 Database file #1: ref.bib
 Warning--entry type for "phd_nickel" isn't style-file defined
 --line 410 of file ref.bib
-Warning--I didn't find a database entry for "ruisnaar&ivp0"
 Warning--can't use both volume and number fields in dirac1928quantum
 Warning--empty journal in selfKG
 Warning--can't use both volume and number fields in dice_paper
-You've used 54 entries,
+You've used 56 entries,
             2118 wiz_defined-function locations,
-            819 strings with 11548 characters,
-and the built_in function-call counts, 16167 in all, are:
-= -- 1612
-> -- 603
+            826 strings with 11813 characters,
+and the built_in function-call counts, 16652 in all, are:
+= -- 1655
+> -- 616
 < -- 10
-+ -- 255
-- -- 186
-* -- 1102
-:= -- 2704
-add.period$ -- 163
-call.type$ -- 54
-change.case$ -- 248
++ -- 260
+- -- 190
+* -- 1130
+:= -- 2787
+add.period$ -- 169
+call.type$ -- 56
+change.case$ -- 254
 chr.to.int$ -- 0
-cite$ -- 57
-duplicate$ -- 636
-empty$ -- 1373
-format.name$ -- 186
-if$ -- 3370
+cite$ -- 59
+duplicate$ -- 661
+empty$ -- 1425
+format.name$ -- 190
+if$ -- 3474
 int.to.chr$ -- 0
-int.to.str$ -- 54
-missing$ -- 57
-newline$ -- 270
-num.names$ -- 108
-pop$ -- 224
+int.to.str$ -- 56
+missing$ -- 61
+newline$ -- 280
+num.names$ -- 112
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 200
+purify$ -- 206
 quote$ -- 0
-skip$ -- 454
+skip$ -- 464
 stack$ -- 0
-substring$ -- 1104
-swap$ -- 104
+substring$ -- 1128
+swap$ -- 106
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 204
+type$ -- 208
 warning$ -- 3
-while$ -- 172
-width$ -- 56
-write$ -- 587
-(There were 5 warnings)
+while$ -- 177
+width$ -- 58
+write$ -- 608
+(There were 4 warnings)

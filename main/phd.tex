@@ -1393,8 +1393,7 @@ $k \notin \{i,j\}$.
 \subsubsection{On the possible origin of a cutoff in 
 time}
 \label{sec:KGcurvedspacetime}
-\todo{read the references on how to find the Greens 
-functions and dirac and KG equations on curved spacetime}
+
 So far, we have assumed a cutoff in time. In the way 
 this has been treated so far, this cutoff breaks the 
 manifest Poincar\'e invariance of our integral 
@@ -1441,7 +1440,7 @@ those of the usual wave equation on $\tfrac{1}{2}\M$
 as follows (using coordinates $x=(\eta,\vx)$ and 
 $x'=(\eta',\vx')$ with $\eta,\eta' \in [0,\infty)$ 
 and $\vx,\vx' \in \R^3$):
-\begin{equation}
+\begin{equation}\label{eq: greens function singular interaction curved}
 	G_{\mathcal{M}}(x,x') ~=~ \frac{1}{a(\eta)} \frac{1}{a(\eta')} G_{\frac{1}{2}\M}(x,x'),
 \end{equation}
 which can be derived from the transformation behavior of 
@@ -1542,7 +1541,7 @@ theorem:
 
 %%%%%
 \begin{Thm}[Existence of dynamics for an open FLRW 
-  universe.]
+  universe]
 	\label{thm:existencecurved}~\\
   Let $a: [0,\infty) \rightarrow [0,\infty)$ be a 
   continuous function with $a(0)=0$ and $a(\eta)>0$ 
@@ -1573,7 +1572,7 @@ The proof can be found in Sec.\@
     \item \textit{Manifest covariance.} The theorem 
     shows the existence and uniqueness of solutions 
     of the manifestly covariant integral equation 
-    \eqref{eq:inteqcurved}. Our example of a particular 
+    \eqref{eq:KGinteqcurved}. Our example of a particular 
     FLRW spacetime thus achieves its goal of 
     demonstrating that a cutoff in time can arise 
     naturally in a cosmological context.
@@ -1605,7 +1604,7 @@ The proof can be found in Sec.\@
     \item \textit{$N$-particle generalization.} As 
     shown in Sec.\@ \ref{sec:Npart} for the \linebreak 
     Minkowski 
-    half-space, it would also be easy to extend 
+    half-space, it would also be possible to directly extend 
     Thm.\@ \ref{thm:existencecurved} to $N$ particles. 
     To avoid duplication, we do not carry this out 
     explicitly for the curved spacetime example here.
@@ -1647,7 +1646,7 @@ leads us to:
 \label{eq:a0calc01}
 \end{align}
 Next, we observe that the fraction 
-$\frac{|b^2|}{(b^0+|\vb|\cos\vartheta)^2 |\vy'|}$ is 
+$\frac{|b^2|}{(b^0+|\vb|\cos\vartheta)^2}$ is 
 the derivative of the fraction which occurs in the 
 argument of the second $g$-function. Introducing 
 $u = \cos \vartheta$ allows us to rewrite 
@@ -1731,10 +1730,7 @@ minimum can be simplified by observing that
 \begin{align}
     b^0+|\vb|\min\left(1,\frac{b^2}{2x^0|\vb|}-\frac{b^0}{|\vb|}\right) = \min \left( b^0+|\vb|, \frac{b^2}{2x^0} \right)= \frac{b^2}{2x^0}
 \end{align}
-as the term contributes only for \(b^2<0\) and 
-$2x^0>b^0+|\vb|$ (note that then $\frac{b^2}{2x^0} 
-< \frac{(b^0)^2-|\vb|^2}{b^0 + |\vb|} = b^0 - |\vb| 
-< b^0 + |\vb|$). Thus,
+as the term contributes only for \(b^2<0\) hence \(b^0+|\vb|>0>b^2/(2x^0)\). Thus,
 \begin{equation}
 	\frac{1}{2} \frac{b^2}{b^0+|\vb| \min(1, \frac{b^2}{2x^0|\vb|}-\frac{b^0}{|\vb|})} = x^0.
 \end{equation}
@@ -1822,7 +1818,9 @@ Together with \eqref{eq:b0cond}, we obtain the
 condition \(y^0-x^0<|\vy'|<
 \frac{y^0-x^0+|\vx-\vy|}{2}<y^0-x^0\) in the second 
 case which means that there is no contribution to 
-the integral. So we focus on the first case,
+the integral. For \(y^0-x^0=|\vx-\vy|\) we have 
+\(K_{x-y}(|\vy'|)=-1\) so this case is also ruled out. 
+So we focus on the first case,
 \begin{equation}
 	\frac{y^0-x^0+|\vx-\vy|}{2}<|\vy'|  \quad \text{and } |\vx-\vy|>y^0-x^0,
 \label{eq:xycond1}
@@ -1837,7 +1835,9 @@ nonzero for
 	y^0+x^0>|\vx-\vy|.
 	\label{eq:xycond2}
 \end{equation}
-We make this clear by including the respective 
+For equality the integral vanishes, because the inegral domain,
+while not empty, 
+is of measure zero. We make this clear by including the respective 
 characteristic function.
 
 %%%
@@ -1882,7 +1882,7 @@ the square root. We obtain:
 \label{CasesFirstTermEnd}
 \end{align}
 Next, we subdivide the conditions in the first 
-indicator function into two cases, (a) $(x-y)^2>0$ and 
+indicator function into two cases, (a) $(x-y)^2\ge0$ and 
 (b) $(x-y)^2<0$. In case (a), the condition 
 $|\vx-\vy|>y^0-x^0$ implies $x^0>y^0$. This, in turn, 
 yields $\max\left(0,y^0-x^0,\frac{y^0-x^0+|\vx-\vy|}{2}
@@ -1892,13 +1892,13 @@ that $x^0,y^0>0$). In case (b), the condition
 $|\vx-\vy|>0$ is automatically satisfied. We find:
 \begin{align}
  \nonumber
-     &\eqref{y'Integral1} = \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho  \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
+     &\eqref{y'Integral1} = \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2\ge 0, x^0>y^0} \int_{0}^{y^0} d\rho  \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
     &\times\left[ g_2\left(\frac{x^0+y^0 + |\vx-\vy|}{2}\right)
     -g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\right]\\\nonumber
     &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
     &\times \Bigg[ g_2\left(\frac{x^0+y^0-\rho + |x^0-y^0+\rho|}{2}\right)\\\notag
     &\quad \quad -g_2\left(\frac{x^0+y^0-\rho + ||\vx-\vy|-\rho|}{2}\right)\Bigg]\\\nonumber
-    &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
+    &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2\ge0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\\nonumber
     &\times \Bigg[ g_2\left(\frac{x^0+y^0 + |\vx-\vy|}{2}\right)\\\notag
     &\quad \quad -g_2\!\max\left(\frac{x^0+y^0- |\vx-\vy|}{2},\frac{x^0+y^0+ |\vx-\vy|}{2}-\rho\right)\Bigg]\\\nonumber
     &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx-\vy|}\\
@@ -1958,13 +1958,13 @@ analogous calculation to
     &\eqref{y'Integral2}=\frac{\lambda\|\psi\|_g}{16\pi} 1_{y^0-x^0<|\vx-\vy|<x^0+y^0} \int_{\max \left(0,y^0-x^0, \frac{y^0-x^0+|\vx-\vy|}{2} \right)}^{y^0} \!\!\!d\rho \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
     &\times \left[g_2\!\left(\frac{x^0\!+\!y^0\!-\!\rho\!-\!\min(|\vx\!-\!\vy|\!+\!\rho,|x^0\!-\!y^0\!+\!\rho|,x^0\!+\!y^0\!-\!\rho)}{2} \right)\right.\nonumber\\
     &\left.\quad\quad  -g_2\!\left( \frac{x^0+y^0-\rho-||\vx-\vy|-\rho|}{2} \right) \right] \nonumber\\
-    &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
+    &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2\ge0, x^0>y^0} \int_{0}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
     &\times\left[ g_2\!\left(\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2}\!-\!\rho\right)
     \!-\!g_2\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho \!-\! ||\vx\!-\!\vy|\!-\!\rho|}{2}\right)\right]\nonumber\\
     &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
     &\times \left[ g_2\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho \!-\! |x^0\!-\!y^0\!+\!\rho|}{2}\right)
     \!-\!g_2\!\left(\!\frac{x^0\!+\!y^0\!-\!\rho \!-\! ||\vx\!-\!\vy|\!-\!\rho|}{2}\right)\right]\nonumber\\
-    &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
+    &= \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2\ge0, x^0>y^0} \int_{0}^{y^0} d\rho  ~\frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
     &\times \Bigg[ g_2\!\left(\!\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2}\!-\!\rho\right)\\
     &\quad \quad \!-\!g_2\!\min\!\left(\!\frac{x^0\!+\!y^0 \!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!+\!y^0 \!+\! |\vx\!-\!\vy|}{2}\!-\!\rho\!\right)\Bigg]\nonumber\\
     &+ \frac{\lambda \|\psi\|_g}{16\pi} 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx-\vy|} \int_{\frac{y^0-x^0+|\vx-\vy|}{2}}^{y^0} d\rho ~ \frac{ g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
@@ -2066,11 +2066,11 @@ For the first one, we have:
 \begin{align}
 &x^0\!\!+\!y^0\!\!-\!\rho\!-\!\max(||\vx\!-\!\vy|\!-\!\rho|,|x^0\!\!-\!y^0\!\!+\!\rho|)\nonumber\\
 &= x^0\!\!+\!y^0\!\!-\!\rho\! -\!\max ( |\vx\!-\!\vy|\!-\!\rho,\rho\!-\!|\vx\!-\!\vy|,x^0\!\!-\!y^0\!\!+\!\rho,y^0\!\!-\!\rho\!-\!x^0)\nonumber\\
-&= \min\!\left(x^0\!\!+\!y^0\!\!-\!\rho\!-\!|\vx\!-\!\vy|,x^0\!\!+\!y^0\!\!+\!|\vx\!-\!\vy|\!-\!2\rho,2(y^0\!\!-\!\rho),2x^0 \right).
+&= \min\!\left(x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|,x^0\!\!+\!y^0\!\!+\!|\vx\!-\!\vy|\!-\!2\rho,2(y^0\!\!-\!\rho),2x^0 \right).
 \end{align}
 For the second one we get
 \begin{equation}
-	x^0\!\!+\!y^0\!\!-\!\min(|\vx\!-\!\vy|\!+\!\rho,x^0\!\!+\!y^0\!\!-\!\rho) = \max(x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|\!-\!2\rho,0).
+	x^0\!\!+\!y^0\!\!-\rho-\!\min(|\vx\!-\!\vy|\!+\!\rho,x^0\!\!+\!y^0\!\!-\!\rho) = \max(x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|\!-\!2\rho,0).
 \end{equation}
 Using this in \eqref{eq:y'Integral3calc}, we find:
 \begin{align}
@@ -2088,7 +2088,7 @@ the expressions involving the minimum. This results
 in:
 \begin{align}
     &\eqref{y'Integral3} =
-    \frac{\lambda\|\psi\|_g}{16\pi} 1_{(x-y)^2>0,y^0>x^0}
+    \frac{\lambda\|\psi\|_g}{16\pi} 1_{(x-y)^2\ge0,y^0>x^0}
     \int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\frac{x^0+y^0+|\vx-\vy|}{2}}d\rho \, \frac{g(y^0-\rho)}{|\vx-\vy|}\nonumber\\
     &\times \left[g_2 \min\!\left(\!\frac{x^0\!\!+\!y^0\!\!+\!|\vx\!-\!\vy|}{2}\!-\!\rho,x^0\!\right) \!-\!g_2\!\max\!\left(\! \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right) \right]\nonumber\\
     &+\frac{\lambda\|\psi\|_g}{16\pi} 
@@ -2103,19 +2103,19 @@ This concludes the calculation of \eqref{y'Integral3}.
 obtained the following bound for $| A_0 \psi |(x,y)$:
 \begin{align}
     &\frac{16\pi}{\lambda\|\psi\|_g}|A_0\psi|(x,y) \le 
-    1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    1_{(x-y)^2\ge0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Bigg[ g_2\!\left(\!\frac{x^0\!\!+\!y^0\!\! +\! |\vx\!-\!\vy|}{2}\right)\notag\\
     &\quad\quad \!-\!g_2\!\max\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\! |\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+ \!|\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg]\nonumber\\
     &+ 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx\!-\!\vy|} \int_{\frac{y^0-x^0+|\vx\!-\!\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Big[ g_2\!\max\!\left(x^0,y^0-\rho\right)\notag\\
     &\quad\quad -g_2\!\max\!\left(\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}-\rho\right)\Bigg]\nonumber\\
-    &+ 1_{(x-y)^2>0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    &+ 1_{(x-y)^2\ge0, x^0>y^0} \int_{0}^{y^0} d\rho \, \frac{ g(y^0-\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Bigg[ g_2\left(\frac{x^0+y^0 - |\vx\!-\!\vy|}{2}-\rho\right)\notag\\
     &\quad\quad -g_2\min\!\left(\frac{x^0+y^0 - |\vx\!-\!\vy|}{2},\frac{x^0+y^0 + |\vx\!-\!\vy|}{2}\!-\!\rho\right)\Bigg]\nonumber\\\nonumber
     &+ 1_{(x-y)^2<0}~1_{ x^0+y^0>|\vx\!-\!\vy|} \int_{\frac{y^0-x^0+|\vx\!-\!\vy|}{2}}^{y^0} d\rho \, \frac{ g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Bigg[ g_2\min\!\left(x^0,y^0-\rho\right)\notag\\
     &\quad\quad -g_2\min\!\left(\frac{x^0+y^0- |\vx\!-\!\vy|}{2},\frac{x^0\!\!+\!y^0\!\!+ |\vx\!-\!\vy|}{2}-\rho\right)\Bigg]\nonumber\\
-    &+1_{(x-y)^2>0,y^0>x^0} \int_{\frac{y^0-x^0-|\vx\!-\!\vy|}{2}}^{\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}}d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\nonumber\\
+    &+1_{(x-y)^2\ge0,y^0>x^0} \int_{\frac{y^0-x^0-|\vx\!-\!\vy|}{2}}^{\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}}d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\nonumber\\
     &\times \Bigg[g_2 \min\!\left(\frac{x^0\!\!+\!y^0\!\!+|\vx\!-\!\vy|}{2}\!-\!\rho,x^0\right)\notag\\
     &\quad\quad \!-\!g_2\!\max\!\left( \frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0 \right) \Bigg]\nonumber\\
     &+1_{(x-y)^2<0,|\vx\!-\!\vy|<x^0+y^0}
@@ -2123,7 +2123,7 @@ obtained the following bound for $| A_0 \psi |(x,y)$:
     &\times \Bigg[g_2 \min\!\left(\!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2},y^0\!\!-\!\rho\right)\notag\\
     &\quad\quad \!-\!g_2\!\max\!\left( \!\frac{x^0\!\!+\!y^0\!\!-\!|\vx\!-\!\vy|}{2}\!-\!\rho,0\!\right)  \Bigg].
 \end{align}
-In order to simplify the result, we introduce the 
+In order to simplify the notation, we introduce the 
 variables
 \begin{align}
     \xi^+:=\frac{x^0+y^0+|\vx-\vy|}{2},\\
@@ -2139,9 +2139,9 @@ functions. This results in:
     &\quad + 1_{\frac{y^0\!\!-\!x^0+|\vx\!-\!\vy|}{2}<\rho} \big(g_2(x^0)+g_2(y^0\!\!-\!\rho)
     \!-\!g_2(\xi^-)\!-\!g_2(\xi^+\!\!-\!\rho)\big)
     \Big]\\\label{A psi estimate 2}
-    &+1_{(x-y)^2>0,x^0>y^0}\int_0^{y^0} d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|} \big[g_2(\xi^+)+g_2(\xi^-\!\!-\!\rho)\notag\\
+    &+1_{(x-y)^2\ge0,x^0>y^0}\int_0^{y^0} d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|} \big[g_2(\xi^+)+g_2(\xi^-\!\!-\!\rho)\notag\\
     &\hspace{6cm} \!-\! g_2(\xi^-)\!-\!g_2(\xi^+\!\!-\!\rho)\big]\\\label{A psi estimate 3}
-    &+1_{(x-y)^2>0,y^0>x^0}\int_{\frac{y^0\!\!-\!x^0\!\!-\!|\vx\!-\!\vy|}{2}}^{\xi^+}d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\notag\\
+    &+1_{(x-y)^2\ge0,y^0>x^0}\int_{(y^0\!\!-\!x^0\!\!-\!|\vx\!-\!\vy|)/2}^{\xi^+}d\rho \, \frac{g(y^0\!\!-\!\rho)}{|\vx\!-\!\vy|}\notag\\
     &\hspace{3cm}\times \big[g_2\min(\xi^+\!\!-\!\rho,x^0) \!-\! g_2\!\max(\xi^-\!\!-\!\rho,0)\big].
 \end{align}
 This estimate is an important stepping stone in the proof. Except for special weight functions, the resulting expressions are too complicated to be computed explicitly. We therefore continue with further estimates. The main difficulty in these estimates is that the $1/|\vx-\vy|$ singularity in the expressions needs to be compensated by the integrand and that this cancellation needs to be preserved by the respective estimate. Fortunately, the mean value theorem turns out suitable to provide such estimates.
@@ -2205,12 +2205,11 @@ With these considerations, we obtain a rougher but simpler estimate than
     &\le~ \label{massless_after estimate1}
     1_{(x-y)^2<0,\xi^->0} \int_0^{y^0}d\rho~ g(y^0-\!\rho)\Big[ g_1\!\min(\xi^-,y^0-\!\rho) \\\label{massless_after estimate2}
     &~~~+ 1_{\frac{y^0-x^0+|\vx-\vy|}{2}<\rho}\frac{g_2(x^0)-g_2(\xi^-)}{|\vx-\vy|}\Big]\\\label{massless_after estimate3}
-    &~~~+1_{(x-y)^2>0,x^0>y^0}\frac{g_2(\xi^+)-g_2(\xi^-)}{|\vx-\vy|} \int_{0}^{y^0}d\rho~ g(y^0-\!\rho)\\\label{massless_after estimate4}
-    &~~~+1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0)\int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\xi^+}d\rho~ g(y^0-\!\rho).
+    &~~~+1_{(x-y)^2\ge0,x^0>y^0}\frac{g_2(\xi^+)-g_2(\xi^-)}{|\vx-\vy|} \int_{0}^{y^0}d\rho~ g(y^0-\!\rho)\\\label{massless_after estimate4}
+    &~~~+1_{(x-y)^2\ge0,y^0>x^0}\, g_1(x^0)\int_{\frac{y^0-x^0-|\vx-\vy|}{2}}^{\xi^+}d\rho~ g(y^0-\!\rho).
 \end{align}
 Next, we continue estimating these terms separately so that only expressions 
 without integrals remain.
-
 
 %%%
 \subparagraph{Further estimate of \eqref{massless_after estimate1}.}
@@ -2258,21 +2257,21 @@ Using also that for the given constrains $\xi^- < y^0$, we finally obtain:
 Here, we can directly carry out the remaining integral using the definition 
 of $g_1$ as the integral of $g$:
 \begin{equation}
-	\eqref{massless_after estimate3} = 1_{(x-y)^2>0,x^0>y^0}\, \frac{g_2(\xi^+)-g_2(\xi^-)}{|\vx-\vy|} g_1(y^0).
+	\eqref{massless_after estimate3} = 1_{(x-y)^2\ge0,x^0>y^0}\, \frac{g_2(\xi^+)-g_2(\xi^-)}{|\vx-\vy|} g_1(y^0).
 \end{equation}
 Next, we apply the mean value theorem to $g_2$ in the interval 
 $[\xi^-,\xi^+]$ noting that $\xi^+\!\!-\xi^- = |\vx-\vy|$. This implies:
 \begin{equation}
 	\eqref{massless_after estimate3} \leq 1_{(x-y)^2>0,x^0>y^0} \,g_1(\xi^+) g_1(y^0).
 \end{equation}
-Next, we note that $(x-y)^2 > 0 \Leftrightarrow |x^0-y^0| > |\vx-\vy|$. 
-Together with $x^0>y^0$, we obtain $x^0>y^0 +|\vx-\vy|$ and therefore:
+Next, we note that $(x-y)^2 \ge 0 \Leftrightarrow |x^0-y^0| \ge |\vx-\vy|$. 
+Together with $x^0>y^0$, we obtain $x^0\ge y^0 +|\vx-\vy|$ and therefore:
 \begin{equation}
 	\xi^+ = \frac{x^0+y^0 +|\vx-\vy|}{2} \leq x^0.
 \end{equation}
 Thus, we obtain:
 \begin{equation}
-	\eqref{massless_after estimate3} \leq 1_{(x-y)^2>0,x^0>y^0} \, g_1(x^0) g_1(y^0).
+	\eqref{massless_after estimate3} \leq 1_{(x-y)^2\ge0,x^0>y^0} \, g_1(x^0) g_1(y^0).
 	\label{eq:resultmasslessafterestimate3}
 \end{equation}
 
@@ -2280,7 +2279,7 @@ Thus, we obtain:
 \subparagraph{Further estimate of \eqref{massless_after estimate4}.}
 Here, we carry out the remaining integral as well.
 \begin{align}
-	\eqref{A psi estimate 3} &\leq 1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0) [ g_1(\xi^+)\!-\!g_1( (y^0\!\!-\!x^0\!\!-\!|\vx\!-\!\vy|)/2)]\nonumber\\
+	\eqref{massless_after estimate4} &\leq 1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0) [ g_1(\xi^+)\!-\!g_1( (y^0\!\!-\!x^0\!\!-\!|\vx\!-\!\vy|)/2)]\nonumber\\
 &\leq 1_{(x-y)^2>0,y^0>x^0}\, g_1(x^0)g_1(y^0).
 \label{eq:resultmasslessafterestimate4}
 \end{align}
@@ -2295,7 +2294,7 @@ as $\xi^+\leq y^0$.
 \eqref{eq:resultmasslessafterestimate4} yields:
 \begin{align}
     &\frac{16\pi}{\lambda\|\psi\|_g}\, |A_0 \psi |(x,y) \\
-    &\leq g_1(x^0) g_1(y^0) \left( 2 \!\times\! 1_{(x-y)^2 < 0, \xi^- >0} \!+\! 1_{(x-y)^2>0,x^0>y^0} \!+\! 1_{(x-y)^2>0,y^0>x^0}\right).\notag
+    &\leq g_1(x^0) g_1(y^0) \left( 2 \!\times\! 1_{(x-y)^2 < 0, \xi^- >0} \!+\! 1_{(x-y)^2\ge0,x^0>y^0} \!+\! 1_{(x-y)^2\ge0,y^0>x^0}\right).\notag
 \end{align}
 Considering that the conditions in different indicator functions are mutually 
 exclusive, we finally obtain:
@@ -2358,7 +2357,7 @@ to:
 \begin{align}
   &|A_2 \psi|(x,y)  \frac{16\pi}{\lambda  m_2^2 \, \| \psi \|_g} \notag\\
   &\leq  \int_0^{x^0} d r_1 \int_0^{\max(0,y^0-x^0+r_1)} \!\!\! dr_2~r_1 r_2\,g(x^0\!\!-\!r_1) g(x^0\!\!-\!r_1\!+\!r_2)\label{eq:A2firstestimate}\\
-&+~\int_0^{x^0} d r_1 \int_{\max( 0,x^0-r_1-y^0)}^{t_1-r_1} \!\!\! dr_2~r_1 r_2 ~ g(x^0\!\!-\!r_1) g(x^0\!\!-\!r_1\!-\!r_2) \label{eq:A2secondestimate}.
+&+~\int_0^{x^0} d r_1 \int_{\max( 0,x^0-r_1-y^0)}^{x^0-r_1} \!\!\! dr_2~r_1 r_2 ~ g(x^0\!\!-\!r_1) g(x^0\!\!-\!r_1\!-\!r_2) \label{eq:A2secondestimate}.
 \end{align}
 
 Our next task is to simplify the remaining integrals. We begin with making 
@@ -2394,36 +2393,37 @@ differentiate between the cases $\rho < y^0$ and $\rho \geq y^0$ and split
 up the integrals accordingly. This yields:
 \begin{align}
 	 &\int_0^{x^0} d \rho~(x^0-\rho) g(\rho) |y^0-\rho| g_1(y^0)\nonumber\\
-&=~ g_1(y^0)\, H(x^0-y^0) \int_0^{y^0} d \rho~(x^0-\rho)(y^0-\rho) g(\rho)\label{eq:a2estimate2a}\\
-&~~~ - g_1(y^0)\, H(x^0-y^0) \int_{y^0}^{x^0} d \rho~(x^0-\rho)(y^0-\rho) g(\rho)\label{eq:a2estimate2b}\\
-& ~~~+ g_1(y^0)\, H(y^0-x^0) \int_0^{x^0} d \rho~(x^0-\rho)(y^0-\rho) g(\rho).
+&=~ g_1(y^0)\, 1_{x^0>y^0} \int_0^{y^0} d \rho~(x^0-\rho)(y^0-\rho) g(\rho)\label{eq:a2estimate2a}\\
+&~~~ - g_1(y^0)\, 1_{x^0>y^0} \int_{y^0}^{x^0} d \rho~(x^0-\rho)(y^0-\rho) g(\rho)\label{eq:a2estimate2b}\\
+& ~~~+ g_1(y^0)\, 1_{x^0\le y^0} \int_0^{x^0} d \rho~(x^0-\rho)(y^0-\rho) g(\rho).
 \label{eq:a2estimate2c}
 \end{align}
 We now calculate these terms separately using integration by parts. The first 
 term yields:
 \begin{align}
-	\eqref{eq:a2estimate2a} ~&=~ g_1(y^0) H(x^0-y^0) \left[ (x^0-y^0) g_2(y^0)+ 2g_3(y^0)\right].
+	\eqref{eq:a2estimate2a} ~&=~ g_1(y^0) 1_{x^0>y^0} \left[ (x^0-y^0) g_2(y^0)+ 2g_3(y^0)\right].
 \label{eq:a2estimate2a2}
 \end{align}
 We turn to \eqref{eq:a2estimate2b}:
 \begin{align}\notag
-  \eqref{eq:a2estimate2b} = -g_1(y^0) H(x^0\!\!-\!y^0)\!&\big[ (y^0\!\!-\!x^0)(g_2(x^0)\\
+  \eqref{eq:a2estimate2b} = -g_1(y^0) 1_{x^0>y^0}\!&\big[ (y^0\!\!-\!x^0)(g_2(x^0)\\
   &\quad \!+\!g_2(y^0))\!+\!2g_3(x^0) \!-\! 2g_3(y^0)\big].
 \label{eq:a2estimate2b2}
 \end{align}
 The result of \eqref{eq:a2estimate2c} is:
 \begin{align}
-	\eqref{eq:a2estimate2c} ~&=~ g_1(y^0) H(y^0-x^0) \left[ (y^0-x^0) g_2(x^0)+ 2g_3(x^0)\right].
+	\eqref{eq:a2estimate2c} ~&=~ g_1(y^0) 1_{x^0\le y^0} \left[ (y^0-x^0) g_2(x^0)+ 2g_3(x^0)\right].
 	\label{eq:a2estimate2c2}
 \end{align}
 Gathering the terms \eqref{eq:a2estimate2a2}, \eqref{eq:a2estimate2b2} and 
 \eqref{eq:a2estimate2c2} yields:
+
 \begin{align}
   |A_2 \psi|(x,y)& \frac{16\pi}{\lambda \, m_2^2 \, \| \psi \|_g} \notag\\
-  &\leq g_1(y^0) H(x^0\!\!-\!y^0) \left[ 2(x^0\!\!-\!y^0)g_2(y^0) \!+\! 4 g_3(y^0)\!-\!2g_3(x^0) \right]\nonumber\\
-&~~~+g_1(y^0) |x^0\!\!-\!y^0| g_2(x^0) + 2 g_1(y^0) H(y^0\!\!-\!x^0) g_3(x^0)\nonumber\\
-&\leq 2g_1(y^0)|x^0\!\!-\!y^0| g_2(x^0) + 2 g_1(y^0)g_3(x^0) H(x^0-y^0)\nonumber\\
-&~~~+g_1(y^0)|x^0\!\!-\!y^0|g_2(x^0) + 2 g_1(y^0) g_3(x^0) H(y^0\!\!-\!x^0)\nonumber\\
+  &\leq g_1(y^0) 1_{x^0>y^0} \left[ 2(x^0\!\!-\!y^0)g_2(y^0) \!+\! 4 g_3(y^0)\!-\!2g_3(x^0) \right]\nonumber\\
+&~~~+g_1(y^0) |x^0\!\!-\!y^0| g_2(x^0) + 2 g_1(y^0) 1_{x^0\le y^0} g_3(x^0)\nonumber\\
+&\leq 2g_1(y^0)|x^0\!\!-\!y^0| g_2(x^0) + 2 g_1(y^0)g_3(x^0) 1_{x^0<y^0}\nonumber\\
+&~~~+g_1(y^0)|x^0\!\!-\!y^0|g_2(x^0) + 2 g_1(y^0) g_3(x^0) 1_{x^0\le y^0}\nonumber\\
 &= 3g_1(y^0)|x^0\!\!-\!y^0| g_2(x^0) + 2 g_1(y^0)g_3(x^0)\nonumber\\
 &\leq 3(x^0+y^0)g_1(y^0) g_2(x^0) + 2 g_1(y^0)g_3(x^0).
 \end{align}
@@ -2452,13 +2452,12 @@ the claim
 %%%
 \paragraph{Estimate of the mass-mass term \eqref{eq:estimatea12}.} 
 \label{sec:estimatemassmass}
-
 We begin with \eqref{eq:defa12}. Taking the absolute value and using 
 $|\psi(x,y)| \leq \| \psi \|_g \, g(x^0) g(y^0)$ as well as 
 $|J_1(t)/t|\leq \frac{1}{2}$ yields:
 \begin{align}
 &|A_{12} \psi|(x,y) \notag\\
-&\leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{4(4\pi)^3}\!  \int_0^\infty\!\!\! d{x'}^0\!\! \int d^3 \!\vx' \!\int_0^\infty \!\!\!d{y'}^0 \!\int_0^{2\pi}\!\!\! d\varphi \!\int_{0}^{\pi} \!\!\!d \vartheta \, \cos(\vartheta) |{x'}^0\!\!-\!{y'}^0| \,  \nonumber\\
+&\leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{8(4\pi)^3}\!  \int_0^\infty\!\!\! d{x'}^0\!\! \int d^3 \!\vx' \!\int_0^\infty \!\!\!d{y'}^0 \!\int_0^{2\pi}\!\!\! d\varphi \!\int_{0}^{\pi} \!\!\!d \vartheta \, \cos(\vartheta) |{x'}^0\!\!-\!{y'}^0| \,  \nonumber\\
 &\hspace{1cm}\times\! H(x^0\!\!-{x'}^0\!\!-\!|\vx-\vx'|)H(y^0\!\!-{y'}^0\!\!-\!|\vy\!-\!\vx'\!+\!\vz|)\notag\\
 &\hspace{3cm} \times g({x'}^0)g({y'}^0)\Big|_{|\vz| = |{x^0}'-{y^0}'|},
 \end{align}
@@ -2477,7 +2476,7 @@ use the estimate
 Then ${y'}^0 \in (0,y^0)$ and there is no further restriction for 
 the angular variables. We obtain:
 \begin{align}
-|A_{12} \psi|(x,y) &\leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{8(4\pi)^3}  \int_0^{x^0} d{'}^0 \int_{B_{x^0-{x'}^0}(\vx)} \!\!\!\!\!\!\!\!\!\! d^3 \vx' \int_0^{y^0} d{y'}^0 \int_0^{2\pi} d\varphi \int_{0}^{\pi} d \vartheta \nonumber\\
+|A_{12} \psi|(x,y) &\leq \frac{\lambda \, m_1 m_2 \, \| \psi \|_g}{8(4\pi)^3}  \int_0^{x^0} d{x'}^0 \int_{B_{x^0-{x'}^0}(\vx)} \!\!\!\!\!\!\!\!\!\! d^3 \vx' \int_0^{y^0} d{y'}^0 \int_0^{2\pi} d\varphi \int_{0}^{\pi} d \vartheta \nonumber\\
 &~~~\times \cos(\vartheta) |{x'}^0-{y'}^0| \, g({x'}^0)g({y'}^0).
 \end{align}
 Performing the $\vx'$-integration, as well as the angular integrals 
@@ -2494,7 +2493,7 @@ functions $g_n$ only. To do so, we use
 This yields:
 \begin{align}
   &|A_{12} \psi|(x,y) \notag\\
-  &\leq \!\frac{\lambda  m_1 m_2  \| \psi \|_g}{48\pi}\!  \int_0^{x^0} \!\!\!d{x'}^0 |x^0\!\!-\!{x'}^0|^3 g({x'}^0) \!\!\int_0^{y^0} \!\!\!d{y'}^0 ({x'}^0 \!\!+\! {y'}^0) g({y'}^0).
+  &\leq \!\frac{\lambda  m_1 m_2  \| \psi \|_g}{96\pi}\!  \int_0^{x^0} \!\!\!d{x'}^0 |x^0\!\!-\!{x'}^0|^3 g({x'}^0) \!\!\int_0^{y^0} \!\!\!d{y'}^0 ({x'}^0 \!\!+\! {y'}^0) g({y'}^0).
 \label{eq:a12estimatecalc}
 \end{align}
 Let
@@ -2572,7 +2571,7 @@ for every $\psi^\free \in \Banach_g$.
 \subsubsection{Proof of Theorem \ref{thm:existence}} \label{sec:proofexistence}
 
 Let again $\psi \in \mathcal{S}$. We need to calculate the suprema 
-in \eqref{eq:estimatea0}-\eqref{eq:estimatea12} for 
+in \eqref{eq:estimatea0} to \eqref{eq:estimatea12} for 
 $g(t)=(1+\alpha t^2)e^{\alpha t^2/2}$. We first note:
 \begin{align}
 	g_1(t) ~&=~ t e^{\alpha t^2/2},\nonumber\\
@@ -2602,7 +2601,7 @@ Using the property \(|tD(t)|<\frac{2}{3}\), we obtain:
 \label{eq:g3estimate}
 \end{equation}
 We are now well-equipped to calculate the suprema occurring in 
-\eqref{eq:estimatea0}-\eqref{eq:estimatea12}. Using
+\eqref{eq:estimatea0} to \eqref{eq:estimatea12}. Using
 \begin{equation}
  \sup_{t\geq 0}\frac{t^\beta}{1+t^2} ~=~ \left\{ \begin{matrix} 1\quad \text{ for } \beta=0\\ \frac{1}{2} \quad \text{ for } \beta=1 \\ 1\quad \text{ for } \beta=2 \end{matrix}\right. 
 \end{equation}
@@ -2642,7 +2641,7 @@ Finally, for $A_{12}$, we have
 \end{align}
 which yields \eqref{eq:estimatea12final}.
 
-Now, the estimates \eqref{eq:estimatea0final}-
+Now, the estimates \eqref{eq:estimatea0final} to
 \eqref{eq:estimatea12final} show that the operators 
 $A_0$, $A_1$, $A_2$ and $A_{12}$ are bounded on test functions. 
 Thus, they can be linearly extended to bounded operators on 
@@ -2747,14 +2746,14 @@ of the integral equation (see Sec. \ref{sec:choiceofB}).
 
 This section is structured as follows. 
 In subsec. \ref{sec:setting}, we specify the integral equation 
-\eqref{eq:twopartint} in detail. The difficulties 
+\eqref{eq:twopartintgeneral} in detail. The difficulties 
 with understanding 
 the distributional derivatives are discussed and a suitable 
 function space is identified. Subsec. \ref{sec:results} contains 
 the main results of this section. 
 In subsec. \ref{sec:minkhalfspace}, we formulate 
 an existence and uniqueness theorem (Thm. \ref{thm:minkhalfspace}) 
-for eq. \eqref{eq:twopartint} on $\frac{1}{2}\M$. 
+for eq. \eqref{eq:twopartintgeneral} on $\frac{1}{2}\M$. 
 It is shown that 
 the relevant initial data are equivalent to Cauchy data at $t=0$. 
 In subsec. \ref{sec:flrw}, we provide a physical justification for 
@@ -2779,18 +2778,11 @@ In this section, we show how the integral operator in
 \eqref{eq:twopartintgeneral} can be defined rigorously on 
 test functions.
 We consider the integral equation \eqref{eq:twopartintgeneral} 
-on the Minkowski half space $\frac{1}{2}\M := [0,\infty) \times 
-\R^3$ equipped with the same sign convention as for 
-all of Minkowski space.
+on the Minkowski half space $\frac{1}{2}\M$ as we did in the last section.
 We focus on retarded Green's functions of the Dirac equation, 
 $\mathscr{S}^\ret(x) = \overline{D} G^\ret(x)$ where 
-$G^\ret(x)$ is the retarded Green's function of the KG equation. 
-Explicitly,
-\begin{equation}
-	G^\ret(x) = \frac{1}{4\pi} \frac{\delta(x^0-|\vx|)}{|\vx|} - \frac{m}{4\pi} H(x^0-|\vx|) \frac{J_1(m \sqrt{x^2})}{\sqrt{x^2}}
-\end{equation}
-where $H$ denotes the Heaviside function, $J_1$ a Bessel function.
-
+$G^\ret(x)$ is the retarded Green's function of the KG equation defined 
+in equation \eqref{eq:gretkg}.
 In order to define the meaning of the Green's functions as distributions, we introduce a suitable space of test functions:
 \begin{equation}
 	\mathscr{D} = \mathcal{S}\big( (\tfrac{1}{2}\M)^2,\CC^{16} \big),
@@ -2848,19 +2840,20 @@ The operator $A$ is first defined on test functions $\psi \in \mathscr{D}$ as
 where for $j=1,2$, $k=1,2,3,4$ the operator \\
 \(A_j^{(k)}(m) : \mathscr{D} \rightarrow C^\infty\big((\frac{1}{2}\M)^2,\CC^{16}\big)\)  
 is defined by letting the respective operator $A^{(k)}(m)$, given 
-below, act on the $j$-th 4-variable and spin index of 
+below, act on the $j$-th spacetime-variable and spin index of 
 $\psi(x_1,x_2),~ \psi \in \mathscr{D}$.
 \footnote{We deliberately avoid using tensor products here, as 
-the completion of an algebraic tensor product of Banach spaces depends strongly 
+the completion of an algebraic tensor product of Banach spaces depends sensitively 
 on which completion is taken.}
 \begin{align}
-	\left(A^{(1)}(m) \,\psi \right)(x) ~&=~ \frac{1}{4\pi} \int_{B_{x^0}(0)} \! \!d^3 \vy ~ \frac{1}{|\vy|} \psi(x+y)|_{y^0 = -|\vy|}, \label{eq:a1}\\
-	\left(A^{(2)}(m) \,\psi\right)(x) ~&=~ -\frac{m}{4\pi} \int_{-x^0}^0 dy^0 \int_{B_{|y^0|}(0)} d^3 \vy ~ \frac{J_1(m\sqrt{y^2})}{\sqrt{y^2}} \psi(x+y),\label{eq:a2}\\
-	\left(A^{(3)}(m)\, \psi\right)(x) ~&=~ \frac{i \gamma^0}{4\pi} \int_{\partial B_{x^0}(0)}d\sigma(\vy) ~ \frac{\psi(0,\vx+\vy)}{x^0}, \label{eq:a3}\\\nonumber
-  \left(A^{(4)}(m) \, \psi\right)(x) ~&=~ - i \gamma^0 \frac{m}{4\pi} \int_{B_{x^0}(0)}d^3 \vy ~ \frac{J_1(m\sqrt{(x^0)^2 - \vy^2})}{\sqrt{(x^0)^2 - \vy^2}}\\
-  &\hspace{2cm} \times\psi(0,\vx+\vy).\label{eq:a4}
+	\left(A^{(1)}(m) \,\phi \right)(x) ~&=~ \frac{1}{4\pi} \int_{B_{x^0}(0)} \! \!d^3 \vy ~ \frac{1}{|\vy|} \phi(x+y)|_{y^0 = -|\vy|}, \label{eq:a1}\\
+	\left(A^{(2)}(m) \,\phi\right)(x) ~&=~ -\frac{m}{4\pi} \int_{-x^0}^0 dy^0 \int_{B_{|y^0|}(0)} d^3 \vy ~ \frac{J_1(m\sqrt{y^2})}{\sqrt{y^2}} \phi(x+y),\label{eq:a2}\\
+	\left(A^{(3)}(m)\, \phi\right)(x) ~&=~ \frac{i \gamma^0}{4\pi} \int_{\partial B_{x^0}(0)}d\sigma(\vy) ~ \frac{\phi(0,\vx+\vy)}{x^0}, \label{eq:a3}\\\nonumber
+  \left(A^{(4)}(m) \, \phi\right)(x) ~&=~ - i \gamma^0 \frac{m}{4\pi} \int_{B_{x^0}(0)}d^3 \vy ~ \frac{J_1(m\sqrt{(x^0)^2 - \vy^2})}{\sqrt{(x^0)^2 - \vy^2}}\\
+  &\hspace{2cm} \times\phi(0,\vx+\vy),\label{eq:a4}
 \end{align}
-Here, the dependence of $A_j^{(1)}$ and $A_j^{(3)}$ on $m$ is only for notational convenience.\\
+here \(\phi\in\mathcal{S}(\frac{1}{2}\M,\mathbb{C}^4)\) and the dependence of $A_j^{(1)}$ and 
+$A_j^{(3)}$ on $m$ is only for notational convenience.\\
 We now turn to the question of a suitable Banach space for Eq.\ \eqref{eq:inteqschematic}.
 
 \subsubsection{Choice of Banach space} \label{sec:choiceofB}
@@ -2932,7 +2925,7 @@ Together with the previous considerations about $\Banach_0$ \eqref{eq:banach0}, 
 	\| \psi \|^2_g = \esssup_{x_1^0,x_2^0 >0} \frac{1}{g(x_1^0)g(x_2^0)} [\psi]^2(x_1^0,x_2^0)
 \label{eq:normpsi}
 \end{equation}
-where \(g : [0,\infty) \rightarrow (0,\infty) \) is a monotonically increasing function which is such that the function $1/g$ is bounded. We admit such a weight factor with hindsight. As we shall see, a suitable choice of $g$ will make a contraction mapping argument possible.
+where \(g : [0,\infty[ \rightarrow [0,\infty[ \) is a monotonically increasing function which is such that the function $1/g$ is bounded. We admit such a weight factor with hindsight. As we shall see, a suitable choice of $g$ will make a contraction mapping argument possible.
 
 In \eqref{eq:normpsi} we use the notation
 \begin{equation}
@@ -2961,9 +2954,9 @@ with
   Let $\psi^\free$ be a solution of the free multi-time Dirac 
   equations $D_i \psi^\free = 0,~i=1,2$ with initial data 
   $\psi^\free(0,\cdot,0,\cdot) = \psi_0 \in C_c^\infty(\R^6,\CC^{16})$. 
-  Furthermore, let $g : [0,\infty) \rightarrow [1,\infty)$ be a 
+  Furthermore, let $g : [0,\infty[ \rightarrow ]0,\infty[$ be a 
   monotonically increasing function with $g(t) \rightarrow \infty$ 
-  for $t \rightarrow \infty$ and \(g(0)=1\). Then $\psi^\free$ lies 
+  for $t \rightarrow \infty$. Then $\psi^\free$ lies 
   in $\Banach_g$.
 	\label{thm:freesolutionsinbanach}
 \end{Lemma}
@@ -3014,7 +3007,7 @@ Lemma \ref{thm:boundsa} can now be used to identify (with some trial and error) 
 	Let $0 < \| K \| < 1$, $\mu = \max \{ m_1,m_2\}$ and
 	\begin{align} 
 		g(t)& ~=~ \sqrt{1+b t^8}\, \exp(b t^8/16),	\label{eq:defg}\\
-    		b& ~=~ \frac{\|K\|^4}{(1-\|K\|)^4} \left(6+\mu^4\right)^4. \label{eq:defb}
+    		b& ~=~ \frac{\|K\|^4}{(1-\|K\|)^4} \left(16+\mu^4\right)^4. \label{eq:defb}
 \end{align}
 	Then for every $\psi^\free \in \Banach_g$, the equation $\psi = \psi^\free + A \psi$ possesses a unique solution $\psi \in \Banach_g$.
 \end{Thm}
@@ -3025,7 +3018,13 @@ The proof is given in Sec.\ \ref{sec:proofminkhalfspace}.
 \begin{Remark}
 \begin{enumerate}
 %
-	\item Note that Thm. \ref{thm:minkhalfspace} establishes the existence and uniqueness of a global-in-time solution. The non-Markovian nature of the dynamics makes it necessary to prove such a result directly instead of concatenating short-time solutions. The key step in our proof which makes the global-in-time result possible is the suitable choice of the weight factor $g$.
+  \item Note that Thm. \ref{thm:minkhalfspace} establishes 
+  the existence and uniqueness of a global-in-time solution. 
+  The non-Markovian nature of the dynamics makes it 
+  necessary to prove such a result directly instead of 
+  concatenating short-time solutions. The key step in our 
+  proof which makes the global-in-time result possible is 
+  the suitable choice of the weight factor $g$.
 %
 	\item The main condition in Thm.\ \ref{thm:minkhalfspace} is $\| K \| < 1$. This means that the interaction must not be too strong (in a suitable sense). A condition of that kind is to be expected solely because of the contribution $\| (D_1 D_2 (A \psi))(x_1^0,\cdot, x_2^0,\cdot)\|_{L^2} = \| K \psi(x_1^0,\cdot,x_2^0,\cdot)\|_{L^2}$ to $[A \psi](x_1^0,x_2^0)$. Taking our
 strategy for setting up the Banach space for granted, we therefore think that one cannot avoid a condition on the interaction strength. Note that conditions on the interaction strength also occur at other places in quantum theory (albeit in a different sense). For example, the Dirac Hamiltonian plus a Coulomb potential is only self-adjoint if the prefactor of the latter is smaller than a certain value.
@@ -3043,12 +3042,12 @@ Furthermore, if $\psi^\free$ is differentiable, \eqref{eq:twopartintgeneral} yie
 
 %%%%%%%%%
 \subsubsection{Results for a FLRW universe with a Big Bang singularity} \label{sec:flrw}
-\todo{read sources on how to get the greens function here and how the dirac equation looks like on curved spacetime}
-In this section we show that a Big Bang singularity provides a 
+This section is analogous to subsection \ref{sec:KGcurvedspacetime},
+we show that a Big Bang singularity provides a 
 natural and covariant justification for the cutoff at $t = 0$. As 
 this justification is our main goal, we make the point at the 
-example of a particular class of Friedman-Lema\^itre-Robertson-Walker 
-(FLRW) spacetimes and do not strive to treat more general spacetimes 
+example of a particular class of  
+FLRW spacetimes and do not strive to treat more general spacetimes 
 here. The reason for studying these FLRW spacetimes is that they are 
 conformally equivalent to $\frac{1}{2} \M$ \cite{ibison}. Together 
 with the conformal invariance of the massless Dirac operator this 
@@ -3061,14 +3060,14 @@ uniqueness result on these spacetimes can be reduced to Thm.\
 As shown in \cite{lienertcurved}, Eq.\ \eqref{eq:twopartintgeneral} possesses 
 a natural generalization to curved spacetimes $\mathcal{M}$,
 \begin{align}\nonumber
-  \psi(x_1,x_2) = \psi^\free(x_1,x_2) &+ \int dV(x_1') \int dV(x_2') \, G_1(x_1,x_1') G_2(x_2,x_2')\\
+  \psi(x_1,x_2) = \psi^\free(x_1,x_2) &+ \int dV(x_1') \int dV(x_2') \, \mathscr{S}_1(x_1,x_1') \mathscr{S}_2(x_2,x_2')\\
   &\times K(x_1',x_2') \psi(x_1',x_2').
 	\label{eq:inteqcurved}
 \end{align}
-Here, $dV(x)$ is the spacetime volume element, $S_i$ are (retarded) 
-Green's functions of the respective free wave equation, i.e.\
+Here, $dV(x)$ is the spacetime volume element, $\mathscr{S}_i$ are (retarded) 
+Green's functions of the respective free Dirac equation, i.e.\
 \begin{equation}
-	D G(x,x') = [-g(x)]^{-1/2} \, \delta^{(4)}(x,x'),
+	D \mathscr{S}(x,x') = [-g(x)]^{-1/2} \, \delta^{(4)}(x,x'),
 	\label{eq:greensfndefcurved}
 \end{equation}
 where $g(x)$ is the metric determinant, $D$ the covariant Dirac 
@@ -3076,8 +3075,8 @@ operator on $\mathcal{M}$, and $\psi$ a section of the tensor
 spinor bundle over $\mathcal{M} \times \mathcal{M}$.
 
 In order to explicitly formulate \eqref{eq:inteqcurved}, we need 
-to know the detailed form of $S^\ret$. Note that results for 
-general classes of spacetimes showing that $S^\ret$ is a bounded 
+to know the detailed form of $\mathscr{S}$. Note that results for 
+general classes of spacetimes showing that $\mathscr{S}$ is a bounded 
 operator on a suitable function space are not sufficient to obtain 
 a strong (global in time) existence and uniqueness result. We 
 therefore focus on the case of a flat FLRW universe where it is 
@@ -3087,9 +3086,9 @@ the metric is given by
 	ds^2 = a^2(\eta) [d \eta^2 - d \vx^2]
 	\label{eq:metricflrw}
 \end{equation}
-where $\eta$ is cosmological time and $a(\eta)$ denotes the 
-so-called \textit{scale factor}. The coordinate ranges are given 
-by $\eta \in [0,\infty)$ and $\vx \in \R^3$. For a FLRW universe 
+where, as before, $\eta$ is conformal time and $a(\eta)$ denotes the 
+\textit{scale function}. The coordinate ranges are given 
+by $\eta \in [0,\infty[$ and $\vx \in \R^3$. For a FLRW universe 
 with a Big Bang singularity, $a(\eta)$ is a continuous, 
 monotonically increasing function of $\eta$ with $a(\eta)=0$, 
 corresponding to the Big Bang singularity. The spacetime volume 
@@ -3104,7 +3103,7 @@ with conformal factor
 	\Omega(x) = a(\eta).
 \end{equation}
 In addition, for $m=0$, the Dirac equation is known to be 
-conformally invariant (see e.g.\ \cite{penrose_rindler}). More 
+conformally invariant (see e.g.\ \cite{silenko2015new,penrose_rindler}). More 
 accurately, consider two spacetimes $\mathcal{M}$ and 
 $\widetilde{\mathcal{M}}$ with metrics
 \begin{equation}
@@ -3112,7 +3111,8 @@ $\widetilde{\mathcal{M}}$ with metrics
 \end{equation}
 Then the massless Dirac operator $D$ on $\mathcal{M}$ is related to 
 the massless Dirac operator $\widetilde{D}$ on 
-$\widetilde{\mathcal{M}}$ by (see \cite{haantjes}):
+$\widetilde{\mathcal{M}}$ by (see 
+\cite{silenko2015new,fecko2006differential}):
 \begin{equation}
 	\widetilde{D} = \Omega^{-5/2} \, D \, \Omega^{3/2}.
 	\label{eq:diracoperatortrafo}
@@ -3161,7 +3161,7 @@ $K(x_1,x_2)\propto \delta((x_1-x_2)_\mu(x_1-x_2)^\mu)$ which is a
 Green's function of the wave equation -- a concept that can be 
 generalized to curved spacetimes using the conformal wave equation. 
 Now, under conformal transformations, Green's functions of that 
-equation transform as \cite{john}
+equation transform as \eqref{eq: greens function singular interaction curved}
 \begin{equation}
 	\widetilde{G}(x,x') = \Omega^{-1}(x) \,\Omega^{-1}(x') \, G(x,x'),
 \end{equation}
@@ -3240,9 +3240,8 @@ understanding of the Green's functions as before, thm.
   \begin{equation}
 	\widetilde{K}(x_1,x_2) = \left\{ \begin{array}{cl} f(d(x_1,x_2))& \text{if } x_1, x_2 \text{ are time-like related}\\ 0 &  \text{else}, \end{array} \right.
 \end{equation}
-where $d(x_1,x_2) = (|\eta_1-\eta_2| -|\vx_1-\vx_2|) \int_0^1 d 
-\tau \, a(\tau \eta_1 + (1-\tau) \eta_2)$ denotes the time-like 
-distance of the spacetime points $x_1 = (\eta_1,\vx_1)$ and 
+where \(d(x_1,x_2)\) denotes the geodesic distance 
+of time-like separated the events $x_1 = (\eta_1,\vx_1)$ and 
 $x_2 = (\eta_2,\vx_2)$, and $f$ is an arbitrary smooth function 
 which leads to $\| \widetilde{K} \| < 1$.
 
@@ -3310,7 +3309,7 @@ between given by (see also Fig. \ref{fig:eta})
  Note that $\eta$ is smooth and monotonically increasing. Next, we 
  define for every \(m\in\mathbb{N}\)
  \begin{equation}
- \psi^\free_m(t_1,\vx_1, t_1, \vx_2)\! :=\! e^{-(t_1-m) \eta(t_1-m) } e^{-(t_2-m) \eta(t_2-m)} \psi^\free(t_1,\vx_1, t_2, \vx_2).
+ \psi^\free_m(t_1,\vx_1, t_2, \vx_2)\! :=\! e^{-(t_1-m) \eta(t_1-m) } e^{-(t_2-m) \eta(t_2-m)} \psi^\free(t_1,\vx_1, t_2, \vx_2).
  \end{equation}
  This function is smooth and decreases rapidly in all variables and 
  thus lies in \(\mathscr{D}\). Now we estimate
@@ -3321,7 +3320,7 @@ between given by (see also Fig. \ref{fig:eta})
  \begin{align}
     & \sup_{t_1,t_2>0} \frac{1}{g(t_1)^2g(t_2)^2} \|\psi^\free- \psi_m\|^2_{L^2(\mathbb{R}^6)}\nonumber\\
      =&\sup_{t_1,t_2>0} \frac{1}{g(t_1)^2g(t_2)^2} \left|1-e^{-\eta(t_1-m)(t_1-m)}e^{-\eta(t_2-m)(t_2-m)}\right|\\
-     & ~\le~\frac{1}{g(m)^2}.
+     & ~\le~\frac{1}{g(0)^2g(m)^2}.
 \end{align}
 For the other terms we use that \(\psi^\free\) solves the free Dirac 
 equation in each variable and that 
@@ -3332,17 +3331,17 @@ for some positive value of \(t\). So we find for \(i\in \{0,1\}\):
 = &\sup_{t_1,t_2>0}\frac{1}{g(t_1)^2g(t_2)^2}
  \\
  &\times\|\gamma_{i}^0 \psi^\free(t_1,\cdot,t_2,\cdot) e^{-\eta(t_{3-i}-n)(t_{3-i}-n)}\partial_{t_i}e^{-\eta(t_i-n)(t_i-m)} \|^2_{L^2(\mathbb{R}^6)}\\
- &\le~ \frac{\alpha}{g(m)^2}.
+ &\le~ \frac{\alpha}{g(0)^2g(m)^2}.
  \end{align}
-For the first inequality it has been used that the factor with a 
+For the inequality it has been used that the factor with a 
 derivative vanishes for \(t_i<m\). 
 
 An analogous estimate repeated for the \(D_1D_2\)-term yields
 \begin{equation*}
-     \sup_{t_1,t_2>0} \frac{1}{g(t_1)^2g(t_2)^2}\|D_1D_2(\psi^\free \!\!-\! \psi_m)\|^2_{L^2(\mathbb{R}^6)}(t_1,t_2)\!\le\! \frac{\alpha^2}{g(m)^4} \!\le\! \frac{\alpha^2}{g(m)^2}.
+     \sup_{t_1,t_2>0} \frac{1}{g(t_1)^2g(t_2)^2}\|D_1D_2(\psi^\free \!\!-\! \psi_m)\|^2_{L^2(\mathbb{R}^6)}(t_1,t_2)\!\le\! \frac{\alpha^2}{g(m)^4} \!\le\! \frac{\alpha^2}{g(0)^2g(m)^2}.
  \end{equation*}
 All in all, adding the estimates and taking the square root we 
-find \(\|\psi^\free - \psi_n\|_g \le \frac{1+\alpha}{g(n)}\), which 
+find \(\|\psi^\free - \psi_n\|_g \le \frac{1+\alpha}{g(0)g(n)}\), which 
 together with the asymptotic behavior of \(g\) implies convergence. 
 It follows that the free solution \(\psi^\free\) can be approximated 
 by Cauchy sequences in \(\mathscr{D}\) and hence is contained in 
@@ -3390,10 +3389,10 @@ $\mathcal{A}_1^{(4)}(m_1)\, \|\psi(t_1,\cdot,t_2,\cdot)\|^2_{L^2} = \frac{m^4_1 
   We prove \eqref{eq:aestimate} for $k=1$, $ l=2$ and $k=3$, $l=4$. 
   The remaining cases can be treated in the same way. We begin with 
   $k=1$, $l=2$, using $|J_1(x)/x| \leq \frac{1}{2}$:
-\begin{align*}
-	&\| A_1^{(1)}(m_1) A_2^{(2)}(m_2)\, \psi(x_1^0,\cdot,x_2^0,\cdot) \|^2_{L^2} ~= \frac{m_2^2}{(4\pi)^4} \int_{\R^3 \times \R^3} \!\!\! d^3 \vx_1 \, d^3 \vx_2 \nonumber\\
+\begin{align}
+	&\| A_1^{(1)}(m_1) A_2^{(2)}(m_2)\, \psi(x_1^0,\cdot,x_2^0,\cdot) \|^2_{L^2} ~= \frac{m_2^2}{(4\pi)^4} \int_{\R^3 \times \R^3} \!\!\! d^3 \vx_1 \, d^3 \vx_2 \\
 &\hspace{-1cm}\times \left| \int_{B_{x_1^0}(0)} \!\!\! d^3\vy_1 \int_{-x_2^0}^0 dy_2^0 \int_{B_{|y_2^0|}(0)} \!\!\! d^3 \vy_2 ~\frac{1}{|\vy_1|}  \frac{J_1(m_2\sqrt{y_2^2})}{\sqrt{y_2^2}}\psi(x_1+y_1,x_2+y_2)|_{y^0_1=-|\vy_1|} \right|^2\nonumber\\
-&\leq \frac{m_2^2}{(4\pi)^4} \int_{\R^3 \times \R^3}  \!\!\! d^3 \vx_1 \, d^3 \vx_2 \\
+&\leq \frac{m_2^2}{(4\pi)^4} \int_{\R^3 \times \R^3}  \!\!\! d^3 \vx_1 \, d^3 \vx_2 \notag\\
 &\times \left( \int_{B_{x_1^0}(0)} \!\!\! d^3\vy_1 \int_{-x_2^0}^0 dy_2^0 \int_{B_{|y_2^0|}(0)} \!\!\! d^3 \vy_2~ \frac{1}{|\vy_1|^2} \left| \frac{J_1(m_2\sqrt{y_2^2})}{\sqrt{y_2^2}} \right|^2 \right)\nonumber\\
 &~\times \left( \int_{B_{x_1^0}(0)} \!\!\! d^3\vy_1 \int_{-x_2^0}^0 dy_2^0 \int_{B_{|y_2^0|}(0)} \!\!\! d^3 \vy_2 ~|\psi|^2(x_1+y_1,x_2+y_2)|_{y^0_1=-|\vy_1|} \right)\nonumber\\
 &\leq~  \frac{m_2^2}{(4\pi)^4} \int_{\R^3 \times \R^3}  \!\!\! d^3 \vx_1 \, d^3 \vx_2 ~4\pi x_1^0 \left( \frac{\pi m_2^2 (x_2^0)^4}{12}\right) \nonumber\\
@@ -3401,7 +3400,7 @@ $\mathcal{A}_1^{(4)}(m_1)\, \|\psi(t_1,\cdot,t_2,\cdot)\|^2_{L^2} = \frac{m^4_1 
 &\leq~  \frac{m_2^4 \, x_1^0 \,  (x_2^0)^4}{3 \pi^2\, 2^8 } \int_{\R^3 \times \R^3}  \!\!\! d^3 \vx_1 \, d^3 \vx_2  \int_{B_{x_1^0}(0)} \!\!\! d^3\vy_1 \int_{-x_2^0}^0 dy_2^0 \int_{B_{|y_2^0|}(0)} \!\!\! d^3 \vy_2\nonumber\\
 &~\times |\psi|^2(x_1^0 - |\vy_1|,\vx_1+\vy_1,x_2^0 + y_2^0,\vx_2+\vy_2).
 \label{eq:a1a2estimate1}
-\end{align*}
+\end{align}
 Exchanging the $x$ and $y$ integrals yields:
 \begin{align}\nonumber
 &\eqref{eq:a1a2estimate1} \leq  \frac{m_2^4 \, x_1^0\,  (x_2^0)^4}{3 \pi^2\, 2^8 } \int_{B_{x_1^0}(0)} \!\!\! d^3\vy_1 \int_{-x_2^0}^0 dy_2^0 \int_{B_{|y_2^0|}(0)} \!\!\! d^3 \vy_2 \\
@@ -3426,7 +3425,7 @@ largest eigenvalue of $\gamma^0$ is 1, we obtain:
 \end{align}
 Exchanging the order of the $x$ and $y$ integrals yields:
 \begin{align}
-	\eqref{eq:a3a4estimate1} ~&=~ \frac{m_2^4}{(4\pi)^4} \pi (x_2^0)^2\int_{\partial B_{x_1^0}(0)} \!\!\! d \sigma(\vy_1) \int_{B_{x_2^0}(0)} \!\!\! d^3 \vy_2 ~\|\psi(0,\cdot,0,\cdot)\|^2_{L^2}\nonumber\\
+	\eqref{eq:a3a4estimate1} ~&=~ \frac{m_2^4}{3 (4\pi)^3} \pi (x_2^0)^3\int_{\partial B_{x_1^0}(0)} \!\!\! d \sigma(\vy_1) \int_{B_{x_2^0}(0)} \!\!\! d^3 \vy_2 ~\|\psi(0,\cdot,0,\cdot)\|^2_{L^2}\nonumber\\
 &=~ \frac{m_2^4 \, (x_1^0)^2 \, (x_2^0)^6}{2^2 \, 3^2} \, \|\psi(0,\cdot,0,\cdot)\|^2_{L^2}\nonumber\\
 &= ~ \mathcal{A}_1^{(3)}(m_1) \mathcal{A}_2^{(4)}(m_2) \,  \|\psi(x_1^0,\cdot,x_2^0,\cdot)\|^2_{L^2}.
 \end{align} 
@@ -3495,7 +3494,7 @@ Recalling the definition of $[\psi]^2(x_1^0,x_2^0)$, Eq.\
 
 Next, we turn to \eqref{eq:d1apsiestimate}. We start from the initial 
 form of the integral equation \eqref{eq:twopartintgeneral} and use that as a 
-distributional identity on test functions $\psi \in \mathscr{D}_T$, 
+distributional identity on test functions $\psi \in \mathscr{D}$, 
 we have $D_1 \mathscr{S}^\ret(x_1-x_1') = \delta^{(4)}(x_1-x_1')$. Thus, we 
 obtain:
 \begin{equation}
@@ -3557,7 +3556,7 @@ In order to prove Thm. \ref{thm:minkhalfspace}, we combine the
 previous estimates to show that \(\|A\|<1\), first on test 
 functions $\psi \in \mathscr{D}$ and by linear extension also on the 
 whole of $\Banach_g$ . We start with Eq. \eqref{eq:spatialnormapsi} 
-of Thm. \ref{sec:minkhalfspace} using the definition of 
+of lemma \ref{thm:boundsa} using the definition of 
 \(\mathcal{A}_j\) for \(j=1,2\), as well as the following 
 estimate, valid for all \(\psi \in \mathscr{D}, t_1,t_2>0\):
 \begin{equation}
@@ -3565,8 +3564,8 @@ estimate, valid for all \(\psi \in \mathscr{D}, t_1,t_2>0\):
 \end{equation}
 Using this in \eqref{eq:spatialnormapsi} yields:
 \begin{align}
-\|A\psi\|^2_g ~&\le~ \sup_{x_1^0,x_2^0>0}\frac{1}{(g(x_1^0)g(x_2^0))^2} \,  \|K\|^2 \prod_{j=1,2} \left( \id + 8\mathcal{A}_j(m_j) \right) [\psi]^2(x_1^0,x_2^0),\\\nonumber
-&\le~ \sup_{x_1^0,x_2^0>0} \frac{\|\psi\|^2}{(g(x_1^0)g(x_2^0))^2} \,  \|K\|^2\\
+\|A\psi\|^2_g \!&\le\! \sup_{x_1^0,x_2^0>0}\frac{1}{(g(x_1^0)g(x_2^0))^2} \,  \|K\|^2 \prod_{j=1,2} \left( \id + 8\mathcal{A}_j(m_j) \right) [\psi]^2(x_1^0,x_2^0),\\\nonumber
+&\le\! \sup_{x_1^0,x_2^0>0} \frac{\|\psi\|^2}{(g(x_1^0)g(x_2^0))^2} \,  \|K\|^2\\
 & \hspace{2cm}\times\prod_{j=1,2} \left( \id + 8\mathcal{A}_j(m_j) \right) \, (g^2\otimes g^2)(x_1^0,x_2^0),\\
 &\le~ \|K\|^2\, \|\psi\|^2_g \left( \sup_{t>0}\frac{1}{g(t)^2} \left( \id + 8\mathcal{A}(\mu) \right)g^2 (t) \right)^2,
 \label{est:NormA1}
@@ -3595,7 +3594,7 @@ motivated choosing $g$ as in \eqref{eq:defg}.
 \begin{Lemma}\label{lem:someidentities}
 For $c<8$ we have
 \begin{equation}
-	\sup_{t>0} \frac{t^c}{1+b t^8}  ~=~\frac{c}{8}\,  b^{-c/8} \left( \frac{8}{c}-1\right)^{-c/8},
+	\sup_{t>0} \frac{t^c}{1+b t^8}  ~=~\frac{c}{8}\,  b^{-c/8} \left( \frac{8}{c}-1\right)^{1-c/8},
 	\label{eq:firstequality}
 \end{equation}
 and furthermore for $c=8$:
@@ -3630,10 +3629,10 @@ Multiplying with \(1/g^2(t)\) and using Lemma
 \ref{lem:someidentities} as well as $1/g(t)^2 \le (1+b t^8)^{-1}$, 
 we find:
 \begin{align}
-    g^{-2}(t)\, \big(\mathcal{A}^{(1)}(\mu) \,g^2\big)(t) & ~\le~ \frac{1}{2} \, b^{-\frac{1}{2}},\nonumber\\
+    g^{-2}(t)\, \big(\mathcal{A}^{(1)}(\mu) \,g^2\big)(t) & ~\le~ \sqrt{2} b^{-\frac{1}{2}},\nonumber\\
     g^{-2}(t)\, \big(\mathcal{A}^{(2)}(\mu) \,g^2\big)(t) & ~\le~ \frac{\mu^4}{2^4 \,3^2 \,b},\nonumber\\
-    g^{-2}(t)\, \big( \mathcal{A}^{(3)}(\mu) \, g^2\big)(t) & ~\le~ \frac{1}{2^2\, (3b)^{1/4}},\nonumber\\
-   g^{-2}(t)\, \big( \mathcal{A}^{(4)}(\mu) \, g^2\big) (t) & ~\le~ \frac{\mu^4}{2^4 \, 3^{1/4}} \, b^{-3/4}.
+    g^{-2}(t)\, \big( \mathcal{A}^{(3)}(\mu) \, g^2\big)(t) & ~\le~ \frac{3^{3/4}}{2^2\, b^{1/4}},\nonumber\\
+   g^{-2}(t)\, \big( \mathcal{A}^{(4)}(\mu) \, g^2\big) (t) & ~\le~ \frac{\mu^4}{2^4 \, 3^{5/4}} \, b^{-3/4}.
 \label{eq:gtotheminus2estimates}
 \end{align}
 Using \eqref{est:NormA1}, we can employ these inequalities (whose 
@@ -3649,14 +3648,14 @@ contributions
 $A^{(k)}(\mu) $ to $\mathcal{A}(\mu) = \sum_{k=1}^4 A^{(k)}(\mu)$, 
 finding:
 \begin{align}
-	\|A\| & ~\le~ \|K\| + \frac{4 \|K\|}{b^{1/2}} + \frac{\mu^4 \|K\|}{18 b} + \frac{2 \|K\|}{(3b)^{1/4}} + \frac{\mu^4 \|K\|}{2 (3b^3)^{1/4}}\nonumber\\
-&\overset{b\ge 1}{\le}~ \|K\| + \frac{\|K\|}{b^{1/4}} \left(4+ \mu^4/18 + 2/3^{1/4} + \mu^4/(2 \cdot 3^{1/4})\right)\\
-&<~ \|K\| + \frac{\|K\|}{b^{1/4}} (6 + \mu^4 ).
+	\|A\| & ~\le~ \|K\| + \frac{2^{3.5} \|K\|}{b^{1/2}} + \frac{\mu^4 \|K\|}{18 b} + \frac{3^{3/4} 2 \|K\|}{b^{1/4}} + \frac{\mu^4 \|K\|}{2 (3^5 b^3)^{1/4}}\nonumber\\
+&\overset{b\ge 1}{\le}~ \|K\| + \frac{\|K\|}{b^{1/4}} \left(2^{3.5}+ \mu^4/18 + 3^{3/4} 2 + \mu^4/(2 \cdot 3^{5/4})\right)\\
+&<~ \|K\| + \frac{\|K\|}{b^{1/4}} (16 + \mu^4 ).
 \end{align}
-Recalling that $b=\frac{\|K\|^4}{(1-\|K\|)^4} (6+\mu^4)^4$ (see 
+Recalling that $b=\frac{\|K\|^4}{(1-\|K\|)^4} (16+\mu^4)^4$ (see 
 \eqref{eq:defb}), we finally obtain that:
 \begin{equation}
-	\|A\| ~<~ \|K\| + \frac{\|K\|}{b^{1/4}} (6 + \mu^4 ) ~= ~ \|K\| + 1-\|K\| =1.
+	\|A\| ~<~ \|K\| + \frac{\|K\|}{b^{1/4}} (16 + \mu^4 ) ~= ~ \|K\| + 1-\|K\| =1.
 \end{equation}
 We have thus shown that $A$ defines (by linear extension) a 
 contraction on $\Banach_g$. Thus, the Neumann series 
@@ -3679,7 +3678,7 @@ Extending previous work for Klein-Gordon particles
 existence of dynamics for a class of integral equations 
 \eqref{eq:twopartintgeneral} which express 
 direct interactions with time delay at the quantum level. To obtain 
-this result, we have have used both simplifying assumptions 
+this result, we have used both simplifying assumptions 
 \ref{matt simplifying assumption 1} of a cutoff of the spacetime before $t=0$, 
 and \ref{matt simplifying assumption 2} of a smoother interaction 
 kernel than is present in equation \eqref{eq:twopartint}. While we have tried
@@ -3713,8 +3712,8 @@ Secondly, the physically most
 natural interaction kernel is given by a delta function along the 
 light cone, $K(x_1,x_2) \propto \delta((x_1-x_2)_\mu 
 (x_1-x_2)^\mu)$. In the Dirac 
-case, the distributional derivatives make a generalization of 
-that results about more singular interaction kernels 
+case, the distributional derivatives make generalizations of 
+results about more singular interaction kernels 
 obtained in the KG case such as \cite{mtve,lienertcurved} difficult, 
 and we have not attempted it here. 
 Another interesting question is whether the smallness condition on 
@@ -3725,7 +3724,7 @@ delta function along the light cone.
 Improving upon any of these two points would be very desirable.
 
 In the case of scalar particles, we have proved the existence and 
-uniqueness of solution of the fully singular  
+uniqueness of solutions of the fully singular  
 scalar integral equation 
 \eqref{eq:KGtwopartint} and its $N$-particle generalization 
 \eqref{eq:npartint}. Following previous works and the 
@@ -3739,6 +3738,22 @@ We have given the same justification for
 assumption \ref{matt simplifying assumption 1} as in the Dirac case and 
 in \cite{lienertcurved}
 by extending the main part of our result to the FLRW spacetime.
+
+We have worked with a 
+weighted $L^\infty$ norm both for time and space variables 
+in the case of scalar particles, 
+while it would be more natural 
+to use a weighted $L^\infty L^2$ norm 
+instead ($L^\infty$ for the time variables and $L^2$ for the 
+space variables). It would then be a challenging task to 
+find the right inequalities to obtain similar estimates as we 
+did. Moreover, one could also try to prove higher regularity 
+not only in the sense of integrability but also 
+differentiability. An interesting question, for example, 
+is whether one can apply the Klein-Gordon operators 
+$(\Box_k + m_k^2)$ to the solutions of \eqref{eq:KGtwopartint} in 
+a weak sense. 
+
 
 This work provides a rigorous proof of the existence of 
 interacting relativistic quantum dynamics in 1+3 spacetime 
@@ -3756,19 +3771,7 @@ interactions could contribute to a rigorous formulation of
 quantum field theory.
 
 
-We have here worked with a 
-weighted $L^\infty$ norm both for time and space variables, 
-while it would be more natural 
-to use a weighted $L^\infty L^2$ norm 
-instead ($L^\infty$ for the time variables and $L^2$ for the 
-space variables). It would then be a challenging task to 
-find the right inequalities to obtain similar estimates as we 
-did. Moreover, one could also try to prove higher regularity 
-not only in the sense of integrability but also 
-differentiability. An interesting question, for example, 
-is whether one can apply the Klein-Gordon operators 
-$(\Box_k + m_k^2)$ to the solutions of \eqref{eq:KGtwopartint} in 
-a weak sense. 
+
 
 
 
@@ -3784,7 +3787,7 @@ In this chapter we will turn our attention to the
 more widely accepted way of 
 introducing interaction into relativistic quantum 
 mechanics, Quantum Field Theory. For the motivation and 
-introduction we follow \cite{deckert2016perspective}.
+introduction we closely follow \cite{deckert2016perspective}.
 While the rigorous quantum field theoretic formulation of free 
 relativistic fermions is textbook material
 \cite{derezinski2013mathematics} the introduction of interaction faces 
@@ -3828,7 +3831,7 @@ it's evolution to an antisymmetric product
 where \((\varphi_k)_{k\in\mathbb{N}}\) forms an ONB of the negative spectral 
 subspace \(\mathcal{H}^-\). Thus making use of 
 Pauli's exclusion principle for 
-fermions no particle is any longer able to lower it's kindetic 
+fermions no particle is any longer able to lower it's kinetic 
 energy.  This \emph{Dirac sea} \(\Omega\) might be evolved 
 by a one-particle evolution \(U:\mathcal{H}\righttoleftarrow\)
 according to 
@@ -3847,7 +3850,7 @@ effectively cancels the direct
 interactions between the electrons.  Furthermore, 
 expectation values with respect to \(\Omega\) are 
 used also in the
-calculations of QED showing agreement to experiments to a remarkable 
+calculations of QED showing agreement with experiments to a remarkable 
 degree giving us all the more reason to use it as a starting point. 
 
 The first step towards a theory including interactions is to allow 
@@ -3863,7 +3866,7 @@ brief period of time. Such a field could pull a particle
 of the Dirac Sea \(\Omega\), say 
 \(\varphi_1\), out of \(\mathcal{H}^-\) and  
 onto the surface \(U^A \varphi_1=\xi \in \mathcal{H}^+\).
-Such a field might not disturb the other wavefunctions to much 
+Such a field might not disturb the other wavefunctions much 
 and the Dirac Sea after the action of the field might be 
 represented by 
 
@@ -3883,8 +3886,8 @@ at greater depth are left relatively unperturbed by the action
 of the process, according to Dirac, we can switch to a leaner  
 description. If \(\Omega\) remains completely unchanged below a 
 certain level, such as in our example,  it
-suffices to follow the particles that generated 
-e.g. \(\xi\), the holes created e.g. \(\varphi_1\). If on the 
+suffices to follow the generated particles  
+e.g. \(\xi\) and the created holes e.g. \(\varphi_1\). If on the 
 other hand all wavefunctions are affected one has to keep track
 of a net evolution of \(\Omega\) as well. As in this description
 the particle number is not a constant, creation operators 
@@ -3900,7 +3903,7 @@ can be condensed to
 \Psi= a^*(\xi)a(\varphi_1)\Omega.
 \end{equation}
 Given a one-particle time evolution operator \(U^A\), its 
-\emph{lift} \(\tilde{U}^A\) acting objects like the 
+\emph{lift} \(\tilde{U}^A\) acting on objects like the 
 wedge product \eqref{infinite wedge}
 needs to fulfil
 \begin{equation}\label{intro lift condition}
@@ -3932,8 +3935,8 @@ This can be hidden by one more change in notation
 d^*(f)= c(f),
 \end{equation}
 Since \(c\) is antilinear, but \(d^*\) is supposed to be linear, one 
-replaces \(\overline{\mathcal{H}^-}\) as the domain of definition of \(d^*\).
-By \(\overline{\mathcal{H}^-}\) we mean the space that is identical to 
+replaces \(\mathcal{H}^-\) by \(\overline{\mathcal{H}^-}\) as the domain of definition of \(d^*\).
+By \(\overline{\mathcal{H}^-}\) we denote the space that is identical to 
 \(\mathcal{H}^-\) as a set, but differs in its definition of multiplication:
 
 \begin{equation}
@@ -3969,7 +3972,9 @@ the scalar product by
 \end{equation}
 
 where \(U_{\pm \mp}:= P^\pm U P^\mp\) for any operator \(U\)
-and \(I_2(\mathcal{H})\) is the space of Hilbert-Schmidt operators.
+and \(\|\cdot\|_{I_2}\) is the Hilbert-Schmidt norm. The space of 
+operators of type \(\mathcal{H}\righttoleftarrow\) induced by this norm 
+is denoted by \(I_2(\mathcal{H})\).
 As a probability this quantity needs to be less than one; however,
 this is not always the case.
 
@@ -4010,7 +4015,7 @@ product of \(\Omega\) and there is no mechanism of suppression
 for states of large momentum, there is no reason why the sum in 
 \eqref{pair creation prob} should converge for \(\vec{A}\neq 0\)
 and it does not, as the theorem states. However, as it turns out
-there is a \(\tilde{U}^A(t_1,t_-):\mathcal{F}\righttoleftarrow\)
+there is a \(\tilde{U}^A(t_1,t_0):\mathcal{F}\righttoleftarrow\)
 whenever \(\vec{A}(t_1)=0=\vec{A}(t_0)\). This implies 
 that all those 
 infinitely many pairs created by the spacial parts of the 
@@ -4129,7 +4134,8 @@ with respect to this salar product we define
 \(\mathcal{H}_{\Sigma}=L^2(\Sigma, \mathbb{C}^4)\).
 \end{Def}
 
-As is well known equation \eqref{dirac ext field} has a 
+As is well known the Dirac equation coupled to an external 
+potential, equation \eqref{dirac ext field}, has a 
 one-particle evolution operator for each pair of Cauchy surfaces \(\Sigma, \Sigma'\)
 \begin{equation}
 U_{\Sigma',\Sigma}:\mathcal{H}_\Sigma \rightarrow \mathcal{H}_{\Sigma'},
@@ -4218,8 +4224,10 @@ we define
 C_{\Sigma}(A):=\big\{W\in\text{Pol}(\mathcal{H}_\Sigma)\mid 
 W \approx U^A_{\Sigma,\Sigma_{\mathrm{in}}}\mathcal{H}^-_{\Sigma_{\mathrm{in}}}\big\},
 \end{equation}
-where \(\Sigma_{\mathrm{in}}\) is a Cauchy surface earlier than \(\supp A\)
-and for \(V,V'\in\text{Pol}(\mathcal{H}_{\Sigma})\) we may write \(V\approx V'\)
+where \(\Sigma_{\mathrm{in}}\) is a Cauchy surface earlier than \(\supp A\),
+\(\mathcal{H}^-_{\Sigma_{\text{in}}}\) is the subspace spanned by the wavefunctions 
+in the negative spectrum of the free Dirac Hamiltonian. Furthermore, for 
+\(V,V'\in\text{Pol}(\mathcal{H}_{\Sigma})\) we may write \(V\approx V'\)
 whenever \(P^V_{\Sigma}-P^{V'}_{\Sigma}\) is a Hilbert-Schmidt operator. 
 \end{Def}
 
@@ -4252,11 +4260,11 @@ and \(y\in T_x\Sigma\) the relation
 
 This is a version of theorem \ref{thm ruisnaar} for general 
 Cauchy surfaces.
-The next theorem will show how the polarisation classes change 
+The next theorem shows how the polarisation classes change 
 with the gauge and Lorentz transforms.
 
 \begin{Thm}[transformation of polarisation classes, thm. 1.6 of \cite{ivp2}]\label{thm: pol class transform}
-Let \(A\in\mathcal{V}\) be a four-potential and and \(\Sigma\) 
+Let \(A\in\mathcal{V}\) be a four-potential and \(\Sigma\) 
 a Cauchy surface.
 
 \begin{enumerate}[label=\alph*)]
@@ -4281,11 +4289,11 @@ V\in C_{\Sigma}(A) \iff e^{-i\zeta}V \in C_{\Sigma}(A+d\zeta).
 \end{Thm}
 
 Theorems \ref{thm: pol class transform}, \ref{thm: pol class history}
-and corollary \ref{cor: pol class lift} makes clear in which way
+and corollary \ref{cor: pol class lift} make clear in which way
 the original plan to work in a single Fock space was misguided and 
 how it may be adapted to make it work.
 
-When trying to construct an evolution from a Cauchy surface \(\Sigma\)
+When trying to construct an evolution operator from a Cauchy surface \(\Sigma\)
 to a second one \(\Sigma'\) subject to an external field \(A\),
 one has to choose an initial polarisation \(V\in C_{\Sigma}(A)\)
 and a final polarisation \(V'\in C_{\Sigma'}(A)\). 
@@ -4316,8 +4324,8 @@ To make the discussion more concrete, we are going to
 introduce a particular representation of the Fock spaces 
 and evolution operators discussed so far. This representation 
 is heavily inspired by Diracs orignal idea discussed in section 
-\ref{sec: mot QED} and is usually referred to as inifinite
-spaces. For furhter details please have a look at section 2 of 
+\ref{sec: mot QED} and is usually referred to as inifinite wedge
+space. For furhter details please have a look at section 2 of 
 \cite{ivp0}. 
 
 The basic idea behind this representation is a generalisation of 
@@ -4362,9 +4370,10 @@ The corresponding wedge product can be thought of as
 \begin{equation}
   \mathsf{\Lambda}\Phi=\varphi_1\wedge \varphi_2\dots .
 \end{equation}
-However, as only operators on an infinite dimensional 
-Vector space \(\mathcal{\ell}\) in the set \(1+I_1(\mathcal{\ell})\) 
-have a Fredholm determinant only Dirac seas 
+However, as operators on an infinite dimensional 
+Vector space \(\mathcal{\ell}\) only have a Fredholm determinant 
+if they are in the set \(1+I_1(\mathcal{\ell})\), 
+only Dirac seas 
 \(\Phi,\Psi: \ell \rightarrow \mathcal{H}\) satisfying
 \begin{equation}\label{wedge space condition}
 \Psi^*\Phi,\Psi^*\Psi,\Phi^*\Phi\in 1+I_1(\ell)
@@ -4375,7 +4384,7 @@ infinite wedge product \(\mathsf{\Lambda}\Phi\) and collecting all infinite
 wedge products \(\mathsf{\Lambda}\Psi\) such that \eqref{wedge space condition}
 if fulfilled and taking the completion with respect to 
 the pairing \eqref{wedge space scalar product} results in 
-what referred to as infinite wedge space 
+what is referred to as infinite wedge space 
 \(\mathcal{F}_{\mathsf{\Lambda} \Phi}\). For a rigorous construction 
 please have a look at \cite[section 2.1]{ivp0}. 
 
@@ -4419,7 +4428,7 @@ we define one from the right:
   \mathcal{R}_{R}:\mathcal{F}_{\mathsf{\Lambda}\Psi}&\rightarrow \mathcal{F}_{\mathsf{\Lambda}\Phi'}, \\
   \mathcal{R}_R \mathsf{\Lambda}\Phi'&= \mathsf{\Lambda}(\Phi' R),
 \end{align}
-also here the \(Phi'\) generate the infinite wedge space 
+also here the \(\Phi'\) generate the infinite wedge space 
 \(\mathcal{F}_{\mathsf{\Lambda}\Psi}\). The spaces 
 \(\mathcal{F}_{\mathsf{\Lambda}\Psi}\) and 
 \(\mathcal{F}_{\mathsf{\Lambda}\Psi R}\) only coincides if 
@@ -4434,7 +4443,7 @@ Let \(\mathcal{H}, \ell, \mathcal{H}',\ell'\) be Hilbert spaces,
 \(V\in\mathrm{Pol}(\mathcal{H})\) and \(V'\in\mathrm{Pol}(\mathcal{H}')\) 
 polarisations, \(\Phi:\ell\rightarrow  \mathcal{H}\) and 
 \(\Phi':\ell'\rightarrow \mathcal{H}'\) be Dirac seas 
-such that \(\mathrm{ragne}(\Phi)=V\) and \(\mathrm{ragne}(\Phi')=V'\)
+such that \(\mathrm{range}(\Phi)=V\) and \(\mathrm{range}(\Phi')=V'\)
 Then the following two statements are equivalent
 \begin{enumerate}[label=\alph*)]
   \item The off diagonal operators \(P^{{V'}^\perp}U P^V\) and 
@@ -4472,9 +4481,19 @@ is irrelevant for understanding excitations at the surface.
 However, as we saw the motion of the electrons at great depth
 made it impossible to directly compare the time evolved 
 states with the original ones.
-We can use the \(R\) to revert this motion.  
-So the idea is to pick \(R'= (P^{V'}U P^V)^{-1}\), but 
-this choice is not unitary. By virtue of the scalar product 
+We can use \(R\) to revert this motion.  
+So the idea is to pick \(R'= (P^{V'}U P^V)^{-1}\) 
+whenever \(P^{V'}U P^V\) is invertible, but 
+this choice is not unitary. 
+If \(P^{V'}U P^V\) is not invertible one can perform the following construction 
+in several steps and assemble a lift of the total operator \(U\).
+This is possible, because of for two unitary operators \(U_1,U_2\)
+and corresponing lifts \(\tilde{U}_1,\tilde{U}_2\),
+\begin{equation}
+  \tilde{U}_1\tilde{U}_2
+\end{equation}
+is a lift of \(U_1 U_2\).
+By virtue of the scalar product 
 of two infinite wedge products being a determinant and 
 the equation 
 \begin{align}\label{right op calculation}
@@ -4537,7 +4556,7 @@ inspired by physical intuition. This object \(c^+\) has not
 itself been constructed yet, but the author and his supervisors 
 hope to construct it in the near future. 
 We restrict ourselves to the scattering regime, because it reduces 
-the available freedom. More precisely, in the scattering regime we 
+the available freedom. More precisely, in the scattering regime 
 there is a canonical polarisation in the initial and final Hilbert-space.
 
 
@@ -4564,7 +4583,7 @@ branch of the logarithm.
 
 We also introduce \(S^1:=\{z\in\mathbb{C}\mid |z|=1\}\).
 
-Furthermore the orthogonal projcetors onto the negative and
+Furthermore the orthogonal projectors onto the negative and
 positive energy
 subspaces of \(\mathcal{H}\) shall be denoted by 
 
@@ -4592,6 +4611,11 @@ where \(\Sigma_{\mathrm{out}}\) and \(\Sigma_{\mathrm{int}}\)  are Cauchy-surfac
 &\forall (x,y)\in \supp A\cup\supp B\times \Sigma_{\mathrm{out}}: (x-y)^2 \ge 0\Rightarrow x^0<y^0
 \end{align}
 holds.
+Define for any \(a,b\) elements of the same real or complex 
+vectorspace the linesegment connecting them 
+\begin{equation}
+  \overline{a~b}:=\{sa+(1-s)b\mid s\in[0,1]\}.
+\end{equation}
 Let 
 \begin{align}
 \mathrm{dm}:=\{(A,B)\in\mathcal{V}^2\mid P^- S_{A,B}P^-\text{ and }\\
@@ -4599,10 +4623,10 @@ Let
 \end{align}
 we define
 \begin{equation}\label{dom s bar}
-\dom\overline{S}:=\{(A,B)\in \mathrm{dm}\mid  \overline{A~B}\times\overline{A~B} \subseteq \mathrm{dm} \},
+\dom\overline{S}:=\{(A,B)\in \mathrm{dm}\mid  \overline{A~B}\times\overline{A~B} \subseteq \mathrm{dm} \}.
 \end{equation}
-where \(\overline{A~B}\) is the line segment connecting \(A\) and \(B\) in \(\mathcal{V}\).
-Furthermore, we choose for all \(A,B\in \dom \overline{S}\) the lift
+Furthermore, we choose for all \(A,B\in \dom \overline{S}\) the lift the lift discussed at 
+the end of the last section
 \begin{align}
 \overline{S}_{A,B}=\mathcal{R}_{\AG((P^- S_{A,B}P^-)^{-1})} \mathcal{L}_{S_{A,B}}.
 \end{align}
@@ -4615,12 +4639,22 @@ For \((A,B),(B,C), (C,A)\in\dom\overline{S}\), we define
 \end{align}
 We will see in lemma \ref{gamma attri} that 
 \(\gamma_{A,B,C}\neq 0\) and
-\( P^-S_{A,B}P^-S_{B,C}P^-S_{C,A}-1\) is traceclass, so 
+\( P^-S_{A,B}P^-S_{B,C}P^-S_{C,A}\in 1+I_1(\mathcal{H}^-)\), so 
 that \(\Gamma_{A,B,C}\) is well-defined.
-Lastly we introduce for \(A,B,C\in\mathcal{V}\) the function
+Next, we introduce for \(A,B,C\in\mathcal{V}\) the function
 \begin{equation}
 c_A(F,G):=-i \partial_F \partial_G  \Im \tr [P^- S_{A,A+F} P^+ S_{A,A+G} P^-] .
 \end{equation}
+Finally, 
+let \(a,b\) be two subsets of Minkowski spacetime, we say \(a\prec b\) 
+(in words: ``\(a\) is causally prior to \(b\)'') if 
+and only if for all \((x,y)\in a \times b\)
+\begin{equation}
+  \big((x-y)^2\ge 0\wedge x\neq y\big) \Rightarrow x^0<y^0
+\end{equation}
+holds. For \(A,B\in \mathcal{V}\) in the expressions 
+\(a\prec A, A\prec a, A\prec B \) the four-potentials \(A,B\)
+are to be interpreted as \(\supp A, \supp B\) respectively.
 \end{Def}
 
 \begin{Lemma}[properties of \(\dom\overline{S}\)]\label{lem properties of dom s bar}
@@ -4640,10 +4674,10 @@ We have to find a neighbourhood \(U\subseteq \mathbb{R}^{2n}\) of \(s\) such tha
 In doing so we have to ensure that the square
 
 \begin{align}
-  \overline{\sum_{k=1}^n s_k A_k~~~\sum_{k=n+1}^{2n} s_{k} A_{k} }^2
+  \overline{\sum_{k=1}^n s_k' A_k~~~\sum_{k=n+1}^{2n} s_{k}' A_{k} }^2
 \end{align}
 stays a subsets of \(\mathrm{dm}\) for all \(s'\in U\). 
-Now pick a metric \(d\) on \(\mathbb{R}^n\) and define 
+Now pick a metric \(d\) on \(\mathbb{R}^{2n}\) and define 
 \begin{align}\nonumber
 &r:=\inf \left\{d(s,s')\mid \overline{\sum_{k=1}^n s_k' A_k~~\sum_{k=n+1}^{2n} s_k' A_k }^2 ~~\cap \mathrm{dm}^c\neq \emptyset \right\}.
 \end{align}
@@ -4714,22 +4748,16 @@ this goal properties \eqref{prop S tilde 1} and
 \eqref{prop S tilde 1} is a basic requirement,
 any phase that does not fulfil it will not be directly 
 generalisable to the the evolution between different 
-Cauchy surfaces. In the proof of theorem we will see 
+Cauchy surfaces. In the proof of the theorem we will see 
 that in order to 
 satisfy it, it suffices to construct any global section, i.e.
 a lift of \(S_{0,A}\) for any \(A\in\mathcal{V}\). 
 In order to see why \eqref{prop S tilde 2} is a reasonable 
-second requirement we may quickly to through it's proof in 
+second requirement we may quickly go through its proof in 
 the one-particle situation. Let \(A,F,G\in\mathcal{V}\) 
 such that \(F\prec G\). We may then pick  a Cauchy 
-surface \(\Sigma'\) such that \(\supp F\) is causally prior to 
-\(\Sigma'\) and \(\Sigma'\) causally prior to \(\supp G\) 
-meaning that for \((x,y)\in \supp F \times \Sigma'\) we 
-have 
-\begin{equation}
-  \big((x-y)^2\ge 0\wedge x\neq y\big) \Rightarrow x^0<y^0
-\end{equation}
-and analogous for \((x,y)\in \Sigma' \times \supp G\).
+surface \(\Sigma'\) such that \(\supp F\prec \Sigma'\) 
+and \(\Sigma'\prec \supp G\). 
 This implies 
 \begin{align}
   S_{A+G,A+G+F}=U^{A+G}_{\Sigma_{\text{in}},\Sigma_{\text{out}}} U^{A+G+F}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}\\
@@ -4748,7 +4776,7 @@ For a lift
 of \(U^A_{\Sigma',\Sigma}\) we would expect the last calculation 
 to hold in the second quantised language as well. So 
 property \eqref{prop S tilde 2} is a way of incorporating
-properties of the lift of the time evolution 
+attributes of the lift of the time evolution 
 between different hypersurfaces 
 without mentioning those hypersurfaces directly.
 \end{Remark}
@@ -4756,8 +4784,10 @@ without mentioning those hypersurfaces directly.
 \subsection{Proofs}
 
 
-Since the phase of a lift relative to any other lift is fixed by a single matrix element, we may use the vacuum expectation values to characterise the
-phase of a lift. The function \(c\) captures the dependence of this object on variation of the external fields, the connection between vacuum expectation
+Since the phase of a lift relative to any other lift is fixed by a single 
+matrix element, we may use the vacuum expectation values to characterise the
+phase of a lift. The function \(c\) captures the dependence of this object on 
+variations of the external field, the connection between vacuum expectation
 values and \(c\) becomes clearer with the next lemma.
 
 \begin{Lemma}[properties of \(\Gamma\)]\label{gamma attri}
@@ -4776,7 +4806,7 @@ The function \(\Gamma\) has the following properties for all  \(A,B,C,D\in\mathc
 \end{align}
 \end{Lemma}
 \begin{proof}
-Pick  \(A,B,C\in\mathcal{V}\) such that \(\|1-S_{X,Y}\|<1\) for \(X,Y\in\{A,B,C\}\). 
+Pick  \(A,B,C\in\mathcal{V}\) such that \((X,Y)\in \dom\overline{S}\) for \(X,Y\in\{A,B,C\}\). 
 By definition \(\gamma\) is
 \begin{equation}
 \gamma_{A,B,C}=\det_{\mathcal{H}^-}(P^- S_{A,B} P^- S_{B,C} P^- S_{C,A} P^-).
@@ -4785,8 +4815,8 @@ The operator whose determinant we take in the last line is a product
 \begin{equation}
 P^- S_{A,B} P^- S_{B,C} P^- S_{C,A} P^-=P^- S_{A,B}P^-~~ P^- S_{B,C}P^-~~ P^- S_{C,A} P^-.
 \end{equation}
-The three factors appearing in this product are all invertible, hence the product is also invertible as operators of type \(\mathcal{H}^-\rightarrow \mathcal{H}^-\)
- because of the conditions of \(\{A,B,C\}\) imply that \(\|P^--P^-S_{X,Y}P^-\|<1\) which means that the Von Neumann series of the inverse converges, 
+The three factors appearing in this product are all invertible due to the definition of 
+\(\dom\overline{S}\), 
 therefore if the determinant exists we have \(\gamma_{A,B,C}\neq 0\).
 To see that it does exist, we reformulate
 \begin{align}
@@ -4794,7 +4824,8 @@ To see that it does exist, we reformulate
 &=\det_{\mathcal{H}^-}(P^-S_{A,C}P^-S_{C,A}P^- - P^- S_{A,B} P^+ S_{B,C} P^- S_{C,A} P^-)\\\label{eq: gamma proof of first attri}
 &=\det_{\mathcal{H}^-}(P^--P^-S_{A,C}P^+S_{C,A}P^- - P^- S_{A,B} P^+ S_{B,C} P^- S_{C,A} P^-),
 \end{align}
-now we know by a classic result of Ruisnaars \cite{ruisnaar&ivp0} that \(P^+S_{X,Y}P^-\) is a Hilbert-Schmidt operator for our setting,
+now we know by theorem \ref{thm ruisnaar} of Ruisnaars that \(P^+S_{X,Y}P^-\) 
+is a Hilbert-Schmidt operator for our setting,
 hence \(\gamma\) and also \(\Gamma\) are well defined.
 
  Equation 
@@ -7485,7 +7516,7 @@ Z^A=-i e\gamma^0 \gamma^\alpha \hat{A}_\alpha,\\
 \end{align}
 
 We introduce the projectors of the standard polarisation 
-of \(\mathcal{H}\) in terms of the hamiltonian of 
+of \(\mathcal{H}\) in terms of the Hamiltonian of 
 the free Dirac equation
 \begin{align}
 P^-:=1_{\mathrm{spec}(H^0)<0}, \quad P^+=1-P^-,

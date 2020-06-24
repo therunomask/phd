@@ -12,11 +12,6 @@ Christian B{\"a}r, Nicolas Ginoux, and Frank Pf{\"a}ffle.
   volume~3.
 \newblock European Mathematical Society, 2007.
 
-\bibitem{haantjes}
-IM~Benn and Philip Charlton.
-\newblock Dirac symmetry operators from conformal killing-yano tensors.
-\newblock {\em arXiv preprint gr-qc/9612011}, 1996.
-
 \bibitem{ivp0}
 D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher.
 \newblock Time-evolution of the external field problem in quantum
@@ -88,10 +83,20 @@ Yu~A Dubinskii.
 \newblock Sobolev spaces of infinite order.
 \newblock {\em Russian Mathematical Surveys}, 46(6):107, 1991.
 
+\bibitem{fecko2006differential}
+Mari{\'a}n Fecko.
+\newblock {\em Differential geometry and Lie groups for physicists}.
+\newblock Cambridge University Press, 2006.
+
 \bibitem{feynman1949theory}
 Richard~P Feynman.
 \newblock The theory of positrons.
 \newblock {\em Physical Review}, 76(6):749, 1949.
+
+\bibitem{feynman1949space}
+Richard~Phillips Feynman.
+\newblock Space-time approach to quantum electrodynamics.
+\newblock {\em Physical Review}, 76(6):769, 1949.
 
 \bibitem{finster2016fermionic}
 Felix Finster, Simone Murro, and Christian R{\"o}ken.
@@ -110,11 +115,11 @@ Ronald~L Graham, Donald~E Knuth, and Oren Patashnik.
 \newblock {\em Concrete mathematics: a foundation for computer science}.
 \newblock Addison-Wesley, Reading, 1994.
 
-\bibitem{guenther_1952}
-Marian G{\"u}nther.
-\newblock The relativistic configuration space formulation of the
-  multi-electron problem.
-\newblock {\em Physical Review}, 88(6):1411, 1952.
+\bibitem{hainzl2005existence}
+Christian Hainzl, Mathieu Lewin, and {\'E}ric S{\'e}r{\'e}.
+\newblock Existence of a stable polarized vacuum in the bogoliubov-dirac-fock
+  approximation.
+\newblock {\em Communications in mathematical physics}, 257(3):515--562, 2005.
 
 \bibitem{hoorfar2008inequalities}
 Abdolhossein Hoorfar and Mehdi Hassani.
@@ -132,7 +137,7 @@ Michael Ibison.
 \newblock On the conformal forms of the robertson-walker metric.
 \newblock {\em Journal of Mathematical Physics}, 48(12):122501, 2007.
 
-\bibitem{john}
+\bibitem{john1987hadamard}
 RW~John.
 \newblock The hadamard construction of green's functions on a curved space-time
   with symmetries.
@@ -198,11 +203,6 @@ Matthias Lienert and Roderich Tumulka.
 \newblock Interacting relativistic quantum dynamics of two particles on
   spacetimes with a big bang singularity.
 \newblock {\em Journal of Mathematical Physics}, 60(4), 2019.
-
-\bibitem{generalized_born}
-Matthias Lienert and Roderich Tumulka.
-\newblock Born’s rule for arbitrary cauchy surfaces.
-\newblock {\em Letters in Mathematical Physics}, 110(4):753--804, 2020.
 
 \bibitem{mtve}
 Matthias Lienert, Roderich Tumulka, et~al.
@@ -271,6 +271,11 @@ Jan Schlemmer and Jochen Zahn.
   potentials.
 \newblock {\em Annals of Physics}, 359:31--45, 2015.
 
+\bibitem{schwartz2014quantum}
+Matthew~D Schwartz.
+\newblock {\em Quantum field theory and the standard model}.
+\newblock Cambridge University Press, 2014.
+
 \bibitem{schweber}
 Silvan~S Schweber.
 \newblock {\em An introduction to relativistic quantum field theory}.
@@ -290,6 +295,11 @@ Julian Schwinger.
 David Shale and W~Forrest Stinespring.
 \newblock Spinor representations of infinite orthogonal groups.
 \newblock {\em Journal of Mathematics and Mechanics}, 14(2):315--322, 1965.
+
+\bibitem{silenko2015new}
+Alexander~J Silenko.
+\newblock New symmetry properties of pointlike scalar and dirac particles.
+\newblock {\em Physical Review D}, 91(6):065012, 2015.
 
 \bibitem{tomonaga}
 Sin-itiro Tomonaga.

@@ -54,8 +54,8 @@
 \contentsline {section}{\numberline {3.3}Geometric Construction of the Phase}{115}{section.3.3}% 
 \contentsline {subsection}{\numberline {3.3.1}Main Result of Construction}{118}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Proofs}{120}{subsection.3.3.2}% 
-\contentsline {section}{\numberline {3.4}Analyticity of the Scattering Operator}{151}{section.3.4}% 
-\contentsline {subsection}{\numberline {3.4.1}Differential second quantisation}{153}{subsection.3.4.1}% 
+\contentsline {section}{\numberline {3.4}Analyticity of the Scattering Operator}{152}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Differential second quantisation}{154}{subsection.3.4.1}% 
 \contentsline {subsection}{\numberline {3.4.2}Presentation and Proof of the Formula}{176}{subsection.3.4.2}% 
 \contentsline {section}{\numberline {3.5}The Relationship Between Hadamard States and Admissible Polarisation Classes}{181}{section.3.5}% 
 \contentsline {subsection}{\numberline {3.5.1}Hadamard States}{182}{subsection.3.5.1}% 

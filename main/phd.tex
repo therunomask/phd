@@ -300,6 +300,7 @@ metric signature and the Dirac representation of this
 algebra. Squared four dimensional objects always refer to 
 the Minkowski square, meaning for all 
 \(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
+We will be working in units where \(\hbar=1=c\).
 
 Two very important reasons for these difficulties
 are:
@@ -3858,9 +3859,10 @@ for an external field \(A\) to act upon the particles, changing
 \eqref{dirac free} to
 
 \begin{equation}\label{dirac ext field}
-  0= (i\slashed{\partial}-e\slashed{A}-m ) \psi.
+  0= (i\slashed{\partial}-\slashed{A}-m ) \psi,
 \end{equation}
 
+where we have set the electric charge of the electron to one.
 We might now imagine a field \(A\) that acts only during a 
 brief period of time. Such a field could pull a particle 
 of the Dirac Sea \(\Omega\), say 
@@ -3975,10 +3977,18 @@ where \(U_{\pm \mp}:= P^\pm U P^\mp\) for any operator \(U\)
 and \(\|\cdot\|_{I_2}\) is the Hilbert-Schmidt norm. The space of 
 operators of type \(\mathcal{H}\righttoleftarrow\) induced by this norm 
 is denoted by \(I_2(\mathcal{H})\).
-As a probability this quantity needs to be less than one; however,
-this is not always the case.
+Furthermore the orthogonal projectors onto the negative and
+positive energy
+subspaces of \(\mathcal{H}\) will be denoted by 
+\begin{align}\label{def: Ppm}
+P^-:\mathcal{H}\rightarrow \mathcal{H}^-\\
+P^+:=1-P^-,
+\end{align}
+respectively.
+As a probability the expression \eqref{pair creation prob} needs to 
+be bounded by one; however,this is not always the case.
 
-\begin{Thm}[Ruijsenaars,\cite{ruijsenaars1977charged}]\label{thm ruisnaar}
+\begin{Thm}[Ruijsenaars \cite{ruijsenaars1977charged}]\label{thm ruisnaar}
 The right hand side of \(\eqref{pair creation prob}<\infty\)
 for all times \(t_0,t_1\in\mathbb{R}\)
 if and only if \(\vec{A}=0\).
@@ -3986,14 +3996,15 @@ if and only if \(\vec{A}=0\).
 
 There is one more classical theorem to take note of in this context.
 
-\begin{Thm}[Shale-Stinespring,\cite{shale1965spinor}]\label{thm shale stinepsirng}
+\begin{Thm}[Shale-Stinespring \cite{shale1965spinor}]\label{thm shale stinepsirng}
 The one-particle operator \(U\) has a lift 
 \(\tilde{U}:\mathcal{F}\righttoleftarrow\) satisfying 
 \eqref{intro lift condition} if and only if 
 \(U_{\pm}, U_{\mp}\in I_2(\mathcal{H})\). 
 \end{Thm}
 
-Combined these theorems imply that unless the apparently
+Combined these theorems imply that unless the in the light of  
+Lorentz and gauge invariance
 highly artificial condition \(\vec{A}=0\) is 
 fulfilled there is no representation of the time evolution 
 operator subject to the field \(A\) into Fock space. 
@@ -4012,16 +4023,16 @@ H^A=\gamma^0(-i\vec{\gamma}\cdot \vec{\nabla} +m) + A_0 -\gamma^0\vec{\gamma}\cd
 \end{equation}
 Since there are infinitely many particles in the wedge 
 product of \(\Omega\) and there is no mechanism of suppression 
-for states of large momentum, there is no reason why the sum in 
-\eqref{pair creation prob} should converge for \(\vec{A}\neq 0\)
-and it does not, as the theorem states. However, as it turns out
+for states of large momentum, the sum in 
+\eqref{pair creation prob} does not converge for \(\vec{A}\neq 0\).
+However, as it turns out
 there is a \(\tilde{U}^A(t_1,t_0):\mathcal{F}\righttoleftarrow\)
 whenever \(\vec{A}(t_1)=0=\vec{A}(t_0)\). This implies 
-that all those 
-infinitely many pairs created by the spacial parts of the 
-vector potential \(A\) vanish again together with those parts of 
-\(A\), which is a justification for the term ``virtual pairs''
-employed by physicists. 
+that once the vector parts \(\vec{A}\) vanishes, only 
+finitely many pairs remain, justifying the term ``virtual pairs''
+for the infinity of pairs that appear and vanish together with 
+\(\vec{A}\).
+
 
 As we can read off of our construction of Fock space, this space 
 consists of infinite wedge products that are sufficiently close 
@@ -4134,7 +4145,7 @@ with respect to this salar product we define
 \(\mathcal{H}_{\Sigma}=L^2(\Sigma, \mathbb{C}^4)\).
 \end{Def}
 
-As is well known the Dirac equation coupled to an external 
+As is well known(e.g. \cite{bar2007wave,ivp1}) the Dirac equation coupled to an external 
 potential, equation \eqref{dirac ext field}, has a 
 one-particle evolution operator for each pair of Cauchy surfaces \(\Sigma, \Sigma'\)
 \begin{equation}
@@ -4242,7 +4253,7 @@ polarisations. Then there is a unitary operator
 \(V'\in C_{\Sigma'}(A)\).
 \end{Corollary}
 
-The definition \eqref{def pol class} suggests a dependence of 
+The definition \ref{def pol class} suggests a dependence of 
 \(C_{\Sigma}(A)\) on all of \(A\) as a function of time. 
 As indicated in the last section,
 this is not the case.
@@ -4325,7 +4336,7 @@ introduce a particular representation of the Fock spaces
 and evolution operators discussed so far. This representation 
 is heavily inspired by Diracs orignal idea discussed in section 
 \ref{sec: mot QED} and is usually referred to as inifinite wedge
-space. For furhter details please have a look at section 2 of 
+space. For further details please have a look at section 2 of 
 \cite{ivp0}. 
 
 The basic idea behind this representation is a generalisation of 
@@ -4372,7 +4383,8 @@ The corresponding wedge product can be thought of as
 \end{equation}
 However, as operators on an infinite dimensional 
 Vector space \(\mathcal{\ell}\) only have a Fredholm determinant 
-if they are in the set \(1+I_1(\mathcal{\ell})\), 
+if they are in the set \(1+I_1(\mathcal{\ell})\) (here \(I_1\) 
+denotes the space of operators with finite trace-norm), 
 only Dirac seas 
 \(\Phi,\Psi: \ell \rightarrow \mathcal{H}\) satisfying
 \begin{equation}\label{wedge space condition}
@@ -4382,7 +4394,8 @@ have a scalar product.
 Starting with one particular 
 infinite wedge product \(\mathsf{\Lambda}\Phi\) and collecting all infinite 
 wedge products \(\mathsf{\Lambda}\Psi\) such that \eqref{wedge space condition}
-if fulfilled and taking the completion with respect to 
+is fulfilled and formal linear combinations thereof and 
+taking the completion with respect to 
 the pairing \eqref{wedge space scalar product} results in 
 what is referred to as infinite wedge space 
 \(\mathcal{F}_{\mathsf{\Lambda} \Phi}\). For a rigorous construction 
@@ -4434,7 +4447,7 @@ also here the \(\Phi'\) generate the infinite wedge space
 \(\mathcal{F}_{\mathsf{\Lambda}\Psi R}\) only coincides if 
 \(\ell'=\ell\) and
 \(R\) has a determinant, i.e. \(R\in 1+I_1(\ell)\). The next
-theorem helps us to decide when there is a unitary 
+theorem helps us to decide in which cases there is a unitary 
 \(R:\ell'\rightarrow \ell\) such that 
 \(\mathcal{F}_{\mathsf{\Lambda}U\Phi R}
 =\mathcal{F}_{\mathsf{\Lambda}\Phi' }\) holds. 
@@ -4456,7 +4469,8 @@ Then the following two statements are equivalent
 
 So returning to \(\Phi:\ell\rightarrow \mathcal{H}_\Sigma\), 
 \(\Phi':\ell\rightarrow \mathcal{H}_{\Sigma'}\), 
-\(\mathrm{range}(\Phi)\in C_{\Sigma}(A),
+with
+\(\mathrm{range}(\Phi)\in C_{\Sigma}(A),\\
 \mathrm{range}(\Phi')\in C_{\Sigma'}(A)\) for some 
 Cauchy surfaces \(\Sigma, \Sigma'\) and some \(A\in\mathcal{V}\),
 condition a) of the last theorem is satisfied so 
@@ -4485,7 +4499,8 @@ We can use \(R\) to revert this motion.
 So the idea is to pick \(R'= (P^{V'}U P^V)^{-1}\) 
 whenever \(P^{V'}U P^V\) is invertible, but 
 this choice is not unitary. 
-If \(P^{V'}U P^V\) is not invertible one can perform the following construction 
+If \(P^{V'}U P^V\) is not invertible one can perform the construction 
+outlined next
 in several steps and assemble a lift of the total operator \(U\).
 This is possible, because of for two unitary operators \(U_1,U_2\)
 and corresponing lifts \(\tilde{U}_1,\tilde{U}_2\),
@@ -4534,7 +4549,7 @@ has a determinant. Hence we may define
 Well-definedness can be checked directly, the operator
 \begin{equation}
   {\Phi'}^* U^A_{\Sigma',\Sigma} \Phi R' 
-  =P^{V'} U{\Sigma',\Sigma} P^{V}R' 
+  =P^{V'} U_{\Sigma',\Sigma}^A P^{V}R' 
   = 1_{V'}
 \end{equation}
 clearly has a determinant on \(V'\). By similar 
@@ -4583,16 +4598,6 @@ branch of the logarithm.
 
 We also introduce \(S^1:=\{z\in\mathbb{C}\mid |z|=1\}\).
 
-Furthermore the orthogonal projectors onto the negative and
-positive energy
-subspaces of \(\mathcal{H}\) shall be denoted by 
-
-\begin{align}\label{def: Ppm}
-P^-:\mathcal{H}\rightarrow \mathcal{H}^-\\
-P^+:=1-P^-,
-\end{align}
-respectively.
-
 
 \end{Def}
 
@@ -4635,7 +4640,7 @@ For \((A,B),(B,C), (C,A)\in\dom\overline{S}\), we define
  the complex numbers 
 \begin{align}\label{def: gamma}
 \gamma_{A,B,C}&:=\det_{\mathcal{H}^-} (P^- S_{A,B} P^- S_{B,C} P^- S_{C,A}P^-),\\
-\Gamma_{A,B,C}&:=\ag(\gamma_{A,B,C}).
+\Gamma_{A,B,C}&:=\ag(\gamma_{A,B,C}).\label{def: Gamma}
 \end{align}
 We will see in lemma \ref{gamma attri} that 
 \(\gamma_{A,B,C}\neq 0\) and
@@ -4727,12 +4732,12 @@ with the following properties
 &\forall F\prec G: \tilde{S}_{A,A+F}=\tilde{S}_{A+G,A+F+G}\label{prop S tilde 2}
 \end{align}
 and the associated current satisfies
-\begin{equation}
+\begin{equation}\label{jurrent S tilde}
 \partial_G j_{A+G}^{\tilde{S}}(F)=\left\{\begin{matrix} -2i c_A(F,G)  &\text{ for } G\prec F\\ 0 &\text{ for } F\prec G  \end{matrix} \right.
 \end{equation}
 \end{Thm}
 
-\begin{Remark}
+\begin{Remark}\label{rmk phase construction}
 One may wonder why we construct a lift with the properties 
 \eqref{prop S tilde 1} and \eqref{prop S tilde 2}. 
 The project of finding a rigorous formulation of external 
@@ -4830,8 +4835,8 @@ hence \(\gamma\) and also \(\Gamma\) are well defined.
 
  Equation 
 \eqref{eq: gamma proof of first attri} also proves \eqref{gamma attri1}. Next we show \eqref{gamma attri2}. 
-Borrowing notation from \cite[section 2]{ivp0} to identify \(\Omega=\bigwedge \Phi\) with the injection \(\Phi: \mathcal{H}^-\hookrightarrow\mathcal{H}\)
-and \(\bigwedge\) is used to construct the infinite wedge spaces that are the perspective of Fock space introduced in \cite{ivp0}. 
+In the notation of the last section we have \(\Omega=\bigwedge \Phi\) 
+with the injection \(\Phi: \mathcal{H}^-\hookrightarrow\mathcal{H}\). 
 We begin by reformulating the right hand side of  \eqref{gamma attri2}
 \begin{align}
  &\langle \Omega, \overline{S}_{A,B} \overline{S}_{B,C} \overline{S}_{C,A}\Omega\rangle \\\notag
@@ -4865,25 +4870,24 @@ since \(|P^- S_{X,Y}P^-|\) is an absolute value. We continue with the result of 
 &=\det_{\mathcal{H}^-}\left(  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) P^-S_{C,A} P^-  \right)\\
 &\hspace{7cm}\times \det_{\mathcal{H}^-}|P^-S_{C,A} P^-|^{-1} \\\notag
 &=\det_{\mathcal{H}^-}\left( P^-S_{C,A} P^- \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-)  \right)\\
-&\hspace{7cm}\times \det_{\mathcal{H}^-}|P^-S_{C,A} P^-|^{-1} \\\notag
+&\hspace{7cm}\times \det_{\mathcal{H}^-}|P^-S_{C,A} P^-|^{-1} \\
 &=\frac{\det_{\mathcal{H}^-}\left(P^- S_{A,B} P^- P^- S_{B,C} P^- P^-S_{C,A} P^-  \right)}
-{\det_{\mathcal{H}^-}|P^- S_{A,B} P^-| \cdot \det_{\mathcal{H}^-}|P^-S_{B,C} P^-|}\\
-&\hspace{7cm}\times\frac{1}{\det_{\mathcal{H}^-}|P^-S_{C,A} P^-|}.
+{\det_{\mathcal{H}^-}\!|P^- S_{A,B} P^-| \cdot \det_{\mathcal{H}^-}\!|P^-S_{B,C} P^-|\cdot \det_{\mathcal{H}^-}\!|P^-S_{C,A} P^-|}.
 \end{align}
-Now since the denominator of this fraction is real we can use \eqref{gamma attri1} to identity
+Now since the denominator of this fraction is real we can use \eqref{def: Gamma} to identity
 \begin{equation}
 \ag(\langle \Omega, \overline{S}_{A,B} \overline{S}_{B,C} \overline{S}_{C,A}\Omega\rangle)=\Gamma_{A,B,C}^{-1},
 \end{equation}
 which proves \eqref{gamma attri2}.
 
-For the first equality in \eqref{gamma attri3} we use \(\det X (1+Y) X^{-1}=\det (1+Y)\) for any \(Y\) trace-class and 
+For the first equality in \eqref{gamma attri3} we use \(\det (X (1+Y) X^{-1})=\det (1+Y)\) for any \(Y\) trace-class and 
  \(X\) bounded and invertible. So we can cyclicly permute the factors \(P^- S_{X,Y}P^-\) in the determinant and find
 \begin{align*}
 &\Gamma_{A,B,C}=\ag(\det_{\mathcal{H}^-} P^- S_{A,B}P^-S_{B,C}P^-S_{C,A}P^- )\\
 &\quad=\ag(\det_{\mathcal{H}^-} P^-S_{C,A}P^- S_{A,B}P^-S_{B,C}P^- )
 =\Gamma_{C,A,B}.
 \end{align*}
-For the second equality of \eqref{gamma attri3} we use \eqref{gamma attri1}
+For the second equality of \eqref{gamma attri3} we use \eqref{def: Gamma}
 to represent both \(\Gamma_{A,B,C}\) and \(\Gamma_{B,A,C}\). Using this and the manipulations of the determinant 
 we already employed, we arrive at
 \begin{align}
@@ -4909,8 +4913,9 @@ hence \eqref{gamma attri4} follows.
 For proving \eqref{gamma attri5} we will use the definition of \(\Gamma\) directly and repeatedly use that we can cyclicly permute operator groups of the form
 \(P^- S_{X,Y}P^-\) for \(X,Y\in \{A,B,C,D\}\) in the determinant, i.e.
 \begin{equation}\label{tetraeder 1}
-\det P^- S_{X,Y}P^- O = \det O P^- S_{X,Y}P^-.\tag{\(\circlearrowleft\)}
+\det P^- S_{X,Y}P^- O = \det O P^- S_{X,Y}P^-,\tag{\(\circlearrowleft\)}
 \end{equation}
+whenever \(O\) has a determinant.
 This is possible, because \(P^- S_{X,Y}P^-\) is bounded and invertible. Furthermore we will use that 
 \begin{equation}\label{tetraeder 2}
 \det O_1 O_2 = \det O_1 \det O_2\tag{\(\leftrightarrow\)}
@@ -4976,18 +4981,18 @@ Equation \eqref{gamma attri6} is a direct consequence of \eqref{gamma attri5} an
 For \eqref{gamma attri7} we realise that according to \cite{ivp0} that two lifts can only differ by a phase,
 that is
 \begin{equation}
-\overline{S}_{A,C}=\alpha \overline{S}_{A,B} \overline{S}_{B,C}
+\overline{S}_{A,C}=\xi \overline{S}_{A,B} \overline{S}_{B,C}
 \end{equation}
-for some \(\alpha\in \mathbb{C}, |\alpha|=1\). 
+for some \(\xi\in \mathbb{C}, |\xi|=1\). 
 
-In order to identify \(\alpha\) we recognise that \(\overline{S}_{X,Y}=\overline{S}_{Y,X}^{-1}\) for four potentials \(X,Y\) 
+In order to identify \(\xi\) we recognise that \(\overline{S}_{X,Y}=\overline{S}_{Y,X}^{-1}\) for four potentials \(X,Y\) 
 and find
 \begin{equation}
-1 \alpha^{-1}= \overline{S}_{A,B} \overline{S}_{B,C}\overline{S}_{C,A}.
+1 \xi^{-1}= \overline{S}_{A,B} \overline{S}_{B,C}\overline{S}_{C,A}.
 \end{equation}
 Now we take the vacuum expectation value on both sides of this equation and use \eqref{gamma attri2} to find
 \begin{equation}
-\alpha^{-1}=\langle\Omega,\overline{S}_{A,B} \overline{S}_{B,C}\overline{S}_{C,A}\Omega\rangle = \Gamma_{A,B,C}^{-1}.
+\xi^{-1}=\langle\Omega,\overline{S}_{A,B} \overline{S}_{B,C}\overline{S}_{C,A}\Omega\rangle = \Gamma_{A,B,C}^{-1}.
 \end{equation}
 
 Finally we prove \eqref{gamma attri8}. We start from the right hand side of this equation 
@@ -4999,8 +5004,9 @@ holds, we have
 (z/|z|)'(t)=\frac{z'}{|z|}(t)+\frac{-z}{|z|^2}\frac{z'z^*+ {z^*}'z}{2|z|}(t) =\frac{z'}{2|z|}(t)-\frac{z^2{z^*}'}{2 |z|^3}(t)\\
 =i (\Im (z'))/z(t).
 \end{align}
-Furthermore, we will use the following  expressions for the derivative of the determinant which holds for all functions 
-\(M:\mathbb{R}\rightarrow (\mathcal{H}\rightarrow \mathcal{H})\) such that \(M(t)-1\) is traceclass and \(M\) is invertible 
+Furthermore, we will use the following  expressions for the derivative of 
+the determinant which holds for all operator valued functions on the reals
+\(M:\mathbb{R}\rightarrow 1+I_1(\mathcal{H})\) such that \(M\) is invertible 
 for all \(t\in\mathbb{R}\)
 \begin{align}\label{diff det}
 \partial_\varepsilon \det M(\varepsilon)|_{\varepsilon=0}=\det M(0) \tr (M^{-1}(0)\partial_\varepsilon M(\varepsilon)|_{\varepsilon}),
@@ -5016,7 +5022,7 @@ the chapter on regularity \ref{chap:regularity of S}.
 We compute
 \begin{align}
 \partial_B \partial_C \ln \Gamma_{A,A+B,A+C}\\
-\overset{\eqref{gamma attri1}}{=} 
+\overset{\eqref{def: Gamma}}{=} 
 \partial_B \partial_C \ln \ag(\det_{\mathcal{H}^-} (P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-))\\
 =\partial_B \frac{\partial_C\ag(\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-))}{\ag(\det_{\mathcal{H}^-} (P^-S_{A,A+B}P^-S_{A+B,A}P^- ))}\\
 =\partial_B \partial_C\ag(\det_{\mathcal{H}^-}(P^-S_{A,A+B}P^-S_{A+B,A+C}P^- S_{A+C,A}P^-))\\
@@ -5088,7 +5094,7 @@ subject to the initial condition \(\hat{S}_{0,0}=1\).
 
 The proof of theorem \ref{thm: ex s hat} is divided into two lemmas due to its length. We will introduce the integral flow \(\phi_A\) associated 
 with the differential equation \eqref{diff s hat} for some \(A\in\mathcal{V}\). We will then study the properties of \(\phi_A\)
-in the two lemmas and finally construct \(\hat{S}_{0,A}=1 \phi_A(0,1)\). In the first lemma we will establish the existence of a 
+in the two lemmas and finally construct \(\hat{S}_{0,A}:=\phi_A(0,1)\). In the first lemma we will establish the existence of a 
 local solution. The solution will be constructed along the line \(\overline{0 ~~ A}\). In the second lemma we patch local solutions together
 to a global one.
 
@@ -5110,7 +5116,7 @@ We first define the phase
 z:\{(A,B)\in\dom\overline{S}\mid A, B \text{ linearly dependent}\} \rightarrow S^1
 \end{align}
 by the differential equation
-\begin{equation}
+\begin{equation}\label{diff eq z local}
 \frac{d}{d x} \ln z(t A, x A) = - \left.\left( \frac{d}{dy} \ln \Gamma_{tA,x A, yA}\right)\right|_{y=x}
 \end{equation}
 and the initial condition 
@@ -5135,8 +5141,8 @@ Calculating the argument of the derivative of \eqref{diff s hat} we find:
 {\hat{S}_{0, A} \overline{S}_{ A, s A} \overline{S}_{s A,(s+\varepsilon)}z( A, s A)}\\
 \overset{\eqref{gamma attri6}}{=}
  \frac{\hat{S}_{0,A}\overline{S}_{ A, s A} \overline{S}_{s A,(s+\varepsilon)} \Gamma_{A, sA, (s+\varepsilon)A} z(A, (s+\varepsilon)A)}
-{\hat{S}_{0, A} \overline{S}_{t A, s A} \overline{S}_{s A,(s+\varepsilon)}z( A, s A)}\\
-= \frac{\Gamma_{tA,sA,(s+\varepsilon)A}z(tA, (s+\varepsilon)A)}{z( A, sA)}
+{\hat{S}_{0, A} \overline{S}_{ A, s A} \overline{S}_{s A,(s+\varepsilon)}z( A, s A)}\\
+= \frac{\Gamma_{A,sA,(s+\varepsilon)A}z(A, (s+\varepsilon)A)}{z( A, sA)}
 \end{align}
 Now we take the derivative with respect to \(\varepsilon\) at \(\varepsilon=0\), 
 cancel the factor that does not depend on \(\varepsilon\) and relabel \(s=x\) to obtain
@@ -5155,11 +5161,15 @@ for \((tA,sA)\in\dom\overline{S}\). Since \(\overline{S}\) is a lift of \(S\), w
  \eqref{phi prop1} holds. Equation \eqref{phi prop3} follows from \eqref{z initial} and 
  \(\overline{S}_{tA, tA}=1\) for general \(t\in\mathbb{R}\).
  Equation \eqref{phi prop4} follows by plugging in 
-\eqref{def phi} and using the differential equation for \(z\) \eqref{z initial}:
+\eqref{def phi} and using the defining differential equation for
+ \(z\) \eqref{diff eq z local} as well as its initial 
+condition \eqref{z initial} and the property 
+\eqref{gamma attri3} of \(\Gamma\):
 \begin{align}
 \partial_s \left.\frac{\phi_A(t,s)}{\overline{S}_{t A,sA}}\right|_{s=t}
 =\partial_s \left.\frac{z(tA,sA)\overline{S}_{t A, sA}}{\overline{S}_{t A, s A}}\right|_{s=t}\\
-=\partial_t \left.z(tA, sA)\right|_{t=s}=0.
+=\partial_s \left.z(tA, sA)\right|_{t=s}
+=z(t A,t A)\bigg(\frac{d}{d s}\ln \Gamma_{t A, t A, s A}\bigg)\bigg|_{s=t}=0.
 \end{align}
 
 
@@ -5178,7 +5188,7 @@ In order to do so we plug in the definition \eqref{def phi} of \(\phi_A\) and ob
 \iff z(tA,sA) z(sA,lA)z(tA,lA)^{-1}=\Gamma_{tA,sA,lA}.
 \end{align}
 In order to check the validity of the last equality we plug in the 
-ntegral formula \eqref{z solution} for \(z\), we also abbreviate 
+integral formula \eqref{z solution} for \(z\), we also abbreviate 
 \(\frac{d}{d x}=\partial_x\)
 
 \begin{align}
@@ -5200,7 +5210,7 @@ which proves the validity of the consistency relation
 
 In order to prove uniqueness we pick \(A\in \mathcal{V}\) 
 and assume there is \(\phi'\) also defined on \(\dom \phi_A\) 
-and satisfies \eqref{phi prop1}-\eqref{phi prop4}. Then we may 
+and satisfies \eqref{phi prop1} to \eqref{phi prop4}. Then we may 
 use \eqref{phi prop1} to conclude that for any \((t,s)\in\dom\phi_A\) 
 there is
 \(\gamma(t,s)\in S^1\) such that
@@ -5278,7 +5288,7 @@ holds and
   \forall n \in \mathbb{N}_0: \bigcup_{k=0}^n U_{x_k}=:\dom_n
 \end{equation}
 is an open interval. Please note that such a sequence always exists. 
-We are going to prove that for any \(n\in\mathbb{R}_0\) 
+We are going to prove that for any \(n\in\mathbb{N}_0\) 
 There is a function \(\psi_n:\dom_n\times\dom_n\to U(\mathcal{F})\), 
 which satisfies the conditions
 \begin{align}\label{induction psi1}
@@ -5297,8 +5307,8 @@ This function is a restriction of \(\phi_A\) and because of
 lemma \ref{lem phi local} it 
 fulfils all of the required properties directly. 
  
-For the induction step we 
-define \(\psi_{n+1}\) on the domain 
+For the induction step we pick \(t\in \dom_n\cap U_{x_{n+1}}\) 
+and define \(\psi_{n+1}\) on the domain 
 \(\dom_{n+1}\times \dom_{n+1}\) by
  \begin{equation}\label{def psi induction}
  \psi_{n+1}(x,y):=\left\{\begin{matrix}
@@ -5320,33 +5330,33 @@ that the cases in the definition agree when they overlap.
   \item If we have \(x,y \in \dom_n\cap U_{x_{n+1}}\) all four cases overlap; however, the 
   alternative definitions all equal \(\phi_A(x,y)\):
 \begin{align}\nonumber
-  \psi_n(x,y)\overset{\eqref{induction psi3}}{=}\phi_A(x,y)\overset{\eqref{consistency phi}}{=}\phi_A(x,t) \phi_A(t,y)
+  \psi_n(x,y)\overset{\eqref{induction psi3}}{=}\phi_A(x,y)\overset{\eqref{phi prop2}}{=}\phi_A(x,t) \phi_A(t,y)
   \\
-\overset{\eqref{induction psi3}}{=}\left\{\begin{matrix}\psi_A(x,t) \phi_n(t,y)\\ \phi_A(x,t) \psi_n(t,y).\end{matrix}\right.
+\overset{\eqref{induction psi3}}{=}\left\{\begin{matrix}\psi_n(x,t) \phi_n(t,y)\\ \phi_A(x,t) \psi_n(t,y).\end{matrix}\right.
   \end{align}
-  \item Furthermore, if we have \(x\in \dom_n\), \(y\in \dom_n\cap U_{x_{n+1}}\) case one 
-  and three overlap. Here both calternatives are equal to
+  \item Furthermore, if we have \(x\in \dom_n\), \(y\in \dom_n\cap U_{x_{n+1}}\) cases one 
+  and three overlap. Here both alternatives are equal to
   \(\psi_n(x,y)\), since \(x,y\in \dom_n\) and we obtain:
   \begin{equation}
   \psi_n(x,y)\overset{\eqref{induction psi2}}{=}\psi_n(x,t)\psi_n(t,y)\overset{\eqref{induction psi3}}{=}\psi_n(x,t)\phi_A(t,y).
   \end{equation}
-  \item Additionally, if \(y\in \dom_n\), \(x\in \dom_n\cap U_{x_{n+1}}\) case one and four overlap. 
+  \item Additionally, if \(y\in \dom_n\), \(x\in \dom_n\cap U_{x_{n+1}}\) cases one and four overlap. 
   Here they are equal to
   \(\psi_n(x,y)\), since \(x,y\in \dom_n\) a quick calculation yields:
   \begin{equation}
-  \psi_n(x,y)\overset{\eqref{induction psi2}}{=}\psi_n(x,t)\psi_n(t,y)\overset{\eqref{induction psi3}}{=}\psi_A(x,t)\psi_n(t,y).
+  \psi_n(x,y)\overset{\eqref{induction psi2}}{=}\psi_n(x,t)\psi_n(t,y)\overset{\eqref{induction psi3}}{=}\phi_A(x,t)\psi_n(t,y).
   \end{equation}
   \item Moreover, if we have \(y\in U_{x_{n+1}}\), \(x\in \dom_n\cap U_z\) 
-  case two and three overlap. Here both candidate definitions are equal to
+  cases two and three overlap. Here both candidate definitions are equal to
   \(\phi_A(x,y)\), since \(x,t\in U_z\) we arrive at:
   \begin{equation}
-  \phi_A(x,y)\overset{\eqref{consistency phi}}{=}\phi_A(x,t)\phi_A(t,y)\overset{\eqref{induction psi3}}{=}\psi_n(x,t)\phi_A(t,y).
+  \phi_A(x,y)\overset{\eqref{phi prop2}}{=}\phi_A(x,t)\phi_A(t,y)\overset{\eqref{induction psi3}}{=}\psi_n(x,t)\phi_A(t,y).
   \end{equation}
   \item Also, if we have \(x\in U_{x_{n+1}}\), \(y\in \dom_n\cap U_{x_{n+1}}\) 
-  case two and four overlap. In this case both alternatives are equal to
+  cases two and four overlap. In this case both alternatives are equal to
   \(\phi_A(x,y)\), since \(y,t\in U_{x_{n+1}}\) we get:
     \begin{equation}
-  \phi_A(x,y)\overset{\eqref{consistency phi}}{=}\phi_A(x,t)\phi_A(t,y)\overset{\eqref{induction psi3}}{=}\phi_A(x,t)\psi_n(t,y).
+  \phi_A(x,y)\overset{\eqref{phi prop2}}{=}\phi_A(x,t)\phi_A(t,y)\overset{\eqref{induction psi3}}{=}\phi_A(x,t)\psi_n(t,y).
   \end{equation}
   \end{enumerate}
 We proceed to show the induction claim, 
@@ -5424,7 +5434,7 @@ Recall the definition of \(\psi_{n+1}\)
   \end{matrix} \right.
 \end{equation} 
 
-Therefore if \(x,y\in\dom_{n+1}\) we may use the induction hypothesis directly
+Therefore if \(x,y\in\dom_{n}\) we may use the induction hypothesis directly
 and if \(x,y\in U_{x_{n+1}}\) we also arrived a the claim we want to prove.
 Excluding these cases, we are left with rows number three and four of this
 definition with the restriction
@@ -5449,7 +5459,7 @@ on \(\dom_{n+1}\times\dom_{n+1}\) fulfil
 \forall s,k,l\in\mathbb{R}: \tilde{\psi}(k,s)\tilde{\psi}(s,l)=\tilde{\psi}(k,l),\\\label{uniqueness psi3}\tag{\(\ref{induction psi3}_{\tilde{\psi}}\)}
 \forall (x,y)\in\dom_{n+1}: (xA, yA)\in\dom\overline{S}\Rightarrow  \tilde{\psi}(x,y)=\phi_A(x,y).
 \end{align}
-Now pick \(x,y \in (\dom_n\cup U_{x_{n+1}})\). We proceed 
+Now pick \(x,y \in \dom_{n+1}\). We proceed 
 in a case by case manner
 \begin{enumerate}
 \item If \(x,y\in\dom_n\) holds, then 
@@ -5463,8 +5473,8 @@ from the induction hypothesis.
 \(x\in \dom_n, y \in U_{x_{n+1}}\) holds, then 
 \begin{align}
 \psi_{n+1}(x,y)
-\overset{\eqref{induction psi2}}{=}
-\psi_{n+1}(x,t)\psi_{n+1}(t,y)\\
+\overset{\eqref{def psi induction}}{=}
+\psi_{n}(x,t)\phi_{A}(t,y)\\
 \overset{t\in \dom_n\cap U_{x_{n+1}}}{=}\tilde{\psi}_{n+1}(x,t)\tilde{\psi}_{n+1}(t,y)
 \overset{\eqref{uniqueness psi2}}{=}
 \tilde{\psi}_{n+1}(x,y)
@@ -5475,22 +5485,22 @@ is satisfied.
 use the same calculation to obtain 
 \begin{align}
 \psi_{n+1}(x,y)
-\overset{\eqref{induction psi2}}{=}
-\psi_{n+1}(x,t)\psi_{n+1}(t,y)\\
+\overset{\eqref{def psi induction}}{=}
+\phi_{A}(x,t)\psi_{n}(t,y)\\
 \overset{t\in \dom_n\cap U_{x_{n+1}}}{=}\tilde{\psi}_{n+1}(x,t)\tilde{\psi}_{n+1}(t,y)
 \overset{\eqref{uniqueness psi2}}{=}
 \tilde{\psi}_{n+1}(x,y).
 \end{align}
 \end{enumerate}
 
-Now we have established an extension \(\psi_n\) of \(\phi_A\)
+Now we have established a unique extension \(\psi_n\) of \(\phi_A\)
 fulfilling properties \eqref{induction psi1}-\eqref{induction psi3}.
 
 We know that for each \(n\in\mathbb{N}\) the function
 \(\psi_{n+1}:\dom_{n+1}^2\rightarrow U(\mathcal{F})\) is 
 an extention of 
 \(\psi_{n+1}:\dom_{n}^2\rightarrow U(\mathcal{F})\).
-Furhtermore, the sets \(\dom_n\) cover 
+Furthermore, the sets \(\dom_n\) cover 
 \(\mathbb{R}\) according 
 to equation \eqref{open cover of R}. Consequently 
 there is a unique common extension, by small abuse of 
@@ -5508,7 +5518,7 @@ Lemma \ref{lem: phi global} enables us to define a global lift.
 \begin{Def}[global lift]\label{de: s hat}
 For any \(A\in\mathcal{V}\) we define 
 \begin{equation}
-\hat{S}_{0,A}:=\phi_A(1,0).
+\hat{S}_{0,A}:=\phi_A(0,1).
 \end{equation}
 \end{Def}
 Using lemma  \ref{lem: phi global} we are now in a position
@@ -5638,7 +5648,7 @@ The parameter \(\overline{S}\) appearing in the defining
 differential equation of \(\hat{S}\) is smooth 
 since it is directly constructed in terms of 
 the one particle scattering operator which is smooth 
-due to chapter \ref{chap:regularity of S} in the a
+due to chapter \ref{chap:regularity of S} in the
 appendix.
 \end{Remark}
 
@@ -5657,7 +5667,7 @@ z(F,A)z(A,G)z(G,F)&=\Gamma_{F,A,G}\\\label{z c}
 Pick \(A,F,G\in\mathcal{V}\) as in the lemma. We start off by analysing
 \begin{align}
 &\hat{S}_{0,F}\overline{S}_{F,G}\overset{\eqref{def z}}{=}z(A,F)\hat{S}_{0,A}\overline{S}_{A,F}\overline{S}_{F,G}\\\label{phase comparison}
-&\overset{\eqref{gamma attri6}}{=}z(A,F) \Gamma_{A,F,G}^{-1} \hat{S}_{0,A} \overline{S}_{A,G}.
+&\overset{\eqref{gamma attri7}}{=}z(A,F) \Gamma_{A,F,G}^{-1} \hat{S}_{0,A} \overline{S}_{A,G}.
 \end{align}
 Exchanging  \(A\) and \(F\) in this equation yields
 \begin{equation}
@@ -5721,15 +5731,15 @@ when restricted to any finite
 dimensional subspace of \(\mathcal{V}\).
 
 Additionally, we define the \(1\)-form 
-\(\chi\in \Omega^1(\mathcal{V})\) by
+\(\chi\in \Omega^1\) by
 \begin{equation}\label{de chi}
 \chi_A(B):=\partial_B\ln z(A,A+B)
 \end{equation}
 for all \(A,B\in\mathcal{V}\).
 Furthermore, for \(p\in\mathbb{N}\) and any differential 
-form \(\omega\in \Omega^p(\mathcal{V})\), 
+form \(\omega\in \Omega^p\), 
 we define its exterior derivative, 
-\(d \omega\in\Omega^{p+1}(\mathcal{V})\) by
+\(d \omega\in\Omega^{p+1}\) by
 \begin{equation}
 (d\omega)_A(B_1,\dots, B_{p+1}):=\sum_{k=1}^{p+1} (-1)^{k+1} 
 \partial_{B_k}\omega_{A+B_k}(B_1,\dots , \widehat{B_k},\dots, B_{p+1}),
@@ -5762,7 +5772,7 @@ Now since \(d c=0\), we might use Poincaré's lemma as a method independent of \
 In order to execute this plan, we first need to prove Poincaré's lemma for our setting:
 
 \begin{Lemma}[Poincaré]\label{lem poincare}
-Let \(\omega\in \Omega^p(\mathcal{V})\) for 
+Let \(\omega\in \Omega^p\) for 
 \(p\in\mathbb{N}\) be closed, i.e. \(d \omega =0\). 
 Then \(\omega\) is also exact, more precisely we have
 \begin{equation}
@@ -5776,17 +5786,17 @@ where \(X\), \(\iota_t\) for \(t\in\mathbb{R}\) and \(f\) are given by
 &\hspace{2cm} B\mapsto (t,B)\\
 &f:\mathbb{R}\times \mathcal{V}\mapsto \mathcal{V},\\
 &\hspace{2cm} (t,B) \mapsto t B\\
-&i_X: \Omega^p(\mathcal{V})\rightarrow \Omega^{p-1}(\mathcal{V}),\\
-&\hspace{2cm} \omega \mapsto ((A;Y_1,\dots, Y_{p-1})\mapsto \omega_A(X,Y_1,\dots,Y_{p-1}))
+&i_W: \Omega^p\rightarrow \Omega^{p-1},\\
+&\hspace{2cm} \omega \mapsto ((A;Y_1,\dots, Y_{p-1})\mapsto \omega_A(W,Y_1,\dots,Y_{p-1}))
  \end{align}
 \end{Lemma}
-For a proof see section \ref{sec:proof of poincare}. This 
+For a proof see section \ref{sec:proof of poincare} of the appendix. This 
 lemma gives the next definition meaning.
 
 \begin{Def}[antiderivative of a closed \(p\) form]\label{antiderivative}
-For a closed exterior form \(\omega\in\Omega^{p}(\mathcal{V})\) we define the form \(\Pi [\omega]\)
+For a closed exterior form \(\omega\in\Omega^{p}\) we define the form \(\Pi [\omega]\)
 \begin{equation}
-\Pi\![\omega]:=\int_{0}^1 \iota^*_t i_X f^* \omega dt.
+\Omega^{p-1}\ni\Pi\![\omega]:=\int_{0}^1 \iota^*_t i_X f^* \omega dt.
 \end{equation}
 For \(A,B_1,\dots , B_{p-1}\in\mathcal{V}\) it takes the form 
 \begin{equation}
@@ -5839,12 +5849,15 @@ Recall property \eqref{c+ 2}:
 \forall A,F,G,H: \partial_H c_{A+H}^+(F,G)=\partial_G c^+_{A+G}(F,H).
 \end{equation}
 
-For a fixed \(F\in\mathcal{V}\), this condition can be read as \(d( c^+_{\cdot} (F,\cdot))=0\). As a consequence we can apply lemma \ref{lem poincare} to define a one form.
+For a fixed \(F\in\mathcal{V}\), this condition can be 
+read as \(d( c^+_{\cdot} (F,\cdot))=0\). As a 
+consequence we can apply Poincaré's lemma 
+\ref{lem poincare} to define a one form.
 
 \begin{Def}[integral of the causal splitting]
 For any \(A,F\in\mathcal{V}\), we define
 
-\begin{equation}
+\begin{equation}\label{eq: def beta}
 \beta_A(F):=2 \Pi\![c^+_{\cdot}(F,\cdot)]_A.
 \end{equation}
 \end{Def}
@@ -5860,7 +5873,7 @@ The following two equations hold:
 We start with the exterior derivative of \(\beta\). Pick \(A,F,G\in\mathcal{V}\):
 \begin{align}
 d\beta_A(F,G)=\partial_F \beta_{A+F}(G)-\partial_G \beta_{A+G}(F)\\
-=d\Big(\Pi\![c^+_\cdot(G,\cdot)]\Big)_A(F)-d\Big(\Pi\![c^+_\cdot(F,\cdot)]\Big)_A(G)\\
+=d\Big(2\Pi\![c^+_\cdot(G,\cdot)]\Big)_A(F)-d\Big(2\Pi\![c^+_\cdot(F,\cdot)]\Big)_A(G)\\
 =2 c^+_A(G,F)-2 c_A^+(F,G)\overset{\eqref{c+ 1}}{=}-2 c_A(F,G).
 \end{align}
 This proves the first equality. The second equality follows directly by \(d \chi=2 c\).
@@ -5879,14 +5892,14 @@ Furthermore, for all \(A,B\in\mathcal{V}\) we define the corrected second quanti
 \end{Def}
 
 Using this definition one immediately gets:
-\begin{Corollary}[group structure of the corrected lift]
+\begin{Corollary}[group structure of the corrected lift]\label{cor: geometry group structure}
 We have\\
  \(\tilde{S}_{A,B} \tilde{S}_{B,C}=\tilde{S}_{A,C}\) for all \(A,B,C\in\mathcal{V}\).
 \end{Corollary}
 
 
 
-\begin{Thm}[causality of the corrected lift]
+\begin{Thm}[causality of the corrected lift]\label{thm: geometry causality}
 The corrected second quantised scattering operator fulfils the following causality condition for all \(A,F,G\in \mathcal{V}\) such that \(F\prec G\):
 \begin{equation}
 \tilde{S}_{A,A+F}=\tilde{S}_{A+G,A+G+F}.
@@ -5897,11 +5910,12 @@ Let \(A,F,G\in\mathcal{V}\) such that \(F\prec G\). For the first quantised scat
 \begin{equation}
 S_{A+G,A+G+F}=S_{A,A+F},
 \end{equation}
-so that by definition of \(\overline{S}\) we obtain
+which we proved in remark \ref{rmk phase construction}. 
+So that by definition of \(\overline{S}\) we obtain
 \begin{equation}\label{s bar causal}
 \overline{S}_{A+G,A+G+F}=\overline{S}_{A,A+F}.
 \end{equation}
-So for any lift this equality is true up to a phase, meaning that 
+Therefore any lift this equality is true up to a phase, meaning that 
 
 \begin{equation}\label{f causal}
 f(A,F,G):=\frac{\tilde{S}_{A+G,A+G+F}}{\tilde{S}_{A,A+F}}
@@ -5920,21 +5934,22 @@ Pick \(F_1,F_2\prec G_1,G_2\). We abbreviate \(F=F_1+F_2, G=G_1+G_2\) and we cal
 &=f(A+G_1,F_1,G_2)f(A+G_1+F_1,G_2,F_2)
  f(A,G_1,F_1+F_2).
 \end{align}
-Taking the logarithmic derivative we find:
+Taking the mixed logarithmic derivative we find:
 \begin{equation}\label{shift to small G,F}
 \partial_{F_2}\partial_{G_2}\ln f(A,F_1+F_2,G_1+G_2)=\partial_{F_2}\partial_{G_2}\ln f(A+F_1+G_1,F_2,G_2).
 \end{equation}
 Next we pick \(F_2=\alpha_1 F_1\) and \(G_2=\alpha_2 G_1\) 
 for \(\alpha_1,\alpha_2\in\mathbb{R}^+\) small enough so that
-\((A+F_1+F_2+G_1+G_2,A+F_1+G_1),(A+F_1+F_2+G_1+G_2,A+F_1+G_1+G_2),
- (A+F_1+F_2+G_1+G_2,A+F_1+F_2+G_1)\in\dom\overline{S}\) holds.
+\((A+(1+\alpha_1)F_1+(1+\alpha_2)G_1,A+F_1+G_1),(A+(1+\alpha_1)F_1+(1+\alpha_2)G_1,A+F_1+(1+\alpha_2)G_1),
+ (A+(1+\alpha_1)F_1+(1+\alpha_2)G_1,A+(1+\alpha_1)F_1+G_1)\in\dom\overline{S}\) holds.
  %\begin{align}
  %\|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+G_1}\|<1\\
  %\|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+G_1+G_2}\|<1\\
  %\|1-S_{A+F_1+F_2+G_1+G_2,A+F_1+F_2+G_1}\|<1
  %\end{align} 
  %hold. 
- We abbreviate \(A'=A+G_1+F_1\), use \eqref{def z} and compute
+ We abbreviate \(A'=A+G_1+F_1\), use 
+ the definition of \(z\) \eqref{def z} and compute
  
  \begin{align}\notag
  &f(A',F_2,G_2)\\\notag
@@ -5956,7 +5971,7 @@ simplify:
 &\partial_{G_2}\partial_{F_2} \ln f(A',F_2,G_2)= \\
 &\partial_{G_2}\partial_{F_2} ( -\alpha_{A'+F_2+G_2} + \ln z(A'+G_2,A'+G_2+F_2))\\
 &\overset{\eqref{def alpha}, \eqref{de chi}}{=}  \partial_{G_2} (-\beta_{A'+G_2}(F_2)-\chi_{A'+G_2}(F_2) + \chi_{A'+G_2}(F_2))\\
-&\overset{\eqref{beta c}}{=}2 c^+_{A'}(F_2,G_2)\overset{F_2\prec G_2, \eqref{c+ 3}}{=}0.
+&\overset{\eqref{eq: def beta}}{=}-2 c^+_{A'}(F_2,G_2)\overset{F_2\prec G_2, \eqref{c+ 3}}{=}0.
 \end{align}
 So by \eqref{shift to small G,F} we also have
 \begin{align}
@@ -5973,23 +5988,17 @@ Using this then we can integrate and obtain
 Recalling equation \eqref{f causal}, the definition of \(f\),  this ends our proof.
 \end{proof}
 
-Using \(\tilde{S}\) we introduce the current associated to it.
+Next, we investigate the current associated with \(\tilde{S}\).
 
-%\begin{Def}
-%Let \(A,F\in\mathcal{V}\), define
-%\begin{equation}
-%j_A(F):=i\partial_F \left\langle\Omega, \tilde{S}_{A,A+F}\Omega\right\rangle = i \partial_F \ln \left\langle\Omega, \tilde{S}_{A,A+F}\Omega\right\rangle.
-%\end{equation}
-%\end{Def}
 
-\begin{Thm}[evaluation of the current of the corrected lift]
+\begin{Thm}[evaluation of the current of the corrected lift]\label{thm geometry current}
 For general \(A,F\in\mathcal{V}\) we have
 \begin{equation}
-j_A(F)=-i\beta_A(F).
+j_A^{\tilde{S}}(F)=-i\beta_A(F).
 \end{equation}
 So in particular for \(G\in\mathcal{V}\)
 \begin{equation}
-\partial_G j_{A+G}(F)=-2i c^+_A(F,G).
+\partial_G j_{A+G}^{\tilde{S}}(F)=-2i c^+_A(F,G).
 \end{equation}
 holds.
 \end{Thm}
@@ -6010,9 +6019,8 @@ The last summand vanishes, as can be seen by the following calculation
 =\frac{i}{2}\tr(\partial_F P^-S_{A+F,A}P^-S_{A,A+F}P^-)\\
 =\frac{i}{2}\tr(\partial_F P^-S_{A,A+F}P^-+\partial_F P^-S_{A+F,A}P^-)=0\end{align}
 where we made use of \eqref{diff det}.
-Where after the substitution \(P^-=1-P^+\) we may use 
-theorem \ref{thm smoothness of S} 
-to see that the derivatives are well-defined.
+Theorem \ref{thm smoothness of S} serves 
+to justify the necessary regularity.
 So we are left with
 \begin{align}
 j_A(F)=i\partial_F (-\alpha_{A+F}+\ln z(A,A+F))\\
@@ -6024,9 +6032,17 @@ Finally by taking the derivative with respect to \(G\in\mathcal{V}\) and using t
 \partial_G j_{A+G}(F)=-2i c_A^+(F,G).
 \end{equation}
 
-
 \end{proof}
 
+\begin{proof}[proof of theorem \ref{thm: geometry}]
+  The operator \(tilde{S}\) constructed in this section 
+  fulfills properties \eqref{prop S tilde 1} and 
+  \eqref{prop S tilde 2} by corollary \ref{cor: geometry group structure}
+  and theorem \ref{thm: geometry causality}. The characterisation 
+  of the current \eqref{jurrent S tilde} follows form 
+  theorem \ref{thm geometry current} and the properties of 
+  \(c^+\), \eqref{c+ 1} to \eqref{c+ 3}.
+\end{proof}
 
 
 \section[Analyticity of the Scattering Operator][Analyticity]{Analyticity of the Scattering Operator}
@@ -6049,9 +6065,9 @@ to be useful. Let \(B:\mathcal{H}\rightarrow \mathcal{H}\)
 be linear and bounded, then we introduce 
 
 \begin{equation}
-  B_{\mathsf{\Phi},\mathsf{\Xi}}=P^{\mathsf{\Phi}}B P^{\mathsf{\Xi}},
+  B_{\#,\tilde{\#}}=P^{\#}B P^{\tilde{\#}},
 \end{equation}
-where \(\mathsf{\Phi},\mathsf{\Xi}\in \{+,-\}\) holds.
+where \(\#,\tilde{\#}\in \{+,-\}\) holds.
 Recall the definition of Fock space in this setting 
 
 \begin{equation}
@@ -6084,7 +6100,18 @@ again by linearity to all of \(\overline{\mathcal{H}}\otimes \mathcal{F}_{m,p}\)
 
 where \(\langle, \rangle\) denotes that the scalar product of 
 \(\mathcal{H}\). The first summand on the right hand side is 
-taken to vanish for \(m=0\). 
+taken to vanish for \(m=0\). The operator norm of \(a\) is 
+given by 
+\begin{equation}
+  \|a(\phi)\|=\|\phi\|.
+\end{equation}
+
+The operators \(a\) and its adjoint \(a^*\) fulfil the
+canonical anticommutation relations:
+\begin{align}
+  \forall \phi,\psi: \{a(\phi),a^*(\psi)\}=a(\phi)a^*(\psi)+a^*(\psi)a(\phi)=\langle \phi,\psi\rangle\\
+  \forall \phi,\psi: \{a^*(\phi),a^*(\psi)\}=\{a(\phi),a(\psi)\}=0.
+\end{align}
 
 Now for the construction of the second quantised 
 \(S\)-matrix please 
@@ -6096,10 +6123,9 @@ recall the lift condition
 which is to be satisfied by any lift \(\tilde{S}^A\)  
 of the one-particle scattering matrix \(S^A\).
 
-The 
-explicit, albeit heuristic, construction 
-of operators fulfilling \eqref{logarithmic lift condition}
-is carried out in the appendix in chapter 
+In the appendix we carry out an explicit, albiet heuristic, 
+construction of a power series expression of a lift of \(S^A\)
+ in chapter 
 \ref{sec:heuristic construction} that culminates in 
 the formula which will be directly verified in 
 this chapter.
@@ -6121,8 +6147,8 @@ up a little by using the tools available e.g. in
 \cite{derezinski2013mathematics} the author is of the 
 opinion that it is instructive to give a direct proof.
 The strategy of this section is to construct an operator in 
-two steps that is essentially self adjoint of the Fock space 
-of 
+two steps that is essentially self adjoint on the domain 
+of the Fock space of 
 finitely many particles, a dense subset of Fock space. It is 
 denoted by
 
@@ -6144,10 +6170,10 @@ of \(\mathcal{H}^-\) such that
   &\alpha\in \mathrm{span}\Bigg\{\prod_{k=1}^m \!a^*\!(\tilde{\varphi}_{L_k}\!)\!\prod_{c=1}^p\!\! a(\tilde{\varphi}_{-C_c})\Omega \\
   &\hspace{0.5cm}\mid m,p \in \mathbb{N}, (L_k)_k, (C_c)_c \subset \mathbb{N}, |L|\!=\!m,|C|\!=\!p\! \Bigg\}
 \end{align}
-for some \( \)holds.
+holds.
 \end{Def}
 
-In order to do so, the following splitting turns out to be advantageous. 
+Constructing \(\mathrm{d}\Gamma\) piecewise turns out to be advantageous. 
 
 \begin{Def}
 We define the following operators of type \(\mathcal{F}^0\rightarrow \mathcal{F}\)
@@ -6168,7 +6194,7 @@ ONBs of \(\mathcal{H}^+\) and \(\mathcal{H}^-\).
 The operators 
 \(\mathrm{d}\Gamma(B_{++}),\mathrm{d}\Gamma(B_{--})\) and 
 \(\mathrm{d}\Gamma(B_{-+})\) 
-restricted to \(|_{\mathcal{F}^0_{m,p}}\) have the following 
+restricted to \(\mathcal{F}^0_{m,p}\) have the following 
 type
 \begin{align}
 \mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}&: \quad \mathcal{F}^0_{m,p} \rightarrow \mathcal{F}_{m,p}\\
@@ -6178,8 +6204,8 @@ type
  and fulfil
 the following bounds for all \(m,p\)
 \begin{align}
-\|\mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}\|&\le (m+5)\|B_{++}\|\\
-\|\mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}\|&\le (p+5)\|B_{--}\|\\
+\|\mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}\|&\le (m+4)\|B_{++}\|\\
+\|\mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}\|&\le (p+4)\|B_{--}\|\\
 \|\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}\|&\le 2 \|B_{-+}\|_{I_2}.
 \end{align}
 \end{Lemma}
@@ -6221,7 +6247,8 @@ wavefunction on each side of the scalar product is modified,
 this implies that in order for the
 scalar product not to vanish \(|L\cap L'|\ge m-2\) has to 
 hold. For the case  \(L\neq L'\) we split up the sum over sets 
-into the sum over a new \(|L|=m-2\) and an additional sum 
+into the sum over a new \(L\) such that \(|L|=m-2\) holds 
+and an additional sum 
 over four indices \(n_1<n_2, p_1<p_2\). 
 The double sum over \(b,b'\) only has  
 contribution where 
@@ -6235,7 +6262,7 @@ In the case
 &\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 = \\\nonumber
 &= \hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\sum_{\overset{n_1<n_2,p_1<p_2\in\mathbb{N}\backslash L }{\{n_1,n_2\}\neq \{p_1,p_2\}}}
 \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
-\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\\\label{B++estimate}
+\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\\label{B++estimate}
   &\times \bigg(\langle \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2}\rangle\\
   &\hspace{1cm}-\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle \\
   &+\langle B^{L\cup\{n_1,n_2\}}_{n_1}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2}\rangle\\
@@ -6243,7 +6270,7 @@ In the case
   & +\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_1}\tilde{\varphi}_{p_1} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_2}\rangle\\
   &\hspace{1cm}-\langle \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle \\
   & +\langle B^{L\cup\{n_1,n_2\}}_{n_1} \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_1}\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_2}\rangle\\
-  &\hspace{1cm}-\langle B^{L\cup\{n_1,n_1\}}_{n_2} \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle  \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle \bigg)\\
+  &\hspace{1cm}-\langle B^{L\cup\{n_1,n_1\}}_{n_1} \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle  \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle \bigg)\\
 &+\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.4cm} |\alpha_{L,C}|^2
  \sum_{b,b'=1}^m 
 \left\langle \prod_{l=1}^{b-1} a^*(\tilde{\varphi}_{L_l})  ~~ a^*(B^{L}_{L_b} \tilde{\varphi}_{L_b})\right.  \\\nonumber
@@ -6262,22 +6289,21 @@ contained to this section.
 Due to the antisymmetry each summand containing 
 a factor without an occurrence of the \(B\) operator are only 
 nonzero if \(n_1=p_1\) or \(n_2=p_2\). Each factor containing 
-exactly one occurrence of \(B\) will only be nonzero 
-if \(n_1\neq p_1\) and \(n_2\neq p_2\) holds true. 
+exactly one occurrence of \(B\) obtains a similar restriction. 
 So we can split the block of terms into one corresponding 
 to the two cases just mentioned. 
 
 \begin{align}\nonumber
   &\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 = \\\nonumber
-  &= \hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2,p_1<p_2\in\mathbb{N}\backslash L }{\{n_1,n_2\}\cap \{p_1,p_2\}= \emptyset}}
+  &= \hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2,p_1<p_2\in\mathbb{N}\backslash L }{\{n_1,n_2\}\neq \{p_1,p_2\}}}
   \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
 \left[\begin{matrix}n_1\\n_2\end{matrix}\right]
 \left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\\label{B++ long estimate}
     &\times \bigg(
-    -\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle \\
-    &+\langle B^{L\cup\{n_1,n_2\}}_{n_1}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2}\rangle\notag\\
-    &+\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_1}\tilde{\varphi}_{p_1} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_2}\rangle\notag\\
-    &-\langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle  \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle \bigg)\notag\\
+    -\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle 1_{n_1\neq p_1}\\
+    &+\langle B^{L\cup\{n_1,n_2\}}_{n_1}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B^{L\cup\{p_1,p_2\}}_{p_2}\tilde{\varphi}_{p_2}\rangle 1_{n_2\neq p_1}\notag\\
+    &+\langle \tilde{\varphi}_{n_1},B^{L\cup\{p_1,p_2\}}_{p_1}\tilde{\varphi}_{p_1} \rangle \langle B^{L\cup\{n_1,n_2\}}_{n_2} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_2}\rangle 1_{n_1\neq p_2}\notag\\
+    &-\langle B^{L\cup\{n_1,n_2\}}_{n_1} \tilde{\varphi}_{n_1},\tilde{\varphi}_{p_2} \rangle \langle  \tilde{\varphi}_{n_2},B^{L\cup\{p_1,p_2\}}_{p_1} \tilde{\varphi}_{p_1}\rangle 1_{n_2\neq p_2} \bigg)\notag\\
   &+\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-1}}}\hspace{-0.2cm}\sum_{n\neq p\in\mathbb{N}\backslash L }
   \hspace{-0.4cm}\overline{\alpha_{L\cup\{n\},C}}\alpha_{L\cup\{p\},C}
 \left[\begin{matrix}n\\p\end{matrix}\right] \langle B^{L\cup\{n\}}_{n} \tilde{\varphi}_{n}, B^{L\cup\{p\}}_{p}\tilde{\varphi}_{p}\rangle\label{B++ short estimate}\\
@@ -6306,7 +6332,8 @@ Now the operator product inside the norm has operator norm \(\|B_{++}\|\) and so
 \begin{equation}\label{B++estimatefinal1}
 \eqref{B++ first term}\le \|\alpha\|^2 \|B_{++}\|^2.
 \end{equation}
-Now for the first term in \eqref{B++ short estimate} we need to estimate the term we added to complete the norm square, this is done as follows
+We need to estimate the term we added to complete the norm square in \eqref{B++ short estimate}, 
+this is done as follows
 \begin{align}\nonumber
 &\sum_{\overset{L,C\subset\mathbb{N}}{|L|=m-1,|C|=p}} \hspace{-0.4cm}\sum_{n\in\mathbb{N}\backslash L} |\alpha_{L\cup\{n\},C}|^2 \|B_n^{L\cup\{n\}} \tilde{\varphi}_{n}\|^2\\\label{B++estimatefinal2}
 &\le \hspace{-0.6cm}\sum_{\overset{L,C\subset\mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.5cm} \|B_{++}\|^2|\alpha_{L,C}|^2 =\|\alpha\|^2 \|B_{++}\|^2.
@@ -6314,37 +6341,61 @@ Now for the first term in \eqref{B++ short estimate} we need to estimate the ter
 For \eqref{B++ long estimate} and the following 3 lines we notice that 
 we may replace all one particle operators with \(B_{++}\), since 
 the projector acts as the identity in these cases. Subsequently, the 
-two terms of equal sign are identical, resulting in 
+two terms of equal sign are identical except for the extra 
+condition on the sum, resulting in 
 
 \begin{align}
   &\eqref{B++ long estimate} =\notag\\
-  &2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2,p_1<p_2\in\mathbb{N}\backslash L }{\{n_1,n_2\}\cap \{p_1,p_2\}= \emptyset}}
+  &\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2,p_1<p_2\in\mathbb{N}\backslash L }{\{n_1,n_2\}\neq \{p_1,p_2\}}}
   \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
 \left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\
     &\times \bigg(
-    \langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
-    -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg).
+    \langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle (1_{n_1\neq p_2}+1_{n_2\neq p_1})\label{skew adj est B++1}\\
+    &-\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle(1_{n_1\neq p_1}+1_{n_2\neq p_2})\bigg).\label{skew adj est B++2}
 \end{align}
 
 Next, we are going to repeatedly add and subtract terms, such that we may
-factorise the \(n\) and the \(p\) sums. So in a first step we add and subtact the 
-terms where \(\{n_1,n_2\}\cap \{p_1,p_2\}\neq \emptyset\):
-
+factorise the \(n\) and the \(p\) sums. In order to do so we impose the 
+condition \(\{n_1,n_2\}\neq \{p_1,p_2\}\) in the sum by the factor \(1-\delta_{n_1,p_1}\delta_{n_2,p_2}\). 
+Similarly we rewrite the other conditions in the following way
 \begin{align}
-  &\eqref{B++ long estimate} =\notag\\
-  &2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
-  \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
-\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\
-    &\times \bigg(
-    \langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
-    -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
-    &\times (1- \delta_{n_1,p_1}-\delta_{n_1,p_2}-\delta_{n_2,p_1}-\delta_{n_2,p_2}+\delta_{n_1,p_1}\delta_{n_2,p_2}).
+  1_{n_1\neq p_2}+1_{n_2\neq p_1}=2-\delta_{n_1,p_2}-\delta_{n_2,p_1},\\
+  1_{n_1\neq p_1}+1_{n_2\neq p_2}=2-\delta_{n_1,p_1}-\delta_{n_2,p_2}.
 \end{align}
-These five terms will be estimated separately. The terms 
+
+These are to be multiplied by \(1-\delta_{n_1,p_1}\delta_{n_2,p_2}\)
+resulting in the two expressions
+\begin{align}\label{skew adj est cases 1}
+  2-\delta_{n_1,p_2}-\delta_{n_2,p_1}-2 \delta_{n_1,p_1}\delta_{n_2,p_2}\\
+  2-\delta_{n_1,p_1}-\delta_{n_2,p_2},
+\end{align}
+wehre the upper expression yields the restrictions on the sum of 
+over \(\langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle\)
+and the lower expression analogously for 
+\(\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\).
+For the term without further restrictions we may add the sum of the 
+terms \eqref{skew adj est B++1} and \eqref{skew adj est B++2}, the rest 
+is treated separately.
+
+%So in a first step we add and subtact the 
+%terms where \(\{n_1,n_2\}\cap \{p_1,p_2\}\neq \emptyset\):
+
+%\begin{align}
+%  &\eqref{B++ long estimate} =\notag\\
+%  &2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+%  \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
+%\left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\\
+%    &\times \bigg(
+%    \langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
+%    -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
+%    &\times (1- \delta_{n_1,p_1}-\delta_{n_1,p_2}-\delta_{n_2,p_1}-\delta_{n_2,p_2}+\delta_{n_1,p_1}\delta_{n_2,p_2}).
+%\end{align}
+%These five terms will be estimated separately. 
+The terms 
 are all estimated after rewriting the scalar products as a 
 single sum of two scalar products in \(\mathcal{H}^+\otimes \mathcal{H}^+\).
 
-\(\boldsymbol{1:}\) 
+\(\boldsymbol{2:}\) 
 
 \begin{align}
   &2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
@@ -6364,78 +6415,61 @@ single sum of two scalar products in \(\mathcal{H}^+\otimes \mathcal{H}^+\).
 
 \(\boldsymbol{\delta_{n_1,p_1}:}\) 
 \begin{align}
-  &-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+  &\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
   \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
 \left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\delta_{n_1,p_1}\\
-    &\times \bigg(
-    \langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
-    -\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
-  &=-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n,p,l \in\mathbb{N}\backslash L }
+    &\times 
+    \langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\\
+  &=\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n,p,l \in\mathbb{N}\backslash L }
   \hspace{-0.4cm}\overline{\alpha_{L\cup\{l,n\},C}}\alpha_{L\cup\{l,p\},C}
 \left[\begin{matrix}0\\n\end{matrix}\right]\left[\begin{matrix}0\\p\end{matrix}\right]\\
-    &\times \bigg(
-    \langle B_{++}\tilde{\varphi}_{l},\tilde{\varphi}_{l} \rangle \langle  \tilde{\varphi}_{n}, B_{++}\tilde{\varphi}_{p}\rangle
-    -\langle \tilde{\varphi}_{l},B_{++}\tilde{\varphi}_{p} \rangle \langle B_{++} \tilde{\varphi}_{n}, \tilde{\varphi}_{l}\rangle\bigg)\\
-    &=-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{l \in\mathbb{N}\backslash L }
-\!\!\!\left\langle\sum_{n\in\mathbb{N}\backslash L}\!\!\!\!\alpha_{L\cup \{l,n\},C}\left[\begin{matrix}0\\n\end{matrix}\right] \!\!\tilde{\varphi}_{n} ,B_{++}\!\!\!\!\!\sum_{p\in\mathbb{N}\backslash L}\alpha_{L\cup \{l,p\},C}\!\!\left[\begin{matrix}0\\p\end{matrix}\right]\!\! \tilde{\varphi}_{p}  \!\!\!\right\rangle\\
-  &\hspace{3cm}\times \langle B_{++} \tilde{\varphi}_l,\tilde{\varphi}_l \rangle\\
-  &+2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{l \in\mathbb{N}\backslash L }
+    &\times 
+    \langle \tilde{\varphi}_{l},B_{++}\tilde{\varphi}_{p} \rangle \langle B_{++} \tilde{\varphi}_{n}, \tilde{\varphi}_{l}\rangle\\
+    &=
+  \hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{l \in\mathbb{N}\backslash L }
 \!\!\!\left\langle \tilde{\varphi}_{l} ,B_{++}\!\!\!\!\!\sum_{p\in\mathbb{N}\backslash L}\alpha_{L\cup \{l,p\},C}\!\!\left[\begin{matrix}0\\p\end{matrix}\right]\!\! \tilde{\varphi}_{p}  \!\!\!\right\rangle\\
 &\hspace{2cm}\times \left\langle B_{++}\sum_{n\in\mathbb{N}\backslash L}\!\!\!\!\alpha_{L\cup \{l,n\},C}\left[\begin{matrix}0\\n\end{matrix}\right] \!\!\tilde{\varphi}_{n} , \tilde{\varphi}_{l}  \!\!\!\right\rangle\\
-  &\le 4 \|B_{++}\|^2 \|\alpha\|^2
+  &\le \|B_{++}\|^2 \|\alpha\|^2
 \end{align}
 \(\boldsymbol{-\delta_{n_1,p_2}-\delta_{n_2,p_1}:}\)
 \begin{align}
-&-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+&-\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
 \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
 \left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right](\delta_{n_1,p_2}+\delta_{n_2,p_1})\\
-&\times \bigg(
-\langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
--\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
-&=-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n\neq p,l\in\mathbb{N}\backslash L }
+&\times 
+\langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle\\
+&=-\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n,p,l\in\mathbb{N}\backslash L }
 \hspace{-0.4cm}\overline{\alpha_{L\cup\{l,n\},C}}\alpha_{L\cup\{l,p\},C}
 \left[\begin{matrix}0\\n\end{matrix}\right]\left[\begin{matrix}0\\p\end{matrix}\right]\\
-&\times \bigg( 1_{p<n}[
-\langle B_{++}\tilde{\varphi}_{l},\tilde{\varphi}_{p} \rangle \langle  \tilde{\varphi}_{n}, B_{++}\tilde{\varphi}_{l}\rangle
--\langle \tilde{\varphi}_{l},B_{++}\tilde{\varphi}_{l} \rangle \langle B_{++} \tilde{\varphi}_{n}, \tilde{\varphi}_{p}\rangle]\\
-&+1_{n<p}[\langle B_{++}\tilde{\varphi}_{n},\tilde{\varphi}_{l} \rangle \langle  \tilde{\varphi}_{l}, B_{++}\tilde{\varphi}_{p}\rangle
--\langle \tilde{\varphi}_{n},B_{++}\tilde{\varphi}_{p} \rangle \langle B_{++} \tilde{\varphi}_{l}, \tilde{\varphi}_{l}\rangle]\bigg)\\
-&\overset{B^*=-B}{=}-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n\neq p, l\in\mathbb{N}\backslash L }
-\hspace{-0.4cm}\overline{\alpha_{L\cup\{l,n\},C}}\alpha_{L\cup\{l,p\},C}
-\left[\begin{matrix}0\\n\end{matrix}\right]\left[\begin{matrix}0\\p\end{matrix}\right]\\
-&\times \bigg( 
-\langle B_{++}\tilde{\varphi}_{l},\tilde{\varphi}_{p} \rangle \langle  \tilde{\varphi}_{n}, B_{++}\tilde{\varphi}_{l}\rangle
--\langle \tilde{\varphi}_{l},B_{++}\tilde{\varphi}_{l} \rangle \langle B_{++} \tilde{\varphi}_{n}, \tilde{\varphi}_{p}\rangle\bigg)\\
-&\hspace{-0.4cm}=-2\hspace{-0.4cm}\!\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\!\!\sum_{l\in\mathbb{N}\backslash L}\!\!\!
-\left\langle\!\!\! B_{++} \tilde{\varphi}_{l}, \!\!\!\!\sum_{p\in\mathbb{N}\backslash L}\!\!\left[\begin{matrix}0\\p\end{matrix}\right] \!\alpha_{L\cup\{l,p\},C}\tilde{\varphi}_p \!\!\!\right\rangle \left\langle \sum_{n\in\mathbb{N}\backslash L} \!\!\left[\begin{matrix}0\\n\end{matrix}\right]\!\!\alpha_{L\cup \{l,n\},C} \tilde{\varphi}_n,  B_{++} \tilde{\varphi}_l \!\!\!\right\rangle\\
-&\hspace{-0.4cm}+2\!\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\!\!\sum_{l\in\mathbb{N}\backslash L}\!\!\!
-\left\langle \!\!\! \tilde{\varphi}_{l}, B_{++} \tilde{\varphi}_l \right\rangle \left\langle\!\!\! B_{++}\!\!\!\sum_{n\in\mathbb{N}\backslash L}\!\!\left[\begin{matrix}0\\n\end{matrix}\right] \alpha_{L\cup \{l,n\},C} \tilde{\varphi}_n,\!\!\!\sum_{p\in\mathbb{N}\backslash L} \!\!\left[\begin{matrix}0\\p\end{matrix}\right]\alpha_{L\cup\{l,p\},C}\!\!\! \right\rangle\\
-&\le 4 \|B_{++}\|^2 \|\alpha\|^2
+&\times \bigg( 1_{p<l<n}
+\langle B_{++}\tilde{\varphi}_{l},\tilde{\varphi}_{p} \rangle \langle  \tilde{\varphi}_{n}, B_{++}\tilde{\varphi}_{l}\rangle\\
+&+1_{n<l<p}\langle B_{++}\tilde{\varphi}_{n},\tilde{\varphi}_{l} \rangle \langle  \tilde{\varphi}_{l}, B_{++}\tilde{\varphi}_{p}\rangle\bigg)\\
+&\hspace{-0.4cm}=-\hspace{-0.4cm}\!\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\!\!\sum_{l\in\mathbb{N}\backslash L}\\
+&\Bigg[\left\langle\!\!\! B_{++} \tilde{\varphi}_{l}, \!\!\!\!\sum_{\overset{p\in\mathbb{N}\backslash L}{p<l}}\!\!\left[\begin{matrix}0\\p\end{matrix}\right] \!\alpha_{L\cup\{l,p\},C}\tilde{\varphi}_p \!\!\!\right\rangle \left\langle \sum_{\overset{n\in\mathbb{N}\backslash L}{l<n}} \!\!\left[\begin{matrix}0\\n\end{matrix}\right]\!\!\alpha_{L\cup \{l,n\},C} \tilde{\varphi}_n,  B_{++} \tilde{\varphi}_l \!\!\!\right\rangle\\
+&+\left\langle\!\!\! B_{++} \tilde{\varphi}_{l}, \!\!\!\!\sum_{\overset{p\in\mathbb{N}\backslash L}{p>l}}\!\!\left[\begin{matrix}0\\p\end{matrix}\right] \!\alpha_{L\cup\{l,p\},C}\tilde{\varphi}_p \!\!\!\right\rangle \left\langle \sum_{\overset{n\in\mathbb{N}\backslash L}{l>n}} \!\!\left[\begin{matrix}0\\n\end{matrix}\right]\!\!\alpha_{L\cup \{l,n\},C} \tilde{\varphi}_n,  B_{++} \tilde{\varphi}_l \!\!\!\right\rangle\Bigg]\\
+&\le 2\|B_{++}\|^2 \|\alpha\|^2
 \end{align}
 
 \(\boldsymbol{\delta_{n_2,p_2}:}\) completely analogous to \(\delta_{n_1,p_1}\) one arrives at 
 \begin{equation}
-  \le 4\|B_{++}\|^2\|\alpha\|^2.
+  \le \|B_{++}\|^2\|\alpha\|^2.
 \end{equation}
 
 \(\boldsymbol{\delta_{n_1,p_1}\delta_{n_2,p_2}:}\)
 \begin{align}
-&2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
+&-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{\overset{n_1<n_2\in\mathbb{N}\backslash L }{p_1<p_2\in\mathbb{N}\backslash L }}
 \hspace{-0.4cm}\overline{\alpha_{L\cup\{n_1,n_2\},C}}\alpha_{L\cup\{p_1,p_2\},C}
 \left[\begin{matrix}n_1\\n_2\end{matrix}\right]\left[\begin{matrix}p_1\\p_2\end{matrix}\right]\delta_{n_1,p_1}\delta_{n_2,p_2}\\
-&\times \bigg(
-\langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle
--\langle \tilde{\varphi}_{n_1},B_{++}\tilde{\varphi}_{p_2} \rangle \langle B_{++} \tilde{\varphi}_{n_2}, \tilde{\varphi}_{p_1}\rangle\bigg)\\
-&=2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n\neq p\in\mathbb{N}\backslash L }
-\hspace{-0.4cm}|\alpha_{L\cup\{n,p\},C}|^2\\
-&\times \bigg(
-\langle B_{++}\tilde{\varphi}_{n},\tilde{\varphi}_{n} \rangle \langle  \tilde{\varphi}_{p}, B_{++}\tilde{\varphi}_{p}\rangle
--\langle \tilde{\varphi}_{n},B_{++}\tilde{\varphi}_{p} \rangle \langle B_{++} \tilde{\varphi}_{p}, \tilde{\varphi}_{n}\rangle\bigg)\\
-&\le 4 \|B_{++}\|^2 \|\alpha\|^2
+&\times
+\langle B_{++}\tilde{\varphi}_{n_1},\tilde{\varphi}_{p_1} \rangle \langle  \tilde{\varphi}_{n_2}, B_{++}\tilde{\varphi}_{p_2}\rangle\\
+&=-2\hspace{-0.4cm}\sum_{\overset{L,C\subset \mathbb{N}}{\overset{|C|=p}{|L|=m-2}}}\hspace{-0.2cm}\sum_{n< p\in\mathbb{N}\backslash L }
+\hspace{-0.4cm}|\alpha_{L\cup\{n,p\},C}|^2
+\langle B_{++}\tilde{\varphi}_{n},\tilde{\varphi}_{n} \rangle \langle  \tilde{\varphi}_{p}, B_{++}\tilde{\varphi}_{p}\rangle\\
+&\le 2 \|B_{++}\|^2 \|\alpha\|^2
 \end{align}
 So all together we have 
 \begin{equation}\label{B++ long estimate final}
-  \eqref{B++ long estimate}\le 20 \|B_{++}\|^2 \|\alpha\|^2
+  \eqref{B++ long estimate}\le 10 \|B_{++}\|^2 \|\alpha\|^2
 \end{equation}
 
 What remains is term \eqref{B++ m squared term}, for this term there are two cases.  If \(b=b'\) then the scalar product is 
@@ -6445,11 +6479,11 @@ However both of these terms can be estimated by \(\|B_{++}\|^2\). So all \(m^2\)
 this estimate yields
 \begin{align}\nonumber
 &\|\mathrm{d}\Gamma(B_{++})\alpha\|^2 \le \eqref{B++estimatefinal1}+\eqref{B++estimatefinal2}+\eqref{B++ long estimate final} + \|\alpha\|^2 m^2 \|B_{++}\|^2 \\\nonumber
-&= \|\alpha\|^2 (22+m^2) \|B_{++}\|^2.
+&= \|\alpha\|^2 (12+m^2) \|B_{++}\|^2.
 \end{align}
 For convenience of notation the estimate can be weakened to 
 \begin{equation}
-\|\mathrm{d}\Gamma(B_{++})\alpha\| \le (m+5) \|B_{++}\|\|\alpha\|.
+\|\mathrm{d}\Gamma(B_{++})\alpha\| \le (m+4) \|B_{++}\|\|\alpha\|.
 \end{equation}
 A completely analogous argument works for 
 \(\mathrm{d}\Gamma(B_{--})\). 
@@ -6485,10 +6519,10 @@ Hence we arrive at
 \sum_{\scaleto{\begin{matrix}n_1,n_2\in\mathbb{N}\backslash L \\l_1,l_2\in\mathbb{N}\backslash C\end{matrix}}{15pt}}
   |\alpha_{L\cup \{n_2\},C\cup\{l_2\}}| |\alpha_{L\cup \{n_1\},C\cup\{l_1\}}|\\
 &\Bigg[
-    \delta_{n_1,n_2}\delta_{l_1,l_2} \sum_{b=1}^m \sum_{c=1}^p |\langle B_{+-}\tilde{\varphi}_{-C_c},\tilde{\varphi}_{L_b} \rangle|^2\\
-    &+(1-\delta_{n_1,n_2})\delta_{l_1,l_2}\sum_{c=1}^p |\langle B_{+-} \tilde{\varphi}_{-C_c},\tilde{\varphi}_{n_1}\rangle||\langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-C_c}\rangle |\\
-    &+\delta_{n_1,n_2}(1-\delta_{l_1,l_2})\sum_{b=1}^m |\langle B_{+-}\tilde{\varphi}_{-C_{l_1}},\tilde{\varphi}_{L_b}\rangle| |\langle \tilde{\varphi}_{L_b},B_{+-}\tilde{\varphi}_{-C_{L_2}}\rangle |\\
-    &+(1-\delta_{n_1,n_2})(1-\delta_{l_1,l_2})|\langle B_{+-}\tilde{\varphi}_{-C_{l_1}},\tilde{\varphi}_{n_1}\rangle| | \langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-C_{l_2}}\rangle |
+    \delta_{n_1,n_2}\delta_{l_1,l_2} \sum_{b\in L\cup\{n_1\}} \sum_{d\in C\cup\{l_1\}} |\langle B_{+-}\tilde{\varphi}_{-d},\tilde{\varphi}_{b} \rangle|^2\\
+    &+(1-\delta_{n_1,n_2})\delta_{l_1,l_2}\sum_{d\in C\cup\{l_1\}} |\langle B_{+-} \tilde{\varphi}_{-d},\tilde{\varphi}_{n_1}\rangle||\langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-d}\rangle |\\
+    &+\delta_{n_1,n_2}(1-\delta_{l_1,l_2})\sum_{b\in L\cup\{n_1\}} |\langle B_{+-}\tilde{\varphi}_{-l_1},\tilde{\varphi}_{b}\rangle| |\langle \tilde{\varphi}_{b},B_{+-}\tilde{\varphi}_{-l_2}\rangle |\\
+    &+\!(1\!-\!\delta_{n_1,n_2})(1\!-\!\delta_{l_1,l_2})|\langle B_{+-}\tilde{\varphi}_{-C_{l_1}},\tilde{\varphi}_{n_1}\rangle| | \langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-C_{l_2}}\rangle |
   \Bigg].
 \end{align}
 
@@ -6505,11 +6539,11 @@ over all basis elements, yielding
       &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p\end{matrix}}{20pt}}
       \sum_{n_1,n_2\in\mathbb{N}\backslash L }
       |\alpha_{L\cup \{n_2\},C}| |\alpha_{L\cup \{n_1\},C}|\\
-      &\hspace{1.5cm}\times \sum_{c=1}^p |\langle B_{+-} \tilde{\varphi}_{-C_c},\tilde{\varphi}_{n_1}\rangle||\langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-C_c}\rangle |\\
+      &\hspace{1.5cm}\times \sum_{d\in C} |\langle B_{+-} \tilde{\varphi}_{-d},\tilde{\varphi}_{n_1}\rangle||\langle \tilde{\varphi}_{n_2},B_{+-}\tilde{\varphi}_{-d}\rangle |\\
       &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m\\|C|=p-1\end{matrix}}{20pt}}
       \sum_{l_1,l_2\in\mathbb{N}\backslash C }
       |\alpha_{L,C\cup\{l_2\}}| |\alpha_{L,C\cup\{l_1\}}|\\
-      &\hspace{1.5cm}\times \sum_{b=1}^m |\langle B_{+-}\tilde{\varphi}_{-C_{l_1}},\tilde{\varphi}_{L_b}\rangle| |\langle \tilde{\varphi}_{L_b},B_{+-}\tilde{\varphi}_{-C_{L_2}}\rangle |\\
+      &\hspace{1.5cm}\times \sum_{b\in L} |\langle B_{+-}\tilde{\varphi}_{-l_1},\tilde{\varphi}_{b}\rangle| |\langle \tilde{\varphi}_{b},B_{+-}\tilde{\varphi}_{-l_2}\rangle |\\
       &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p-1\end{matrix}}{20pt}}
       \sum_{\scaleto{\begin{matrix}n_1,n_2\in\mathbb{N}\backslash L \\l_1,l_2\in\mathbb{N}\backslash C\end{matrix}}{15pt}}
       |\alpha_{L\cup \{n_2\},C\cup\{l_2\}}| |\alpha_{L\cup \{n_1\},C\cup\{l_1\}}|\\
@@ -6528,10 +6562,10 @@ we identify
   \|\alpha\|^2 \|B_{-+}\|^2_{I_2}\\
   &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p\end{matrix}}{20pt}}
   \sum_{n\in\mathbb{N}\backslash L }
-  |\alpha_{L\cup \{n\},C}|^2 \sum_{c=1}^p \sum_{u\in\mathbb{N}\backslash L}|\langle B_{+-} \tilde{\varphi}_{-C_c},\tilde{\varphi}_{u}\rangle|^2 \\
+  |\alpha_{L\cup \{n\},C}|^2 \sum_{d\in C} \sum_{u\in\mathbb{N}\backslash L}|\langle B_{+-} \tilde{\varphi}_{-d},\tilde{\varphi}_{u}\rangle|^2 \\
   &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m\\|C|=p-1\end{matrix}}{20pt}}
   \sum_{l\in\mathbb{N}\backslash C }
-  |\alpha_{L,C\cup\{l\}}|^2 \sum_{b=1}^m \sum_{u\in\mathbb{N}\backslash C }|\langle B_{+-}\tilde{\varphi}_{-u},\tilde{\varphi}_{L_b}\rangle|^2 \\
+  |\alpha_{L,C\cup\{l\}}|^2 \sum_{b\in L} \sum_{u\in\mathbb{N}\backslash C }|\langle B_{+-}\tilde{\varphi}_{-u},\tilde{\varphi}_{b}\rangle|^2 \\
   &+\sum_{\scaleto{\begin{matrix}C,L\subset \mathbb{N} \\|L|=m-1\\|C|=p-1\end{matrix}}{20pt}}
   \sum_{\scaleto{\begin{matrix}n \in\mathbb{N}\backslash L \\l \in\mathbb{N}\backslash C\end{matrix}}{15pt}}
     |\alpha_{L\cup \{n\},C\cup\{l\}}|^2

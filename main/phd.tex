@@ -4669,7 +4669,7 @@ The set \(\dom \overline{S}\) has the following properties:
 \item openness: \(\forall n \in \mathbb{N}: \left\{s\in\mathbb{R}^{2n}\mid \left(\sum_{k=1}^n s_k A_k,\sum_{k=n+1}^{2n} s_{k} A_{k} \right)\in \dom\overline{S}\right\}\) is an open subset of \(\mathbb{R}^{2n}\) for all \(A_1,\dots A_{2n}\in\mathcal{V}\).
 \item symmetry:  \((A,A')\in\dom\overline{S}\iff (A',A)\in\dom\overline{S}\)
 \item star-shaped: \((A,t A)\in \dom\overline{S}\Rightarrow \forall s\in \overline{1~~t} : (A,s A)\in\dom\overline{S}\)
-\item well defined-ness of \(\overline{S}\): \(\dom\overline{S}\subseteq \{A,B\in\mathcal{V}\mid P^- S_{A,B} P^-:\mathcal{H}^- \righttoleftarrow \text{is invertible} \}\).
+\item well-defined-ness of \(\overline{S}\): \(\dom\overline{S}\subseteq \{A,B\in\mathcal{V}\mid P^- S_{A,B} P^-:\mathcal{H}^- \righttoleftarrow \text{is invertible} \}\).
 \end{enumerate}
 We will only prove openness, as the other properties follow directly from the definition \eqref{dom s bar}. So pick \(n\in\mathbb{N}\), 
 \(A_i\in\mathcal{V}\) for \(i\in \mathbb{N}, i\le 2 n\) and \(s\in\mathbb{R}^{2n}\)
@@ -4796,7 +4796,7 @@ variations of the external field, the connection between vacuum expectation
 values and \(c\) becomes clearer with the next lemma.
 
 \begin{Lemma}[properties of \(\Gamma\)]\label{gamma attri}
-The function \(\Gamma\) has the following properties for all  \(A,B,C,D\in\mathcal{V}\) such that the expressions occurring in each equation are well defined:
+The function \(\Gamma\) has the following properties for all  \(A,B,C,D\in\mathcal{V}\) such that the expressions occurring in each equation are well-defined:
 \begin{align}\label{gamma attri0}
 &\gamma_{A,B,C}\neq 0\\\notag
 &\Gamma_{A,B,C}=\det_{\mathcal{H}^-}(P^--P^-S_{A,C}P^+S_{C,A}P^- \\\label{gamma attri1}
@@ -4831,7 +4831,7 @@ To see that it does exist, we reformulate
 \end{align}
 now we know by theorem \ref{thm ruisnaar} of Ruisnaars that \(P^+S_{X,Y}P^-\) 
 is a Hilbert-Schmidt operator for our setting,
-hence \(\gamma\) and also \(\Gamma\) are well defined.
+hence \(\gamma\) and also \(\Gamma\) are well-defined.
 
  Equation 
 \eqref{eq: gamma proof of first attri} also proves \eqref{gamma attri1}. Next we show \eqref{gamma attri2}. 
@@ -4850,7 +4850,7 @@ We begin by reformulating the right hand side of  \eqref{gamma attri2}
 &\hspace{6cm}\left.\times\AG(P^-S_{A,B} P^-)^{-1}\right)  \\\label{eq:1/arg}
 &=\frac{1}{\det_{\mathcal{H}^-}  \AG(P^- S_{A,B} P^-) \AG(P^- S_{B,C} P^-) \AG(P^-S_{C,A} P^-) }.
 \end{align}
-We first note that \(\det_{\mathcal{H}^-}|P^- S_{X,Y}P^-|\in\mathbb{R}^+\) for \(X,Y\in \{A,B,C\}\). This is well defined because 
+We first note that \(\det_{\mathcal{H}^-}|P^- S_{X,Y}P^-|\in\mathbb{R}^+\) for \(X,Y\in \{A,B,C\}\). This is well-defined because 
 \begin{align}
 &\langle \Omega, \overline{S}_{X,Y}\Omega\rangle
 =\langle \bigwedge \Phi, \bigwedge(S_{X,Y}\Phi \AG(P^- S_{X,Y}P^-)^{-1})\rangle\\
@@ -5061,7 +5061,7 @@ which proves the claim.
 
 
 
-In order to construct the lift announced in theorem \ref{thm: geometry}, we first construct a reference lift \(\hat{S}\), that is well defined on all of \(\mathcal{V}\). 
+In order to construct the lift announced in theorem \ref{thm: geometry}, we first construct a reference lift \(\hat{S}\), that is well-defined on all of \(\mathcal{V}\). 
 Afterwards we will study the dependence of the relative phase between 
 this global lift \(\hat{S}_{0,A}\) and a local lift given by \(\hat{S}_{0,B}\overline{S}_{B,A}\) for \(B-A\) small. 
 By exploiting properties of this phase and the causal splitting \(c^+\) we will construct a global lift that has the desired properties.
@@ -5127,7 +5127,7 @@ z(A,A)=1
 \begin{equation}\label{z solution}
 z(tA,xA)=\exp\left(-\int_{t}^x dx' \left.\left( \frac{d}{dx'} \ln \Gamma_{tA,y A, x' A}\right)\right|_{y=x'}\right).
 \end{equation}
-Please note that both differential equation and initial condition are invariant under rescaling of the potential \(A\), so \(z\) is well defined. 
+Please note that both differential equation and initial condition are invariant under rescaling of the potential \(A\), so \(z\) is well-defined. 
 We will now construct a local solution to \eqref{diff s hat} and define \(\phi_A\) using this solution.
 Pick \(A\in \mathcal{V}\) the expression
 \begin{equation}\label{loc s hat}
@@ -5319,12 +5319,12 @@ and define \(\psi_{n+1}\) on the domain
  \end{matrix} \right.
  \end{equation} 
 In order to complete the induction step we have to show that 
-\(\psi_{n+1}\) is well defined and fulfils properties
+\(\psi_{n+1}\) is well-defined and fulfils properties
 \eqref{induction psi1}-\eqref{induction psi3} 
 with \(n\) replaced by \(n+1\) and is the unique function 
 to do so.
   
-To see that \(\psi_{n+1}\) is well defined we have to check 
+To see that \(\psi_{n+1}\) is well-defined we have to check 
 that the cases in the definition agree when they overlap. 
 \begin{enumerate}
   \item If we have \(x,y \in \dom_n\cap U_{x_{n+1}}\) all four cases overlap; however, the 
@@ -5573,7 +5573,7 @@ from lemma \ref{lem: phi global}.
 %where we have used various properties of lemma \ref{gamma attri}.
 %
 %\textcolor{blue}{generalisation:}
-%claim: for all \(A,B\in \mathcal{A}\) and all \(\alpha,\beta\in\mathbb{R}\), \(|\alpha|,|\beta|\) small enough, such that the expression appearing is well defined
+%claim: for all \(A,B\in \mathcal{A}\) and all \(\alpha,\beta\in\mathbb{R}\), \(|\alpha|,|\beta|\) small enough, such that the expression appearing is well-defined
 %\begin{equation}
 %\Gamma_{A,A+\alpha B, A+ \beta B} =1.
 %\end{equation}
@@ -5625,10 +5625,10 @@ Let \((A,B) \in\dom\overline{S}\), we define \(z(A,B)\in S^1\) by
 z(A,B):=\frac{\hat{S}_{0,B}}{\hat{S}_{0,A}\overline{S}_{A,B}}.
 \end{equation}
 Please note that for such \(A,B\) the lift \(\bar{S}_{A,B}\) 
-is well defined. This means that the product in the 
+is well-defined. This means that the product in the 
 denominator is a lift of \(S_{0,B}\)
 and according to definition \ref{de: s hat} the 
-ratio is well defined. 
+ratio is well-defined. 
 \end{Def}
 
 \begin{Remark}
@@ -5708,7 +5708,7 @@ Finally, in this equation, we substitute
 \(F=A+\varepsilon_1 H\) as well as  
 \(G=A+\varepsilon_2 K\), where 
 \(\varepsilon_1,\varepsilon_2\) is small enough so that 
-\(z\) and \(\Gamma\) are still well defined. Then we 
+\(z\) and \(\Gamma\) are still well-defined. Then we 
 take the second logarithmic derivative to find
 \begin{align}\notag
  \partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln  z(A+\varepsilon_1 H,A+\varepsilon_2 K)=\partial_{\varepsilon_1}\partial_{\varepsilon_2}\ln\Gamma_{A,A+\varepsilon_1 H,A+\varepsilon_2 K}\\
@@ -5920,7 +5920,7 @@ Therefore any lift this equality is true up to a phase, meaning that
 \begin{equation}\label{f causal}
 f(A,F,G):=\frac{\tilde{S}_{A+G,A+G+F}}{\tilde{S}_{A,A+F}}
 \end{equation}
-is well defined. We see immediately
+is well-defined. We see immediately
 \begin{equation}\label{vanish at axis}
 f(A,0,G)=1=f(A,F,0).
 \end{equation}
@@ -6146,6 +6146,15 @@ of such proofs. Even though one might speed it
 up a little by using the tools available e.g. in 
 \cite{derezinski2013mathematics} the author is of the 
 opinion that it is instructive to give a direct proof.
+In this section we will associate with every set 
+\(C\subset\mathbb{N}\) such that \(|C|<\infty\) the 
+sequence \((C_k)_{1\le k\le |C|}\) such that
+\begin{align}
+  \forall 1\le k \le |C|: C_k\in C\\
+  \forall 1\le k<l\le |C|: C_k<C_l
+\end{align}
+hold. This notation is confined to within the 
+proofs of this section.
 The strategy of this section is to construct an operator in 
 two steps that is essentially self adjoint on the domain 
 of the Fock space of 
@@ -6206,8 +6215,14 @@ the following bounds for all \(m,p\)
 \begin{align}
 \|\mathrm{d}\Gamma(B_{++})|_{\mathcal{F}^0_{m,p}}\|&\le (m+4)\|B_{++}\|\\
 \|\mathrm{d}\Gamma(B_{--})|_{\mathcal{F}^0_{m,p}}\|&\le (p+4)\|B_{--}\|\\
-\|\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}\|&\le 2 \|B_{-+}\|_{I_2}.
+\|\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}\|&\le 2 \|B_{-+}\|_{I_2},
 \end{align}
+Moreover the operator \(\mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}\)
+also assumes the following form
+\begin{equation}\label{dGamma form for adjoint}
+  \mathrm{d}\Gamma(B_{-+})|_{\mathcal{F}^0_{m,p}}=\!-\!\sum_{k\in\mathbb{N}}a^*(\varphi_{-k})a(B_{+-}\varphi_{-k})|_{\mathcal{F}^0_{m,p}}.
+\end{equation}
+The equality of operators can then be continued to all of \(\mathcal{F}\).
 \end{Lemma}
 \begin{proof}
 Pick \(\alpha\in\mathcal{F}^0_{m,p}\) for \(m,p\in\mathbb{N}_0\), \(\alpha\) can be expressed in terms of some ONB 
@@ -6496,10 +6511,24 @@ terms are
 \begin{align}\nonumber
 \sum_{n\in\mathbb{N}} a^*(B_{-+}\varphi_n)a(\varphi_{n})\hspace{-0.5cm}\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}  \hspace{-0.5cm}\alpha_{L,C} 
 \prod_{l=1}^m a^*(\tilde{\varphi}_{L_l}) \prod_{c=1}^p a(\tilde{\varphi}_{-C_c}) \Omega  \\\nonumber
-=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.5cm} \alpha_{L,C} \sum_{b=1}^m \sum_{d=1}^p (-1)^{m-1+b+d} \langle B_{+-} \tilde{\varphi}_{-C_d},\tilde{\varphi}_{L_b}\rangle \\
-\prod_{\overset{l=1}{l\neq b}}^m a^*(\tilde{\varphi}_{L_l})
+=\!\sum_{n\in\mathbb{N}}\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.5cm}\alpha_{L,C}\!\!\sum_{b=1}^m\sum_{d=1}^p(-1)^{m-1+b+d}\langle \varphi_n, \tilde{\varphi}_{L_b}\rangle \langle \tilde{\varphi}_{-C_d},B_{-+}\varphi_n\rangle\\
+\times \prod_{\overset{l=1}{l\neq b}}^m a^*(\tilde{\varphi}_{L_l})
 \prod_{\overset{c=1}{c\neq d}}^p a(\tilde{\varphi}_{-C_c})\Omega.
 \end{align}
+From here we can eliminate the sum over \(n\), and reintroduce a sum 
+over the ONB of \(\mathcal{H}^-\) to arrive at the 
+expression for \(\mathrm{d}\Gamma(B_{-+})\):
+\begin{align}
+=\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.5cm} \alpha_{L,C} \sum_{b=1}^m \sum_{d=1}^p (-1)^{m+b+d} \langle B_{+-} \tilde{\varphi}_{-C_d},\tilde{\varphi}_{L_b}\rangle \notag\\
+\times\prod_{\overset{l=1}{l\neq b}}^m a^*(\tilde{\varphi}_{L_l})
+\prod_{\overset{c=1}{c\neq d}}^p a(\tilde{\varphi}_{-C_c})\Omega\label{estimate dGamma +-}\\
+=\!\!\!\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.5cm} \alpha_{L,C} \sum_{b=1}^m \sum_{d=1}^p \sum_{k\in\mathbb{N}}(-1)^{m+b+d} \langle \tilde{\varphi}_{-C_d},\varphi_{-k}\rangle \langle B_{+-}\varphi_{-k},\tilde{\varphi}_{L_b}\rangle \notag\\
+\times\prod_{\overset{l=1}{l\neq b}}^m a^*(\tilde{\varphi}_{L_l})
+\prod_{\overset{c=1}{c\neq d}}^p a(\tilde{\varphi}_{-C_c})\Omega\\
+=\!-\!\sum_{k\in\mathbb{N}}a^*(\varphi_{-k})a(B_{+-}\varphi_{-k})\hspace{-0.5cm}\sum_{\overset{L,C\subset \mathbb{N}}{|L|=m,|C|=p}}\hspace{-0.6cm}\alpha_{L,C}\prod_{l=1}^m a^*(\tilde{\varphi}_{L_l})\prod_{c=1}^pa(\tilde{\varphi}_{-C_c})\Omega.
+\end{align}
+For the estimate of the operator norm we continue with expression 
+\eqref{estimate dGamma +-}.
 By counting the remaining creation and annihilation operators 
 we immediately see that \(\mathrm{d}\Gamma(B_{-+})\alpha\in 
 \mathcal{F}_{m-1,p-1}\). We take the norm squared of the 
@@ -6591,18 +6620,14 @@ So also \(\mathrm{d}\Gamma(B_{+-}):\mathcal{F}^0\rightarrow \mathcal{F}\) can be
 Moreover \(\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{+-})\) is skew-adjoint.
 \end{Lemma}
 \begin{proof}
-Pick \(\beta,\alpha \in \mathcal{F}^0\). We expand those 
-states with respect to the basis 
-\((\varphi_k)_{k\in\mathbb{Z}\backslash \{0\}}\). Consider
+Pick \(\beta,\alpha \in \mathcal{F}^0\). We use the form 
+\eqref{dGamma form for adjoint} to obtain
 
 \begin{align}\nonumber
-&\langle \beta, \mathrm{d}\Gamma(B_{-+}) \alpha \rangle=\left\langle \beta, \sum_{n\in\mathbb{N}} a^*(B_{-+}\varphi_n)a(\varphi_{n}) \alpha \right\rangle\\\nonumber
-&=\sum_{n\in\mathbb{N}} \langle \beta , a^*(B_{-+}\varphi_n)a(\varphi_{n}) \alpha\rangle
-=\sum_{n\in\mathbb{N}}  \langle a^*(\varphi_{n})  a(B_{-+}\varphi_n)\beta , \alpha\rangle\\\nonumber
-&=\left\langle \sum_{n\in\mathbb{N}}a^*(\varphi_{n})  a(B_{-+}\varphi_n) \beta, \alpha \right\rangle
-=\left\langle \sum_{n\in\mathbb{N}} \lambda_n a^*(\varphi_{n})  a(\varphi_{-n}) \beta, \alpha \right\rangle\\
-&=\left\langle \sum_{n\in\mathbb{N}}  a^*(- B_{+-}\varphi_{-n})  a(\varphi_{-n}) \beta, \alpha \right\rangle
-=\langle -\mathrm{d}\Gamma(B_{+-})  \beta, \alpha \rangle,
+&\langle \beta, \mathrm{d}\Gamma(B_{-+}) \alpha \rangle=\left\langle \beta, -\sum_{n\in\mathbb{N}} a^*(\varphi_{-n})a(B_{+-}\varphi_{-n}) \alpha \right\rangle\\\nonumber
+&=\!-\!\sum_{n\in\mathbb{N}} \langle \beta , a^*(\varphi_{-n})a(B_{+-}\varphi_{-n}) \alpha\rangle
+=\!-\!\sum_{n\in\mathbb{N}}  \langle a^*(B_{+-}\varphi_{-n})  a(\varphi_{-n})\beta , \alpha\rangle\\
+&=\bigg\langle\!\!-\sum_{n\in\mathbb{N}} a^*(B_{+-}\varphi_{-n})  a(\varphi_{-n})\beta , \alpha\bigg\rangle
 \end{align}
  So we see that \(\mathrm{d}\Gamma(B_{+-})\)
 and \(\mathrm{d}\Gamma(B_{-+})^*\) agree on \(\mathcal{F}^0\) which is dense. So they are the same bounded and continuous operator on all of
@@ -6612,14 +6637,14 @@ Fock space.
 \begin{Def}
 We define the set 
 \begin{equation}
-  \mathfrak{B}:=\{B':\mathcal{H}\righttoleftarrow|\mathrm{linear},\|B'\|\in\mathbb{R}, {B'}^*=-B'\}
+  \mathfrak{B}:=\{B:\mathcal{H}\righttoleftarrow|\mathrm{linear},\|B\|\!+\!\|B_{+-}\|_{I_2}\!+\!\|B_{-+}\|_{I_2}\in\mathbb{R}, {B}^*\!=-B\}
 \end{equation}
 and the operator
 \begin{equation}
   \mathrm{d}\Gamma(B):=\mathrm{d}\Gamma(B_{++})+\mathrm{d}\Gamma(B_{+-})+\mathrm{d}\Gamma(B_{-+})+\mathrm{d}\Gamma(B_{--}).
 \end{equation}
-Furhtermore, we endoe \(\mathfrak{B}\) with the topology induced by 
-the norm \(\|\cdot\|+\|P^+\cdot P^-\|+\|P^-\cdot P^+\|\).
+Furhtermore, we endow \(\mathfrak{B}\) with the topology induced by 
+the norm \(B\mapsto \|B\|+\|B_{+-}\|_{I_2}+\|B_{-+}\|_{I_2}\).
 \end{Def}
 
 \begin{Lemma}
@@ -6636,35 +6661,34 @@ to the set of bounded linear operators of type
 Since the sum of skew symmetric operators is skew symmetric, it suffices to show skew symmetry of \(\mathrm{d}\Gamma(B_{++})\) and \(\mathrm{d}\Gamma(B_{--})\).
 Moreover since both of these operators are extended versions of operators of the same name of type \(\mathcal{F}^0\rightarrow \mathcal{F}\) it suffices to show skew symmetry
 on this domain. We will only do the calculation for \(\mathrm{d}\Gamma(B_{++})\), the other calculation is analogous. 
-First we notice that
-\begin{equation}\label{d Gamma ++ double sum}
-\mathrm{d}\Gamma(B_{++})=\sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_{n})a(\varphi_n)
-=\sum_{n\in\mathbb{N}} \sum_{m\in\mathbb{N}}  \langle \varphi_m, B_{++}\varphi_n\rangle a^*(\varphi_m) a(\varphi_n)
-\end{equation}
-holds.  Pick \(\alpha,\beta \in \mathcal{F}^0\). Consider
+Pick \(\beta,\alpha \in \mathcal{F}^0\) and basis \(\tilde{\varphi}\), \(\varphi'\)
+such that \(\beta,\alpha\) are expressible with finite sums over 
+elements of the generating sets with respect to their respective basis. 
+We caculate
 \begin{align}\nonumber
 \left\langle \beta, \mathrm{d}\Gamma(B_{++}) \alpha \right\rangle
 = \sum_{L,L',C,C'\subset \mathbb{N}} \overline{\beta}_{L',C'}\alpha_{L,C} 
-\left\langle \prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega,\right. \\ \nonumber
-\left. \sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_{n})a(\varphi_n) \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle\\\nonumber
+\left\langle \prod_{l=1}^{|L'|}a^*(\tilde{\varphi}_{L_l'})\prod_{c=1}^{|C'|} a(\tilde{\varphi}_{-C_c'})\Omega,\right. \\ \nonumber
+\left. \sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_{n})a(\varphi_n) \prod_{l=1}^{|L|}a^*(\varphi_{L_l}')\prod_{c=1}^{|C|} a(\varphi_{-C_c}')\Omega\right\rangle\\\nonumber
 = \sum_{L,L',C,C'\subset \mathbb{N}} \overline{\beta}_{L',C'}\alpha_{L,C} \sum_{n\in\mathbb{N}}
-\left\langle \prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega,\right. \\ \nonumber
-\left. a^*(B_{++}\varphi_{n})a(\varphi_n) \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle\\\nonumber
+\left\langle \prod_{l=1}^{|L'|}a^*(\tilde{\varphi}_{L_l'})\prod_{c=1}^{|C'|} a(\tilde{\varphi}_{-C_c'})\Omega,\right. \\ \nonumber
+\left. a^*(B_{++}\varphi_{n})a(\varphi_n) \prod_{l=1}^{|L|}a^*(\varphi_{L_l}')\prod_{c=1}^{|C|} a(\varphi_{-C_c}')\Omega\right\rangle\\\nonumber
 = \sum_{L,L',C,C'\subset \mathbb{N}} \overline{\beta}_{L',C'}\alpha_{L,C} \sum_{n\in\mathbb{N}}
-\left\langle a^*(\varphi_n) a(B_{++}\varphi_{n})\prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega,\right. \\ \nonumber
-\left.  \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle\\\nonumber
-= \sum_{L,L',C,C'\subset \mathbb{N}} \overline{\beta}_{L',C'}\alpha_{L,C} 
-\left\langle \sum_{n\in\mathbb{N}} \sum_{m\in\mathbb{N}} \langle B_{++}\varphi_n,\varphi_m\rangle a^*(\varphi_n) a(\varphi_{m})\right. \\ \nonumber
-\left. \prod_{l=1}^{|L'|}a^*(\varphi_{L_l'})\prod_{c=1}^{|C'|} a(\varphi_{-C_c'})\Omega, \prod_{l=1}^{|L|}a^*(\varphi_{L_l})\prod_{c=1}^{|C|} a(\varphi_{-C_c})\Omega\right\rangle.
+\left\langle a^*(\varphi_n) a(B_{++}\varphi_{n})\prod_{l=1}^{|L'|}a^*(\tilde{\varphi}_{L_l'})\prod_{c=1}^{|C'|} a(\tilde{\varphi}_{-C_c'})\Omega,\right. \\ \nonumber
+\left.  \prod_{l=1}^{|L|}a^*(\varphi_{L_l}')\prod_{c=1}^{|C|} a(\varphi_{-C_c}')\Omega\right\rangle.
 \end{align}
-Now the sum over \(m\mathbb{N}\) may be reduced to a finite sum over 
-\(m\in L'\), because for \(m\in {L'}^c\) the annihilation 
-operator \(a(\varphi_m)\) may directly be commuted to \(\Omega\) which 
-is then mapped to \(0\). Analogously the sum \(n\in\mathbb{N}\)
-may be replaced by \(n\in L\), hence we may commute the sums. 
-Furthermore, because \(B_{++}^*=-B_{++}\) we 
-add the vanishing terms and use \eqref{d Gamma ++ double sum}
-to obtain
+In the next step we perform the standard anticommutations to 
+move the operator \(B_{++}\) from the annihilation operator to
+the creation operator:
+\begin{align}
+  \sum_{L,C\subset \mathbb{N}}\beta_{L,C} \sum_{n\in\mathbb{N}}a^*(\varphi_n)a(B_{++}\varphi_n) \prod_{l=1}^{|L|}a^*(\tilde{\varphi}_{L_l})\prod_{c=1}^{|C|}a(\tilde{\varphi}_{-C_c})\Omega\\
+  =\sum_{L,C\subset \mathbb{N}}\!\!\!\beta_{L,C}\!\sum_{b=1}^{|L|} \prod_{l=1}^{b-1}a^*(\tilde{\varphi}_{L_l}) (-1)a^*(B_{++}\tilde{\varphi}_{L_b})\\
+  \times \prod_{l=b+1}^{|L|}a^*(\tilde{\varphi}_{L_l})\prod_{c=1}^{|C|}a(\tilde{\varphi}_{-C_c})\Omega\\
+  =\sum_{L,C\subset \mathbb{N}}\beta_{L,C} (-1)\sum_{k\in\mathbb{N}}a^*(B_{++}\varphi_k)a(\varphi_k) \prod_{l=1}^{|L|}a^*(\tilde{\varphi_{L_l}})\prod_{c=1}^{|C|}a(\tilde{\varphi}_{-C_c})\Omega\\
+  =-\sum_{k\in\mathbb{N}}a^*(B_{++}\varphi_k)a(\varphi_k)\beta,
+\end{align}
+where we used \(B_{++}^*=-B_{++}\).  
+This yields
 \begin{equation}
 \left\langle \beta, \mathrm{d}\Gamma(B_{++})\alpha\right\rangle =- \left\langle \mathrm{d}\Gamma(B_{++})\beta, \alpha\right\rangle.
 \end{equation}
@@ -6682,15 +6706,15 @@ Now we would like to define \(e^{\mathrm{d}\Gamma(B)}\), in order to do so, we w
 One way of doing so is by Nelson's analytic vector theorem. 
 
 \begin{Thm}[Nelson's analytic vector theorem]
-Let \(C\) be a symmetric operator on a Hilbert space \(\mathscr{H}\). If \(D(C)\) contains a total set 
-\(S\subset \bigcap_{n=1}^\infty D(C^n)\) of analytic vectors, then \(C\) is essentially self adjoint. 
-A vector \(\phi\in \bigcap_{n=1}^\infty D(C^n)\) is called analytic if there is \(t>0\) such that
+Let \(C\) be a symmetric operator on a Hilbert space \(\mathscr{H}\). If \(\dom(C)\) contains a total set 
+\(S\subset \bigcap_{n=1}^\infty \dom(C^n)\) of analytic vectors, then \(C\) is essentially self adjoint. 
+A vector \(\phi\in \bigcap_{n=1}^\infty \dom(C^n)\) is called analytic if there is \(t>0\) such that
 \(\sum_{k=0}^\infty \frac{\|C^n \phi\|}{n!} t^n<\infty\) holds. A set \(S\) is said to be total if \(\overline{\text{span}(S)}=\mathscr{H}\)
 \end{Thm}
 For a proof see e.g. \cite{SimonReed2}.
 
 \begin{Lemma}\label{Gamma exponential bound}
-For any \( \alpha \in \mathcal{F}', t>0\) the operator \(\mathrm{d}\Gamma(B):\mathcal{F}'\rightarrow \mathcal{F}\) satisfies
+For any \( \alpha \in \mathcal{F}', t>0\) and \(B\in \mathfrak{B}\) the operator \(\mathrm{d}\Gamma(B):\mathcal{F}'\rightarrow \mathcal{F}\) satisfies
 \begin{equation}
 \sum_{k=0}^\infty \frac{\|\mathrm{d}\Gamma(B)^k \alpha\|}{k!} t^k <\infty.
 \end{equation}
@@ -6703,36 +6727,39 @@ We dissect \(\alpha\) into its parts of fixed particle numbers:
 \end{equation}
  Using the following abbreviations
 \begin{align}
-&\Gamma_{-1}:=\mathrm{d}\Gamma(B)_{-+}\\
-&\Gamma_0:=\mathrm{d}\Gamma(B)_{++}+\mathrm{d}\Gamma(B)_{--}\\
-&\Gamma_{+1}:=\mathrm{d}\Gamma(B)_{+-}\\
-&\beta:=\max\{\|B_{++}\|+\|B_{--}\|,\|B_{-+},\|_{\mathrm{HS}}\}
+&\Gamma_{-1}:=\mathrm{d}\Gamma(B_{-+})\\
+&\Gamma_0:=\mathrm{d}\Gamma(B_{++})+\mathrm{d}\Gamma(B_{--})\\
+&\Gamma_{+1}:=\mathrm{d}\Gamma(B_{+-})\\
+&\beta:=\max\{\|B_{++}\|+\|B_{--}\|,\|B_{-+},\|_{I_2}\}
 \end{align}
 we estimate
 \begin{align}\nonumber
-\|\mathrm{d}\Gamma(B)^k \alpha_{l,c}\|\le \sum_{x\in \{-1,0,+1\}^k} \left\| \prod_{b=1}^k \Gamma_{x_b}\alpha_{l,c}\right\|\\\label{essentialSelfadjointnessOperatorProduct}
-\le  \sum_{x\in \{-1,0,+1\}^k} \prod_{b=1}^k \left\| \Gamma_{x_b}|_{\mathcal{F}_{l+\sum_{d=1}^{b-1} x_d,c+\sum_{d=1}^{b-1} x_d}}\right\| \|\alpha_{l,c}\|\\
+\|\mathrm{d}\Gamma(B)^k \alpha_{l,c}\|\le \sum_{x\in \{-1,0,+1\}^k} \left\| \prod_{b=1}^k \Gamma_{x_b}\alpha_{l,c}\right\|\\
+\le  \sum_{x\in \{-1,0,+1\}^k} \prod_{b=1}^k \left\| \Gamma_{x_b}|_{\mathcal{F}_{l+\sum_{d=1}^{b-1} x_d,c+\sum_{d=1}^{b-1} x_d}}\right\| \|\alpha_{l,c}\|\\\label{essentialSelfadjointnessOperatorProduct}
 \le 3^k \|\alpha\| \max_{x\in \{-1,0,+1\}^k} \prod_{b=1}^k\left\| \Gamma_{x_b}|_{\mathcal{F}_{l+\sum_{d=1}^{b-1} x_d,c+\sum_{d=1}^{b-1} x_d}}\right\|  .
 \end{align}
 At this point the factors only depend on the number of particles the Fock space 
-vector attains as we act on it with the operators \(\Gamma_{\cdot}\). 
+vector attains as we act on it with the operators \(\Gamma_{\#}\) for 
+\(\#\in \{-1,0,1\}\). 
 As these bounds increase with the particle number we can restrict the set 
 \(\{-1,0,+1\}\) in the last line to \(\{0,+1\}\).
 We notice that the bound in \eqref{essentialSelfadjointnessOperatorProduct} 
 will only increase if  we exchange each pair 
-\(x_{i}=1, x_{h}=0\) by the pair \(x_{\max\{i,h\}}=1, x_{\min\{i,h\}}=0\) so 
+\(x_{i+1}=1, x_{i}=0\) by the pair \(x_{i}=1, x_{i+1}=0\) so 
 that the norm of the operator that acts like
 a particle number operator is taken after the particle number is increased. 
-By the esimates of lemma \ref{d Gamma norms} the maximum 
-therefore has the form \((c+l+10+2d)^{k-d}\), which we bound 
+Therefore we for each fixed \(\sum_{b=1}^k x_b=d\)
+we can estimate the maximum by lemma \ref{d Gamma norms} 
+to be \(\beta^k (c+l+8+2d)^{k-d}\), which we bound 
 by
-\(2^k (c/2+l/2+5+d)^{k-d}\).
-For maximising 
+\((2\beta)^k (c/2+l/2+4+d)^{k-d}\).
+The Faktor constant in \(d\) will be omitted for the 
+maximization problem. For maximising 
 \begin{equation}
-  c/2+l/2+5+d)^{k-d}
+  (c/2+l/2+4+d)^{k-d}
 \end{equation}
 we treat \(d\) as a continuous variable take the derivative and set it to zero. From the form of the function to be maximised
-it is clear that it is equal to \(1\) for \(d=k\) and at \(d=-c/2-l/2-4\), but for \(k\) large it will be bigger in between. We abbreviate \(y=c/2+l/2+1\).
+it is clear that it is equal to \(1\) for \(d=k\) and at \(d=-c/2-l/2-3\), it is be bigger in between. We abbreviate \(y=c/2+l/2+4\).
 \begin{align}
 0= (y+d)^{k-d} (-\ln(y+d) + \frac{k-d}{y+d})\\
 \iff \frac{k-d}{y+d}= \ln (y+d)\\
@@ -6743,10 +6770,13 @@ it is clear that it is equal to \(1\) for \(d=k\) and at \(d=-c/2-l/2-4\), but f
 \iff e^{W_0(e(k+y))-1}-y=d,
 \end{align}
 
-where we made use of the Lambert W function, which is the inverse function of \(x\mapsto x e^x\) and has multiple branches; however as \(e(y+d)>0\) 
+where we made use of the Lambert W function, which 
+is the inverse function of \(x\mapsto x e^x\) and has 
+multiple branches; however as \(e(y+d)>0\) 
 \(W_0\) is the only real branch which is applicable here, it corresponds to the inverse of \(x\mapsto x e^x\) for \(x>-1\). 
-From the form of the maximising value we see, that it is always bigger than \(-y\). Plugging this back onto our
-function we find its maximum
+From the form of the maximising value we see, that it 
+is always bigger than \(-y\). Plugging this back 
+onto our function we find its maximum
 
 \begin{align}\nonumber
 &\max_{d\in ]-y,\infty[} (y+d)^{k-d}=e^{(W_0(e(k+y))-1) (k+y)- (W_0(e(k+y))-1)e^{W_0(e(k+y))-1}}\\\nonumber
@@ -6812,20 +6842,17 @@ Lastly in this chapter, we will investigate the commutation properties of \(\mat
 These properties are the reason we are interested in this operator, they will prove to be very useful in the next chapter.
 
 \begin{Thm}\label{Commutation Gamma}
-For \(\psi \in \mathcal{H}\) we have
+For \(\psi \in \mathcal{H}\) and \(\alpha\in \mathcal{F}'\) we have
 \begin{equation}
 [\mathrm{d}\Gamma(B),a^\# (\psi)]\alpha=a^\#(B\psi)\alpha,
 \end{equation}
-where \(a^\#\) can be either \(a\) or \(a^*\) 
-or all \(\alpha\in\mathcal{F}'\).
+where \(a^\#\) can be either \(a\) or \(a^*\).
 \end{Thm}
 \begin{proof}
 Because \(\mathrm{d}\Gamma(B)\) is defined as 
 the extension of an operator on \(\mathcal{F}^0\) it 
-suffices to show the desired identity on this space. In 
-order to do so
-we first restrict \(\psi\in \text{span}\{\varphi_{n}| n 
-\in \mathbb{Z}\backslash\{0\}\}\). We will do the 
+suffices to show the desired identity on this space. 
+ We will do the 
 case \(a(\psi)\), the other case is completely analogous.  
 As a first step we decompose \(\mathrm{d}\Gamma(B)\) into its four parts
 
@@ -6837,13 +6864,18 @@ each of those parts is evaluated directly. We begin with the \(B_{++}\) part, th
 
 \begin{align}
 \left[ \mathrm{d}\Gamma(B_{++}),a(\psi) \right] \\
-= \sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_n)a(\varphi_n) a(\psi) - \sum_{n\in\mathbb{N}} a(\psi) a^*(B_{++}\varphi_n)a(\varphi_n) \\
-=\sum_{n\in\mathbb{N}} \left[ -\langle \psi, B_{++} \varphi_n\rangle a(\varphi_n) +a(\psi) a^*(B_{++}\varphi_n)a(\varphi_n) \right]  \\
+= \sum_{n\in\mathbb{N}} a^*(B_{++}\varphi_n)a(\varphi_n) a(\psi) - \sum_{n\in\mathbb{N}} a(\psi) a^*(B_{++}\varphi_n)a(\varphi_n) \\\label{commutation calculation1}
+=\sum_{n\in\mathbb{N}} \left[ -\langle \psi, B_{++} \varphi_n\rangle a(\varphi_n) +a(\psi) a^*(B_{++}\varphi_n)a(\varphi_n) \right]  \\\label{commutation calculation2}
 - \sum_{n\in\mathbb{N}} a(\psi) a^*(B_{++}\varphi_n)a(\varphi_n).
 \end{align}
 
-Let \(\alpha \in \mathcal{F}^0\). Now applying the expression in the last two lines to \(\alpha\) online finitely many elements of the sum in fact contribute.
-So we may split the firs sum into two and observe the cancellation between the last two terms. Continuing we find
+Let \(\alpha \in \mathcal{F}^0\). Now applying the expression in the last 
+two lines to \(\alpha\), considering each \(\alpha_{m,p}\in\mathcal{F}_{m,p}\)
+separately and commuting the annihilation operators in \eqref{commutation calculation1} 
+and \eqref{commutation calculation2} 
+to the right, the sums over \(n\) will be absolutely convergent. hence
+we may split the firs sum into two and observe the cancellation 
+between the last two terms. Continuing we find
 
 \begin{align}
 \left[ \mathrm{d}\Gamma(B_{++}),a(\psi) \right] \alpha
@@ -6853,28 +6885,21 @@ So we may split the firs sum into two and observe the cancellation between the l
 =a(B_{++}\psi)\alpha,
 \end{align}
 
-where we used \(B^*=-B^*\). Now for a general \(\psi\in\mathcal{H}\) we pick a sequence 
-\((\psi_k)_{k\in\mathbb{N}}\subset \text{span}\{\varphi_{n}| n \in \mathbb{Z}\backslash\{0\}\}\)
-such that \(\lim_{k\rightarrow \infty} \psi_k = \psi\). Now because of the calculation we have the equality
-
+where we used \(B^*=-B^*\).  
+The final extension of this equation to all \(\alpha \in \mathcal{F}'\) happens via the continuous linear
+extension theorem on \(\mathcal{F}_{m,p}\) for each \(m,p\in\mathbb{N}\). 
+The proof in all seven other cases are completely analogous,
+except that the off diagonal terms switch. More precisely, from the excatly analogous 
+calculation it follows that 
 \begin{equation}
-\left[ \mathrm{d}\Gamma(B_{++}),a(\psi_k) \right] \alpha =a(B_{++}\psi_k)\alpha
-\end{equation}
-
-for each \(k\in\mathbb{N}\) and hence if a limit exists it also holds in the limit. Now on the right hand side, because
-\(a\) is a bounded operator on all of \(\mathcal{F}\) clearly the limit exists and is equal to \(a(B_{++}\psi)\alpha\).
-On the left hand side we know \(\mathrm{d}\Gamma(B)\) to be bounded and hence continuous on every \(\mathcal{F}_{m,p}\)
-for every \(m,p\in\mathbb{N}\).  Furhtermore since \(\alpha\in\mathcal{F}^0\) there is are \(m',p'\in\mathbb{N}\) such that 
-\(\alpha \in \bigobot_{m=0}^{m'}\bigobot_{p=0}^{p'} \mathcal{F}_{m,p}\) holds and hence we can exchange the limit also 
-with \(\mathrm{d}\Gamma(B)\) and find
-
+  \big[\mathrm{d}\Gamma(B_{-+}),a^\#(\psi)\big]\alpha=a^\#\left(B_{+-}\psi\right)\alpha
+\end{equation}  
+and 
 \begin{equation}
-\left[ \mathrm{d}\Gamma(B_{++}),a(\psi) \right] \alpha =a(B_{++}\psi)\alpha
-\end{equation}
-
-for general \(\psi\in\mathcal{H}\). The final extension of this equation to all \(\alpha \in \mathcal{F}'\) happens via the continuous linear
-extension theorem on \(\mathcal{F}_{m,p}\) for each \(m,p\in\mathbb{N}\). The proof in all seven other cases are completely analogous.
-Putting thins together again we obtain
+  \big[\mathrm{d}\Gamma(B_{+-}),a^\#(\psi)\big]\alpha=a^\#\left(B_{-+}\psi\right)\alpha
+\end{equation}  
+hold.
+Putting things together again we obtain
 
 \begin{align}
 \left[ \mathrm{d}\Gamma(B_{++}),a(\psi) \right] +\left[ \mathrm{d}\Gamma(B_{-+}),a(\psi) \right] \\
@@ -6891,8 +6916,10 @@ on all of \(\mathcal{F}'\).
 \subsection{Presentation and Proof of the Formula}\label{sec:proof simple formula}
 
 In this chapter we verify the formula for the \(S\)-matrix directly.
-For a heuristic derivation in the appendix in 
-section \ref{sec:heuristic construction}
+For a heuristic derivation see 
+section \ref{sec:heuristic construction} of the 
+appendix.
+
 
 
 \begin{Thm}[Analyticity for small \(A\)]\label{sleek_second_quantised_scattering_operator}
@@ -6900,9 +6927,9 @@ Let \(A\in\mathcal{V}\) be such that the one
 particle scattering operator \(S^A\) fulfills
 \begin{equation}
 \|\id-S^A\|<1.
-\end{equation}\label{eq:sleek_scattering}
+\end{equation}
 Then the operator 
-\begin{equation}\label{eq:sleek_second_quantised_scattering_operator}
+\begin{equation}\label{eq:sleek_scattering}
 \tilde{S}^A=  e^{\mathrm{d}\Gamma(\ln (S^A))}
 \end{equation}
 is a lift of \(S^A\), where the logarithm is defined by its 
@@ -6910,14 +6937,12 @@ taylor series around the identity.
 \end{Thm}
 \begin{proof}
 In order to establish this theorem we need to verify that the 
-expression given in \eqref{eq:sleek_scattering} for the scattering 
+expression given in equation \eqref{eq:sleek_scattering} for the scattering 
 operator
- is a well defined object
-and fulfils the \eqref{lift condition}. Because these conditions 
-uniquely fix the Operator \(S^A\)  up to a phase this suffices as 
-a proof.
+ is a well-defined object
+and fulfils the \eqref{lift condition}.
 
-Well definedness is established, by theorem 
+Well-definedness is established, by theorem 
 \ref{Gamma essential selfadjointness}, because for unitary \(S^A\)
 with \(\|1-S^A\|<1\) the power series of the logarithm converges 
 and fulfils
@@ -6926,14 +6951,22 @@ and fulfils
  \le  \sum_{k=1}^\infty \frac{\|1-S^A\|^k}{k}=-\ln(1-\|1-S^A\|)
 \end{align}
 implying that the power series of the logarithm around the 
-identity is a well defined map from the one particle 
+identity is a well-defined map from the one particle 
 operators of norm less than
 one to the bounded one particle operators. Moreover this 
 operator fulfils \([\ln (S^A)]^*=\ln (S^A)^*= \ln 
 (S^A)^{-1}=-\ln (S^A)\), so 
-\(\mathrm{d}\Gamma(\ln S^A)\) is a well defined unbounded 
+\(\mathrm{d}\Gamma(\ln S^A)\) is a well-defined unbounded 
 operator that is essentially skew adjoint on the finite 
-particle sector of Fock space \(\mathcal{F}'\).
+particle sector of Fock space \(\mathcal{F}'\). Finally the 
+off diagonal Hilbert-Schmidt norm can also be controlled by 
+the same norm of \(S^A\):
+\begin{align}
+  \|P^+\ln(S^A)P^-\|_{I_2}=\|P^+\ln (1-(1-S^A))P^-\|_{I_2}\\
+  = \left\| - P^+\sum_{k=1}^\infty \frac{(1-S^A)^k}{k} P^-\right\|_{I_2}\\
+   \le  \|S^A_{+-}\|_{I_2}\sum_{k=1}^\infty \max\{\|1-S^A\|,\|P^--S^A_{--}\|\}^{k-1}\\
+   =\frac{\|S^A_{+-}\|_{I_2}}{1-\|1-S^A\|}.
+\end{align}
 
 
 Let \(\varphi\in \mathcal{H}\) and \(\alpha\in \mathcal{F}'\), 
@@ -6963,6 +6996,9 @@ For the marked equality changing oder of summation is justified, because by the 
  of summands converges absolutely.
 Clearly multiplying the second quantised operator by an additional phase as in 
 \eqref{sleek_second_quantised_scattering_operator} does not influence this calculation.
+So \eqref{lift condition} holds when applied 
+to any \(\alpha \in \mathcal{F}'\) and can be continued 
+to all of \(\mathcal{F}\) by continuity of \(\tilde{S}\).
 \end{proof}
 
 The last theorem can be restated as for \(A\) small enough 
@@ -6995,7 +7031,7 @@ the one-particle scattering operator
 \end{equation}
 Pick \(N\in\mathbb{N}\) such that 
 \begin{equation}
-  S^A_k=U^{(k-1)A/N}_{\Sigma_{\text{in}},\Sigma_{\text{out}}}U^{k/N A}_{\Sigma_{\text{out}},\Sigma_{\text{in}}}
+  S^A_k=U^{(k-1)A/N}_{\Sigma_{\text{in}},\Sigma_{\text{out}}}U^{A k/N }_{\Sigma_{\text{out}},\Sigma_{\text{in}}}
 \end{equation}
 fulfills 
 \begin{equation}
@@ -7689,7 +7725,7 @@ for \(t_1,t_0\in\mathbb{R}\)
 T_1T_2 = \int_{t_0}^{t_1}dt~ T_1(t_1,t)T_2(t,t_0),
 \end{equation}
 as a map of the same type as \(T_1\) and \(T_2\)
-whenever this is well defined. Furthermore, for operator valued functions
+whenever this is well-defined. Furthermore, for operator valued functions
 \(W_1,W_2:\mathbb{R}\to \mathcal{B}(\mathcal{H})\) we define
 \begin{align}\label{ivp0 shortnotation 1}
 T_1W_1~(t',t)=T_1(t',t)C_1(t)\\\label{ivp0 shortnotation 2}
@@ -8468,7 +8504,7 @@ where the last factor is the multinomial coefficient of the indices\linebreak \(
 For the rest of this chapter, we are going to derive a concrete form of the second quantised scattering matrix. In order to turn the ``conjectures'' 
 into ``theorems'' not only would one have to turn the rough sketches of the combinatorics into proofs, one also would have to show linearity (over real numbers) and
 continuity of \(\mathrm{d}\Gamma(B)\) in \(B\).
-However, since the final result can be verified to be well defined and to fulfil the lift conditions, this will not be necessary.
+However, since the final result can be verified to be well-defined and to fulfil the lift conditions, this will not be necessary.
 We will nonetheless come across various combinatorial assertions that we are going to prove rigorously. 
 These will be clearly marked: ``lemma'' and ``proof''.
 

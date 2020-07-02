@@ -49,6 +49,7 @@
 
 \newtheorem{Def}{Definition}
 \newtheorem{axiom}[Def]{Axiom}
+\newtheorem{fact}[Def]{Fact}
 \newtheorem{Conj}[Def]{Conjecture}
 \newtheorem{Thm}[Def]{Theorem}
 \newtheorem{Prp}[Def]{Proposition}
@@ -4597,7 +4598,16 @@ even if the expression \(\ln f(t)\) cannot be interpreted as the principle
 branch of the logarithm.
 
 We also introduce \(S^1:=\{z\in\mathbb{C}\mid |z|=1\}\).
+We will denote the space of bounded linear functions from 
+one normed Vektorspace \(V\) into itself by \(\mathcal{B}(V)\).
 
+Lastly we introduce the partial derivative in 
+the direction of any four-potential \(F\) of an operator valued 
+function \(F:\mathcal{V}\rightarrow \mathcal{B}(\mathcal{F})\) by
+\begin{equation}\label{def derivative}
+\partial_F T(F):=\partial_{\varepsilon}T(\varepsilon F)|_{\varepsilon =0},
+\end{equation}
+where the limit is taken with respect to the operator norm topology.
 
 \end{Def}
 
@@ -7111,22 +7121,14 @@ on \(\mathcal{F}'\) as claimed in the theorem.
 This section compares central objects of two different 
 types of approaches to quantum field theory (QFT): 
 The study of Hadamard states and admissible polarisation classes 
-related to the rest of this chapter.
+related to sections \ref{sec: mot QED} and \ref{sec: qft intro}
+as well as \cite{ivp0,ivp1,ivp2} and future work 
+generalising section \ref{chapter geometery} to finite times.
 These approaches have different scopes and pursue different 
 motivations, which makes a direct comparison difficult.
-Nevertheless, the basic protagonists in all three approaches 
+Nevertheless, the basic protagonists the two approaches 
 share much more similarity than is apparent at first glance.
 It is the purpose of this section to highlight these common features. 
-
-The first class of objects of interest are Hadamard states 
-which appear in the algebraic approach to 
-QFT for a historyic reference see \cite{fulling1978singularity}. 
-
-The second class of objects are the (\(I_2\)-almost) 
-projectors \(P^\lambda_{\Sigma}\) which are 
-operators that are Hilbert-Schmidt 
-close to projectors onto polarisation classes 
-discussed in section \ref{sec: qft intro}.
 
 In subsection \ref{sec:hadamard} we give the definition of a Hadamard 
 state, briefly motivate it's usage 
@@ -7146,12 +7148,10 @@ In section \ref{sec:comparison hadamard pol} we find that each
 Hadamard state corresponds to an \(I_2\)-almost projector in a 
 natural way.
 
-Throughout this setion
-\(\Sigma, \Sigma'\) denote arbitrary Cauchy surfaces. 
 We choose 
 a fixed four-potential \(A\in \mathcal{V}\) 
 and \(\Sigma_{\text{in}}\) denotes a 
-Cauchy surface earlier than the support of \((A)\).
+Cauchy surface earlier than the support of \(A\).
 
 
 For brevity of notation we denote the minimally coupled 
@@ -7184,6 +7184,8 @@ the notion of wavefront set, which itself needs some preliminaries.
 For the introduction of these concepts we follow 
 Hömander \cite[Chapter 8]{hormander2003analysis}.
 
+Throughout this section we will consider a fixed but 
+arbitrary four-potential \(A\in\mathcal{V}\).
 We begin by introducing the singular support of a distribution
 
 \begin{Def}
@@ -7208,7 +7210,7 @@ Let for \(n,m\in\mathbb{N}\),  \(v\in (C^\infty(\mathbb{R}^n,
 \mathbb{C}^m))'\), we denote by \(\Xi(v)\subset \mathbb{R}^n
 \backslash\{0\}\) the set of all \(\eta\) such that there is no
 cone \(V_\eta\subset \mathbb{R}^n\), neighbourhood of \(\eta\), 
-such that for all \(a\in\mathbb{N}\) there are \(C_a>0\) such that for 
+such that for all \(a\in\mathbb{N}\) there is a \(C_a>0\) such that for 
 all \(\xi\in V_\eta\) we have
 \begin{equation}
 |\hat{v}(\xi)|\le \frac{C_a}{1+|\xi|^a}.
@@ -7233,17 +7235,17 @@ with \(\psi_{x} ,\chi_y\in C_c^\infty(\mathbb{R}^4)\)  and \(x\in\supp(\psi_x), 
 
 We have collected the tools to introduce the wavefront set and the notion of Hadamard states.
 
-\begin{Def}
+\begin{Def}[Definition 3.1 of \cite{zahn2014renormalized}]
 Let for \(n,m\in\mathbb{N}\), \(v\in (\mathcal{S}(\mathbb{R}^n,\mathbb{C}^m))'\) be a tempered distribution. The wavefront set \(\mathrm{WF}(v)\) of 
 the distribution \(v\) is defined as 
 \begin{equation}
 \mathrm{WF}(v):= \left\{(x,\xi)\in \mathbb{R}^n\times \mathbb{R}^n\mid \xi \in \Xi_x(v) \right\}.
 \end{equation}
 Analogously for a tempered distribution 
-\(v:\mathcal{S}(\mathbb{R}^4)\times \mathcal{S}(\mathbb{R}^4)\rightarrow \mathbb{C}\)
+\(v:\mathcal{S}(\mathbb{R}^4,\mathbb{C}^4)\times \mathcal{S}(\mathbb{R}^4,\mathbb{C}^4)\rightarrow \mathbb{C}\)
 we define the wavefront set as
 \begin{equation}
-  \mathrm{WF}(v):= \left\{(x,\xi;y,\xi')\in \mathbb{R}^n\times \mathbb{R}^n\mid (\xi,\xi') \in \Xi_{x,y}(v) \right\}.
+  \mathrm{WF}(v):= \left\{(x,\xi;y,\xi')\in \mathbb{R}^{16}\mid (\xi,\xi') \in \Xi_{x,y}(v) \right\}.
 \end{equation}
 \end{Def}
 
@@ -7253,13 +7255,13 @@ for all \( f,g\in \mathcal{S}(\mathbb{R}^4,\mathbb{C}^4)\):
 
 \begin{align}
 H(Df,g)=0\\
-H(f,g)+H(g,f)=i S(f,g)\\
+H(f,g)+H(g,f)=i S_{\text{prop}}(f,g)\\
 \overline{H(f,g)}=H(\overline{f},\overline{g})\\
 \text{WF}(H)\subset C_+,
 \end{align}
-where \(S(f,g)\) is the propagator of the Dirac equation, 
-  and  \(C_+:=\{(x,y;k_1,-k_2)\in\mathbb{R}^{16}\mid (x;k_1)\approx (y;k_2) , k_1^2\ge0, k_1^0>0\}\)
-and \((x;k_1)\approx(y;k_2)\) holds whenever \((x-y)^2=0\) and \((y-x)\parallel k_1 = k_2\).
+where \(S_{\text{prop}}(f,g)\) is the propagator of the Dirac equation, 
+  and  \(C_+:=\{(x,y;k_1,-k_1)\in\mathbb{R}^{16}\mid (x;k_1)\approx (y;k_2) , k_1^2\ge0, k_1^0>0\}\)
+and \((x;k_1)\approx(y;k_2)\) holds whenever \((x-y)^2=0\) and \((y-x)\parallel k_1\).
 \end{Def}
 It is in the sense of the fourth condition that Hadamard states are of positive energy.
 
@@ -7270,7 +7272,8 @@ They are given in terms of the Klein-Gordon operator corresponding to Dirac's eq
 
 
 \begin{Def}
-The Klein-Gordon operator corresponding to the Dirac equation \eqref{dirac ext field} reads
+The Klein-Gordon operator corresponding to the Dirac 
+equation in an external field \eqref{dirac ext field} reads
 \begin{align}
 &P: C^\infty(\mathbb{R}^4,\mathbb{C}^4)\rightarrow C^\infty(\mathbb{R}^4,\mathbb{C}^4)\\
 &P=(i\slashed{\nabla}-m)(-i\slashed{\nabla}-m)=\nabla_\alpha \nabla^\alpha + \frac{i}{2} \gamma^\alpha \gamma^\beta F_{\alpha,\beta} +m^2,
@@ -7284,7 +7287,7 @@ define for \(f\in \mathcal{C}^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^
 
 
 For the special case of a Dirac field in Minkowski space-time Zahn \cite{schlemmer2015current} gave a more explicit form of
-the Hadamard states \(H \in (\mathcal{S}(\mathcal{M})\times \mathcal{S}(\mathcal{M}))'\)  on which we base our analysis below.
+the Hadamard states \(H \in (\mathcal{S}(\mathcal{M},\mathbb{C}^4)\times \mathcal{S}(\mathcal{M},\mathbb{C}^4))'\)  on which we base our analysis below.
 According to this, \(H\) 
 acts for \(f_1,f_2\in C_c^\infty(\mathcal{M})\otimes \mathbb{C}^4\) as 
 \begin{equation}\label{eq:hadamard1}
@@ -7310,8 +7313,8 @@ is an asymptotic expansion for \(V\) for
 \(N\rightarrow \infty\), in the sense that
 \((V-V^N)(x,y)\ln(-(x-y)^2)\) as a function of \(x\) and 
 \(y\) is in \(C^{N-2}(\mathbb{R}^{4+4})\)
-and \(V-V^N=\mathcal{O}\left(\left((x-y)^{2}\right)^{N-2}\right)\).
-The functions \(V_k\) fulfil a recursive set of partial 
+and \((V-V^N)(x,y)=\mathcal{O}\left(\left((x-y)^{2}\right)^{N-2}\right)\).
+The functions \(V_k\) fulfil the recursive set of partial 
 differential differential equations
 \begin{align}\label{Hadamard recursive equ.}
 (x-y)^\alpha (\partial_{x,\alpha}+i A_\alpha(x)) V_{n}(x,y) + n V_{n}(x,y)=-n P V_{n-1}(x,y),
@@ -7319,21 +7322,12 @@ differential differential equations
 where \(V_{0}(x,y)=e^{-i (x-y)^\alpha\int_0^1 ds A_\alpha (x s + (1-s)y)}\). 
 
 For the rest of this paper, we assume that for any \(A\in C_c^\infty(\mathbb{R}^4)\) there are \(H\), \((h_\varepsilon)_{\varepsilon>0}\) and \(V\)
-fulfilling all of the conditions described in this paragraph.
-
-
-
-
-%note to self: should I mention that fields are operator valued distributions? 
-
-%write that one needs to restrict to Hadamard states for the perturbative expansion of interacting QFT (cite this wald overview paper, p.15)
-
-%give some reply to the standard argument that notions of particles are non unique in QFT in curved spacetimes. 
-
+fulfilling all of the conditions described in this subsection.
+ 
 
 \subsection{Projectors for Polarisation Classes}\label{sec:pol classes}
 
-The concept of polarisation classes introduced in 
+Polarisation classes as introduced in 
 definition \ref{def pol class} can be represented by 
 a projector onto a polarisation of that class. 
 Alternatively it can also be represented by 
@@ -7352,7 +7346,10 @@ with the kernel\cite{ivp2}
 \begin{equation}
 p^-_\varepsilon(x,y)= -\frac{m^2}{4\pi^2}(i\slashed{\partial}_x+m) \frac{K_1(m \sqrt{-(y-x-i \varepsilon e_0)^2})}{m \sqrt{-(y-x-i \varepsilon e_0)^2}},
 \end{equation}
-where the square is a Minkowski square and the square root denotes its principle value. By weak limit we mean
+where the square is a Minkowski square, the 
+square root denotes its principle value and 
+\(K_1\) is a modified Bessel function. By weak 
+limit we mean
 
 \begin{align}
 \langle \phi, P^{\mathcal{H}^-}_{\Sigma} \psi\rangle = \lim_{\varepsilon \searrow 0} \int_{\Sigma\times \Sigma} \overline{\phi}(x) i_\gamma(d^4x) p^-_\varepsilon(x,y ) i_\gamma(d^4y) \psi(y),
@@ -7362,7 +7359,8 @@ for general \(\phi, \psi \in \mathcal{H}_\Sigma\).
 \end{Def}
 
 \begin{Remark}
-By inserting the expansion of \(K_1\) in terms of a Laurent series and a logarithm, \cite{abramowitz1965handbook} one obtains:
+By inserting the expansion of \(K_1\) in terms of a Laurent series and a 
+logarithm, \cite{abramowitz1965handbook} one obtains:
 
 \begin{align}\label{K1series}
 K_1(\xi) = \frac{1}{\xi}- \frac{\xi}{4} \sum_{k=0}^\infty \left(2 \psi(k+1)+\frac{1}{k+1}+2\ln 2 -2 \ln \xi \right) \frac{\left(\frac{\xi^2}{4}\right)^k}{k!^2 (k+1)}\\\label{def:Q}
@@ -7378,9 +7376,13 @@ agree with the Minkowski vacuum up to smooth terms.
 
 
 
-Because all we are interested in is representations of equivalence classes, we are content with finding
-objects that differ from a Projector onto \(U_{\Sigma,\Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_in}^-\) by a Hilbert-Schmidt operator.
-Therefore we need not keep track of the exact evolution of the projection operators, but define a whole class of admissible ones.
+Because all we are interested in is representations of 
+equivalence classes, we are content with finding
+objects that differ from a Projector onto 
+\(U_{\Sigma,\Sigma_{\text{in}}}^A \mathcal{H}_{\Sigma_{in}}^-\) 
+by a Hilbert-Schmidt operator.
+Therefore we need not keep track of the exact evolution of 
+the projectors, but define a whole class of admissible ones.
 
 \begin{Def}[kernel of \(P^\lambda\), \(I_2\)-almost projectors]\label{def:lambda}
 The set \(\mathcal{G}^A\) denotes the set of all functions \(\lambda^A \in C^\infty (\mathbb{R}^4\times \mathbb{R}^4, \mathbb{R})\) that satisfy
@@ -7392,7 +7394,7 @@ The set \(\mathcal{G}^A\) denotes the set of all functions \(\lambda^A \in C^\in
 \forall x,y\in\mathbb{R}^4: \partial_x \lambda(x,y)|_{y=x}=-\partial_y \lambda(x,y)|_{y=x} = A(x).
 \end{equation}
 \end{enumerate}
-We futhermore define a corresponding (quasi) projector \(P^\lambda\):
+We futhermore define a corresponding \(I_2-\)almost projector \(P^\lambda\):
 \begin{align}
 \langle \phi, P^\lambda_\Sigma \psi\rangle =& \lim_{\varepsilon \searrow 0} \langle \phi, P^{A,\varepsilon}_\Sigma \psi\rangle ,\\\label{def:p lambda}
 \langle \phi, P^{\lambda,\varepsilon}_\Sigma \psi\rangle :=&
@@ -7429,23 +7431,21 @@ This is the topic of the next section.
 
 \subsection{Comparing Hadamard States and \(P^\lambda_\Sigma\)}\label{sec:comparison hadamard pol}
 
-The following theorem is the basis of our comparison 
+The following theorems is the basis of our comparison 
 between\linebreak Hadamard states and \(I_2-\) almost Projectors. 
-We first
-discuss its consequences and postpone the proof until 
-the appendix in section \ref{sec: proof hadamard}.
 
 
 \begin{Thm}\label{thm:hadamard=>Pol}
-Given as four-potential \(A\in \mathcal{V}\), and a Hadamard state \(H\) of the form 
+Given a four-potential \(A\in \mathcal{V}\), and a Hadamard state \(H\) of the form 
 \eqref{eq:hadamard1} to \eqref{eq:hadamardexp3}, there is a family of smooth functions 
-\((w_\varepsilon)_{\varepsilon>0}\) in \( C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times 4})\), such that for any Cauchy surface 
-\(\Sigma\)and an operator  acting as
+\((w_\varepsilon)_{\varepsilon>0}\) in 
+\( C^\infty(\mathbb{R}^4\times \mathbb{R}^4,\mathbb{C}^{4\times 4})\), such that for any Cauchy surface 
+\(\Sigma\) and there is an operator  acting as
 \begin{equation}
 \mathcal{H}_{\Sigma} \ni \psi \mapsto \tilde{P}\psi= \lim_{\varepsilon \rightarrow 0} \int_{\Sigma} (h_\varepsilon - w_\varepsilon)(\cdot,y)i_{\gamma}(d^4y) \psi(y).
 \end{equation}
-This operator \(\tilde{P}\) is a bounded operator on 
-\(\mathcal{H}_\Sigma\) that fulfils 
+This operator \(\tilde{P}\) is bounded on 
+\(\mathcal{H}_\Sigma\) and fulfils 
 \(P^{\lambda^A}-\tilde{P}\in I_2(\mathcal{H}_\Sigma)\) 
 for any \(\lambda^A\in \mathcal{G}^A\) . 
 Additionally, the pointwise limit of 
@@ -7455,9 +7455,9 @@ Additionally, the pointwise limit of
 
 \begin{Thm}\label{thm:Pol=>hadamard}
 Given a four-potential \(A\in \mathcal{V}\) and a \(\lambda^A\in\mathcal{G}^A\), there is a family of functions
-\((w_\varepsilon)_\varepsilon\) in \( C^\infty(\mathbb{R}^4 \times \mathbb{R}^4 ,\mathbb{C}^{4\times 4})\) such that for all Cauchy surfaces \(\Sigma\)
+\((w_\varepsilon)_\varepsilon>0\) in \( C^\infty(\mathbb{R}^4 \times \mathbb{R}^4 ,\mathbb{C}^{4\times 4})\) such that for all Cauchy surfaces \(\Sigma\)
 the restriction \(w_\varepsilon|_{\Sigma\times\Sigma}\) can be 
-split up 
+split
 \begin{equation}
   w_\varepsilon|_{\Sigma\times\Sigma}=w_{1,\varepsilon}+w_{2,\varepsilon},
 \end{equation}
@@ -7474,6 +7474,9 @@ Furthermore, \(\tilde{H}\) acting on test functions \(f_1,f_2\in C^\infty(\mathb
 
 is a Hadamard state of the form \eqref{eq:hadamard1} to \eqref{eq:hadamardexp3}.
 \end{Thm}
+
+The proofs are to be found in section 
+\ref{sec: proof hadamard} of the appendix.
 
 \begin{Remark}
 In the approach of polarisation classes, two projectors represent the same polarisation class if and only if their difference is a Hilbert-Schmidt operator. 
@@ -7502,7 +7505,7 @@ between a Hadamard state and an
 
 In the third chapter of this thesis we worked on a quantum 
 field theoretic formulation of electromagnetic interactions.
-While this is more conventional than what was 
+While this approach is more conventional than what was 
 presented in chapter \ref{chap: direct interaction} 
 that does not at all imply that the general theory has been worked 
 out on a mathematically rigorous level. So much so that 
@@ -7514,7 +7517,7 @@ approach to construct a lift of the one-particle
 time evolution operator where we mentioned 
 the shortcoming of the present method, not
 uniquely identifying the phase of this operator.
-Subsequently, we gave a geometric construciton of 
+Subsequently, we gave a geometric construction of 
 said phase in the scattering regime 
 from an object \(c^+\) very closely related to the 
 current induced by an external field. If such an 
@@ -7524,9 +7527,13 @@ number related to the charge of the electron.
 Furthermore we showed that there is a lift of the 
 one-particle scattering operator that is analytic in the 
 external field and gave a compact explicit fomula for 
-weak fields. Finally we gave theorems on how 
+weak fields. Furthermore, we saw that this implies 
+that the scattering operator can be seen as a power 
+series in the external field and that this also 
+holds true for arbitrary four-potentials 
+\(A\in\mathcal{V}\). Finally we gave theorems on how 
 \(I_2-\)almost projectors representing the state 
-of the fermion field related to the approach we 
+of the fermion field are related to the approach we 
 are following here compare to the concept of Hadamard 
 state popular in the algebraic formulation of QFT.
 
@@ -7538,7 +7545,8 @@ fermion field induced by the action of an electrodynamic
 field into Maxwells equations and acts with the 
 resulting fields again on the fermion field. Such a 
 model would incorporate a mean field interaction between 
-the fermions and thus be a further step in the direction 
+the fermions and would thus be a further 
+step in the direction 
 of a fully interacting theory.
 
 
@@ -7585,28 +7593,13 @@ Z^A=-i e\gamma^0 \gamma^\alpha \hat{A}_\alpha,\\
 \text{and } E(p):=\sqrt{m^2+|p|^2}.
 \end{align}
 
-We introduce the projectors of the standard polarisation 
-of \(\mathcal{H}\) in terms of the Hamiltonian of 
-the free Dirac equation
-\begin{align}
-P^-:=1_{\mathrm{spec}(H^0)<0}, \quad P^+=1-P^-,
-\end{align}
-as the projectors onto the negative, positive energy 
-subspace respectively.
-
-Lastly we introduce the partial derivative in 
-the direction of any four-potential \(F\) of an operator valued 
-function \(F:\mathcal{V}\rightarrow \mathcal{B}(\mathcal{F})\) by
-\begin{equation}\label{def derivative}
-\partial_F T(F):=\partial_{\varepsilon}T(\varepsilon F)|_{\varepsilon =0},
-\end{equation}
-where the limit is taken with respect to the operator norm topology.
 \end{Def}
 
 
 
-\begin{Lemma}
-For general \(A,F\in\mathcal{V}\) and \(t_0,t_1\in\mathbb{R}\) 
+\begin{fact}
+Plase recall that for general \(A,F\in\mathcal{V}\) 
+and \(t_0,t_1\in\mathbb{R}\) 
 we have the well known equations for
 the one-particle time evolution operators
 
@@ -7614,10 +7607,8 @@ the one-particle time evolution operators
 U^A(t_1,t_0)=U^0(t_1,t_0) + \int_{t_0}^{t_1}dt~ U^0(t_1,t) Z^A(t) U^{A}(t,t_0)\\
 U^{A+F}(t_1,t_0)=U^A(t_1,t_0) + \int_{t_0}^{t_1}dt ~U^A(t_1,t) Z^F(t) U^{A+F}(t,t_0).
 \end{align}
-\end{Lemma}
-\begin{proof}
-\dots
-\end{proof}
+\end{fact}
+
 
 \begin{Def}
 For any \(A\in\mathcal{V}\), we introduce the 
@@ -7661,7 +7652,7 @@ equipped with the norm
 Banach space.
 \end{Lemma}
 \begin{proof}
-Let \((T_n)_{n\in\mathbb{R}}\subset I_2^{\odd}\)
+Let \((T_n)_{n\in\mathbb{N}}\subset I_2^{\odd}\)
 be a Cauchy sequence with 
 respect to \(\left\|\cdot\right\|_{\mathrm{op}+I_2}\). 
 Then it follows directly that 
@@ -7737,7 +7728,7 @@ respectively.
 
 Pick \(k\in\mathbb{N}\), \(A,H_b\in\mathcal{V}\) for \(b\le k\) 
 and \(t_1,t_0\) as in the theorem. Whenever the shorthand 
-\eqref{ivp0 shortnotation 1} and \eqref{ivp0 shortnotation 1}
+\eqref{ivp0 shortnotation 1} and \eqref{ivp0 shortnotation 2}
 is used without specific arguments, by convention 
 \(t'=t_1,t=t_0\).  We abbreviate
 \begin{equation}
@@ -9091,9 +9082,9 @@ The last conjecture is proven directly in section \ref{sec:proof simple formula}
 
 
 
-\subsection{Proofs of Section \ref{sec: hadamard}}\label{sec: proof hadamard}
+\section[Proofs of Section \ref{sec: hadamard}][proofs for Hadamard comparison]{Proofs of Section \ref{sec: hadamard}}\label{sec: proof hadamard}
 
-We first break down the problem of the proof of theorem \ref{thm:hadamard=>Pol} to a problem on a bounded domain. Then we go on 
+We first break  down the problem of the proof of theorem \ref{thm:hadamard=>Pol} to a problem on a bounded domain. Then we go on 
 to show that the relevant functions are locally bounded so that an application of Lebesgue dominated convergence yields our result.
 The same estimates we need for theorem \ref{thm:hadamard=>Pol} will be used again for the proof of theorem \ref{thm:Pol=>hadamard}.
 

@@ -192,39 +192,39 @@ Zwei dieser Facetten werden bearbeitet.
 In der Ersten wird eine kürzlich von 
 Lienert\cite{direct_interaction_quantum} vorgestellten 
 relativistisch invariante Integralgleichung für Wellenfunktionen 
-für \linebreak mehrere Zeitkoordinaten thematisiert. Dies ist eine Gleichung für 
+für mehrere Zeitkoordinaten thematisiert. Dies ist eine Gleichung für 
 Fermionen welche direkt entlang lichtartiger Konfigurationen 
-wechselwirken. In dieser Arbeit werden zunächst bereits bestehende Resultate über 
-Existenz und Eindeutigkeit von Lösungen von einer Variante dieser 
-Gleichung für skalare Teilchen für realistischere Wechselwirkungen
+wechselwirken. In dieser Arbeit werden zunächst bestehende Resultate über 
+Existenz und Eindeutigkeit von Lösungen einer Variante dieser 
+Gleichung für skalare Teilchen auf realistische Wechselwirkungen
 erweitert. 
 Weiterhin wird ein erstes Resultat über Existenz und 
 Eindeutigkeit von Lösungen für eine Variante der Gleichung 
-für Teilchen mit Spin 1/2 bewiesen.
+für Dirac Teilchen bewiesen.
 
 Die zweite Facette handelt von Wechselwirkung im Kontext 
 veränderlicher Teilchenzahl.
 Als ersten Schritt in 
 Richtung einer wechselwirkenden Theorie führen wir ein externes 
-elektromagnetisches Feld in eine ansonsten freie Quantenfeldtheorie
+elektromagnetisches Feld in eine ansonsten freie Quantenfeldtheorie (QFT)
 ein. Frühere Resultate konstruierten 
-Zeitentwicklungsoperatoren eindeutig, bis auf eine 
-Phase welche vom externen Feld abhängen kann.
-In dieser Arbeit wird das Problem diese Phase 
-zu bestimmen teilweise durch eine geometrische 
-Konstruktion dieser Phase behoben.
-Kausalität spielt bei dieser Konstruktion eine Rolle.
+Zeitentwicklungsoperatoren bis auf eine 
+Phase eindeutig, welche vom externen Feld abhängen kann.
+In dieser Arbeit wird diese Phase 
+durch eine geometrische 
+Konstruktion partiell bestimmt.
+Kausalität spielt hierbei eine Rolle.
 
-Anschließend wird eine einfache Formel für den Streuoperator 
+Anschließend wird eine Formel für den Streuoperator 
 als Funktion des Einteilchenstreuoperators angegeben und
 dessen Wohldefiniertheit gezeigt.
 
 Schließlich wird die hier verwendete Formulierung der 
-Quantenfeldtheorie mit der in der Quantenfeldtheorie auf 
+QFT mit der in der QFT auf 
 gekrümmter Raumzeit üblichen algebraischen Formulierung 
-verglichen. Dabei werden die jeweils zentralen Objekte
+verglichen. Dabei werden die zentralen Objekte
  und deren 
-natürlich auftretende Äquivalenzklassen betrachtet.
+natürliche Äquivalenzklassen betrachtet.
 Zusätzlich wird bewiesen wie das zentrale Objekt einer 
 Formulierung aus dem der jeweils anderen hervorgeht. 
 
@@ -240,23 +240,24 @@ Formulierung aus dem der jeweils anderen hervorgeht.
 In the following I will mostly be using personal 
 pronouns denoting the plural such as
 ``we''. This does not solely refer to my, the authors, 
-person, nor does it refer to the author and his 
+person, nor does it refer to me and my 
 supervisors or other coauther of the preprints that 
 led to this thesis. Instead it refers to you the reader 
 and myself, as I want to follow 
-the example of the textbooks I enjoyed reading as an 
-undergraduate student which invited the reader to 
-perform all of the announced tasks 
+the example of the textbooks I enjoy reading 
+which invite the reader to 
+follow jointly the line of arguments
 together with the text. 
 
 \vspace{0.5cm}
 Furthermore, there will be many occasions to speak of 
-individual terms that appear in previous equations or 
+individual mathematical expressions that appear in previous equations or 
 estimates. Often, such terms will reappear only once or 
 twice and are not important enough to receive a name of 
 their own. On such occations we will denote them 
 by the number they were given initially enclosed 
-in round brackets. If we want to emphasise 
+in round brackets. Contrary to standard practice, we will also 
+use these abbreviations in formulas. If we want to emphasise 
 the dependence of some of the variables appearing in 
 the term we will be using standard notation for 
 functions where the function name is the number 
@@ -274,81 +275,44 @@ of the term enclosed in round brackets.
 
 \chapter{Introduction}
 
-The difficulties in writing down a
-mathematically consistent relativistically 
-invariant interacting quantum mechanical theory in 
-four dimensional spacetime have had a big impact 
-on the development of theoretical physics of the 
-past century and the question of whether these 
-difficulties have been overcome today still remain 
-subject of controversy. As an illustration see for example 
-\cite{schwartz2014quantum} for a book that disputes 
-the existence of problems of the full theory and 
-see e.g. \cite{derezinski2013mathematics} for a 
-very modern book on the rigorous mathematical 
-results on quantum field theory that barely moves 
-past the free theory, which is not 
-because of a fear of scaring off readers by too 
-abstract or complicated mathematics. 
-This controversy remains, despite the 
-fact that the relativistic analog of Schrödingers 
-equation, the Dirac equation 
+The history of relativistic quantum mechanics since the 
+discovery of the Dirac equation
+
 \begin{equation}\label{dirac free}
   0= (i\slashed{\partial}-m) \phi,
 \end{equation}
-has been found as early as 1928\cite{dirac1928quantum}.
-Here and in the following a slashed four vector denotes 
-\begin{equation}
-  \slashed{A}:= A_\alpha \gamma^\alpha,
-\end{equation}
-where Einstein's summation convention is used. 
-The matrices \(\gamma^\alpha \in \mathbb{C}^{4\times 4}\) 
-fulfil the anti-commutation relation
-\begin{equation}
-\forall \alpha, \beta \in \{0,1,2,3\}:\{\gamma^\alpha, \gamma^\beta\}:= \gamma^\alpha \gamma^\beta+ \gamma^\beta \gamma^\alpha= 2g^{\alpha \beta},
-\end{equation}
-where \(g\) is the Minkowski metric. We will work with 
-the \(+---\) 
-metric signature and the Dirac representation of this 
-algebra. Squared four dimensional objects always refer to 
-the Minkowski square, meaning for all 
-\(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
-We will be working in units where \(\hbar=1=c\).
 
-Two very important reasons for these difficulties
-are:
+in 1928 \cite{dirac1928quantum} is long and complicated. 
+One reason for this is the 
+extraordinary success with which Quantum Field Theory (QFT)
+has been applied to predict the outcomes of experiments 
+at particle accelerators such as the 
+large hadron collider. Another reason is that there is 
+still no mathematically rigorous theory forming a 
+solid foundation of those Quantum Field Theories. 
+The free theory; however, is well understood see e.g. 
+\cite{derezinski2013mathematics} for an overview of the 
+rigorous mathematical results. Bearing this in mind, we 
+might ask ourselves what kinds of interaction can be 
+rigorously defined in a relativistic quantum mechanical 
+setting. We are going to describe aspects of this 
+question in detail.
+
 \begin{enumerate}
-\item \label{item: instability}The spectrum of the Hamiltonian 
-generating the 
-time evolution of equation \eqref{dirac free} is 
-\(\sigma(H^0)=~]-\infty,-m]\cup[m,\infty[\). 
-\item Poincaré invariance of the equations of motion 
-of a theory rules out mechanisms of interaction.
-\end{enumerate}
-
-The first of these items is problematic, because a particle 
-that couples to a radiation field but whose kinetic energy 
-has no lower bound may continuously lose energy while 
-radiating. That is, systems of such particles would not 
-have a stable ground state. We will discuss two possible 
-ways of omitting this problem. 
-
-\textbf{1.} In the first approach, we do not introduce a radiation 
-field. We will stick as closely as possible to 
-non-relativistic physics and introduce a wavefunction 
+\item In describing the first faced, we will introduce 
+interaction into a system of persistent particles.
+Analogously to non-relativistic quantum mechanics, 
+we will introduce a wavefunction 
 for \(N\in\mathbb{N}\) particles. In order for this function  
 to transform relativistically we will consider it a
 function of \(N\) spacetime points \(x_i\in\mathbb{R}^4\).
 This \emph{multi-time} formulation 
 goes back to Dirac \cite{dirac_32}. 
-It heavily inspired works of Tomonaga \cite{tomonaga} and Schwinger 
-\cite{schwinger} and has inspired research since then
-\cite{marx_1974,schweber,drozvincent_1981,sazdjian_2bd,2bdem}. 
-See 
-\cite{qftmultitime,multitime_pair_creation,1d_model,
-nt_model,2bd_current_cons,lpt_2017b,
-ibc_model,phd_nickel} for mor recent work on the 
-subject and \cite{dice_paper} for an overview. 
+It heavily inspired works essential for the 
+development of Quantum Electrodynamics such as 
+that of Tomonaga \cite{tomonaga}
+and has inspired research since then, see e.g.
+\cite{marx_1974,2bdem} and \cite{dice_paper} for an overview. 
 A natural way of introducing interaction in this setting 
 would be to let the wavefunction 
 solve \(N\) Dirac equations each minimally
@@ -356,43 +320,51 @@ coupled to a potential; however, recent no-go theorems
 \cite{nogo_potentials,deckert_nickel_2016} show that 
 no such choice of potentials compatible with Poincaré 
 invariance results in an interacting system of particles.
-
 The approach we will follow in chapter \ref{chap: direct interaction}
-bypasses the main reason why the theorem in \cite{deckert_nickel_2016} 
-is so powerful by introducing only a single integral equation 
-for the wavefunction of the particles. The resulting equation 
+bypasses those no-go theorem in 
+\cite{nogo_potentials,deckert_nickel_2016} 
+by introducing only a single integral equation 
+for the wavefunction of the particles. The result is the equation 
 \begin{align}\label{eq:matt}
   \psi&(x_1,x_2) = \psi^\free(x_1,x_2)+i\, \frac{e_1e_2}{4\pi} \int d^4 x_1' \, d^4 x_2' \\\nonumber
   & \times \mathscr{S}^\ret_1(x_1-x_1') \mathscr{S}^\ret_2(x_2-x_2') \, \gamma_1^\mu \gamma_{2,\mu}\delta((x_1'-x_2')^2) \psi(x_1',x_2'),
 \end{align}
-for whose relatives we will investigate existence of solutions seem to 
-be hardly related to the theory of 
-quantum electrodynamics; however, before 
-coming to this conclusion one should compare this 
-equation with equation (4) of \cite{feynman1949space} and take 
-note of footnote 7 on the same page. 
+of Lienert\cite{direct_interaction_quantum} for spin 1/2 particles. 
+Equations like 
+\eqref{eq:matt} have, in fact, already been considered by 
+Feynman \cite[eq. (4)]{feynman1949space} in a paper 
+of fundamental importance 
+to the development of quantum electrodynamics (QED).
 The main difference is that Feynman only uses positive Fourier
-modes in time for his interaction term.
-
+modes in time for his interaction term. 
 Despite this fact and the similarity between \eqref{eq:matt}
 and the Bethe-Salpeter equation, not much is known about the 
 mathematical properties of equation \eqref{eq:matt}, 
-the main results about related equations are summarised in section 
+the previous results about related equations are summarised in section 
 \ref{sec: direct interation previous}.
 
+There are two main results of this thesis about equations of the 
+same type as \eqref{eq:matt}. Theorem \ref{thm:KGexistence} extends 
+previous results on the existence and uniqueness of the dynamics 
+of a version of equation \eqref{eq:matt} for spin-less particles 
+to singular interaction along the light-cone. The second main 
+result on this topic is theorem \eqref{thm:minkhalfspace}, the 
+first result on existence and uniqueness of an equation of 
+the type of \eqref{eq:matt} for spin 1/2 particles. Section 
+\ref{sec: multitime overview} provides perspective on 
+the grounds of which these theorems should be judged. 
+ 
 
-\textbf{2.} Another approach to circumvent the problems associated with 
-item \ref{item: instability} that results in quantum field theory 
-is to fill up all negative energy states and use an antisymmetric 
-description as called for by Paulis exclusion principle. This will 
-prevent the instability described earlier, but renders many 
-physically relevant quantities ill defined.
+
+\item The second faced concerns the description of the 
+vacuum of QED. 
 The problems associated with finding a mathematically rigorous 
 description of quantum field theory are quite serious.
-The basic motivation of this approach was to introduce 
+As we will see in the beginning of chapter \ref{chap:QFT}
+the basic motivation of this approach was to introduce 
 otherwise missing ground states, yet proving existence of 
 ground states even in simplified models such as 
-quantum electrodynamics (QED) without photons has only 
+quantum electrodynamics without photons has only 
 been achieved in the recent past\cite{hainzl2005existence}.
 We 
 will be content with working in external field QED,
@@ -410,6 +382,24 @@ by abandoning the restriction to work in a static Fock space
 \cite{ivp0,ivp1,ivp2}.
 These results form the basis upon which we will 
 build our analysis in chapter \ref{chap:QFT}.
+
+Chapter \ref{chap:QFT} contains three main results in 
+four theorems.
+The first, theorem \ref{thm: geometry} contains a 
+construction which partially fixes the phase freedom of 
+previous results. Theorem 
+\ref{sleek_second_quantised_scattering_operator}
+provides a well defined formula that gives the 
+scattering operator of external field QED in terms of 
+the one-particle scattering operator. Finally theorems 
+\ref{thm:hadamard=>Pol} and \ref{thm:Pol=>hadamard} 
+provide a first step to mutual intelligibility between 
+the algebraic formulation of QFT and the formulation 
+used in this thesis by providing a means to translate 
+the central object of one formulation to the central 
+object of the other.
+\end{enumerate}
+
 
 
 
@@ -450,7 +440,7 @@ discuss results appearing in \cite{selfDirac,selfKG}.
 
 
 
-\section{Overview}
+\section{Overview}\label{sec: multitime overview}
 \subsection{Derivation}
 
 We will now closely follow the  heuristic derivation of 
@@ -475,6 +465,29 @@ external potential \(V\) takes the form
 \end{equation}
 here \(\phi\) denotes the wavefunction in question, \(\vx\in\mathbb{R}^3, t\in\mathbb{R}\)
 and \(H^\free\) is the Hamiltonian associated with a free Dirac particle.
+It acts on wavefunctions as 
+\begin{equation}
+  H^\free \phi(t,\vx)=i \gamma^0 \vec{\gamma} \cdot \nabla \phi + m \gamma^0 \phi.
+\end{equation}
+The matrices \(\gamma^\alpha \in \mathbb{C}^{4\times 4}\) 
+fulfil the anti-commutation relation
+\begin{equation}
+\forall \alpha, \beta \in \{0,1,2,3\}:\{\gamma^\alpha, \gamma^\beta\}:= \gamma^\alpha \gamma^\beta+ \gamma^\beta \gamma^\alpha= 2g^{\alpha \beta},
+\end{equation}
+where \(g\) is the Minkowski metric. We will work with 
+the \(+---\) 
+metric signature and the Dirac representation of this 
+algebra. Squared four dimensional vectors always refer to 
+the Minkowski square, meaning for all 
+\(a\in \mathbb{C}^4\), \(a^2:= a^{\alpha} a_{\alpha}\). 
+In the following a slashed four vector denotes 
+\begin{equation}
+  \slashed{A}:= A_\alpha \gamma^\alpha,
+\end{equation}
+where Einstein's summation convention is used. 
+We will be working in units where \(\hbar=1=c\).
+
+
 We denote by \(\mathscr{S}^\ret\) the retarded Green's function of the non interacting Dirac equation,
 that is \(S^\ret\) satisfies
 \begin{align}\label{eq:schroedgreensfn}
@@ -821,7 +834,7 @@ the integral equation \eqref{KG curved bounded} has a unique solution
 \end{Thm}
 
 
-\section{Singular light cone interactions of scalar particles}\label{sec:KG lightcones}
+\section{Singular light cone interactions of spin-less particles}\label{sec:KG lightcones}
 In this section we prove existence and uniqueness
 of an equation of type \eqref{eq:KGtwopartint},
 subject to the simplifying assumption 
@@ -850,14 +863,14 @@ general weight function of a weighted $L^\infty$ space. Thm.
 \ref{thm:exponentialg} shows that in the case of massless particles 
 already an exponential weight function leads to the existence and 
 uniqueness of solutions of the integral equation. Our main result 
-is Thm. \ref{thm:existence}, an existence and uniqueness theorem 
+is Thm. \ref{thm:KGexistence}, an existence and uniqueness theorem 
 for the full (massive) case. In that case, a different weight 
 function growing like the exponential of a polynomial is used. 
 
 Subsection \ref{sec:Npart} deals with generalizing this existence and 
 uniqueness theorem to $N$ scalar particles; the corresponding 
 theorem, Thm. \ref{thm:Npart}, is a direct consequence of Thm.
-\ref{thm:existence}. To the best of the knowledge of 
+\ref{thm:KGexistence}. To the best of the knowledge of 
 the Lienert and the author, this is the 
 first rigorous result about a multi-time integral equation for 
 $N$-particles. 
@@ -1173,7 +1186,7 @@ finite after taking the supremum. The massive case is treated
 subsequently; it is a little more difficult since all the estimates 
 for the operators $A_0, A_1, A_2, A_{12}$ have to be finite at 
 the same time. This  requires a different choice of weight 
-function (see Thm.\@ \ref{thm:existence}).
+function (see Thm.\@ \ref{thm:KGexistence}).
 
 
 %%%%%
@@ -1196,7 +1209,7 @@ Now we come to our main result.
 
 %%%%%
 \begin{Thm}[Existence of dynamics in the massive case.]
-	\label{thm:existence}~\\
+	\label{thm:KGexistence}~\\
 	For any $\alpha > 0$, let
 	\begin{equation}
 		g(t) = (1+\alpha t^2)e^{\alpha t^2/2}.
@@ -1223,7 +1236,7 @@ The proof can be found in Sec.\@ \ref{sec:proofexistence}.
 \begin{Remarks}
 	\begin{enumerate}
     \item \textit{Comparison of Thms. 
-    \ref{thm:exponentialg} and \ref{thm:existence} in 
+    \ref{thm:exponentialg} and \ref{thm:KGexistence} in 
     the massless case.} On the first glance, the result 
     of Thm.\@ \ref{thm:exponentialg} looks stronger in 
     the sense that for $g(t)=e^{\gamma t}$, the estimate 
@@ -1300,7 +1313,7 @@ The proof can be found in Sec.\@ \ref{sec:proofexistence}.
 %%%%%
 \subsubsection{The $N$-particle case} \label{sec:Npart}
 
-Here we extend Thm.\@ \ref{thm:existence} from two to 
+Here we extend Thm.\@ \ref{thm:KGexistence} from two to 
 $N\geq 3$ scalar particles. While there are different 
 possibilities to generalize the two-particle integral 
 equation \eqref{eq:KGtwopartint}, we focus on the one 
@@ -1372,7 +1385,7 @@ the $N$-particle existence and uniqueness theorem.
 \end{Thm}
 
 The proof follows straightforwardly from that of 
-Thm.\@ \ref{thm:existence} using
+Thm.\@ \ref{thm:KGexistence} using
 \begin{equation}
 	\|\! \,^{(N)}\! A\| \leq \sum_{i,j =1,...,N; \, i<j} \| A^{(ij)}\|_g.
 \end{equation}
@@ -2582,7 +2595,7 @@ for every $\psi^\free \in \Banach_g$.
 
 
 %%%%%
-\subsubsection{Proof of Theorem \ref{thm:existence}} \label{sec:proofexistence}
+\subsubsection{Proof of Theorem \ref{thm:KGexistence}} \label{sec:proofexistence}
 
 Let again $\psi \in \mathcal{S}$. We need to calculate the suprema 
 in \eqref{eq:estimatea0} to \eqref{eq:estimatea12} for 
@@ -3795,7 +3808,8 @@ quantum field theory.
 
 \chapter[Quantum Field Theoretic Approach to Interactions][Interaction in QFT]{Quantum Field Theoretic Approach to Interactions} \label{chap:QFT}
 
-\section{Motivation}\label{sec: mot QED}
+\section{Introduction}
+\subsection{Motivation}\label{sec: mot QED}
 
 In this chapter we will turn our attention to the 
 more widely accepted way of 
@@ -4078,7 +4092,7 @@ in the original versions. In order to state those theorems
 we need some mathematical notation which we introduce first.
 
 
-\section{Introduction}\label{sec: qft intro}
+\subsection{Overview of Previous Results}\label{sec: qft intro}
 
 This section will first introduce some notation of 
 \cite{ivp0,ivp1,ivp2,deckert2016perspective} in order to 
@@ -4086,7 +4100,7 @@ state the results of \cite{ivp2} and prepare for the sections
 to come. While doing so we will closely follow 
 \cite{deckert2016perspective}.
 Throughout the whole chapter the class of four potentials we 
-shall be 
+are
 interested in is 
 \begin{equation}
   \mathcal{V}:= C_c^\infty(\mathbb{R}^4,\mathbb{R}^4).
@@ -4098,7 +4112,7 @@ the Coulomb potential.
 
 Any notion of time evolution in a relativistic setting needs to 
 generalise the notion of simultaneity. For this reason we 
-introduce Cauchy surfaces as follows.
+introduce Cauchy surfaces.
 
 
 \begin{Def}[Cauchy surface, def 2.1 of \cite{deckert2016perspective}]
@@ -8558,8 +8572,8 @@ of the second summand of \eqref{T_n recursive}, since two operators on Fock spac
 have the same commutator with general creation and annihilation operators if they
 agree up to multiples of the identity this will conclude the motivation of this conjecture. 
 
- In order to simplify the notation as much as possible, 
-I will denote by \(a^\# z\) either \(a(z(\varphi_p))\) or
+ In order to simplify the notation as much as possible, we 
+ will denote by \(a^\# z\) either \(a(z(\varphi_p))\) or
  \(a^*(z(\varphi_p))\) for any  one-particle operator \(z\) and any element
  \(\varphi_p\) of the orthonormal basis \((\varphi_p)_{p\in\mathbb{Z}\backslash\{0\}}\) of
  \(\mathcal{H}\). (We need not decide between creation and annihilation 

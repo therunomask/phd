@@ -5,48 +5,52 @@ The style file: plain.bst
 Database file #1: ref.bib
 Warning--entry type for "phd_nickel" isn't style-file defined
 --line 410 of file ref.bib
+Warning--empty journal in bloch
+Warning--empty year in bloch
+Warning--can't use both volume and number fields in dirk_martin_2018
 Warning--can't use both volume and number fields in dirac1928quantum
+Warning--can't use both volume and number fields in epstein1973role
 Warning--empty journal in selfKG
 Warning--can't use both volume and number fields in dice_paper
-You've used 56 entries,
+You've used 83 entries,
             2118 wiz_defined-function locations,
-            826 strings with 11813 characters,
-and the built_in function-call counts, 16652 in all, are:
-= -- 1655
-> -- 616
-< -- 10
-+ -- 260
-- -- 190
-* -- 1130
-:= -- 2787
-add.period$ -- 169
-call.type$ -- 56
-change.case$ -- 254
+            963 strings with 14740 characters,
+and the built_in function-call counts, 24900 in all, are:
+= -- 2492
+> -- 903
+< -- 16
++ -- 384
+- -- 278
+* -- 1689
+:= -- 4146
+add.period$ -- 250
+call.type$ -- 83
+change.case$ -- 377
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 661
-empty$ -- 1425
-format.name$ -- 190
-if$ -- 3474
+cite$ -- 90
+duplicate$ -- 999
+empty$ -- 2119
+format.name$ -- 278
+if$ -- 5201
 int.to.chr$ -- 0
-int.to.str$ -- 56
-missing$ -- 61
-newline$ -- 280
-num.names$ -- 112
-pop$ -- 238
+int.to.str$ -- 83
+missing$ -- 90
+newline$ -- 414
+num.names$ -- 166
+pop$ -- 341
 preamble$ -- 1
-purify$ -- 206
+purify$ -- 304
 quote$ -- 0
-skip$ -- 464
+skip$ -- 709
 stack$ -- 0
-substring$ -- 1128
-swap$ -- 106
-text.length$ -- 10
+substring$ -- 1722
+swap$ -- 174
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 208
-warning$ -- 3
-while$ -- 177
-width$ -- 58
-write$ -- 608
-(There were 4 warnings)
+type$ -- 312
+warning$ -- 7
+while$ -- 271
+width$ -- 85
+write$ -- 900
+(There were 8 warnings)

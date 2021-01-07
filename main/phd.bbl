@@ -6,11 +6,37 @@ Milton Abramowitz and Irene~A Stegun.
   mathematical tables}, volume~55.
 \newblock Courier Corporation, 1965.
 
+\bibitem{alvarez2005introductory}
+Luis Alvarez-Gaume and Miguel~A Vazquez-Mozo.
+\newblock Introductory lectures on quantum field theory.
+\newblock {\em arXiv preprint hep-th/0510040}, 2005.
+
 \bibitem{bar2007wave}
 Christian B{\"a}r, Nicolas Ginoux, and Frank Pf{\"a}ffle.
 \newblock {\em Wave equations on Lorentzian manifolds and quantization},
   volume~3.
 \newblock European Mathematical Society, 2007.
+
+\bibitem{bloch}
+F~Bloch.
+\newblock Die physikalische bedeutung mehrerer zeiten in der
+  quantenelektrodynamik. phys. z. d. sowjetunion, 5: 301--315, 1934.
+
+\bibitem{consenza65}
+G~Cosenza, L~Sertorio, and M~Toller.
+\newblock Singular integral equations in the bound-state problem.
+\newblock {\em Il Nuovo Cimento (1955-1965)}, 35(3):913--932, 1965.
+
+\bibitem{nointeraction}
+DG~Currie, TF~Jordan, and ECG Sudarshan.
+\newblock Relativistic invariance and hamiltonian theories of interacting
+  particles.
+\newblock {\em Reviews of Modern Physics}, 35(2):350, 1963.
+
+\bibitem{cutkosky54}
+RE~Cutkosky.
+\newblock Solutions of a bethe-salpeter equation.
+\newblock {\em Physical Review}, 96(4):1135, 1954.
 
 \bibitem{ivp0}
 D-A Deckert, D~D{\"u}rr, F~Merkl, and M~Schottenloher.
@@ -42,6 +68,18 @@ Dirk-Andr{\'e} Deckert and Lukas Nickel.
   potentials.
 \newblock {\em Journal of Mathematical Physics}, 57(7):072301, 2016.
 
+\bibitem{deckert_nickel_2019}
+Dirk-Andr{\'e} Deckert and Lukas Nickel.
+\newblock Multi-time dynamics of the dirac-fock-podolsky model of qed.
+\newblock {\em Journal of Mathematical Physics}, 60(7):072301, 2019.
+
+\bibitem{dirk_martin_2018}
+Dirk-Andr{\'e} Deckert and Martin Oelker.
+\newblock Distinguished self-adjoint extension of the two-body dirac operator
+  with coulomb interaction.
+\newblock In {\em Annales Henri Poincar{\'e}}, volume~20, pages 2407--2445.
+  Springer, 2019.
+
 \bibitem{derezinski2013mathematics}
 Jan Derezi{\'n}ski and Christian G{\'e}rard.
 \newblock {\em Mathematics of quantization and quantum fields}.
@@ -51,6 +89,11 @@ Jan Derezi{\'n}ski and Christian G{\'e}rard.
 PAM Dirac.
 \newblock Th{\'e}orie du positron.
 \newblock {\em Solvay report}, 25:203--212, 1934.
+
+\bibitem{dfp}
+PAM Dirac, VA~Fock, and B~Podolsky.
+\newblock Selected papers on quantum electrodynamics.
+\newblock {\em Ed.: Schwinger J., Dover Publi. Inc. NY}, pages 29--40, 1958.
 
 \bibitem{dirac_32}
 Paul Adrien~Maurice Dirac.
@@ -83,6 +126,18 @@ Yu~A Dubinskii.
 \newblock Sobolev spaces of infinite order.
 \newblock {\em Russian Mathematical Surveys}, 46(6):107, 1991.
 
+\bibitem{eddington}
+Arthur~Stanley Eddington.
+\newblock The charge of an electron.
+\newblock {\em Proceedings of the Royal Society of London. Series A, Containing
+  Papers of a Mathematical and Physical Character}, 122(789):358--369, 1929.
+
+\bibitem{epstein1973role}
+Henri Epstein and Vladimir Glaser.
+\newblock The role of locality in perturbation theory.
+\newblock In {\em Annales de l'IHP Physique th{\'e}orique}, volume~19, pages
+  211--295, 1973.
+
 \bibitem{fecko2006differential}
 Mari{\'a}n Fecko.
 \newblock {\em Differential geometry and Lie groups for physicists}.
@@ -110,10 +165,26 @@ Stephen~A Fulling, Mark Sweeny, and Robert~M Wald.
   theory in curved spacetime.
 \newblock {\em Communications in Mathematical Physics}, 63(3):257--264, 1978.
 
+\bibitem{glimm_jaffe}
+James Glimm and Arthur Jaffe.
+\newblock {\em Quantum physics: a functional integral point of view}.
+\newblock Springer Science \& Business Media, 2012.
+
 \bibitem{graham1994concrete}
 Ronald~L Graham, Donald~E Knuth, and Oren Patashnik.
 \newblock {\em Concrete mathematics: a foundation for computer science}.
 \newblock Addison-Wesley, Reading, 1994.
+
+\bibitem{green57}
+HS~Green.
+\newblock Separability of a covariant wave equation.
+\newblock {\em Il Nuovo Cimento (1955-1965)}, 5(4):866--871, 1957.
+
+\bibitem{guenther_1952}
+Marian G{\"u}nther.
+\newblock The relativistic configuration space formulation of the
+  multi-electron problem.
+\newblock {\em Physical Review}, 88(6):1411, 1952.
 
 \bibitem{hainzl2005existence}
 Christian Hainzl, Mathieu Lewin, and {\'E}ric S{\'e}r{\'e}.
@@ -137,11 +208,28 @@ Michael Ibison.
 \newblock On the conformal forms of the robertson-walker metric.
 \newblock {\em Journal of Mathematical Physics}, 48(12):122501, 2007.
 
+\bibitem{jaffe_cft}
+Arthur Jaffe.
+\newblock Constructive quantum field theory.
+\newblock {\em Mathematical physics}, pages 111--127, 2000.
+
 \bibitem{john1987hadamard}
 RW~John.
 \newblock The hadamard construction of green's functions on a curved space-time
   with symmetries.
 \newblock {\em Annalen der Physik}, 499(7):531--544, 1987.
+
+\bibitem{john}
+RW~John.
+\newblock The hadamard construction of green's functions on a curved space-time
+  with symmetries.
+\newblock {\em Annalen der Physik}, 499(7):531--544, 1987.
+
+\bibitem{nointeraction2}
+H~Leutwyler.
+\newblock A no-interaction theorem in classical relativistic hamiltonian
+  particle mechanics.
+\newblock {\em Il Nuovo Cimento (1955-1965)}, 37(2):556--567, 1965.
 
 \bibitem{ibc_model}
 M~Lienert and L~Nickel.
@@ -204,12 +292,23 @@ Matthias Lienert and Roderich Tumulka.
   spacetimes with a big bang singularity.
 \newblock {\em Journal of Mathematical Physics}, 60(4), 2019.
 
+\bibitem{generalized_born}
+Matthias Lienert and Roderich Tumulka.
+\newblock Born’s rule for arbitrary cauchy surfaces.
+\newblock {\em Letters in Mathematical Physics}, 110(4):753--804, 2020.
+
 \bibitem{mtve}
 Matthias Lienert, Roderich Tumulka, et~al.
 \newblock A new class of volterra-type integral equations from relativistic
   quantum physics.
 \newblock {\em Journal of Integral Equations and Applications}, 31(4):535--569,
   2019.
+
+\bibitem{lnt_2020}
+Sascha Lill, Lukas Nickel, and Roderich Tumulka.
+\newblock Consistency proof for multi-time schrodinger equations with particle
+  creation and ultraviolet cut-off.
+\newblock {\em arXiv preprint arXiv:2001.05920}, 2020.
 
 \bibitem{marx_1974}
 Egon Marx.
@@ -223,9 +322,19 @@ Jouko Mickelsson.
   infinite-dimensional groups.
 \newblock {\em Letters in Mathematical Physics}, 104(10):1189--1199, 2014.
 
+\bibitem{nakanishi}
+Noboru Nakanishi.
+\newblock A general survey of the theory of the bethe-salpeter equation.
+\newblock {\em Progress of Theoretical Physics Supplement}, 43:1--81, 1969.
+
 \bibitem{phd_nickel}
 L.~Nickel.
 \newblock Phd thesis. on the dynamics of multi-time systems, 2019.
+
+\bibitem{obrien75}
+DM~O'Brien.
+\newblock The wick rotation.
+\newblock {\em Australian Journal of Physics}, 28(1):7--14, 1975.
 
 \bibitem{penrose_rindler}
 Roger Penrose and Wolfgang Rindler.
@@ -259,11 +368,21 @@ SNM Ruijsenaars.
 \newblock Charged particles in external fields. i. classical theory.
 \newblock {\em Journal of Mathematical Physics}, 18(4):720--737, 1977.
 
+\bibitem{bs_equation}
+Edwin~E Salpeter and Hans~Albrecht Bethe.
+\newblock A relativistic equation for bound-state problems.
+\newblock {\em Physical Review}, 84(6):1232, 1951.
+
 \bibitem{sazdjian_2bd}
 Hagop Sazdjian.
 \newblock Relativistic wave equations for the dynamics of two interacting
   particles.
 \newblock {\em Physical Review D}, 33(11):3401, 1986.
+
+\bibitem{scharf2014finite}
+Gunter Scharf.
+\newblock {\em Finite quantum electrodynamics: the causal approach}.
+\newblock Courier Corporation, 2014.
 
 \bibitem{schlemmer2015current}
 Jan Schlemmer and Jochen Zahn.
@@ -301,6 +420,16 @@ Alexander~J Silenko.
 \newblock New symmetry properties of pointlike scalar and dirac particles.
 \newblock {\em Physical Review D}, 91(6):065012, 2015.
 
+\bibitem{thirring_model}
+Walter~E Thirring.
+\newblock A soluble relativistic field theory.
+\newblock {\em Annals of Physics}, 3(1):91--112, 1958.
+
+\bibitem{tiktopoulos65}
+George Tiktopoulos.
+\newblock Note on positronium.
+\newblock {\em Journal of Mathematical Physics}, 6(4):573--577, 1965.
+
 \bibitem{tomonaga}
 Sin-itiro Tomonaga.
 \newblock On a relativistically invariant formulation of the quantum theory of
@@ -312,6 +441,21 @@ Peter Van~Alstine and Horace~W Crater.
 \newblock A tale of three equations: Breit, eddington—gaunt, and two-body
   dirac.
 \newblock {\em Foundations of Physics}, 27(1):67--79, 1997.
+
+\bibitem{wf1}
+John~Archibald Wheeler and Richard~Phillips Feynman.
+\newblock Interaction with the absorber as the mechanism of radiation.
+\newblock {\em Reviews of modern physics}, 17(2-3):157, 1945.
+
+\bibitem{wf2}
+John~Archibald Wheeler and Richard~Phillips Feynman.
+\newblock Classical electrodynamics in terms of direct interparticle action.
+\newblock {\em Reviews of modern physics}, 21(3):425, 1949.
+
+\bibitem{wick_54}
+Gian~Carlo Wick.
+\newblock Properties of bethe-salpeter wave functions.
+\newblock {\em Physical Review}, 96(4):1124, 1954.
 
 \bibitem{zahn2014renormalized}
 Jochen Zahn.
